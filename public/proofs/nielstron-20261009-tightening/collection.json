@@ -1,0 +1,36 @@
+{
+  "status": "verification-pending",
+  "files": {
+    "NOTICE.txt": "53e7d249d25b078b1f22be5ce2406db6b59f6813086f51994840ce9b085d0d0a",
+    "PUBLICATION.txt": "f8db2e270a32d6b79b9e5450f8165fa7ff337be05d6774f2d20a4a3cf56b90b4",
+    "README.txt": "22b2a6d5e9436edd39f8f4c5bc467fd36f437ab14b6250836481d99383ed360c",
+    "SHA256SUMS.txt": "40f765d8341146d1fcde71ed3721bf66ec8e3abf6770a4c883ea6694abbe3cda",
+    "TightIndependentTargets.lean": "6f703e4d03017ca044c5c298e7432670664f5379751d46f5b5405ac43c68a9a5",
+    "TightTargetsRequired.lean": "334917ca9a1274cfbfc835efb09b3122f89a581762cba6ff983ba0cd322b0083",
+    "TighterNonvanishing.lean": "80338e1b6e4c8b98d26a9d11d97d3f3418921ca2d184f6a5bcd9d92d43216276",
+    "build-status.json": "e59279bcc8bcaacfc331ecf1fda65d6e791dddaeacd264993d0491dd39d2168c",
+    "external-checker-status.json": "d145fde7db165fb0c138d1ee60a190311087e93cc4eb2c5ba1a4a65202657a4c",
+    "gate.log": "f90dd5b1b46b9a7b0f145746860ae1d68203d428f3e3a0735c1fd1b155fd575d",
+    "native-lean-verification.json": "ce4309c65967236142a140c1947ce69f79d9adf4dfb58252557ceb27cccf8811",
+    "reproduction.json": "390a0fb82aa29d035cf48b266120151e692d5fd9ae040ab8ccd679ee572f14f1",
+    "result.json": "d6a5fc4102cebaf83860c087661e66868635e4d85d3de2604c8dd142b907521e",
+    "source-public.tar.gz": "4388d6e63f0127ce12a116ead3ffecbdc1db2a0d33b5da15993c206c69896dd4",
+    "source-sha256.json": "03188c46e70f737a641dc2c86412f1e699cffa2d612161d1c629d830535945b0",
+    "token-counts.json": "f30bbd91b38d79370e55e89d31163165ac88f4615ba92a861a07860b256a15a0"
+  },
+  "snapshot_exports": {
+    "README.txt": "README.md",
+    "NOTICE.txt": "NOTICE",
+    "PUBLICATION.txt": "PUBLICATION.md",
+    "result.json": "tightening-result.json",
+    "native-lean-verification.json": "compressed/audit/tightening-verification.json",
+    "build-status.json": "compressed/audit/local-build-status.json",
+    "token-counts.json": "compressed/audit/token-counts.json",
+    "reproduction.json": "tightening/reproduction.json",
+    "TightIndependentTargets.lean": "compressed/audit/TightIndependentTargets.lean",
+    "TightTargetsRequired.lean": "compressed/audit/TightTargetsRequired.lean",
+    "TighterNonvanishing.lean": "compressed/formalization/QRH/TighterNonvanishing.lean",
+    "gate.log": "compressed/logs/local-tight-targets-required.log",
+    "external-checker-status.json": "tightening/checker-evidence/checker-status.json"
+  }
+}

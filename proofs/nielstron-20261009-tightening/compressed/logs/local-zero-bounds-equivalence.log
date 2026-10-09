@@ -1,0 +1,8 @@
+'QRH.riemannZeta_zero_re_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.DirichletCharacter.zero_re_le_or_exception' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.DirichletCharacter.zero_re_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.Hecke.zero_re_le_or_exception' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.Hecke.zero_re_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.ZeroBoundsEquivalence.zeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.ZeroBoundsEquivalence.dirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.ZeroBoundsEquivalence.hecke' depends on axioms: [propext, Classical.choice, Quot.sound]

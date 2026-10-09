@@ -1,0 +1,20 @@
+{
+  "roots": [
+    "QRH",
+    "QRH.Analytic",
+    "QRH.Detector.UniformDetectorCount",
+    "QRH.Hecke.DynamicBatchCount"
+  ],
+  "closure": 7232,
+  "checked": 7232,
+  "official_cache_modules": 4101,
+  "local_source_modules": 3131,
+  "failed": [],
+  "blocked": [],
+  "seconds": 234.65015959739685,
+  "jobs": 16,
+  "success": true,
+  "thread_policy": "Distribute the full jobs-thread budget across ready Lean modules",
+  "trust_note": "Official mathlib cache reused; OAI and QRH compiled from source.",
+  "configuration": "lean-4.34.1-local-cache-build-v1"
+}

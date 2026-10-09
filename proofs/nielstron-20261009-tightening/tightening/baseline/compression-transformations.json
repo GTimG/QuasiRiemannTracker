@@ -1,0 +1,1239 @@
+{
+  "before_tokens": 284326,
+  "after_tokens": 251528,
+  "saved_tokens": 32798,
+  "changed_files": 39,
+  "removed": [
+    {
+      "file": "QRH/Adaptive.lean",
+      "declaration": "crossing_identity",
+      "round": 0,
+      "tokens": 46
+    },
+    {
+      "file": "QRH/Certificate.lean",
+      "declaration": "post_extension_saving",
+      "round": 0,
+      "tokens": 135
+    },
+    {
+      "file": "QRH/Continuation.lean",
+      "declaration": "boundary_of_uniform_drop",
+      "round": 0,
+      "tokens": 193
+    },
+    {
+      "file": "QRH/Detector/ActualDetectorFiberCount.lean",
+      "declaration": "actual_uniform_detector_fiber_count",
+      "round": 0,
+      "tokens": 855
+    },
+    {
+      "file": "QRH/Detector/ActualNonfloorRows.lean",
+      "declaration": "exists_optimized_nonfloor_rows_bound",
+      "round": 0,
+      "tokens": 2178
+    },
+    {
+      "file": "QRH/Detector/DynamicMomentInput.lean",
+      "declaration": "actual_source_batch_plain_marked",
+      "round": 0,
+      "tokens": 497
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "uniform_closed_box_bound",
+      "round": 0,
+      "tokens": 196
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "fixed_source_ordered_boundaries",
+      "round": 0,
+      "tokens": 193
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "selected_norm_bound",
+      "round": 0,
+      "tokens": 144
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "selected_analytic_z",
+      "round": 0,
+      "tokens": 73
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "selected_analytic_w",
+      "round": 0,
+      "tokens": 73
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "declaration": "source_analytic_x_off_one",
+      "round": 0,
+      "tokens": 229
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "declaration": "combined_slot_analytic_x",
+      "round": 0,
+      "tokens": 150
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "declaration": "combined_selected_analytic_x",
+      "round": 0,
+      "tokens": 117
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "declaration": "window_analytic_x",
+      "round": 0,
+      "tokens": 101
+    },
+    {
+      "file": "QRH/Detector/ExtendedGlobalCorrection.lean",
+      "declaration": "globalClosedCorrection_multipliable",
+      "round": 0,
+      "tokens": 155
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "declaration": "raw_source_uniform_high_slices",
+      "round": 0,
+      "tokens": 563
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "declaration": "residue_uniform_tails",
+      "round": 0,
+      "tokens": 783
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "declaration": "source_uniform_joint_tails",
+      "round": 0,
+      "tokens": 942
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "actual_region_slot_error",
+      "round": 0,
+      "tokens": 143
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "region_raw_slot_error",
+      "round": 0,
+      "tokens": 82
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "principal_raw_slot_error",
+      "round": 0,
+      "tokens": 122
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "actual_principal_slot_error",
+      "round": 0,
+      "tokens": 119
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalTransport.lean",
+      "declaration": "raw_uniform_high_z_joins",
+      "round": 0,
+      "tokens": 459
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalTransport.lean",
+      "declaration": "raw_uniform_high_x_joins",
+      "round": 0,
+      "tokens": 480
+    },
+    {
+      "file": "QRH/Detector/OptimizedCentralExponent.lean",
+      "declaration": "mixed_physical_exponent",
+      "round": 0,
+      "tokens": 192
+    },
+    {
+      "file": "QRH/Detector/OptimizedData.lean",
+      "declaration": "optimized_count_budget",
+      "round": 0,
+      "tokens": 20
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalRemainders.lean",
+      "declaration": "eventual_annulus_threshold",
+      "round": 0,
+      "tokens": 225
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "fixedPrincipal_product_eq",
+      "round": 0,
+      "tokens": 35
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "actualSlotResidue_isBigO",
+      "round": 0,
+      "tokens": 268
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "exists_actualSlotResidue_bound",
+      "round": 0,
+      "tokens": 383
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "actual_principal_slot",
+      "round": 0,
+      "tokens": 131
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "sourceCorrection_eq_principal",
+      "round": 0,
+      "tokens": 20
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "annularPrimeWeight_target_unit",
+      "round": 0,
+      "tokens": 79
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "annularPrimeWeight_nonneg",
+      "round": 0,
+      "tokens": 51
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slot_scalar_ne_zero",
+      "round": 0,
+      "tokens": 17
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "raw_quotient_integral_eq",
+      "round": 0,
+      "tokens": 75
+    },
+    {
+      "file": "QRH/Detector/OptimizedProbe.lean",
+      "declaration": "optimized_canonical_rows",
+      "round": 0,
+      "tokens": 262
+    },
+    {
+      "file": "QRH/Detector/OptimizedProbe.lean",
+      "declaration": "optimized_row_triples",
+      "round": 0,
+      "tokens": 252
+    },
+    {
+      "file": "QRH/Detector/OptimizedProbe.lean",
+      "declaration": "optimized_product_scale",
+      "round": 0,
+      "tokens": 107
+    },
+    {
+      "file": "QRH/Detector/OptimizedSlots.lean",
+      "declaration": "exists_optimized_slots",
+      "round": 0,
+      "tokens": 167
+    },
+    {
+      "file": "QRH/Detector/UniformDetectorCount.lean",
+      "declaration": "actual_uniform_plain_detector_count",
+      "round": 0,
+      "tokens": 759
+    },
+    {
+      "file": "QRH/DynamicLoss.lean",
+      "declaration": "dynamic_capacity_strict_slack",
+      "round": 0,
+      "tokens": 31
+    },
+    {
+      "file": "QRH/DynamicLoss.lean",
+      "declaration": "dynamic_capacity_loss",
+      "round": 0,
+      "tokens": 386
+    },
+    {
+      "file": "QRH/Energy/LiveClippingDefect.lean",
+      "declaration": "live_profiles_reference_window_extended",
+      "round": 0,
+      "tokens": 620
+    },
+    {
+      "file": "QRH/Energy/LiveClippingDefect.lean",
+      "declaration": "robust_deleted_cases_extended",
+      "round": 0,
+      "tokens": 246
+    },
+    {
+      "file": "QRH/Energy/PositiveBalancedAdmission.lean",
+      "declaration": "state_capacity_packet_extended",
+      "round": 0,
+      "tokens": 229
+    },
+    {
+      "file": "QRH/Energy/ReferenceDeletionCapacity.lean",
+      "declaration": "deleted_reflection_removal_extended",
+      "round": 0,
+      "tokens": 442
+    },
+    {
+      "file": "QRH/Energy/ReferenceDeletionClipped.lean",
+      "declaration": "clipped_reflected_bound_extended",
+      "round": 0,
+      "tokens": 228
+    },
+    {
+      "file": "QRH/Energy/ReferenceLowWindow.lean",
+      "declaration": "deleted_reference_window_extended",
+      "round": 0,
+      "tokens": 485
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "low_energy",
+      "round": 0,
+      "tokens": 348
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "plain_slot_budget",
+      "round": 0,
+      "tokens": 87
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "plain_centering",
+      "round": 0,
+      "tokens": 152
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "old_moment_range_insufficient",
+      "round": 0,
+      "tokens": 46
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "dynamic_kappa",
+      "round": 0,
+      "tokens": 96
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "geometry_identities",
+      "round": 0,
+      "tokens": 70
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "kappa0_value",
+      "round": 0,
+      "tokens": 20
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "ell_value",
+      "round": 0,
+      "tokens": 20
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "improvement",
+      "round": 0,
+      "tokens": 22
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "theta_lt_seven_eighths",
+      "round": 0,
+      "tokens": 18
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "theta_pos",
+      "round": 0,
+      "tokens": 12
+    },
+    {
+      "file": "QRH/Hecke/DetectorRowCountCrossing.lean",
+      "declaration": "plain_capacity_bound_extended",
+      "round": 0,
+      "tokens": 99
+    },
+    {
+      "file": "QRH/Hecke/DynamicBatchCount.lean",
+      "declaration": "batch_count_from_raw_moments",
+      "round": 0,
+      "tokens": 619
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "declaration": "inverse_capacity_exponent",
+      "round": 0,
+      "tokens": 108
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "declaration": "prime_supply_margin",
+      "round": 0,
+      "tokens": 85
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "declaration": "plain_capacity_bound",
+      "round": 0,
+      "tokens": 163
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "declaration": "strict_inverse_capacity",
+      "round": 0,
+      "tokens": 173
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "declaration": "crossing_average",
+      "round": 0,
+      "tokens": 130
+    },
+    {
+      "file": "QRH/Hecke/OptimizedAdaptiveCutoff.lean",
+      "declaration": "actual_adaptive_witnesses",
+      "round": 0,
+      "tokens": 510
+    },
+    {
+      "file": "QRH/Moments/ReflectionRetainedLength.lean",
+      "declaration": "positive_slot_width_drop_extended",
+      "round": 0,
+      "tokens": 157
+    },
+    {
+      "file": "QRH/OtherRanges.lean",
+      "declaration": "unbounded_tail_saving",
+      "round": 0,
+      "tokens": 61
+    },
+    {
+      "file": "QRH/OtherRanges.lean",
+      "declaration": "small_row_saving",
+      "round": 0,
+      "tokens": 53
+    },
+    {
+      "file": "QRH/OtherRanges.lean",
+      "declaration": "short_saving",
+      "round": 0,
+      "tokens": 76
+    },
+    {
+      "file": "QRH/PrimeRows/DynamicSourceCount.lean",
+      "declaration": "adaptive_source_count_from_raw_moments",
+      "round": 0,
+      "tokens": 909
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedTailScales.lean",
+      "declaration": "small_row_scale_bound",
+      "round": 0,
+      "tokens": 394
+    },
+    {
+      "file": "QRH/Detector/ActualFixedNonfloorData.lean",
+      "declaration": "exists_optimized_nonfloor_cube_bound",
+      "round": 1,
+      "tokens": 846
+    },
+    {
+      "file": "QRH/Detector/DetectorPlainMarkedFineField.lean",
+      "declaration": "source_batch_plain_marked_dynamic",
+      "round": 1,
+      "tokens": 1549
+    },
+    {
+      "file": "QRH/Detector/DynamicMomentInput.lean",
+      "declaration": "dynamic_source_input",
+      "round": 1,
+      "tokens": 256
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "declaration": "fixed_source_boundaries",
+      "round": 1,
+      "tokens": 222
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "declaration": "selected_analytic_x",
+      "round": 1,
+      "tokens": 91
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "declaration": "residue_uniform_moments",
+      "round": 1,
+      "tokens": 1252
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "region_slot_eq_raw",
+      "round": 1,
+      "tokens": 175
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "principal_slot_eq_raw",
+      "round": 1,
+      "tokens": 167
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalTransport.lean",
+      "declaration": "uniform_high_z_joins",
+      "round": 1,
+      "tokens": 916
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalTransport.lean",
+      "declaration": "uniform_high_x_joins",
+      "round": 1,
+      "tokens": 933
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slotResidue_isBigO",
+      "round": 1,
+      "tokens": 680
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "annularPrimeWeight_norm_lower",
+      "round": 1,
+      "tokens": 42
+    },
+    {
+      "file": "QRH/Energy/LiveClippingDefect.lean",
+      "declaration": "robust_deleted_reference_window_extended",
+      "round": 1,
+      "tokens": 506
+    },
+    {
+      "file": "QRH/Energy/LiveClippingDefect.lean",
+      "declaration": "robust_fixed_slack_extended",
+      "round": 1,
+      "tokens": 53
+    },
+    {
+      "file": "QRH/Energy/ReferenceDeletionCapacity.lean",
+      "declaration": "deleted_reflection_excess_extended",
+      "round": 1,
+      "tokens": 535
+    },
+    {
+      "file": "QRH/Energy/ReferenceDeletionClipped.lean",
+      "declaration": "deleted_long_le_width_extended",
+      "round": 1,
+      "tokens": 226
+    },
+    {
+      "file": "QRH/Geometry.lean",
+      "declaration": "geometry_ledger",
+      "round": 1,
+      "tokens": 196
+    },
+    {
+      "file": "QRH/OtherRanges.lean",
+      "declaration": "short_formula",
+      "round": 1,
+      "tokens": 72
+    },
+    {
+      "file": "QRH/PrimeRows/DynamicSourceCount.lean",
+      "declaration": "high_source_count_from_raw_moments",
+      "round": 1,
+      "tokens": 762
+    },
+    {
+      "file": "QRH/PrimeRows/DynamicSourceCount.lean",
+      "declaration": "balanced_source_count_from_raw_moments",
+      "round": 1,
+      "tokens": 879
+    },
+    {
+      "file": "QRH/RobustReflectionGeometry.lean",
+      "declaration": "deleted_cases",
+      "round": 1,
+      "tokens": 329
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "declaration": "source_uniform_high_slices",
+      "round": 2,
+      "tokens": 705
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "region_raw_ne_zero",
+      "round": 2,
+      "tokens": 41
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "principal_raw_ne_zero",
+      "round": 2,
+      "tokens": 37
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slotResidue_active",
+      "round": 2,
+      "tokens": 91
+    },
+    {
+      "file": "QRH/Energy/ReferenceState.lean",
+      "declaration": "balanced_reflection_margins_extended",
+      "round": 2,
+      "tokens": 208
+    },
+    {
+      "file": "QRH/Moments/DetectorPlainMarkedState.lean",
+      "declaration": "source_batch_marked_initial_dynamic",
+      "round": 2,
+      "tokens": 926
+    },
+    {
+      "file": "QRH/RobustReflectionGeometry.lean",
+      "declaration": "fixed_slack",
+      "round": 2,
+      "tokens": 57
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "region_raw_lower_bound",
+      "round": 3,
+      "tokens": 250
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "principal_raw_lower_bound",
+      "round": 3,
+      "tokens": 252
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slotRatio_active",
+      "round": 3,
+      "tokens": 36
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "region_correction_eq_raw",
+      "round": 4,
+      "tokens": 108
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "declaration": "principal_correction_eq_raw",
+      "round": 4,
+      "tokens": 113
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slotProduct_active",
+      "round": 4,
+      "tokens": 58
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "declaration": "slotMass_active",
+      "round": 4,
+      "tokens": 63
+    }
+  ],
+  "validation": "requires full Lean rebuild",
+  "baseline_commit": "290d9c5463344c3e2fab93b878f3281e77e3fd6f",
+  "baseline_tokens": 294019,
+  "overlays": [
+    {
+      "file": "QRH/Certificate.lean",
+      "from": "candidates/QRH/Certificate.lean"
+    },
+    {
+      "file": "QRH/Detector/ActualAdaptiveBatchCount.lean",
+      "from": "candidates/QRH/Detector/ActualAdaptiveBatchCount.lean"
+    },
+    {
+      "file": "QRH/Detector/ActualDetectorFiberCount.lean",
+      "from": "candidates/QRH/Detector/ActualDetectorFiberCount.lean"
+    },
+    {
+      "file": "QRH/Detector/ActualNonfloorRows.lean",
+      "from": "candidates/QRH/Detector/ActualNonfloorRows.lean"
+    },
+    {
+      "file": "QRH/Detector/CompleteNonfloorRowsData.lean",
+      "from": "candidates/QRH/Detector/CompleteNonfloorRowsData.lean"
+    },
+    {
+      "file": "QRH/Detector/DynamicSlotMomentInput.lean",
+      "from": "candidates/QRH/Detector/DynamicSlotMomentInput.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProduct.lean",
+      "from": "candidates/QRH/Detector/ExtendedFiniteProduct.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedFiniteProductX.lean",
+      "from": "candidates/QRH/Detector/ExtendedFiniteProductX.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedGlobalCorrection.lean",
+      "from": "candidates/QRH/Detector/ExtendedGlobalCorrection.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedGlobalHolomorphic.lean",
+      "from": "candidates/QRH/Detector/ExtendedGlobalHolomorphic.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedHeckeSignalBounds.lean",
+      "from": "candidates/QRH/Detector/ExtendedHeckeSignalBounds.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedHeckeSignalShift.lean",
+      "from": "candidates/QRH/Detector/ExtendedHeckeSignalShift.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalContours.lean",
+      "from": "candidates/QRH/Detector/ExtendedPrincipalContours.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalSlots.lean",
+      "from": "candidates/QRH/Detector/ExtendedPrincipalSlots.lean"
+    },
+    {
+      "file": "QRH/Detector/ExtendedPrincipalTransport.lean",
+      "from": "candidates/QRH/Detector/ExtendedPrincipalTransport.lean"
+    },
+    {
+      "file": "QRH/Detector/LowCommonBound.lean",
+      "from": "candidates/QRH/Detector/LowCommonBound.lean"
+    },
+    {
+      "file": "QRH/Detector/LowGaussianCentral.lean",
+      "from": "candidates/QRH/Detector/LowGaussianCentral.lean"
+    },
+    {
+      "file": "QRH/Detector/LowGaussianDyad.lean",
+      "from": "candidates/QRH/Detector/LowGaussianDyad.lean"
+    },
+    {
+      "file": "QRH/Detector/LowGaussianRemote.lean",
+      "from": "candidates/QRH/Detector/LowGaussianRemote.lean"
+    },
+    {
+      "file": "QRH/Detector/LowGaussianSum.lean",
+      "from": "candidates/QRH/Detector/LowGaussianSum.lean"
+    },
+    {
+      "file": "QRH/Detector/LowGramScale.lean",
+      "from": "candidates/QRH/Detector/LowGramScale.lean"
+    },
+    {
+      "file": "QRH/Detector/LowNormalized.lean",
+      "from": "candidates/QRH/Detector/LowNormalized.lean"
+    },
+    {
+      "file": "QRH/Detector/LowRemoteMass.lean",
+      "from": "candidates/QRH/Detector/LowRemoteMass.lean"
+    },
+    {
+      "file": "QRH/Detector/LowSourceScales.lean",
+      "from": "candidates/QRH/Detector/LowSourceScales.lean"
+    },
+    {
+      "file": "QRH/Detector/LowWindowBound.lean",
+      "from": "candidates/QRH/Detector/LowWindowBound.lean"
+    },
+    {
+      "file": "QRH/Detector/OptimizedData.lean",
+      "from": "candidates/QRH/Detector/OptimizedData.lean"
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalRemainders.lean",
+      "from": "candidates/QRH/Detector/OptimizedPrincipalRemainders.lean"
+    },
+    {
+      "file": "QRH/Detector/OptimizedPrincipalSignal.lean",
+      "from": "candidates/QRH/Detector/OptimizedPrincipalSignal.lean"
+    },
+    {
+      "file": "QRH/Detector/OptimizedProbe.lean",
+      "from": "candidates/QRH/Detector/OptimizedProbe.lean"
+    },
+    {
+      "file": "QRH/Detector/OptimizedTransportBudget.lean",
+      "from": "candidates/QRH/Detector/OptimizedTransportBudget.lean"
+    },
+    {
+      "file": "QRH/Energy/CertifiedExistence.lean",
+      "from": "candidates/QRH/Energy/CertifiedExistence.lean"
+    },
+    {
+      "file": "QRH/Energy/PositiveBalancedAdmission.lean",
+      "from": "candidates/QRH/Energy/PositiveBalancedAdmission.lean"
+    },
+    {
+      "file": "QRH/Energy/ReferenceDeletionCapacity.lean",
+      "from": "candidates/QRH/Energy/ReferenceDeletionCapacity.lean"
+    },
+    {
+      "file": "QRH/Hecke/DynamicBranchBudget.lean",
+      "from": "candidates/QRH/Hecke/DynamicBranchBudget.lean"
+    },
+    {
+      "file": "QRH/Hecke/DynamicCrossing.lean",
+      "from": "candidates/QRH/Hecke/DynamicCrossing.lean"
+    },
+    {
+      "file": "QRH/Hecke/DynamicRawBranches.lean",
+      "from": "candidates/QRH/Hecke/DynamicRawBranches.lean"
+    },
+    {
+      "file": "QRH/Hecke/OptimizedAdaptiveCutoff.lean",
+      "from": "candidates/QRH/Hecke/OptimizedAdaptiveCutoff.lean"
+    },
+    {
+      "file": "QRH/Moments/DetectorPlainExceptionalSlots.lean",
+      "from": "candidates/QRH/Moments/DetectorPlainExceptionalSlots.lean"
+    },
+    {
+      "file": "QRH/NumericFacts.lean",
+      "from": "candidates/QRH/NumericFacts.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/CubeNormalizer.lean",
+      "from": "candidates/QRH/PrimeRows/CubeNormalizer.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/DynamicNonfloorCount.lean",
+      "from": "candidates/QRH/PrimeRows/DynamicNonfloorCount.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/DynamicSourceCount.lean",
+      "from": "candidates/QRH/PrimeRows/DynamicSourceCount.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCanonicalCubeChoice.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCanonicalCubeChoice.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCanonicalCubeReduction.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCanonicalCubeReduction.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCanonicalRayCube.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCanonicalRayCube.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCanonicalReduction.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCanonicalReduction.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCanonicalTails.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCanonicalTails.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCentralCost.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCentralCost.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCentralTupleCount.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCentralTupleCount.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCubeErrorSaving.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCubeErrorSaving.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedCubeFiniteError.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedGeometricTail.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedGeometricTail.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedLargeDyad.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedLargeDyad.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedLargeSaving.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedLargeSaving.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedLargeTail.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedLargeTail.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedNonfloorTransport.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedNormalizedTransport.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedNormalizedTransport.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedPhysicalLargeTail.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedPhysicalLargeTail.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedPhysicalSmallTail.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedPhysicalSmallTail.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedSlotExponent.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedSlotExponent.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedSmallTail.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedSmallTail.lean"
+    },
+    {
+      "file": "QRH/PrimeRows/OptimizedTailScales.lean",
+      "from": "candidates/QRH/PrimeRows/OptimizedTailScales.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowBranchSum.lean",
+      "from": "candidates/QRH/Reflection/LowBranchSum.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowCaps.lean",
+      "from": "candidates/QRH/Reflection/LowCaps.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowChoiceEnergy.lean",
+      "from": "candidates/QRH/Reflection/LowChoiceEnergy.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowCompletedFiber.lean",
+      "from": "candidates/QRH/Reflection/LowCompletedFiber.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowCompletedRows.lean",
+      "from": "candidates/QRH/Reflection/LowCompletedRows.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowDyads.lean",
+      "from": "candidates/QRH/Reflection/LowDyads.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowExponent.lean",
+      "from": "candidates/QRH/Reflection/LowExponent.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowFixedMember.lean",
+      "from": "candidates/QRH/Reflection/LowFixedMember.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowFrozenEnergy.lean",
+      "from": "candidates/QRH/Reflection/LowFrozenEnergy.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowFull.lean",
+      "from": "candidates/QRH/Reflection/LowFull.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowFullBudget.lean",
+      "from": "candidates/QRH/Reflection/LowFullBudget.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowGlobalBudget.lean",
+      "from": "candidates/QRH/Reflection/LowGlobalBudget.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowInactiveEnergy.lean",
+      "from": "candidates/QRH/Reflection/LowInactiveEnergy.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowMemberBudget.lean",
+      "from": "candidates/QRH/Reflection/LowMemberBudget.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowMemberGeometry.lean",
+      "from": "candidates/QRH/Reflection/LowMemberGeometry.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowOriginalEnergy.lean",
+      "from": "candidates/QRH/Reflection/LowOriginalEnergy.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowRetained.lean",
+      "from": "candidates/QRH/Reflection/LowRetained.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowRetainedBudget.lean",
+      "from": "candidates/QRH/Reflection/LowRetainedBudget.lean"
+    },
+    {
+      "file": "QRH/Reflection/LowSector.lean",
+      "from": "candidates/QRH/Reflection/LowSector.lean"
+    },
+    {
+      "file": "QRH/Adaptive.lean",
+      "from": "manual/adaptive-compression.json",
+      "method": "replace named proof bodies, retain factored signatures"
+    },
+    {
+      "file": "QRH/Certificate.lean",
+      "from": "manual/certificate-compression.json",
+      "method": "replace named proof bodies, retain factored signatures"
+    },
+    {
+      "file": "QRH/RobustReflectionGeometry.lean",
+      "from": "manual/robust-reflection-compression.json",
+      "method": "replace named proof bodies, retain factored signatures"
+    },
+    {
+      "file": "QRH/ZeroBounds.lean",
+      "from": "interfaces/QRH/ZeroBounds.lean",
+      "method": "add public reformulations; count all source tokens"
+    }
+  ],
+  "protected_files_unchanged": [
+    "QRH/DirichletTargets.lean",
+    "QRH/HeckeTargets.lean",
+    "QRH/IndependentTargets.lean",
+    "QRH/Nonvanishing.lean",
+    "QRH/StatementParity.lean"
+  ],
+  "public_presentation_files": [
+    "QRH/ZeroBounds.lean"
+  ],
+  "candidate_files": {
+    "QRH/Adaptive.lean": "eb13f7dfb6172c3b9c3208cd9d0336cc441aa05a44c98b735c79bf639603a5cc",
+    "QRH/Analytic.lean": "0c7aca75632d5db811b136202cc9285a0e3e8646768f898679560aa6a8c8590f",
+    "QRH/Certificate.lean": "fb0b1904b52773b96c0b45077f7a08decdf99e90b0bb0c72e871ce45cd0e253a",
+    "QRH/Continuation.lean": "60073cde0f2a8ba27a66abed554b64f42b17d415d381f3621fda0dae42b97f99",
+    "QRH/Detector/ActualAdaptiveBatchCount.lean": "46da2b75c16c207b46a6c0fdc2d9ad011575cd15711f4791cd423c2d11f38060",
+    "QRH/Detector/ActualAmplitudeClassCount.lean": "f2d3d32f2852af28e51b46f06faa3d332656784059a83a92a1382bb617548f80",
+    "QRH/Detector/ActualCubeArithmeticSaving.lean": "8b74eb2cb73abd5ea6379d3f726daf0bd145b3a9ee76a9c76152ec02568e126a",
+    "QRH/Detector/ActualCubeClassBound.lean": "d86e3dd62977de5a2e3f8f9371f0f3898a7e3f7180c3b9585e628cc77a87d446",
+    "QRH/Detector/ActualDetectorFiberCount.lean": "9367f466b56db702b164b0f0f0828f8c5cb48528b0f2127a424acc6561492979",
+    "QRH/Detector/ActualFixedNonfloorData.lean": "22ee0c6c974e45a1ab3fef98fde94642665b40aa8dd878a06feb079dd1fd449d",
+    "QRH/Detector/ActualNonfloorCubeNorm.lean": "95f0ad476f5a8c168bd9c086a4e7c363794132afc1b3679ff199a89a380eda31",
+    "QRH/Detector/ActualNonfloorRows.lean": "2fa03748fc3009146e32d48d6adca480511edf80e46698207c907b8a621dc3d0",
+    "QRH/Detector/ActualNormalizedNonfloorCube.lean": "769d229ce0ff3df6939e2af75cef5db55227da9ab982bca3f9f2ed1c0766c3ba",
+    "QRH/Detector/ActualOptimizedHigh.lean": "25c7e3b42a45d7348f3478a7da4a002ff06e535bc3b4b6e0d7d48f0c489fa2cc",
+    "QRH/Detector/ActualOptimizedLow.lean": "c58a525ca78bc34c5fe485b32098cc3a5a6057a1ba5bc73bcc6dcd959f200136",
+    "QRH/Detector/ActualPlainUnmarkedInput.lean": "28910962032ada4c3f9709a6b9df25910c6eb3b8b1da733823e09b65c37ad2d6",
+    "QRH/Detector/ActualSourceCount.lean": "d2d259b8f1c5c53d18ec8ac0629fa5adaee113be14b29bf032d7d07d6ed87d51",
+    "QRH/Detector/CompleteNonfloorCubeData.lean": "f11285e4d39a1e4591312bc0dbcc1b3dc846818346f2d827ce10037e5961c63c",
+    "QRH/Detector/CompleteNonfloorRowsData.lean": "1e88d87e1acee9ce59216f7d488e7477f1756ecf0cf8d964de3bf17fe810e8a8",
+    "QRH/Detector/DetectorInverseFields.lean": "0803a862851db943e9955522b48b699f0e4fd6b01837426cbdec0fd049ac9f60",
+    "QRH/Detector/DetectorInverseMarkedField.lean": "954e3a7f905dcac1ad9ff874003f019324980df80096c3e602acd64184312fa4",
+    "QRH/Detector/DetectorMomentPrimeGeometry.lean": "d5c6b2ace42e7c9fec00d2b0747b3e01325076af0fea61788cade8da56e685c7",
+    "QRH/Detector/DetectorPlainMarkedFineField.lean": "574fe604b9d5e7927d11e17701ca5b6b4183398f456af55b5ccce12541d6f54e",
+    "QRH/Detector/DetectorPlainMarkedSlots.lean": "1d7531cf8b5468bb0493cc3a433886404286abadc67b3879f30022ca9ee0149e",
+    "QRH/Detector/DynamicMomentInput.lean": "d9c4877f0fcd6494075abc17a06b58958b08eced37c1d337c1461bf64d79abec",
+    "QRH/Detector/DynamicSlotMomentInput.lean": "92c9371f3b8dba2f324f4da12f6d537581ab185d49d1cf6cfba27e898e2cc9f7",
+    "QRH/Detector/ExtendedEulerRegion.lean": "f0ca427a3007029a95012492abcf6fa2898e29bc5395734b45ff053f8b8fdcf5",
+    "QRH/Detector/ExtendedFiniteProduct.lean": "59be8ad4a7fafc07194d7e3f65a994cd630ff6e4e28fadf409dbd6fa631b0d66",
+    "QRH/Detector/ExtendedFiniteProductX.lean": "646680c779ba0df538100d586752c551f34795cfea98e2d91f59dba297348d3e",
+    "QRH/Detector/ExtendedGlobalCorrection.lean": "f4caeb963228328b0b71782b28bf74ee99bde92c70b4aa79ed4d3ea8bfbaf9bc",
+    "QRH/Detector/ExtendedGlobalHolomorphic.lean": "65c6f6342bd021816eed208f872b71dc7ea4d23ae0db4e82c326fd4fe2be36bb",
+    "QRH/Detector/ExtendedGlobalRegion.lean": "d07b37fa4392349c2b41ab439041aa12b1f6b11d354650cbb6c8bc7ec3c88921",
+    "QRH/Detector/ExtendedHeckeSignalBounds.lean": "001c7b1698cd5c60a46aff0004e33188c1df47eda1932db3dc13a54c69629285",
+    "QRH/Detector/ExtendedHeckeSignalShift.lean": "91ed7a02f82c24196e72de3d88cfc743b93c927ca65d7ba0dd660dc842365d47",
+    "QRH/Detector/ExtendedPrincipalContours.lean": "3844f3dd1c28638ced7c168611f2f4a72fa66ed63afaec5196e19a6e38b9001a",
+    "QRH/Detector/ExtendedPrincipalPhysical.lean": "e8dedd6dd8dc67195a9f145cef467e008a4ae18b06698cc5fbe66b699c781f2c",
+    "QRH/Detector/ExtendedPrincipalSlots.lean": "9dd7fbb5c718deeba3e9f22a3a1dc9fd3f4b74bbd96ef2f5b8150891227f4c1f",
+    "QRH/Detector/ExtendedPrincipalTransport.lean": "8b6860d694ae37b801135ff68e7b06e0ad27fa5acca467c216db880b146cce53",
+    "QRH/Detector/ExtendedRayPoolThresholds.lean": "8fa9f73d6720b1aba90d029569ca28f0688d74a2c8d7f8c54f6b5054d0471b2f",
+    "QRH/Detector/FineSmallData.lean": "3261e5adb1f79f908d2bf45950a6633a67a859f26d214b308e64179e568da4e1",
+    "QRH/Detector/InverseRawParameters.lean": "8991581592bb6bb3f5e914c061e555240c66954dfa606e2a0d3730cf4fc289bd",
+    "QRH/Detector/LowCentralTuple.lean": "bd4832e91dc18b0e0c9abe91204abda132e06d04129926e0563cb0af805f5874",
+    "QRH/Detector/LowCommonBound.lean": "4486e9af5d379ae00ecd987105bbc9711d3fcd96a7c51741e305055d971376e5",
+    "QRH/Detector/LowGaussianCentral.lean": "787848b64b6229c982eba09d3e8ddf862e74e6259a6378add0357cba5ffde7fb",
+    "QRH/Detector/LowGaussianDyad.lean": "a8cc4c6cebd1fb5748f30ac0e3e5b16ccddfda86d326918a4de963771533948b",
+    "QRH/Detector/LowGaussianRemote.lean": "690e83f42e7799061fb0da5174a8848a4f8050bdfdb22b0b1cebeb5dc7fdf12a",
+    "QRH/Detector/LowGaussianSum.lean": "fddf88b4feff50e1a95724186ef3eeeacf540af79633ff177a2b911b61b1203d",
+    "QRH/Detector/LowGramScale.lean": "ba7b60e9263bf8fa1322dca51094be71745b2872ac803e5f30bf241562fbd13f",
+    "QRH/Detector/LowInverseNormalize.lean": "a37c514cef67ad842cc3c0e7c25466e510684a66699b7ad25e3d3b7b4e003b26",
+    "QRH/Detector/LowNominalEnergy.lean": "165fe3bcff38b0ab59c13e92c9e76e20971a2d709612c3d76fb7993c79edda3b",
+    "QRH/Detector/LowNominalGeometry.lean": "001cc132bd20820b669bd3ed335a1e8e75aede0aa10766f41da5d737caa2f26e",
+    "QRH/Detector/LowNormalized.lean": "5d85126e1504db211d9d792dc074a510ce112efdb4c421e10f776f3a4f7d00c0",
+    "QRH/Detector/LowPenaltyAbsorption.lean": "6f5f023d3421225b09a08a272a95b0925e039708c265ffd74bba29580ee11415",
+    "QRH/Detector/LowPhysicalInverseBound.lean": "542a5a3b466a9ed1bde01d5644a609a7e8445bb2ec5168c1630c82d440147e18",
+    "QRH/Detector/LowReflectedLength.lean": "3c2cd7fa1d9ea46885c9252ba688ce096d2ea68b6412afc18c4e4336d36d029f",
+    "QRH/Detector/LowRemoteMass.lean": "0c1ce4eb1b1d542c3afb73b99d8118fd187ad3a68dc0abf7bbac24cd67ae1812",
+    "QRH/Detector/LowSelectedBound.lean": "f086bb217e06cb1c0536b95ac5493fa5466b2672ebb73fe3ac80b5b3e6484706",
+    "QRH/Detector/LowSlotScales.lean": "b4bce1ad0ce4e962db9ee278438a60bfedb76a310dc6e56c9daa2def75415c9f",
+    "QRH/Detector/LowSourceScales.lean": "aae98d53c7ab3b2d57c907e12323a711b5dafcd99f6b959ceb5bb5287ac5cf91",
+    "QRH/Detector/LowUnselectedMass.lean": "0004e89b7a8295e40fa806e8bc0574987affed7414c0998cb540db0a892c040f",
+    "QRH/Detector/LowWindowBound.lean": "f0eb9543346a0eee2501afb5ad45531910b0760782941ee51a57d971e5b8adfd",
+    "QRH/Detector/OptimizedAdaptiveSaving.lean": "9739dcb633a5f6125f61be3b9e02e6bd066fe47da5a1df666205eb2a73645061",
+    "QRH/Detector/OptimizedBatchWidths.lean": "75922d6e9c6003e78efcac813767aa1878e71016b33e94ca5b67cc46cb663e77",
+    "QRH/Detector/OptimizedCentralExponent.lean": "d4ee100a9a54e501b3286b127764e853aa4fbb2ad30d9757987e6f6be19ec40b",
+    "QRH/Detector/OptimizedClassArithmetic.lean": "55696cc93a3232133f74a33bd2432cc0e268150cb378c9e946df9e8c951a2c7c",
+    "QRH/Detector/OptimizedContinuation.lean": "da5877000cc84ada2367891849989ff525958d33b5038a5dc1452020b9022797",
+    "QRH/Detector/OptimizedData.lean": "1f0be67e202cab3abc3723574501a1886e5173cf7f2d05ce2042ec8dbcd28027",
+    "QRH/Detector/OptimizedFloorMargin.lean": "30a63c34dea0461360d51b1f864c4f1c8df6d6aac2458b6f0023e60ab5f3442e",
+    "QRH/Detector/OptimizedMixedSaving.lean": "c22f726c6044c9d87621ffa93a8c3bfbfd1b3a91ee5be6178bc5ec01ea5b8548",
+    "QRH/Detector/OptimizedPrincipalNormalized.lean": "748f44c88e1db7320754c1db3e02cfb66ceb7fabb1e1847688166500cac6852a",
+    "QRH/Detector/OptimizedPrincipalPhysicalRemainder.lean": "bb30a5ee4d2bc861e7069a2cc43a143f1114e31c929f5842f7cadc0c8bebbda6",
+    "QRH/Detector/OptimizedPrincipalRemainders.lean": "96c11dda08a2b28b4d53dea11d717a0125589440bcf6757a6ef94d16a3a3e28d",
+    "QRH/Detector/OptimizedPrincipalResidueActual.lean": "cd094f7f347fb4c814b5d06b58615030bd56d22089cf63cf6c4597b5c2bc21f4",
+    "QRH/Detector/OptimizedPrincipalSignal.lean": "c250a2fbf6aab9e39cbc3e169adb73a09dfaf6cb3f443668f776687df90874b4",
+    "QRH/Detector/OptimizedProbe.lean": "5f603775247489ec0fdb4504e73d212acc392d1d3854d484095f7c4c0b535d94",
+    "QRH/Detector/OptimizedSlots.lean": "2729e1cd2b15186200ef69cbb4f30058ff1f36d127c4de417361ce9449ebd443",
+    "QRH/Detector/OptimizedSourceAmplitudeClasses.lean": "773f8382329b66aec0fe76dca0ae63b4189582ad8efc20c52135452850b46fce",
+    "QRH/Detector/OptimizedSourceBatch.lean": "84ddd2897c789b8291a520ba72d4396286fa6b75d5a45d8a7f9c2d7715d1e6cd",
+    "QRH/Detector/OptimizedSupremum.lean": "1224d7f8163b52dc4472fbebcc82359d22ea5a8dc48fcb975d621f8d18b9931f",
+    "QRH/Detector/OptimizedTransportBudget.lean": "0aecb4dfe6c425d2590ea3711485267b6fe24be9a8e63a025ac51a4fb5c0acf4",
+    "QRH/Detector/PlainUnmarkedRetainedSlots.lean": "95ce687a25b0d9da1448acf21928f1aca82faab30c6b9b39c4a042196942221d",
+    "QRH/Detector/PlainUnmarkedSlots.lean": "abb7693fd074df983206ba8b97783039b5b342f26e7015b01e064057fc29ac6c",
+    "QRH/Detector/UniformAllMoments.lean": "2d6edb00a50ff974856074c9e51cb71ba07da13fded1a53b44b6354e5e762239",
+    "QRH/Detector/UniformDetectorCount.lean": "a8f610aed0b7d2448c4397b3ff5779596b599ff6890e8f12c9771e04deedee3c",
+    "QRH/Detector/UniformDetectorMoment.lean": "edd65b3c3c91bffef08bd27933b13f24a5b7a3f4f1e29dc77921ac8489a33b52",
+    "QRH/DirichletTargets.lean": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+    "QRH/DynamicLoss.lean": "0b4ddcd3d5c86fd1feaf755d9ddc3f8ab2b0d94dd967776e72e8ac8f64742a0a",
+    "QRH/Energy/CappedAnalyticSuccessor.lean": "4b8750d2bcda92df77ae96a6001d19bc43f7edeab269f1a54360ccfdc19bdf13",
+    "QRH/Energy/CappedLowStage.lean": "b303090cdb264c6b75a8e0f271c1465b57b2c51aab02ed588409acc92346766d",
+    "QRH/Energy/CertifiedExistence.lean": "b9099f5b141210b372210ae23cde5c425f65db503501ad72a32a28569a8ec2d1",
+    "QRH/Energy/DeletedRobustGeometry.lean": "aab03fedaf80a15375dacda9e89d6ef56b6cae2c51ee6aa62d4109ebe0534170",
+    "QRH/Energy/FirstSourceParameters.lean": "ecba8f5aa07adb32f8546c7a1b68b8bbfb676e83a34c07d9473745e776ab769f",
+    "QRH/Energy/LiveClippingDefect.lean": "8dea50da7fab873982acbbd939823e1b3fbccf227944ed26b9bc4037e583264d",
+    "QRH/Energy/NaturalHighStage.lean": "ebd5788aa4edf11c58b758a0da7581e26c71f48ec94a5e6f22df3e1ed6aeb317",
+    "QRH/Energy/NaturalLowPhysical.lean": "9e4d013f8784fd5af1f56a07a35c4f0b080bc237dd125d7945fc341eb75fb86e",
+    "QRH/Energy/NaturalLowStage.lean": "1c2aa3b751a3a7aaa08a63d10f31f96d403639ebb6c25ba996efecf88f59b1ea",
+    "QRH/Energy/NaturalZeroStage.lean": "273fde25a185bf426faa19dada926b3c9c9e914deea6b44e6d7fe4a1f5ec4261",
+    "QRH/Energy/OriginalHighReflectionBounded.lean": "c586ca8b211f896891f8e8915e73c0cb9a0073624fb0162989532c2f6746f878",
+    "QRH/Energy/OriginalHighReflectionDeleted.lean": "7817d5d23bd62ab5965c6ea2152d815ecfc52b241e74f71ab0c70ac022b2b16f",
+    "QRH/Energy/OriginalHighReflectionGeometry.lean": "1fdd0f9918289d617a5bd666c85123734d4ff1840cc28be177d32aa8e9b241ea",
+    "QRH/Energy/OriginalHighReflectionOriginal.lean": "d3dcc1e8715ef9e950a624fe9d93a5c437e9967e8d27b7e7bf52bdd72a067016",
+    "QRH/Energy/OriginalHighReflectionPower.lean": "59e4dc5ba13c5d7554a040579dd084721066b0096a5653dc4feac788d64050b6",
+    "QRH/Energy/OriginalHighReflectionSymmetric.lean": "17ee862f17219c32c1a8ab814fa9631af4294caa7b5c1ce39b76fca971ea620c",
+    "QRH/Energy/OriginalHighReflectionSymmetricBounded.lean": "28681e692abd27a483466ba5136eff059d6068eaf58d56e82adf1ed5d1f6e854",
+    "QRH/Energy/PositiveBalancedAdmission.lean": "2d20a28c59cc79bed5bfa3c851277b5bf01bfe14cc68b024b918932f897e8b0b",
+    "QRH/Energy/PositiveHighAssembly.lean": "d1196870d66f6b458295cdc1cb58fafcc7b1ddb4f31d1e2ddb59ca06b6c014d6",
+    "QRH/Energy/PositiveHighAssemblyBounded.lean": "eb9e754e79fac1bb8ea7e9b682334ce2babf27dc00933e2e1fa1acf62c24f37c",
+    "QRH/Energy/PositiveHighBound.lean": "2fb8668ffb5d04f5d526206ccbb8660b734fba3194fa732500d51bbba53ed27e",
+    "QRH/Energy/PositiveHighParameters.lean": "132936a489a1e78c393d992ad365a598d7050777f4fcabd9de01630f6f925ad5",
+    "QRH/Energy/PositiveHighPhysical.lean": "35850fb1877a759afbb7800cf030c9fe15f74d22a7a85fb2dfa1a9d93b4c581a",
+    "QRH/Energy/PositiveHighSource.lean": "d5d07e3eeda721d0bde5159d4c3c686f88a18624b44b6349a75b35369ceea242",
+    "QRH/Energy/PositiveHighSourceBound.lean": "38f4dffd07ea29d1bd805d931e612a4a4254fd5c8ae5dfe87ca3cb0430d7da4e",
+    "QRH/Energy/PositiveHighSourceBounded.lean": "424a0db2e0bc218c1d2ba1d9b87997817d4c0dfcb61352c2a0faaaef94c3e359",
+    "QRH/Energy/ReferenceDeletionCapacity.lean": "f1d6b1326936e3350e0775146d73ef29be987cc1fe1d35a77a824b65ba21c343",
+    "QRH/Energy/ReferenceDeletionClipped.lean": "d5bfd170774aaccfbf373b090984e825ef5aa330ca8e0980ecba5bb77f84aca6",
+    "QRH/Energy/ReferenceDivisors.lean": "f87af6fc2dccae2fb88d11083848b599bcd6088747feaf5bc6e817f58ead777d",
+    "QRH/Energy/ReferenceLiveBounded.lean": "1e621cca8f0fedc124188b82189d8a5d5b2e1b80aa34270b3e77798879b9313c",
+    "QRH/Energy/ReferenceLivePower.lean": "c2ba17d1ae77e70eb429cf6a4c33d79e5fccf774df7fd9aa00d5b8f2170d7a91",
+    "QRH/Energy/ReferenceLowBranchGeometry.lean": "885e25e558b0816e810fdb487dd69ff04ed931be1b89a8d2dc6b378fd4b27cd3",
+    "QRH/Energy/ReferenceLowDeletedGeometry.lean": "2d29f71283a944e15377921dad50a18c64eed07a97c8c52ea9f5cfb597be1266",
+    "QRH/Energy/ReferenceLowWindow.lean": "a7a18b275938b72c08bf45d8b399ebf5ebf0bace2f02f0312975871d4ad42007",
+    "QRH/Energy/ReferenceRobustBounded.lean": "ac550b01bdc7b18cad5709bb8c37bde99ba47dc4e76bda035a9c8702d292e389",
+    "QRH/Energy/ReferenceRobustDeletedEnergy.lean": "305d33c486a2ebd9faaa1ff7df0528eb3106cc8ff0ead954879c613b39285491",
+    "QRH/Energy/ReferenceRobustOriginal.lean": "012985f5d24742c97f52010fc2ab2bce66ddee6b74756896d723a37ba9d5cc3e",
+    "QRH/Energy/ReferenceRobustPower.lean": "6f1b1f3184f87e4f00de8c4982670f473b2e3c4ef7993ff2f8fb6a907ded55ff",
+    "QRH/Energy/ReferenceState.lean": "ba202efdc35fcc70ee29cddda42764b63d7a4f6e8bd0d370f89235d48f3e57a8",
+    "QRH/Energy/UniformMesh.lean": "1d27142b6825a902d561cd644c753cb839b90b32caa1df02ecc1e29e7b55c7d8",
+    "QRH/Energy/UniformMoment.lean": "3ad9ff434e04bcb97e7d43114593deb4bb84021a79e98416c5648736e187f687",
+    "QRH/Energy/ZeroGrowthPhysical.lean": "074a45ce801fc609d7c545a9606c64138563c16cc147beeaf55c930793e74244",
+    "QRH/Geometry.lean": "988555e58095deee9ae78de89c4d6b40e260cb08ef39117d1f1cafb586ab3675",
+    "QRH/Hecke/DetectorRowCountCrossing.lean": "ac46f4955a5c3cf284d0b175265fa81b15607de008e657e68fcabff46318c092",
+    "QRH/Hecke/DynamicBalancedCount.lean": "ec1d8a8807ff514537086f51185968e03cbecb47f098214f6c37122f974cda03",
+    "QRH/Hecke/DynamicBatchCount.lean": "cae2757e1036bbb2eea5add1b1729786065042a77a4df2c76103784149d7f6c0",
+    "QRH/Hecke/DynamicBranchBudget.lean": "c5517ae551bd7f3221e5d335091cc1a65ee4c49142cfad6604ba9f4b22c0df31",
+    "QRH/Hecke/DynamicCountFromMoments.lean": "e73d287b3c04d913b1063fe4f8cdf5a61c11e9fefdaeb9a5c4a722a67232cf2f",
+    "QRH/Hecke/DynamicCountOptimization.lean": "be2a2eca3d00719010f0a501cb6a73ae74879cda20a1a0849e2df3c2d497c17e",
+    "QRH/Hecke/DynamicCrossing.lean": "ec4a7e1b22904f4b05c8454574dcf10fde9ca796dc137dd5f6b927be15a8091a",
+    "QRH/Hecke/DynamicFixedAmplitudeCount.lean": "f81fdcb790af97eb7fb33559e053d4ef7586ef14b4949b3c70c4c8bb94b0616f",
+    "QRH/Hecke/DynamicRawBranches.lean": "701494a934866826e9e9f6c4d53d1cebdd52cb7d70d65d4672a1f9fe01be3336",
+    "QRH/Hecke/OptimizedAdaptiveCutoff.lean": "fea5c7784c26f87746bd3f7ac9332647d5affffb157a337a441a14f928ccbeeb",
+    "QRH/HeckeTargets.lean": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+    "QRH/IndependentTargets.lean": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+    "QRH/Moments/DetectorPlainExceptionalSlots.lean": "6a9d57f7c6a7140d33d97d99122671b1fe04c317dce2bfaa0757c21de14f1b68",
+    "QRH/Moments/DetectorPlainMarkedSlots.lean": "0ea1f8a9a25dc1992e502e28dbb921853e315cc0c3cc82700a8f84fa0ad91176",
+    "QRH/Moments/DetectorPlainMarkedState.lean": "11d56aa6027bacc6a29b2b203538b1044df29076df2deb2b6df8c8a1d971b5ee",
+    "QRH/Moments/DetectorPlainUnmarkedParameters.lean": "4d80809178bd618d3f8b3f51ffeb1de3090e4c14ac75951ef2af2f63264a9712",
+    "QRH/Moments/ReflectionRetainedLength.lean": "a87165433b1229c5afc9dc2ce94dc2c011c8a17cdddfd1d91877ddda44986e61",
+    "QRH/Nonvanishing.lean": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+    "QRH/NumericFacts.lean": "ba4b38fcd64b097e01ef2f8add9ad2d98ddc7bdaf8027d32949f42589252f42f",
+    "QRH/OtherRanges.lean": "cdd8f86c1ea404c54743094aded3583ce4e9527afe48efe8ac251231f355a8da",
+    "QRH/PlainReflectionGeometry.lean": "cb0fe7b3248b122422ccdcc87c44017bfcec5e4c95ed5d1eb30ec3a6e6662449",
+    "QRH/PrimeRows/CubeNormalizer.lean": "899470861fd3302f89ae202c56d0a325b4e5f5b4924d8806d7853e6c69d3a444",
+    "QRH/PrimeRows/DynamicNonfloorCount.lean": "9187c9f19aa51c55c2a1af15fdd367048cdf5429460b9377d4d6b4e37ff94d6e",
+    "QRH/PrimeRows/DynamicSourceCount.lean": "2066c14b6a21646cf30b4d9a8de86947feb850bc7b0b32279f653a774f514809",
+    "QRH/PrimeRows/OptimizedCanonicalCubeChoice.lean": "bb7a4b58e051e8e8690c0fd40fc7ef6e0dd9699d84df035371b351ba1ee2971e",
+    "QRH/PrimeRows/OptimizedCanonicalCubeReduction.lean": "e4be1d8015421fe2e7f4ca71bbf1e9fe0b5b4686181da087108088b51ec2d606",
+    "QRH/PrimeRows/OptimizedCanonicalRayCube.lean": "addeebeffcbf7bb9c4198437ccd39c31c1f3f1f1952fcc64bb7a2e6ae0b8e70b",
+    "QRH/PrimeRows/OptimizedCanonicalReduction.lean": "9ab685bc6a7511c97cec872f5653790f290343cd575c2db635512c11318d414e",
+    "QRH/PrimeRows/OptimizedCanonicalTails.lean": "2b774601c88ab067b7ad36bab687934049203dda19444b1c344389d4ce51c935",
+    "QRH/PrimeRows/OptimizedCentralCost.lean": "57c6824168bbefbd261efaeda83f861142f6f1b7777a8aa4ca017980bcaa2fcd",
+    "QRH/PrimeRows/OptimizedCentralTupleCount.lean": "05c17c31f15fe35aeed8eced275c76dd5406bb458a5fb24bb1ae9fdd5036bc3f",
+    "QRH/PrimeRows/OptimizedCubeErrorSaving.lean": "383290587ba544eb501248d992f6675ec06fd5b53653305da5986ccaa878df50",
+    "QRH/PrimeRows/OptimizedCubeFiniteError.lean": "22e31bd89f95afba80c48e75885722911a6c871bd24ef947f502f81b0ad1546f",
+    "QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean": "45edbdc8d2119063a20c5c6d3401a5c4c56830748935da6191d5205d375e1469",
+    "QRH/PrimeRows/OptimizedCubeFloorCollected.lean": "0d0385d7396970eaa59ec8a9d2c72d0c1f1fb9398a6d49969f6fca1fdf345e19",
+    "QRH/PrimeRows/OptimizedCubeFloorGlobal.lean": "2fb5543cc47c93cf75e520f4ae7d818e4ea5fec01733ca9fb0feeb9bddf994d9",
+    "QRH/PrimeRows/OptimizedCubeFloorGlobalIntegral.lean": "10c1c18a5ed306267411ee1d5c7f647f909563b324e5c6c1347aca0356236cd5",
+    "QRH/PrimeRows/OptimizedCubeFloorNormalized.lean": "d4de9d5c5b7f36005764cdbfb84d80edad74edb79079138ac2f05b598d643385",
+    "QRH/PrimeRows/OptimizedCubeFloorSaving.lean": "eb62ac13e2e4439d92c9bdd98d004e895bce884f9ad5074da8fb9277584f4b1c",
+    "QRH/PrimeRows/OptimizedGeometricTail.lean": "854b5066cf3f6a639ddbfdf06d200c32db520605a4a5745a8d12e778c682b4b3",
+    "QRH/PrimeRows/OptimizedLargeDyad.lean": "8eaa31f30f2cbe6d1a35692294159d44278401f27d622a7812f6f3c68b2a1b3c",
+    "QRH/PrimeRows/OptimizedLargeSaving.lean": "6830ad8cd227fa0a732a363dfece49ae915a48e6001652f75631fd85e409007f",
+    "QRH/PrimeRows/OptimizedLargeTail.lean": "5d80d1c6192535194e9e2cc8370e32e5f65f1f05debf4f7b20f7c53d1e890998",
+    "QRH/PrimeRows/OptimizedNonfloorTransport.lean": "882f4d493791d4955eb0b6a3f65ac354d8c50c9972c9acc4c28e7895e02d14e7",
+    "QRH/PrimeRows/OptimizedNormalizedTransport.lean": "03407d3fe5b8d977d05790e309f8b721e116993404f429da0f5dbefa6e6fd4a1",
+    "QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean": "ec9718ce9428051119606a9c213a22d8ed6887cc97a30b843cd53b78f1902a7a",
+    "QRH/PrimeRows/OptimizedPhysicalLargeTail.lean": "a50cb1a204e40781670c731ba7f58694230a8c464413791a91d879a8ca1150aa",
+    "QRH/PrimeRows/OptimizedPhysicalSmallTail.lean": "ad6b9a50cc4c67316f63df7959ba349c13376344ae3322325b6a654e5db4cf39",
+    "QRH/PrimeRows/OptimizedSlotExponent.lean": "aa25ef9abca714f209e09c8a01454a64f1784407a2efafe90567e70ddd54dc19",
+    "QRH/PrimeRows/OptimizedSmallTail.lean": "80dfd8a362e891bae94e06d0d7b36dc6e21f3d401d754715e929d7822b8d8dcb",
+    "QRH/PrimeRows/OptimizedTailScales.lean": "937e0d26f07b69fdf3fe260faa3552bf2a846d05755ae80f44f00b8fd557f990",
+    "QRH/Reflection/LowBranchSum.lean": "19e189b10435a714688f8919429396d8cecafd90aeed09b262f4aa84d527e0b8",
+    "QRH/Reflection/LowCaps.lean": "cc301a1b94e6147ae73ddffead90b5cd091e43d1d46c9010b4f7a267261941b0",
+    "QRH/Reflection/LowChoiceEnergy.lean": "65a4eb5081f709c3f8caaaadca453a54449db7518d36b4a8d78b341c6029eee2",
+    "QRH/Reflection/LowCompletedFiber.lean": "9b8ec752a6a3a88e629ccb36c7ee11ecfd6500aa39c28c881800f81107ca1473",
+    "QRH/Reflection/LowCompletedRows.lean": "05c9341e3b462475c5591d0db3fa22782d47ce7179cc8159635ef7f79175abaf",
+    "QRH/Reflection/LowDyads.lean": "b36f87db70a228e9f127a7993f19ef3f0e1e99b492950b3e2d1f8854fb165e75",
+    "QRH/Reflection/LowExponent.lean": "b02a7e4fde015ccad9378600c02c5459533840ca2bf7b5a83aebe70c60b37de0",
+    "QRH/Reflection/LowFixedMember.lean": "9a08ede385ab3e5814620e675e458c954878826d77553c0b086fc9b6c4b10ccd",
+    "QRH/Reflection/LowFrozenEnergy.lean": "fb46e115ca331f9a9515cea496499edac062a03c32de45d7ee5725753ff8f145",
+    "QRH/Reflection/LowFull.lean": "2e95a569ef8bdcc578e1de6ba8284061b91fa8e2efa745ed568c0c45d5a79913",
+    "QRH/Reflection/LowFullBudget.lean": "d3bbf697b3ad6c6cc84fc82d6171c3699c63a19016cfe62cb96193e6be65c3f5",
+    "QRH/Reflection/LowGlobalBudget.lean": "d5c1be9e5248edadc5f8b8de47c46fce891add8b94fc67a15e5ffa7a14ee8999",
+    "QRH/Reflection/LowInactiveEnergy.lean": "16d92a35321424674405ecf096bf0fe9a320092675ba39411f4d8586de5787c3",
+    "QRH/Reflection/LowMemberBudget.lean": "bffa3dc8ba1dba5058bbd448b988ce008ce190653b3daa853b1fcbb75ca3782d",
+    "QRH/Reflection/LowMemberGeometry.lean": "fcebd572712044b6eaaa5a1213eb44a8967c4c893864bb20d396cc2e50d1c0c6",
+    "QRH/Reflection/LowOriginalEnergy.lean": "9a98beef626086183aa24d0045fe2c6cec24d848d6ac8ac3a12d275fce23266c",
+    "QRH/Reflection/LowRetained.lean": "c80086af9c19f6b06c7d18eac343c062bd1af384f5948226e80d4e956b461937",
+    "QRH/Reflection/LowRetainedBudget.lean": "b7aef724ac07ba8121920f0e3d3098759d61d2f808ae1e21d4438b49b2b5da25",
+    "QRH/Reflection/LowSector.lean": "566efa340cd982f542317b4cbe0d097dec2594581d3bf1609453d41bcf8720b9",
+    "QRH/RobustReflectionGeometry.lean": "0a58502717facfe6f49e14a70c8ac49e71ab06ea35b1b3c25894985afa7cfe68",
+    "QRH/StatementParity.lean": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+    "QRH/ZeroBounds.lean": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac",
+    "QRH/ZetaTransfer.lean": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+    "QRH.lean": "aec33ed0fc2ed1737fae4fa4643248864804b62f94cc69a65a2ef408f8a15078",
+    "lakefile.lean": "d385a1be9c03bfd11f321c0e984782177b15d00c826536a2fb413674e5465cac"
+  }
+}

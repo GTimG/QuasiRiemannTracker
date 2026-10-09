@@ -1,0 +1,23 @@
+Nielstron compressed and tightened quasi-Riemann formalization, 2026-10-09.
+Human contribution: Nielstron. AI-assisted research, proof compression,
+certificate arithmetic, and formalization.
+
+This is a derivative of Tim Gehrunger / ProofCouncil's QRH development in
+gtimg/QuasiRiemannTracker at 290d9c5463344c3e2fab93b878f3281e77e3fd6f,
+which builds on OpenAI/math at fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb,
+Mathlib, and the dependencies identified in compressed/audit/dependency-licenses.json.
+The original notices and source headers are retained. UPSTREAM-NOTICE is the
+tracker's supplied notice. New and modified Lean sources remain Apache-2.0.
+
+Modifications include shared binder contexts, shorter arithmetic proofs,
+removal of unused helper declarations, readable zero-bound corollaries,
+recomputed exact rational certificate coefficients and slack denominators,
+and the added tighter-bound targets. The per-file baseline/final hashes and
+token counts identify the changed source files in compressed/audit/token-counts.json.
+compression.patch records the source differences from the pinned baseline.
+The accepted manuscript under compressed/inputs is inherited unchanged and
+describes the earlier proof; it is not presented as a newly authored manuscript.
+
+The LeanLeanBench tokenizer is fetched from eth-sri/lean-lean at the pinned
+revision recorded in the metric report; its source is not redistributed here.
+No upstream author or checker project is represented as endorsing this result.

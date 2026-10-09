@@ -37,15 +37,15 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("four real results, verification statuses and source downloads", async ({
+test("five real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(4);
-  await expect(page.locator("[data-dot]")).toHaveCount(4);
+  await expect(page.locator("tbody tr")).toHaveCount(5);
+  await expect(page.locator("[data-dot]")).toHaveCount(5);
   await expect(page.locator("tbody .tag.teal")).toHaveCount(2);
-  await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
+  await expect(page.locator("tbody .tag.amber")).toHaveCount(3);
   await page
     .getByRole("button", {
       name: "Baiying Liu · optimized parameters",
@@ -78,6 +78,16 @@ test("four real results, verification statuses and source downloads", async ({
   expect(await proof.text()).toContain(
     "theorem DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
   );
+  await page
+    .getByRole("button", { name: "Nielstron · compressed rational refinement", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText("Verification pending");
+  await expect(page.locator(".proof-detail")).toContainText("874957019420098946128604623/1000000000000000000000000000");
+  const native = await request.get("/proofs/nielstron-20261009-tightening/native-lean-verification.json");
+  expect(native.ok()).toBeTruthy();
+  const nativeReport = await native.json();
+  expect(nativeReport.status).toBe("PASS");
+  expect(nativeReport.external_checker_status).toContain("Not checked");
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
   await page.getByRole("button", { name: "Close proof details" }).click();
@@ -103,11 +113,11 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
-  await expect(page.locator("tbody tr").first()).toContainText("ProofCouncil");
+  await expect(page.locator("tbody tr").first()).toContainText("Nielstron");
   await page.getByLabel("Contribution type").selectOption("verified");
   await expect(page.locator("tbody tr")).toHaveCount(2);
   await page.getByLabel("Contribution type").selectOption("pending");
-  await expect(page.locator("tbody tr")).toHaveCount(2);
+  await expect(page.locator("tbody tr")).toHaveCount(3);
   await page.getByLabel("Contribution type").selectOption("all");
   await page.getByLabel("Search contributions").fill("Tim Gehrunger");
   await expect(page.locator("tbody tr")).toHaveCount(1);

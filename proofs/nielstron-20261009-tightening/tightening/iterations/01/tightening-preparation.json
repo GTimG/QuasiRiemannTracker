@@ -1,0 +1,392 @@
+{
+  "status": "SOURCES_PREPARED_NOT_VERIFIED",
+  "sources_only": true,
+  "baseline_commit": "4b0c67a3d52dcdb627d511fde29fb21864a3e034",
+  "baseline_path": "compressed/formalization",
+  "output": "/work/qrh-proof/tightening-preview",
+  "candidate": {
+    "numerator": 874957019420871,
+    "denominator": 1000000000000000
+  },
+  "strictly_smaller_than_original": true,
+  "original_theta_definition_preserved": "def theta : ℝ := (874957019421 / 1000000000000 : ℝ)",
+  "protected_files": {
+    "QRH/DirichletTargets.lean": {
+      "sha256": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/HeckeTargets.lean": {
+      "sha256": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/IndependentTargets.lean": {
+      "sha256": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/Nonvanishing.lean": {
+      "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/StatementParity.lean": {
+      "sha256": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/ZeroBounds.lean": {
+      "sha256": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac",
+      "unchanged": true,
+      "reason": "protected statement/public API"
+    },
+    "QRH/ZetaTransfer.lean": {
+      "sha256": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+      "unchanged": true,
+      "reason": "legacy zeta transfer"
+    }
+  },
+  "source_files_written": 209,
+  "changed_paths": [
+    "QRH/Adaptive.lean",
+    "QRH/Certificate.lean",
+    "QRH/Continuation.lean",
+    "QRH/Detector/ActualCubeArithmeticSaving.lean",
+    "QRH/Detector/ActualNonfloorCubeNorm.lean",
+    "QRH/Detector/ActualNormalizedNonfloorCube.lean",
+    "QRH/Detector/ActualOptimizedHigh.lean",
+    "QRH/Detector/ActualOptimizedLow.lean",
+    "QRH/Detector/CompleteNonfloorCubeData.lean",
+    "QRH/Detector/CompleteNonfloorRowsData.lean",
+    "QRH/Detector/LowCentralTuple.lean",
+    "QRH/Detector/LowCommonBound.lean",
+    "QRH/Detector/LowGaussianCentral.lean",
+    "QRH/Detector/LowGaussianDyad.lean",
+    "QRH/Detector/LowGaussianRemote.lean",
+    "QRH/Detector/LowGaussianSum.lean",
+    "QRH/Detector/LowGramScale.lean",
+    "QRH/Detector/LowNormalized.lean",
+    "QRH/Detector/LowPenaltyAbsorption.lean",
+    "QRH/Detector/LowRemoteMass.lean",
+    "QRH/Detector/LowSlotScales.lean",
+    "QRH/Detector/LowSourceScales.lean",
+    "QRH/Detector/LowWindowBound.lean",
+    "QRH/Detector/OptimizedAdaptiveSaving.lean",
+    "QRH/Detector/OptimizedBatchWidths.lean",
+    "QRH/Detector/OptimizedCentralExponent.lean",
+    "QRH/Detector/OptimizedContinuation.lean",
+    "QRH/Detector/OptimizedData.lean",
+    "QRH/Detector/OptimizedFloorMargin.lean",
+    "QRH/Detector/OptimizedMixedSaving.lean",
+    "QRH/Detector/OptimizedPrincipalRemainders.lean",
+    "QRH/Detector/OptimizedSupremum.lean",
+    "QRH/Detector/OptimizedTransportBudget.lean",
+    "QRH/Detector/UniformAllMoments.lean",
+    "QRH/Geometry.lean",
+    "QRH/Hecke/DynamicCountOptimization.lean",
+    "QRH/Hecke/DynamicCrossing.lean",
+    "QRH/NumericFacts.lean",
+    "QRH/OtherRanges.lean",
+    "QRH/PrimeRows/CubeNormalizer.lean",
+    "QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+    "QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean",
+    "QRH/PrimeRows/OptimizedCubeFloorCollected.lean",
+    "QRH/PrimeRows/OptimizedCubeFloorSaving.lean",
+    "QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+    "QRH/PrimeRows/OptimizedNormalizedTransport.lean",
+    "QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean"
+  ],
+  "changes": [
+    {
+      "path": "QRH/Adaptive.lean",
+      "before_sha256": "eb13f7dfb6172c3b9c3208cd9d0336cc441aa05a44c98b735c79bf639603a5cc",
+      "after_sha256": "92d57b235bf4d2209015549084aec085f0eefe9f71f9ab2e3f39a1c03a99b2f6",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Certificate.lean",
+      "before_sha256": "fb0b1904b52773b96c0b45077f7a08decdf99e90b0bb0c72e871ce45cd0e253a",
+      "after_sha256": "0802aafcc19043f3058adc37142bba90e26fee96f5d40b84ed4b7862c6174e78",
+      "original_theta_word_occurrences": 6
+    },
+    {
+      "path": "QRH/Continuation.lean",
+      "before_sha256": "60073cde0f2a8ba27a66abed554b64f42b17d415d381f3621fda0dae42b97f99",
+      "after_sha256": "725d7087ccd496a1d36dc3d52d151e92a8c0cffcaf31a5154dc117b29e638af4",
+      "original_theta_word_occurrences": 7
+    },
+    {
+      "path": "QRH/Detector/ActualCubeArithmeticSaving.lean",
+      "before_sha256": "8b74eb2cb73abd5ea6379d3f726daf0bd145b3a9ee76a9c76152ec02568e126a",
+      "after_sha256": "ca7d410a4d40189ef0359369b2212db90d103064d209faa8320be269a3b8dd81",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/ActualNonfloorCubeNorm.lean",
+      "before_sha256": "95f0ad476f5a8c168bd9c086a4e7c363794132afc1b3679ff199a89a380eda31",
+      "after_sha256": "7cdd5792b529e5f6530f4e7995a48aa88087f203a16961d444c7d17db8fae105",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/ActualNormalizedNonfloorCube.lean",
+      "before_sha256": "769d229ce0ff3df6939e2af75cef5db55227da9ab982bca3f9f2ed1c0766c3ba",
+      "after_sha256": "6e9d610bfeae5e25560bd762cd2a8859b6556154969731b8d1d172d31648511b",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/ActualOptimizedHigh.lean",
+      "before_sha256": "25c7e3b42a45d7348f3478a7da4a002ff06e535bc3b4b6e0d7d48f0c489fa2cc",
+      "after_sha256": "43222c16810c797a0efa91de5e507252108bf8addf01327c2b115ecae1b32492",
+      "original_theta_word_occurrences": 9
+    },
+    {
+      "path": "QRH/Detector/ActualOptimizedLow.lean",
+      "before_sha256": "c58a525ca78bc34c5fe485b32098cc3a5a6057a1ba5bc73bcc6dcd959f200136",
+      "after_sha256": "778d7d4604fc4e74b28191745d489d363e819d0c5dd271b67e6273931b9ad90f",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Detector/CompleteNonfloorCubeData.lean",
+      "before_sha256": "f11285e4d39a1e4591312bc0dbcc1b3dc846818346f2d827ce10037e5961c63c",
+      "after_sha256": "369b066a3de97873de41e87b729f29b843692a3198dee8e07a9d8d2ef73fd521",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/Detector/CompleteNonfloorRowsData.lean",
+      "before_sha256": "1e88d87e1acee9ce59216f7d488e7477f1756ecf0cf8d964de3bf17fe810e8a8",
+      "after_sha256": "49a6dc986d86fdaab45ddc0ce355a520459a1e107be7d916b97bb90a501a983e",
+      "original_theta_word_occurrences": 4
+    },
+    {
+      "path": "QRH/Detector/LowCentralTuple.lean",
+      "before_sha256": "bd4832e91dc18b0e0c9abe91204abda132e06d04129926e0563cb0af805f5874",
+      "after_sha256": "4c2cc2020f8b0207a3bc84afb555499527d749dc2709bfefb92284a00bddf437",
+      "original_theta_word_occurrences": 8
+    },
+    {
+      "path": "QRH/Detector/LowCommonBound.lean",
+      "before_sha256": "4486e9af5d379ae00ecd987105bbc9711d3fcd96a7c51741e305055d971376e5",
+      "after_sha256": "5871889a337e29e48a64107f937414cf3c9062c6ae314a68c616338131ea35eb",
+      "original_theta_word_occurrences": 7
+    },
+    {
+      "path": "QRH/Detector/LowGaussianCentral.lean",
+      "before_sha256": "787848b64b6229c982eba09d3e8ddf862e74e6259a6378add0357cba5ffde7fb",
+      "after_sha256": "5ae05f130e089cdbdee43ee833a4552bc9688c001ab03432d62fa8604f6be396",
+      "original_theta_word_occurrences": 9
+    },
+    {
+      "path": "QRH/Detector/LowGaussianDyad.lean",
+      "before_sha256": "a8cc4c6cebd1fb5748f30ac0e3e5b16ccddfda86d326918a4de963771533948b",
+      "after_sha256": "1470a340eb53c26f904d345d66ceb26d39fdda3964dd6a797c546d5bce61af4e",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/LowGaussianRemote.lean",
+      "before_sha256": "690e83f42e7799061fb0da5174a8848a4f8050bdfdb22b0b1cebeb5dc7fdf12a",
+      "after_sha256": "e2d6e6e34755f12a930d8435408967a332a917014904548f0c4310428bed3181",
+      "original_theta_word_occurrences": 9
+    },
+    {
+      "path": "QRH/Detector/LowGaussianSum.lean",
+      "before_sha256": "fddf88b4feff50e1a95724186ef3eeeacf540af79633ff177a2b911b61b1203d",
+      "after_sha256": "cb399bf84d344baa676b19ca0a5cd15cb2bb1833d493f432542ca3f00b1e4bef",
+      "original_theta_word_occurrences": 7
+    },
+    {
+      "path": "QRH/Detector/LowGramScale.lean",
+      "before_sha256": "ba7b60e9263bf8fa1322dca51094be71745b2872ac803e5f30bf241562fbd13f",
+      "after_sha256": "1d09126b25da923b2549c9bb05a1dc834b6c895a41db36745ba04b4dfe560840",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/LowNormalized.lean",
+      "before_sha256": "5d85126e1504db211d9d792dc074a510ce112efdb4c421e10f776f3a4f7d00c0",
+      "after_sha256": "6df262e294a96a9f97a64b2376b5987de9747c403c019c6875f282c4cf1c0918",
+      "original_theta_word_occurrences": 5
+    },
+    {
+      "path": "QRH/Detector/LowPenaltyAbsorption.lean",
+      "before_sha256": "6f5f023d3421225b09a08a272a95b0925e039708c265ffd74bba29580ee11415",
+      "after_sha256": "a1d4148e2c3c49aa3000ae846655f1db9b8cbc35467d8b952151eae6940e661d",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Detector/LowRemoteMass.lean",
+      "before_sha256": "0c1ce4eb1b1d542c3afb73b99d8118fd187ad3a68dc0abf7bbac24cd67ae1812",
+      "after_sha256": "7680b620a687af8292c28031d97a44181303aa0492e9e8dc7d430dfe83909a60",
+      "original_theta_word_occurrences": 5
+    },
+    {
+      "path": "QRH/Detector/LowSlotScales.lean",
+      "before_sha256": "b4bce1ad0ce4e962db9ee278438a60bfedb76a310dc6e56c9daa2def75415c9f",
+      "after_sha256": "7a7e7d55e9d07a093e2f47a05f3cac577de7e16b5cce4ec3ff31e047996cfcdd",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Detector/LowSourceScales.lean",
+      "before_sha256": "aae98d53c7ab3b2d57c907e12323a711b5dafcd99f6b959ceb5bb5287ac5cf91",
+      "after_sha256": "b014934e653345b921c07cfa66965f19a920eb257caa22d864e83b4bd753a152",
+      "original_theta_word_occurrences": 11
+    },
+    {
+      "path": "QRH/Detector/LowWindowBound.lean",
+      "before_sha256": "f0eb9543346a0eee2501afb5ad45531910b0760782941ee51a57d971e5b8adfd",
+      "after_sha256": "96b767235e6c1e8753783e2c98c8052101e5c43fa50849e996df789c6bd99973",
+      "original_theta_word_occurrences": 5
+    },
+    {
+      "path": "QRH/Detector/OptimizedAdaptiveSaving.lean",
+      "before_sha256": "9739dcb633a5f6125f61be3b9e02e6bd066fe47da5a1df666205eb2a73645061",
+      "after_sha256": "02a37fc2534867a4bbc21a0e084fe8b8ce7869f6653e6dc71b61d38000371472",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Detector/OptimizedBatchWidths.lean",
+      "before_sha256": "75922d6e9c6003e78efcac813767aa1878e71016b33e94ca5b67cc46cb663e77",
+      "after_sha256": "4be7a046dceed704b313609601c6e3b2f9c9a926acf6b23c5babe5a1170c7773",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/Detector/OptimizedCentralExponent.lean",
+      "before_sha256": "d4ee100a9a54e501b3286b127764e853aa4fbb2ad30d9757987e6f6be19ec40b",
+      "after_sha256": "55be2f222e324eda2e3cfcf1d779d606e476f5624f3aab9fed2e6bcef70cd335",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/Detector/OptimizedContinuation.lean",
+      "before_sha256": "da5877000cc84ada2367891849989ff525958d33b5038a5dc1452020b9022797",
+      "after_sha256": "0d74e8db3ac4f9a9551438dc5f4a628c86ccdc8fbba3c64bd289c68a91cfb575",
+      "original_theta_word_occurrences": 8
+    },
+    {
+      "path": "QRH/Detector/OptimizedData.lean",
+      "before_sha256": "1f0be67e202cab3abc3723574501a1886e5173cf7f2d05ce2042ec8dbcd28027",
+      "after_sha256": "ba161cd51d699dac1ee65dc0a9c9cf2b40a15215c7459080daaaddcdc0789640",
+      "original_theta_word_occurrences": 6
+    },
+    {
+      "path": "QRH/Detector/OptimizedFloorMargin.lean",
+      "before_sha256": "30a63c34dea0461360d51b1f864c4f1c8df6d6aac2458b6f0023e60ab5f3442e",
+      "after_sha256": "db08feb70305d2d3cde6a3c4842cbab127aad1afbbdcfc8e2c5f2d14d2f754d8",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/Detector/OptimizedMixedSaving.lean",
+      "before_sha256": "c22f726c6044c9d87621ffa93a8c3bfbfd1b3a91ee5be6178bc5ec01ea5b8548",
+      "after_sha256": "26821e0f259acad4b561ac4ebf323133b3b3628dabba1046e5217f634b621de9",
+      "original_theta_word_occurrences": 4
+    },
+    {
+      "path": "QRH/Detector/OptimizedPrincipalRemainders.lean",
+      "before_sha256": "96c11dda08a2b28b4d53dea11d717a0125589440bcf6757a6ef94d16a3a3e28d",
+      "after_sha256": "5138cd99c1afa98239b37cfc95ccb2d1a75519bdfa808200988a48f2671bc279",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/Detector/OptimizedSupremum.lean",
+      "before_sha256": "1224d7f8163b52dc4472fbebcc82359d22ea5a8dc48fcb975d621f8d18b9931f",
+      "after_sha256": "5cb39d008772390073c90a6529ec34da57c5ee1a2a804ad4b1fa20a50e5c7f2d",
+      "original_theta_word_occurrences": 6
+    },
+    {
+      "path": "QRH/Detector/OptimizedTransportBudget.lean",
+      "before_sha256": "0aecb4dfe6c425d2590ea3711485267b6fe24be9a8e63a025ac51a4fb5c0acf4",
+      "after_sha256": "dc09bec3cc2348291d307a65e29b3d1b9e3f069844de0faeb5466ab503512cd4",
+      "original_theta_word_occurrences": 5
+    },
+    {
+      "path": "QRH/Detector/UniformAllMoments.lean",
+      "before_sha256": "2d6edb00a50ff974856074c9e51cb71ba07da13fded1a53b44b6354e5e762239",
+      "after_sha256": "d0bc54dc41c5e562218975e2f39d6ac7f819d17ccf5003ea034093da5398682a",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Geometry.lean",
+      "before_sha256": "988555e58095deee9ae78de89c4d6b40e260cb08ef39117d1f1cafb586ab3675",
+      "after_sha256": "4632430bb339bfb125aaca3eeb54d874dead0b59d770986763fbd9492a035481",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/Hecke/DynamicCountOptimization.lean",
+      "before_sha256": "be2a2eca3d00719010f0a501cb6a73ae74879cda20a1a0849e2df3c2d497c17e",
+      "after_sha256": "2e006300549ff7e2dfeb2cb9a45c155a4de27984ada2329da63e7f569606d941",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/Hecke/DynamicCrossing.lean",
+      "before_sha256": "ec4a7e1b22904f4b05c8454574dcf10fde9ca796dc137dd5f6b927be15a8091a",
+      "after_sha256": "06df569e0ce13eef0ecf70ee5cea36b0bfd3e2f687f44d56b78a3338bfd8246b",
+      "original_theta_word_occurrences": 33
+    },
+    {
+      "path": "QRH/NumericFacts.lean",
+      "before_sha256": "ba4b38fcd64b097e01ef2f8add9ad2d98ddc7bdaf8027d32949f42589252f42f",
+      "after_sha256": "257a22c7d2185a1c083cdd615f1644f5c3de4a15a402efa642a847f34bf0b7af",
+      "original_theta_word_occurrences": 12
+    },
+    {
+      "path": "QRH/OtherRanges.lean",
+      "before_sha256": "cdd8f86c1ea404c54743094aded3583ce4e9527afe48efe8ac251231f355a8da",
+      "after_sha256": "fddb66afffe49a05e0bda3cc4db0f9166636a8f403ab2f9609e04fe5cfb5e0cd",
+      "original_theta_word_occurrences": 4
+    },
+    {
+      "path": "QRH/PrimeRows/CubeNormalizer.lean",
+      "before_sha256": "899470861fd3302f89ae202c56d0a325b4e5f5b4924d8806d7853e6c69d3a444",
+      "after_sha256": "ce051dfb2672b675b7f412111ef835ce430df6985fb12b7f8ca8c4fe7467f855",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+      "before_sha256": "22e31bd89f95afba80c48e75885722911a6c871bd24ef947f502f81b0ad1546f",
+      "after_sha256": "9d88af06436566b1f4a86158efe5a7329ffca241d216531fb79a6ae4d65a9228",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean",
+      "before_sha256": "45edbdc8d2119063a20c5c6d3401a5c4c56830748935da6191d5205d375e1469",
+      "after_sha256": "fdb9c32a96ac8fe2dc7c7cf4f9384d5f6d0aec4ae76f97ebc9abf7efc97011c0",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFloorCollected.lean",
+      "before_sha256": "0d0385d7396970eaa59ec8a9d2c72d0c1f1fb9398a6d49969f6fca1fdf345e19",
+      "after_sha256": "b48a0a886ed85c408f0467d208e0f92fdcac668c8bd7d729741ee8f5288e58da",
+      "original_theta_word_occurrences": 3
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFloorSaving.lean",
+      "before_sha256": "eb62ac13e2e4439d92c9bdd98d004e895bce884f9ad5074da8fb9277584f4b1c",
+      "after_sha256": "1f02200a1ff1bddc428ece2fae6ed1cec7a4a43bd88891f360c5c83da6c5df3e",
+      "original_theta_word_occurrences": 1
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+      "before_sha256": "882f4d493791d4955eb0b6a3f65ac354d8c50c9972c9acc4c28e7895e02d14e7",
+      "after_sha256": "ad6cfce019977e13436661e8efe13fb38c0060e7575b9f1980d3f0d5bd138f76",
+      "original_theta_word_occurrences": 5
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedNormalizedTransport.lean",
+      "before_sha256": "03407d3fe5b8d977d05790e309f8b721e116993404f429da0f5dbefa6e6fd4a1",
+      "after_sha256": "44d095c97cbb26d904dd2654155f1ba989dd6aa32d306e45ed1e184af72ef9f8",
+      "original_theta_word_occurrences": 2
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean",
+      "before_sha256": "ec9718ce9428051119606a9c213a22d8ed6887cc97a30b843cd53b78f1902a7a",
+      "after_sha256": "ae4eca08cf70285a53cc0aaf73e355fdb489ee47c11132d4712a2e3392f7430a",
+      "original_theta_word_occurrences": 3
+    }
+  ],
+  "preexisting_extra_lean_files_not_touched": [],
+  "certificate_regeneration_required": "QRH/Certificate.lean retains the old exact certificate coefficients and must be regenerated for tightTheta.",
+  "required_validation": [
+    "Regenerate the exact rational certificate",
+    "Rebuild every QRH source with unchanged pinned dependencies",
+    "Recheck original frozen targets and axiom gate",
+    "Add and independently check strengthened nonvanishing/zero-bound statements"
+  ]
+}

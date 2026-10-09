@@ -221,6 +221,76 @@
       "date_label": "Lean verification",
       "verification_note": "The original proof passed local verification with Palomar’s mechanical checker: Comparator compared the exact statements and their definitions, then con-ron, NanoDa and Lean’s fresh kernel accepted the exported proofs. All-Dirichlet, zeta and finite-order Eisenstein Hecke targets were checked, with only propext, Classical.choice and Quot.sound allowed. This is a local check; Palomar registration and editorial review are separate.",
       "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "Nielstron/QuasiRiemannTracker",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "QRH.TighterNonvanishing",
+        "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "proofcouncil-20261009",
+        "openai-baseline"
+      ],
+      "id": "nielstron-20261009-tightening",
+      "title": "Nielstron · compressed rational refinement",
+      "theta": {
+        "numerator": "874957019420098946128604623",
+        "denominator": "1000000000000000000000000000"
+      },
+      "authors": [
+        {
+          "name": "Nielstron",
+          "url": "https://github.com/Nielstron"
+        }
+      ],
+      "method": "Compresses the ProofCouncil Lean development, then tightens its exact rational certificate and slack budgets. The all-Dirichlet, zeta and finite-order Eisenstein Hecke targets compile at the smaller rational boundary. Final QRH source tokens decrease from 294,019 to 251,464 under the pinned LeanLeanBench metric.",
+      "references": [
+        {
+          "label": "Scope, attribution and reproduction",
+          "url": "proofs/nielstron-20261009-tightening/README.txt"
+        },
+        {
+          "label": "Native Lean result and exact improvement",
+          "url": "proofs/nielstron-20261009-tightening/result.json"
+        },
+        {
+          "label": "Native Lean target and axiom checks",
+          "url": "proofs/nielstron-20261009-tightening/native-lean-verification.json"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/nielstron-20261009-tightening/TightIndependentTargets.lean"
+        },
+        {
+          "label": "Tighter Lean proof source",
+          "url": "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean"
+        },
+        {
+          "label": "Per-file source token counts",
+          "url": "proofs/nielstron-20261009-tightening/token-counts.json"
+        },
+        {
+          "label": "External checker status",
+          "url": "proofs/nielstron-20261009-tightening/external-checker-status.json"
+        },
+        {
+          "label": "Complete reproducible source and evidence",
+          "url": "proofs/nielstron-20261009-tightening/source-public.tar.gz"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-09T17:21:30.103097+00:00",
+      "date_label": "Author-side Lean check",
+      "verification_note": "The author reports a completed native Lean 4.34.1 build of the 7,232-module closure, reusing the pinned official Mathlib cache. Original and tighter all-Dirichlet, zeta and Hecke targets, independent literal statements, strict improvement and allowed axioms passed. Comparator, NanoDa and con-ron have not checked this candidate: the genuine sandbox preflight failed before proof code ran. This is author-side native evidence, with independent verification pending; no signed receipt is claimed.",
+      "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
     }
   ]
 }
