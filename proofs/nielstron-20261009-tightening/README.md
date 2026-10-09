@@ -44,7 +44,7 @@ The source baseline is the public tracker commit
 The new result builds directly on Tim Gehrunger / ProofCouncil and OpenAI/math.
 Nielstron is the human contributor; compression, certificate refinement, and
 formalization were AI-assisted. Retained source headers, `LICENSE`,
-`UPSTREAM-NOTICE`, and `compressed/license/` document upstream attribution.
+`UPSTREAM-NOTICE`, and `compressed/third-party-notices/` document upstream attribution.
 
 ## Compression before tightening
 

@@ -5,6 +5,7 @@ import json
 import re
 import tarfile
 import subprocess
+import unicodedata
 
 # Generic classes, never a list of the maintainer's private values.
 PATTERNS = {
@@ -27,14 +28,33 @@ def check_content(name, data):
             raise ValueError(f'Publication rejected ({label}): {name}')
 
 
-def approved_files(proof):
-    names = json.loads((proof / 'publication-files.json').read_text())
-    if not isinstance(names, list) or not names or names != sorted(set(names)):
+def validate_publication_paths(names):
+    """Validate file names, including directory prefixes on portable filesystems."""
+    if not isinstance(names, list) or not names or any(not isinstance(n, str) for n in names):
+        raise ValueError('Publication allowlist must contain file names')
+    if names != sorted(set(names)):
         raise ValueError('Publication allowlist must be a nonempty sorted unique list')
+    prefixes = {}
+    files = set(names)
     for name in names:
         path = PurePosixPath(name)
-        if not isinstance(name, str) or path.is_absolute() or '..' in path.parts or str(path) != name or '\\' in name:
+        if not path.parts or path.is_absolute() or '..' in path.parts or str(path) != name or '\\' in name:
             raise ValueError('Unsafe publication path')
+        for count in range(1, len(path.parts) + 1):
+            prefix = '/'.join(path.parts[:count])
+            key = unicodedata.normalize('NFC', prefix).casefold()
+            if key in prefixes and prefixes[key] != prefix:
+                raise ValueError('Case-insensitive publication path collision')
+            prefixes[key] = prefix
+            if count < len(path.parts) and prefix in files:
+                raise ValueError('Publication path is both a file and a directory')
+    return names
+
+
+def approved_files(proof):
+    if proof.is_symlink():
+        raise ValueError('Symlink in proof publication tree')
+    names = validate_publication_paths(json.loads((proof / 'publication-files.json').read_text()))
     actual = set()
     for p in proof.rglob('*'):
         if p.is_symlink():
@@ -49,6 +69,7 @@ def approved_files(proof):
 
 
 def check_archive(archive, proof, manifest):
+    validate_publication_paths(sorted(manifest))
     expected = {f'{proof.name}/{name}': digest for name, digest in manifest.items()}
     seen = set()
     total = 0

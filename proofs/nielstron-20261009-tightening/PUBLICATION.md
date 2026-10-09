@@ -21,3 +21,18 @@ archive, and maps compact copies back to the source snapshot. These checks
 authenticate supplied files; they do not rerun Lean or external kernels.
 Native Lean verification and a successful source replay are explicitly
 distinguished from the still-pending Comparator/NanoDa/con-ron check.
+
+Maintainer packaging uses the existing reviewed allowlist and refuses extra
+source files, unexpected downloads, symlinks, and case-insensitive path
+collisions. Adding a source file requires an explicit review and allowlist edit;
+running the packager never approves it automatically. Dependency notices live
+under `compressed/third-party-notices/` so the `compressed/LICENSE` file remains
+portable to case-insensitive filesystems.
+
+From the tracker repository root, regenerate the archive and compact downloads
+without executing submission code using:
+
+```sh
+python3 scripts/package-native-tightening.py --snapshot
+npm run check
+```

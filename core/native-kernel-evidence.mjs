@@ -10,6 +10,12 @@ export const SOURCE_MANIFEST =
   "eeef7d35e9437ad2ad5180be09bbaecf8e0403f8c16b399b868bf21818d176ed";
 export const SOURCE_ARCHIVE =
   "4388d6e63f0127ce12a116ead3ffecbdc1db2a0d33b5da15993c206c69896dd4";
+// Keep the receipt's original archive binding immutable. The reviewed published
+// package relocates third-party notices for case-insensitive filesystems and
+// updates packaging documentation; all checked source/config bytes are still
+// compared individually against the original replay manifest below.
+export const PUBLISHED_SOURCE_ARCHIVE =
+  "bc07ecdd5994f9838accb23601604f759d6a9606db73815d66209d81ec0b6eba";
 const THETA = "874957019420098946128604623/1000000000000000000000000000";
 const NAMES = [
   "QRHPalomar.allDirichlet",
@@ -381,8 +387,8 @@ export function validateNativeKernelEvidence(
       readFileSync(
         join(root, `public/proofs/${NATIVE_ID}/source-public.tar.gz`),
       ),
-    ) === SOURCE_ARCHIVE,
-    "Submitted native source archive changed",
+    ) === PUBLISHED_SOURCE_ARCHIVE,
+    "Reviewed published native source archive changed",
   );
   if (record.status === "framework-verified") {
     demand(

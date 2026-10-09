@@ -2,7 +2,8 @@
 """Publish the reviewed native-Lean source snapshot after its final gate passes.
 
 This packages existing evidence; it does not perform or claim an independent
-Comparator, NanoDa, or con-ron check. Run with --workspace PATH from repo root.
+Comparator, NanoDa, or con-ron check. Use --snapshot to repackage the existing
+reviewed snapshot, or --workspace PATH to refresh only its approved files.
 """
 from pathlib import Path
 import argparse
@@ -12,6 +13,9 @@ import io
 import json
 import os
 import tarfile
+import tempfile
+
+from publication_policy import approved_files
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = "nielstron-20261009-tightening"
@@ -29,17 +33,89 @@ selected-source-graph.json""".split()
 TOOLS = "compose_candidate.py count_lean_tokens.py prune_unused.py setup_workspace.py prepare_tightening.py reproduce_tightened.py".split()
 
 
+EXPORTS = {
+    "README.txt": "README.md", "NOTICE.txt": "NOTICE", "PUBLICATION.txt": "PUBLICATION.md",
+    "result.json": "tightening-result.json",
+    "native-lean-verification.json": "compressed/audit/tightening-verification.json",
+    "build-status.json": "compressed/audit/local-build-status.json",
+    "token-counts.json": "compressed/audit/token-counts.json",
+    "reproduction.json": "tightening/reproduction.json",
+    "TightIndependentTargets.lean": "compressed/audit/TightIndependentTargets.lean",
+    "TightTargetsRequired.lean": "compressed/audit/TightTargetsRequired.lean",
+    "TighterNonvanishing.lean": "compressed/formalization/QRH/TighterNonvanishing.lean",
+    "gate.log": "compressed/logs/local-tight-targets-required.log",
+    "external-checker-status.json": "tightening/checker-evidence/checker-status.json",
+}
+PUBLIC_FILES = set(EXPORTS) | {"source-public.tar.gz", "SHA256SUMS.txt", "source-sha256.json", "collection.json"}
+
+
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def check_public_directory(public):
+    """Never adopt existing download files into a newly generated collection."""
+    if public.is_symlink():
+        raise ValueError("Symlink in public evidence directory")
+    if public.exists():
+        for path in public.iterdir():
+            if path.is_symlink() or not path.is_file() or path.name not in PUBLIC_FILES:
+                raise ValueError("Unexpected file in public evidence directory")
+
+
+def package_snapshot(root):
+    """Package an explicitly reviewed list; never discover or approve new files."""
+    proof = root / "proofs" / ID
+    public = root / "public/proofs" / ID
+    names = approved_files(proof)
+    check_public_directory(public)
+    if not set(EXPORTS.values()).issubset(names):
+        raise ValueError("An evidence export is outside the reviewed allowlist")
+    manifest = {name: sha((proof / name).read_bytes()) for name in names}
+    work = root / ".work"
+    work.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="publication-", dir=work) as temporary:
+        stage = Path(temporary)
+        archive = stage / "source-public.tar.gz"
+        with archive.open("wb") as output:
+            with gzip.GzipFile(fileobj=output, mode="wb", filename="", mtime=0) as zipped:
+                with tarfile.open(fileobj=zipped, mode="w", format=tarfile.USTAR_FORMAT) as tar:
+                    for name in names:
+                        data = (proof / name).read_bytes()
+                        item = tarfile.TarInfo(ID + "/" + name)
+                        item.size, item.mode, item.mtime = len(data), 0o644, 0
+                        tar.addfile(item, io.BytesIO(data))
+        (stage / "SHA256SUMS.txt").write_text(sha(archive.read_bytes()) + "  source-public.tar.gz\n")
+        for destination, name in EXPORTS.items():
+            (stage / destination).write_bytes((proof / name).read_bytes())
+        (stage / "source-sha256.json").write_text(json.dumps(manifest, indent=2) + "\n")
+        collection = {name: sha((stage / name).read_bytes()) for name in sorted(PUBLIC_FILES - {"collection.json"})}
+        (stage / "collection.json").write_text(json.dumps({"status": "verification-pending", "files": collection,
+                                                           "snapshot_exports": EXPORTS}, indent=2) + "\n")
+        # Validation completes before any public file is replaced.
+        public.mkdir(parents=True, exist_ok=True)
+        for name in sorted(PUBLIC_FILES):
+            (stage / name).replace(public / name)
+        (root / "proofs" / (ID + ".sha256.json")).write_text(json.dumps(manifest, indent=2) + "\n")
+    print(json.dumps({"snapshot_files": len(names), "archive_sha256": collection["source-public.tar.gz"],
+                      "status": "verification-pending"}))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workspace", type=Path, required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--workspace", type=Path)
+    mode.add_argument("--snapshot", action="store_true", help="Repackage only the existing reviewed snapshot")
     args = parser.parse_args()
+    if args.snapshot:
+        package_snapshot(ROOT)
+        return
     source = args.workspace.resolve()
     proof = ROOT / "proofs" / ID
     public = ROOT / "public/proofs" / ID
+    # Reject stale/private files before copying or regenerating any evidence.
+    reviewed_names = approved_files(proof)
+    check_public_directory(public)
     report = json.loads((source / "compressed/audit/tightening-verification.json").read_text())
     assert report["status"] == "PASS" and report["threshold"] == THETA
     assert report["tighter_exact_three_targets_proved"] and report["strict_improvement_proved_in_lean"]
@@ -68,6 +144,8 @@ def main():
         raw = src.read_bytes()
         data = raw.replace(str(source).encode(), b"/work/qrh-proof") if neutralize else raw
         relative = destination or name
+        if relative not in reviewed_names:
+            raise ValueError("Workspace output is not in the reviewed publication allowlist")
         dst = proof / relative
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(data)
@@ -120,7 +198,7 @@ def main():
             original = source / "compressed" / notice["path"]
             if original.exists():
                 assert sha(original.read_bytes()) == notice["sha256"]
-                destination = "compressed/license/" + repository["path"].rsplit("/", 1)[-1] + f"-{number}.txt"
+                destination = "compressed/third-party-notices/" + repository["path"].rsplit("/", 1)[-1] + f"-{number}.txt"
                 copy("compressed/" + notice["path"], destination)
     # This repository's upstream notice is retained verbatim alongside new attribution.
     (proof / "UPSTREAM-NOTICE").write_bytes((ROOT / "NOTICE").read_bytes())
@@ -132,43 +210,12 @@ def main():
     # Draft README/NOTICE/PUBLICATION.md are maintained directly in the submission.
     for name in ("README.md", "NOTICE", "PUBLICATION.md"):
         assert (proof / name).is_file(), name
-    names = sorted(p.relative_to(proof).as_posix() for p in proof.rglob("*")
-                   if p.is_file() and p.name != "publication-files.json")
-    names = sorted(names + ["publication-files.json"])
-    (proof / "publication-files.json").write_text(json.dumps(names, indent=2) + "\n")
-    manifest = {name: sha((proof / name).read_bytes()) for name in names}
-    (ROOT / "proofs" / (ID + ".sha256.json")).write_text(json.dumps(manifest, indent=2) + "\n")
-    archive = public / "source-public.tar.gz"
-    with archive.open("wb") as output:
-        with gzip.GzipFile(fileobj=output, mode="wb", filename="", mtime=0) as zipped:
-            with tarfile.open(fileobj=zipped, mode="w", format=tarfile.USTAR_FORMAT) as tar:
-                for name in names:
-                    data = (proof / name).read_bytes()
-                    item = tarfile.TarInfo(ID + "/" + name)
-                    item.size, item.mode, item.mtime = len(data), 0o644, 0
-                    tar.addfile(item, io.BytesIO(data))
-    (public / "SHA256SUMS.txt").write_text(sha(archive.read_bytes()) + "  source-public.tar.gz\n")
-    exports = {
-        "README.txt": "README.md", "NOTICE.txt": "NOTICE", "PUBLICATION.txt": "PUBLICATION.md",
-        "result.json": "tightening-result.json",
-        "native-lean-verification.json": "compressed/audit/tightening-verification.json",
-        "build-status.json": "compressed/audit/local-build-status.json",
-        "token-counts.json": "compressed/audit/token-counts.json",
-        "reproduction.json": "tightening/reproduction.json",
-        "TightIndependentTargets.lean": "compressed/audit/TightIndependentTargets.lean",
-        "TightTargetsRequired.lean": "compressed/audit/TightTargetsRequired.lean",
-        "TighterNonvanishing.lean": "compressed/formalization/QRH/TighterNonvanishing.lean",
-        "gate.log": "compressed/logs/local-tight-targets-required.log",
-        "external-checker-status.json": "tightening/checker-evidence/checker-status.json",
-    }
-    for destination, name in exports.items():
-        (public / destination).write_bytes((proof / name).read_bytes())
-    (public / "source-sha256.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    collection = {p.name: sha(p.read_bytes()) for p in sorted(public.iterdir()) if p.is_file() and p.name != "collection.json"}
-    (public / "collection.json").write_text(json.dumps({"status": "verification-pending", "files": collection,
-                                                         "snapshot_exports": exports}, indent=2) + "\n")
-    print(json.dumps({"snapshot_files": len(names), "archive_bytes": archive.stat().st_size,
-                      "archive_sha256": sha(archive.read_bytes()), "status": "verification-pending"}))
+    expected = copied | {"README.md", "NOTICE", "PUBLICATION.md", "UPSTREAM-NOTICE",
+                         "publication-transformations.json", "publication-files.json"}
+    if expected != set(reviewed_names):
+        raise ValueError("Workspace outputs differ from the reviewed publication allowlist")
+    package_snapshot(ROOT)
+
 
 
 if __name__ == "__main__":
