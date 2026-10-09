@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Minus, Plus, Maximize2, Move, Info } from "lucide-react";
 import {
   BASELINE,
@@ -167,6 +167,95 @@ export default function Chart({
     }
     return decimal(v, 8);
   };
+  // Measure actual SVG text so labels respect both neighbouring names and the
+  // plot edges. Keep the newest label when a dense cluster has no free space.
+  const [labels, setLabels] = useState<
+    Record<
+      string,
+      { x: number; y: number; lineX: number; lineY: number; moved: boolean }
+    >
+  >({});
+  useLayoutEffect(() => {
+    const points = Array.from(
+      svg.current?.querySelectorAll<SVGGElement>("[data-dot]") ?? [],
+    ).map((el) => {
+      const circle = el.querySelector("circle")!;
+      return {
+        id: el.dataset.id!,
+        at: Number(el.dataset.time),
+        x: Number(circle.getAttribute("cx")),
+        y: Number(circle.getAttribute("cy")),
+        text: el.querySelector<SVGTextElement>(".point-label"),
+      };
+    });
+    const placed: { x: number; y: number; width: number; height: number }[] =
+      [];
+    const next: typeof labels = {};
+    const overlaps = (a: (typeof placed)[number], b: (typeof placed)[number]) =>
+      a.x < b.x + b.width + 6 &&
+      a.x + a.width + 6 > b.x &&
+      a.y < b.y + b.height + 6 &&
+      a.y + a.height + 6 > b.y;
+    for (const point of points.sort(
+      (a, b) => b.at - a.at || a.id.localeCompare(b.id),
+    )) {
+      if (!point.text) continue;
+      const box = point.text.getBBox();
+      if (!box.width || !box.height || box.width > width) continue;
+      const baselineOffset = box.y - Number(point.text.getAttribute("y"));
+      const right = Math.max(L, Math.min(point.x + 10, W - R - box.width));
+      const centered = Math.max(
+        L,
+        Math.min(point.x - box.width / 2, W - R - box.width),
+      );
+      const left = Math.max(
+        L,
+        Math.min(point.x - 10 - box.width, W - R - box.width),
+      );
+      const above = point.y - 10 - box.height;
+      const below = point.y + 10;
+      // Center lower labels directly beneath their dots.
+      for (const [lx, ly] of [
+        [right, above],
+        [centered, below],
+        [left, above],
+      ]) {
+        const rect = { x: lx, y: ly, width: box.width, height: box.height };
+        if (
+          ly < T - 10 ||
+          ly + box.height > H - B + 8 ||
+          placed.some((other) => overlaps(rect, other)) ||
+          points.some((p) =>
+            overlaps(rect, { x: p.x - 3, y: p.y - 3, width: 6, height: 6 }),
+          )
+        )
+          continue;
+        next[point.id] = {
+          x: lx,
+          y: ly - baselineOffset,
+          lineX: Math.max(lx, Math.min(point.x, lx + box.width)),
+          lineY: ly > point.y ? ly - 2 : ly + box.height + 2,
+          moved: lx !== point.x + 10 || ly !== above,
+        };
+        placed.push(rect);
+        break;
+      }
+    }
+    setLabels((previous) =>
+      JSON.stringify(previous) === JSON.stringify(next) ? previous : next,
+    );
+  }, [
+    records,
+    W,
+    start,
+    end,
+    low.numerator,
+    low.denominator,
+    high.numerator,
+    high.denominator,
+    vertical.scale,
+    vertical.offset,
+  ]);
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return (
     <section className="panel chart-panel" aria-label="Bound progress">
@@ -319,9 +408,10 @@ export default function Chart({
                 strokeLinejoin="round"
               />
             )}
-            {records.map((r, i) => {
+            {records.map((r) => {
               const px = x(contributionDate(r)),
-                py = y(r.theta);
+                py = y(r.theta),
+                label = labels[r.id];
               if (
                 px < L - 6 ||
                 px > W - R + 6 ||
@@ -333,6 +423,8 @@ export default function Chart({
                 <g
                   key={r.id}
                   data-dot
+                  data-id={r.id}
+                  data-time={Date.parse(contributionDate(r))}
                   role="button"
                   tabIndex={0}
                   aria-label={`Select ${r.title}, theta ${boundLabel(r)}`}
@@ -375,9 +467,27 @@ export default function Chart({
                   />
                   {W > 600 &&
                     (r.timeline_at || cmp(r.theta, BASELINE) === 0) && (
-                      <text x={px + 10} y={py - 13} className="point-label">
-                        {r.title.split(" · ")[0]}
-                      </text>
+                      <>
+                        {label?.moved && (
+                          <line
+                            x1={px}
+                            y1={py + (label.lineY > py ? 7 : -7)}
+                            x2={label.lineX}
+                            y2={label.lineY}
+                            stroke="#9caeb9"
+                            strokeWidth={1}
+                            pointerEvents="none"
+                          />
+                        )}
+                        <text
+                          x={label?.x ?? px + 10}
+                          y={label?.y ?? py - 13}
+                          visibility={label ? "visible" : "hidden"}
+                          className="point-label"
+                        >
+                          {r.title.split(" · ")[0]}
+                        </text>
+                      </>
                     )}
                 </g>
               );
