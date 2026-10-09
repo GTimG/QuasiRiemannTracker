@@ -14,7 +14,7 @@ test("all five results advance the plotted frontier while verification stays sep
   const verified = d.records.filter(verifiedHere);
   assert.deepEqual(
     verified.map((r) => r.id),
-    ["openai-baseline", "proofcouncil-20261009"],
+    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening"],
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
   assert.equal(frontier.length, 5);

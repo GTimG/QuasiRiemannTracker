@@ -81,6 +81,9 @@ try {
     "proofs/nielstron-20261009-tightening/native-lean-verification.json",
     "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean",
     "proofs/nielstron-20261009-tightening/collection.json",
+    "proofs/nielstron-20261009-kernels/result.json",
+    "proofs/nielstron-20261009-kernels/control-results.json",
+    "proofs/nielstron-20261009-kernels/collection.json",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);

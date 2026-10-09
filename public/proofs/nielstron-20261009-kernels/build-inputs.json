@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "modules_checked": 7232,
+  "qrh_modules_checked": 206,
+  "challenge_imports": [
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+  ],
+  "challenge_closure_modules": 4386,
+  "challenge_imports_no_QRH": true,
+  "source_graph_sha256": "7364b78eb62004edfe9d7c3ebacd0b4f8cbc65f53e07dd6200816a92338cca7e",
+  "build_records_sha256": "530332d9c117d87456183de122ac4fc685661f0d7aa671253d91d31bd9018b00",
+  "native_build": {
+    "roots": [
+      "QRH",
+      "QRH.Analytic",
+      "QRH.Detector.UniformDetectorCount",
+      "QRH.Hecke.DynamicBatchCount"
+    ],
+    "closure": 7232,
+    "checked": 7232,
+    "official_cache_modules": 4101,
+    "local_source_modules": 3131,
+    "failed": [],
+    "blocked": [],
+    "seconds": 234.65015959739685,
+    "jobs": 16,
+    "success": true,
+    "thread_policy": "Distribute the full jobs-thread budget across ready Lean modules",
+    "trust_note": "Official mathlib cache reused; OAI and QRH compiled from source.",
+    "configuration": "lean-4.34.1-local-cache-build-v1"
+  },
+  "sources_and_oleans_rehashed": true,
+  "dependency_trust": "Pinned source graph; official Mathlib caches; OAI and QRH locally source-built."
+}

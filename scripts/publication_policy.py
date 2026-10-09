@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import tarfile
+import subprocess
 
 # Generic classes, never a list of the maintainer's private values.
 PATTERNS = {
@@ -102,8 +103,9 @@ def check_native_tightening(root):
         raise ValueError('Native archive checksum mismatch')
     record = next(r for r in json.loads((root / 'catalogue/results.json').read_text())['records'] if r['id'] == name)
     report = json.loads((proof / 'compressed/audit/tightening-verification.json').read_text())
-    if record['status'] != 'verification-pending' or record['first_verified_at']:
-        raise ValueError('Native-only contribution must remain verification pending')
+    # The native collection remains an immutable historical pending report.
+    # A current catalogue upgrade requires a separate authenticated kernel dossier.
+    subprocess.run(['node', str(root / 'scripts/check-native-kernels.mjs')], check=True)
     theta = f"{record['theta']['numerator']}/{record['theta']['denominator']}"
     if report['status'] != 'PASS' or report['threshold'] != theta:
         raise ValueError('Native target report does not match catalogue boundary')

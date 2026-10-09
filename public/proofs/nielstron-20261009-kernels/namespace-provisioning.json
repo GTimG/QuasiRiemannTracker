@@ -1,0 +1,22 @@
+{
+  "status": "temporary_profile_active",
+  "recorded_at_utc": "2026-10-09T18:05:49.062999+00:00",
+  "provisioning": "Root copied the pinned bubblewrap binary into a root-owned directory and loaded a temporary path-specific AppArmor userns profile in memory.",
+  "profile_name": "qrh-pinned-bwrap",
+  "profile_path": "/opt/qrh-verifier-20261009/apparmor-profile",
+  "profile_sha256": "6a879fe0f567da02d734d4880252446d3c1b58c5eaf3ec6c25e40a3df8835cf7",
+  "binary_path": "/opt/qrh-verifier-20261009/bwrap",
+  "binary_sha256": "bb807d18eaee5dad15afd5cf48c8de1c3206ff97e852af693d679d62394eb5a2",
+  "binary_owner_uid": 0,
+  "binary_mode": "0o755",
+  "host_policy_changed": true,
+  "global_userns_restriction_before": "1",
+  "global_userns_restriction_current": "1",
+  "global_userns_restriction_changed": false,
+  "persistent_configuration_created": false,
+  "proof_execution_uid": 1001,
+  "proof_execution_as_root": false,
+  "cleanup": "Pending completion of independent checks; unload profile and remove exact temporary files/directory.",
+  "provisioning_script_sha256": "9a433ad0bf175928b7719e212838d8a6b1bf55c87f48ce6b7fe9a6dc290b8ce0",
+  "documentation": "https://documentation.ubuntu.com/security/security-features/privilege-restriction/apparmor/"
+}
