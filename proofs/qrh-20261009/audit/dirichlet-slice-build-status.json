@@ -1,0 +1,13 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Supremum",
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation"
+  ],
+  "closure": 3618,
+  "checked": 3618,
+  "failed": [],
+  "blocked": [],
+  "seconds": 1485.595935344696,
+  "jobs": 6,
+  "success": true
+}

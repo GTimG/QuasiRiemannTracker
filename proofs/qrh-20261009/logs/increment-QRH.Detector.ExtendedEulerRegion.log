@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/ExtendedEulerRegion.olean", "/work/qrh-proof/research/drafts/QRH/Detector/ExtendedEulerRegion.lean"], "source_sha256": "f0ca427a3007029a95012492abcf6fa2898e29bc5395734b45ff053f8b8fdcf5"}

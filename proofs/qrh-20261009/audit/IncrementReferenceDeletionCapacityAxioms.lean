@@ -1,0 +1,3 @@
+import QRH.Energy.ReferenceDeletionCapacity
+#print axioms OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionCapacity.deleted_reflection_excess_extended
+#print axioms OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionCapacity.deleted_reflection_removal_extended

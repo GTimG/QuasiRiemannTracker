@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedSupremum",
+    "source": "research/drafts/QRH/Detector/OptimizedSupremum.lean",
+    "namespace": "SevenEighths.QRHFinalAssembly",
+    "theorems": [
+      "beta_le_theta"
+    ]
+  }
+]

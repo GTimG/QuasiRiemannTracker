@@ -1,0 +1,3 @@
+import QRH.Energy.FirstSourceParameters
+#print axioms OAI.SevenEighths.CenteredMomentEnergyFirstSourceParameters.parameter_gates_extended
+#print axioms OAI.SevenEighths.CenteredMomentEnergyFirstSourceParameters.eventually_actual_four_fit_extended

@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualNonfloorRows",
+    "source": "research/drafts/QRH/Detector/ActualNonfloorRows.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "exists_optimized_nonfloor_rows_bound"
+    ]
+  }
+]

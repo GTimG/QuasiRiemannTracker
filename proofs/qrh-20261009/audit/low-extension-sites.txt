@@ -1,0 +1,138 @@
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:17:theorem low_completed_rows_energy (Q : Ideal Eis) (hQ : Q≠0)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:26:    ∀ {σ : Type v} [Fintype σ] [DecidableEq σ],∀ (Z d ell0 shift : ℝ), Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:27:    ∀ (parents : Finset (Ideal Eis)),(∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:43:      C*(1+‖θ‖)^degree*Z^((5/6-2*d)+507*η) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:64:      _ ≤ Z*Z^(5/6-2*d) := mul_le_mul_of_nonneg_right hCkZ (Real.rpow_nonneg hz.le _)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:65:      _ = Z^(1+(5/6-2*d)) := by rw [Real.rpow_add hz,Real.rpow_one]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:69:    (C*(1+‖θ‖)^degree*Z^((5/6-2*d)+506*η))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean:80:    _ = (D*C)*(1+‖θ‖)^degree*(Z^η*Z^((5/6-2*d)+506*η)) := by ring
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean:14:theorem low_original_inactive_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean:29:      Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean:32:      (∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean:69:          (C*(1+‖θ‖)^degree*Z^((5/6-2*d)+505*η-O₀/2)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean:117:    hH w hw f (C*(1+‖θ‖)^degree*Z^((5/6-2*d)+505*η-O₀/2)) (by positivity)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowWidth.lean:12:lemma nonresidual_prime_product_square_dvd {ι : Type*} [Fintype ι]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowWidth.lean:26:lemma nonresidual_prime_product_width {ι : Type*} [Fintype ι]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowWidth.lean:44:lemma original_optional_powerful_width (J I Q Q₀ : Ideal Eis) (hJ : J≠0) (hI : I≠0) (hQ : Q≠0)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowWidth.lean:54:lemma frozenExtracted_width_le {ι : Type*} [Fintype ι] (G : PrimeFamily ι)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:14:theorem original_low_sector_literal_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:28:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:33:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:58:        C*(1+‖θ‖)^degree*(Ideal.absNorm (∏ b,G.ideal b):ℝ)^ρ*Z^((5/6-2*d)+200*η+π-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:102:    _ ≤ Kc*(Cb*(Ideal.absNorm (∏ b,G.ideal b):ℝ)^ρ*Z^((5/6-2*d)+200*η+π-O₀/2))*(C₀*(1+‖θ‖)^degree)^2 := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean:104:    _ = (Kc*Cb*C₀^2)*(1+‖θ‖)^(degree*2)*(Ideal.absNorm (∏ b,G.ideal b):ℝ)^ρ*Z^((5/6-2*d)+200*η+π-O₀/2) := by rw [mul_pow,←pow_mul];ring
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:14:theorem original_low_global_full_budget
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:30:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:35:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:39:      X⁻¹≤Z^Lcap → QK≤Z^Lcap → QP≤Z^Lcap → -saving≤(5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2 →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:63:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:85:    (C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2)) (by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:106:  change q^3*(C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2))≤_
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean:107:  have hp : 0≤(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by positivity
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:16:theorem low_completed_fiber_energy (Q : Ideal Eis) (hQ : Q≠0)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:26:      (Z d ell0 shift : ℝ), Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:27:      (Ideal.absNorm J:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:28:    ∀ (parents : Finset (Ideal Eis)),(∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:44:      C*(1+‖θ‖)^degree*Z^((5/6-2*d)+506*η)*(Ideal.absNorm (rowPowerfulPart J):ℝ)^(-(1/2:ℝ)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:137:  have hR : C*(1+‖θ‖)^degree*Z^((5/6-2*d)+506*η-O/2)=
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:138:      C*(1+‖θ‖)^degree*Z^((5/6-2*d)+506*η)*(Ideal.absNorm (rowPowerfulPart J):ℝ)^(-(1/2:ℝ)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean:139:    rw [show (5/6-2*d)+506*η-O/2=((5/6-2*d)+506*η)+O*(-(1/2:ℝ)) by ring,
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:14:theorem original_low_sector_full_budget
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:29:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:34:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:38:      X⁻¹≤Z^Lcap → QK≤Z^Lcap → QP≤Z^Lcap → -saving≤(5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2 →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:61:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:95:      (2*Ct^2*cusp^4)*(1+‖θ‖)^deg*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:102:      _ ≤ (2*Ct^2*(1+‖θ‖)^deg)*(cusp^4*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2)) := by gcongr
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:104:  have hmain : Cm*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2)≤
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:105:      Cm*(1+‖θ‖)^deg*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by gcongr
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean:107:  have hp : 0≤(1+‖θ‖)^deg*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by positivity
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:15:theorem low_original_choice_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:30:      Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:33:      (∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:60:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+505*η-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:105:  let Hrow := (Ck*Z^(5/6-2*d))/((Ideal.absNorm (rowPowerfulPart J):ℝ)*(Ideal.absNorm (rowMaskPart J Q):ℝ))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:152:      Ck*Z^(5/6-2*d) ≤ Z*Z^(5/6-2*d) := mul_le_mul_of_nonneg_right hCkZ (Real.rpow_nonneg hzpos.le _)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:153:      _ = Z^(1+(5/6-2*d)) := by rw [Real.rpow_add hzpos,Real.rpow_one]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:157:    _ ≤ (Cb*Z^(η))*(C*(1+‖θ‖)^degree*Z^((5/6-2*d)+504*η-O₀/2)) :=
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean:159:    _ = (Cb*C)*(1+‖θ‖)^degree*Z^(η+((5/6-2*d)+504*η-O₀/2)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:14:theorem original_low_sector_retained_budget
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:28:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:33:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:59:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:84:    _ ≤ C*(Cd*Z^κ)*(1+‖θ‖)^degree*Z^(Lpool*ρ)*Z^((5/6-2*d)+200*η+π-O₀/2) := by gcongr
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean:85:    _ = (C*Cd)*(1+‖θ‖)^degree*Z^(κ+Lpool*ρ+((5/6-2*d)+200*η+π-O₀/2)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:14:theorem original_low_sector_full_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:28:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:33:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:58:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2)+
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:126:    _ ≤ 2*(Cshape^2*(Cm*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2)))+2*rows.card*Et^2 := by gcongr
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean:129:      have hp : 0≤(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by positivity
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean:14:theorem original_low_sector_retained_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean:27:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean:32:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean:57:        C*((retainedDyads (familyRawScale G s X QK QP) (16*Z^δ)).card:ℝ)^2*(1+‖θ‖)^degree*(Ideal.absNorm (∏ b,G.ideal b):ℝ)^ρ*Z^((5/6-2*d)+200*η+π-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:12:lemma low_actual_scale_caps (J I Q Q₀ : Ideal Eis) (hJ : J≠0) (hI : I≠0) (hQ : Q≠0)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:17:    (hellcap : ell0≤1/6-d+η) (hshift : |shift|≤η) (hη : η≤1)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:18:    (hIn : (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:19:    (hK : QK≤2*Ck*Z^(5/6-2*d)) (hP : QP/2≤Z^ell0) :
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:25:  have hcp : Ck*Z^(5/6-2*d)≤Z^2 := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:27:      _ ≤ Z*Z^(5/6-2*d) := mul_le_mul_of_nonneg_right hCk (Real.rpow_nonneg hz.le _)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:28:      _ = Z^(1+(5/6-2*d)) := by rw [Real.rpow_add hz,Real.rpow_one]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:40:      QK ≤ 2*(Ck*Z^(5/6-2*d)) := by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:52:lemma low_reflection_parameters (η : ℝ) (hη : 0<η) :
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:53:    0<η/(200*(1+η)) ∧
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:54:    η/(200*(1+η))*(8+8+2*(η/2+57+η))+η/2≤2*η := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean:55:  have hp : 0<200*(1+η) := by positivity
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:15:theorem low_original_frozen_energy
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:29:      Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:30:      O₀=normWidth Z (rowPowerfulPart J) → (Ideal.absNorm J:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:32:      (∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:60:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+506*η-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:84:  let energy := C*(1+‖θ‖)^degree*Z^((5/6-2*d)+505*η-O₀/2)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:123:      Ck*Z^(5/6-2*d) ≤ Z*Z^(5/6-2*d) := mul_le_mul_of_nonneg_right hCkZ (Real.rpow_nonneg hzp.le _)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:124:      _ = Z^(1+(5/6-2*d)) := by rw [Real.rpow_add hzp,Real.rpow_one]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean:140:        Z^(η+((5/6-2*d)+505*η-O₀/2)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:14:theorem original_surviving_low_energy_sum
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:24:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:29:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:46:        C*(Ideal.absNorm (∏ b,G.ideal b):ℝ)^ρ*Z^((5/6-2*d)+200*η+π-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:67:    _ ≤ (branches.card:ℝ)*∑ _e∈branches,Z^((5/6-2*d)+200*η+π-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean:75:    _ = ((branches.card:ℝ)^2)*Z^((5/6-2*d)+200*η+π-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowPunctureLists.lean:17:lemma actualPuncturePrimes_mem (lists : σ→Finset (Ideal Eis)) (m : Eis)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowPunctureLists.lean:23:lemma puncture_period_coprime (Q : Ideal Eis) (m : Eis) (hQ : Q∣Ideal.span {m})
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowPunctureLists.lean:31:theorem original_completed_actual_puncture_lists (lists : σ→Finset (Ideal Eis))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean:18:theorem low_original_completed_energy (Q : Ideal Eis) (hQ : Q≠0)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean:27:    ∀ {σ : Type v} [Fintype σ] [DecidableEq σ],∀ (Z d ell0 shift : ℝ), Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean:28:    ∀ (parents : Finset (Ideal Eis)),(∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean:43:      C*(1+‖θ‖)^degree*Z^((5/6-2*d)+507*η) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:18:theorem low_fixed_member_geometry_uniform
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:40:      Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:42:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:44:      1≤QK → QK≤2*Ck*Z^(5/6-2*d) → 2≤QP → QP/2≤Z^ell0 →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:69:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+504*η-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean:70:  let ε := η/(200*(1+η))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean:15:theorem original_low_member_geometry_uniform
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean:38:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean:43:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean:47:      X⁻¹≤Z^Lcap → QK≤Z^Lcap → QP≤Z^Lcap → -saving≤(5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2 →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean:75:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean:15:theorem original_surviving_low_exponent
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean:24:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean:29:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean:43:      (5/6-2*d)+200*η+π := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean:58:  have hH := physical_residual_width I Q hI Z (5/6-2*d) O₀ H Ck CO CH hz hCk hCO hCH hIn hPow hRow
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean:15:theorem original_low_member_tuple_full_budget
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean:31:      (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean:36:      0≤d → d≤1/6 → ell0≤1/6-d+η → 0≤O₀ → za≤ell0+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean:40:      X⁻¹≤Z^Lcap → QK≤Z^Lcap → QP≤Z^Lcap → -saving≤(5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2 →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean:68:        C*(1+‖θ‖)^degree*Z^((5/6-2*d)+200*η+π+κ+ρ*Lpool-O₀/2) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:14:theorem low_dyadic_geometry_uniform
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:29:      Z₀≤Z → 0≤d → d≤1/6 → 0≤ell0 → ell0≤1/6-d+η → |shift|≤η →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:32:      (∀ I∈parents,I≠0 ∧ (Ideal.absNorm I:ℝ)≤Ck*Z^(5/6-2*d)) →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:35:      let Hrow := (Ck*Z^(5/6-2*d))/((Ideal.absNorm (rowPowerfulPart J):ℝ)*(Ideal.absNorm (rowMaskPart J Q):ℝ))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:58:          (C*(1+‖θ‖)^degree*Z^((5/6-2*d)+504*η-O₀/2)) := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:66:  let Hrow := (Ck*Z^(5/6-2*d))/((Ideal.absNorm (rowPowerfulPart J):ℝ)*(Ideal.absNorm (rowMaskPart J Q):ℝ))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:73:    fun K hK => original_residual_norm_bounds parents J Q hbad (Ck*Z^(5/6-2*d)) hparents K (hsub hK)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:78:    (s g) (hc₀ g) jF W (Z^(1+ell0+shift)) (fun θ => C*(1+‖θ‖)^degree*Z^((5/6-2*d)+504*η-O₀/2))
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean:99:  have hKupper : 2*divisorDyadicScale i.val≤2*Ck*Z^(5/6-2*d) := by

@@ -1,0 +1,13 @@
+[
+  {
+    "module": "QRH.Detector.DynamicMomentInput",
+    "source": "research/drafts/QRH/Detector/DynamicMomentInput.lean",
+    "namespace": "SevenEighths.QRHDynamicMomentInput",
+    "theorems": [
+      "dynamicMesh_pos",
+      "dynamic_source_input",
+      "actual_source_batch_plain_marked"
+    ],
+    "upstream": "original QRH proof using pinned actual analytic energy and detector predicates"
+  }
+]

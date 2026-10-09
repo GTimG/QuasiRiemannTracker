@@ -1,0 +1,3 @@
+'OAI.SevenEighths.QRHGlobalRegion.unramifiedClosed_open_region_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

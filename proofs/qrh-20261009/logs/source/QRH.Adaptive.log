@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/Adaptive.olean", "QRH/Adaptive.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "8d4ed5b061de2e7d69b3562215f36e54f171ba1b53d2d7cd0e5cd3d1fc299407", "key": "a3955238fb369b94f0eed1c4733d38bd566a2704b21f10e1619b931ed47bc864"}

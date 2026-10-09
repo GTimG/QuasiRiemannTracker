@@ -1,0 +1,27 @@
+
+> qrh-bounds@0.1.0 test:browser
+> playwright test
+
+
+Running 10 tests using 1 worker
+
+(node:51493) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51493) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/browser/dashboard.spec.ts:2:1 › status panels follow an admitted registry (isolated mock response) (721ms)
+  ✓   2 [desktop] › tests/browser/dashboard.spec.ts:41:1 › four real results, honest statuses, source downloads, and separate demonstration (790ms)
+  ✓   3 [desktop] › tests/browser/dashboard.spec.ts:101:1 › selection, exact sorting, filters, zoom and lineage (1.3s)
+  ✓   4 [desktop] › tests/browser/dashboard.spec.ts:173:1 › dialog keyboard controls, protocol, responsive overflow and no errors (398ms)
+  ✓   5 [desktop] › tests/browser/dashboard.spec.ts:197:1 › sub-float bounds remain visibly separate after narrowing time, with safe wheel zoom (610ms)
+(node:51520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [mobile] › tests/browser/dashboard.spec.ts:2:1 › status panels follow an admitted registry (isolated mock response) (436ms)
+  ✓   7 [mobile] › tests/browser/dashboard.spec.ts:41:1 › four real results, honest statuses, source downloads, and separate demonstration (1.1s)
+  ✓   8 [mobile] › tests/browser/dashboard.spec.ts:101:1 › selection, exact sorting, filters, zoom and lineage (2.0s)
+  ✓   9 [mobile] › tests/browser/dashboard.spec.ts:173:1 › dialog keyboard controls, protocol, responsive overflow and no errors (394ms)
+  ✓  10 [mobile] › tests/browser/dashboard.spec.ts:197:1 › sub-float bounds remain visibly separate after narrowing time, with safe wheel zoom (804ms)
+
+  10 passed (9.9s)

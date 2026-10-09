@@ -1,0 +1,15 @@
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+WAIT QRH.Detector.ActualSourceCount : QRH.Detector.ActualAdaptiveBatchCount
+FAIL QRH.Detector.ActualSourceCount; /work/qrh-proof/logs/increment-QRH.Detector.ActualSourceCount.log

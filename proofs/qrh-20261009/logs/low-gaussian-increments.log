@@ -1,0 +1,12 @@
+CHECKED QRH.Detector.LowRemoteMass
+WAIT QRH.Detector.LowGaussianDyad : QRH.Detector.LowCentralTuple
+WAIT QRH.Detector.LowGaussianDyad : QRH.Detector.LowCentralTuple
+CHECKED QRH.Detector.LowGaussianDyad
+CHECKED QRH.Detector.LowGaussianRemote
+CHECKED QRH.Detector.LowGaussianCentral
+CHECKED QRH.Detector.LowGaussianSum
+CHECKED QRH.Detector.LowCommonBound
+CHECKED QRH.Detector.LowWindowBound
+CHECKED QRH.PrimeRows.CubeNormalizer
+CHECKED QRH.Detector.LowNormalized
+All requested increments checked; this does not complete the analytic theorem.

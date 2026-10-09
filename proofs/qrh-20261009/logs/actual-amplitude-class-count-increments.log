@@ -1,0 +1,11 @@
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+WAIT QRH.Detector.ActualAmplitudeClassCount : QRH.Detector.ActualSourceCount
+FAIL QRH.Detector.ActualAmplitudeClassCount; /work/qrh-proof/logs/increment-QRH.Detector.ActualAmplitudeClassCount.log

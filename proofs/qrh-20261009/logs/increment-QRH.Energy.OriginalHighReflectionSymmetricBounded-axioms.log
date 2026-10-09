@@ -1,0 +1,3 @@
+'OAI.SevenEighths.CenteredMomentEnergyOriginalHighReflectionSymmetricBounded.original_unbalanced_from_low_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

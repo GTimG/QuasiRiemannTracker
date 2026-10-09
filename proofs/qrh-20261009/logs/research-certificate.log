@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/qrh-proof/research/exact_certificate.py", line 4, in <module>
+    import sympy as s
+ModuleNotFoundError: No module named 'sympy'

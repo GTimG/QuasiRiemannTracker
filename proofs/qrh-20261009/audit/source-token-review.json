@@ -1,0 +1,1292 @@
+[
+  [
+    "Mathlib.Tactic.Translate.ToDual",
+    60,
+    "lemma min_le_left (a b : \u03b1) : min a b \u2264 a := sorry"
+  ],
+  [
+    "Mathlib.Tactic.Translate.ToDual",
+    87,
+    "@[to_dual (attr := simp)] lemma min_self (a : \u03b1) : min a a = a := sorry"
+  ],
+  [
+    "Batteries.Tactic.Lint.Misc",
+    30,
+    "/-- A linter for checking for unused arguments. We skip all declarations that contain `sorry` in"
+  ],
+  [
+    "Batteries.Tactic.Lint.Misc",
+    100,
+    "      | .axiomInfo .. => pure \"axiom\""
+  ],
+  [
+    "Batteries.Util.ProofWanted",
+    49,
+    "`DefWanted`/`ProofWanted` placeholders (never `axiom`/`sorry`), the whole construction is sound: a"
+  ],
+  [
+    "Batteries.Util.ProofWanted",
+    550,
+    "  -- so no `axiom`/`sorry` is introduced. (See the module docstring.)"
+  ],
+  [
+    "Batteries.Util.ProofWanted",
+    713,
+    "way no `axiom`/`sorry` is introduced (see the module docstring)."
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    27,
+    "theorem extracted_1 (i j k : Nat) (h\u2080 : i \u2264 j) (h\u2081 : j \u2264 k) : i \u2264 k := sorry"
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    49,
+    "theorem int_eq_nat {z : Int} : \u2203 n, Int.ofNat n = z := sorry"
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    85,
+    "theorem extracted_1.{u_1} {\u03b1 : Sort u_1} (a : \u03b1) : \u2203 f, f a = a := sorry"
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    93,
+    "theorem extracted_1 : X = X := sorry"
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    217,
+    "        -- Preserve foralls: format as \"theorem name : ty := sorry\""
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    218,
+    "        pure m!\"{cmd} {name} : {ty} := sorry\""
+  ],
+  [
+    "Mathlib.Tactic.ExtractGoal",
+    221,
+    "        pure m!\"{cmd} {sig} := sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    97,
+    "/-- Collects free variables that do not appear in proofs. Ignores `sorry`s (and their types). -/"
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    100,
+    "    -- If it doesn't have an fvar, or it's a sorry, or it's a proof, don't descend further."
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    134,
+    "  and instantiating all other bvars with `sorry`. The only free variables therefore arise from"
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    137,
+    "  By instantiating ordinary binders with `sorry`, `collectFVarsOutsideOfProofs` can use the"
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    156,
+    "        -- This forall does not introduce a binder of concern. Instantiate the bvar with `sorry`."
+  ],
+  [
+    "Mathlib.Tactic.Linter.UnusedInstancesInType",
+    195,
+    "    unless decl.type.hasSorry do -- only check for `sorry` in the \"expensive\" interactive case"
+  ],
+  [
+    "Mathlib.Lean.Expr.Basic",
+    205,
+    "/-- Erase proofs in an expression by replacing them with `sorry`s."
+  ],
+  [
+    "Mathlib.Lean.Expr.Basic",
+    379,
+    "This is the form produced by the `sorry` term/tactic."
+  ],
+  [
+    "Mathlib.Lean.Expr.Basic",
+    382,
+    "`sorry`/`sorryAx` (including e.g. `sorryAx \u03b1 true x y z`). -/"
+  ],
+  [
+    "Mathlib.Tactic.Linter.GlobalAttributeIn",
+    34,
+    "theorem what : False := sorry"
+  ],
+  [
+    "Mathlib.Tactic.Linter.GlobalAttributeIn",
+    42,
+    "theorem who {x y : Nat} : x = y := sorry"
+  ],
+  [
+    "Mathlib.Tactic.Linter.GlobalAttributeIn",
+    69,
+    "theorem what : False := sorry"
+  ],
+  [
+    "Mathlib.Tactic.Linter.EmptyLine",
+    103,
+    "  -- The linter does not report anything on incomplete proofs, e.g. proofs containing `sorry`"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    29,
+    "The `admit` tactic is a synonym for the much more common `sorry`, so the latter should be preferred."
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    31,
+    "The `native_decide` tactic is not allowed in mathlib, as it trusts the entire Lean compiler"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    33,
+    "probably possible to prove `False` using `native_decide`."
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    78,
+    "/-- The option `linter.style.admit` of the deprecated syntax linter flags usages of"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    79,
+    "the `admit` tactic, which is a synonym for the much more common `sorry`. -/"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    80,
+    "public register_option linter.style.admit : Bool := {"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    82,
+    "  descr := \"enable the admit linter\""
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    86,
+    "tactics which use `nativeEqTrue` such as `native_decide` and `decide +native`, which are"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    169,
+    "        \"The `admit` tactic is discouraged: \\"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    170,
+    "         please strongly consider using the synonymous `sorry` instead.\")"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    179,
+    "      rargs.push (kind, stx, m!\"Using `native_decide` is not allowed in mathlib: \\"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    207,
+    "* `admit`, superseded by `sorry` (controlled by `linter.style.admit`)"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    208,
+    "* `native_decide` and any config setting `+native`, which trust the Lean compiler"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    217,
+    "      getLinterValue linter.style.admit (\u2190 getLinterOptions) ||"
+  ],
+  [
+    "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter",
+    237,
+    "      | ``Lean.Parser.Tactic.tacticAdmit => Linter.logLintIf linter.style.admit stx' msg"
+  ],
+  [
+    "Mathlib.Data.Set.Basic",
+    344,
+    "on the argument. Note that it makes a proof depend on the `Classical.choice` axiom. -/"
+  ],
+  [
+    "Mathlib.Data.Set.Basic",
+    1158,
+    "coming from the choice axiom, so that we don't have to provide `[DecidableEq (Set \u03b1)]` arguments"
+  ],
+  [
+    "Mathlib.Tactic.Attr.Register",
+    133,
+    "objects \"remembers\" how it was proved: Every use of a (commutative) monoid object axiom inserts a"
+  ],
+  [
+    "Batteries.Linter.UnreachableTactic",
+    22,
+    "because `trivial` produces no subgoals; you could put `sorry` or `apply I_don't_exist`"
+  ],
+  [
+    "Mathlib.Tactic.FastInstance",
+    125,
+    "instance instSemiring : Semiring X := sorry"
+  ],
+  [
+    "Mathlib.Tactic.Convert",
+    218,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Basic.Logic.Basic",
+    236,
+    "In most of mathlib, we use the law of excluded middle (LEM) and the axiom of choice (AC) freely."
+  ],
+  [
+    "Mathlib.Basic.Logic.Basic",
+    238,
+    "attempt to avoid the axiom of choice, usually by adding decidability assumptions on the inputs."
+  ],
+  [
+    "Mathlib.Basic.Logic.Basic",
+    240,
+    "You can check if a lemma uses the axiom of choice by using `#print axioms foo` and seeing if"
+  ],
+  [
+    "Mathlib.Basic.Logic.Basic",
+    781,
+    "/-- `Classical.byContradiction'` is equivalent to lean's axiom `Classical.choice`. -/"
+  ],
+  [
+    "Mathlib.Basic.Logic.Basic",
+    800,
+    "using the axiom of choice. -/"
+  ],
+  [
+    "Qq.Simp",
+    16,
+    "  sorry"
+  ],
+  [
+    "Qq.Simp",
+    21,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.Conv",
+    128,
+    "of the expression is reduced to a primitive - a lambda or forall, or an axiom or inductive type."
+  ],
+  [
+    "Mathlib.Data.Quot",
+    359,
+    "/-- Choose an element of the equivalence class using the axiom of choice."
+  ],
+  [
+    "Mathlib.Data.Quot",
+    373,
+    "/-- Choose an element of the equivalence class using the axiom of choice."
+  ],
+  [
+    "Mathlib.Data.Quot",
+    555,
+    "/-- Noncomputably extract a representative of `Trunc \u03b1` (using the axiom of choice). -/"
+  ],
+  [
+    "Mathlib.Data.FunLike.Equiv",
+    120,
+    "-- Compare with: lemma do_something (f : MyIso A B) : sorry := sorry"
+  ],
+  [
+    "Mathlib.Data.FunLike.Equiv",
+    121,
+    "lemma do_something {F : Type*} [EquivLike F A B] [MyIsoClass F A B] (f : F) : sorry := sorry"
+  ],
+  [
+    "Mathlib.Data.FunLike.Embedding",
+    122,
+    "-- Compare with: lemma do_something (f : MyEmbedding A B) : sorry := sorry"
+  ],
+  [
+    "Mathlib.Data.FunLike.Embedding",
+    123,
+    "lemma do_something {F : Type*} [FunLike F A B] [MyEmbeddingClass F A B] (f : F) : sorry := sorry"
+  ],
+  [
+    "Mathlib.Data.FunLike.Basic",
+    117,
+    "-- Compare with: lemma do_something (f : MyHom A B) : sorry := sorry"
+  ],
+  [
+    "Mathlib.Data.FunLike.Basic",
+    118,
+    "lemma do_something {F : Type*} [FunLike F A B] [MyHomClass F A B] (f : F) : sorry :="
+  ],
+  [
+    "Mathlib.Data.FunLike.Basic",
+    119,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Data.Set.Operations",
+    202,
+    "/-- We can use the axiom of choice to pick a preimage for every element of `range f`. -/"
+  ],
+  [
+    "Aesop.Script.Step",
+    61,
+    "    preGoal.admit (synthetic := false)"
+  ],
+  [
+    "Aesop.Script.Step",
+    62,
+    "  let tactic \u2190 .unstructured <$> `(tactic| sorry)"
+  ],
+  [
+    "Aesop.Tree.ExtractScript",
+    125,
+    "    -- mvars is downgraded to an unsafe rule. So we add `sorry` steps for all"
+  ],
+  [
+    "Aesop.Tree.State",
+    132,
+    "    -- `g` should not have any children, but better safe than sorry."
+  ],
+  [
+    "Aesop.RuleTac.Tactic",
+    95,
+    "          throwError \"generated proof contains sorry\""
+  ],
+  [
+    "Mathlib.Data.Nat.Init",
+    133,
+    "| refl => sorry"
+  ],
+  [
+    "Mathlib.Data.Nat.Init",
+    134,
+    "| le_succ_of_le hle ih => sorry"
+  ],
+  [
+    "Mathlib.Data.Nat.Init",
+    426,
+    "-- Note: the following should stay axiom-free, since it is used whenever one writes the symbol"
+  ],
+  [
+    "Mathlib.Data.Set.Subsingleton",
+    160,
+    "argument. Note that it makes a proof depend on the classical.choice axiom. -/"
+  ],
+  [
+    "Mathlib.Tactic.Translate.ToAdditive",
+    48,
+    "theorem foo := sorry"
+  ],
+  [
+    "Mathlib.Util.WhatsNew",
+    74,
+    "    mkHeader' \"axiom\" id us t u"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    13,
+    "# Tracking uses of `sorry`"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    16,
+    "sorry-free. `#print sorries foo` returns a non-sorry-free declaration `bar` which `foo` depends on,"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    27,
+    "  The `#print sorries` command itself shouldn't be generalized, since `sorry` is a special concept,"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    38,
+    "/-- Type of intermediate computation of sorry-tracking. -/"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    42,
+    "  /-- The set of `sorry` expressions that have been found."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    46,
+    "  /-- The uses of `sorry` that were found. -/"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    50,
+    "Collects all uses of `sorry` by the declaration `c`."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    54,
+    "each use of `sorry`."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    59,
+    "    We assume most declarations do not contain sorry."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    63,
+    "    declaration that included it. Recall that `sorry` might appear in the type of a theorem,"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    64,
+    "    which leads to the `sorry` appearing directly in any declarations that use it."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    66,
+    "    The other reason is that we match entire sorry applications,"
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    67,
+    "    so `forEachExpr'`'s cache won't prevent over-reporting if `sorry` is a function."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    111,
+    "Prints all uses of `sorry` inside a list of declarations."
+  ],
+  [
+    "Mathlib.Util.PrintSorries",
+    133,
+    "    logInfo m!\"Declarations are sorry-free!\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    50,
+    "          { range := \u27e8tacPos, endPos\u27e9, newText := s!\"calc {goalFmt} := by sorry\" }"
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    97,
+    "      s!\"{lhsStr} {relStr} {newLhsStr} := by sorry\\n{spc}_ {relStr} {newRhsStr} := by sorry\\n\\"
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    98,
+    "         {spc}_ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    100,
+    "      s!\"_ {relStr} {newLhsStr} := by sorry\\n{spc}\\"
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    101,
+    "         _ {relStr} {newRhsStr} := by sorry\\n{spc}\\"
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    102,
+    "         _ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    105,
+    "      s!\"{lhsStr} {relStr} {newRhsStr} := by sorry\\n{spc}_ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    107,
+    "      s!\"_ {relStr} {newRhsStr} := by sorry\\n{spc}_ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    110,
+    "      s!\"{lhsStr} {relStr} {newLhsStr} := by sorry\\n{spc}_ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    112,
+    "      s!\"_ {relStr} {newLhsStr} := by sorry\\n{spc}_ {relStr} {rhsStr} := by sorry\""
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    141,
+    "  let s \u2190 `(tactic| calc $(\u2190 Lean.PrettyPrinter.delab (\u2190 getMainTarget)) := by sorry)"
+  ],
+  [
+    "Mathlib.Tactic.Widget.Calc",
+    143,
+    "  evalTactic (\u2190 `(tactic|sorry))"
+  ],
+  [
+    "Mathlib.Tactic.SimpIntro",
+    72,
+    "    sorry"
+  ],
+  [
+    "Mathlib.Tactic.Set",
+    40,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.CongrM",
+    46,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.CongrM",
+    47,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.CongrM",
+    48,
+    "  sorry"
+  ],
+  [
+    "LeanSearchClient.LoogleSyntax",
+    167,
+    "  sorry"
+  ],
+  [
+    "LeanSearchClient.Syntax",
+    290,
+    "  sorry"
+  ],
+  [
+    "LeanSearchClient.Syntax",
+    317,
+    "  sorry"
+  ],
+  [
+    "LeanSearchClient.Syntax",
+    393,
+    "  sorry"
+  ],
+  [
+    "Batteries.CodeAction.Misc",
+    33,
+    "  | ``Elab.Term.elabSorry, _ => \"sorry\""
+  ],
+  [
+    "Batteries.CodeAction.Misc",
+    317,
+    "  | zero => sorry"
+  ],
+  [
+    "Batteries.CodeAction.Misc",
+    318,
+    "  | succ n ih => sorry"
+  ],
+  [
+    "Batteries.CodeAction.Misc",
+    382,
+    "        \"sorry\""
+  ],
+  [
+    "Batteries.CodeAction.Misc",
+    432,
+    "    -- or if there is only a `done` or `sorry` terminator"
+  ],
+  [
+    "Batteries.CodeAction.Basic",
+    20,
+    "on each occurrence of a hole (`_`, `?_` or `sorry`)."
+  ],
+  [
+    "Batteries.Tactic.GeneralizeProofs",
+    24,
+    "def List.nthLe {\u03b1} (l : List \u03b1) (n : \u2115) (_h : n < l.length) : \u03b1 := sorry"
+  ],
+  [
+    "Batteries.Tactic.GeneralizeProofs",
+    502,
+    "def List.nthLe {\u03b1} (l : List \u03b1) (n : \u2115) (_h : n < l.length) : \u03b1 := sorry"
+  ],
+  [
+    "Plausible.Tactic",
+    84,
+    "If no counter-examples are found, `plausible` behaves like `admit`."
+  ],
+  [
+    "Plausible.Tactic",
+    138,
+    "admit. If it gives up or finds a counter-example, it reports an error."
+  ],
+  [
+    "Plausible.Testable",
+    144,
+    "  silently admit the goal with `sorry` instead of throwing an error."
+  ],
+  [
+    "Mathlib.Data.SetLike.Basic",
+    39,
+    "  (op_mem' : \u2200 {x : X}, x \u2208 carrier \u2192 sorry \u2208 carrier)"
+  ],
+  [
+    "Mathlib.Algebra.Group.Hom.Defs",
+    222,
+    "  toFun := foo; map_one' := sorry; map_mul' := sorry"
+  ],
+  [
+    "Mathlib.RingTheory.Ideal.Operations",
+    1360,
+    "equality, coming from the choice axiom, so that we don't have to provide"
+  ],
+  [
+    "Mathlib.RingTheory.Ideal.Operations",
+    1368,
+    "reducibility, coming from the choice axiom, so that we don't have to provide"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    111,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    117,
+    "  tfae_have 1 \u2192 2 := sorry /- proof of P \u2192 Q -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    118,
+    "  tfae_have 2 \u2192 1 := sorry /- proof of Q \u2192 P -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    119,
+    "  tfae_have 2 \u2194 3 := sorry /- proof of Q \u2194 R -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    127,
+    "  tfae_have 1 \u2192 2 := sorry"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    130,
+    "  tfae_have hpq : 1 \u2192 2 := sorry"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    137,
+    "  tfae_have \u27e8pq, qp\u27e9 : 1 \u2194 2 := sorry"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    142,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    156,
+    "  tfae_have 1 \u2192 2 := sorry /- proof of P \u2192 Q -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    157,
+    "  tfae_have 2 \u2192 1 := sorry /- proof of Q \u2192 P -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    158,
+    "  tfae_have 2 \u2194 3 := sorry /- proof of Q \u2194 R -/"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    278,
+    "    Term.addTermInfo' i q(sorry : $Pi) Pi"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    279,
+    "    Term.addTermInfo' j q(sorry : $Pj) Pj"
+  ],
+  [
+    "Mathlib.Tactic.TFAE",
+    285,
+    "    Term.addTermInfo' stx q(sorry : $ty) ty"
+  ],
+  [
+    "Mathlib.Algebra.Group.Invertible.Defs",
+    45,
+    "def something_that_needs_inverses (x : \u03b1) [Invertible x] := sorry"
+  ],
+  [
+    "Mathlib.Algebra.Group.Action.Defs",
+    86,
+    "type `P`.  More precisely this means that the action satisfies the axiom"
+  ],
+  [
+    "Mathlib.Algebra.Group.Action.Defs",
+    99,
+    "More precisely this means that the action satisfies the axiom `(g\u2081 * g\u2082) \u2022 p = g\u2081 \u2022 (g\u2082 \u2022 p)`."
+  ],
+  [
+    "Mathlib.Algebra.Group.Action.Defs",
+    621,
+    "The key axiom here is `smul_mul : g \u2022 (x * y) = (g \u2022 x) * (g \u2022 y)`."
+  ],
+  [
+    "Mathlib.Algebra.Group.Action.Defs",
+    625,
+    "The axiom is also satisfied by a Galois group $Gal(L/K)$ acting on the field `L`,"
+  ],
+  [
+    "Mathlib.Algebra.Group.Action.Defs",
+    637,
+    "The key axiom here is `vadd_add : g +\u1d65 (x + y) = (g +\u1d65 x) + (g +\u1d65 y)`."
+  ],
+  [
+    "Mathlib.Algebra.Module.Submodule.Defs",
+    164,
+    "equality, coming from the choice axiom, so that we don't have to provide"
+  ],
+  [
+    "Mathlib.Order.Closure",
+    178,
+    "/-- Constructor for a closure operator using the weaker idempotency axiom: `f (f x) \u2264 f x`. -/"
+  ],
+  [
+    "Mathlib.Order.Closure",
+    187,
+    "/-- Convenience constructor for a closure operator using the weaker minimality axiom:"
+  ],
+  [
+    "Mathlib.Tactic.Zify",
+    66,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.Zify",
+    72,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Control.Traversable.Basic",
+    229,
+    "  /-- An axiom for `traverse` involving `pure : \u03b2 \u2192 Id \u03b2`. -/"
+  ],
+  [
+    "Mathlib.Control.Traversable.Basic",
+    232,
+    "  /-- The naturality axiom explaining how lawful traversable functors should play with"
+  ],
+  [
+    "Mathlib.Topology.Separation.Hausdorff",
+    86,
+    "  /-- Every two points in a Hausdorff space admit disjoint open neighbourhoods. -/"
+  ],
+  [
+    "Mathlib.Order.Filter.Ultrafilter.Defs",
+    301,
+    "  we use the axiom of choice to pick one. -/"
+  ],
+  [
+    "Mathlib.Topology.Irreducible",
+    21,
+    "  is nonempty and does not admit a nontrivial pair of disjoint opens."
+  ],
+  [
+    "Mathlib.Topology.Separation.Regular",
+    80,
+    "  /-- If `a` is a point that does not belong to a closed set `s`, then `a` and `s` admit disjoint"
+  ],
+  [
+    "Mathlib.Topology.Separation.Regular",
+    499,
+    "  /-- Two disjoint sets in a normal space admit disjoint neighbourhoods. -/"
+  ],
+  [
+    "Mathlib.Topology.Separation.Regular",
+    618,
+    "  admit disjoint neighbourhoods. -/"
+  ],
+  [
+    "Mathlib.SetTheory.Ordinal.Family",
+    37,
+    "given by the axiom of choice. -/"
+  ],
+  [
+    "Mathlib.SetTheory.Ordinal.Family",
+    53,
+    "given by the axiom of choice. -/"
+  ],
+  [
+    "Mathlib.SetTheory.Ordinal.Basic",
+    624,
+    "axiom of choice; in particular, it has no useful def-eqs."
+  ],
+  [
+    "Mathlib.Data.Nat.Prime.Defs",
+    156,
+    "(e.g. in `#eval` or `by native_decide`)."
+  ],
+  [
+    "Mathlib.Tactic.ComputeDegree",
+    29,
+    "Both tactics admit a `!` modifier (`compute_degree!` and `monicity!`) instructing"
+  ],
+  [
+    "Mathlib.Algebra.Algebra.RestrictScalars",
+    64,
+    "example : RestrictScalars R S M \u2192\u2097[R] S := sorry"
+  ],
+  [
+    "Mathlib.Algebra.Algebra.RestrictScalars",
+    69,
+    "example [Module R M] [IsScalarTower R S M] : M \u2192\u2097[R] S := sorry"
+  ],
+  [
+    "Mathlib.Tactic.FieldSimp",
+    697,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.FieldSimp",
+    704,
+    "  sorry"
+  ],
+  [
+    "Mathlib.LinearAlgebra.Dimension.StrongRankCondition",
+    186,
+    "  -- and expressing that (using the axiom of choice) as a linear combination over `w`."
+  ],
+  [
+    "Mathlib.GroupTheory.SpecificGroups.Cyclic",
+    502,
+    "and instead picks one out with the axiom of choice. -/"
+  ],
+  [
+    "Mathlib.GroupTheory.SpecificGroups.Cyclic",
+    535,
+    "and instead picks one out with the axiom of choice. -/"
+  ],
+  [
+    "Mathlib.GroupTheory.SpecificGroups.Cyclic",
+    556,
+    "and instead picks one out with the axiom of choice. -/"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    19,
+    "axiom that can be dropped in cases where there is some finiteness assumption."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    22,
+    "predicates, using axiom sets that are appropriate in different settings,"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    26,
+    "All the independence axiom sets need nontriviality (the empty set is independent),"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    28,
+    "and some form of 'augmentation' axiom, which allows one to enlarge a non-maximal independent set."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    29,
+    "This augmentation axiom is still required when there are finiteness assumptions, but is simpler."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    32,
+    "This is the axiom that appears in most of the definitions."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    67,
+    "  augmentation axiom resembles the finite augmentation axiom."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    71,
+    "  the augmentation axiom; the corresponding `Matroid` is `RankFinite`."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    73,
+    "* `IndepMatroid.ofBddAugment` is the same as the above, but with a finite augmentation axiom."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    173,
+    "then an `IndepMatroid` can be constructed without proving the maximality axiom."
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    313,
+    "/-- If there is an absolute upper bound on the size of an independent set, then the maximality axiom"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.IndepAxioms",
+    344,
+    "  can be defined using an 'augmentation' axiom similar to the standard definition of"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Basic",
+    74,
+    "  These are defined by adding one carefully chosen axiom to the standard set,"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Basic",
+    706,
+    "  it is defeq to the augmentation axiom for independent sets. -/"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Basic",
+    778,
+    "/-- Matroids obey the maximality axiom -/"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Circuit",
+    438,
+    "/-- A generalization of the strong circuit elimination axiom `Matroid.IsCircuit.strong_elimination`"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Circuit",
+    492,
+    "/-- The strong isCircuit elimination axiom. For any pair of distinct circuits `C\u2081, C\u2082` and all"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Circuit",
+    501,
+    "/-- The circuit elimination axiom : for any pair of distinct circuits `C\u2081, C\u2082` and any `e`,"
+  ],
+  [
+    "Mathlib.Combinatorics.Matroid.Circuit",
+    505,
+    "as an axiom, it is usually stated with the extra assumption that `e \u2208 C\u2081 \u2229 C\u2082`. -/"
+  ],
+  [
+    "Mathlib.Topology.UniformSpace.Defs",
+    59,
+    "Note that this discussion does not depend on any axiom imposed on the uniformity filter,"
+  ],
+  [
+    "Mathlib.Tactic.Qify",
+    28,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Tactic.Qify",
+    67,
+    "  sorry"
+  ],
+  [
+    "Mathlib.Algebra.Order.CauSeq.Completion",
+    261,
+    "    \"(sorry /- \" ++ Std.Format.joinSep ((List.range N).map <| repr \u2218 seq) \", \" ++ \", ... -/)\""
+  ],
+  [
+    "Mathlib.Data.Int.LeastGreatest",
+    23,
+    "  of the minimality. This definition is computable and does not rely on the axiom of choice."
+  ],
+  [
+    "Mathlib.Topology.Metrizable.Basic",
+    16,
+    "For the proof that metrizable spaces admit a compatible metric,"
+  ],
+  [
+    "Mathlib.Topology.Algebra.IsUniformGroup.Defs",
+    186,
+    "not all topological groups admit a uniform group structure in this sense. This is however the"
+  ],
+  [
+    "Mathlib.Topology.Algebra.IsUniformGroup.Defs",
+    201,
+    "not all topological groups admit a uniform group structure in this sense. This is however the"
+  ],
+  [
+    "Mathlib.Analysis.Normed.Ring.Basic",
+    163,
+    "/-- A mixin class with the axiom `\u20161\u2016 = 1`. Many `NormedRing`s and all `NormedField`s satisfy this"
+  ],
+  [
+    "Mathlib.Analysis.Normed.Ring.Basic",
+    164,
+    "axiom. -/"
+  ],
+  [
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    322,
+    "normed ring satisfies the axiom `\u20161\u2016 = 1`. -/"
+  ],
+  [
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    407,
+    "normed ring satisfies the axiom `\u20161\u2016 = 1`. -/"
+  ],
+  [
+    "Mathlib.Analysis.Normed.Order.Lattice",
+    17,
+    "lattice with a covariant normed group addition satisfying the solid axiom."
+  ],
+  [
+    "Mathlib.Topology.MetricSpace.Thickening",
+    19,
+    "* `Disjoint.exists_thickenings`: two disjoint sets admit disjoint thickenings"
+  ],
+  [
+    "Mathlib.Topology.MetricSpace.Thickening",
+    20,
+    "* `Disjoint.exists_cthickenings`: two disjoint sets admit disjoint closed thickenings"
+  ],
+  [
+    "Mathlib.Algebra.Order.GroupWithZero.WithZero",
+    15,
+    "axiom, gives us a new type which satisfies some variant of the axiom."
+  ],
+  [
+    "Mathlib.Topology.Algebra.UniformField",
+    97,
+    "Here we explicitly enforce the `inv_zero` axiom."
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.HasLimits",
+    27,
+    "we happily use the axiom of choice in mathlib,"
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.HasLimits",
+    104,
+    "/-- Use the axiom of choice to extract explicit `LimitCone F` from `HasLimit F`. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.HasLimits",
+    106,
+    "/-- Use the axiom of choice to extract explicit `ColimitCocone F` from `HasColimit F`. -/]"
+  ],
+  [
+    "Mathlib.CategoryTheory.Category.Basic",
+    141,
+    "/-- Close the main goal with `sorry` if its type contains `sorry`, and fail otherwise. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Category.Basic",
+    150,
+    "    throwError \"The goal does not contain `sorry`\""
+  ],
+  [
+    "Mathlib.CategoryTheory.Functor.Basic",
+    37,
+    "The axiom `map_id` expresses preservation of identities, and"
+  ],
+  [
+    "Mathlib.CategoryTheory.Bicategory.Basic",
+    39,
+    "which is required as an axiom in the definition here."
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.Shapes.Pullback.Mono",
+    24,
+    "* Monomorphisms admit kernel pairs, this is `has_kernel_pair_of_mono`."
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.Shapes.Images",
+    49,
+    "* When `C` has strong epi images, then these images admit image maps."
+  ],
+  [
+    "Mathlib.CategoryTheory.MorphismProperty.Factorization",
+    11,
+    "# The factorization axiom"
+  ],
+  [
+    "Mathlib.CategoryTheory.MorphismProperty.Factorization",
+    18,
+    "This shall be used in the formalization of model categories for which the CM5 axiom"
+  ],
+  [
+    "Mathlib.CategoryTheory.MorphismProperty.Factorization",
+    99,
+    "/-- The factorization axiom for two classes of morphisms `W\u2081` and `W\u2082` in a category `C`. It"
+  ],
+  [
+    "Mathlib.CategoryTheory.MorphismProperty.Factorization",
+    257,
+    "/-- The functorial factorization axiom for two classes of morphisms `W\u2081` and `W\u2082` in a"
+  ],
+  [
+    "Mathlib.CategoryTheory.MorphismProperty.Factorization",
+    264,
+    "axiom `HasFunctorialFactorization W\u2081 W\u2082` holds. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.Preserves.Basic",
+    33,
+    "vacuously satisfied when K does not admit a limit, which is consistent"
+  ],
+  [
+    "Mathlib.CategoryTheory.Monad.Algebra",
+    48,
+    "  /-- The unit axiom associated to an algebra. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Monad.Algebra",
+    50,
+    "  /-- The associativity axiom associated to an algebra. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Monad.Algebra",
+    266,
+    "  /-- The counit axiom associated to a coalgebra. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Monad.Algebra",
+    268,
+    "  /-- The coassociativity axiom associated to a coalgebra. -/"
+  ],
+  [
+    "Mathlib.Algebra.Category.Ring.Colimits",
+    85,
+    "  -- And one Relation per axiom"
+  ],
+  [
+    "Mathlib.Algebra.Category.Ring.Colimits",
+    379,
+    "  -- And one Relation per axiom"
+  ],
+  [
+    "Mathlib.Geometry.Convex.ConvexSpace.Module",
+    58,
+    "convexity as we develop it here, although they do admit a perfectly reasonable convexity structure"
+  ],
+  [
+    "Mathlib.Topology.Algebra.Module.LocallyConvex",
+    143,
+    "is closed admit disjoint convex open neighborhoods. -/"
+  ],
+  [
+    "Mathlib.Topology.Algebra.Module.LocallyConvex",
+    158,
+    "/-- In a locally convex space, every point `x` and closed convex set `s \u220c x` admit disjoint convex"
+  ],
+  [
+    "Mathlib.Analysis.Analytic.Linear",
+    18,
+    "polynomial, i.e., they admit a finite power series."
+  ],
+  [
+    "Mathlib.Analysis.Analytic.CPolynomialDef",
+    13,
+    "We specialize the theory of analytic functions to the case of functions that admit a"
+  ],
+  [
+    "Mathlib.Analysis.Analytic.Composition",
+    43,
+    "* `HasFPowerSeriesAt.comp` states that if two functions `g` and `f` admit power series expansions"
+  ],
+  [
+    "Mathlib.Analysis.InnerProductSpace.Projection.Submodule",
+    15,
+    "defined in `Mathlib/Analysis/InnerProductSpace/Orthogonal.lean`) such that they admit"
+  ],
+  [
+    "Mathlib.Topology.Algebra.Module.Complement",
+    19,
+    "Not all submodules of `M` admit such a topological complements (even if they admit algebraic"
+  ],
+  [
+    "Mathlib.MeasureTheory.Constructions.Polish.Basic",
+    1125,
+    "/-- If two standard Borel spaces admit Borel measurable injections to one another,"
+  ],
+  [
+    "Mathlib.Topology.MetricSpace.Polish",
+    269,
+    "  /- Both sets `s` and `s\u1d9c` admit a Polish topology. So does their disjoint union `s \u2295 s\u1d9c`."
+  ],
+  [
+    "Mathlib.Analysis.Calculus.ContDiff.Basic",
+    522,
+    "/-- If two functions `f` and `g` admit Taylor series `p` and `q` in a set `s`, then the Cartesian"
+  ],
+  [
+    "Mathlib.GroupTheory.FiniteAbelian.Basic",
+    42,
+    "  left_inv x := DFinsupp.ext fun i \u21a6 sorry"
+  ],
+  [
+    "Mathlib.GroupTheory.FiniteAbelian.Basic",
+    43,
+    "  right_inv y := DFinsupp.ext fun j \u21a6 sorry"
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.Shapes.BinaryBiproducts",
+    401,
+    "Use the axiom of choice to extract explicit `BinaryBiproductData F` from `HasBinaryBiproduct F`."
+  ],
+  [
+    "Mathlib.CategoryTheory.Limits.Shapes.Biproducts",
+    331,
+    "/-- Use the axiom of choice to extract explicit `BiproductData F` from `HasBiproduct F`. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Preadditive.Injective.Basic",
+    105,
+    "/-- The axiom of choice says that every nonempty type is an injective object in `Type`. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Preadditive.Projective.Basic",
+    114,
+    "/-- The axiom of choice says that every type is a projective object in `Type`. -/"
+  ],
+  [
+    "Mathlib.CategoryTheory.Abelian.NonPreadditive",
+    42,
+    "since abelian categories admit exactly one preadditive structure (see"
+  ],
+  [
+    "Mathlib.CategoryTheory.Subobject.Lattice",
+    159,
+    "/-- A morphism version of the `le_inf` axiom. -/"
+  ],
+  [
+    "Mathlib.Analysis.Calculus.FDeriv.Extend",
+    14,
+    "on the boundary. For this, it suffices that the function and its derivative admit limits there."
+  ],
+  [
+    "Mathlib.Topology.ShrinkingLemma",
+    17,
+    "For finite or countable coverings this lemma can be proved without the axiom of choice, see"
+  ],
+  [
+    "Mathlib.Topology.ShrinkingLemma",
+    19,
+    "general result that works for any covering but needs the axiom of choice."
+  ],
+  [
+    "Mathlib.MeasureTheory.Function.ConditionalExpectation.Basic",
+    123,
+    "/-- info: \u03bc[f | m] sorry : E -/"
+  ],
+  [
+    "Mathlib.MeasureTheory.Function.ConditionalExpectation.Basic",
+    125,
+    "#check \u03bc[f | m] (sorry : \u03b1)"
+  ],
+  [
+    "Mathlib.Probability.Independence.Integration",
+    26,
+    "example {M1 : MeasurableSpace \u03a9} [M2 : MeasurableSpace \u03a9] {\u03bc : Measure \u03a9} : sorry := sorry"
+  ],
+  [
+    "Mathlib.Probability.Independence.Integration",
+    27,
+    "example [M1 : MeasurableSpace \u03a9] {M2 : MeasurableSpace \u03a9} {\u03bc : Measure \u03a9} : sorry := sorry"
+  ]
+]

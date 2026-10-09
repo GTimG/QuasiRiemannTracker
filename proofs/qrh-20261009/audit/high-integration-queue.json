@@ -1,0 +1,71 @@
+[
+  {
+    "module": "QRH.Detector.ActualPlainUnmarkedInput",
+    "source": "research/drafts/QRH/Detector/ActualPlainUnmarkedInput.lean",
+    "namespace": "SevenEighths.QRHDynamicSlotMomentInput",
+    "theorems": [
+      "actual_zero_source_input",
+      "actual_source_batch_plain_unmarked_slots"
+    ]
+  },
+  {
+    "module": "QRH.Detector.InverseRawParameters",
+    "source": "research/drafts/QRH/Detector/InverseRawParameters.lean",
+    "namespace": "SevenEighths.ProbeDetectorInverseRawField",
+    "theorems": [
+      "source_batch_inverse_raw_parameters"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.OptimizedAdaptiveCutoff",
+    "source": "research/drafts/QRH/Hecke/OptimizedAdaptiveCutoff.lean",
+    "namespace": "SevenEighths.QRHAdaptiveCutoff",
+    "theorems": [
+      "cutoff_bounds",
+      "cutoff_eq_balanced",
+      "cutoff_eq_high",
+      "actual_adaptive_witnesses"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.DynamicBranchBudget",
+    "source": "research/drafts/QRH/Hecke/DynamicBranchBudget.lean",
+    "namespace": "SevenEighths.HeckeDetectorBranchBudget",
+    "theorems": [
+      "plain_marked_loss_optimized",
+      "plain_requested_capacity_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.DynamicRawBranches",
+    "source": "research/drafts/QRH/Hecke/DynamicRawBranches.lean",
+    "namespace": "SevenEighths.HeckeDetectorRawFiber",
+    "theorems": [
+      "Fiber.plain_marked_count_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.DynamicCountFromMoments",
+    "source": "research/drafts/QRH/Hecke/DynamicCountFromMoments.lean",
+    "namespace": "SevenEighths.QRHDetectorCountFromMoments",
+    "theorems": [
+      "count_from_raw_moments"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.DynamicBatchCount",
+    "source": "research/drafts/QRH/Hecke/DynamicBatchCount.lean",
+    "namespace": "SevenEighths.QRHDetectorBatchCount",
+    "theorems": [
+      "batch_count_from_raw_moments"
+    ]
+  },
+  {
+    "module": "QRH.Detector.UniformAllMoments",
+    "source": "research/drafts/QRH/Detector/UniformAllMoments.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_four_moment_fields"
+    ]
+  }
+]

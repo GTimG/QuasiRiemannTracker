@@ -1,0 +1,4 @@
+WAIT QRH.Detector.DynamicSlotMomentInput : QRH.Detector.DetectorPlainMarkedSlots
+WAIT QRH.Detector.DynamicSlotMomentInput : QRH.Detector.DetectorPlainMarkedSlots
+CHECKED QRH.Detector.DynamicSlotMomentInput
+All requested increments checked; this does not complete the analytic theorem.

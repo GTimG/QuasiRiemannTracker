@@ -1,0 +1,4 @@
+'OAI.SevenEighths.QRHProbeCentralExponent.high_mixed_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.adaptive_mixed_saving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

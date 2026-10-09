@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-09",
+  "records": [
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "openai/math",
+      "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "first_verified_at": "2026-10-09T11:37:19Z",
+      "entrypoint": {
+        "module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re"
+      },
+      "license": "Apache-2.0",
+      "builds_on": [],
+      "id": "openai-baseline",
+      "title": "OpenAI · seven eighths",
+      "theta": {
+        "numerator": "7",
+        "denominator": "8"
+      },
+      "authors": [
+        {
+          "name": "OpenAI"
+        }
+      ],
+      "method": "OpenAI’s quasi-Riemann framework establishes the 7/8 boundary. The original pinned proof has now been rebuilt and checked directly.",
+      "references": [
+        {
+          "label": "Independent kernel verification report",
+          "url": "proofs/palomar-20261009/openai/result.json"
+        },
+        {
+          "label": "Comparator and kernel acceptance log",
+          "url": "proofs/palomar-20261009/openai/judge.log"
+        },
+        {
+          "label": "Exact checked statements",
+          "url": "proofs/palomar-20261009/openai/src/Challenge.lean"
+        },
+        {
+          "label": "Checking method and reproduction details",
+          "url": "proofs/palomar-20261009/README.txt"
+        },
+        {
+          "label": "Original source and scope",
+          "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+        },
+        {
+          "label": "Our verification evidence",
+          "url": "proofs/qrh-20261009/verification.json"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-06T00:00:00Z",
+      "date_label": "Public release",
+      "verification_note": "The original proof passed local verification with Palomar’s mechanical checker: Comparator compared the exact statements and their definitions, then con-ron, NanoDa and Lean’s fresh kernel accepted the exported proofs. All-Dirichlet, zeta and finite-order Eisenstein Hecke targets were checked, with only propext, Classical.choice and Quot.sound allowed. This is a local check; Palomar registration and editorial review are separate."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
+      "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "",
+        "declaration": ""
+      },
+      "license": "Apache-2.0",
+      "builds_on": ["openai-baseline"],
+      "id": "argonaut-20261008",
+      "title": "Argonaut · perturbed boundary",
+      "theta": {
+        "numerator": "3499999",
+        "denominator": "4000000"
+      },
+      "authors": [
+        {
+          "name": "Argonaut Math"
+        }
+      ],
+      "method": "Refinement of the OpenAI framework to 3499999/4000000. Authors report Lean and native Comparator verification; our independent verification is pending.",
+      "references": [
+        {
+          "label": "Argonaut source and release",
+          "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-08T00:00:00Z",
+      "date_label": "Public announcement",
+      "verification_note": "Authors report Lean and native Comparator verification. We have inspected sources but have not independently reproduced the complete proof check. This is a verification status, not a claim that the proof is defective."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "",
+        "declaration": ""
+      },
+      "license": "See source and notices",
+      "builds_on": ["openai-baseline"],
+      "id": "liu-20261008",
+      "title": "Baiying Liu · optimized parameters",
+      "theta": {
+        "numerator": "874957069799168740018340006959",
+        "denominator": "1000000000000000000000000000000"
+      },
+      "exact_bound": "(1507 − 2√921) / 1653",
+      "bound_interval": {
+        "lower": {
+          "numerator": "437478534899584370009170003479",
+          "denominator": "500000000000000000000000000000"
+        },
+        "upper": {
+          "numerator": "874957069799168740018340006959",
+          "denominator": "1000000000000000000000000000000"
+        }
+      },
+      "authors": [
+        {
+          "name": "Baiying Liu"
+        }
+      ],
+      "method": "Optimizes b and ℓ in the OpenAI argument. The exact boundary is algebraic. The plotted rational is a certified upper endpoint less than 10⁻³⁰ above it, used only for rendering.",
+      "references": [
+        {
+          "label": "Paper · arXiv:2610.12234",
+          "url": "https://arxiv.org/abs/2610.12234"
+        },
+        {
+          "label": "Reported Lean formalization",
+          "url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-08T16:18:53Z",
+      "date_label": "arXiv submission",
+      "verification_note": "The author reports a Lean formalization. We have not independently reproduced it. No Liu proof code is redistributed in this repository."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "",
+      "source_commit": "",
+      "first_verified_at": "2026-10-09T11:37:19Z",
+      "entrypoint": {
+        "module": "QRH.Nonvanishing",
+        "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re"
+      },
+      "license": "Apache-2.0 (Lean development; retained upstream notices)",
+      "builds_on": ["openai-baseline"],
+      "id": "proofcouncil-20261009",
+      "title": "ProofCouncil · certified uniform descent",
+      "theta": {
+        "numerator": "874957019421",
+        "denominator": "1000000000000"
+      },
+      "authors": [
+        {
+          "name": "Tim Gehrunger · ProofCouncil"
+        }
+      ],
+      "method": "Extends the actual masked moment and detector range, proves optimized low/high probe estimates, and applies Mellin continuation and all-character transfer. All three targets compile at the exact rational threshold.",
+      "references": [
+        {
+          "label": "Independent kernel verification report",
+          "url": "proofs/palomar-20261009/qrh/result.json"
+        },
+        {
+          "label": "Comparator and kernel acceptance log",
+          "url": "proofs/palomar-20261009/qrh/judge.log"
+        },
+        {
+          "label": "Exact checked statements",
+          "url": "proofs/palomar-20261009/qrh/src/Challenge.lean"
+        },
+        {
+          "label": "Checking method and reproduction details",
+          "url": "proofs/palomar-20261009/README.txt"
+        },
+        {
+          "label": "Lean proof source",
+          "url": "proofs/qrh-20261009/Nonvanishing.lean"
+        },
+        {
+          "label": "Final verification report",
+          "url": "proofs/qrh-20261009/FINAL_STATUS.txt"
+        },
+        {
+          "label": "Statement and axiom checks",
+          "url": "proofs/qrh-20261009/verification.json"
+        },
+        {
+          "label": "Coordinator recheck",
+          "url": "proofs/qrh-20261009/operator-recheck.json"
+        },
+        {
+          "label": "Complete proof source, inputs and logs",
+          "url": "proofs/qrh-20261009/source-public.tar.gz"
+        },
+        {
+          "label": "Accepted manuscript (TeX)",
+          "url": "proofs/qrh-20261009/accepted-answer.tex"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-09T11:37:19Z",
+      "date_label": "Lean verification",
+      "verification_note": "The original proof passed local verification with Palomar’s mechanical checker: Comparator compared the exact statements and their definitions, then con-ron, NanoDa and Lean’s fresh kernel accepted the exported proofs. All-Dirichlet, zeta and finite-order Eisenstein Hecke targets were checked, with only propext, Classical.choice and Quot.sound allowed. This is a local check; Palomar registration and editorial review are separate.",
+      "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+import QRH.Detector.ExtendedGlobalCorrection
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.idealClosedCorrection_bound
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.globalClosedCorrection_bound
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.globalClosedCorrection_multipliable
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.globalClosedCorrection_analytic_x
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.globalClosedCorrection_analytic_w
+#print axioms OAI.SevenEighths.QRHGlobalCorrection.globalClosedCorrection_analytic_z

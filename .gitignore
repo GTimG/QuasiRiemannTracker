@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.work/
+.sites-runtime/
+test-results/
+playwright-report/
+.env*
+*.pem
+!*.public.pem
+proofs/**/build/
+proofs/**/upstream/
+proofs/**/toolchains/
+proofs/**/downloads/
+proofs/**/.lake/
+**/__pycache__/

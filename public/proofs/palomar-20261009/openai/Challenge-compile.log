@@ -1,0 +1,4 @@
+/work/qrh-checker/runs/openai/src/Challenge.lean:7:8: warning: declaration uses `sorry`
+/work/qrh-checker/runs/openai/src/Challenge.lean:12:8: warning: declaration uses `sorry`
+/work/qrh-checker/runs/openai/src/Challenge.lean:15:8: warning: declaration uses `sorry`
+

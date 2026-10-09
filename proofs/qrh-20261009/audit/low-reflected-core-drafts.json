@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.LowReflectedLength",
+    "source": "research/drafts/QRH/Detector/LowReflectedLength.lean",
+    "namespace": "SevenEighths.ProbeLowReflected",
+    "theorems": [
+      "compensated_reflected_exponent_with_length_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/LowReflectedLength.lean"
+  }
+]

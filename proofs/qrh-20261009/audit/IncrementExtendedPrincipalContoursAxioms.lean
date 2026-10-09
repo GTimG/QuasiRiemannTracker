@@ -1,0 +1,22 @@
+import QRH.Detector.ExtendedPrincipalContours
+#print axioms OAI.SevenEighths.QRHPrincipalContours.arithmetic_onLines_bound_of_gaps
+#print axioms OAI.SevenEighths.QRHPrincipalContours.arithmetic_onLines_bound
+#print axioms OAI.SevenEighths.QRHPrincipalContours.continued_source_joint_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_joint_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_joint_fubini
+#print axioms OAI.SevenEighths.QRHPrincipalContours.continued_source_slices
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_w_leftover_outer_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_z_boundary_any
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_ordered_at_height
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_ordered_ae
+#print axioms OAI.SevenEighths.QRHPrincipalContours.residue_arithmetic_bound
+#print axioms OAI.SevenEighths.QRHPrincipalContours.continued_residue_pair_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.residue_pair_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_iterated_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.residue_iterated_integrable
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_ordered_outer
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_uniform_joint_tails
+#print axioms OAI.SevenEighths.QRHPrincipalContours.source_uniform_high_slices
+#print axioms OAI.SevenEighths.QRHPrincipalContours.residue_uniform_moments
+#print axioms OAI.SevenEighths.QRHPrincipalContours.residue_uniform_tails
+#print axioms OAI.SevenEighths.QRHPrincipalContours.raw_source_uniform_high_slices

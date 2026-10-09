@@ -1,0 +1,3 @@
+CHECKED QRH.Moments.DetectorPlainExceptionalSlots
+CHECKED QRH.Moments.DetectorPlainMarkedSlots
+FAIL QRH.Detector.DetectorPlainMarkedSlots; /work/qrh-proof/logs/increment-QRH.Detector.DetectorPlainMarkedSlots.log

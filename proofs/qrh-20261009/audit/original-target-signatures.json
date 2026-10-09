@@ -1,0 +1,15 @@
+{
+  "revision": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "file": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+  "sha256": "d98c4a7e074469b429890e1c21b8cc76c410026525a776895293cdc0f9e6ae89",
+  "declarations": {
+    "LFunction_ne_zero_of_seven_eighths_lt_re": {
+      "original_type": "{q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}\n    (hs : (7 / 8 : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :\n    _root_.DirichletCharacter.LFunction χ s ≠ 0",
+      "required_type": "{q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}\n    (hs : (874957019421 / 1000000000000 : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :\n    _root_.DirichletCharacter.LFunction χ s ≠ 0"
+    },
+    "riemannZeta_ne_zero_of_seven_eighths_lt_re": {
+      "original_type": "{s : ℂ} (hs : (7 / 8 : ℝ) < s.re) : riemannZeta s ≠ 0",
+      "required_type": "{s : ℂ} (hs : (874957019421 / 1000000000000 : ℝ) < s.re) : riemannZeta s ≠ 0"
+    }
+  }
+}

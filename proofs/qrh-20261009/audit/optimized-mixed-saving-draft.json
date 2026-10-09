@@ -1,0 +1,12 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedMixedSaving",
+    "source": "research/drafts/QRH/Detector/OptimizedMixedSaving.lean",
+    "namespace": "SevenEighths.QRHProbeCentralExponent",
+    "theorems": [
+      "adaptive_count_range",
+      "balanced_mixed_margin",
+      "balanced_mixed_saving"
+    ]
+  }
+]

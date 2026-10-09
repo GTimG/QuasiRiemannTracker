@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentDetectorPlainExceptional.source_fibers_eventually_retained_slots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentDetectorPlainExceptional.source_batch_plain_retained_slots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.LowPenaltyAbsorption",
+    "source": "research/drafts/QRH/Detector/LowPenaltyAbsorption.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_penalty_le_length",
+      "low_penalty_gram_absorption"
+    ]
+  }
+]

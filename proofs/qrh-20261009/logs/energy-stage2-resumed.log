@@ -1,0 +1,33 @@
+REUSE CHECKED QRH.Hecke.DetectorRowCountCrossing
+REUSE CHECKED QRH.Moments.ReflectionRetainedLength
+REUSE CHECKED QRH.Energy.FirstSourceParameters
+REUSE CHECKED QRH.Energy.LiveClippingDefect
+REUSE CHECKED QRH.Energy.DeletedRobustGeometry
+REUSE CHECKED QRH.Energy.ReferenceRobustDeletedEnergy
+REUSE CHECKED QRH.Energy.OriginalHighReflectionOriginal
+REUSE CHECKED QRH.Energy.ReferenceRobustOriginal
+REUSE CHECKED QRH.Energy.OriginalHighReflectionBounded
+REUSE CHECKED QRH.Energy.OriginalHighReflectionPower
+REUSE CHECKED QRH.Energy.ReferenceRobustBounded
+REUSE CHECKED QRH.Energy.ReferenceRobustPower
+REUSE CHECKED QRH.Energy.OriginalHighReflectionSymmetric
+REUSE CHECKED QRH.Energy.ReferenceLiveBounded
+REUSE CHECKED QRH.Energy.ReferenceLivePower
+REUSE CHECKED QRH.Energy.OriginalHighReflectionSymmetricBounded
+REUSE CHECKED QRH.Energy.PositiveHighSource
+REUSE CHECKED QRH.Energy.PositiveHighAssembly
+REUSE CHECKED QRH.Energy.PositiveHighParameters
+REUSE CHECKED QRH.Energy.PositiveHighSourceBounded
+REUSE CHECKED QRH.Energy.PositiveBalancedAdmission
+REUSE CHECKED QRH.Energy.PositiveHighAssemblyBounded
+CHECKED QRH.Energy.ZeroGrowthPhysical
+CHECKED QRH.Energy.NaturalLowPhysical
+CHECKED QRH.Energy.PositiveHighBound
+CHECKED QRH.Energy.PositiveHighSourceBound
+CHECKED QRH.Energy.NaturalLowStage
+CHECKED QRH.Energy.NaturalZeroStage
+CHECKED QRH.Energy.PositiveHighPhysical
+CHECKED QRH.Energy.CappedLowStage
+CHECKED QRH.Energy.NaturalHighStage
+CHECKED QRH.Energy.CappedAnalyticSuccessor
+All requested increments checked; this does not complete the analytic theorem.

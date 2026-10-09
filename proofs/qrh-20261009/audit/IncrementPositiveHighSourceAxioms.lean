@@ -1,0 +1,3 @@
+import QRH.Energy.PositiveHighSource
+#print axioms OAI.SevenEighths.CenteredMomentEnergyPositiveHighSource.balanced_volume_bound_extended
+#print axioms OAI.SevenEighths.CenteredMomentEnergyPositiveHighSource.actual_positive_source_entry_extended

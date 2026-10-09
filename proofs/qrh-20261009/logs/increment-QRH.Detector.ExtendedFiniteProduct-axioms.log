@@ -1,0 +1,36 @@
+'OAI.SevenEighths.QRHFiniteProduct.correction_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.correction_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.correction_inverse_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.marked_differentiableAt_w' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.marked_differentiableAt_z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.local_analytic_w' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.local_analytic_z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.marked_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.local_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.selected_analytic_w' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.selected_analytic_z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.slot_analytic_w' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.slot_analytic_z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.selected_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.slot_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.global_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.combined_slot_analytic_w' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.combined_slot_analytic_z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.combined_slot_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_w_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_z_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_multiplier_differentiable_w' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_multiplier_differentiable_z' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_w_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.source_residue_z_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.slot_norm_bound_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.combined_slot_bound_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.fixed_source_boundaries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.fixed_source_ordered_boundaries' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHFiniteProduct.uniform_closed_box_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,6 @@
+'OAI.SevenEighths.QRHPhysicalTails.absolutePhysicalDyadIntegral_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.large_physical_dyads_summable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

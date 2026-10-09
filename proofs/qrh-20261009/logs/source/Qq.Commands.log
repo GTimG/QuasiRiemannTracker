@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-o", "/work/qrh-proof/build/source/Qq/Commands.olean", "Qq/Commands.lean"], "cwd": "/work/qrh-proof/formalization/.lake/packages/Qq", "source_sha256": "50fda99ce73ec5cce8b9b7f3d914d8c11012788d071f75123a306f4fa906ca07", "key": "9343dc283b3c32449bb31d64b8d7acc20d3cd1c4fbf1b6b9d5c43a47e69d5047"}

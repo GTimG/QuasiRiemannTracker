@@ -1,0 +1,2 @@
+import QRH.PrimeRows.OptimizedLargeDyad
+#print axioms OAI.SevenEighths.QRHPhysicalTails.large_physical_dyad_bound

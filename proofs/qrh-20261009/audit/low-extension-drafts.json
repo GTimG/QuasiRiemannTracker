@@ -1,0 +1,173 @@
+[
+  {
+    "module": "QRH.Reflection.LowCaps",
+    "source": "research/drafts/QRH/Reflection/LowCaps.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_actual_scale_caps_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowExponent",
+    "source": "research/drafts/QRH/Reflection/LowExponent.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_surviving_low_exponent_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowBranchSum",
+    "source": "research/drafts/QRH/Reflection/LowBranchSum.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_surviving_low_energy_sum_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowSector",
+    "source": "research/drafts/QRH/Reflection/LowSector.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_sector_literal_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowRetained",
+    "source": "research/drafts/QRH/Reflection/LowRetained.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_sector_retained_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowRetainedBudget",
+    "source": "research/drafts/QRH/Reflection/LowRetainedBudget.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_sector_retained_budget_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowFull",
+    "source": "research/drafts/QRH/Reflection/LowFull.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_sector_full_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowFullBudget",
+    "source": "research/drafts/QRH/Reflection/LowFullBudget.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_sector_full_budget_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowGlobalBudget",
+    "source": "research/drafts/QRH/Reflection/LowGlobalBudget.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_global_full_budget_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowMemberBudget",
+    "source": "research/drafts/QRH/Reflection/LowMemberBudget.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_member_tuple_full_budget_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowMemberGeometry",
+    "source": "research/drafts/QRH/Reflection/LowMemberGeometry.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "original_low_member_geometry_uniform_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowFixedMember",
+    "source": "research/drafts/QRH/Reflection/LowFixedMember.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_fixed_member_geometry_uniform_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowDyads",
+    "source": "research/drafts/QRH/Reflection/LowDyads.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_dyadic_geometry_uniform_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowChoiceEnergy",
+    "source": "research/drafts/QRH/Reflection/LowChoiceEnergy.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_original_choice_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowInactiveEnergy",
+    "source": "research/drafts/QRH/Reflection/LowInactiveEnergy.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_original_inactive_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowFrozenEnergy",
+    "source": "research/drafts/QRH/Reflection/LowFrozenEnergy.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_original_frozen_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowCompletedFiber",
+    "source": "research/drafts/QRH/Reflection/LowCompletedFiber.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_completed_fiber_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowCompletedRows",
+    "source": "research/drafts/QRH/Reflection/LowCompletedRows.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_completed_rows_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean"
+  },
+  {
+    "module": "QRH.Reflection.LowOriginalEnergy",
+    "source": "research/drafts/QRH/Reflection/LowOriginalEnergy.lean",
+    "namespace": "SevenEighths.InverseReflectedPhase",
+    "theorems": [
+      "low_original_completed_energy_optimized"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean"
+  }
+]

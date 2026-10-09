@@ -1,0 +1,11 @@
+import QRH.Detector.ExtendedFiniteProductX
+#print axioms OAI.SevenEighths.QRHFiniteProductX.marked_differentiableAt_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.local_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.selected_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.slot_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.window_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.combined_selected_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.combined_slot_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.continued_source_analytic_x
+#print axioms OAI.SevenEighths.QRHFiniteProductX.source_analytic_x_off_one
+#print axioms OAI.SevenEighths.QRHFiniteProductX.continued_source_differentiable_strip

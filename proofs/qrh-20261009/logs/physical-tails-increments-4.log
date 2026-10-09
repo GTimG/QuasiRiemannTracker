@@ -1,0 +1,11 @@
+REUSE CHECKED QRH.PrimeRows.OptimizedTailScales
+CHECKED QRH.PrimeRows.OptimizedSmallTail
+CHECKED QRH.PrimeRows.OptimizedPhysicalSmallTail
+CHECKED QRH.PrimeRows.OptimizedLargeDyad
+CHECKED QRH.PrimeRows.OptimizedGeometricTail
+CHECKED QRH.PrimeRows.OptimizedLargeTail
+CHECKED QRH.PrimeRows.OptimizedLargeSaving
+CHECKED QRH.PrimeRows.OptimizedPhysicalLargeTail
+CHECKED QRH.PrimeRows.OptimizedCanonicalTails
+CHECKED QRH.PrimeRows.OptimizedCanonicalReduction
+All requested increments checked; this does not complete the analytic theorem.

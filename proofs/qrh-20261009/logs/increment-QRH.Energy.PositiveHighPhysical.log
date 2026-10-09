@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/PositiveHighPhysical.olean", "/work/qrh-proof/research/drafts/QRH/Energy/PositiveHighPhysical.lean"], "source_sha256": "35850fb1877a759afbb7800cf030c9fe15f74d22a7a85fb2dfa1a9d93b4c581a"}

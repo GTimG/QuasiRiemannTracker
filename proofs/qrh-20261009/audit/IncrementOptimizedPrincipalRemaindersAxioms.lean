@@ -1,0 +1,26 @@
+import QRH.Detector.OptimizedPrincipalRemainders
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.active_prime_sum_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.slotConstant
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.slotConstant_nonneg
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.window_sharp_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.scalePower
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.scalePower_nonneg
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.continued_source_sharp_pointwise
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.full_sharp_pointwise
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.residue_sharp_pointwise
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.vertical_triple_eq_joint
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.vertical_pair_eq_joint
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.normalizer_norm_pos
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.full_scale_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.residue_scale_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.full_vertical_scale_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.residue_vertical_scale_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.ordered_remainders_scale_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_scale_identity
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_w_scale_identity
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_z_scale_identity
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.eventual_annulus_threshold
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_remainders_power_bound
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_w_strict_exponent
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_z_strict_exponent
+#print axioms OAI.SevenEighths.QRHPrincipalRemainders.source_remainders_strict_saving

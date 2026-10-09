@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyFirstSourceParameters.parameter_gates_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyFirstSourceParameters.eventually_actual_four_fit_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

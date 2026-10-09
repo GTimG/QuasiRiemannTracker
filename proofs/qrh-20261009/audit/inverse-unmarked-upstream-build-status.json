@@ -1,0 +1,13 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField"
+  ],
+  "closure": 6447,
+  "checked": 6447,
+  "failed": [],
+  "blocked": [],
+  "seconds": 411.60224437713623,
+  "jobs": 6,
+  "success": true
+}

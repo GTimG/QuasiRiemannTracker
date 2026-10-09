@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Hecke.DynamicCountOptimization",
+    "source": "research/drafts/QRH/Hecke/DynamicCountOptimization.lean",
+    "namespace": "SevenEighths.QRHDetectorRowCount",
+    "theorems": [
+      "count_bound_of_source_branches"
+    ]
+  }
+]

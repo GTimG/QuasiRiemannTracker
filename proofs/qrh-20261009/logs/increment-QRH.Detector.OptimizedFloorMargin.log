@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/OptimizedFloorMargin.olean", "/work/qrh-proof/research/drafts/QRH/Detector/OptimizedFloorMargin.lean"], "source_sha256": "30a63c34dea0461360d51b1f864c4f1c8df6d6aac2458b6f0023e60ab5f3442e"}

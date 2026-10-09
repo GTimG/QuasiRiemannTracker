@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Reflection/LowBranchSum.olean", "/work/qrh-proof/research/drafts/QRH/Reflection/LowBranchSum.lean"], "source_sha256": "9a93423020bd4fab7deceadc4a12ea24d6db83ad6012af34548935acdcb809cf"}

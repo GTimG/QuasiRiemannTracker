@@ -1,0 +1,104 @@
+{
+  "inspected_on": "2026-10-09",
+  "scope": "Candidate selection; not a verification receipt or public registry input",
+  "repositories": [
+    {
+      "id": "argonaut",
+      "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+      "source_commit_at": "2026-10-08T11:35:58Z",
+      "source_commit_url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary/commit/5971383edcb0b1cf863927eed3b359d2d3ba346e",
+      "inspection": "source-only; no Lean, Lake, build hooks or repository scripts executed",
+      "files": [
+        {
+          "path": ".github/workflows/comparator.yml",
+          "sha256": "df18a93fb7fc96d2918c88c6d85a673b30a2c97cb6bbed0182d57dd6b64cbc38"
+        },
+        {
+          "path": "README.md",
+          "sha256": "b649c301aa40d5b23d471c85801a4a6a86109bed556a62dedc807e8d50057264"
+        },
+        {
+          "path": "lean/AUTHORSHIP-AND-LICENSES.md",
+          "sha256": "1d40d7d32d97d070561fe3827cf1630c4f72aaec6ed53dc918d6ca47c2ff8c0a"
+        },
+        {
+          "path": "lean/BUILD.md",
+          "sha256": "968fe7ec24279017c04b8d8c65b16ab19693591f21428971253daad04427b087"
+        },
+        {
+          "path": "lean/PINS.json",
+          "sha256": "4508e51408da4dd13cbd7ec77d4828e24db3a98c1a247fca33f3cc1fb77eb503"
+        },
+        {
+          "path": "lean/PerturbedBoundaryMain.lean",
+          "sha256": "ffdd133750ac3bf57b5de12e474e5451791d625e2fc6e7269755e91760a642b5"
+        },
+        {
+          "path": "lean/README.md",
+          "sha256": "230932a9586f6d655f9b69a61591301d9967a283c8e9837ba9d1e34ba0ab5caa"
+        },
+        {
+          "path": "lean/SOURCE-MANIFEST.json",
+          "sha256": "6f5ee4028eb5aeddf5fdc12cb736490e1b27ad109e8422610079e46022300078"
+        },
+        {
+          "path": "lean/reconstruct.py",
+          "sha256": "f561c8769eab6dd7591d39fc4a9e76f37ef637aff6e929d8c26511f707e8c5cc"
+        }
+      ]
+    },
+    {
+      "id": "liu",
+      "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+      "source_commit_at": "2026-10-08T16:43:30Z",
+      "source_commit_url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis/commit/7d10420de90efa2f082a06a342fc7accbd57ab37",
+      "inspection": "source-only; no Lean, Lake, build hooks or repository scripts executed",
+      "files": [
+        {
+          "path": "ActualDirichletTransfer.lean",
+          "sha256": "95a0a0fa05afd2c456b4506eb5bdb6da77aff665be4b1eff9d5afeed1ea8a6bb"
+        },
+        {
+          "path": "CombinedPaperVerification.lean",
+          "sha256": "8dd8af17775597dd3adca267db58c90a1435b73a48b0cabdf177b15d67f18270"
+        },
+        {
+          "path": "README.md",
+          "sha256": "91f5a61c74b1660b9ceb9b80df777c7ae6231775f7c2958a0bfbf8f3c16cac00"
+        },
+        {
+          "path": "RHZeroFreeExtension.lean",
+          "sha256": "795837354fe9d226ece889e8945d8fe2ee7ff57c8e55274a71fe641787416aa0"
+        },
+        {
+          "path": "V2FullVerification.lean",
+          "sha256": "bb7edb2c1c4eea11dd8859c083d168450bf740d7c400e13265b8335e1a6bce71"
+        },
+        {
+          "path": "geometry/V2AnalyticGeometry.lean",
+          "sha256": "4f3f0ae8ebce7cc7df4f480c099aff42af311225a1cb14e7be2d56868a64d1bb"
+        },
+        {
+          "path": "geometry/V2Optimization.lean",
+          "sha256": "656affd9c85e7d3de731ee298a81bb14194d9624e448de041d81096680330cca"
+        },
+        {
+          "path": "lakefile.lean",
+          "sha256": "0a4b866829507ef8f0f642061aeea0b6478587dd7387c1635b78ce6830d290d8"
+        },
+        {
+          "path": "lean-toolchain",
+          "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+        },
+        {
+          "path": "upstream/closure_manifest.json",
+          "sha256": "b34b902e4d8141ac6bee3a10761439246bc7262ffb342aa83f79e02f295f043f"
+        },
+        {
+          "path": "verify.py",
+          "sha256": "1209810e61d037e5628864b7cdd8bdbd182a1bd321ad21f8a47e63572adb329a"
+        }
+      ]
+    }
+  ]
+}

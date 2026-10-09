@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "verification_policy": "comparator-and-nanoda-v1",
+  "records": [],
+  "events": [],
+  "active_ids": [],
+  "baseline_status": "infrastructure-blocked"
+}

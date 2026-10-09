@@ -1,0 +1,13 @@
+{
+  "roots": [
+    "QRH.Energy.UniformMoment",
+    "QRH.Detector.OptimizedProbe"
+  ],
+  "closure": 6379,
+  "checked": 6379,
+  "failed": [],
+  "blocked": [],
+  "seconds": 102.47638607025146,
+  "jobs": 6,
+  "success": true
+}

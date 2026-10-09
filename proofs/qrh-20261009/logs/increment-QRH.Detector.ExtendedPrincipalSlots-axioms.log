@@ -1,0 +1,63 @@
+'OAI.SevenEighths.QRHPrincipalSlot.principal_correction_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_correction_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_correction_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_correction_inverse_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_marked_error_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_replacement_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_slot_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.actual_principal_slot_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.weighted_principal_slot_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.weighted_principal_product_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_geometric_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_correction_eq_raw' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_raw_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_raw_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_slot_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.principal_raw_slot_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.weighted_principal_product_error_linear' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_correction_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_correction_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_correction_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_correction_inverse_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_geometric_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_marked_error_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_replacement_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_slot_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_correction_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_raw_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_raw_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_slot_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_raw_slot_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.region_slot_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.weighted_region_slot_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSlot.actual_region_slot_error' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,17 @@
+import QRH.Hecke.DynamicCrossing
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.denominator_lower
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.crossing_bounds
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.crossing_average
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.inverse_at_crossing
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.plain_at_crossing
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.selected_short_bound
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.strict_inverse_capacity
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.plain_capacity_bound
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.prime_supply_margin
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.short_ge_base
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.inverse_capacity_exponent
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.capacity_loss
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.plain_capacity_comparison
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.inverse_zero_capacity
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.plain_zero_capacity
+#print axioms OAI.SevenEighths.QRHDetectorRowCount.long_count_bound

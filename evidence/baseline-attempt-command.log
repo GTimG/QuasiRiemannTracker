@@ -1,0 +1,5 @@
+
+> qrh-bounds@0.1.0 verify
+> node verifier/cli.mjs submissions/openai-baseline
+
+infrastructure-blocked: Linux isolation required; host is darwin. No proof checking was performed.

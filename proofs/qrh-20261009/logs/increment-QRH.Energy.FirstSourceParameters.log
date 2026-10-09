@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/FirstSourceParameters.olean", "/work/qrh-proof/research/drafts/QRH/Energy/FirstSourceParameters.lean"], "source_sha256": "ecba8f5aa07adb32f8546c7a1b68b8bbfb676e83a34c07d9473745e776ab769f"}

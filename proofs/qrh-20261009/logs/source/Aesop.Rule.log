@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-o", "/work/qrh-proof/build/source/Aesop/Rule.olean", "Aesop/Rule.lean"], "cwd": "/work/qrh-proof/formalization/.lake/packages/aesop", "source_sha256": "1f19949060bcb5757dd9637101643b36d4f8f4c567d181f47e0766bfa0290f23", "key": "d3ab8396c2fb027e6b0deabe8358a8705effaf09357232ef48b960e36dce0dfa"}

@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.UniformDetectorMoment",
+    "source": "research/drafts/QRH/Detector/UniformDetectorMoment.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_source_batch_plain_marked_slots"
+    ],
+    "upstream": "original QRH proof from actual dynamic-capacity row-sum theorem"
+  }
+]

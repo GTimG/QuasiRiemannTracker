@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/UniformMesh.olean", "/work/qrh-proof/research/drafts/QRH/Energy/UniformMesh.lean"], "source_sha256": "1d27142b6825a902d561cd644c753cb839b90b32caa1df02ecc1e29e7b55c7d8"}

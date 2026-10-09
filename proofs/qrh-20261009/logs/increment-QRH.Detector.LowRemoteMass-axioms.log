@@ -1,0 +1,6 @@
+'OAI.SevenEighths.ProbePhysical.canonicalTuple_count_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.compensation_scale_mass_bound_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

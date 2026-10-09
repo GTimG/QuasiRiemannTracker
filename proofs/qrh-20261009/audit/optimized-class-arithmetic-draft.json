@@ -1,0 +1,20 @@
+[
+  {
+    "module": "QRH.PrimeRows.OptimizedSlotExponent",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedSlotExponent.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "source_slot_length_sum",
+      "source_slot_weightedMean",
+      "source_slot_product"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedClassArithmetic",
+    "source": "research/drafts/QRH/Detector/OptimizedClassArithmetic.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_class_cube_arithmetic"
+    ]
+  }
+]

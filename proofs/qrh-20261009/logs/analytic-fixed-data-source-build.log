@@ -1,0 +1,2 @@
+Source closure: 7158 modules; workers=6
+{"roots": ["QRH.Analytic"], "closure": 7158, "checked": 7158, "failed": [], "seconds": 11.819308996200562, "jobs": 6, "success": true}

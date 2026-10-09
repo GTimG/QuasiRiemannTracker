@@ -1,0 +1,15 @@
+{
+  "roots": [
+    "QRH.Detector.LowNormalized",
+    "QRH.Detector.UniformDetectorMoment",
+    "QRH.Detector.OptimizedProbe",
+    "QRH.Detector.OptimizedSlots"
+  ],
+  "closure": 6533,
+  "checked": 6533,
+  "failed": [],
+  "blocked": [],
+  "seconds": 134.55533075332642,
+  "jobs": 6,
+  "success": true
+}

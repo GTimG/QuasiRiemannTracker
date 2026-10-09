@@ -1,0 +1,2 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-o", "/work/qrh-proof/build/source/QRH.olean", "QRH.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "fa4ed1d3aa4900c1044554631812efebb77f057178387c18254bb2295692ff27", "key": "7dba83f25d5af835502ccd72dbe19ae1de695a8134cd1b62cbb3b20b29ca4e4f"}
+QRH.lean:2:0: error: invalid 'import' command, it must be used in the beginning of the file

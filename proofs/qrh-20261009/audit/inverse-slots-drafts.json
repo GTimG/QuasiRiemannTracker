@@ -1,0 +1,26 @@
+[
+  {
+    "module": "QRH.Detector.DetectorMomentPrimeGeometry",
+    "source": "research/drafts/QRH/Detector/DetectorMomentPrimeGeometry.lean",
+    "namespace": "SevenEighths.ProbeHighRowFamily",
+    "theorems": [
+      "sourceMoment_fiber_prime_geometry_eventually_slots"
+    ]
+  },
+  {
+    "module": "QRH.Detector.DetectorInverseMarkedField",
+    "source": "research/drafts/QRH/Detector/DetectorInverseMarkedField.lean",
+    "namespace": "SevenEighths.ProbeDetectorInverseMarkedField",
+    "theorems": [
+      "source_batch_inverse_marked_slots"
+    ]
+  },
+  {
+    "module": "QRH.Detector.DetectorInverseFields",
+    "source": "research/drafts/QRH/Detector/DetectorInverseFields.lean",
+    "namespace": "SevenEighths.ProbeDetectorInverseFields",
+    "theorems": [
+      "source_batch_inverse_fields_slots"
+    ]
+  }
+]

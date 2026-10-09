@@ -1,0 +1,9 @@
+'OAI.SevenEighths.QRHHeckeSignalShift.quotient_holomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHHeckeSignalShift.quotient_polynomial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHHeckeSignalShift.contour_shift_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHHeckeSignalShift.signal_bound_at_infinity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHHeckeSignalShift.signal_isBigO_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]

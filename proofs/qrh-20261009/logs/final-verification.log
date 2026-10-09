@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "exact_three_targets_proved": true,
+  "threshold": "874957019421/1000000000000",
+  "declarations": {
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "independent_literal_specifications": "formalization/QRH/IndependentTargets.lean",
+  "specification_hash_manifest_sha256": "f21940b705c10ad30b4029c763e8e65ce0f9a5e04ff0355c3c369953fcd68b15",
+  "parity_and_axiom_gate": "audit/FinalTargetsRequired.lean",
+  "gate_exit_code": 0,
+  "source_build": {
+    "roots": [
+      "QRH",
+      "QRH.Analytic"
+    ],
+    "closure": 7227,
+    "checked": 7227,
+    "failed": [],
+    "blocked": [],
+    "seconds": 13.573592901229858,
+    "jobs": 6,
+    "success": true
+  },
+  "source_graph_sha256": "68e43049bdc0b3dae2e97fd54db26989712e83c35b588e6734d145d46c41386f",
+  "source_and_dependency_keys_rechecked": 7227,
+  "per_module_compiler_logs_matched": 7227,
+  "provenance_rechecked": true,
+  "source": "formalization/QRH/Nonvanishing.lean",
+  "source_sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+  "scope_note": "Proves the three requested nonvanishing targets by the shortest analytic route. Does not separately state every manuscript lemma or optional optimality result."
+}

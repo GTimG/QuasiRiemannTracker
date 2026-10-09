@@ -1,0 +1,6 @@
+import QRH.Detector.ExtendedHeckeSignalShift
+#print axioms OAI.SevenEighths.QRHHeckeSignalShift.quotient_holomorphic
+#print axioms OAI.SevenEighths.QRHHeckeSignalShift.quotient_polynomial_bound
+#print axioms OAI.SevenEighths.QRHHeckeSignalShift.contour_shift_left
+#print axioms OAI.SevenEighths.QRHHeckeSignalShift.signal_bound_at_infinity
+#print axioms OAI.SevenEighths.QRHHeckeSignalShift.signal_isBigO_atTop

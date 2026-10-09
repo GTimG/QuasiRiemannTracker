@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.ActualOptimizedHigh",
+    "source": "research/drafts/QRH/Detector/ActualOptimizedHigh.lean",
+    "namespace": "SevenEighths.QRHFinalAssembly",
+    "theorems": [
+      "optimizedNormalizedProbe",
+      "exists_actual_optimized_high"
+    ]
+  }
+]

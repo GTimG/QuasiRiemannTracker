@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/OptimizedLargeDyad.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/OptimizedLargeDyad.lean"], "source_sha256": "8fbdd26eaf4b3d88d191454178ea67f242e743f26653ced590c82c000060488b"}

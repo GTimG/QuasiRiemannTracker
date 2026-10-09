@@ -1,0 +1,1 @@
+'OAI.SevenEighths.QRHRayPoolThresholds.power_pool_thresholds' depends on axioms: [propext, Classical.choice, Quot.sound]

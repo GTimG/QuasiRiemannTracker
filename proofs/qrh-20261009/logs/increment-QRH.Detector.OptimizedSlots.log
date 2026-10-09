@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/OptimizedSlots.olean", "/work/qrh-proof/research/drafts/QRH/Detector/OptimizedSlots.lean"], "source_sha256": "1f09ea5010b91761e7a526f6936e9bb3ba11267bfce6462008efd6517a55c281"}

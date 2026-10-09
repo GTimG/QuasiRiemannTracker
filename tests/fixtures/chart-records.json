@@ -1,0 +1,178 @@
+{
+  "records": [
+    {
+      "id": "fixture-01",
+      "title": "Fixture baseline",
+      "theta": {
+        "numerator": "7",
+        "denominator": "8"
+      },
+      "authors": [
+        {
+          "name": "Fixture author A"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": [],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-02T08:00:00.000Z",
+      "first_verified_at": "2026-10-02T12:00:00.000Z",
+      "merged_at": "2026-10-02T13:00:00.000Z",
+      "published_at": "2026-10-02T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    },
+    {
+      "id": "fixture-02",
+      "title": "A first illustrative improvement",
+      "theta": {
+        "numerator": "6999999",
+        "denominator": "8000000"
+      },
+      "authors": [
+        {
+          "name": "Fixture author B"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": ["fixture-01"],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-03T08:00:00.000Z",
+      "first_verified_at": "2026-10-03T12:00:00.000Z",
+      "merged_at": "2026-10-03T13:00:00.000Z",
+      "published_at": "2026-10-03T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    },
+    {
+      "id": "fixture-03",
+      "title": "A sharper illustrative bound",
+      "theta": {
+        "numerator": "3499999",
+        "denominator": "4000000"
+      },
+      "authors": [
+        {
+          "name": "Fixture author C"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": ["fixture-02"],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-04T08:00:00.000Z",
+      "first_verified_at": "2026-10-04T12:00:00.000Z",
+      "merged_at": "2026-10-04T13:00:00.000Z",
+      "published_at": "2026-10-04T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    },
+    {
+      "id": "fixture-04",
+      "title": "An alternative proof example",
+      "theta": {
+        "numerator": "3499999",
+        "denominator": "4000000"
+      },
+      "authors": [
+        {
+          "name": "Fixture author A"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": ["fixture-03"],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-05T08:00:00.000Z",
+      "first_verified_at": "2026-10-05T12:00:00.000Z",
+      "merged_at": "2026-10-05T13:00:00.000Z",
+      "published_at": "2026-10-05T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    },
+    {
+      "id": "fixture-05",
+      "title": "A sub-float improvement",
+      "theta": {
+        "numerator": "87499974999999999999",
+        "denominator": "100000000000000000000"
+      },
+      "authors": [
+        {
+          "name": "Fixture author B"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": ["fixture-04"],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-06T08:00:00.000Z",
+      "first_verified_at": "2026-10-06T12:00:00.000Z",
+      "merged_at": "2026-10-06T13:00:00.000Z",
+      "published_at": "2026-10-06T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    },
+    {
+      "id": "fixture-06",
+      "title": "Another sub-float improvement",
+      "theta": {
+        "numerator": "43749987499999999999",
+        "denominator": "50000000000000000000"
+      },
+      "authors": [
+        {
+          "name": "Fixture author C"
+        }
+      ],
+      "method": "Synthetic interaction fixture for testing exact ranking and proof relationships. It is not a mathematical result.",
+      "references": [],
+      "license": "Apache-2.0",
+      "builds_on": ["fixture-05"],
+      "entrypoint": {
+        "module": "Candidate.Main",
+        "declaration": "Candidate.bound"
+      },
+      "submitted_at": "2026-10-07T08:00:00.000Z",
+      "first_verified_at": "2026-10-07T12:00:00.000Z",
+      "merged_at": "2026-10-07T13:00:00.000Z",
+      "published_at": "2026-10-07T14:00:00.000Z",
+      "source_commit": "",
+      "repository": "",
+      "pr": null,
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "module": "QRH.PrimeRows.DynamicSourceCount",
+    "source": "research/drafts/QRH/PrimeRows/DynamicSourceCount.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "balanced_source_count_from_raw_moments",
+      "high_source_count_from_raw_moments",
+      "adaptiveRowExponent",
+      "adaptive_source_count_from_raw_moments"
+    ]
+  }
+]

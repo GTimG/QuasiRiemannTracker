@@ -1,0 +1,8 @@
+CHECKED QRH.Detector.OptimizedFloorMargin
+CHECKED QRH.PrimeRows.OptimizedCubeFloorArithmetic
+CHECKED QRH.PrimeRows.OptimizedCubeFloorGlobal
+CHECKED QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral
+CHECKED QRH.PrimeRows.OptimizedCubeFloorNormalized
+CHECKED QRH.PrimeRows.OptimizedCubeFloorSaving
+CHECKED QRH.PrimeRows.OptimizedCubeFloorCollected
+All requested increments checked; this does not complete the analytic theorem.

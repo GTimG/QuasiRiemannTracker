@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/LowNominalGeometry.olean", "/work/qrh-proof/research/drafts/QRH/Detector/LowNominalGeometry.lean"], "source_sha256": "001cc132bd20820b669bd3ed335a1e8e75aede0aa10766f41da5d737caa2f26e"}

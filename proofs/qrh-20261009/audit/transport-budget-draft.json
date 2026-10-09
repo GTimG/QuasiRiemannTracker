@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedTransportBudget",
+    "source": "research/drafts/QRH/Detector/OptimizedTransportBudget.lean",
+    "namespace": "SevenEighths.QRHParameters",
+    "theorems": [
+      "optimized_transport_budgets"
+    ]
+  }
+]

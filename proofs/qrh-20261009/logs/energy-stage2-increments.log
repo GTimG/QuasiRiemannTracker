@@ -1,0 +1,52 @@
+WAIT QRH.Hecke.DetectorRowCountCrossing : OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing
+WAIT QRH.Hecke.DetectorRowCountCrossing : OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing
+CHECKED QRH.Hecke.DetectorRowCountCrossing
+CHECKED QRH.Moments.ReflectionRetainedLength
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters, QRH.Energy.ReferenceDivisors
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters
+WAIT QRH.Energy.FirstSourceParameters : OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters
+CHECKED QRH.Energy.FirstSourceParameters
+CHECKED QRH.Energy.LiveClippingDefect
+CHECKED QRH.Energy.DeletedRobustGeometry
+CHECKED QRH.Energy.ReferenceRobustDeletedEnergy
+CHECKED QRH.Energy.OriginalHighReflectionOriginal
+CHECKED QRH.Energy.ReferenceRobustOriginal
+CHECKED QRH.Energy.OriginalHighReflectionBounded
+CHECKED QRH.Energy.OriginalHighReflectionPower
+CHECKED QRH.Energy.ReferenceRobustBounded
+CHECKED QRH.Energy.ReferenceRobustPower
+CHECKED QRH.Energy.OriginalHighReflectionSymmetric
+CHECKED QRH.Energy.ReferenceLiveBounded
+CHECKED QRH.Energy.ReferenceLivePower
+CHECKED QRH.Energy.OriginalHighReflectionSymmetricBounded
+CHECKED QRH.Energy.PositiveHighSource
+CHECKED QRH.Energy.PositiveHighAssembly
+CHECKED QRH.Energy.PositiveHighParameters
+CHECKED QRH.Energy.PositiveHighSourceBounded
+CHECKED QRH.Energy.PositiveBalancedAdmission
+CHECKED QRH.Energy.PositiveHighAssemblyBounded
+FAIL QRH.Energy.ZeroGrowthPhysical; /work/qrh-proof/logs/increment-QRH.Energy.ZeroGrowthPhysical.log

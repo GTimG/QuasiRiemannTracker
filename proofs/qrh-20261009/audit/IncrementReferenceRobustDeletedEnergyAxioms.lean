@@ -1,0 +1,2 @@
+import QRH.Energy.ReferenceRobustDeletedEnergy
+#print axioms OAI.SevenEighths.CenteredMomentEnergyReferenceRobustDeletedEnergy.deleted_energy_from_low_robust_extended

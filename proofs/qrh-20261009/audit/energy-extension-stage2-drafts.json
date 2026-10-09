@@ -1,0 +1,302 @@
+[
+  {
+    "module": "QRH.Hecke.DetectorRowCountCrossing",
+    "source": "research/drafts/QRH/Hecke/DetectorRowCountCrossing.lean",
+    "theorems": [
+      "plain_capacity_bound_extended"
+    ],
+    "namespace": "SevenEighths.HeckeDetectorRowCount",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Hecke/DetectorRowCountCrossing.lean"
+  },
+  {
+    "module": "QRH.Moments.ReflectionRetainedLength",
+    "source": "research/drafts/QRH/Moments/ReflectionRetainedLength.lean",
+    "theorems": [
+      "positive_slot_width_drop_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentReflectionRetainedLength",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/ReflectionRetainedLength.lean"
+  },
+  {
+    "module": "QRH.Energy.FirstSourceParameters",
+    "source": "research/drafts/QRH/Energy/FirstSourceParameters.lean",
+    "theorems": [
+      "parameter_gates_extended",
+      "eventually_actual_four_fit_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyFirstSourceParameters",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean"
+  },
+  {
+    "module": "QRH.Energy.LiveClippingDefect",
+    "source": "research/drafts/QRH/Energy/LiveClippingDefect.lean",
+    "theorems": [
+      "robust_slot_budgets_extended",
+      "robust_defect_le_width_extended",
+      "robust_balanced_long_nonneg_extended",
+      "robust_reflected_low_extended",
+      "robust_reflected_low_admissible_extended",
+      "robust_deleted_cases_extended",
+      "robust_fixed_slack_extended",
+      "robust_deleted_reference_cases_extended",
+      "robust_deleted_reference_window_extended",
+      "live_profiles_reference_window_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyLiveClippingDefect",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean"
+  },
+  {
+    "module": "QRH.Energy.DeletedRobustGeometry",
+    "source": "research/drafts/QRH/Energy/DeletedRobustGeometry.lean",
+    "theorems": [
+      "actual_deleted_gates_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyDeletedRobustGeometry",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/DeletedRobustGeometry.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceRobustDeletedEnergy",
+    "source": "research/drafts/QRH/Energy/ReferenceRobustDeletedEnergy.lean",
+    "theorems": [
+      "deleted_energy_from_low_robust_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceRobustDeletedEnergy",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustDeletedEnergy.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionOriginal",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionOriginal.lean",
+    "theorems": [
+      "original_high_from_low_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionOriginal",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionOriginal.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceRobustOriginal",
+    "source": "research/drafts/QRH/Energy/ReferenceRobustOriginal.lean",
+    "theorems": [
+      "original_reference_from_low_robust_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceRobustOriginal",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustOriginal.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionBounded",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionBounded.lean",
+    "theorems": [
+      "original_high_power_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionPower",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionPower.lean",
+    "theorems": [
+      "original_high_power_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionPower",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionPower.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceRobustBounded",
+    "source": "research/drafts/QRH/Energy/ReferenceRobustBounded.lean",
+    "theorems": [
+      "original_reference_power_robust_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceRobustBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceRobustPower",
+    "source": "research/drafts/QRH/Energy/ReferenceRobustPower.lean",
+    "theorems": [
+      "original_reference_power_robust_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceRobustPower",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustPower.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionSymmetric",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionSymmetric.lean",
+    "theorems": [
+      "original_unbalanced_from_low_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionSymmetric",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionSymmetric.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceLiveBounded",
+    "source": "research/drafts/QRH/Energy/ReferenceLiveBounded.lean",
+    "theorems": [
+      "original_reference_power_live_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceLiveBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLiveBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceLivePower",
+    "source": "research/drafts/QRH/Energy/ReferenceLivePower.lean",
+    "theorems": [
+      "original_reference_power_live_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceLivePower",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLivePower.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionSymmetricBounded.lean",
+    "theorems": [
+      "original_unbalanced_from_low_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionSymmetricBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionSymmetricBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighSource",
+    "source": "research/drafts/QRH/Energy/PositiveHighSource.lean",
+    "theorems": [
+      "balanced_volume_bound_extended",
+      "actual_positive_source_entry_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighSource",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSource.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighAssembly",
+    "source": "research/drafts/QRH/Energy/PositiveHighAssembly.lean",
+    "theorems": [
+      "actual_high_source_split_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighAssembly",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighAssembly.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighParameters",
+    "source": "research/drafts/QRH/Energy/PositiveHighParameters.lean",
+    "theorems": [
+      "balanced_log_volume_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighParameters",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighParameters.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighSourceBounded",
+    "source": "research/drafts/QRH/Energy/PositiveHighSourceBounded.lean",
+    "theorems": [
+      "actual_positive_source_entry_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighSourceBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSourceBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveBalancedAdmission",
+    "source": "research/drafts/QRH/Energy/PositiveBalancedAdmission.lean",
+    "theorems": [
+      "four_upper_scales_extended",
+      "state_capacity_packet_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveBalancedAdmission",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveBalancedAdmission.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighAssemblyBounded",
+    "source": "research/drafts/QRH/Energy/PositiveHighAssemblyBounded.lean",
+    "theorems": [
+      "actual_high_source_split_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighAssemblyBounded",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighAssemblyBounded.lean"
+  },
+  {
+    "module": "QRH.Energy.ZeroGrowthPhysical",
+    "source": "research/drafts/QRH/Energy/ZeroGrowthPhysical.lean",
+    "theorems": [
+      "actual_growth_physical_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyZeroGrowthPhysical",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ZeroGrowthPhysical.lean"
+  },
+  {
+    "module": "QRH.Energy.NaturalLowPhysical",
+    "source": "research/drafts/QRH/Energy/NaturalLowPhysical.lean",
+    "theorems": [
+      "actual_natural_low_physical_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyNaturalLowPhysical",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowPhysical.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighBound",
+    "source": "research/drafts/QRH/Energy/PositiveHighBound.lean",
+    "theorems": [
+      "actual_high_from_physical_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighBound",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighBound.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighSourceBound",
+    "source": "research/drafts/QRH/Energy/PositiveHighSourceBound.lean",
+    "theorems": [
+      "actual_high_stage_from_physical_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighSourceBound",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSourceBound.lean"
+  },
+  {
+    "module": "QRH.Energy.NaturalLowStage",
+    "source": "research/drafts/QRH/Energy/NaturalLowStage.lean",
+    "theorems": [
+      "actual_low_from_bands_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyNaturalLowStage",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowStage.lean"
+  },
+  {
+    "module": "QRH.Energy.NaturalZeroStage",
+    "source": "research/drafts/QRH/Energy/NaturalZeroStage.lean",
+    "theorems": [
+      "actual_zero_stage_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyNaturalZeroStage",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean"
+  },
+  {
+    "module": "QRH.Energy.PositiveHighPhysical",
+    "source": "research/drafts/QRH/Energy/PositiveHighPhysical.lean",
+    "theorems": [
+      "actual_positive_high_physical_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyPositiveHighPhysical",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighPhysical.lean"
+  },
+  {
+    "module": "QRH.Energy.CappedLowStage",
+    "source": "research/drafts/QRH/Energy/CappedLowStage.lean",
+    "theorems": [
+      "actual_capped_low_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyCappedLowStage",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedLowStage.lean"
+  },
+  {
+    "module": "QRH.Energy.NaturalHighStage",
+    "source": "research/drafts/QRH/Energy/NaturalHighStage.lean",
+    "theorems": [
+      "actual_high_stage_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyNaturalHighStage",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean"
+  },
+  {
+    "module": "QRH.Energy.CappedAnalyticSuccessor",
+    "source": "research/drafts/QRH/Energy/CappedAnalyticSuccessor.lean",
+    "theorems": [
+      "actual_successor_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyCappedAnalyticSuccessor",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean"
+  }
+]

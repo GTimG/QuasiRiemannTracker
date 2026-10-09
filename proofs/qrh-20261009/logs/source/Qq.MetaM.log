@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-o", "/work/qrh-proof/build/source/Qq/MetaM.olean", "Qq/MetaM.lean"], "cwd": "/work/qrh-proof/formalization/.lake/packages/Qq", "source_sha256": "fbe080a57926c6545b5532e53ad071bc9f83958d53b7a394034ea4a0219cacb2", "key": "b35d6774ebe40ae69f0e2db1cdf40d8826c06d2f53433a753015aff91d4e06c8"}

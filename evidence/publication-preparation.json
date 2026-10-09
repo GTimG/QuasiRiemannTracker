@@ -1,0 +1,28 @@
+{
+  "prepared_at_utc": "2026-10-09T12:26:53.431470+00:00",
+  "results": [
+    "openai-baseline",
+    "proofcouncil-20261009",
+    "argonaut-20261008",
+    "liu-20261008"
+  ],
+  "display_credit": "Tim Gehrunger \u00b7 ProofCouncil (maintainer/project credit; editable)",
+  "native_lean_evidence": "proofs/qrh-20261009/audit/final-verification.json",
+  "proof_snapshot_files": 8351,
+  "source_archive": "public/proofs/qrh-20261009/source-public.tar.gz",
+  "source_archive_sha256": "9f643ba4923cb41bbdc7e97702b9ccad8d024f1bfd350e4595dcfb4a73f78dab",
+  "unit_tests_passed": 19,
+  "browser_tests_passed": 10,
+  "github_pages_subpath_test": "PASS at /qrh-bounds/: four points, JSON, favicon, proof links; no browser errors",
+  "deployment_workflow": ".github/workflows/ci.yml",
+  "production_trigger": "successful checks after reviewed merge to default branch",
+  "remaining_setup": [
+    "Receive repository URL; inspect target repository",
+    "Set repository links and actual CODEOWNERS",
+    "Push reviewed project and enable GitHub Pages Actions source",
+    "Verify first remote CI/deployment"
+  ],
+  "uploaded": false,
+  "publicly_deployed": false,
+  "signed_comparator_nanoda_admission": "Not commissioned; no signed receipts created"
+}

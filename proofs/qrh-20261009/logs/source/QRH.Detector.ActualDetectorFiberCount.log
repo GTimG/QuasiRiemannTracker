@@ -1,0 +1,2 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/Detector/ActualDetectorFiberCount.olean", "QRH/Detector/ActualDetectorFiberCount.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "985af76ec39975ba8b4bff6f47cb845c14faedae87275ab5b37f4c64694877c7", "key": "15bfe3f94ca1bc7d5a6cefc29f1cd6ba88e54dc6d23a0d9407e1bf830d05a549"}
+QRH/Detector/ActualDetectorFiberCount.lean:59:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead

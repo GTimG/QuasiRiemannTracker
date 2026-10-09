@@ -1,0 +1,2 @@
+import QRH.Energy.ReferenceLowDeletedGeometry
+#print axioms OAI.SevenEighths.CenteredMomentEnergyReferenceLowDeletedGeometry.actual_deleted_gates_extended

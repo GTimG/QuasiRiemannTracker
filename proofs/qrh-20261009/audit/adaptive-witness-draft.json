@@ -1,0 +1,13 @@
+[
+  {
+    "module": "QRH.Hecke.OptimizedAdaptiveCutoff",
+    "source": "research/drafts/QRH/Hecke/OptimizedAdaptiveCutoff.lean",
+    "namespace": "SevenEighths.QRHAdaptiveCutoff",
+    "theorems": [
+      "cutoff_bounds",
+      "cutoff_eq_balanced",
+      "cutoff_eq_high",
+      "actual_adaptive_witnesses"
+    ]
+  }
+]

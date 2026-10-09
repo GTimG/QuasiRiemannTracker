@@ -1,0 +1,3 @@
+'OAI.SevenEighths.QRHUniformDetectorMoment.actual_uniform_detector_fiber_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

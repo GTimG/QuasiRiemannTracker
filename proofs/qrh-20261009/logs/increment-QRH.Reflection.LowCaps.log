@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Reflection/LowCaps.olean", "/work/qrh-proof/research/drafts/QRH/Reflection/LowCaps.lean"], "source_sha256": "db7fda3bdaefa0740cda42abd94243ec7ba8af03891fb992b7a45d568b8b5bf3"}

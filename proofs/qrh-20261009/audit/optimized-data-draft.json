@@ -1,0 +1,17 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedData",
+    "source": "research/drafts/QRH/Detector/OptimizedData.lean",
+    "namespace": "SevenEighths.QRHParameters",
+    "theorems": [
+      "optimizedLengths",
+      "optimizedLengths_sum",
+      "optimizedLengths_pos",
+      "optimizedLengths_injective",
+      "optimizedLengths_lower",
+      "exists_optimized_data",
+      "optimized_count_budget",
+      "optimized_central_budget"
+    ]
+  }
+]

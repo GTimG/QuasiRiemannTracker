@@ -1,0 +1,59 @@
+[
+  {
+    "module": "QRH.Detector.ExtendedPrincipalContours",
+    "source": "research/drafts/QRH/Detector/ExtendedPrincipalContours.lean",
+    "namespace": "SevenEighths.QRHPrincipalContours",
+    "theorems": [
+      "arithmetic_onLines_bound_of_gaps",
+      "arithmetic_onLines_bound",
+      "continued_source_joint_integrable",
+      "source_joint_integrable",
+      "source_joint_fubini",
+      "continued_source_slices",
+      "source_w_leftover_outer_integrable",
+      "source_z_boundary_any",
+      "source_ordered_at_height",
+      "source_ordered_ae",
+      "residue_arithmetic_bound",
+      "continued_residue_pair_integrable",
+      "residue_pair_integrable",
+      "source_iterated_integrable",
+      "residue_iterated_integrable",
+      "source_ordered_outer",
+      "source_uniform_joint_tails",
+      "source_uniform_high_slices",
+      "residue_uniform_moments",
+      "residue_uniform_tails",
+      "raw_source_uniform_high_slices"
+    ]
+  },
+  {
+    "module": "QRH.Detector.ExtendedPrincipalTransport",
+    "source": "research/drafts/QRH/Detector/ExtendedPrincipalTransport.lean",
+    "namespace": "SevenEighths.QRHPrincipalTransport",
+    "theorems": [
+      "principal_box_majorant",
+      "continued_x_shift",
+      "continued_source_differentiable_z",
+      "continued_principal_differentiable_z",
+      "continued_z_shift",
+      "continued_triple_x_shift",
+      "continued_triple_z_shift",
+      "source_initial_placement",
+      "source_initial_ordered_at_a",
+      "uniform_high_x_joins",
+      "uniform_high_z_joins",
+      "raw_uniform_high_x_joins",
+      "raw_uniform_high_z_joins",
+      "source_initial_joint_ordered_at_a"
+    ]
+  },
+  {
+    "module": "QRH.Detector.ExtendedPrincipalPhysical",
+    "source": "research/drafts/QRH/Detector/ExtendedPrincipalPhysical.lean",
+    "namespace": "SevenEighths.QRHPrincipalPhysical",
+    "theorems": [
+      "principal_physical_pool_ordered"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+REUSE CHECKED QRH.Detector.ActualPlainUnmarkedInput
+REUSE CHECKED QRH.Detector.InverseRawParameters
+REUSE CHECKED QRH.Hecke.OptimizedAdaptiveCutoff
+REUSE CHECKED QRH.Hecke.DynamicBranchBudget
+CHECKED QRH.Hecke.DynamicRawBranches
+CHECKED QRH.Hecke.DynamicCountFromMoments
+CHECKED QRH.Hecke.DynamicBatchCount
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+WAIT QRH.Detector.UniformAllMoments : OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+CHECKED QRH.Detector.UniformAllMoments
+All requested increments checked; this does not complete the analytic theorem.

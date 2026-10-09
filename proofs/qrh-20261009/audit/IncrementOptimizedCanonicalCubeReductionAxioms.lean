@@ -1,0 +1,2 @@
+import QRH.PrimeRows.OptimizedCanonicalCubeReduction
+#print axioms OAI.SevenEighths.QRHPhysicalTails.canonical_probe_minus_cube

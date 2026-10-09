@@ -1,0 +1,6 @@
+**
+!worker/
+!worker/**
+!verifier/
+!verifier/pins.json
+!verifier/upstream-challenge.lean

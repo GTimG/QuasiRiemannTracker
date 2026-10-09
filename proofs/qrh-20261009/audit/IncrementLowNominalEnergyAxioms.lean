@@ -1,0 +1,2 @@
+import QRH.Detector.LowNominalEnergy
+#print axioms OAI.SevenEighths.ProbePhysical.low_selected_nominal_energy_optimized

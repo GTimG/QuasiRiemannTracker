@@ -1,0 +1,90 @@
+[
+  {
+    "module": "QRH.Energy.ReferenceState",
+    "source": "research/drafts/QRH/Energy/ReferenceState.lean",
+    "theorems": [
+      "balanced_reference_geometry_extended",
+      "balanced_reflection_margins_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceState",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceState.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceDeletionCapacity",
+    "source": "research/drafts/QRH/Energy/ReferenceDeletionCapacity.lean",
+    "theorems": [
+      "deleted_reflection_excess_extended",
+      "deleted_reflection_removal_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceDeletionCapacity",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionCapacity.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceDeletionClipped",
+    "source": "research/drafts/QRH/Energy/ReferenceDeletionClipped.lean",
+    "theorems": [
+      "deleted_long_le_width_extended",
+      "clipped_reflected_bound_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceDeletionClipped",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionClipped.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceDivisors",
+    "source": "research/drafts/QRH/Energy/ReferenceDivisors.lean",
+    "theorems": [
+      "balanced_divisor_range_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceDivisors",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDivisors.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceLowBranchGeometry",
+    "source": "research/drafts/QRH/Energy/ReferenceLowBranchGeometry.lean",
+    "theorems": [
+      "slot_budgets_extended",
+      "reflected_low_extended",
+      "deleted_reference_cases_extended",
+      "reflected_low_admissible_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceLowBranchGeometry",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowBranchGeometry.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceLowWindow",
+    "source": "research/drafts/QRH/Energy/ReferenceLowWindow.lean",
+    "theorems": [
+      "deleted_reference_window_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceLowWindow",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowWindow.lean"
+  },
+  {
+    "module": "QRH.Energy.ReferenceLowDeletedGeometry",
+    "source": "research/drafts/QRH/Energy/ReferenceLowDeletedGeometry.lean",
+    "theorems": [
+      "actual_deleted_gates_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyReferenceLowDeletedGeometry",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowDeletedGeometry.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionGeometry",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionGeometry.lean",
+    "theorems": [
+      "original_long_positive_extended",
+      "actual_deleted_gates_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionGeometry",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionGeometry.lean"
+  },
+  {
+    "module": "QRH.Energy.OriginalHighReflectionDeleted",
+    "source": "research/drafts/QRH/Energy/OriginalHighReflectionDeleted.lean",
+    "theorems": [
+      "deleted_original_from_low_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyOriginalHighReflectionDeleted",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionDeleted.lean"
+  }
+]

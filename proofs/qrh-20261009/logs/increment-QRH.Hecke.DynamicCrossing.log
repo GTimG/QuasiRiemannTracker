@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Hecke/DynamicCrossing.olean", "/work/qrh-proof/research/drafts/QRH/Hecke/DynamicCrossing.lean"], "source_sha256": "ef49ca4ddc24c213b49436255ad381cc14c57ae255ded03212988271d9126211"}

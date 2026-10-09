@@ -1,0 +1,12 @@
+CHECKED QRH.Reflection.LowCaps
+CHECKED QRH.Reflection.LowExponent
+CHECKED QRH.Reflection.LowBranchSum
+CHECKED QRH.Reflection.LowSector
+CHECKED QRH.Reflection.LowRetained
+CHECKED QRH.Reflection.LowRetainedBudget
+CHECKED QRH.Reflection.LowFull
+CHECKED QRH.Reflection.LowFullBudget
+CHECKED QRH.Reflection.LowGlobalBudget
+CHECKED QRH.Reflection.LowMemberBudget
+CHECKED QRH.Reflection.LowMemberGeometry
+FAIL QRH.Reflection.LowFixedMember; /work/qrh-proof/logs/increment-QRH.Reflection.LowFixedMember.log

@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualCubeArithmeticSaving",
+    "source": "research/drafts/QRH/Detector/ActualCubeArithmeticSaving.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_cube_arithmetic_saving"
+    ]
+  }
+]

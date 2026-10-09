@@ -1,0 +1,12 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField"
+  ],
+  "closure": 5928,
+  "checked": 5928,
+  "failed": [],
+  "blocked": [],
+  "seconds": 141.92521595954895,
+  "jobs": 6,
+  "success": true
+}

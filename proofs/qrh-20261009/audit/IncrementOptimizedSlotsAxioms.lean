@@ -1,0 +1,4 @@
+import QRH.Detector.OptimizedSlots
+#print axioms OAI.SevenEighths.QRHOptimizedSlots.exists_distinct_slot_lengths
+#print axioms OAI.SevenEighths.QRHOptimizedSlots.exists_physical_slot_lengths
+#print axioms OAI.SevenEighths.QRHOptimizedSlots.exists_optimized_slots

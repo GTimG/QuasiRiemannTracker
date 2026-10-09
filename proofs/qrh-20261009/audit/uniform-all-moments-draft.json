@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.UniformAllMoments",
+    "source": "research/drafts/QRH/Detector/UniformAllMoments.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_four_moment_fields"
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/OptimizedPrincipalSignal.olean", "/work/qrh-proof/research/drafts/QRH/Detector/OptimizedPrincipalSignal.lean"], "source_sha256": "58299b7ac130ea12c808a2a90f478b20824284eed13369a34a983f096d7b6f9f"}
+/work/qrh-proof/research/drafts/QRH/Detector/OptimizedPrincipalSignal.lean:141:2: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/work/qrh-proof/research/drafts/QRH/Detector/OptimizedPrincipalSignal.lean:280:2: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

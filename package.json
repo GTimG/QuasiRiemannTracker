@@ -1,0 +1,39 @@
+{
+  "name": "qrh-bounds",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.17.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "node scripts/catalogue.mjs && node verifier/registry.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "verify": "node verifier/cli.mjs",
+    "test:integration": "node verifier/integration.mjs",
+    "check": "npm run check:publication && npm test && npm run build",
+    "format": "prettier --write src core verifier tests .github schemas worker/*.json *.json *.ts *.md docs",
+    "configure-repository": "node scripts/configure-repository.mjs",
+    "check:publication": "python3 scripts/publication_policy.py"
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "lucide-react": "0.468.0",
+    "ajv": "8.17.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/node": "22.18.6",
+    "typescript": "5.9.3",
+    "vite": "7.1.9",
+    "@vitejs/plugin-react": "5.0.4",
+    "@playwright/test": "1.56.1",
+    "prettier": "3.6.2"
+  }
+}

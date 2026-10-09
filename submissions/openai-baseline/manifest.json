@@ -1,0 +1,8 @@
+{
+ "schema_version":1,"id":"openai-baseline","title":"OpenAI seven-eighths baseline",
+ "theta":{"numerator":"7","denominator":"8"},"authors":[{"name":"OpenAI","url":"https://github.com/openai/math"}],
+ "entrypoint":{"module":"Candidate.Main","declaration":"Candidate.bound"},
+ "method":"Direct reuse of the upstream all-Dirichlet nonvanishing theorem. This example is pending independent verification; it is not a published result.",
+ "references":[{"label":"Pinned upstream proof","url":"https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean"}],
+ "license":"Apache-2.0","builds_on":[]
+}

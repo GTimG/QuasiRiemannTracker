@@ -1,0 +1,58 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedFloorMargin",
+    "source": "research/drafts/QRH/Detector/OptimizedFloorMargin.lean",
+    "namespace": "SevenEighths.QRHProbeCentralExponent",
+    "theorems": [
+      "floor_source_margin"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorArithmetic",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_floor_cube_arithmetic"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorGlobal",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorGlobal.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_global_floor_cube_arithmetic"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorGlobalIntegral.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_global_floor_cube_norm"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorNormalized",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorNormalized.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_normalized_floor_cube"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorSaving",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorSaving.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_floor_cube_saving"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFloorCollected",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFloorCollected.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_floor_rows_saving"
+    ]
+  }
+]

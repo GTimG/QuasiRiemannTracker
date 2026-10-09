@@ -1,0 +1,20 @@
+[
+  {
+    "module": "QRH.Moments.DetectorPlainMarkedState",
+    "source": "research/drafts/QRH/Moments/DetectorPlainMarkedState.lean",
+    "namespace": "SevenEighths.CenteredMomentDetectorPlainMarkedState",
+    "theorems": [
+      "source_batch_marked_initial_dynamic"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMarkedState.lean"
+  },
+  {
+    "module": "QRH.Detector.DetectorPlainMarkedFineField",
+    "source": "research/drafts/QRH/Detector/DetectorPlainMarkedFineField.lean",
+    "namespace": "SevenEighths.ProbeDetectorPlainMarkedFineField",
+    "theorems": [
+      "source_batch_plain_marked_dynamic"
+    ],
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/DetectorPlainMarkedFineField.lean"
+  }
+]

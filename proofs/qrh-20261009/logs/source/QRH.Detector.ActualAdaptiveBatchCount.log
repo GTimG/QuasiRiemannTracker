@@ -1,0 +1,5 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/Detector/ActualAdaptiveBatchCount.olean", "QRH/Detector/ActualAdaptiveBatchCount.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "b605f9643e60b9f83aabb73c922855e52435e829e22c05516fb9814007728491", "key": "1c064ec782de257fa2d01da1f08e38963e86ef618c9112eb3f70b1807df3e666"}
+QRH/Detector/ActualAdaptiveBatchCount.lean:71:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+QRH/Detector/ActualAdaptiveBatchCount.lean:74:57: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+QRH/Detector/ActualAdaptiveBatchCount.lean:85:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+QRH/Detector/ActualAdaptiveBatchCount.lean:88:57: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

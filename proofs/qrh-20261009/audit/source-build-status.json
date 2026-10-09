@@ -1,0 +1,13 @@
+{
+  "roots": [
+    "QRH",
+    "QRH.Analytic"
+  ],
+  "closure": 7227,
+  "checked": 7227,
+  "failed": [],
+  "blocked": [],
+  "seconds": 13.573592901229858,
+  "jobs": 6,
+  "success": true
+}

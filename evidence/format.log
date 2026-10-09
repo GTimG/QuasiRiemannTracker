@@ -1,0 +1,70 @@
+
+> qrh-bounds@0.1.0 format
+> prettier --write src core verifier tests .github schemas worker/*.json *.json *.ts *.md docs
+
+src/App.tsx 133ms
+src/Chart.tsx 57ms
+src/Lineage.tsx 10ms
+src/main.tsx 1ms
+src/styles.css 95ms
+src/types.ts 2ms
+core/rational.mjs 29ms
+verifier/archive-receipt.mjs 3ms
+verifier/audit-history.mjs 3ms
+verifier/challenge.mjs 3ms
+verifier/ci-check.mjs 10ms
+verifier/cli.mjs 3ms
+verifier/commission.mjs 3ms
+verifier/common.mjs 3ms
+verifier/events.mjs 2ms
+verifier/github.mjs 11ms
+verifier/history.mjs 2ms
+verifier/integration.mjs 3ms
+verifier/manifest.mjs 7ms
+verifier/pins.json 2ms
+verifier/publish.mjs 5ms
+verifier/receipts.mjs 7ms
+verifier/registry.mjs 14ms
+verifier/runner.mjs 11ms
+verifier/sign-result.mjs 4ms
+verifier/trust-policy.json 1ms
+verifier/upstream-lake-manifest.json 5ms
+tests/adversarial/changed-definition/explanation.md 25ms (unchanged)
+tests/adversarial/changed-definition/manifest.json 1ms (unchanged)
+tests/adversarial/extra-hypothesis/explanation.md 1ms (unchanged)
+tests/adversarial/extra-hypothesis/manifest.json 1ms (unchanged)
+tests/adversarial/hidden-axiom/explanation.md 1ms (unchanged)
+tests/adversarial/hidden-axiom/manifest.json 1ms (unchanged)
+tests/adversarial/restricted-modulus/explanation.md 1ms (unchanged)
+tests/adversarial/restricted-modulus/manifest.json 1ms (unchanged)
+tests/adversarial/sorry/explanation.md 1ms (unchanged)
+tests/adversarial/sorry/manifest.json 1ms (unchanged)
+tests/adversarial/weakened-statement/explanation.md 1ms (unchanged)
+tests/adversarial/weakened-statement/manifest.json 1ms (unchanged)
+tests/adversarial/zeta-only/explanation.md 1ms (unchanged)
+tests/adversarial/zeta-only/manifest.json 1ms (unchanged)
+tests/browser/dashboard.spec.ts 8ms
+tests/helpers.mjs 2ms
+tests/history.test.mjs 2ms
+tests/rational.test.mjs 3ms
+tests/security.test.mjs 10ms
+.github/PULL_REQUEST_TEMPLATE.md 5ms (unchanged)
+.github/workflows/ci.yml 15ms (unchanged)
+.github/workflows/publish-record.yml 3ms (unchanged)
+.github/workflows/verify-submission.yml 5ms (unchanged)
+schemas/submission.schema.json 2ms
+worker/lake-manifest.json 3ms (unchanged)
+worker/seccomp.json 1ms
+package-lock.json 8ms (unchanged)
+package.json 1ms (unchanged)
+tsconfig.json 1ms
+playwright.config.ts 2ms
+vite.config.ts 1ms
+CONTRIBUTING.md 7ms (unchanged)
+PLAN.md 2ms (unchanged)
+README.md 8ms (unchanged)
+docs/DEPLOYMENT.md 4ms (unchanged)
+docs/GITHUB.md 8ms (unchanged)
+docs/REPRODUCTION.md 7ms (unchanged)
+docs/SOURCES.md 4ms
+docs/TRUST.md 7ms (unchanged)

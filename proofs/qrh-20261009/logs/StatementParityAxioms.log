@@ -1,0 +1,14 @@
+def QRH.Independent.allDirichlet : Prop :=
+∀ {q : ℕ} [inst : NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ},
+  874957019421 / 1000000000000 < s.re → ¬(χ = 1 ∧ s = 1) → DirichletCharacter.LFunction χ s ≠ 0
+def QRH.Independent.zeta : Prop :=
+∀ {s : ℂ}, 874957019421 / 1000000000000 < s.re → riemannZeta s ≠ 0
+def QRH.Independent.allHecke : Prop :=
+∀ (χ : OAI.SevenEighths.HeckeFamily.Character) (s : ℂ),
+  874957019421 / 1000000000000 < s.re → s ≠ 1 ∨ χ.residue ≠ 1 → OAI.SevenEighths.HeckeFamily.LFunction χ s ≠ 0
+'QRH.StatementParity.dirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.StatementParity.zeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.StatementParity.hecke' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.HeckeFamily.Character.ofResidue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.HeckeFamily.LFunction_eq_ideal_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.HeckeFamily.LFunction_differentiableAt' depends on axioms: [propext, Classical.choice, Quot.sound]

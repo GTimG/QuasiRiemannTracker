@@ -1,0 +1,5 @@
+Source closure: 6533 modules; workers=6
+5955/6533 checked; 2 running; 9s
+6251/6533 checked; 0 running; 72s
+6253/6533 checked; 0 running; 76s
+{"roots": ["QRH.Detector.LowNormalized", "QRH.Detector.UniformDetectorMoment", "QRH.Detector.OptimizedProbe", "QRH.Detector.OptimizedSlots"], "closure": 6533, "checked": 6533, "failed": [], "seconds": 134.55533075332642, "jobs": 6, "success": true}

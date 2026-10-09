@@ -1,0 +1,5 @@
+REUSE CHECKED QRH.Detector.ActualPlainUnmarkedInput
+REUSE CHECKED QRH.Detector.InverseRawParameters
+REUSE CHECKED QRH.Hecke.OptimizedAdaptiveCutoff
+CHECKED QRH.Hecke.DynamicBranchBudget
+FAIL QRH.Hecke.DynamicRawBranches; /work/qrh-proof/logs/increment-QRH.Hecke.DynamicRawBranches.log

@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/OptimizedCentralCost.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/OptimizedCentralCost.lean"], "source_sha256": "18ad8b4e34f3df50e53a04d01fb519d77ddaf6b2d0ef3ed8cd8a4945f2d3e7b6"}

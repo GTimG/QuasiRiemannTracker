@@ -1,0 +1,3 @@
+'QRH.PlainReflection.slot_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.PlainReflection.reflected_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.PlainReflection.reflected_low_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]

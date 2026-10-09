@@ -1,0 +1,3 @@
+import QRH.Detector.ExtendedHeckeSignalBounds
+#print axioms OAI.SevenEighths.QRHHeckeSignalBounds.contour_shift_left
+#print axioms OAI.SevenEighths.QRHHeckeSignalBounds.signal_isBigO_atTop

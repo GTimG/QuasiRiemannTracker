@@ -1,0 +1,60 @@
+[
+  {
+    "module": "QRH.PrimeRows.OptimizedCentralCost",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCentralCost.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "central_source_crude_scale",
+      "central_prime_product_bound",
+      "central_arithmetic_cost_bound"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCentralTupleCount",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCentralTupleCount.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "central_prime_tuple_count"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeErrorSaving",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeErrorSaving.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "original_row_cube_arbitrary_saving"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCubeFiniteError",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "finite_cube_arbitrary_saving"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCanonicalCubeReduction",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCanonicalCubeReduction.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "canonical_probe_minus_cube"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCanonicalCubeChoice",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCanonicalCubeChoice.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "canonical_probe_exists_cube"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCanonicalRayCube",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCanonicalRayCube.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "canonical_probe_exists_ray_cube"
+    ]
+  }
+]

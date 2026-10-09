@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualAmplitudeClassCount",
+    "source": "research/drafts/QRH/Detector/ActualAmplitudeClassCount.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_amplitude_class_count"
+    ]
+  }
+]

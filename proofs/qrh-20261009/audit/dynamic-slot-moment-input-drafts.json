@@ -1,0 +1,12 @@
+[
+  {
+    "module": "QRH.Detector.DynamicSlotMomentInput",
+    "source": "research/drafts/QRH/Detector/DynamicSlotMomentInput.lean",
+    "namespace": "SevenEighths.QRHDynamicSlotMomentInput",
+    "theorems": [
+      "dynamic_source_input_slots",
+      "actual_source_batch_plain_marked_slots"
+    ],
+    "upstream": "original QRH actual analytic integration, independent physical slot vector"
+  }
+]

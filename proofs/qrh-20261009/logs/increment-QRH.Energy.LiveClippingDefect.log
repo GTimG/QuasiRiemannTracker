@@ -1,0 +1,13 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/LiveClippingDefect.olean", "/work/qrh-proof/research/drafts/QRH/Energy/LiveClippingDefect.lean"], "source_sha256": "91b025b460534c533328bb4480c39d172db66401035d790ca983081cf3de83d8"}
+/work/qrh-proof/research/drafts/QRH/Energy/LiveClippingDefect.lean:69:18: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/work/qrh-proof/research/drafts/QRH/Energy/LiveClippingDefect.lean:70:22: warning: Variable name `hz` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

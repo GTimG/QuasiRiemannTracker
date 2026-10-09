@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/InverseRawParameters.olean", "/work/qrh-proof/research/drafts/QRH/Detector/InverseRawParameters.lean"], "source_sha256": "8991581592bb6bb3f5e914c061e555240c66954dfa606e2a0d3730cf4fc289bd"}

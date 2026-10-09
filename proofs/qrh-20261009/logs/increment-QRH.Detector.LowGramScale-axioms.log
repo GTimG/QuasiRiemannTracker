@@ -1,0 +1,4 @@
+'OAI.SevenEighths.ProbePhysical.source_gram_power_optimized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.ProbePhysical.source_gram_sqrt_power_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

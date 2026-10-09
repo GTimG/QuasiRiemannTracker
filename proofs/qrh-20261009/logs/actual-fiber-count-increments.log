@@ -1,0 +1,7 @@
+WAIT QRH.Detector.ActualDetectorFiberCount : QRH.Detector.UniformAllMoments
+WAIT QRH.Detector.ActualDetectorFiberCount : QRH.Detector.UniformAllMoments
+WAIT QRH.Detector.ActualDetectorFiberCount : QRH.Detector.UniformAllMoments
+WAIT QRH.Detector.ActualDetectorFiberCount : QRH.Detector.UniformAllMoments
+WAIT QRH.Detector.ActualDetectorFiberCount : QRH.Detector.UniformAllMoments
+CHECKED QRH.Detector.ActualDetectorFiberCount
+All requested increments checked; this does not complete the analytic theorem.

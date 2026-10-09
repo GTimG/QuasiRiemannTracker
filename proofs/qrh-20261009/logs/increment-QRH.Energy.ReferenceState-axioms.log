@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyReferenceState.balanced_reference_geometry_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceState.balanced_reflection_margins_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

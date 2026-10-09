@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.InverseRawParameters",
+    "source": "research/drafts/QRH/Detector/InverseRawParameters.lean",
+    "namespace": "SevenEighths.ProbeDetectorInverseRawField",
+    "theorems": [
+      "source_batch_inverse_raw_parameters"
+    ]
+  }
+]

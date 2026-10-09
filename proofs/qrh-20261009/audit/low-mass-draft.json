@@ -1,0 +1,12 @@
+[
+  {
+    "module": "QRH.Detector.LowUnselectedMass",
+    "source": "research/drafts/QRH/Detector/LowUnselectedMass.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "canonical_slot_inverse_three_halves",
+      "lowUnselectedWeight_norm_plain_identity",
+      "lowUnselectedMass_plain_bound"
+    ]
+  }
+]

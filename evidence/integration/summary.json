@@ -1,0 +1,18 @@
+{
+  "kind": "qrh-integration-attempt-v1",
+  "at": "2026-10-09T11:26:04.461Z",
+  "worker_image": null,
+  "pin_digest": "4948e3f59bf97031391f8c8c8f2b4eaf7b763176a81a9155cf5607b7ae104f31",
+  "baseline": "infrastructure-blocked",
+  "adversarial_suite": "not-established",
+  "isolation": "not-established",
+  "results": [
+    {
+      "id": "baseline",
+      "status": "infrastructure-blocked",
+      "log_sha256": "8fa22df0d2effe8a8c5784752222c6f766a6c383b8061d1978bb72e8dda19366",
+      "expected": "accepted"
+    }
+  ],
+  "production_ready": false
+}

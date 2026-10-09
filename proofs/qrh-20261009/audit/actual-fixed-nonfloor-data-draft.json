@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualFixedNonfloorData",
+    "source": "research/drafts/QRH/Detector/ActualFixedNonfloorData.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "exists_optimized_nonfloor_cube_bound"
+    ]
+  }
+]

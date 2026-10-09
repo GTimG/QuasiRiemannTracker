@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/ReferenceDivisors.olean", "/work/qrh-proof/research/drafts/QRH/Energy/ReferenceDivisors.lean"], "source_sha256": "f87af6fc2dccae2fb88d11083848b599bcd6088747feaf5bc6e817f58ead777d"}

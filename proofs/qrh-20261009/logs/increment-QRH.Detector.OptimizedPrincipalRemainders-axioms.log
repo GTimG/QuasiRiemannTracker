@@ -1,0 +1,59 @@
+'OAI.SevenEighths.QRHPrincipalRemainders.active_prime_sum_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.slotConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.slotConstant_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.window_sharp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.scalePower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.scalePower_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.continued_source_sharp_pointwise' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.full_sharp_pointwise' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.residue_sharp_pointwise' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.vertical_triple_eq_joint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.vertical_pair_eq_joint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.normalizer_norm_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.full_scale_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.residue_scale_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.full_vertical_scale_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.residue_vertical_scale_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.ordered_remainders_scale_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_scale_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_w_scale_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_z_scale_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.eventual_annulus_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_remainders_power_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_w_strict_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_z_strict_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalRemainders.source_remainders_strict_saving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

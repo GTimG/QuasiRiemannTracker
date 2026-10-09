@@ -1,0 +1,19 @@
+'OAI.SevenEighths.ProbePhysical.source_scale_ratio_optimized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.ProbePhysical.source_scale_square_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.source_compensated_scale_admissible_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.source_compensated_gram_scale_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.source_compensated_gram_sqrt_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.lowGramFactor_source_bound_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.eventually_compensated_source_scales_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

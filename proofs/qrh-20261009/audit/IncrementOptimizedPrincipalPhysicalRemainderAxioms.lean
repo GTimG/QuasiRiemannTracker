@@ -1,0 +1,2 @@
+import QRH.Detector.OptimizedPrincipalPhysicalRemainder
+#print axioms OAI.SevenEighths.QRHPrincipalPhysical.physical_principal_residue_remainder

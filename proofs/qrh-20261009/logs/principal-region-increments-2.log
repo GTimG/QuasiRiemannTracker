@@ -1,0 +1,8 @@
+CHECKED QRH.Detector.ExtendedEulerRegion
+CHECKED QRH.Detector.ExtendedGlobalRegion
+CHECKED QRH.Detector.ExtendedGlobalHolomorphic
+CHECKED QRH.Detector.ExtendedGlobalCorrection
+CHECKED QRH.Detector.ExtendedPrincipalSlots
+CHECKED QRH.Detector.ExtendedFiniteProduct
+CHECKED QRH.Detector.ExtendedFiniteProductX
+All requested increments checked; this does not complete the analytic theorem.

@@ -1,0 +1,2 @@
+import QRH.Detector.CompleteNonfloorRowsData
+#print axioms OAI.SevenEighths.QRHUniformDetectorMoment.exists_optimized_nonfloor_rows_bound_with_parameters

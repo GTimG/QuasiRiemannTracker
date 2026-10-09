@@ -1,0 +1,2 @@
+import QRH.Energy.OriginalHighReflectionDeleted
+#print axioms OAI.SevenEighths.CenteredMomentEnergyOriginalHighReflectionDeleted.deleted_original_from_low_extended

@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/DynamicNonfloorCount.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/DynamicNonfloorCount.lean"], "source_sha256": "b8d62fe091c8ba05608f66e4a3c17919dee1d86b9f1a09e42ad63b2b50df00c0"}

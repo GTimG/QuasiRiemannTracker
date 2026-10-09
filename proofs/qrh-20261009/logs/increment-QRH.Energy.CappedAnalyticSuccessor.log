@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/CappedAnalyticSuccessor.olean", "/work/qrh-proof/research/drafts/QRH/Energy/CappedAnalyticSuccessor.lean"], "source_sha256": "4b8750d2bcda92df77ae96a6001d19bc43f7edeab269f1a54360ccfdc19bdf13"}

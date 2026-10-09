@@ -1,0 +1,13 @@
+Source closure: 5928 modules; workers=6
+4804/5928 checked; 4 running; 15s
+5250/5928 checked; 2 running; 30s
+5351/5928 checked; 3 running; 32s
+5605/5928 checked; 2 running; 40s
+5701/5928 checked; 3 running; 51s
+5803/5928 checked; 1 running; 66s
+5850/5928 checked; 4 running; 80s
+5851/5928 checked; 5 running; 82s
+5852/5928 checked; 5 running; 82s
+5854/5928 checked; 4 running; 82s
+5903/5928 checked; 2 running; 92s
+{"roots": ["OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField"], "closure": 5928, "checked": 5928, "failed": [], "seconds": 141.92521595954895, "jobs": 6, "success": true}

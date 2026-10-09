@@ -1,0 +1,2 @@
+import QRH.Detector.CompleteNonfloorCubeData
+#print axioms OAI.SevenEighths.QRHUniformDetectorMoment.exists_optimized_nonfloor_cube_bound_with_parameters

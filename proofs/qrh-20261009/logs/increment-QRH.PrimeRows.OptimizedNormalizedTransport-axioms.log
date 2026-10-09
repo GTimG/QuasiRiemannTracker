@@ -1,0 +1,6 @@
+'OAI.SevenEighths.QRHPhysicalTails.normalized_central_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.actual_normalized_probe_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

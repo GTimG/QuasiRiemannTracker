@@ -1,0 +1,5 @@
+Source closure: 7177 modules; workers=6
+5351/7177 checked; 0 running; 34s
+5553/7177 checked; 0 running; 64s
+6200/7177 checked; 0 running; 66s
+{"roots": ["QRH.Analytic"], "closure": 7177, "checked": 7177, "failed": [], "seconds": 76.46789622306824, "jobs": 6, "success": true}

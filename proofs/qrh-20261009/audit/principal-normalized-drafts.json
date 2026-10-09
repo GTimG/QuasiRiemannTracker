@@ -1,0 +1,26 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedPrincipalResidueActual",
+    "source": "research/drafts/QRH/Detector/OptimizedPrincipalResidueActual.lean",
+    "namespace": "SevenEighths.QRHPrincipalResidueActual",
+    "theorems": [
+      "normalized_actual_window_residue"
+    ]
+  },
+  {
+    "module": "QRH.Detector.ExtendedRayPoolThresholds",
+    "source": "research/drafts/QRH/Detector/ExtendedRayPoolThresholds.lean",
+    "namespace": "SevenEighths.QRHRayPoolThresholds",
+    "theorems": [
+      "power_pool_thresholds"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedPrincipalNormalized",
+    "source": "research/drafts/QRH/Detector/OptimizedPrincipalNormalized.lean",
+    "namespace": "SevenEighths.QRHPrincipalNormalized",
+    "theorems": [
+      "actual_ray_principal_comparison"
+    ]
+  }
+]

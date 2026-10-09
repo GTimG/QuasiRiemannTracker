@@ -1,0 +1,7 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/OptimizedData.olean", "/work/qrh-proof/research/drafts/QRH/Detector/OptimizedData.lean"], "source_sha256": "89b7c6455da3ce6bdc494403c2981c2c37c3cf60a2b7ec9901cbdcccab3ae322"}
+/work/qrh-proof/research/drafts/QRH/Detector/OptimizedData.lean:65:15: warning: Variable name `hτ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hτ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

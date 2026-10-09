@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/LowRemoteMass.olean", "/work/qrh-proof/research/drafts/QRH/Detector/LowRemoteMass.lean"], "source_sha256": "048b0ffcbdc58c252fc7fd3d999dcf1e16e3feb4b1550c4e4fae06028c68eb06"}

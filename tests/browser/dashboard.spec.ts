@@ -1,0 +1,204 @@
+import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const chartFixtures = () =>
+  JSON.parse(
+    readFileSync(
+      new URL("../fixtures/chart-records.json", import.meta.url),
+      "utf8",
+    ),
+  );
+test("status panels follow an admitted registry (isolated mock response)", async ({
+  page,
+  request,
+}) => {
+  const fixtures = chartFixtures();
+  await page.route("**/registry.json", (route) =>
+    route.fulfill({
+      json: {
+        schema_version: 1,
+        records: [{ ...fixtures.records[0], id: "openai-baseline" }],
+        events: [],
+        active_ids: ["openai-baseline"],
+        baseline_status: "verified",
+      },
+    }),
+  );
+  await page.goto("/");
+  await page.getByRole("button", { name: "Protocol", exact: true }).click();
+  await expect(
+    page.getByText("Signed registry entries link to Comparator", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "The separate Comparator and NanoDa checking service is not yet running.",
+      { exact: false },
+    ),
+  ).toHaveCount(0);
+});
+test("four real results, verification statuses and source downloads", async ({
+  page,
+  request,
+}, info) => {
+  await page.goto("/");
+  await expect(page.locator("tbody tr")).toHaveCount(4);
+  await expect(page.locator("[data-dot]")).toHaveCount(4);
+  await expect(page.locator("tbody .tag.teal")).toHaveCount(2);
+  await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
+  await page
+    .getByRole("button", {
+      name: "Baiying Liu · optimized parameters",
+      exact: true,
+    })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText(
+    "(1507 − 2√921) / 1653",
+  );
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Verification pending",
+  );
+  await expect(page.locator(".proof-detail")).not.toContainText(
+    "Signed verification receipt",
+  );
+  await page
+    .getByRole("button", {
+      name: "ProofCouncil · certified uniform descent",
+      exact: true,
+    })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText(
+    "874957019421/1000000000000",
+  );
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Tim Gehrunger · ProofCouncil",
+  );
+  const proof = await request.get("/proofs/qrh-20261009/Nonvanishing.lean");
+  expect(proof.ok()).toBeTruthy();
+  expect(await proof.text()).toContain(
+    "theorem DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
+  );
+  const reg = await (await request.get("/registry.json")).json();
+  expect(reg.records).toEqual([]);
+  await page.getByRole("button", { name: "Close proof details" }).click();
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({
+    path: `evidence/screenshots/${info.project.name}-live.png`,
+    fullPage: true,
+  });
+});
+test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "OpenAI · seven eighths", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText("7/8");
+  await expect(page.locator(".proof-detail")).toContainText("con-ron");
+  await page.getByRole("button", { name: "Close proof details" }).click();
+  const plot = page.getByRole("group", { name: /Interactive bound timeline/ });
+  await plot.focus();
+  await page.keyboard.press("+");
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("Home");
+  await page.getByRole("button", { name: "Zoom in", exact: true }).click();
+  await page.getByRole("button", { name: "Fit chart", exact: true }).click();
+  await page.getByLabel("Sort contributions").selectOption("bound");
+  await expect(page.locator("tbody tr").first()).toContainText("ProofCouncil");
+  await page.getByLabel("Contribution type").selectOption("verified");
+  await expect(page.locator("tbody tr")).toHaveCount(2);
+  await page.getByLabel("Contribution type").selectOption("pending");
+  await expect(page.locator("tbody tr")).toHaveCount(2);
+  await page.getByLabel("Contribution type").selectOption("all");
+  await page.getByLabel("Search contributions").fill("Tim Gehrunger");
+  await expect(page.locator("tbody tr")).toHaveCount(1);
+  await page.getByLabel("Search contributions").fill("");
+  await page.screenshot({
+    path: `evidence/screenshots/${info.project.name}-interactions.png`,
+    fullPage: true,
+  });
+});
+test("dialog keyboard controls, protocol, responsive overflow and no errors", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Submit a proof", exact: true })
+    .click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await page.getByRole("button", { name: "Protocol", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Required proof checks" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBeTruthy();
+  expect(errors).toEqual([]);
+});
+
+test("sub-float bounds remain visibly separate after narrowing time, with safe wheel zoom", async ({
+  page,
+  isMobile,
+}, info) => {
+  // Synthetic values exist only in this isolated browser test response.
+  await page.route("**/catalogue.json", (route) =>
+    route.fulfill({ json: { schema_version: 1, records: [] } }),
+  );
+  const fixtures = chartFixtures();
+  await page.route("**/registry.json", (route) =>
+    route.fulfill({
+      json: {
+        schema_version: 1,
+        records: fixtures.records,
+        events: [],
+        active_ids: fixtures.records.map((r: { id: string }) => r.id),
+        baseline_status: "verified",
+      },
+    }),
+  );
+  await page.goto("/");
+  await page.getByLabel("Timeline start").fill("70");
+  await page.getByLabel("Timeline end").fill("90");
+  const first = page.getByRole("button", {
+    name: "Select A sub-float improvement, theta 87499974999999999999/100000000000000000000",
+    exact: true,
+  });
+  const second = page.getByRole("button", {
+    name: "Select Another sub-float improvement, theta 43749987499999999999/50000000000000000000",
+    exact: true,
+  });
+  await expect(first).toBeVisible();
+  await expect(second).toBeVisible();
+  const y1 = Number(await first.locator("circle").last().getAttribute("cy"));
+  const y2 = Number(await second.locator("circle").last().getAttribute("cy"));
+  expect(Math.abs(y1 - y2)).toBeGreaterThan(100);
+  await page.screenshot({
+    path: `evidence/screenshots/${info.project.name}-tiny-improvements.png`,
+    fullPage: true,
+  });
+  if (!isMobile) {
+    const warnings: string[] = [];
+    page.on("console", (m) => {
+      if (m.type() === "error") warnings.push(m.text());
+    });
+    const plot = page.getByRole("group", {
+      name: /Interactive bound timeline/,
+    });
+    await plot.hover();
+    await page.keyboard.down("Control");
+    await page.mouse.wheel(0, -100);
+    await page.keyboard.up("Control");
+    await expect(page.getByLabel("Timeline start")).not.toHaveValue("70");
+    expect(warnings.filter((x) => x.includes("passive"))).toEqual([]);
+  }
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBeTruthy();
+});

@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-o", "/work/qrh-proof/build/source/Plausible/Gen.olean", "Plausible/Gen.lean"], "cwd": "/work/qrh-proof/formalization/.lake/packages/plausible", "source_sha256": "6b8a4951159be7db66630252c2dd277e88dadf70ff5c9db259c8e77570ccd19e", "key": "eb02d8af97049d214850db4359f0eefff7d2f9bd0cbb63ffd449e87632f9f143"}

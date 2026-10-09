@@ -1,0 +1,18 @@
+[
+  {
+    "module": "QRH.Detector.ActualOptimizedLow",
+    "source": "research/drafts/QRH/Detector/ActualOptimizedLow.lean",
+    "namespace": "SevenEighths.QRHFinalAssembly",
+    "theorems": [
+      "actual_optimized_low"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedContinuation",
+    "source": "research/drafts/QRH/Detector/OptimizedContinuation.lean",
+    "namespace": "SevenEighths.QRHContinuation",
+    "theorems": [
+      "nonzero_of_probe_bounds"
+    ]
+  }
+]

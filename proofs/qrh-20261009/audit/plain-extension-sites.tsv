@@ -1,0 +1,101 @@
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionPower.lean	41	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowWindow.lean	30	(hk:3/4≤kappa)(hxi:0≤xi)(hxiM:xi≤M/14)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionBounded.lean	42	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveBalancedAdmission.lean	67	theorem four_upper_scales (κ L:ℝ)(hZ:1<Z)(hw:∀i,0≤w i)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveBalancedAdmission.lean	96	theorem state_capacity_packet (κ L:ℝ)(hZ:1<Z)(hw:∀i,0≤w i)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighParameters.lean	53	lemma balanced_log_volume (κ:ℝ)(hZ:1<Z)(hw:∀i,0≤w i)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowStage.lean	64	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowStage.lean	65	have hr:0<r:=(bounds Mglobal B κ ε hMg hB hκ0 hε).2.2.2.1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowStage.lean	66	have hmarg:=margins Mglobal B κ ε hMg hB hκ0 hε k
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalLowStage.lean	125	have hs:0<amplification ε:=(bounds Mglobal B κ ε hMg hB hκ0 hε).1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionCapacity.lean	30	(hX₁:0<X₁)(hX₂:0<X₂)(hκ:3/4≤κ)(hxi:0≤xi)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionCapacity.lean	60	(hX₁:0<X₁)(hX₂:0<X₂)(hκ:3/4≤κ)(hxi:0≤xi)(hm:0≤mesh)(hwm:∀i∈J,w i≤mesh)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean	58	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean	60	have hr:0<r:=(bounds Mglobal B κ ε hMg hB hκ0 hε).2.2.2.1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean	62	have hs:0<amplification ε:=(bounds Mglobal B κ ε hMg hB hκ0 hε).1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean	79	have hm:=margins Mglobal B κ ε hMg hB hκ0 hε k
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthFloor.lean	30	(hκ0:0≤κ)(hε:0<ε)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthFloor.lean	41	have hs:=bounds Mcap B κ ε hMcap hB hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthInduction.lean	59	(hκ0:0≤κ)(hε:0<ε)(hbeta:(51/100:ℝ)≤HeckeZeroSupremum.beta)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthInduction.lean	66	actual_joint_floor (α:=α) M H hH Mcap Bs κ ε hMcap hBs hκ0 hε W aslot bslot
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthInduction.lean	88	(hmask:0≤Bmask)(hMcap:0≤Mcap)(hκ0:0≤κ)(hε:0<ε)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthInduction.lean	99	obtain ⟨hs,hs1,hse,hr,hm,hmm,hκm,h20,hcover,hloss⟩:=bounds Mcap Bs κ ε hMcap hBs hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/WidthInduction.lean	101	have hh:=stageLoss_final Mcap Bs κ ε hMcap hBs hκ0 hε (count Mcap ε) le_rfl
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionOriginal.lean	44	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDivisors.lean	46	(hX₁:0<X₁)(hX₂:0<X₂)(hell:0≤ell)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustDeletedEnergy.lean	42	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/DeletedRobustGeometry.lean	19	(hκ:3/4≤κ)(hxi:0≤xi)(he:0≤e)(hreserve:xi+11*e/7≤s.width/14)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean	54	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean	55	have hr:0<r:=(bounds Mschedule Bschedule κ ε hMschedule hBschedule hκ0 hε).2.2.2.1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean	90	have hmarg:=margins Mschedule Bschedule κ ε hMschedule hBschedule hκ0 hε k
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean	116	(by have hh:= (bounds Mschedule Bschedule κ ε hMschedule hBschedule hκ0 hε).1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustPower.lean	41	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighBound.lean	56	0≤height→ (∀i,|freq i|≤height)→ 3/4≤κ→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLivePower.lean	39	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighAssembly.lean	62	0≤height→ (∀i,|freq i|≤height)→ 3/4≤κ→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLiveBounded.lean	39	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionClipped.lean	15	(hell : 0 ≤ ell) (hkappa : 3/4 ≤ kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceDeletionClipped.lean	31	(hell : 0 ≤ ell) (hkappa : 3/4 ≤ kappa) (hxi : 0 ≤ xi)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionGeometry.lean	15	(_hX₁:0<X₁)(hX₂:0<X₂)(hell:0≤ell)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionGeometry.lean	42	(hκ:3/4≤κ)(hxi:0≤xi)(hxiM:xi≤s.width/14)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustOriginal.lean	44	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighAssemblyBounded.lean	50	0≤height→ (∀i,|freq i|≤height)→ 3/4≤κ→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedLowStage.lean	60	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedLowStage.lean	61	have hbounds:=bounds Mcap Bs κ ε hMcap hBs hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionSymmetricBounded.lean	43	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowDeletedGeometry.lean	19	(hκ:3/4≤κ)(hxi:0≤xi)(hxiM:xi≤s.width/14)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean	43	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean	44	have hb:=bounds M B κ ε hM hB hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean	76	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean	77	have h:=actual_frequency_four_budget M A B (A+1) κ ε hM hA hB (by linarith) hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/FirstSourceParameters.lean	79	have hr:0<reserve M B ε:=(bounds M B κ ε hM hB hκ0 hε).2.2.2.1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean	22	(hmask:0≤Bmask)(hMcap:0<Mcap)(hκ0:(3/4:ℝ)≤κ)(hε:0<ε)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean	37	haslot hWs hW hbslot ha haUpper hb hrad hmask hMcap hκ0 hε hbeta hκ
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean	43	(hmask:0≤Bmask)(hMcap:0<Mcap)(hκ0:(3/4:ℝ)≤κ)(hε:0<ε)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean	48	haslot hWs hW hbslot ha haUpper hb (le_max_left _ _) hmask hMcap hκ0 hε hbeta hκ _ le_rfl
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionSymmetric.lean	86	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceState.lean	76	(hZ:1<Z)(hM:0≤M)(hX₁:0<X₁)(hX₂:0<X₂)(hell:0≤ell)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceState.lean	97	(hZ:1<Z)(hM:0≤M)(hX₁:0<X₁)(hX₂:0<X₂)(hell:0≤ell)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedWidthInduction.lean	66	(hκ0:0≤κ)(hε:0<ε)(hbeta:(51/100:ℝ)≤HeckeZeroSupremum.beta)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedWidthInduction.lean	73	actual_joint_floor (α:=α) M H hH Mcap Bs κ ε hMcap hBs hκ0 hε W aslot bslot
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedWidthInduction.lean	95	(hmask:0≤Bmask)(hMcap:0≤Mcap)(hκ0:0≤κ)(hε:0<ε)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedWidthInduction.lean	106	obtain ⟨hs,hs1,hse,hr,hm,hmm,hκm,h20,hcover,hloss⟩:=bounds Mcap Bs κ ε hMcap hBs hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedWidthInduction.lean	108	have hh:=stageLoss_final Mcap Bs κ ε hMcap hBs hκ0 hε (count Mcap ε) le_rfl
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowBranchGeometry.lean	22	lemma slot_budgets (M total ell kappa:ℝ)(_hM:0≤M)(hell:0≤ell)(hk:3/4≤kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowBranchGeometry.lean	30	(hk:3/4≤kappa)(he:ell≤M/21)(hbudget:(6*kappa-1)*ell≤M/6)(hxi:0≤xi)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceLowBranchGeometry.lean	53	(hk:3/4≤kappa)(hxi:0≤xi)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSourceBounded.lean	57	0≤height→ (∀i,|freq i|≤height)→ 3/4≤κ→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/OriginalHighReflectionDeleted.lean	42	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	187	(hell : 0 ≤ ell) (hk : 3/4 ≤ kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	200	(hM : 0 ≤ M) (hell : 0 ≤ ell) (hk : 3/4 ≤ kappa) (hxi : 0 ≤ xi)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	210	(_hell : 0 ≤ ell) (_hz : 0 ≤ z) (hze : z ≤ ell) (hk : 3/4 ≤ kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	243	(hell : 0 ≤ ell) (hz : 0 ≤ z) (hze : z ≤ ell) (hk : 3/4 ≤ kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	276	(hell : 0 ≤ ell) (hz : 0 ≤ z) (hze : z ≤ ell) (hκ : 3/4 ≤ κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	323	(hell : 0 ≤ ell) (hz : 0 ≤ z) (hze : z ≤ ell) (hκ : 3/4 ≤ κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/LiveClippingDefect.lean	354	0 ≤ z → z ≤ ell → 3/4 ≤ κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSourceBound.lean	78	3/4≤κ→0≤e→0≤K→0≤Cphysical→e+ε≤efinal→emass≤efinal→εdiag≤efinal→-saving≤efinal→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	49	have hκ0:0≤κ:=by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	51	have hr:0<r:=(bounds Mcap Bs κ ε hMcap.le hBs hκ0 hε).2.2.2.1
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	53	have hh:=bounds Mcap Bs κ ε hMcap.le hBs hκ0 hε
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	75	(fineMesh_pos Mcap Bmask L κ ε hMcap.le hmask hκ0 hε).le
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	118	have hmarg:=margins Mcap Bs κ ε hMcap.le hBs hκ0 hε k
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean	120	W bslot a b radial Bmask L lo hi Mcap κ ε ha hmask hMcap.le hκ0 hε k
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/ReferenceRobustBounded.lean	42	0≤height → (∀i,|freq i|≤height) → 3/4≤κ →
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSource.lean	57	lemma balanced_volume_bound (κ Mcap:ℝ)(hZ:1<Z)(hw:∀i,0≤w i)(hκ:3/4≤κ)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/PositiveHighSource.lean	91	0≤height→ (∀i,|freq i|≤height)→ 3/4≤κ→
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/PrimeHeight.lean	173	have hκ0 : 0≤κ := by linarith
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/PrimeHeight.lean	174	have hpκ : 1≤P^κ := Real.one_le_rpow hP hκ0
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	22	def kappaPlain (_D:Parameters.HighData Δ):ℝ := 3/4+2*Δ
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	26	delta D+stageError D≤D.t ∧ 3/4<kappaPlain D ∧ 0<kappaPlain D := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	28	dsimp [delta,stageError,kappaPlain]
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	108	(hcap:2*F.m+6*(kappaPlain D)*(∑s∈selected,F.widths s)≤1):
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	115	6*(kappaPlain D)*(∑s:selected,F.widths s.val)≤s.width := by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainMomentParameters.lean	120	exact marked_capacity F hU selected (kappaPlain D) (delta D) (fixed_parameters D).1.le hcap
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Moments/ReflectionRetainedLength.lean	62	(hM : 0≤M) (hz : 0≤z) (hk : 3/4≤kappa)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean	36	2 (1/4) (9/4) bΦ 0 1 (33/50) (33/50) 2 (kappaPlain D) (stageError D)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean	42	(kappaPlain D) (stageError D) (count 2 (stageError D))):
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean	50	2 (1/4) (9/4) bΦ 0 1 (33/50) (33/50) 2 (kappaPlain D) (stageError D)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean	59	(stageError D) (kappaPlain D) U η₀ (sourceFixedIdeal F) degree control Cpositive:=by
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyUnconditional.lean	20	(kappaPlain D) (stageError D)
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyUnconditional.lean	34	· unfold kappaPlain
+upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/DetectorPlainMarkedFineField.lean	28	(kappaPlain D) U η₀ (sourceFixedIdeal S) degree seminorms C

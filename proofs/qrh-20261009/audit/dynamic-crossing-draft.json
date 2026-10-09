@@ -1,0 +1,25 @@
+[
+  {
+    "module": "QRH.Hecke.DynamicCrossing",
+    "source": "research/drafts/QRH/Hecke/DynamicCrossing.lean",
+    "namespace": "SevenEighths.QRHDetectorRowCount",
+    "theorems": [
+      "denominator_lower",
+      "crossing_bounds",
+      "crossing_average",
+      "inverse_at_crossing",
+      "plain_at_crossing",
+      "selected_short_bound",
+      "strict_inverse_capacity",
+      "plain_capacity_bound",
+      "prime_supply_margin",
+      "short_ge_base",
+      "inverse_capacity_exponent",
+      "capacity_loss",
+      "plain_capacity_comparison",
+      "inverse_zero_capacity",
+      "plain_zero_capacity",
+      "long_count_bound"
+    ]
+  }
+]

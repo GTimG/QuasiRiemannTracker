@@ -1,0 +1,8 @@
+import QRH.Detector.LowSourceScales
+#print axioms OAI.SevenEighths.ProbePhysical.source_scale_ratio_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.source_scale_square_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.source_compensated_scale_admissible_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.source_compensated_gram_scale_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.source_compensated_gram_sqrt_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.lowGramFactor_source_bound_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.eventually_compensated_source_scales_optimized

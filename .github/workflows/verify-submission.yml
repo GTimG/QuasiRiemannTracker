@@ -1,0 +1,82 @@
+name: Verify submission (trusted dispatch)
+run-name: Verify PR ${{ inputs.pr }} at its exact head
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Submission PR number
+        type: number
+        required: true
+permissions: {}
+concurrency:
+  group: verify-${{ inputs.pr }}
+  cancel-in-progress: true
+jobs:
+  check:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    # Ephemeral JIT runner: destroyed after this single job; no host secrets; rootless Docker.
+    runs-on: [self-hosted, linux, qrh-ephemeral]
+    timeout-minutes: 90
+    environment: verification-workers
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Materialize data via API, then check in disposable offline worker
+        run: node verifier/ci-check.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QRH_PR: ${{ inputs.pr }}
+          GITHUB_WORKFLOW_SHA: ${{ github.workflow_sha }}
+          QRH_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: check-attempt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: out/
+          if-no-files-found: error
+          retention-days: 90
+  seal:
+    needs: check
+    runs-on: ubuntu-24.04
+    environment: receipt-signing
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: check-attempt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: out/
+      - name: Sign outside the checking environment after rechecking PR head
+        run: node verifier/sign-result.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QRH_PR: ${{ inputs.pr }}
+          GITHUB_WORKFLOW_SHA: ${{ github.workflow_sha }}
+          QRH_SIGNING_KEY: ${{ secrets.QRH_SIGNING_KEY }}
+          QRH_KEY_ID: ${{ vars.QRH_KEY_ID }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: signed-receipt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: out/
+          if-no-files-found: error
+          retention-days: 90

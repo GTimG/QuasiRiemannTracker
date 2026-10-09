@@ -1,0 +1,5 @@
+Source closure: 5101 modules; workers=6
+5053/5101 checked; 0 running; 8s
+5100/5101 checked; 0 running; 63s
+5101/5101 checked; 0 running; 68s
+{"roots": ["OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh"], "closure": 5101, "checked": 5101, "failed": [], "seconds": 68.31509017944336, "jobs": 6, "success": true}

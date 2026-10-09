@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualAdaptiveBatchCount",
+    "source": "research/drafts/QRH/Detector/ActualAdaptiveBatchCount.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_adaptive_batch_count"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "module": "QRH.Hecke.DynamicBalancedCount",
+    "source": "research/drafts/QRH/Hecke/DynamicBalancedCount.lean",
+    "namespace": "SevenEighths.QRHDetectorRowCount",
+    "theorems": [
+      "balanced_count_identity"
+    ]
+  },
+  {
+    "module": "QRH.Hecke.DynamicFixedAmplitudeCount",
+    "source": "research/drafts/QRH/Hecke/DynamicFixedAmplitudeCount.lean",
+    "namespace": "SevenEighths.QRHDetectorFixedAmplitudeCount",
+    "theorems": [
+      "fixed_amplitude_count_from_raw_moments"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.DynamicNonfloorCount",
+    "source": "research/drafts/QRH/PrimeRows/DynamicNonfloorCount.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "balanced_adaptive_count_from_raw_moments",
+      "high_adaptive_count_from_raw_moments"
+    ]
+  }
+]

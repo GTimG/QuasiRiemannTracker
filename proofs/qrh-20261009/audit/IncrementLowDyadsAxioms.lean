@@ -1,0 +1,2 @@
+import QRH.Reflection.LowDyads
+#print axioms OAI.SevenEighths.InverseReflectedPhase.low_dyadic_geometry_uniform_optimized

@@ -1,0 +1,26 @@
+[
+  {
+    "repository": "formalization/.lake/packages/mathlib",
+    "path": "Mathlib/NumberTheory/LSeries/DirichletContinuation.lean",
+    "matches_pinned_git_blob": true,
+    "sha256": "7ef38fb53f462e19dfd6746fc1826423e55bb5e2672c2b5667e2fd4889f401b6"
+  },
+  {
+    "repository": "formalization/.lake/packages/mathlib",
+    "path": "Mathlib/NumberTheory/LSeries/RiemannZeta.lean",
+    "matches_pinned_git_blob": true,
+    "sha256": "8d24b729a30f1fef0820f0f7c9cdbb5910df30dfac2c597eb666794bead08b1c"
+  },
+  {
+    "repository": "upstream/openai-math",
+    "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean",
+    "matches_pinned_git_blob": true,
+    "sha256": "9871d175749b34ec40cf66ccc14b4faa0a9ef08831cb3fa901c944e57c7b9ec6"
+  },
+  {
+    "repository": "upstream/openai-math",
+    "path": "lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean",
+    "matches_pinned_git_blob": true,
+    "sha256": "6c1fc33b7372108323bf3af3d4ab6f6e454ea9896b89e78964463a8e35df735f"
+  }
+]

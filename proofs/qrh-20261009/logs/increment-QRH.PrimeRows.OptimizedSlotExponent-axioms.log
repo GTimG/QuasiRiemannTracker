@@ -1,0 +1,7 @@
+'OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_length_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_weightedMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_product' depends on axioms: [propext, Classical.choice, Quot.sound]

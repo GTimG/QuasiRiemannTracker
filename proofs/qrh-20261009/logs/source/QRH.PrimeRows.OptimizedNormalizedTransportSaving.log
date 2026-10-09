@@ -1,0 +1,7 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/OptimizedNormalizedTransportSaving.olean", "QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "f44a71949667d0eb4bcfff841b055e2827c5310736a8cc573daff9be9cc8f753", "key": "5232568eae241337b53022962458ef2b19878c19c1f70f75ed29f8c70131184a"}
+QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean:37:17: warning: Variable name `hsigma` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsigma
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

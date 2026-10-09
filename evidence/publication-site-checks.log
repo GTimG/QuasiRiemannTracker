@@ -1,0 +1,147 @@
+
+> qrh-bounds@0.1.0 check
+> npm test && npm run build
+
+
+> qrh-bounds@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: all four results are visible; pending external claims never advance the verified frontier
+ok 1 - all four results are visible; pending external claims never advance the verified frontier
+  ---
+  duration_ms: 10.704542
+  type: 'test'
+  ...
+# Subtest: Liu's algebraic threshold is enclosed exactly; a truncated decimal is rejected
+ok 2 - Liu's algebraic threshold is enclosed exactly; a truncated decimal is rejected
+  ---
+  duration_ms: 0.676292
+  type: 'test'
+  ...
+# Subtest: catalogue cannot fabricate signed admission or local verification dates for pending results
+ok 3 - catalogue cannot fabricate signed admission or local verification dates for pending results
+  ---
+  duration_ms: 0.224458
+  type: 'test'
+  ...
+# Subtest: publication uses first authenticated success for the exact revision, not a later rerun
+ok 4 - publication uses first authenticated success for the exact revision, not a later rerun
+  ---
+  duration_ms: 13.712791
+  type: 'test'
+  ...
+# Subtest: immutable journal permits appends, refuses altered or deleted evidence
+ok 5 - immutable journal permits appends, refuses altered or deleted evidence
+  ---
+  duration_ms: 0.1445
+  type: 'test'
+  ...
+# Subtest: rationals reject noncanonical, zero/negative denominators and injection
+ok 6 - rationals reject noncanonical, zero/negative denominators and injection
+  ---
+  duration_ms: 0.893708
+  type: 'test'
+  ...
+# Subtest: bounds indistinguishable as floats rank exactly and render without cancellation
+ok 7 - bounds indistinguishable as floats rank exactly and render without cancellation
+  ---
+  duration_ms: 1.261208
+  type: 'test'
+  ...
+# Subtest: equal bounds are alternatives and history is immutable
+ok 8 - equal bounds are alternatives and history is immutable
+  ---
+  duration_ms: 7.9245
+  type: 'test'
+  ...
+# Subtest: records after withdrawal compare to the active frontier while retaining past records
+ok 9 - records after withdrawal compare to the active frontier while retaining past records
+  ---
+  duration_ms: 0.193709
+  type: 'test'
+  ...
+# Subtest: challenge fixes quantifiers, pole exclusion and definitions; only literals vary
+ok 10 - challenge fixes quantifiers, pole exclusion and definitions; only literals vary
+  ---
+  duration_ms: 2.677083
+  type: 'test'
+  ...
+# Subtest: manifest forbids candidate-defined challenge/verified claims and metadata injection
+ok 11 - manifest forbids candidate-defined challenge/verified claims and metadata injection
+  ---
+  duration_ms: 1.076542
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlinks and submitted caches are rejected; source changes alter digest
+ok 12 - unsafe paths, symlinks and submitted caches are rejected; source changes alter digest
+  ---
+  duration_ms: 6.230166
+  type: 'test'
+  ...
+# Subtest: forged, stale, cross-repo, altered-bound and partial receipts fail closed
+ok 13 - forged, stale, cross-repo, altered-bound and partial receipts fail closed
+  ---
+  duration_ms: 4.628209
+  type: 'test'
+  ...
+# Subtest: PR cannot approve itself, retain dismissed approval, or use approval for an older head
+ok 14 - PR cannot approve itself, retain dismissed approval, or use approval for an older head
+  ---
+  duration_ms: 8.111667
+  type: 'test'
+  ...
+# Subtest: registry authenticates records/logs, rejects duplicate IDs and unknown predecessors
+ok 15 - registry authenticates records/logs, rejects duplicate IDs and unknown predecessors
+  ---
+  duration_ms: 4.085917
+  type: 'test'
+  ...
+# Subtest: submission PR cannot replace CI, verifier, tools or trusted registry
+ok 16 - submission PR cannot replace CI, verifier, tools or trusted registry
+  ---
+  duration_ms: 0.276291
+  type: 'test'
+  ...
+# Subtest: worker invocation is immutable, offline, unprivileged and has no shared writable cache
+ok 17 - worker invocation is immutable, offline, unprivileged and has no shared writable cache
+  ---
+  duration_ms: 0.63275
+  type: 'test'
+  ...
+# Subtest: checker infrastructure failure is not labelled mathematical rejection
+ok 18 - checker infrastructure failure is not labelled mathematical rejection
+  ---
+  duration_ms: 0.41925
+  type: 'test'
+  ...
+# Subtest: workflows use protected dispatch, exact orchestration commits and pinned actions
+ok 19 - workflows use protected dispatch, exact orchestration commits and pinned actions
+  ---
+  duration_ms: 1.052458
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 150.326708
+
+> qrh-bounds@0.1.0 build
+> node scripts/catalogue.mjs && node verifier/registry.mjs && tsc --noEmit && vite build
+
+Catalogue: 4 results; 8351 proof snapshot files authenticated. No signed registry receipts created.
+Authenticated registry: 0 contributions, 0 events.
+vite v7.1.9 building for production...
+transforming...
+✓ 1585 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.60 kB │ gzip:  0.39 kB
+dist/assets/index-CrWF-lQu.css   23.64 kB │ gzip:  6.22 kB
+dist/assets/index-BdlRr0G0.js   244.35 kB │ gzip: 75.94 kB
+✓ built in 1.03s

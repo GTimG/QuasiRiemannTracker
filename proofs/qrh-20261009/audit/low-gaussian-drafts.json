@@ -1,0 +1,78 @@
+[
+  {
+    "module": "QRH.Detector.LowRemoteMass",
+    "source": "research/drafts/QRH/Detector/LowRemoteMass.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "canonicalTuple_count_optimized",
+      "compensation_scale_mass_bound_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowGaussianDyad",
+    "source": "research/drafts/QRH/Detector/LowGaussianDyad.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_central_gaussian_dyad_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowGaussianRemote",
+    "source": "research/drafts/QRH/Detector/LowGaussianRemote.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "eventually_low_physical_scales_optimized",
+      "low_remote_power_optimized",
+      "low_remote_gaussian_dyads_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowGaussianCentral",
+    "source": "research/drafts/QRH/Detector/LowGaussianCentral.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_central_gaussian_dyads_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowGaussianSum",
+    "source": "research/drafts/QRH/Detector/LowGaussianSum.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_all_gaussian_dyads_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowCommonBound",
+    "source": "research/drafts/QRH/Detector/LowCommonBound.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "compensatedPhysicalProbe_low_optimized",
+      "original_ray_compensatedPhysicalProbe_low_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowWindowBound",
+    "source": "research/drafts/QRH/Detector/LowWindowBound.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "original_ray_compensatedPhysicalProbe_low_loss_optimized"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.CubeNormalizer",
+    "source": "research/drafts/QRH/PrimeRows/CubeNormalizer.lean",
+    "namespace": "SevenEighths.ProbeHighRowFamily",
+    "theorems": [
+      "actual_ray_normalizer_inverse_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowNormalized",
+    "source": "research/drafts/QRH/Detector/LowNormalized.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "original_normalized_compensatedPhysicalProbe_low_optimized"
+    ]
+  }
+]

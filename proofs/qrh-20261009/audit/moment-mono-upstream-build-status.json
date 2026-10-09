@@ -1,0 +1,12 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono"
+  ],
+  "closure": 5065,
+  "checked": 5065,
+  "failed": [],
+  "blocked": [],
+  "seconds": 112.14902758598328,
+  "jobs": 6,
+  "success": true
+}

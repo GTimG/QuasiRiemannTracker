@@ -1,0 +1,27 @@
+
+> qrh-bounds@0.1.0 test:browser
+> playwright test
+
+
+Running 10 tests using 1 worker
+
+(node:43119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/browser/dashboard.spec.ts:2:1 › status panels follow an admitted registry (isolated mock response) (761ms)
+  ✓   2 [desktop] › tests/browser/dashboard.spec.ts:41:1 › real registry is empty; fixtures never leak across dataset switch (601ms)
+  ✓   3 [desktop] › tests/browser/dashboard.spec.ts:75:1 › selection, exact sorting, filters, zoom and lineage (1.5s)
+  ✓   4 [desktop] › tests/browser/dashboard.spec.ts:147:1 › dialog keyboard controls, protocol, responsive overflow and no errors (391ms)
+  ✓   5 [desktop] › tests/browser/dashboard.spec.ts:171:1 › sub-float bounds remain visibly separate after narrowing time, with safe wheel zoom (585ms)
+(node:43166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [mobile] › tests/browser/dashboard.spec.ts:2:1 › status panels follow an admitted registry (isolated mock response) (479ms)
+  ✓   7 [mobile] › tests/browser/dashboard.spec.ts:41:1 › real registry is empty; fixtures never leak across dataset switch (781ms)
+  ✓   8 [mobile] › tests/browser/dashboard.spec.ts:75:1 › selection, exact sorting, filters, zoom and lineage (1.8s)
+  ✓   9 [mobile] › tests/browser/dashboard.spec.ts:147:1 › dialog keyboard controls, protocol, responsive overflow and no errors (394ms)
+  ✓  10 [mobile] › tests/browser/dashboard.spec.ts:171:1 › sub-float bounds remain visibly separate after narrowing time, with safe wheel zoom (747ms)
+
+  10 passed (9.4s)

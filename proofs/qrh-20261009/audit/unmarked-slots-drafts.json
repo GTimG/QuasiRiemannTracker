@@ -1,0 +1,26 @@
+[
+  {
+    "module": "QRH.Moments.DetectorPlainUnmarkedParameters",
+    "source": "research/drafts/QRH/Moments/DetectorPlainUnmarkedParameters.lean",
+    "namespace": "SevenEighths.CenteredMomentDetectorPlainMomentParameters",
+    "theorems": [
+      "unmarked_state_admission_slots"
+    ]
+  },
+  {
+    "module": "QRH.Detector.PlainUnmarkedRetainedSlots",
+    "source": "research/drafts/QRH/Detector/PlainUnmarkedRetainedSlots.lean",
+    "namespace": "SevenEighths.ProbeDetectorPlainUnmarkedField",
+    "theorems": [
+      "retained_unmarked_bound_slots"
+    ]
+  },
+  {
+    "module": "QRH.Detector.PlainUnmarkedSlots",
+    "source": "research/drafts/QRH/Detector/PlainUnmarkedSlots.lean",
+    "namespace": "SevenEighths.ProbeDetectorPlainUnmarkedRestrictedField",
+    "theorems": [
+      "source_batch_plain_unmarked_slots"
+    ]
+  }
+]

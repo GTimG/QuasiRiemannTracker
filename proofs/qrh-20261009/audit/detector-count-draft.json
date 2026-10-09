@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.UniformDetectorCount",
+    "source": "research/drafts/QRH/Detector/UniformDetectorCount.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_plain_detector_count"
+    ]
+  }
+]

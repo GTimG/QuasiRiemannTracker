@@ -1,0 +1,2 @@
+import QRH.Detector.ActualAdaptiveBatchCount
+#print axioms OAI.SevenEighths.QRHUniformDetectorMoment.actual_uniform_adaptive_batch_count

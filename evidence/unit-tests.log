@@ -1,0 +1,110 @@
+
+> qrh-bounds@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: publication uses first authenticated success for the exact revision, not a later rerun
+ok 1 - publication uses first authenticated success for the exact revision, not a later rerun
+  ---
+  duration_ms: 22.447125
+  type: 'test'
+  ...
+# Subtest: immutable journal permits appends, refuses altered or deleted evidence
+ok 2 - immutable journal permits appends, refuses altered or deleted evidence
+  ---
+  duration_ms: 0.165042
+  type: 'test'
+  ...
+# Subtest: rationals reject noncanonical, zero/negative denominators and injection
+ok 3 - rationals reject noncanonical, zero/negative denominators and injection
+  ---
+  duration_ms: 1.20525
+  type: 'test'
+  ...
+# Subtest: bounds indistinguishable as floats rank exactly and render without cancellation
+ok 4 - bounds indistinguishable as floats rank exactly and render without cancellation
+  ---
+  duration_ms: 0.873583
+  type: 'test'
+  ...
+# Subtest: equal bounds are alternatives and history is immutable
+ok 5 - equal bounds are alternatives and history is immutable
+  ---
+  duration_ms: 8.038667
+  type: 'test'
+  ...
+# Subtest: records after withdrawal compare to the active frontier while retaining past records
+ok 6 - records after withdrawal compare to the active frontier while retaining past records
+  ---
+  duration_ms: 0.20125
+  type: 'test'
+  ...
+# Subtest: challenge fixes quantifiers, pole exclusion and definitions; only literals vary
+ok 7 - challenge fixes quantifiers, pole exclusion and definitions; only literals vary
+  ---
+  duration_ms: 6.445708
+  type: 'test'
+  ...
+# Subtest: manifest forbids candidate-defined challenge/verified claims and metadata injection
+ok 8 - manifest forbids candidate-defined challenge/verified claims and metadata injection
+  ---
+  duration_ms: 1.047583
+  type: 'test'
+  ...
+# Subtest: unsafe paths, symlinks and submitted caches are rejected; source changes alter digest
+ok 9 - unsafe paths, symlinks and submitted caches are rejected; source changes alter digest
+  ---
+  duration_ms: 7.093917
+  type: 'test'
+  ...
+# Subtest: forged, stale, cross-repo, altered-bound and partial receipts fail closed
+ok 10 - forged, stale, cross-repo, altered-bound and partial receipts fail closed
+  ---
+  duration_ms: 9.095542
+  type: 'test'
+  ...
+# Subtest: PR cannot approve itself, retain dismissed approval, or use approval for an older head
+ok 11 - PR cannot approve itself, retain dismissed approval, or use approval for an older head
+  ---
+  duration_ms: 8.228625
+  type: 'test'
+  ...
+# Subtest: registry authenticates records/logs, rejects duplicate IDs and unknown predecessors
+ok 12 - registry authenticates records/logs, rejects duplicate IDs and unknown predecessors
+  ---
+  duration_ms: 4.219458
+  type: 'test'
+  ...
+# Subtest: submission PR cannot replace CI, verifier, tools or trusted registry
+ok 13 - submission PR cannot replace CI, verifier, tools or trusted registry
+  ---
+  duration_ms: 0.300292
+  type: 'test'
+  ...
+# Subtest: worker invocation is immutable, offline, unprivileged and has no shared writable cache
+ok 14 - worker invocation is immutable, offline, unprivileged and has no shared writable cache
+  ---
+  duration_ms: 0.663375
+  type: 'test'
+  ...
+# Subtest: checker infrastructure failure is not labelled mathematical rejection
+ok 15 - checker infrastructure failure is not labelled mathematical rejection
+  ---
+  duration_ms: 0.4165
+  type: 'test'
+  ...
+# Subtest: workflows use protected dispatch, exact orchestration commits and pinned actions
+ok 16 - workflows use protected dispatch, exact orchestration commits and pinned actions
+  ---
+  duration_ms: 1.146917
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 161.494708

@@ -1,0 +1,6 @@
+'OAI.SevenEighths.QRHProbeHighRowFamily.balanced_adaptive_count_from_raw_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeHighRowFamily.high_adaptive_count_from_raw_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

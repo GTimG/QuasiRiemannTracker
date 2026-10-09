@@ -1,0 +1,11 @@
+CHECKED QRH.PrimeRows.OptimizedCentralCost
+CHECKED QRH.PrimeRows.OptimizedCentralTupleCount
+CHECKED QRH.PrimeRows.OptimizedCubeErrorSaving
+CHECKED QRH.PrimeRows.OptimizedCubeFiniteError
+WAIT QRH.PrimeRows.OptimizedCanonicalCubeReduction : QRH.PrimeRows.OptimizedCanonicalReduction
+WAIT QRH.PrimeRows.OptimizedCanonicalCubeReduction : QRH.PrimeRows.OptimizedCanonicalReduction
+WAIT QRH.PrimeRows.OptimizedCanonicalCubeReduction : QRH.PrimeRows.OptimizedCanonicalReduction
+CHECKED QRH.PrimeRows.OptimizedCanonicalCubeReduction
+CHECKED QRH.PrimeRows.OptimizedCanonicalCubeChoice
+CHECKED QRH.PrimeRows.OptimizedCanonicalRayCube
+All requested increments checked; this does not complete the analytic theorem.

@@ -1,0 +1,9 @@
+REUSE CHECKED QRH.Detector.LowNominalGeometry
+REUSE CHECKED QRH.Detector.LowInverseNormalize
+REUSE CHECKED QRH.Detector.LowSelectedBound
+REUSE CHECKED QRH.Detector.LowNominalEnergy
+CHECKED QRH.Detector.LowPhysicalInverseBound
+CHECKED QRH.Detector.LowGramScale
+CHECKED QRH.Detector.LowSourceScales
+CHECKED QRH.Detector.LowSlotScales
+All requested increments checked; this does not complete the analytic theorem.

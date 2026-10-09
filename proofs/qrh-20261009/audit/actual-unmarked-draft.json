@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.ActualPlainUnmarkedInput",
+    "source": "research/drafts/QRH/Detector/ActualPlainUnmarkedInput.lean",
+    "namespace": "SevenEighths.QRHDynamicSlotMomentInput",
+    "theorems": [
+      "actual_zero_source_input",
+      "actual_source_batch_plain_unmarked_slots"
+    ]
+  }
+]

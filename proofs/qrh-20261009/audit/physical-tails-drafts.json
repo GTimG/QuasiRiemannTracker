@@ -1,0 +1,91 @@
+[
+  {
+    "module": "QRH.PrimeRows.OptimizedTailScales",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedTailScales.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "selected_scale_power",
+      "physical_scale_power",
+      "small_source_scale",
+      "small_row_scale_bound",
+      "large_source_scale"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedSmallTail",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedSmallTail.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "small_physical_dyads_sum"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedPhysicalSmallTail",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedPhysicalSmallTail.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "small_original_physical_tail"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedLargeDyad",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedLargeDyad.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "large_physical_dyad_bound"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedGeometricTail",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedGeometricTail.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "large_geometric_scale",
+      "large_geometric_summable",
+      "large_geometric_sum",
+      "exists_large_tail_line"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedLargeTail",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedLargeTail.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "absolutePhysicalDyadIntegral_nonneg",
+      "large_physical_dyads_summable"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedLargeSaving",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedLargeSaving.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "large_physical_tail_arbitrary_saving"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedPhysicalLargeTail",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedPhysicalLargeTail.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "large_original_physical_tail"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCanonicalTails",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCanonicalTails.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "canonical_small_original_tail",
+      "canonical_large_original_tail"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedCanonicalReduction",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedCanonicalReduction.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "canonical_probe_minus_central"
+    ]
+  }
+]

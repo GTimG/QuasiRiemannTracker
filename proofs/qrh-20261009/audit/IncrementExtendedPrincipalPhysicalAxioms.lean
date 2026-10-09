@@ -1,0 +1,2 @@
+import QRH.Detector.ExtendedPrincipalPhysical
+#print axioms OAI.SevenEighths.QRHPrincipalPhysical.principal_physical_pool_ordered

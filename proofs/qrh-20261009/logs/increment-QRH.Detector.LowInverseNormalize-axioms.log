@@ -1,0 +1,6 @@
+'OAI.SevenEighths.ProbePhysical.low_inverse_power_cancel_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.low_inverse_sqrt_normalized_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

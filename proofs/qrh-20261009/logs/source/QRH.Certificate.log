@@ -1,0 +1,19 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/Certificate.olean", "QRH/Certificate.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "81593ad51d079c6f14e20f093a49f777aed578884fe4ba3ee08e2e229b76d290", "key": "34e2feff32db87f1d5c96054b1593f6aa2ec1b883bfbf41cb9283d3cc06a5864"}
+QRH/Certificate.lean:37:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+QRH/Certificate.lean:64:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+QRH/Certificate.lean:101:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+QRH/Certificate.lean:129:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+QRH/Certificate.lean:133:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+QRH/Certificate.lean:172:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

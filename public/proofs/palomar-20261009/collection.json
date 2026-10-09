@@ -1,0 +1,33 @@
+{
+  "collected_utc": "2026-10-09T13:07:24.818134+00:00",
+  "host": "verification-worker",
+  "palomar_registration": false,
+  "files": {
+    "qrh/result.json": "7c25b8df68deec815b59ff8553bb3db5570cbd01af9142e5ed42719557643118",
+    "qrh/tool-pins.json": "3598c282b349ce5b477a68df045ce946e6d909ad02ffcb5df9990ebce5c1958b",
+    "qrh/comparator.json": "2e4457e9b05559fa95905a1a4167e580433f8d9478bb59ad2751944ec360a440",
+    "qrh/judge.log": "9a8cfe77045dda70361c4053a783227f359a50a6b3e69373893d3820dfc7561f",
+    "qrh/Challenge-compile.log": "a1a92896b3235fb6e676ca2c42e2eff024d0dd799537819429cf107e53e5e436",
+    "qrh/Solution-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "qrh/Challenge-export.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "qrh/Solution-export.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "qrh/src/Challenge.lean": "eee59775c5f4f892199f7456f85f7664a14ef3010fc1b3df97ed2c0f8a1db4e6",
+    "qrh/src/Solution.lean": "6c8dcc401534bf8af9220168868467ec67d2788137133048a93d5922396eba41",
+    "openai/result.json": "1e63efa78f0cea4c2afee6634d16a9c848d61f02e9cad1634e01736dc024cdad",
+    "openai/tool-pins.json": "3598c282b349ce5b477a68df045ce946e6d909ad02ffcb5df9990ebce5c1958b",
+    "openai/comparator.json": "2e4457e9b05559fa95905a1a4167e580433f8d9478bb59ad2751944ec360a440",
+    "openai/judge.log": "0f364aecbe7922e3aefc3c9a16eb013678be1a5c9c12f0a49d37eba5c8eca960",
+    "openai/Challenge-compile.log": "3e59098cf4d279d6bcfb39ac5e101141aa84fa27cb80d07fe57d016fc12311a0",
+    "openai/Solution-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "openai/Challenge-export.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "openai/Solution-export.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "openai/src/Challenge.lean": "10e57414544e4e1d4431c04143867e07e492c302fa4bf2a112ef92dcbd758561",
+    "openai/src/Solution.lean": "ceba2bce331979c9ed8f30fb5e809045e14f447d541391c464c80c234e230f39",
+    "check-status.json": "ea1383aba66d300e23569451371225ef643264efce98d041e1e265d20821eba2",
+    "baseline-check-status.json": "ca09c14d9b2ff16242d3d45253ec555980b82b35f659c49b63fb63511d41b44b",
+    "pins.json": "203a41beafe1c03436b32687bef5024e965848bcfd8eb6b1cbdcc0f2bdb04382",
+    "baseline-build/status.json": "a616c8ef732b3621fcad343f65e21371efae445115db6e4cb9bf56f7d8c5827f",
+    "baseline-build/graph.json": "0b6d6cc638577bfd56a1b95bc7057434f19332f514dfcddc8199a9a90849dbfe"
+  },
+  "publication_note": "Sanitized public derivatives; see README.txt. Digests describe the published bytes."
+}

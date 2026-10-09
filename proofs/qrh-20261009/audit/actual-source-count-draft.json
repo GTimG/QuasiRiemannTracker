@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualSourceCount",
+    "source": "research/drafts/QRH/Detector/ActualSourceCount.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_adaptive_source_count"
+    ]
+  }
+]

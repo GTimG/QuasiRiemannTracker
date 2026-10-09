@@ -1,0 +1,26 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedBatchWidths",
+    "source": "research/drafts/QRH/Detector/OptimizedBatchWidths.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "physical_slot_widths"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedSourceBatch",
+    "source": "research/drafts/QRH/Detector/OptimizedSourceBatch.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_source_batch"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedSourceAmplitudeClasses",
+    "source": "research/drafts/QRH/Detector/OptimizedSourceAmplitudeClasses.lean",
+    "namespace": "SevenEighths.QRHProbeHighRowFamily",
+    "theorems": [
+      "actual_source_amplitude_batches"
+    ]
+  }
+]

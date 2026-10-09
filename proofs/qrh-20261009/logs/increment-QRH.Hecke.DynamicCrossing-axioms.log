@@ -1,0 +1,22 @@
+'OAI.SevenEighths.QRHDetectorRowCount.denominator_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.crossing_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.crossing_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.inverse_at_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.plain_at_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.selected_short_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.strict_inverse_capacity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.plain_capacity_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.prime_supply_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.short_ge_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.inverse_capacity_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.capacity_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.plain_capacity_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.inverse_zero_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.plain_zero_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHDetectorRowCount.long_count_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

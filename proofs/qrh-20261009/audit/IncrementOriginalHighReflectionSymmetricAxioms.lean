@@ -1,0 +1,2 @@
+import QRH.Energy.OriginalHighReflectionSymmetric
+#print axioms OAI.SevenEighths.CenteredMomentEnergyOriginalHighReflectionSymmetric.original_unbalanced_from_low_extended

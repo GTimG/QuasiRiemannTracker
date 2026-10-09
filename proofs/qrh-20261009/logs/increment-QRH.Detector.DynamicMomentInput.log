@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/DynamicMomentInput.olean", "/work/qrh-proof/research/drafts/QRH/Detector/DynamicMomentInput.lean"], "source_sha256": "c667abf0d306914fcbd0ef09e2129282fa71e4aaed901dbbfcb51e3b469d4312"}

@@ -1,0 +1,289 @@
+{
+  "root": "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+  "openai_import_closure_count": 2210,
+  "explicit_old_kappa_lower_bound_sites": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+      "line": 34,
+      "text": "(hmask:0\u2264Bmask)(hMcap:0<Mcap)(h\u03ba:(3/4:\u211d)\u2264\u03ba)(h\u03b5:0<\u03b5)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CappedLowStage",
+      "line": 29,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(h\u03b5:0<\u03b5)(hbeta:(51/100:\u211d)\u2264HeckeZeroSupremum.beta)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.DeletedRobustGeometry",
+      "line": 19,
+      "text": "(h\u03ba:3/4\u2264\u03ba)(hxi:0\u2264xi)(he:0\u2264e)(hreserve:xi+11*e/7\u2264s.width/14)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters",
+      "line": 34,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(h\u03b5:0<\u03b5):"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters",
+      "line": 65,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(h\u03b5:0<\u03b5):"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 187,
+      "text": "(hell : 0 \u2264 ell) (hk : 3/4 \u2264 kappa)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 200,
+      "text": "(hM : 0 \u2264 M) (hell : 0 \u2264 ell) (hk : 3/4 \u2264 kappa) (hxi : 0 \u2264 xi)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 210,
+      "text": "(_hell : 0 \u2264 ell) (_hz : 0 \u2264 z) (hze : z \u2264 ell) (hk : 3/4 \u2264 kappa)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 243,
+      "text": "(hell : 0 \u2264 ell) (hz : 0 \u2264 z) (hze : z \u2264 ell) (hk : 3/4 \u2264 kappa)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 276,
+      "text": "(hell : 0 \u2264 ell) (hz : 0 \u2264 z) (hze : z \u2264 ell) (h\u03ba : 3/4 \u2264 \u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 323,
+      "text": "(hell : 0 \u2264 ell) (hz : 0 \u2264 z) (hze : z \u2264 ell) (h\u03ba : 3/4 \u2264 \u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "line": 354,
+      "text": "0 \u2264 z \u2192 z \u2264 ell \u2192 3/4 \u2264 \u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalHighStage",
+      "line": 38,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(hbeta:(51/100:\u211d)\u2264HeckeZeroSupremum.beta)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowPhysical",
+      "line": 39,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(hbeta:(51/100:\u211d)\u2264HeckeZeroSupremum.beta)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowStage",
+      "line": 45,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(hbeta:(51/100:\u211d)\u2264HeckeZeroSupremum.beta)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalZeroStage",
+      "line": 28,
+      "text": "(hW:ContDiff \u211d \u221e W)(hLs:0\u2264Lslot)(h\u03ba:(3/4:\u211d)\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionBounded",
+      "line": 42,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionDeleted",
+      "line": 42,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionGeometry",
+      "line": 15,
+      "text": "(_hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(hell:0\u2264ell)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionGeometry",
+      "line": 42,
+      "text": "(h\u03ba:3/4\u2264\u03ba)(hxi:0\u2264xi)(hxiM:xi\u2264s.width/14)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionOriginal",
+      "line": 44,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionPower",
+      "line": 41,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetric",
+      "line": 86,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetricBounded",
+      "line": 43,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveBalancedAdmission",
+      "line": 67,
+      "text": "theorem four_upper_scales (\u03ba L:\u211d)(hZ:1<Z)(hw:\u2200i,0\u2264w i)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveBalancedAdmission",
+      "line": 96,
+      "text": "theorem state_capacity_packet (\u03ba L:\u211d)(hZ:1<Z)(hw:\u2200i,0\u2264w i)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssembly",
+      "line": 62,
+      "text": "0\u2264height\u2192 (\u2200i,|freq i|\u2264height)\u2192 3/4\u2264\u03ba\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssemblyBounded",
+      "line": 50,
+      "text": "0\u2264height\u2192 (\u2200i,|freq i|\u2264height)\u2192 3/4\u2264\u03ba\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighBound",
+      "line": 56,
+      "text": "0\u2264height\u2192 (\u2200i,|freq i|\u2264height)\u2192 3/4\u2264\u03ba\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighParameters",
+      "line": 53,
+      "text": "lemma balanced_log_volume (\u03ba:\u211d)(hZ:1<Z)(hw:\u2200i,0\u2264w i)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighPhysical",
+      "line": 38,
+      "text": "(h\u03ba:(3/4:\u211d)\u2264\u03ba)(hbeta:(51/100:\u211d)\u2264HeckeZeroSupremum.beta)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSource",
+      "line": 57,
+      "text": "lemma balanced_volume_bound (\u03ba Mcap:\u211d)(hZ:1<Z)(hw:\u2200i,0\u2264w i)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSource",
+      "line": 91,
+      "text": "0\u2264height\u2192 (\u2200i,|freq i|\u2264height)\u2192 3/4\u2264\u03ba\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBound",
+      "line": 78,
+      "text": "3/4\u2264\u03ba\u21920\u2264e\u21920\u2264K\u21920\u2264Cphysical\u2192e+\u03b5\u2264efinal\u2192emass\u2264efinal\u2192\u03b5diag\u2264efinal\u2192-saving\u2264efinal\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBounded",
+      "line": 57,
+      "text": "0\u2264height\u2192 (\u2200i,|freq i|\u2264height)\u2192 3/4\u2264\u03ba\u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionCapacity",
+      "line": 30,
+      "text": "(hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(h\u03ba:3/4\u2264\u03ba)(hxi:0\u2264xi)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionCapacity",
+      "line": 60,
+      "text": "(hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(h\u03ba:3/4\u2264\u03ba)(hxi:0\u2264xi)(hm:0\u2264mesh)(hwm:\u2200i\u2208J,w i\u2264mesh)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionClipped",
+      "line": 15,
+      "text": "(hell : 0 \u2264 ell) (hkappa : 3/4 \u2264 kappa)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionClipped",
+      "line": 31,
+      "text": "(hell : 0 \u2264 ell) (hkappa : 3/4 \u2264 kappa) (hxi : 0 \u2264 xi)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceDivisors",
+      "line": 46,
+      "text": "(hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(hell:0\u2264ell)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLiveBounded",
+      "line": 39,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLivePower",
+      "line": 39,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry",
+      "line": 22,
+      "text": "lemma slot_budgets (M total ell kappa:\u211d)(_hM:0\u2264M)(hell:0\u2264ell)(hk:3/4\u2264kappa)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry",
+      "line": 30,
+      "text": "(hk:3/4\u2264kappa)(he:ell\u2264M/21)(hbudget:(6*kappa-1)*ell\u2264M/6)(hxi:0\u2264xi)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry",
+      "line": 53,
+      "text": "(hk:3/4\u2264kappa)(hxi:0\u2264xi)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowDeletedGeometry",
+      "line": 19,
+      "text": "(h\u03ba:3/4\u2264\u03ba)(hxi:0\u2264xi)(hxiM:xi\u2264s.width/14)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow",
+      "line": 30,
+      "text": "(hk:3/4\u2264kappa)(hxi:0\u2264xi)(hxiM:xi\u2264M/14)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustBounded",
+      "line": 42,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustDeletedEnergy",
+      "line": 42,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustOriginal",
+      "line": 44,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustPower",
+      "line": 41,
+      "text": "0\u2264height \u2192 (\u2200i,|freq i|\u2264height) \u2192 3/4\u2264\u03ba \u2192"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceState",
+      "line": 76,
+      "text": "(hZ:1<Z)(hM:0\u2264M)(hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(hell:0\u2264ell)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ReferenceState",
+      "line": 97,
+      "text": "(hZ:1<Z)(hM:0\u2264M)(hX\u2081:0<X\u2081)(hX\u2082:0<X\u2082)(hell:0\u2264ell)(h\u03ba:3/4\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysical",
+      "line": 35,
+      "text": "(hW:ContDiff \u211d \u221e Wslot)(hLs:0\u2264Lslot)(h\u03ba:(3/4:\u211d)\u2264\u03ba)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing",
+      "line": 104,
+      "text": "lemma plain_capacity_bound {m \u03ba : \u211d} (hm : 1/3\u2264m) (hm' : m\u22641/2) (h\u03ba : 3/4\u2264\u03ba) :"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength",
+      "line": 62,
+      "text": "(hM : 0\u2264M) (hz : 0\u2264z) (hk : 3/4\u2264kappa)"
+    }
+  ],
+  "build_status": "BUILT: original root 6330/6330; extended actual successor and uniform masked moment compiled and axiom checked",
+  "claim": "Historical old-endpoint inventory. Extended actual moment, all optimized analytic transport, unconditional supremum bound and all three frozen final targets now proved; final-verification.json passes.",
+  "final_status": "PASS: 7227/7227 source closure; exact independent target parity; allowed-only transitive axioms"
+}

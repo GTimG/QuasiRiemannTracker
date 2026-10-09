@@ -1,0 +1,6 @@
+'OAI.SevenEighths.ProbePhysical.compensatedPhysicalProbe_low_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.original_ray_compensatedPhysicalProbe_low_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

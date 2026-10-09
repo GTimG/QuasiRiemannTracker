@@ -1,0 +1,5 @@
+CHECKED QRH.Detector.ActualPlainUnmarkedInput
+WAIT QRH.Detector.InverseRawParameters : OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
+CHECKED QRH.Detector.InverseRawParameters
+CHECKED QRH.Hecke.OptimizedAdaptiveCutoff
+FAIL QRH.Hecke.DynamicBranchBudget; /work/qrh-proof/logs/increment-QRH.Hecke.DynamicBranchBudget.log

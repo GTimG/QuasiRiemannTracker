@@ -1,0 +1,3 @@
+import QRH.Detector.LowSlotScales
+#print axioms OAI.SevenEighths.ProbePhysical.lowUnselectedProduct_norm_bound_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.eventually_original_slot_scales_optimized

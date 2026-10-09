@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualDetectorFiberCount",
+    "source": "research/drafts/QRH/Detector/ActualDetectorFiberCount.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_detector_fiber_count"
+    ]
+  }
+]

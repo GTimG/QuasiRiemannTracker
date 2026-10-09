@@ -1,0 +1,242 @@
+{
+  "root": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh",
+  "baseline": "audit/analytic-count-source-graph.json",
+  "closure": 5101,
+  "added": 26,
+  "owners": {
+    "upstream/openai-math": 26
+  },
+  "header_flags": [],
+  "pin": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "license": "Apache-2.0; root licenses/provenance in dependency-licenses.json",
+  "sources": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected"
+      ],
+      "sha256": "51fff0db37a0e2cab919256b87ac4456ca601991e02fbf8543e2d4e1573cb5e4"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized"
+      ],
+      "sha256": "4fa961e930f14f25d4567262636b362300052804c2be761a190770182b2978a6"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorNormalized",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral"
+      ],
+      "sha256": "2a7b16ed73fe873328ef130b532f6a5f98e2ed7e09aa697d7fc9355c1deba300"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorIntegral",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic"
+      ],
+      "sha256": "171b9c78de833f76c7a82b31acacbda7c662bc16ee0b624475e7f507a0c69897"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass"
+      ],
+      "sha256": "c5211fe2bbd37895cbad269e5f4508776e71781c28fc00461b2f3d654cf50c18"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount"
+      ],
+      "sha256": "344795c52e44f4f3dcafe367e387a30d6a78c9dabd5a0c69c16f35b60498d5c0"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorSourceCount",
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters"
+      ],
+      "sha256": "e98e4fb99e2d1809acfbf2c7630d71c7a1ef1d37d19ce9be5a28e58959811f07"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorClass.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorMoments",
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorExponent"
+      ],
+      "sha256": "83326184c6165e3c99f93c957f60af2c99d21ac557d0a10be0cce485a55cfb73"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorExponent",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorExponent.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorSourceCount"
+      ],
+      "sha256": "a8575c7e463a5a671a00c3a0a8ddc16f789d67767237d2ae7b8b37000f4127f3"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorArithmetic.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass"
+      ],
+      "sha256": "6fb297201464d508daf2d948f089fadf908b2a8622c2d2d893c079a27188b068"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorIntegral",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorIntegral.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic"
+      ],
+      "sha256": "8673f068cc71a6464e9d87c379c4721872a43220f5157f99475f2937edc11228"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorNormalized",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorNormalized.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorIntegral",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer"
+      ],
+      "sha256": "bb3f4f1fecfe5e63e55127d3f24888447a01336bca2545dcbb24c0c3da928b09"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic"
+      ],
+      "sha256": "158f5a3d94c14d6f927d5aba0323785d4e7f843d41ef905bb04535741b79ca4a"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorDyadic.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorNormalized",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition"
+      ],
+      "sha256": "3f7c0fad89128f2e05762b2f5f5c13d60ba9e14f9b2f06e30a2c8fff509ff3b4"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorDyadic.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.SmallPartition"
+      ],
+      "sha256": "cb144cf21f1ba9e638cec7850644b350744ea5a1448186f4b28f53ee45ce059d"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected",
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport"
+      ],
+      "sha256": "f4cd678e0f726d2d08f51bc8f45db8035411e121954067a8cd42face02304d80"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransportSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected"
+      ],
+      "sha256": "43c466c09b82882eff832604a9371bfc03ac6894aaefbff9f8903bc7e680306e"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorCollected.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition"
+      ],
+      "sha256": "3184f79b178efe97235a325683c5a677b6b8e15bbc65a46714aa26fdfc1b1089"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorSaving.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized"
+      ],
+      "sha256": "c042e664a6afb7241320106edd6ceb2d9a8f90b963101219d778fe39f6338974"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorNormalized.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer"
+      ],
+      "sha256": "d7a307e8cc59fb06c5ac86406fdb396e8152c625f2fc1229951026d52baef90c"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorGlobalIntegral.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal",
+        "OAI.NumberTheory.DirichletL.Detector.CentralExponent"
+      ],
+      "sha256": "c236312c955034a729457dbdb77a547bde73b3e156d1de423f41f1e54869dccb"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorGlobal.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic"
+      ],
+      "sha256": "939c8135a734160ac57b378794270e10f569d4fe9557553da8da78a22b865271"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CubeFloorArithmetic.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent",
+        "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm"
+      ],
+      "sha256": "fa1776b3b1e481c0d2ca8a3d512ee6d21f70067c54406825bbc0b500637260f8"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/CentralSupportedSplit.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeCalibration"
+      ],
+      "sha256": "972925f42f9e96c7e7bc7ad424c45537751e35b7819ee287648667ae830ab9b5"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransportSaving",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NormalizedTransportSaving.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport"
+      ],
+      "sha256": "e650227d9334b227c5c3417a26183a5782be3f8e2c59d2278b1bf68cb3ea740e"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport",
+      "source": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NormalizedTransport.lean",
+      "imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer"
+      ],
+      "sha256": "f015d2f28b576fdf9cf4be14fd34bb267c5cbb0e9a0d953b2372b632528d347b"
+    }
+  ]
+}

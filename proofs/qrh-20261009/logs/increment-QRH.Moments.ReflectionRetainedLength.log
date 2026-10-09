@@ -1,0 +1,7 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Moments/ReflectionRetainedLength.olean", "/work/qrh-proof/research/drafts/QRH/Moments/ReflectionRetainedLength.lean"], "source_sha256": "dfa1b2a4a7974dedb537de5a425658b385c606a927d82850a7d294f1efe2ea0a"}
+/work/qrh-proof/research/drafts/QRH/Moments/ReflectionRetainedLength.lean:17:5: warning: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

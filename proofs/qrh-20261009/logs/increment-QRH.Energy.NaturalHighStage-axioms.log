@@ -1,0 +1,3 @@
+'OAI.SevenEighths.CenteredMomentEnergyNaturalHighStage.actual_high_stage_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

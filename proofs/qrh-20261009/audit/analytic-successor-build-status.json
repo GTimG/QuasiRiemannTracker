@@ -1,0 +1,12 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor"
+  ],
+  "closure": 6330,
+  "checked": 6330,
+  "failed": [],
+  "blocked": [],
+  "seconds": 1405.0821347236633,
+  "jobs": 6,
+  "success": true
+}

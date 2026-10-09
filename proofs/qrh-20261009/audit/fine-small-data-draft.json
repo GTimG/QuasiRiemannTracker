@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.FineSmallData",
+    "source": "research/drafts/QRH/Detector/FineSmallData.lean",
+    "namespace": "SevenEighths.QRHParameters",
+    "theorems": [
+      "exists_high_data_fine_small"
+    ]
+  }
+]

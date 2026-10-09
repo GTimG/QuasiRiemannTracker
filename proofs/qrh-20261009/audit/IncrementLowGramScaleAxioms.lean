@@ -1,0 +1,3 @@
+import QRH.Detector.LowGramScale
+#print axioms OAI.SevenEighths.ProbePhysical.source_gram_power_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.source_gram_sqrt_power_optimized

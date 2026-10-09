@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionClipped.deleted_long_le_width_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionClipped.clipped_reflected_bound_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

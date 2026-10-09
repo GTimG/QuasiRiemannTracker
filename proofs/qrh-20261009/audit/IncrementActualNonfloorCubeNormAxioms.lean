@@ -1,0 +1,2 @@
+import QRH.Detector.ActualNonfloorCubeNorm
+#print axioms OAI.SevenEighths.QRHUniformDetectorMoment.actual_uniform_nonfloor_cube_norm

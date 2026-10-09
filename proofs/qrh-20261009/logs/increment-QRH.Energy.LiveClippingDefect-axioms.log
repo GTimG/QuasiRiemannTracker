@@ -1,0 +1,30 @@
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_slot_budgets_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_defect_le_width_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_balanced_long_nonneg_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_reflected_low_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_reflected_low_admissible_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_deleted_cases_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_fixed_slack_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_deleted_reference_cases_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.robust_deleted_reference_window_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyLiveClippingDefect.live_profiles_reference_window_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

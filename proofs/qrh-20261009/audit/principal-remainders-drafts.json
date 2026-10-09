@@ -1,0 +1,42 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedPrincipalRemainders",
+    "source": "research/drafts/QRH/Detector/OptimizedPrincipalRemainders.lean",
+    "namespace": "SevenEighths.QRHPrincipalRemainders",
+    "theorems": [
+      "active_prime_sum_bound",
+      "slotConstant",
+      "slotConstant_nonneg",
+      "window_sharp_bound",
+      "scalePower",
+      "scalePower_nonneg",
+      "continued_source_sharp_pointwise",
+      "full_sharp_pointwise",
+      "residue_sharp_pointwise",
+      "vertical_triple_eq_joint",
+      "vertical_pair_eq_joint",
+      "normalizer_norm_pos",
+      "full_scale_bound",
+      "residue_scale_bound",
+      "full_vertical_scale_bound",
+      "residue_vertical_scale_bound",
+      "ordered_remainders_scale_bound",
+      "source_scale_identity",
+      "source_w_scale_identity",
+      "source_z_scale_identity",
+      "eventual_annulus_threshold",
+      "source_remainders_power_bound",
+      "source_w_strict_exponent",
+      "source_z_strict_exponent",
+      "source_remainders_strict_saving"
+    ]
+  },
+  {
+    "module": "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+    "source": "research/drafts/QRH/Detector/OptimizedPrincipalPhysicalRemainder.lean",
+    "namespace": "SevenEighths.QRHPrincipalPhysical",
+    "theorems": [
+      "physical_principal_residue_remainder"
+    ]
+  }
+]

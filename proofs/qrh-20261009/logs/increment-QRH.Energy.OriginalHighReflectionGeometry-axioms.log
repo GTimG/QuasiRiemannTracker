@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyOriginalHighReflectionGeometry.original_long_positive_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyOriginalHighReflectionGeometry.actual_deleted_gates_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

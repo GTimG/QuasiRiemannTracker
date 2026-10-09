@@ -1,0 +1,4 @@
+import QRH.PrimeRows.OptimizedSlotExponent
+#print axioms OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_length_sum
+#print axioms OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_weightedMean
+#print axioms OAI.SevenEighths.QRHProbeHighRowFamily.source_slot_product

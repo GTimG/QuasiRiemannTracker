@@ -1,0 +1,18 @@
+[
+  {
+    "module": "QRH.Detector.CompleteNonfloorCubeData",
+    "source": "research/drafts/QRH/Detector/CompleteNonfloorCubeData.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "exists_optimized_nonfloor_cube_bound_with_parameters"
+    ]
+  },
+  {
+    "module": "QRH.Detector.CompleteNonfloorRowsData",
+    "source": "research/drafts/QRH/Detector/CompleteNonfloorRowsData.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "exists_optimized_nonfloor_rows_bound_with_parameters"
+    ]
+  }
+]

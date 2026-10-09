@@ -1,0 +1,9 @@
+Source closure: 5065 modules; workers=6
+5002/5065 checked; 3 running; 46s
+5050/5065 checked; 3 running; 74s
+5051/5065 checked; 2 running; 74s
+5052/5065 checked; 2 running; 75s
+5053/5065 checked; 1 running; 76s
+5054/5065 checked; 1 running; 79s
+5055/5065 checked; 1 running; 80s
+{"roots": ["OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono"], "closure": 5065, "checked": 5065, "failed": [], "seconds": 112.14902758598328, "jobs": 6, "success": true}

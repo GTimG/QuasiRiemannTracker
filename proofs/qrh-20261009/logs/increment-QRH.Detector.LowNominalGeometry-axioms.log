@@ -1,0 +1,7 @@
+'OAI.SevenEighths.ProbePhysical.lowLength_bounds_optimized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.ProbePhysical.lowPhysicalScale_source_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.lowPhysicalScale_nominal_bound_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

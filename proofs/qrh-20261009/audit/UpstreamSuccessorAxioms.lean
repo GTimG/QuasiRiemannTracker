@@ -1,0 +1,4 @@
+import OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor
+#print axioms OAI.SevenEighths.CenteredMomentEnergyCappedAnalyticSuccessor.actual_successor
+#print axioms OAI.SevenEighths.CenteredMomentEnergyOriginalSource.normalized_input_difference
+#print axioms OAI.SevenEighths.CenteredMomentOriginalCommonHarmonic.actual_common_gates

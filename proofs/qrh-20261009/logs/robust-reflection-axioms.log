@@ -1,0 +1,7 @@
+'QRH.RobustReflection.slot_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.defect_le_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.balanced_long_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.reflected_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.reflected_low_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.deleted_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.RobustReflection.fixed_slack' depends on axioms: [propext, Classical.choice, Quot.sound]

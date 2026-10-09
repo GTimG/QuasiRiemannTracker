@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.ActualNonfloorCubeNorm",
+    "source": "research/drafts/QRH/Detector/ActualNonfloorCubeNorm.lean",
+    "namespace": "SevenEighths.QRHUniformDetectorMoment",
+    "theorems": [
+      "actual_uniform_nonfloor_cube_norm"
+    ]
+  }
+]

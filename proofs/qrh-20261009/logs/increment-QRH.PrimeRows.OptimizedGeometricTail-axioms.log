@@ -1,0 +1,4 @@
+'OAI.SevenEighths.QRHPhysicalTails.large_geometric_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.large_geometric_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.large_geometric_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.exists_large_tail_line' depends on axioms: [propext, Classical.choice, Quot.sound]

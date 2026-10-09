@@ -1,0 +1,53 @@
+'OAI.SevenEighths.QRHPrincipalContours.arithmetic_onLines_bound_of_gaps' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.arithmetic_onLines_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.continued_source_joint_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_joint_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_joint_fubini' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.continued_source_slices' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_w_leftover_outer_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_z_boundary_any' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_ordered_at_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_ordered_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.residue_arithmetic_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.continued_residue_pair_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.residue_pair_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_iterated_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.residue_iterated_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_ordered_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_uniform_joint_tails' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.source_uniform_high_slices' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.residue_uniform_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.residue_uniform_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalContours.raw_source_uniform_high_slices' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

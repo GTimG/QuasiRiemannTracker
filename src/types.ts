@@ -1,0 +1,42 @@
+export type Rational = { numerator: string; denominator: string };
+export type Contribution = {
+  id: string;
+  title: string;
+  theta: Rational;
+  authors: { name: string; url?: string }[];
+  method: string;
+  references: { label: string; url: string }[];
+  license: string;
+  builds_on: string[];
+  entrypoint: { module: string; declaration: string };
+  first_verified_at: string;
+  submitted_at: string;
+  published_at: string;
+  merged_at: string;
+  source_commit: string;
+  repository: string;
+  pr: number | null;
+  receipt_url?: string;
+  log_url?: string;
+  is_record?: boolean;
+  status: string;
+  timeline_at?: string;
+  date_label?: string;
+  exact_bound?: string;
+  verification_note?: string;
+  attribution_note?: string;
+  bound_interval?: { lower: Rational; upper: Rational };
+};
+export type Event = {
+  type: "withdraw" | "supersede";
+  id: string;
+  at: string;
+  reason: string;
+  replacement?: string;
+};
+export type Registry = {
+  records: Contribution[];
+  events: Event[];
+  baseline_status: string;
+  active_ids: string[];
+};

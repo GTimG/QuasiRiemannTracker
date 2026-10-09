@@ -1,0 +1,3 @@
+'OAI.SevenEighths.ProbeLowReflected.compensated_reflected_exponent_with_length_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

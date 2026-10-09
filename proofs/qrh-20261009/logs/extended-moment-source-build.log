@@ -1,0 +1,5 @@
+Source closure: 6379 modules; workers=6
+6300/6379 checked; 0 running; 31s
+6353/6379 checked; 3 running; 53s
+6355/6379 checked; 3 running; 53s
+{"roots": ["QRH.Energy.UniformMoment", "QRH.Detector.OptimizedProbe"], "closure": 6379, "checked": 6379, "failed": [], "seconds": 102.47638607025146, "jobs": 6, "success": true}

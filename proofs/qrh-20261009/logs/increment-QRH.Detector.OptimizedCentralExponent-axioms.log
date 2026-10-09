@@ -1,0 +1,19 @@
+'OAI.SevenEighths.QRHProbeCentralExponent.sourceExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.mixedSourceExponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.realLoss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.manuscript_exponent_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.physical_scale_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.mixed_physical_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.realLoss_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.central_class_exponent_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHProbeCentralExponent.mixed_source_slack' depends on axioms: [propext, Classical.choice, Quot.sound]

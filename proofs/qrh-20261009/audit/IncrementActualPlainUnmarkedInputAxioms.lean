@@ -1,0 +1,3 @@
+import QRH.Detector.ActualPlainUnmarkedInput
+#print axioms OAI.SevenEighths.QRHDynamicSlotMomentInput.actual_zero_source_input
+#print axioms OAI.SevenEighths.QRHDynamicSlotMomentInput.actual_source_batch_plain_unmarked_slots

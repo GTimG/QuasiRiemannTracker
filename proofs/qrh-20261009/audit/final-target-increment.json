@@ -1,0 +1,14 @@
+{
+  "source": "formalization/QRH/Nonvanishing.lean",
+  "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+  "declarations": [
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
+    "QRH.riemannZeta_ne_zero_of_theta_lt_re",
+    "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re"
+  ],
+  "independent_specifications": "formalization/QRH/IndependentTargets.lean",
+  "parity_axioms_log": "logs/final-nonvanishing-increment-parity-axioms.log",
+  "allowed_only": true,
+  "source_replay_pending": false,
+  "final_verification": "audit/final-verification.json"
+}

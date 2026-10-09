@@ -1,0 +1,165 @@
+{
+  "OAI.NumberTheory.DirichletL.Nonvanishing": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+    "sha256": "d98c4a7e074469b429890e1c21b8cc76c410026525a776895293cdc0f9e6ae89",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Foundation",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyUnconditional.lean",
+    "sha256": "0f52159a2929e7b20646f8394589d25a1a637c2f78746ad9d1447871577af615",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Energy.CertifiedExistence",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands",
+      "OAI.NumberTheory.DirichletL.Moments.DetectorPlainSlotProfile"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Energy.CertifiedExistence": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean",
+    "sha256": "2d48b75fdd14ba8eabb428f79f98e0a6e532c28083075bacf16e1d57f020d7a9",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+      "OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean",
+    "sha256": "d41f3d2a7fc675a1e72e02ff0be668a774120dc97ff007f04593d4a28c7e0675",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData",
+      "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields",
+      "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField",
+      "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField",
+      "OAI.NumberTheory.DirichletL.Energy.CappedWidthInduction"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.lean",
+    "sha256": "3bba00cc2d9fd6a48badfac7e69be7bb2785f887b3b0c689b6c3660b18ce9450",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssembly",
+      "OAI.NumberTheory.DirichletL.ParametersHighDataFine"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssembly": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssembly.lean",
+    "sha256": "e16f7a984e46edcda6c21efe9c21d4798d421ff332cc81ec394998102af53490",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyFixedHigh"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyFixedHigh": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyFixedHigh.lean",
+    "sha256": "1bc465b2b62cc50a3ad6a8c701ba1944691b2d2e41652f13e36e608b64d629bf",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.lean",
+    "sha256": "51fff0db37a0e2cab919256b87ac4456ca601991e02fbf8543e2d4e1573cb5e4",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.lean",
+    "sha256": "f4cd678e0f726d2d08f51bc8f45db8035411e121954067a8cd42face02304d80",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected",
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.lean",
+    "sha256": "158f5a3d94c14d6f927d5aba0323785d4e7f843d41ef905bb04535741b79ca4a",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.lean",
+    "sha256": "43c466c09b82882eff832604a9371bfc03ac6894aaefbff9f8903bc7e680306e",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransportSaving",
+      "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+      "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.lean",
+    "sha256": "4fa961e930f14f25d4567262636b362300052804c2be761a190770182b2978a6",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.lean",
+    "sha256": "2a7b16ed73fe873328ef130b532f6a5f98e2ed7e09aa697d7fc9355c1deba300",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorNormalized",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.lean",
+    "sha256": "171b9c78de833f76c7a82b31acacbda7c662bc16ee0b624475e7f507a0c69897",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorIntegral",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.lean",
+    "sha256": "c5211fe2bbd37895cbad269e5f4508776e71781c28fc00461b2f3d654cf50c18",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.lean",
+    "sha256": "344795c52e44f4f3dcafe367e387a30d6a78c9dabd5a0c69c16f35b60498d5c0",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.lean",
+    "sha256": "e98e4fb99e2d1809acfbf2c7630d71c7a1ef1d37d19ce9be5a28e58959811f07",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorSourceCount",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyMomentInput.lean",
+    "sha256": "74edb2e0b51c5913639bde386c51c45083817dabfd1e7fbf4afa46f693436ba7",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData",
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.Nonvanishing": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean",
+    "sha256": "9e120752d0067e9b645f173846833396de6282dfa83dff7dc83b7fd500af47d5",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional",
+      "OAI.NumberTheory.DirichletL.Hecke.ConditionalNonvanishing",
+      "OAI.NumberTheory.DirichletL.Hecke.RayFamily"
+    ]
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.ConditionalNonvanishing": {
+    "source": "/work/qrh-proof/upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Hecke/ConditionalNonvanishing.lean",
+    "sha256": "b628ed950a6e85f6fc8014c951a1450b965f11c36539bd6830a577fa9c470804",
+    "imports": [
+      "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands"
+    ]
+  }
+}

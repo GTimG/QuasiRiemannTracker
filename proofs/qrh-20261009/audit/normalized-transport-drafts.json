@@ -1,0 +1,27 @@
+[
+  {
+    "module": "QRH.PrimeRows.OptimizedNormalizedTransport",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedNormalizedTransport.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "normalized_central_transport",
+      "actual_normalized_probe_transport"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedNormalizedTransportSaving",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "actual_normalized_probe_transport_saving"
+    ]
+  },
+  {
+    "module": "QRH.PrimeRows.OptimizedNonfloorTransport",
+    "source": "research/drafts/QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+    "namespace": "SevenEighths.QRHPhysicalTails",
+    "theorems": [
+      "actual_nonfloor_probe_transport"
+    ]
+  }
+]

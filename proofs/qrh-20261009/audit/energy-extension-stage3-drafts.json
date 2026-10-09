@@ -1,0 +1,31 @@
+[
+  {
+    "module": "QRH.Energy.UniformMesh",
+    "source": "research/drafts/QRH/Energy/UniformMesh.lean",
+    "theorems": [
+      "fineMesh_uniform_lower",
+      "positiveAt_kappa_mesh_mono"
+    ],
+    "namespace": "SevenEighths.QRHUniformMesh",
+    "upstream": "original QRH proof over pinned actual upstream predicates"
+  },
+  {
+    "module": "QRH.Energy.CertifiedExistence",
+    "source": "research/drafts/QRH/Energy/CertifiedExistence.lean",
+    "theorems": [
+      "certified_bands_extended",
+      "terminal_certificate_extended"
+    ],
+    "namespace": "SevenEighths.CenteredMomentEnergyCertifiedExistence",
+    "upstream": "upstream/openai-math/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean"
+  },
+  {
+    "module": "QRH.Energy.UniformMoment",
+    "source": "research/drafts/QRH/Energy/UniformMoment.lean",
+    "theorems": [
+      "actual_uniform_moment"
+    ],
+    "namespace": "SevenEighths.QRHPlainMoment",
+    "upstream": "original QRH proof over pinned actual upstream predicates"
+  }
+]

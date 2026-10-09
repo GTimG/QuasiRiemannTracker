@@ -1,0 +1,7 @@
+CHECKED QRH.Detector.LowNominalGeometry
+CHECKED QRH.Detector.LowInverseNormalize
+WAIT QRH.Detector.LowSelectedBound : QRH.Reflection.LowOriginalEnergy
+WAIT QRH.Detector.LowSelectedBound : QRH.Reflection.LowOriginalEnergy
+CHECKED QRH.Detector.LowSelectedBound
+CHECKED QRH.Detector.LowNominalEnergy
+FAIL QRH.Detector.LowPhysicalInverseBound; /work/qrh-proof/logs/increment-QRH.Detector.LowPhysicalInverseBound.log

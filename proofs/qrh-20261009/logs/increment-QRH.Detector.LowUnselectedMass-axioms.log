@@ -1,0 +1,9 @@
+'OAI.SevenEighths.ProbePhysical.canonical_slot_inverse_three_halves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.lowUnselectedWeight_norm_plain_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.lowUnselectedMass_plain_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,2 @@
+import QRH.Hecke.DetectorRowCountCrossing
+#print axioms OAI.SevenEighths.HeckeDetectorRowCount.plain_capacity_bound_extended

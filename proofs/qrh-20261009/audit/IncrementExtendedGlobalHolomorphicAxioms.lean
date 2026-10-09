@@ -1,0 +1,5 @@
+import QRH.Detector.ExtendedGlobalHolomorphic
+#print axioms OAI.SevenEighths.QRHGlobalHolomorphic.open_region_denominators
+#print axioms OAI.SevenEighths.QRHGlobalHolomorphic.unramifiedClosed_analytic_x
+#print axioms OAI.SevenEighths.QRHGlobalHolomorphic.unramifiedClosed_analytic_w
+#print axioms OAI.SevenEighths.QRHGlobalHolomorphic.unramifiedClosed_analytic_z

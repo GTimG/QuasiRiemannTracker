@@ -1,0 +1,4 @@
+import QRH.Detector.LowUnselectedMass
+#print axioms OAI.SevenEighths.ProbePhysical.canonical_slot_inverse_three_halves
+#print axioms OAI.SevenEighths.ProbePhysical.lowUnselectedWeight_norm_plain_identity
+#print axioms OAI.SevenEighths.ProbePhysical.lowUnselectedMass_plain_bound

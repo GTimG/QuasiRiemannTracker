@@ -1,0 +1,6 @@
+'OAI.SevenEighths.Supremum.uniform_bound_below_supremum_false' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.Supremum.seven_eighths_of_uniform_margin_with_sentinel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

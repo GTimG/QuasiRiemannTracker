@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Detector/ActualCubeClassBound.olean", "/work/qrh-proof/research/drafts/QRH/Detector/ActualCubeClassBound.lean"], "source_sha256": "d86e3dd62977de5a2e3f8f9371f0f3898a7e3f7180c3b9585e628cc77a87d446"}

@@ -1,0 +1,4 @@
+CHECKED QRH.Hecke.DynamicBalancedCount
+CHECKED QRH.Hecke.DynamicFixedAmplitudeCount
+CHECKED QRH.PrimeRows.DynamicNonfloorCount
+All requested increments checked; this does not complete the analytic theorem.

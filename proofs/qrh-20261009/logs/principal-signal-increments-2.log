@@ -1,0 +1,3 @@
+REUSE CHECKED QRH.Detector.ExtendedHeckeSignalShift
+CHECKED QRH.Detector.ExtendedHeckeSignalBounds
+FAIL QRH.Detector.OptimizedPrincipalSignal; /work/qrh-proof/logs/increment-QRH.Detector.OptimizedPrincipalSignal.log

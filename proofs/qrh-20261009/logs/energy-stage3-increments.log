@@ -1,0 +1,16 @@
+CHECKED QRH.Energy.UniformMesh
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor, OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor
+WAIT QRH.Energy.CertifiedExistence : QRH.Energy.CappedAnalyticSuccessor
+CHECKED QRH.Energy.CertifiedExistence
+CHECKED QRH.Energy.UniformMoment
+All requested increments checked; this does not complete the analytic theorem.

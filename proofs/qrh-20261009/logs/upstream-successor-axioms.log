@@ -1,0 +1,9 @@
+'OAI.SevenEighths.CenteredMomentEnergyCappedAnalyticSuccessor.actual_successor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyOriginalSource.normalized_input_difference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentOriginalCommonHarmonic.actual_common_gates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

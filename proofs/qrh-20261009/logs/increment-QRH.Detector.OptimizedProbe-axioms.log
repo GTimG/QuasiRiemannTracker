@@ -1,0 +1,3 @@
+'OAI.SevenEighths.QRHOptimizedProbe.optimized_product_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHOptimizedProbe.optimized_row_triples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHOptimizedProbe.optimized_canonical_rows' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,11 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedAdaptiveSaving",
+    "source": "research/drafts/QRH/Detector/OptimizedAdaptiveSaving.lean",
+    "namespace": "SevenEighths.QRHProbeCentralExponent",
+    "theorems": [
+      "high_mixed_margin",
+      "adaptive_mixed_saving"
+    ]
+  }
+]

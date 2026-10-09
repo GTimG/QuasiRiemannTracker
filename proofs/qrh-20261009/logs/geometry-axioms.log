@@ -1,0 +1,6 @@
+'QRH.geometry_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.dynamic_kappa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.old_moment_range_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.plain_centering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.plain_slot_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRH.low_energy' depends on axioms: [propext, Classical.choice, Quot.sound]

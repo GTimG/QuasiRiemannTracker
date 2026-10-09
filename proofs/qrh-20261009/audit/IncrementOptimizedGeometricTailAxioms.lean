@@ -1,0 +1,5 @@
+import QRH.PrimeRows.OptimizedGeometricTail
+#print axioms OAI.SevenEighths.QRHPhysicalTails.large_geometric_scale
+#print axioms OAI.SevenEighths.QRHPhysicalTails.large_geometric_summable
+#print axioms OAI.SevenEighths.QRHPhysicalTails.large_geometric_sum
+#print axioms OAI.SevenEighths.QRHPhysicalTails.exists_large_tail_line

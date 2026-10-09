@@ -1,0 +1,3 @@
+import QRH.Detector.DetectorPlainMarkedSlots
+#print axioms OAI.SevenEighths.ProbeDetectorPlainMarkedFineField.actual_fiber_lengths_slots
+#print axioms OAI.SevenEighths.ProbeDetectorPlainMarkedFineField.source_batch_plain_marked_slots

@@ -1,0 +1,15 @@
+import QRH.Detector.ExtendedPrincipalTransport
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.principal_box_majorant
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_x_shift
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_source_differentiable_z
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_principal_differentiable_z
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_z_shift
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_triple_x_shift
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.continued_triple_z_shift
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.source_initial_placement
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.source_initial_ordered_at_a
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.uniform_high_x_joins
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.uniform_high_z_joins
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.raw_uniform_high_x_joins
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.raw_uniform_high_z_joins
+#print axioms OAI.SevenEighths.QRHPrincipalTransport.source_initial_joint_ordered_at_a

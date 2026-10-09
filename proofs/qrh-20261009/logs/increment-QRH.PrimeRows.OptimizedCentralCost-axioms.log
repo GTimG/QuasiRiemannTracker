@@ -1,0 +1,9 @@
+'OAI.SevenEighths.QRHPhysicalTails.central_source_crude_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.central_prime_product_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPhysicalTails.central_arithmetic_cost_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

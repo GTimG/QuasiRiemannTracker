@@ -1,0 +1,4 @@
+import QRH.PrimeRows.OptimizedCentralCost
+#print axioms OAI.SevenEighths.QRHPhysicalTails.central_source_crude_scale
+#print axioms OAI.SevenEighths.QRHPhysicalTails.central_prime_product_bound
+#print axioms OAI.SevenEighths.QRHPhysicalTails.central_arithmetic_cost_bound

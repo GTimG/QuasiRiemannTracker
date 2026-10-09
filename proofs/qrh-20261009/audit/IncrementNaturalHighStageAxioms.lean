@@ -1,0 +1,2 @@
+import QRH.Energy.NaturalHighStage
+#print axioms OAI.SevenEighths.CenteredMomentEnergyNaturalHighStage.actual_high_stage_extended

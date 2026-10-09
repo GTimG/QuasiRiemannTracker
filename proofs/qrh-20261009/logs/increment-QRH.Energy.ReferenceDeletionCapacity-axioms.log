@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionCapacity.deleted_reflection_excess_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceDeletionCapacity.deleted_reflection_removal_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

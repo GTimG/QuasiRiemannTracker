@@ -1,0 +1,4 @@
+import QRH.Detector.OptimizedProbe
+#print axioms OAI.SevenEighths.QRHOptimizedProbe.optimized_product_scale
+#print axioms OAI.SevenEighths.QRHOptimizedProbe.optimized_row_triples
+#print axioms OAI.SevenEighths.QRHOptimizedProbe.optimized_canonical_rows

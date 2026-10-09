@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/Geometry.olean", "QRH/Geometry.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "9699c076c5e2f9c47262a7534cc30c1df40e887556a36f98b685e30a53955e01", "key": "07c6e16bfff1df284a6385a5433758f9b72e1fd801091abcfcce0649ecede68c"}

@@ -1,0 +1,50 @@
+name: Prepare signed publication (maintainer dispatch)
+on:
+  workflow_dispatch:
+    inputs:
+      verification_run:
+        description: Successful trusted verification run ID
+        required: true
+        type: number
+      verification_attempt:
+        description: Run attempt containing the signed receipt
+        required: true
+        default: 1
+        type: number
+permissions: {}
+jobs:
+  publication:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    environment: registry-publication
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: signed-receipt-${{ inputs.verification_run }}-${{ inputs.verification_attempt }}
+          run-id: ${{ inputs.verification_run }}
+          github-token: ${{ github.token }}
+          path: out/
+      - name: Authenticate receipt, exact merged content, and independent head review
+        run: node verifier/publish.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QRH_PUBLICATION_KEY: ${{ secrets.QRH_PUBLICATION_KEY }}
+          QRH_PUBLICATION_KEY_ID: ${{ vars.QRH_PUBLICATION_KEY_ID }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reviewed-publication-${{ github.run_id }}
+          path: out/publication/
+          if-no-files-found: error
+          retention-days: 90

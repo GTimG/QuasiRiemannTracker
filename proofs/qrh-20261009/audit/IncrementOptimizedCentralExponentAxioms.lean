@@ -1,0 +1,10 @@
+import QRH.Detector.OptimizedCentralExponent
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.sourceExponent
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.mixedSourceExponent
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.realLoss
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.manuscript_exponent_identity
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.physical_scale_identity
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.mixed_physical_exponent
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.realLoss_bound
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.central_class_exponent_identity
+#print axioms OAI.SevenEighths.QRHProbeCentralExponent.mixed_source_slack

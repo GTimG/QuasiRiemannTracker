@@ -1,0 +1,13 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedProbe",
+    "source": "research/drafts/QRH/Detector/OptimizedProbe.lean",
+    "namespace": "SevenEighths.QRHOptimizedProbe",
+    "theorems": [
+      "optimized_product_scale",
+      "optimized_row_triples",
+      "optimized_canonical_rows"
+    ],
+    "upstream": "original QRH specialization of pinned general actual probe identities"
+  }
+]

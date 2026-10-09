@@ -1,0 +1,33 @@
+{
+  "CheckedArithmeticAxioms": {
+    "exit_code": 0,
+    "declarations": 43,
+    "allowed_only": true
+  },
+  "PlainReflectionAxioms": {
+    "exit_code": 0,
+    "declarations": 3,
+    "allowed_only": true
+  },
+  "ZetaTransferAxioms": {
+    "exit_code": 0,
+    "declarations": 1,
+    "allowed_only": true
+  },
+  "StatementParityAxioms": {
+    "exit_code": 0,
+    "declarations": 6,
+    "allowed_only": true
+  },
+  "final_targets": {
+    "exit_code": 1,
+    "status": "UNPROVED",
+    "required_declarations": [
+      "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
+      "QRH.riemannZeta_ne_zero_of_theta_lt_re",
+      "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re"
+    ]
+  },
+  "partial_checks_passed": true,
+  "task_complete": false
+}

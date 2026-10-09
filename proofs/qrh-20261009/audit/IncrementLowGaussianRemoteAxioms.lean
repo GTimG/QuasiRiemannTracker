@@ -1,0 +1,4 @@
+import QRH.Detector.LowGaussianRemote
+#print axioms OAI.SevenEighths.ProbePhysical.eventually_low_physical_scales_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.low_remote_power_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.low_remote_gaussian_dyads_optimized

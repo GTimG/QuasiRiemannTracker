@@ -1,0 +1,20 @@
+REUSE CHECKED QRH.Reflection.LowCaps
+REUSE CHECKED QRH.Reflection.LowExponent
+REUSE CHECKED QRH.Reflection.LowBranchSum
+REUSE CHECKED QRH.Reflection.LowSector
+REUSE CHECKED QRH.Reflection.LowRetained
+REUSE CHECKED QRH.Reflection.LowRetainedBudget
+REUSE CHECKED QRH.Reflection.LowFull
+REUSE CHECKED QRH.Reflection.LowFullBudget
+REUSE CHECKED QRH.Reflection.LowGlobalBudget
+REUSE CHECKED QRH.Reflection.LowMemberBudget
+REUSE CHECKED QRH.Reflection.LowMemberGeometry
+CHECKED QRH.Reflection.LowFixedMember
+CHECKED QRH.Reflection.LowDyads
+CHECKED QRH.Reflection.LowChoiceEnergy
+CHECKED QRH.Reflection.LowInactiveEnergy
+CHECKED QRH.Reflection.LowFrozenEnergy
+CHECKED QRH.Reflection.LowCompletedFiber
+CHECKED QRH.Reflection.LowCompletedRows
+CHECKED QRH.Reflection.LowOriginalEnergy
+All requested increments checked; this does not complete the analytic theorem.

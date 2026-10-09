@@ -1,0 +1,3 @@
+import QRH.Detector.LowCommonBound
+#print axioms OAI.SevenEighths.ProbePhysical.compensatedPhysicalProbe_low_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.original_ray_compensatedPhysicalProbe_low_optimized

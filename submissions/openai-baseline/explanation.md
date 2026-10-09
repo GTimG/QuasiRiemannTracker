@@ -1,0 +1,1 @@
+This is an import-based baseline example, not a new proof or improvement. All mathematics is attributed to OpenAI's pinned upstream proof. Its independent verification has not completed in this environment. Do not publish it until Comparator and NanoDa both accept it in the isolated worker.

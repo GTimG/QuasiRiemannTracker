@@ -1,0 +1,49 @@
+{
+  "kind": "qrh-check-attempt-v1",
+  "status": "infrastructure-blocked",
+  "started_at": "2026-10-09T11:26:04.289Z",
+  "completed_at": "2026-10-09T11:26:04.290Z",
+  "pin_digest": "4948e3f59bf97031391f8c8c8f2b4eaf7b763176a81a9155cf5607b7ae104f31",
+  "content_digest": "77f88899a2169eeb2d34a89d372f5d52b42721a8de1c082cd0c6902ee11a9c66",
+  "manifest_digest": "66ed34b3cdafa49e5e45e5ca28a5ced45f6dd92dbe2f4ffc15bbc165377c1a91",
+  "manifest": {
+    "schema_version": 1,
+    "id": "openai-baseline",
+    "title": "OpenAI seven-eighths baseline",
+    "theta": {
+      "numerator": "7",
+      "denominator": "8"
+    },
+    "authors": [
+      {
+        "name": "OpenAI",
+        "url": "https://github.com/openai/math"
+      }
+    ],
+    "entrypoint": {
+      "module": "Candidate.Main",
+      "declaration": "Candidate.bound"
+    },
+    "method": "Direct reuse of the upstream all-Dirichlet nonvanishing theorem. This example is pending independent verification; it is not a published result.",
+    "references": [
+      {
+        "label": "Pinned upstream proof",
+        "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean"
+      }
+    ],
+    "license": "Apache-2.0",
+    "builds_on": []
+  },
+  "challenge_sha256": "a9d290c74920624ba06f66da0a56b633876e2a0ac230613add78b61370fbfe12",
+  "source_commit": null,
+  "repository": null,
+  "pr": null,
+  "orchestrator_commit": null,
+  "worker_image": null,
+  "reason": "Linux isolation required; host is darwin. No proof checking was performed.",
+  "results": {
+    "comparator": "not-run",
+    "nanoda": "not-run",
+    "isolation": "not-run"
+  }
+}

@@ -1,0 +1,6 @@
+'OAI.SevenEighths.QRHDynamicSlotMomentInput.dynamic_source_input_slots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHDynamicSlotMomentInput.actual_source_batch_plain_marked_slots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

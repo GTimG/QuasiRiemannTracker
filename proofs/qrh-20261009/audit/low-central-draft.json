@@ -1,0 +1,10 @@
+[
+  {
+    "module": "QRH.Detector.LowCentralTuple",
+    "source": "research/drafts/QRH/Detector/LowCentralTuple.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_central_compensated_tuple_optimized"
+    ]
+  }
+]

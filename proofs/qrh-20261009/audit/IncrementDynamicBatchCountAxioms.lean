@@ -1,0 +1,2 @@
+import QRH.Hecke.DynamicBatchCount
+#print axioms OAI.SevenEighths.QRHDetectorBatchCount.batch_count_from_raw_moments

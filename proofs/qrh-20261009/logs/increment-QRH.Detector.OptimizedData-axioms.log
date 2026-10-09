@@ -1,0 +1,8 @@
+'OAI.SevenEighths.QRHParameters.optimizedLengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimizedLengths_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimizedLengths_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimizedLengths_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimizedLengths_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.exists_optimized_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimized_count_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHParameters.optimized_central_budget' depends on axioms: [propext, Classical.choice, Quot.sound]

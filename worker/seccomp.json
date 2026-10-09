@@ -1,0 +1,39 @@
+{
+  "defaultAction": "SCMP_ACT_ALLOW",
+  "syscalls": [
+    {
+      "names": [
+        "socket",
+        "socketpair",
+        "ptrace",
+        "process_vm_readv",
+        "process_vm_writev",
+        "pidfd_getfd",
+        "bpf",
+        "perf_event_open",
+        "userfaultfd",
+        "keyctl",
+        "add_key",
+        "request_key",
+        "mount",
+        "umount2",
+        "pivot_root",
+        "setns",
+        "unshare",
+        "reboot",
+        "kexec_load",
+        "kexec_file_load",
+        "init_module",
+        "finit_module",
+        "delete_module",
+        "open_by_handle_at",
+        "name_to_handle_at",
+        "io_uring_setup",
+        "io_uring_enter",
+        "io_uring_register"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    }
+  ]
+}

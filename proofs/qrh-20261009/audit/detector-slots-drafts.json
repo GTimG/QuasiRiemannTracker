@@ -1,0 +1,31 @@
+[
+  {
+    "module": "QRH.Moments.DetectorPlainExceptionalSlots",
+    "source": "research/drafts/QRH/Moments/DetectorPlainExceptionalSlots.lean",
+    "namespace": "SevenEighths.CenteredMomentDetectorPlainExceptional",
+    "theorems": [
+      "source_fibers_eventually_retained_slots",
+      "source_batch_plain_retained_slots"
+    ],
+    "upstream": "Apache-2.0 original source and checked dynamic counterpart, full hypotheses retained"
+  },
+  {
+    "module": "QRH.Moments.DetectorPlainMarkedSlots",
+    "source": "research/drafts/QRH/Moments/DetectorPlainMarkedSlots.lean",
+    "namespace": "SevenEighths.CenteredMomentDetectorPlainMarkedState",
+    "theorems": [
+      "source_batch_marked_initial_slots"
+    ],
+    "upstream": "Apache-2.0 original source and checked dynamic counterpart, full hypotheses retained"
+  },
+  {
+    "module": "QRH.Detector.DetectorPlainMarkedSlots",
+    "source": "research/drafts/QRH/Detector/DetectorPlainMarkedSlots.lean",
+    "namespace": "SevenEighths.ProbeDetectorPlainMarkedFineField",
+    "theorems": [
+      "actual_fiber_lengths_slots",
+      "source_batch_plain_marked_slots"
+    ],
+    "upstream": "Apache-2.0 original source and checked dynamic counterpart, full hypotheses retained"
+  }
+]

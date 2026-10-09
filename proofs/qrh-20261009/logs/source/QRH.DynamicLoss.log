@@ -1,0 +1,7 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-o", "/work/qrh-proof/build/source/QRH/DynamicLoss.olean", "QRH/DynamicLoss.lean"], "cwd": "/work/qrh-proof/formalization", "source_sha256": "3d11ee6388bfdc21abaffc16ee3dd402cef1a23d9a22780e99675db57842e573", "key": "a395d329ee2f2cda382eeb45a0e53555ce512c8e75da5ca08f880d4ab60f0220"}
+QRH/DynamicLoss.lean:11:5: warning: Variable name `hq0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

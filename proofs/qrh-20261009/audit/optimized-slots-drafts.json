@@ -1,0 +1,13 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedSlots",
+    "source": "research/drafts/QRH/Detector/OptimizedSlots.lean",
+    "namespace": "SevenEighths.QRHOptimizedSlots",
+    "theorems": [
+      "exists_distinct_slot_lengths",
+      "exists_physical_slot_lengths",
+      "exists_optimized_slots"
+    ],
+    "upstream": "original QRH rescaling plus Apache-2.0 adaptation of ParametersSlotLengths.lean"
+  }
+]

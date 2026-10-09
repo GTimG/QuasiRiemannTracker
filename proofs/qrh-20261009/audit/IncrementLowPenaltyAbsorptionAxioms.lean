@@ -1,0 +1,3 @@
+import QRH.Detector.LowPenaltyAbsorption
+#print axioms OAI.SevenEighths.ProbePhysical.low_penalty_le_length
+#print axioms OAI.SevenEighths.ProbePhysical.low_penalty_gram_absorption

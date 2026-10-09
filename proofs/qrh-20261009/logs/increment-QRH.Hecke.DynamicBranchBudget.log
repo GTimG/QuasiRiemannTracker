@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Hecke/DynamicBranchBudget.olean", "/work/qrh-proof/research/drafts/QRH/Hecke/DynamicBranchBudget.lean"], "source_sha256": "b95b1c3a009084bbb3c690a426859cf42aa7b16b2fc3ca84412ce1496c9ffc0d"}

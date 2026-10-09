@@ -1,0 +1,8 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/OptimizedTailScales.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/OptimizedTailScales.lean"], "source_sha256": "0aaa820a5f761fc72aa4dc35c88fc6f795c5426fdb73976904b2a9e10087d420"}
+/work/qrh-proof/research/drafts/QRH/PrimeRows/OptimizedTailScales.lean:69:17: warning: This simp argument is unused:
+  QRH.C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [QRH.h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

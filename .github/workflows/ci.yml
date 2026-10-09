@@ -1,0 +1,72 @@
+name: Trusted project checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Configure GitHub Pages
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+      - name: Enforce append-only evidence history
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: |
+          if ! git cat-file -e "$QRH_BEFORE^{commit}" 2>/dev/null; then
+            git fetch --quiet --no-tags --depth=1 origin "$QRH_BEFORE"
+          fi
+          node verifier/audit-history.mjs "$QRH_BEFORE"
+        env:
+          QRH_BEFORE: ${{ github.event.before }}
+      - run: npm run check
+        env:
+          QRH_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - name: Test production paths and proof downloads
+        run: node scripts/test-deployment.mjs
+        env:
+          QRH_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: browser-evidence
+          path: test-results/
+      - name: Upload website
+        if: success() && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: dist/
+  deploy:
+    needs: test
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy reviewed website
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

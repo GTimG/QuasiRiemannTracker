@@ -1,0 +1,2 @@
+import QRH.Detector.ActualAmplitudeClassCount
+#print axioms OAI.SevenEighths.QRHUniformDetectorMoment.actual_uniform_amplitude_class_count

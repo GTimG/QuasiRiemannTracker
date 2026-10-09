@@ -1,0 +1,77 @@
+[
+  {
+    "module": "QRH.Detector.LowNominalGeometry",
+    "source": "research/drafts/QRH/Detector/LowNominalGeometry.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "lowLength_bounds_optimized",
+      "lowPhysicalScale_source_optimized",
+      "lowPhysicalScale_nominal_bound_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowInverseNormalize",
+    "source": "research/drafts/QRH/Detector/LowInverseNormalize.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_inverse_power_cancel_optimized",
+      "low_inverse_sqrt_normalized_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowSelectedBound",
+    "source": "research/drafts/QRH/Detector/LowSelectedBound.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_selected_physical_energy_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowNominalEnergy",
+    "source": "research/drafts/QRH/Detector/LowNominalEnergy.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_selected_nominal_energy_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowPhysicalInverseBound",
+    "source": "research/drafts/QRH/Detector/LowPhysicalInverseBound.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "low_physical_inverse_normalized_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowGramScale",
+    "source": "research/drafts/QRH/Detector/LowGramScale.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "source_gram_power_optimized",
+      "source_gram_sqrt_power_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowSourceScales",
+    "source": "research/drafts/QRH/Detector/LowSourceScales.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "source_scale_ratio_optimized",
+      "source_scale_square_optimized",
+      "source_compensated_scale_admissible_optimized",
+      "source_compensated_gram_scale_optimized",
+      "source_compensated_gram_sqrt_optimized",
+      "lowGramFactor_source_bound_optimized",
+      "eventually_compensated_source_scales_optimized"
+    ]
+  },
+  {
+    "module": "QRH.Detector.LowSlotScales",
+    "source": "research/drafts/QRH/Detector/LowSlotScales.lean",
+    "namespace": "SevenEighths.ProbePhysical",
+    "theorems": [
+      "lowUnselectedProduct_norm_bound_optimized",
+      "eventually_original_slot_scales_optimized"
+    ]
+  }
+]

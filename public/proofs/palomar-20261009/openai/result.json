@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "kind": "local Palomar mechanical judge; not Palomar registration",
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke"
+  ],
+  "theta": "7/8",
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "palomar_preflight": "passed",
+  "statement_definitions_compared": true,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "source_compiler": "4.34.1",
+  "judge_toolchain": "4.35.0-rc2",
+  "proof_source_sha256": "d98c4a7e074469b429890e1c21b8cc76c410026525a776895293cdc0f9e6ae89",
+  "artifacts": {
+    "src/Challenge.lean": "10e57414544e4e1d4431c04143867e07e492c302fa4bf2a112ef92dcbd758561",
+    "src/Solution.lean": "ceba2bce331979c9ed8f30fb5e809045e14f447d541391c464c80c234e230f39",
+    "exports/Challenge.export": "9946da1ff648d56d56ae11db12273800f808aadfe07da61e91aa0d476fa6ee78",
+    "exports/Solution.export": "59b4e6f8d8be47e9650b8d0037c1d83c2c9fd85df15c47d339ea68dc0e294caf",
+    "comparator.json": "2e4457e9b05559fa95905a1a4167e580433f8d9478bb59ad2751944ec360a440",
+    "judge.log": "0f364aecbe7922e3aefc3c9a16eb013678be1a5c9c12f0a49d37eba5c8eca960"
+  },
+  "registration_limits": [
+    "Source compiler is older than Palomar current submission floor; export compatibility tested by the judge.",
+    "Hecke statement imports pinned OpenAI definitions outside Palomar current Challenge import allowlist.",
+    "No Palomar editorial review or registry submission performed."
+  ],
+  "publication_note": "Sanitized environment metadata and logs; artifact digests cover published bytes. Proof sources, export hashes and original checker outcomes are unchanged. No new mathematical verification is claimed."
+}

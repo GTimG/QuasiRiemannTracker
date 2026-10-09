@@ -1,0 +1,86 @@
+'OAI.SevenEighths.QRHPrincipalSignal.raw_inverse_ae_reciprocal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.raw_quotient_integral_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slot_scalar_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotRatio_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotRatio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.principalSlot_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotRatio_continuous_line' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotResidue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotResidue_eq_reciprocal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.kernelEnvelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.kernel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.kernel_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.kernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotResidue_bound_of_reciprocal_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.exists_slotResidue_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.raw_slot_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.idealCoeff_norm_one_of_coprime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.prime_coprime_of_norm_gt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.annularPrimeWeight_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.annularPrimeWeight_norm_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.annularPrimeWeight_target_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.sourceCorrection_eq_principal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.sourceCorrection_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.sourceCorrection_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.actualSlotResidue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.actual_principal_slot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.exists_actualSlotResidue_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.source_normalizer_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.source_normalizer_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.source_power_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.normalized_source_double_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.sourceResidueIntegral_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.source_double_residue_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotMass_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotProduct_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotRatio_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotResidue_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.slotResidue_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.actualSlotResidue_isBigO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.fixedPrincipal_product_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.QRHPrincipalSignal.exists_normalized_actual_source_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

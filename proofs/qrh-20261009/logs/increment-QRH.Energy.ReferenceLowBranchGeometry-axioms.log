@@ -1,0 +1,12 @@
+'OAI.SevenEighths.CenteredMomentEnergyReferenceLowBranchGeometry.slot_budgets_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceLowBranchGeometry.reflected_low_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceLowBranchGeometry.deleted_reference_cases_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyReferenceLowBranchGeometry.reflected_low_admissible_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

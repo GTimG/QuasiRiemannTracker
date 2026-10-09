@@ -1,0 +1,23 @@
+{
+  "immutable_inputs_checked": 8,
+  "frozen_targets_checked": 3,
+  "pinned_repositories_checked": 13,
+  "unselected_candidate_absent": [],
+  "source_modules_checked": 4399,
+  "source_counts": {
+    "formalization/.lake/packages/LeanSearchClient": 4,
+    "formalization/.lake/packages/Qq": 14,
+    "formalization/.lake/packages/aesop": 132,
+    "formalization/.lake/packages/batteries": 74,
+    "formalization/.lake/packages/importGraph": 10,
+    "formalization/.lake/packages/mathlib": 3808,
+    "formalization/.lake/packages/plausible": 13,
+    "formalization/.lake/packages/proofwidgets": 10,
+    "formalization/.lake/packages/rellich-kondrachov": 15,
+    "local QRH (Apache-2.0)": 13,
+    "upstream/openai-math": 306
+  },
+  "header_license_flags": [],
+  "actual_definition_files_checked": 4,
+  "task_completion_claim": false
+}

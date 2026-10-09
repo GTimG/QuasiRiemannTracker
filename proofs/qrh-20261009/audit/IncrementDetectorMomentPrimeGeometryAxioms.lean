@@ -1,0 +1,2 @@
+import QRH.Detector.DetectorMomentPrimeGeometry
+#print axioms OAI.SevenEighths.ProbeHighRowFamily.sourceMoment_fiber_prime_geometry_eventually_slots

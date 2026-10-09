@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Energy/DeletedRobustGeometry.olean", "/work/qrh-proof/research/drafts/QRH/Energy/DeletedRobustGeometry.lean"], "source_sha256": "aab03fedaf80a15375dacda9e89d6ef56b6cae2c51ee6aa62d4109ebe0534170"}

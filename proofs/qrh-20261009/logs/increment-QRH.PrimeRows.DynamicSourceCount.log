@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/DynamicSourceCount.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/DynamicSourceCount.lean"], "source_sha256": "148604226ac10c8188457c0489815cd51e543dd559f655c5eb0ced3b2c2761d0"}

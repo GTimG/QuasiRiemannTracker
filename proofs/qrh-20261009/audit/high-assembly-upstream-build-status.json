@@ -1,0 +1,12 @@
+{
+  "roots": [
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh"
+  ],
+  "closure": 5101,
+  "checked": 5101,
+  "failed": [],
+  "blocked": [],
+  "seconds": 68.31509017944336,
+  "jobs": 6,
+  "success": true
+}

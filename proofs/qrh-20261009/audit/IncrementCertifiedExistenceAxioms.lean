@@ -1,0 +1,3 @@
+import QRH.Energy.CertifiedExistence
+#print axioms OAI.SevenEighths.CenteredMomentEnergyCertifiedExistence.certified_bands_extended
+#print axioms OAI.SevenEighths.CenteredMomentEnergyCertifiedExistence.terminal_certificate_extended

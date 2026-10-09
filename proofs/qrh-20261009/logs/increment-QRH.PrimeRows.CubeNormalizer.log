@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/PrimeRows/CubeNormalizer.olean", "/work/qrh-proof/research/drafts/QRH/PrimeRows/CubeNormalizer.lean"], "source_sha256": "19385f5782bc0c1d600bffe3a952421e973fa6ca0fe418ec194d53cf91c5391d"}

@@ -1,0 +1,4 @@
+import QRH.Detector.LowNominalGeometry
+#print axioms OAI.SevenEighths.ProbePhysical.lowLength_bounds_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.lowPhysicalScale_source_optimized
+#print axioms OAI.SevenEighths.ProbePhysical.lowPhysicalScale_nominal_bound_optimized

@@ -1,0 +1,18 @@
+[
+  {
+    "module": "QRH.Detector.OptimizedCentralExponent",
+    "source": "research/drafts/QRH/Detector/OptimizedCentralExponent.lean",
+    "namespace": "SevenEighths.QRHProbeCentralExponent",
+    "theorems": [
+      "sourceExponent",
+      "mixedSourceExponent",
+      "realLoss",
+      "manuscript_exponent_identity",
+      "physical_scale_identity",
+      "mixed_physical_exponent",
+      "realLoss_bound",
+      "central_class_exponent_identity",
+      "mixed_source_slack"
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+{"command": ["/work/qrh-proof/toolchains/lean-4.34.1-linux/bin/lean", "-j1", "-DautoImplicit=false", "-R", "/work/qrh-proof/research/drafts", "-o", "/work/qrh-proof/build/source/QRH/Reflection/LowCompletedFiber.olean", "/work/qrh-proof/research/drafts/QRH/Reflection/LowCompletedFiber.lean"], "source_sha256": "f3dc4013cacc1980ed6adc5c41e97ba7f3b4aeb2e949b171d96ba9fd34b04bc8"}

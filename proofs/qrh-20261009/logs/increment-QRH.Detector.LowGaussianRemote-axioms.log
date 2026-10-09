@@ -1,0 +1,7 @@
+'OAI.SevenEighths.ProbePhysical.eventually_low_physical_scales_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.ProbePhysical.low_remote_power_optimized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.ProbePhysical.low_remote_gaussian_dyads_optimized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

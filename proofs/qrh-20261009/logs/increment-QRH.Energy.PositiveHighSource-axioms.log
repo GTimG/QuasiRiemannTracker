@@ -1,0 +1,6 @@
+'OAI.SevenEighths.CenteredMomentEnergyPositiveHighSource.balanced_volume_bound_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.CenteredMomentEnergyPositiveHighSource.actual_positive_source_entry_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
