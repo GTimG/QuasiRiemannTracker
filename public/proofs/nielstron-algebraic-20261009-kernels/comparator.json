@@ -1,0 +1,28 @@
+{
+  "challenge_module": "PalomarCanonical3d11d053040a6a513a35e5ef.Challenge",
+  "definition_names": [],
+  "external_kernels": {
+    "con-ron": [
+      "/work/qrh-workspace/tightening-research/checkers/tools/lean-4.35.0-rc2-linux/bin/con-ron",
+      "--jobs=2"
+    ],
+    "nanoda": [
+      "/work/qrh-workspace/tightening-research/checkers/tools/lean-4.35.0-rc2-linux/bin/nanoda_bin"
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "solution_module": "Solution",
+  "theorem_names": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ]
+}

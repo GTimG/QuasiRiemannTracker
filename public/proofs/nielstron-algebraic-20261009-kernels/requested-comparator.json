@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ]
+}

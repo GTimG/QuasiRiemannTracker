@@ -37,14 +37,14 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("five real results, verification statuses and source downloads", async ({
+test("six real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(5);
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
-  await expect(page.locator("tbody .tag.teal")).toHaveCount(3);
+  await expect(page.locator("tbody tr")).toHaveCount(6);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("tbody .tag.teal")).toHaveCount(4);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
   await page
     .getByRole("button", {
@@ -94,6 +94,22 @@ test("five real results, verification statuses and source downloads", async ({
   expect(independentReport.status).toBe("PASS");
   expect(independentReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
   expect(independentReport.source_commit).toBe("49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+  await page
+    .getByRole("button", { name: "Nielstron · exact algebraic endpoint", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText("Verified in our framework");
+  await expect(page.locator(".proof-detail")).toContainText("874957019420098946128603850561452983/1000000000000000000000000000000000000");
+  await expect(page.locator(".proof-detail")).toContainText("657e³−954e²+21e+20=0");
+  await expect(page.locator(".proof-detail")).not.toContainText("Signed verification receipt");
+  const algebraic = await request.get("/proofs/nielstron-algebraic-20261009-kernels/result.json");
+  expect(algebraic.ok()).toBeTruthy();
+  const algebraicReport = await algebraic.json();
+  expect(algebraicReport.status).toBe("PASS");
+  expect(algebraicReport.declarations).toHaveLength(7);
+  expect(algebraicReport.declarations).toContain("QRHPalomar.existsUniqueRoot");
+  expect(algebraicReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
+  expect(algebraicReport.source_commit).toBe("2fc2b0b7f2b9510df4618936e1b2ccd58f7d9171");
+  expect(algebraicReport.signed_admission).toBe(false);
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
   await page.getByRole("button", { name: "Close proof details" }).click();
@@ -119,9 +135,9 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
-  await expect(page.locator("tbody tr").first()).toContainText("Nielstron");
+  await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
   await page.getByLabel("Contribution type").selectOption("verified");
-  await expect(page.locator("tbody tr")).toHaveCount(3);
+  await expect(page.locator("tbody tr")).toHaveCount(4);
   await page.getByLabel("Contribution type").selectOption("pending");
   await expect(page.locator("tbody tr")).toHaveCount(2);
   await page.getByLabel("Contribution type").selectOption("all");

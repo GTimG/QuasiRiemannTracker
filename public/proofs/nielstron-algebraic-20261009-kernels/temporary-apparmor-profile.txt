@@ -1,0 +1,5 @@
+abi <abi/4.0>,
+include <tunables/global>
+profile qrh-pinned-bwrap /opt/qrh-verifier-20261009/bwrap flags=(unconfined) {
+  userns,
+}

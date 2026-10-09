@@ -8,16 +8,16 @@ import {
 } from "../core/catalogue.mjs";
 import { frontierHistory, cmp } from "../core/rational.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
-test("all five results advance the plotted frontier while verification stays separate", () => {
+test("all six results advance the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
-  assert.equal(d.records.length, 5);
+  assert.equal(d.records.length, 6);
   const verified = d.records.filter(verifiedHere);
   assert.deepEqual(
     verified.map((r) => r.id),
-    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening"],
+    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening", "nielstron-algebraic-20261009"],
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
-  assert.equal(frontier.length, 5);
+  assert.equal(frontier.length, 6);
   for (let i = 0; i < frontier.length; i++) {
     assert.equal(cmp(frontier[i].theta, d.records[i].theta), 0);
     if (i) assert.equal(cmp(frontier[i].theta, frontier[i - 1].theta), -1);

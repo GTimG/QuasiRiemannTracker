@@ -46,13 +46,13 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
   isMobile,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
   if (!isMobile) {
     const newest = page.locator(
-      '[data-id="nielstron-20261009-tightening"] .point-label',
+      '[data-id="nielstron-algebraic-20261009"] .point-label',
     );
     const previous = page.locator(
-      '[data-id="proofcouncil-20261009"] .point-label',
+      '[data-id="nielstron-20261009-tightening"] .point-label',
     );
     await expect(newest).toBeVisible();
     await expect(previous).toBeVisible();
@@ -83,7 +83,7 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
       await expectReadableLabels(page);
     }
     await page.getByLabel("Contribution type").selectOption("verified");
-    await expect(page.locator("[data-dot]")).toHaveCount(3);
+    await expect(page.locator("[data-dot]")).toHaveCount(4);
     await expectReadableLabels(page);
     await page.getByRole("button", { name: "Zoom out", exact: true }).click();
     await expectReadableLabels(page);
@@ -94,7 +94,7 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
     await page.screenshot({ path: ".work/labels-mobile.png", fullPage: true });
   }
   await page
-    .locator('[data-id="nielstron-20261009-tightening"]')
+    .locator('[data-id="nielstron-algebraic-20261009"]')
     .press("Enter");
   await expect(page.locator(".proof-detail")).toContainText("Nielstron");
 });
