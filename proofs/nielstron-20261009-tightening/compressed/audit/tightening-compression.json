@@ -1,0 +1,514 @@
+{
+  "status": "STAGED_NOT_LEAN_VERIFIED",
+  "source": "/work/qrh-proof/compressed/formalization",
+  "overrides": "/work/qrh-proof/tightening-research/compression/overrides",
+  "tokenizer_commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+  "tokenizer_sha256": "7167627283ad810fc2b2a0007c9a61c3d2dc7a71649afe9664d0e370457d2d2b",
+  "scope": "all QRH package Lean source; package imports excluded by the pinned metric",
+  "before_package_tokens": 251836,
+  "after_package_tokens": 251464,
+  "saved_tokens": 372,
+  "changed_files": 23,
+  "package_files": 206,
+  "new_theorem": "QRH.NumericFacts.C_pos : 0 < QRH.C QRH.tightTheta",
+  "existing_theorem_types": "Preserved. Only proof bodies/local have proofs and imports edited.",
+  "rules": {
+    "add_shared_C_pos": 1,
+    "derive_ell_le_one": 3,
+    "derive_h_le_one": 2,
+    "derive_h_nonneg": 2,
+    "derive_h_zeta_le_one": 1,
+    "derive_kappa_lower": 1,
+    "explicit_numericfacts_import": 8,
+    "remove_irrelevant_unfolds": 1,
+    "reuse_C_nonneg": 1,
+    "reuse_C_pos": 13,
+    "reuse_ell_nonneg": 1,
+    "reuse_ell_pos": 4,
+    "reuse_ell_upper": 1
+  },
+  "protected_files": {
+    "QRH/DirichletTargets.lean": {
+      "sha256": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+      "unchanged": true
+    },
+    "QRH/HeckeTargets.lean": {
+      "sha256": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+      "unchanged": true
+    },
+    "QRH/IndependentTargets.lean": {
+      "sha256": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+      "unchanged": true
+    },
+    "QRH/Nonvanishing.lean": {
+      "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+      "unchanged": true
+    },
+    "QRH/StatementParity.lean": {
+      "sha256": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+      "unchanged": true
+    },
+    "QRH/TighterNonvanishing.lean": {
+      "sha256": "80338e1b6e4c8b98d26a9d11d97d3f3418921ca2d184f6a5bcd9d92d43216276",
+      "unchanged": true
+    },
+    "QRH/ZeroBounds.lean": {
+      "sha256": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac",
+      "unchanged": true
+    },
+    "QRH/ZetaTransfer.lean": {
+      "sha256": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+      "unchanged": true
+    }
+  },
+  "integration": "Check all before_sha256 values, copy overrides, run the source build and all target gates.",
+  "files": [
+    {
+      "path": "QRH/Detector/ActualCubeArithmeticSaving.lean",
+      "before_sha256": "ca7d410a4d40189ef0359369b2212db90d103064d209faa8320be269a3b8dd81",
+      "after_sha256": "2e10fd4e36feb647c1bb3403ae97d3a1f55e90b55be58175e1d70003b84c164b",
+      "before_tokens": 1534,
+      "after_tokens": 1526,
+      "saved_tokens": 8,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_ell_pos",
+          "occurrences": 1,
+          "before": "div_pos (by norm_num [QRH.ell,QRH.tightTheta]) hd0",
+          "after": "div_pos QRH.NumericFacts.ell_bounds.1 hd0"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/CompleteNonfloorCubeData.lean",
+      "before_sha256": "369b066a3de97873de41e87b729f29b843692a3198dee8e07a9d8d2ef73fd521",
+      "after_sha256": "fe27a30f4d44f3f64b5b29acae60922e69819d8010d404d6b9dbdb1849ab01d2",
+      "before_tokens": 957,
+      "after_tokens": 945,
+      "saved_tokens": 12,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_h_zeta_le_one",
+          "occurrences": 1,
+          "before": "have hh:QRH.h+QRH.zeta\u22641:=by norm_num [QRH.h,QRH.zeta,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]",
+          "after": "have hh:QRH.h+QRH.zeta\u22641:=by linarith [QRH.NumericFacts.h_zeta_upper]"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowCommonBound.lean",
+      "before_sha256": "5871889a337e29e48a64107f937414cf3c9062c6ae314a68c616338131ea35eb",
+      "after_sha256": "af390ea046ddeedf111b616344bfe929ba4f3b3a1ff5f9fba6f6cae0cf6018ba",
+      "before_tokens": 1633,
+      "after_tokens": 1597,
+      "saved_tokens": 36,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 2,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowGaussianCentral.lean",
+      "before_sha256": "5ae05f130e089cdbdee43ee833a4552bc9688c001ab03432d62fa8604f6be396",
+      "after_sha256": "b3730026838f2357a47369fd205f4d76e022f527af0abc9b5a7c6cb65b60bafe",
+      "before_tokens": 1244,
+      "after_tokens": 1226,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowGaussianDyad.lean",
+      "before_sha256": "1470a340eb53c26f904d345d66ceb26d39fdda3964dd6a797c546d5bce61af4e",
+      "after_sha256": "7352dffd24e4ccfe60eb93db5b256d6f7df809d930be1393bc4d8b2a94a32232",
+      "before_tokens": 681,
+      "after_tokens": 663,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowGaussianRemote.lean",
+      "before_sha256": "e2d6e6e34755f12a930d8435408967a332a917014904548f0c4310428bed3181",
+      "after_sha256": "e3ea51bd8541370b1b6768a9c95acc8cc0dac9b0806a438c7c41e972a03de6fa",
+      "before_tokens": 1966,
+      "after_tokens": 1912,
+      "saved_tokens": 54,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 3,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowGaussianSum.lean",
+      "before_sha256": "cb399bf84d344baa676b19ca0a5cd15cb2bb1833d493f432542ca3f00b1e4bef",
+      "after_sha256": "6cbe65970b7443b0279c43744c9044f7e8bfe12a3cd2ae7f70f59f18eff5722f",
+      "before_tokens": 842,
+      "after_tokens": 824,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowNormalized.lean",
+      "before_sha256": "6df262e294a96a9f97a64b2376b5987de9747c403c019c6875f282c4cf1c0918",
+      "after_sha256": "e055e888ff4adafef35a82b0ef5a8f6406a9e26572fea7be40e7c65952761e86",
+      "before_tokens": 1074,
+      "after_tokens": 1056,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowPenaltyAbsorption.lean",
+      "before_sha256": "a1d4148e2c3c49aa3000ae846655f1db9b8cbc35467d8b952151eae6940e661d",
+      "after_sha256": "824073812028540913367832fe281a92e05ac1c3a21542f6d473651e83e68d96",
+      "before_tokens": 289,
+      "after_tokens": 273,
+      "saved_tokens": 16,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_ell_upper",
+          "occurrences": 1,
+          "before": "have hell : QRH.ell \u2264 (1/5:\u211d) := by norm_num [QRH.ell, QRH.tightTheta]",
+          "after": "have hell := QRH.NumericFacts.ell_upper.le"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowRemoteMass.lean",
+      "before_sha256": "7680b620a687af8292c28031d97a44181303aa0492e9e8dc7d430dfe83909a60",
+      "after_sha256": "17a3a0c7c27cbf63698bb1495d5374e97ab7cf1f66bbb00e61903badb76679e7",
+      "before_tokens": 1136,
+      "after_tokens": 1100,
+      "saved_tokens": 36,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 2,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowSourceScales.lean",
+      "before_sha256": "b014934e653345b921c07cfa66965f19a920eb257caa22d864e83b4bd753a152",
+      "after_sha256": "d1375a066e14f140dbb8982f0f71cf28e393d9c51587e73c644164f40eabef33",
+      "before_tokens": 1871,
+      "after_tokens": 1858,
+      "saved_tokens": 13,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "remove_irrelevant_unfolds",
+          "occurrences": 1,
+          "before": "show 0\u2264(1/6:\u211d) by norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M]",
+          "after": "show 0\u2264(1/6:\u211d) by norm_num"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/LowWindowBound.lean",
+      "before_sha256": "96b767235e6c1e8753783e2c98c8052101e5c43fa50849e996df789c6bd99973",
+      "after_sha256": "30f5e0b0487d326601fce1477dc0e2b3ad213e8862a9011ce9e97a9711675335",
+      "before_tokens": 890,
+      "after_tokens": 872,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedAdaptiveSaving.lean",
+      "before_sha256": "02a37fc2534867a4bbc21a0e084fe8b8ce7869f6653e6dc71b61d38000371472",
+      "after_sha256": "4631c73a2bcf4744ba704c24dcff669e252fc5e4d860178835111c051c7719a6",
+      "before_tokens": 955,
+      "after_tokens": 945,
+      "saved_tokens": 10,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_h_nonneg",
+          "occurrences": 1,
+          "before": "have hH : 0\u2264QRH.h := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]",
+          "after": "have hH : 0\u2264QRH.h := by linarith [QRH.NumericFacts.h_lower]"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedBatchWidths.lean",
+      "before_sha256": "4be7a046dceed704b313609601c6e3b2f9c9a926acf6b23c5babe5a1170c7773",
+      "after_sha256": "2bef798246707dfc08234a47390885ebea37c4a4982111ff647e8d2a123759e7",
+      "before_tokens": 281,
+      "after_tokens": 271,
+      "saved_tokens": 10,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_ell_pos",
+          "occurrences": 1,
+          "before": "have hell0 : 0<QRH.ell := by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have hell0 := QRH.NumericFacts.ell_bounds.1"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedData.lean",
+      "before_sha256": "ba161cd51d699dac1ee65dc0a9c9cf2b40a15215c7459080daaaddcdc0789640",
+      "after_sha256": "25ea6412d12350adc8eeb0cc0e15d6d5040ac76028c34c46e35a767055785e04",
+      "before_tokens": 801,
+      "after_tokens": 779,
+      "saved_tokens": 22,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_h_le_one",
+          "occurrences": 1,
+          "before": "have hh:QRH.h\u22641:=by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]",
+          "after": "have hh:QRH.h\u22641:=by linarith [QRH.NumericFacts.h_upper]"
+        },
+        {
+          "rule": "reuse_ell_pos",
+          "occurrences": 1,
+          "before": "have he:0<QRH.ell:=by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have he:=QRH.NumericFacts.ell_bounds.1"
+        },
+        {
+          "rule": "derive_ell_le_one",
+          "occurrences": 1,
+          "before": "have hel:QRH.ell\u22641:=by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have hel:QRH.ell\u22641:=by linarith [QRH.NumericFacts.ell_upper]"
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedFloorMargin.lean",
+      "before_sha256": "db08feb70305d2d3cde6a3c4842cbab127aad1afbbdcfc8e2c5f2d14d2f754d8",
+      "after_sha256": "4d7d38f648fd9d6c316e4b77d506f0353c99e1314b8de722773468b1b4132894",
+      "before_tokens": 111,
+      "after_tokens": 101,
+      "saved_tokens": 10,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_ell_nonneg",
+          "occurrences": 1,
+          "before": "have hell:0\u2264QRH.ell:=by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have hell:=QRH.NumericFacts.ell_bounds.1.le"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedMixedSaving.lean",
+      "before_sha256": "26821e0f259acad4b561ac4ebf323133b3b3628dabba1046e5217f634b621de9",
+      "after_sha256": "6ec996f9f9ecc405f9e27dd68859ab2d5b4784310a0881a900d9c0c7192e9435",
+      "before_tokens": 915,
+      "after_tokens": 903,
+      "saved_tokens": 12,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_h_le_one",
+          "occurrences": 1,
+          "before": "have hh : QRH.h\u22641 := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]",
+          "after": "have hh : QRH.h\u22641 := by linarith [QRH.NumericFacts.h_upper]"
+        },
+        {
+          "rule": "derive_kappa_lower",
+          "occurrences": 1,
+          "before": "have hk : (2/3:\u211d)\u2264QRH.kappa0 := by norm_num [QRH.kappa0,QRH.tightTheta]",
+          "after": "have hk : (2/3:\u211d)\u2264QRH.kappa0 := by linarith [QRH.NumericFacts.kappa_lower]"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/Detector/OptimizedTransportBudget.lean",
+      "before_sha256": "dc09bec3cc2348291d307a65e29b3d1b9e3f069844de0faeb5466ab503512cd4",
+      "after_sha256": "3769f000002a54b4de6f8c240e6c5f4fbbfae7f2ecacbd0c8e1b43a85b47d702",
+      "before_tokens": 362,
+      "after_tokens": 337,
+      "saved_tokens": 25,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_nonneg",
+          "occurrences": 1,
+          "before": "have hC : 0\u2264QRH.C QRH.tightTheta := by\n    norm_num [QRH.C,QRH.ly,QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]",
+          "after": "have hC := QRH.NumericFacts.C_pos.le"
+        },
+        {
+          "rule": "derive_ell_le_one",
+          "occurrences": 1,
+          "before": "have hell : QRH.ell\u22641 := by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have hell : QRH.ell\u22641 := by linarith [QRH.NumericFacts.ell_upper]"
+        }
+      ]
+    },
+    {
+      "path": "QRH/NumericFacts.lean",
+      "before_sha256": "257a22c7d2185a1c083cdd615f1644f5c3de4a15a402efa642a847f34bf0b7af",
+      "after_sha256": "1a99fe2551db95de1c93b1ba92e3ace2e7115db3f3def1e1e1ca81c13dc37164",
+      "before_tokens": 258,
+      "after_tokens": 280,
+      "saved_tokens": -22,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "add_shared_C_pos",
+          "occurrences": 1,
+          "before": "\nend QRH.NumericFacts\n",
+          "after": "\ntheorem C_pos : 0 < QRH.C QRH.tightTheta := by\n  rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]\n\nend QRH.NumericFacts\n"
+        }
+      ]
+    },
+    {
+      "path": "QRH/PrimeRows/CubeNormalizer.lean",
+      "before_sha256": "ce051dfb2672b675b7f412111ef835ce430df6985fb12b7f8ca8c4fe7467f855",
+      "after_sha256": "c72d707128697cb2b99ef8ee4235758079a04681624a2213ba3e829724475773",
+      "before_tokens": 824,
+      "after_tokens": 806,
+      "saved_tokens": 18,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_C_pos",
+          "occurrences": 1,
+          "before": "have hQRHC : 0 < QRH.C QRH.tightTheta := by\n    rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]",
+          "after": "have hQRHC := QRH.NumericFacts.C_pos"
+        }
+      ]
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+      "before_sha256": "9d88af06436566b1f4a86158efe5a7329ffca241d216531fb79a6ae4d65a9228",
+      "after_sha256": "b918d6094b1fc613a286a4795f15966fb500d40fa1fce913633f9e83d73ab918",
+      "before_tokens": 1605,
+      "after_tokens": 1603,
+      "saved_tokens": 2,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_ell_le_one",
+          "occurrences": 1,
+          "before": "show QRH.ell\u22641 by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "show QRH.ell\u22641 by linarith [QRH.NumericFacts.ell_upper]"
+        }
+      ]
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean",
+      "before_sha256": "fdb9c32a96ac8fe2dc7c7cf4f9384d5f6d0aec4ae76f97ebc9abf7efc97011c0",
+      "after_sha256": "17b8d5e6f5198d5fe89d6f729482383f65afa37659ccd23c78ff82f29bdcc883",
+      "before_tokens": 2044,
+      "after_tokens": 2034,
+      "saved_tokens": 10,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "reuse_ell_pos",
+          "occurrences": 1,
+          "before": "have hellQRHpos : 0<QRH.ell := by norm_num [QRH.ell,QRH.tightTheta]",
+          "after": "have hellQRHpos := QRH.NumericFacts.ell_bounds.1"
+        },
+        {
+          "rule": "explicit_numericfacts_import",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+      "before_sha256": "ad6cfce019977e13436661e8efe13fb38c0060e7575b9f1980d3f0d5bd138f76",
+      "after_sha256": "7b3bbdd53b70f2ae58216692ec5dcc90d4d6c881ffc7f6eeecf47b1f6be0bca2",
+      "before_tokens": 2481,
+      "after_tokens": 2471,
+      "saved_tokens": 10,
+      "existing_declaration_headers_preserved": true,
+      "edits": [
+        {
+          "rule": "derive_h_nonneg",
+          "occurrences": 1,
+          "before": "have hhpos : 0\u2264QRH.h := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]",
+          "after": "have hhpos : 0\u2264QRH.h := by linarith [QRH.NumericFacts.h_lower]"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Published proof and evidence manifests authenticate exact bytes.
+proofs/nielstron-20261009-tightening/** -text
+public/proofs/nielstron-20261009-tightening/** -text
+public/proofs/nielstron-20261009-kernels/** -text

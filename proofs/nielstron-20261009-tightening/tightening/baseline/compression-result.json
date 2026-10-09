@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "selected_result": "ProofCouncil certified uniform descent",
+  "threshold": "874957019421/1000000000000",
+  "source": {
+    "repository": "https://github.com/gtimg/QuasiRiemannTracker",
+    "commit": "290d9c5463344c3e2fab93b878f3281e77e3fd6f",
+    "path": "proofs/qrh-20261009/formalization",
+    "read_from": "Immutable Git blobs; baseline working tree is not used"
+  },
+  "metric": {
+    "name": "LeanLeanBench repository Lean source tokens",
+    "repository": "https://github.com/eth-sri/lean-lean",
+    "commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+    "path": "src/leanlean/metrics/tokens.py",
+    "sha256": "7167627283ad810fc2b2a0007c9a61c3d2dc7a71649afe9664d0e370457d2d2b",
+    "implementation": "Exact unmodified pinned Python tokenizer, loaded from Git object",
+    "counts": "All non-comment, non-import source tokens, including declarations and proof statements",
+    "excludes": [
+      ".lake directories",
+      "lakefile.lean files",
+      "non-.lean files"
+    ],
+    "not_llm_tokens": true
+  },
+  "qrh_package": {
+    "scope": "Every counted Lean source in the QRH formalization package",
+    "before_files": 203,
+    "after_files": 205,
+    "before_tokens": 294019,
+    "after_tokens": 251528,
+    "saved_tokens": 42491,
+    "reduction_percent": 14.451787129403202,
+    "after_over_before": 0.855482128705968
+  },
+  "qrh_plus_unchanged_oai": {
+    "scope": "QRH source package plus unchanged baseline OAI import closure; all other fixed dependencies excluded",
+    "before_tokens": 6103780,
+    "after_tokens": 6061289,
+    "saved_tokens": 42491,
+    "reduction_percent": 0.6961423904531291,
+    "after_over_before": 0.9930385760954688
+  },
+  "verification": {
+    "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "total_modules": 7231,
+    "qrh_files": 205,
+    "cpu_budget": 16,
+    "local_source_modules": 3130,
+    "official_cached_modules": 4101,
+    "exact_three_targets_proved": true,
+    "axioms": {
+      "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.riemannZeta_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "trust_note": "Official mathlib cache reused; OAI and QRH compiled from source."
+  },
+  "artifacts": {
+    "compressed/audit/local-verification.json": {
+      "sha256": "232acdfa07f5c06d3cbc545e5958715afb6472536a2884e2b31b29c5b5ed39d3"
+    },
+    "compressed/audit/token-counts.json": {
+      "sha256": "61602b68ec3005b759fff5083582889e2b43f9236853de28588620ff4ab22cd7"
+    },
+    "compressed/audit/compression-transformations.json": {
+      "sha256": "ad4941427020871ccb588f442ad6e0adb212fbba33464c42476e8a82cb2e7bf2"
+    },
+    "compressed/logs/local-final-targets-required.log": {
+      "sha256": "bf17710ff0aa07b166bedc2df61039b12ab1a9c521de7e75a5c4c1ab4950ab00"
+    },
+    "compression.patch": {
+      "sha256": "75b6497d8e014c322387dead13053e141d1c5b25b12a297d18b58eee1e8da227"
+    },
+    "compressed/audit/zero-bounds-verification.json": {
+      "sha256": "f3c0aa12466ca1d7517c213fc3dee3b3409b1441087ce8de843242ea48767be1"
+    },
+    "compressed/audit/ZeroBoundsEquivalence.lean": {
+      "sha256": "2cc5649651ab4e7ea203d9cdff951f43394a195c86159bbd310a6016530cc794"
+    },
+    "compressed/logs/local-zero-bounds-equivalence.log": {
+      "sha256": "9209c04e3adff51e8457ba8a8eb9a0caf515d245769dd324e74e3533134ecf0a"
+    }
+  },
+  "notes": [
+    "Original baseline counts come from immutable Git source; the separate local original build was not completed.",
+    "Uses the exact LeanLeanBench token metric, not an official benchmark submission.",
+    "The 14.45% reduction includes all five new public reformulations; including unchanged OAI source the reduction is 0.6961%."
+  ],
+  "readable_reformulations": {
+    "status": "PASS",
+    "source": "compressed/formalization/QRH/ZeroBounds.lean",
+    "public_results": 5,
+    "tokens_added": 278,
+    "previous_compressed_tokens": 251250,
+    "all_three_classifications_equivalent_to_independent_targets": true,
+    "protected_final_sources": {
+      "QRH/DirichletTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa"
+      },
+      "QRH/HeckeTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099"
+      },
+      "QRH/IndependentTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca"
+      },
+      "QRH/Nonvanishing.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f"
+      },
+      "QRH/StatementParity.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0"
+      }
+    },
+    "axioms": {
+      "QRH.riemannZeta_zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.DirichletCharacter.zero_re_le_or_exception": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.DirichletCharacter.zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.zero_re_le_or_exception": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.zeta": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.dirichlet": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.hecke": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  }
+}

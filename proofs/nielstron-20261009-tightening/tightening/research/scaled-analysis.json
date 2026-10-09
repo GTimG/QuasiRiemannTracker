@@ -1,0 +1,222 @@
+{
+  "status": "Exact arithmetic discovery only; Lean and full analytic validation remain necessary. These are rounding-scale improvements within the same analytic method.",
+  "central_t_coefficient": "7137/400",
+  "candidates": [
+    {
+      "N": 18,
+      "grid_denominator": 1000000000000000000000,
+      "theta": "874957019420098946901/1000000000000000000000",
+      "theta_decimal": "0.874957019420098946901",
+      "Dv": "15449199349508343519115782345658818658114817119840644564283823934705121207068364756375009/3087783789179300544585706548276006538615770198370820459561235753076518364296085348986000000000000000000000",
+      "Dv_decimal": "5.00332937935870607573006504778699419001883808320186973750745211217421132626E-18",
+      "Dv_slack_decimal": "3.32937935870607573006504778699419001883808320186973750745211217421132625787E-21",
+      "previous_grid_point": "8749570194200989469/10000000000000000000",
+      "previous_Dv_decimal": "4.99685170675120328758834353426580436608359246297984659629760584194830911731E-18",
+      "improvement_over_original": "901053099/1000000000000000000000",
+      "improvement_over_first_checkpoint": "772053099/1000000000000000000000",
+      "checks": {
+        "Av_gt_one_fifth": true,
+        "Dv_gt_margin": true,
+        "square_region_vertex": true,
+        "shift_positive": true,
+        "original_shift_lower_bounds": true,
+        "bernstein_floor": true,
+        "kappa_lower": true,
+        "h_zeta_upper": true,
+        "ell_bounds": true,
+        "ell_at_least_one_sixth": true,
+        "h_bounds": true,
+        "lx_bounds": true,
+        "ly_nonneg": true,
+        "theta_lower": true,
+        "mass_bounds": true,
+        "shape_positive": true,
+        "count_coefficient_bounds": true,
+        "floor_saving": true,
+        "large_saving_endpoint": true,
+        "transport_geometry": true,
+        "C_theta_nonnegative": true,
+        "transport_height_cap": true
+      },
+      "F_margin": "1/200000000000000000",
+      "E_margin": "1/500000000000000000",
+      "central_budget": "1/1000000000000000000",
+      "zeta": "1/100000000000000000000",
+      "t_cap": "1/10000000000000000000000",
+      "normalized_central_cost_bound": "87137/4000000",
+      "normalized_central_cost_decimal": "0.02178425",
+      "denominator_changes": {
+        "Detector/OptimizedAdaptiveSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/ActualCubeArithmeticSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/ActualNormalizedNonfloorCube.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/OptimizedMixedSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 2
+          }
+        },
+        "Detector/OptimizedData.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 1
+          },
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000",
+            "occurrences": 3
+          }
+        },
+        "Detector/ActualNonfloorCubeNorm.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/OptimizedTransportBudget.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/CompleteNonfloorCubeData.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/CompleteNonfloorRowsData.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000",
+            "occurrences": 1
+          }
+        }
+      },
+      "additional_changes": {
+        "Geometry.lean": "Change only tightTheta to this candidate and zeta to 1/10^(N+2). Keep public theta and literal independent targets unchanged.",
+        "Certificate.lean": "Use regenerated coefficient/budget file. F margin becomes5/10^N; endpoint E margin becomes2/10^N."
+      }
+    },
+    {
+      "N": 24,
+      "grid_denominator": 1000000000000000000000000000,
+      "theta": "874957019420098946128604623/1000000000000000000000000000",
+      "theta_decimal": "0.874957019420098946128604623",
+      "Dv": "108150331598063636456917445280702183291580033296945001686491258407508175773556643599377348874671571831374999613109/21614486524255104167204817812438905292419852894587874743216871701340108534300442923660103669448965460321740982000000000000000000000000000",
+      "Dv_decimal": "5.00360401699576345768106667664227060943801681552896119046461735042227138292E-24",
+      "Dv_slack_decimal": "3.60401699576345768106667664227060943801681552896119046461735042227138291639E-27",
+      "previous_grid_point": "437478509710049473064302311/500000000000000000000000000",
+      "previous_Dv_decimal": "4.99712634438826066952719198378516450905982617720203457369203136531191512671E-24",
+      "improvement_over_original": "901053871395377/1000000000000000000000000000",
+      "improvement_over_first_checkpoint": "772053871395377/1000000000000000000000000000",
+      "checks": {
+        "Av_gt_one_fifth": true,
+        "Dv_gt_margin": true,
+        "square_region_vertex": true,
+        "shift_positive": true,
+        "original_shift_lower_bounds": true,
+        "bernstein_floor": true,
+        "kappa_lower": true,
+        "h_zeta_upper": true,
+        "ell_bounds": true,
+        "ell_at_least_one_sixth": true,
+        "h_bounds": true,
+        "lx_bounds": true,
+        "ly_nonneg": true,
+        "theta_lower": true,
+        "mass_bounds": true,
+        "shape_positive": true,
+        "count_coefficient_bounds": true,
+        "floor_saving": true,
+        "large_saving_endpoint": true,
+        "transport_geometry": true,
+        "C_theta_nonnegative": true,
+        "transport_height_cap": true
+      },
+      "F_margin": "1/200000000000000000000000",
+      "E_margin": "1/500000000000000000000000",
+      "central_budget": "1/1000000000000000000000000",
+      "zeta": "1/100000000000000000000000000",
+      "t_cap": "1/10000000000000000000000000000",
+      "normalized_central_cost_bound": "87137/4000000",
+      "normalized_central_cost_decimal": "0.02178425",
+      "denominator_changes": {
+        "Detector/OptimizedAdaptiveSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/ActualCubeArithmeticSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/ActualNormalizedNonfloorCube.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/OptimizedMixedSaving.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 2
+          }
+        },
+        "Detector/OptimizedData.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 1
+          },
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000000000",
+            "occurrences": 3
+          }
+        },
+        "Detector/ActualNonfloorCubeNorm.lean": {
+          "1000000000000": {
+            "replace_with": "1000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/OptimizedTransportBudget.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/CompleteNonfloorCubeData.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000000000",
+            "occurrences": 1
+          }
+        },
+        "Detector/CompleteNonfloorRowsData.lean": {
+          "10000000000000000": {
+            "replace_with": "10000000000000000000000000000",
+            "occurrences": 1
+          }
+        }
+      },
+      "additional_changes": {
+        "Geometry.lean": "Change only tightTheta to this candidate and zeta to 1/10^(N+2). Keep public theta and literal independent targets unchanged.",
+        "Certificate.lean": "Use regenerated coefficient/budget file. F margin becomes5/10^N; endpoint E margin becomes2/10^N."
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "TightIndependentTargets.lean": "925981893ba2d2b7888bed4adfaad3cc8029e5c28ea1dbf6b67a6495b76c7e36",
+  "TightTargetsRequired.lean": "82fd985a40c43ef66e36f2896c878a0520636a6f4ca0dfd574ba22245694d539",
+  "formalization.tar.gz": "b919a1633d78a7cd3b50293a2770b0a35fbc00fb33b8ae3c1a62ae8fba87e10f",
+  "gate.log": "f90dd5b1b46b9a7b0f145746860ae1d68203d428f3e3a0735c1fd1b155fd575d",
+  "local-build-status.json": "4fba91437aaacbf7518d1aea469bcb9f1a0e929da640113cc728f814a9db1158",
+  "local-verification.json": "87bbb7320c205c8879c9f506d137bbe3daff265e8ca41e668283db251578b073",
+  "tightening-coefficients.json": "22b9b63f6d32c9d7f809fbf1a90ce179168f4f0370d4fafb0cfe79f27630dd21",
+  "tightening-preparation.json": "01a9e359599be318531cf38c445a46b4a89b0647b7ef964603c797fa552c14df",
+  "tightening-verification.json": "bbb54e65b789cf8989323cfc3e88b17fc36a4df7bdf93c5db355f7d8ecfcddc6",
+  "zero-bounds-verification.json": "b8d0c334dea7c10f54c2ae0b0e392f15bc9defb750733dc5756649979f946a48"
+}

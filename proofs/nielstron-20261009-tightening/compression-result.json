@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "selected_result": "ProofCouncil certified uniform descent, compressed and tightened by Nielstron with AI assistance",
+  "threshold": "874957019421/1000000000000",
+  "source": {
+    "repository": "https://github.com/gtimg/QuasiRiemannTracker",
+    "commit": "290d9c5463344c3e2fab93b878f3281e77e3fd6f",
+    "path": "proofs/qrh-20261009/formalization",
+    "read_from": "Immutable Git blobs; baseline working tree is not used"
+  },
+  "metric": {
+    "name": "LeanLeanBench repository Lean source tokens",
+    "repository": "https://github.com/eth-sri/lean-lean",
+    "commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+    "path": "src/leanlean/metrics/tokens.py",
+    "sha256": "7167627283ad810fc2b2a0007c9a61c3d2dc7a71649afe9664d0e370457d2d2b",
+    "implementation": "Exact unmodified pinned Python tokenizer, loaded from Git object",
+    "counts": "All non-comment, non-import source tokens, including declarations and proof statements",
+    "excludes": [
+      ".lake directories",
+      "lakefile.lean files",
+      "non-.lean files"
+    ],
+    "not_llm_tokens": true
+  },
+  "qrh_package": {
+    "scope": "Every counted Lean source in the QRH formalization package",
+    "before_files": 203,
+    "after_files": 206,
+    "before_tokens": 294019,
+    "after_tokens": 251464,
+    "saved_tokens": 42555,
+    "reduction_percent": 14.473554430155874,
+    "after_over_before": 0.8552644556984412
+  },
+  "qrh_plus_unchanged_oai": {
+    "scope": "QRH source package plus unchanged baseline OAI import closure; all other fixed dependencies excluded",
+    "before_tokens": 6103780,
+    "after_tokens": 6061225,
+    "saved_tokens": 42555,
+    "reduction_percent": 0.6971909210358171,
+    "after_over_before": 0.9930280907896418
+  },
+  "verification": {
+    "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "total_modules": 7232,
+    "qrh_files": 206,
+    "cpu_budget": 16,
+    "local_source_modules": 3131,
+    "official_cached_modules": 4101,
+    "exact_three_targets_proved": true,
+    "axioms": {
+      "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.riemannZeta_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "trust_note": "Official mathlib cache reused; OAI and QRH compiled from source.",
+    "stronger_three_targets_proved": true
+  },
+  "artifacts": {
+    "compressed/audit/local-verification.json": {
+      "sha256": "94fa73653a2f6a3badce80924969c941a1df9b584cf1ef89b3d33c6514f1f8bd"
+    },
+    "compressed/audit/token-counts.json": {
+      "sha256": "a03dd26ae12c928ae1871a16182440a553206e12ee7544fc1a4eb422543f7db6"
+    },
+    "compressed/audit/compression-transformations.json": {
+      "sha256": "2610ee41e2c7bcbdcc94395707a85b31528fc73fc7f12e80771e7a856ac74783"
+    },
+    "compressed/logs/local-final-targets-required.log": {
+      "sha256": "bf17710ff0aa07b166bedc2df61039b12ab1a9c521de7e75a5c4c1ab4950ab00"
+    },
+    "compression.patch": {
+      "sha256": "d84d68cb3b462e99d87f6ca6fa6b5abd818fc260f79a211ba6ce6a58c4ade7a5"
+    },
+    "compressed/audit/zero-bounds-verification.json": {
+      "sha256": "5783977b13bb4698c9f0b88fcf03606ac0dc4af19933ca9dd20e542ed5edd09e"
+    },
+    "compressed/audit/ZeroBoundsEquivalence.lean": {
+      "sha256": "2cc5649651ab4e7ea203d9cdff951f43394a195c86159bbd310a6016530cc794"
+    },
+    "compressed/logs/local-zero-bounds-equivalence.log": {
+      "sha256": "9209c04e3adff51e8457ba8a8eb9a0caf515d245769dd324e74e3533134ecf0a"
+    },
+    "compressed/audit/tightening-verification.json": {
+      "sha256": "ce4309c65967236142a140c1947ce69f79d9adf4dfb58252557ceb27cccf8811"
+    },
+    "compressed/audit/tightening-reproduction.json": {
+      "sha256": "1aa5362fda04cb279600a5af7f814299b66fa46f0bb1684ec4250c5c2c9d113a"
+    },
+    "compressed/audit/TightIndependentTargets.lean": {
+      "sha256": "6f703e4d03017ca044c5c298e7432670664f5379751d46f5b5405ac43c68a9a5"
+    },
+    "compressed/audit/TightTargetsRequired.lean": {
+      "sha256": "334917ca9a1274cfbfc835efb09b3122f89a581762cba6ff983ba0cd322b0083"
+    },
+    "compressed/logs/local-tight-targets-required.log": {
+      "sha256": "f90dd5b1b46b9a7b0f145746860ae1d68203d428f3e3a0735c1fd1b155fd575d"
+    },
+    "tightening.patch": {
+      "sha256": "9c050a2d7566cef02dfe83dd0bab36a6e7cacc6977eae9f93cc7b765913f25bc"
+    }
+  },
+  "notes": [
+    "Original baseline counts come from immutable Git source; the separate local original build was not completed.",
+    "Uses the exact LeanLeanBench token metric, not an official benchmark submission.",
+    "The final package includes the stronger targets:294019 ->251464 tokens (14.4736% reduction); including unchanged OAI source the reduction is0.6972%.",
+    "Original theta and protected final theorem/specification files remain byte-identical; stronger witnesses use tightTheta.",
+    "Two successful tightening checkpoints; the second adds372 tokens of further compression savings.",
+    "Native Lean checks pass. Independent Comparator/NanoDa/con-ron checking is pending because the genuine isolation preflight is blocked."
+  ],
+  "readable_reformulations": {
+    "status": "PASS",
+    "source": "compressed/formalization/QRH/ZeroBounds.lean",
+    "public_results": 5,
+    "tokens_added": 278,
+    "previous_compressed_tokens": 251250,
+    "all_three_classifications_equivalent_to_independent_targets": true,
+    "protected_final_sources": {
+      "QRH/DirichletTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa"
+      },
+      "QRH/HeckeTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099"
+      },
+      "QRH/IndependentTargets.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca"
+      },
+      "QRH/Nonvanishing.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f"
+      },
+      "QRH/StatementParity.lean": {
+        "byte_identical_to_original": true,
+        "sha256": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0"
+      }
+    },
+    "axioms": {
+      "QRH.riemannZeta_zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.DirichletCharacter.zero_re_le_or_exception": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.DirichletCharacter.zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.zero_re_le_or_exception": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.Hecke.zero_re_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.zeta": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.dirichlet": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "QRH.ZeroBoundsEquivalence.hecke": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  },
+  "tightened_threshold": "874957019420098946128604623/1000000000000000000000000000"
+}

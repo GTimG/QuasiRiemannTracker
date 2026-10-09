@@ -4,6 +4,8 @@ import hashlib
 import json
 import re
 import tarfile
+import subprocess
+import unicodedata
 
 # Generic classes, never a list of the maintainer's private values.
 PATTERNS = {
@@ -26,14 +28,33 @@ def check_content(name, data):
             raise ValueError(f'Publication rejected ({label}): {name}')
 
 
-def approved_files(proof):
-    names = json.loads((proof / 'publication-files.json').read_text())
-    if not isinstance(names, list) or not names or names != sorted(set(names)):
+def validate_publication_paths(names):
+    """Validate file names, including directory prefixes on portable filesystems."""
+    if not isinstance(names, list) or not names or any(not isinstance(n, str) for n in names):
+        raise ValueError('Publication allowlist must contain file names')
+    if names != sorted(set(names)):
         raise ValueError('Publication allowlist must be a nonempty sorted unique list')
+    prefixes = {}
+    files = set(names)
     for name in names:
         path = PurePosixPath(name)
-        if not isinstance(name, str) or path.is_absolute() or '..' in path.parts or str(path) != name or '\\' in name:
+        if not path.parts or path.is_absolute() or '..' in path.parts or str(path) != name or '\\' in name:
             raise ValueError('Unsafe publication path')
+        for count in range(1, len(path.parts) + 1):
+            prefix = '/'.join(path.parts[:count])
+            key = unicodedata.normalize('NFC', prefix).casefold()
+            if key in prefixes and prefixes[key] != prefix:
+                raise ValueError('Case-insensitive publication path collision')
+            prefixes[key] = prefix
+            if count < len(path.parts) and prefix in files:
+                raise ValueError('Publication path is both a file and a directory')
+    return names
+
+
+def approved_files(proof):
+    if proof.is_symlink():
+        raise ValueError('Symlink in proof publication tree')
+    names = validate_publication_paths(json.loads((proof / 'publication-files.json').read_text()))
     actual = set()
     for p in proof.rglob('*'):
         if p.is_symlink():
@@ -48,6 +69,7 @@ def approved_files(proof):
 
 
 def check_archive(archive, proof, manifest):
+    validate_publication_paths(sorted(manifest))
     expected = {f'{proof.name}/{name}': digest for name, digest in manifest.items()}
     seen = set()
     total = 0
@@ -69,6 +91,70 @@ def check_archive(archive, proof, manifest):
         raise ValueError('Archive is incomplete')
 
 
+def check_native_tightening(root):
+    """Authenticate native evidence while preserving its pending checker status."""
+    from fractions import Fraction
+    name = 'nielstron-20261009-tightening'
+    proof = root / 'proofs' / name
+    public = root / 'public/proofs' / name
+    names = approved_files(proof)
+    manifest = json.loads((root / 'proofs' / (name + '.sha256.json')).read_text())
+    if set(names) != set(manifest):
+        raise ValueError('Native proof publication manifest and allowlist differ')
+    for path, digest in manifest.items():
+        if hashlib.sha256((proof / path).read_bytes()).hexdigest() != digest:
+            raise ValueError(f'Native source checksum mismatch: {path}')
+    collection = json.loads((public / 'collection.json').read_text())
+    if collection['status'] != 'verification-pending':
+        raise ValueError('Native evidence cannot mint external checker verification')
+    if set(collection['files']) != {p.name for p in public.iterdir() if p.name != 'collection.json'}:
+        raise ValueError('Native public evidence collection is incomplete')
+    for path, digest in collection['files'].items():
+        if PurePosixPath(path).name != path or hashlib.sha256((public / path).read_bytes()).hexdigest() != digest:
+            raise ValueError('Native public evidence checksum mismatch')
+    for target, source in collection['snapshot_exports'].items():
+        if source not in manifest or (public / target).read_bytes() != (proof / source).read_bytes():
+            raise ValueError('Native evidence export differs from snapshot')
+    if json.loads((public / 'source-sha256.json').read_text()) != manifest:
+        raise ValueError('Native public source manifest differs')
+    archive = public / 'source-public.tar.gz'
+    check_archive(archive, proof, manifest)
+    digest, archive_name = (public / 'SHA256SUMS.txt').read_text().strip().split('  ')
+    if archive_name != archive.name or hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
+        raise ValueError('Native archive checksum mismatch')
+    record = next(r for r in json.loads((root / 'catalogue/results.json').read_text())['records'] if r['id'] == name)
+    report = json.loads((proof / 'compressed/audit/tightening-verification.json').read_text())
+    # The native collection remains an immutable historical pending report.
+    # A current catalogue upgrade requires a separate authenticated kernel dossier.
+    subprocess.run(['node', str(root / 'scripts/check-native-kernels.mjs')], check=True)
+    theta = f"{record['theta']['numerator']}/{record['theta']['denominator']}"
+    if report['status'] != 'PASS' or report['threshold'] != theta:
+        raise ValueError('Native target report does not match catalogue boundary')
+    if not all(report[k] for k in ('original_exact_three_targets_proved', 'tighter_exact_three_targets_proved',
+                                  'strict_improvement_proved_in_lean', 'specification_compiled_without_QRH_imports')):
+        raise ValueError('Native target evidence is incomplete')
+    if Fraction(report['original_threshold']) - Fraction(theta) != Fraction(report['exact_improvement']) or Fraction(report['exact_improvement']) <= 0:
+        raise ValueError('Native improvement is not exact and positive')
+    for axioms in report['declarations'].values():
+        if set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'}:
+            raise ValueError('Unexpected native proof axiom')
+    changes = {p['path']: p for p in json.loads((proof / 'publication-transformations.json').read_text())['changes']}
+    for path, artifact in report['artifacts'].items():
+        if path.startswith('build/'):
+            continue  # Compiled objects are explicitly excluded; source and logs are authenticated.
+        name_in_snapshot = 'compressed/' + path
+        original = changes.get(name_in_snapshot, {}).get('original_sha256', manifest.get(name_in_snapshot))
+        if original != artifact['sha256']:
+            raise ValueError(f'Native gate artifact hash mismatch: {path}')
+    counts = json.loads((proof / 'compressed/audit/token-counts.json').read_text())['qrh_package']
+    if sum(p['after_tokens'] for p in counts['files']) != counts['after_tokens']:
+        raise ValueError('Native source token totals disagree')
+    for item in counts['files']:
+        if item.get('after_sha256') != manifest.get('compressed/formalization/' + item['path']):
+            raise ValueError('Native token report and published source differ')
+    return len(names)
+
+
 def check_publication(root):
     proof = root / 'proofs/qrh-20261009'
     names = approved_files(proof)
@@ -86,13 +172,14 @@ def check_publication(root):
     digest, name = (public / 'SHA256SUMS.txt').read_text().strip().split('  ')
     if name != archive.name or hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
         raise ValueError('Archive checksum mismatch')
+    native_count = check_native_tightening(root)
     for directory in [root / 'public/proofs', root / 'evidence']:
         for path in directory.rglob('*'):
             if path.is_symlink():
                 raise ValueError('Symlink in public evidence')
             if path.is_file() and path.suffix not in ('.gz', '.png', '.jpg', '.pdf'):
                 check_content(path.relative_to(root).as_posix(), path.read_bytes())
-    return len(names)
+    return len(names) + native_count
 
 
 if __name__ == '__main__':

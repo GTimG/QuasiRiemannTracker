@@ -1,0 +1,151 @@
+{
+  "status": "LEAN_VERIFIED",
+  "submission_status": "verification-pending",
+  "verified_at_utc": "2026-10-09T17:21:30.103097+00:00",
+  "original_threshold": "874957019421/1000000000000",
+  "threshold": "874957019420098946128604623/1000000000000000000000000000",
+  "threshold_decimal": "0.874957019420098946128604623",
+  "exact_improvement": "901053871395377/1000000000000000000000000000",
+  "improvement_approx": 9.01053871395377e-13,
+  "scope": "all Dirichlet characters, Riemann zeta, and the finite-order Eisenstein Hecke family; original exceptions retained",
+  "method": "Numerical slack recovery in the existing analytic argument; two compression/tightening cycles, not a new analytic method.",
+  "original_final_sources_unchanged": [
+    "QRH/DirichletTargets.lean",
+    "QRH/HeckeTargets.lean",
+    "QRH/IndependentTargets.lean",
+    "QRH/Nonvanishing.lean",
+    "QRH/StatementParity.lean",
+    "QRH/ZeroBounds.lean",
+    "QRH/ZetaTransfer.lean"
+  ],
+  "qrh_package": {
+    "scope": "Every counted Lean source in the QRH formalization package",
+    "before_files": 203,
+    "after_files": 206,
+    "before_tokens": 294019,
+    "after_tokens": 251464,
+    "saved_tokens": 42555,
+    "reduction_percent": 14.473554430155874,
+    "after_over_before": 0.8552644556984412
+  },
+  "additional_compression_saved_tokens": 372,
+  "net_tokens_saved_since_previous_compressed_package": 64,
+  "build": {
+    "roots": [
+      "QRH",
+      "QRH.Analytic",
+      "QRH.Detector.UniformDetectorCount",
+      "QRH.Hecke.DynamicBatchCount"
+    ],
+    "closure": 7232,
+    "checked": 7232,
+    "official_cache_modules": 4101,
+    "local_source_modules": 3131,
+    "failed": [],
+    "blocked": [],
+    "seconds": 234.65015959739685,
+    "jobs": 16,
+    "success": true,
+    "thread_policy": "Distribute the full jobs-thread budget across ready Lean modules",
+    "trust_note": "Official mathlib cache reused; OAI and QRH compiled from source.",
+    "configuration": "lean-4.34.1-local-cache-build-v1"
+  },
+  "declarations": {
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_zero_re_le_tightTheta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.tightTheta_lt_theta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "source_replay": "All 210 source/config files reproduced byte-for-byte from public pinned inputs without private Git history.",
+  "first_checkpoint": {
+    "threshold": "874957019420871/1000000000000000",
+    "qrh_tokens": 251836,
+    "status": "PASS",
+    "evidence": "tightening/iterations/01"
+  },
+  "external_checker_status": {
+    "status": "tools-ready; genuine isolation preflight blocked",
+    "candidate_proof_checked": false,
+    "host_policy_changed": false,
+    "original_proof_sources_changed": false,
+    "palomar_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+    "source_toolchain": "v4.34.1",
+    "judge_toolchain": "v4.35.0-rc2",
+    "checker_archive_sha256": "b67d0e0ba959fc74e186f1b44aebca32d6ecb6a28f8e9a029fc4e9f73398a049",
+    "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "all_reference_checker_binary_hashes_match": true,
+    "exporter_binary_sha256": "8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1",
+    "bubblewrap_version": "0.12.0",
+    "bubblewrap_source_sha256": "9760d007363e3abba7c747489910f9f82d9fca53ba3bd3282e396fa3c97a3314",
+    "bubblewrap_binary_sha256": "bb807d18eaee5dad15afd5cf48c8de1c3206ff97e852af693d679d62394eb5a2",
+    "native_preflight_report": "runs/preflight-native/result.json",
+    "native_failure": "bubblewrap network namespace loopback setup returns EPERM; Ubuntu unprivileged-userns AppArmor restriction is enabled. No policy altered.",
+    "docker_probe": {
+      "image": "ubuntu:24.04",
+      "restrictions": [
+        "network none",
+        "read-only",
+        "cap-drop ALL",
+        "no-new-privileges",
+        "user1001:1001",
+        "pids64",
+        "cpu1",
+        "memory128m"
+      ],
+      "command": "/usr/bin/true",
+      "exit": 255,
+      "error": "exec /usr/bin/true: operation not permitted"
+    },
+    "official_runner_profile": "tools/palomar/execution-profiles.json: privileged ephemeral Namespace nscloud-ubuntu-24.04-amd64-16x32",
+    "retry_command": "taskset -c 0-1 python3 run_preflight.py --run-id preflight-next",
+    "next_step": "Run the unchanged pinned preflight on a correctly provisioned disposable worker before compiling/exporting the candidate and judging all three targets. A source-only successful Lean build must be labelled verification-pending until the independent check succeeds."
+  },
+  "artifacts": {
+    "compression-result.json": {
+      "sha256": "51ed9f463ad42e8827679eef0ddf1696293be76ba20ce1f5f6bda88a8de7a830"
+    },
+    "compression.patch": {
+      "sha256": "d84d68cb3b462e99d87f6ca6fa6b5abd818fc260f79a211ba6ce6a58c4ade7a5"
+    },
+    "tightening.patch": {
+      "sha256": "9c050a2d7566cef02dfe83dd0bab36a6e7cacc6977eae9f93cc7b765913f25bc"
+    },
+    "compressed/audit/tightening-verification.json": {
+      "sha256": "ce4309c65967236142a140c1947ce69f79d9adf4dfb58252557ceb27cccf8811"
+    },
+    "compressed/audit/tightening-reproduction.json": {
+      "sha256": "1aa5362fda04cb279600a5af7f814299b66fa46f0bb1684ec4250c5c2c9d113a"
+    },
+    "tightening/parameters.json": {
+      "sha256": "7015fc5420c4e79ba481a5db92d678c7e36b526c7417bf949550b8f31758c6a6"
+    },
+    "tightening/research/Barrier.lean": {
+      "sha256": "67c498b714e5e7656bf9f702491b904b351b0842289cab436e58b4b792675bcc"
+    },
+    "tightening/research/Barrier.log": {
+      "sha256": "f855335a0826402de0f009da934389a70e01f3ce82616f7d6787a515cb9fb8a5"
+    }
+  },
+  "limitation": "The improvement is rounding-scale. The endpoint cubic obstructs crossing the present analytic model's zero-margin root with a positive endpoint certificate; it is not a lower bound for all possible QRH proofs."
+}

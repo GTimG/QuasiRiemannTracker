@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-09T18:09:57.971213+00:00",
+  "palomar_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "verifier_and_supervisors": {
+    "scripts/verify_submission.py": {
+      "sha256": "c575759d82c506f181b3736a110950fd32931c08a1be454262027d6205f178a2",
+      "matches_pinned_git_blob": true
+    },
+    "scripts/supervise_cgroup.py": {
+      "sha256": "3cf9af4fa405e0e2e1bf1e06abe4b53887c1e4a7d5ebe9a6f20b5cf6a66f0e58",
+      "matches_pinned_git_blob": true
+    },
+    "scripts/cgroup_delegate.py": {
+      "sha256": "c8a44ea58ed9a94db2caf21c66cee3f664c86370fabd50ba56e22fa9d9345824",
+      "matches_pinned_git_blob": true
+    }
+  },
+  "checker_code_modified": false
+}

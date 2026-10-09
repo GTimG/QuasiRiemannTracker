@@ -1,0 +1,1689 @@
+--- a/QRH.lean
++++ b/QRH.lean
+@@ -1,3 +1,4 @@
++import QRH.TighterNonvanishing
+ import QRH.ZeroBounds
+ import QRH.Nonvanishing
+ import QRH.Geometry
+--- a/QRH/Adaptive.lean
++++ b/QRH/Adaptive.lean
+@@ -11,7 +11,7 @@
+ 
+ theorem DP_bounds {x : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1 / 2) :
+     (10 / 13 : ℝ) ≤ P x ∧ P x ≤ D x ∧ D x ≤ 3 := by
+-  norm_num [P, D, c, kappa0, theta]
++  norm_num [P, D, c, kappa0, tightTheta]
+   refine ⟨?_, ?_, hx0⟩ <;>
+     nlinarith [sq_nonneg (x - 1 / 2), mul_nonneg hx0 (sub_nonneg.mpr hx1)]
+ 
+--- a/QRH/Certificate.lean
++++ b/QRH/Certificate.lean
+@@ -13,31 +13,31 @@
+ def J (δ x : ℝ) : ℝ := (5 / 6 - δ) * D x + δ * P x
+ 
+ def F (δ y : ℝ) : ℝ :=
+-  -J δ (1 / 2 - y) * ((1 + δ) / 2 - theta - h / 6 -
++  -J δ (1 / 2 - y) * ((1 + δ) / 2 - tightTheta - h / 6 -
+     (1 + δ) / 2 * ly - ell / 2 + (1 / 2 - y) * δ * ell + h * (1 - δ / 2)) -
+     h * (5 / 6 - δ) * δ * P (1 / 2 - y) / 2
+ 
+ def E (δ x : ℝ) : ℝ :=
+-  (1 + δ) / 2 - theta - h / 6 - (1 + δ) / 2 * ly - ell / 2 + x * δ * ell +
++  (1 + δ) / 2 - tightTheta - h / 6 - (1 + δ) / 2 * ly - ell / 2 + x * δ * ell +
+     h * (1 - δ + (5 / 6 - δ) * δ * P x / (2 * J δ x) + δ / 2)
+ 
+-def Av : ℝ := (22980714297137324206149579501325032476327674391 / 97001378465812651372080867785292379000000000000 : ℝ)
+-def Dv : ℝ := (11468905885308989336086113609703310393394156585533 / 1964953320349168109317400115833592633639660605442000000000000 : ℝ)
+-def dv : ℝ := (874613174789 / 2250773650422 : ℝ)
++def Av : ℝ := (252787857275773722424532086557222332581702999423410209795084044478203327115746530548910706040278952814230061 / 1067015163136700307388447586895477369001163937345109195504811885391021802664545243000000000000000000000000000 : ℝ)
++def Dv : ℝ := (108150331598063636456917445280702183291580033296945001686491258407508175773556643599377348874671571831374999613109 / 21614486524255104167204817812438905292419852894587874743216871701340108534300442923660103669448965460321740982000000000000000000000000000 : ℝ)
++def dv : ℝ := (874613174780890515157441607 / 2250773650438218969685116786 : ℝ)
+ 
+ theorem Av_pos : 0 < Av := by norm_num [Av]
+-theorem Dv_margin : (5 / 1000000000000 : ℝ) < Dv := by norm_num [Dv]
++theorem Dv_margin : (1 / 200000000000000000000000 : ℝ) < Dv := by norm_num [Dv]
+ 
+ theorem square_identity (δ y : ℝ) :
+     F δ y = Av * (δ - dv) ^ 2 + Dv +
+-      y ^ 1 * ((47655690054672811310768671049616269603730713471 / 15714223311461649522277100581217365398000000000000 : ℝ) * (δ - 1 / 3) ^ 0 + (98083233764193411159067931457873357482655419773 / 873012406192313862348727810067631411000000000000 : ℝ) * (δ - 1 / 3) ^ 1 + (66090522357236113351990198326622999204915257847 / 109126550774039232793590976258453926375000000000 : ℝ) * (δ - 1 / 3) ^ 2) +
+-      y ^ 2 * ((54649633819311606819745866920167325971807856261 / 1309518609288470793523091715101447116500000000000 : ℝ) * (δ - 1 / 3) ^ 0 + (353517731063908646350315646872573955319830302721 / 1309518609288470793523091715101447116500000000000 : ℝ) * (δ - 1 / 3) ^ 1 + (94784414802986912945539023056035988702203366969 / 218253101548078465587181952516907852750000000000 : ℝ) * (δ - 1 / 3) ^ 2) +
+-      y ^ 3 * ((500515766948 / 30371518573101 : ℝ) * (δ - 1 / 3) ^ 0 + (1001031533896 / 10123839524367 : ℝ) * (δ - 1 / 3) ^ 1 + (500515766948 / 3374613174789 : ℝ) * (δ - 1 / 3) ^ 2) := by
+-  norm_num [F, J, D, P, c, kappa0, theta, h, lx, ly, M, ell, b, Av, Dv, dv]
++      y ^ 1 * ((524212589531889290721237681423306292352550933350763564764974282747687561314408086567825455965156544304008741 / 172856456428145449796928509077067333778188557849907689671779525433345532031656329366000000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 0 + (359638523800744788169352526666143586876601366739441702468047811066241595035961252153517355198890683787476261 / 3201045489410100922165342760686432107003491812035327586514435656173065407993635729000000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 1 + (726995745936118747835382858730504150220876567118103262530828365740969603128067507959121897636412583681388237 / 1200392058528787845812003535257412040126309429513247844942913371064899527997613398375000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 2) +
++      y ^ 2 * ((601145972024165417081583222584562885921133445250417507836668733122960998716950790826309734928569596708373831 / 14404704702345454149744042423088944481515713154158974139314960452778794335971360780500000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 0 + (3888695041764889595812255974968503333945979597889212501827125207997423114274787516330051834724482730160870491 / 14404704702345454149744042423088944481515713154158974139314960452778794335971360780500000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 1 + (1042628562846196672283753153607407338091289631068979989158559504314270059061967571925561314969386970017874499 / 2400784117057575691624007070514824080252618859026495689885826742129799055995226796750000000000000000000000000 : ℝ) * (δ - 1 / 3) ^ 2) +
++      y ^ 3 * ((500515766958812646456744524 / 30371518573028014636416974463 : ℝ) * (δ - 1 / 3) ^ 0 + (1001031533917625292913489048 / 10123839524342671545472324821 : ℝ) * (δ - 1 / 3) ^ 1 + (500515766958812646456744524 / 3374613174780890515157441607 : ℝ) * (δ - 1 / 3) ^ 2) := by
++  norm_num [F, J, D, P, c, kappa0, tightTheta, h, lx, ly, M, ell, b, Av, Dv, dv]
+   <;> ring
+ 
+ theorem near_margin {δ y : ℝ} (hδ : (1 / 3 : ℝ) ≤ δ) (hy : 0 ≤ y) :
+-    (5 / 1000000000000 : ℝ) < F δ y := by
++    (1 / 200000000000000000000000 : ℝ) < F δ y := by
+   have hu : 0 ≤ δ - 1 / 3 := sub_nonneg.mpr hδ
+   have hA := Av_pos.le
+   rw [square_identity]
+@@ -47,24 +47,24 @@
+ 
+ theorem bernstein_identity_0 (t v : ℝ) :
+     F (t / 4) (v / 2) = (723 / 1000000 : ℝ) +
+-      (14687513802220459560595971388905665060889381359 / 419045954972310653927389348832463077280000000000 : ℝ) * (1 - t)^2 * (1-v)^3 +
+-      (15922063544520389829676240908467161461193971359 / 392855582786541238056927514530434134950000000000 : ℝ) * (1 - t)^2 * (3*v*(1-v)^2) +
+-      (289193326391345581140700138237364190844866363103 / 6285689324584659808910840232486946159200000000000 : ℝ) * (1 - t)^2 * (3*v^2*(1-v)) +
+-      (15983739928483326080578124965748393 / 310439992132218079530958800000000000 : ℝ) * (1 - t)^2 * v^3 +
+-      (252159845672480810170150044238372555905316276507 / 20952297748615532696369467441623153864000000000000 : ℝ) * (2*t*(1-t)) * (1-v)^3 +
+-      (479522203730691386061288853538559856638825406663 / 41904595497231065392738934883246307728000000000000 : ℝ) * (2*t*(1-t)) * (3*v*(1-v)^2) +
+-      (1338554220201224449914992410449553804912071615781 / 125713786491693196178216804649738923184000000000000 : ℝ) * (2*t*(1-t)) * (3*v^2*(1-v)) +
+-      (19968081249262566858644094714335309 / 2069599947548120530206392000000000000 : ℝ) * (2*t*(1-t)) * v^3 +
+-      (32073457698117007637408336919739918878634835737 / 8380919099446213078547786976649261545600000000000 : ℝ) * t^2 * (1-v)^3 +
+-      (436597014492580191793334350048671093292406324933 / 125713786491693196178216804649738923184000000000000 : ℝ) * t^2 * (3*v*(1-v)^2) +
+-      (26050231317761999874936659365258807105580578517 / 5238074437153883174092366860405788466000000000000 : ℝ) * t^2 * (3*v^2*(1-v)) +
+-      (490836640187141139201363435494081 / 51739998688703013255159800000000000 : ℝ) * t^2 * v^3 := by
+-  norm_num [F, J, D, P, c, kappa0, theta, h, lx, ly, M, ell, b]
++      (161562651796784256111233435382193596556611991503158978801683804298154077861840907113187748304515038335443189 / 4609505504750545327918093575388462234085028209330871724580787344889214187510835449760000000000000000000000000 : ℝ) * (1 - t)^2 * (1-v)^3 +
++      (175142698959886836225277253758809780655606039558921813963384264593731333415126624065073778304515038335443189 / 4321411410703636244923212726926683344454713946247692241794488135833638300791408234150000000000000000000000000 : ℝ) * (1 - t)^2 * (3*v*(1-v)^2) +
++      (3181126589764614917540370589549009032630213393338113364803039402527091501356438363384544681176755651702534213 / 69142582571258179918771403630826933511275423139963075868711810173338212812662531746400000000000000000000000000 : ℝ) * (1 - t)^2 * (3*v^2*(1-v)) +
++      (175821139183959206962166830442812410639517572029688980878201279565734322495834281 / 3414839913503445364241719501473253367035738890309319129200000000000000000000000000 : ℝ) * (1 - t)^2 * v^3 +
++      (2773758300950248178739956327761217873922052812116174479183453070983244972421321122479976478313283642756371097 / 230475275237527266395904678769423111704251410466543586229039367244460709375541772488000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (1-v)^3 +
++      (310279072805074567829734814804619293425451751124895231854857220670351644590014616544761750403478773302591469 / 27114738263238501928929962208167424906382518878416892497534043205230671691240208528000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (3*v*(1-v)^2) +
++      (14724096410796219752870456504042734667444582815655559319287605273216740791680481381313646246122067870415475751 / 1382851651425163598375428072616538670225508462799261517374236203466764256253250634928000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (3*v^2*(1-v)) +
++      (219648893532154051329764780455363399678809786777300921674413239415638571594191053 / 22765599423356302428278130009821689113571592602062127528000000000000000000000000000 : ℝ) * (2*t*(1-t)) * v^3 +
++      (352808034113691521859769621974102963946598616516175140206540211005812387125270020684344029177832492693075427 / 92190110095010906558361871507769244681700564186617434491615746897784283750216708995200000000000000000000000000 : ℝ) * t^2 * (1-v)^3 +
++      (4802567149524914816955923223153096861370607714597799324684219830007945789253250256713319444609568791651803143 / 1382851651425163598375428072616538670225508462799261517374236203466764256253250634928000000000000000000000000000 : ℝ) * t^2 * (3*v*(1-v)^2) +
++      (16856032001576599598581000731849556963180752994819844617970072032725984570752910235769057711160982360636871 / 3389342282904812741116245276020928113297814859802111562191755400653833961405026066000000000000000000000000000 : ℝ) * t^2 * (3*v^2*(1-v)) +
++      (5399203036933634882437973908276076447199859588225917064196521106941784697176577 / 569139985583907560706953250245542227839289815051553188200000000000000000000000000 : ℝ) * t^2 * v^3 := by
++  norm_num [F, J, D, P, c, kappa0, tightTheta, h, lx, ly, M, ell, b]
+   <;> ring
+ 
+ theorem bernstein_margin_0 {t v : ℝ} (ht : 0 ≤ t) (ht1 : t ≤ 1)
+     (hv : 0 ≤ v) (hv1 : v ≤ 1) :
+-    (5 / 1000000000000 : ℝ) < F (t / 4) (v / 2) := by
++    (1 / 200000000000000000000000 : ℝ) < F (t / 4) (v / 2) := by
+   have ht' : 0 ≤ 1 - t := sub_nonneg.mpr ht1
+   have hv' : 0 ≤ 1 - v := sub_nonneg.mpr hv1
+   rw [bernstein_identity_0]
+@@ -73,24 +73,24 @@
+ 
+ theorem bernstein_identity_1 (t v : ℝ) :
+     F (1 / 4 + t / 12) (v / 2) = (723 / 1000000 : ℝ) +
+-      (32073457698117007637408336919739918878634835737 / 8380919099446213078547786976649261545600000000000 : ℝ) * (1 - t)^2 * (1-v)^3 +
+-      (436597014492580191793334350048671093292406324933 / 125713786491693196178216804649738923184000000000000 : ℝ) * (1 - t)^2 * (3*v*(1-v)^2) +
+-      (26050231317761999874936659365258807105580578517 / 5238074437153883174092366860405788466000000000000 : ℝ) * (1 - t)^2 * (3*v^2*(1-v)) +
+-      (490836640187141139201363435494081 / 51739998688703013255159800000000000 : ℝ) * (1 - t)^2 * v^3 +
+-      (7619414589854362911548147217669625875670231207 / 6984099249538510898789822480541051288000000000000 : ℝ) * (2*t*(1-t)) * (1-v)^3 +
+-      (307821446778246608989470839579004803253149079743 / 377141359475079588534650413949216769552000000000000 : ℝ) * (2*t*(1-t)) * (3*v*(1-v)^2) +
+-      (1162267986303927538078926888615291677223663921851 / 377141359475079588534650413949216769552000000000000 : ℝ) * (2*t*(1-t)) * (3*v^2*(1-v)) +
+-      (19521927060226671804524684988239217 / 2069599947548120530206392000000000000 : ℝ) * (2*t*(1-t)) * v^3 +
+-      (1957369769822342496205129327753385962904743 / 10476148874307766348184733720811576932000000000000 : ℝ) * t^2 * (1-v)^3 +
+-      (23836653191300606196617258606783025038698428079 / 47142669934384948566831301743652096194000000000000 : ℝ) * t^2 * (3*v*(1-v)^2) +
+-      (4979138815919337230852686938637485594258525967 / 1109239292573763495690148276321225792800000000000 : ℝ) * t^2 * (3*v^2*(1-v)) +
+-      (195711799436668976067680505579888991 / 13969799645949813578893146000000000000 : ℝ) * t^2 * v^3 := by
+-  norm_num [F, J, D, P, c, kappa0, theta, h, lx, ly, M, ell, b]
++      (352808034113691521859769621974102963946598616516175140206540211005812387125270020684344029177832492693075427 / 92190110095010906558361871507769244681700564186617434491615746897784283750216708995200000000000000000000000000 : ℝ) * (1 - t)^2 * (1-v)^3 +
++      (4802567149524914816955923223153096861370607714597799324684219830007945789253250256713319444609568791651803143 / 1382851651425163598375428072616538670225508462799261517374236203466764256253250634928000000000000000000000000000 : ℝ) * (1 - t)^2 * (3*v*(1-v)^2) +
++      (16856032001576599598581000731849556963180752994819844617970072032725984570752910235769057711160982360636871 / 3389342282904812741116245276020928113297814859802111562191755400653833961405026066000000000000000000000000000 : ℝ) * (1 - t)^2 * (3*v^2*(1-v)) +
++      (5399203036933634882437973908276076447199859588225917064196521106941784697176577 / 569139985583907560706953250245542227839289815051553188200000000000000000000000000 : ℝ) * (1 - t)^2 * v^3 +
++      (83813560020740782206415543553312418393770372560619658097994337674986544314597676040384868162782364908264797 / 76825091745842422131968226256474370568083803488847862076346455748153569791847257496000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (1-v)^3 +
++      (3386035885040856308507217337576803480784391551021540474139161065843849282922255583070428507860857728175047653 / 4148554954275490795126284217849616010676525388397784552122708610400292768759751904784000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (3*v*(1-v)^2) +
++      (12784947815776790792013736690335742296466406071890427097239552284192066027788268123461455938492655342143897721 / 4148554954275490795126284217849616010676525388397784552122708610400292768759751904784000000000000000000000000000 : ℝ) * (2*t*(1-t)) * (3*v^2*(1-v)) +
++      (644223592377227529860311044868808831873167747338845808597030137695046979954061267 / 68296798270068907284834390029465067340714777806186382584000000000000000000000000000 : ℝ) * (2*t*(1-t)) * v^3 +
++      (21530376938236112933668110225299684340096604197706382120782626346644374015400177407597546265693469122653 / 115237637618763633197952339384711555852125705233271793114519683622230354687770886244000000000000000000000000000 : ℝ) * t^2 * (1-v)^3 +
++      (262203181462166707868820347207666994755805901394271461102030663192403680340273344082246916940773892763056309 / 518569369284436349390785527231202001334565673549723069015338576300036596094968988098000000000000000000000000000 : ℝ) * t^2 * (3*v*(1-v)^2) +
++      (931098956920243041789675542269203519478192681528362306797809601574052182859331903938035539883624382016072869 / 207427747713774539756314210892480800533826269419889227606135430520014638437987595239200000000000000000000000000 : ℝ) * t^2 * (3*v^2*(1-v)) +
++      (2152829792455016470402472945454398349780661741833079565158857092666896837558782047 / 153667796107655041390877377566296401516608250063919360814000000000000000000000000000 : ℝ) * t^2 * v^3 := by
++  norm_num [F, J, D, P, c, kappa0, tightTheta, h, lx, ly, M, ell, b]
+   <;> ring
+ 
+ theorem bernstein_margin_1 {t v : ℝ} (ht : 0 ≤ t) (ht1 : t ≤ 1)
+     (hv : 0 ≤ v) (hv1 : v ≤ 1) :
+-    (5 / 1000000000000 : ℝ) < F (1 / 4 + t / 12) (v / 2) := by
++    (1 / 200000000000000000000000 : ℝ) < F (1 / 4 + t / 12) (v / 2) := by
+   have ht' : 0 ≤ 1 - t := sub_nonneg.mpr ht1
+   have hv' : 0 ≤ 1 - v := sub_nonneg.mpr hv1
+   rw [bernstein_identity_1]
+@@ -99,7 +99,7 @@
+ 
+ theorem continuous_margin {δ y : ℝ} (hδ : 0 ≤ δ)
+     (hy : 0 ≤ y) (hy1 : y ≤ 1 / 2) :
+-    (5 / 1000000000000 : ℝ) < F δ y := by
++    (1 / 200000000000000000000000 : ℝ) < F δ y := by
+   by_cases hd0 : δ ≤ 1 / 4
+   · have hh := bernstein_margin_0 (t := 4 * δ) (v := 2 * y)
+       (by linarith) (by linarith) (by linarith) (by linarith)
+@@ -118,7 +118,7 @@
+     (hd0 : 0 ≤ δ) (hd1 : δ ≤ 5 / 6) (hx0 : 0 ≤ x) (hx1 : x ≤ 1 / 2) :
+     (25 / 39 : ℝ) ≤ J δ x ∧ J δ x ≤ 5 / 2 := by
+   have bounds : (10 / 13 : ℝ) ≤ P x ∧ P x ≤ D x ∧ D x ≤ 3 := by
+-    norm_num [P, D, c, kappa0, theta]
++    norm_num [P, D, c, kappa0, tightTheta]
+     refine ⟨?_, ?_, hx0⟩ <;>
+       nlinarith [sq_nonneg (x - 1 / 2), mul_nonneg hx0 (sub_nonneg.mpr hx1)]
+   have hweight : 0 ≤ 5 / 6 - δ := by linarith
+@@ -138,7 +138,7 @@
+ /-- Exact strict saving over the entire closed rectangle, including its boundary. -/
+ theorem endpoint_saving (hd0 : 0 ≤ δ) (hd1 : δ ≤ 5 / 6)
+     (hx0 : 0 ≤ x) (hx1 : x ≤ 1 / 2) :
+-    E δ x < -(2 / 1000000000000 : ℝ) := by
++    E δ x < -(1 / 500000000000000000000000 : ℝ) := by
+   have hj := denominator_bounds hd0 hd1 hx0 hx1
+   have hjpos : 0 < J δ x := by linarith [hj.1]
+   have hf := continuous_margin hd0 (show 0 ≤ 1 / 2 - x by linarith)
+--- a/QRH/Continuation.lean
++++ b/QRH/Continuation.lean
+@@ -8,17 +8,17 @@
+ 
+ /-- Positive common loss and the exact shared continuation boundary. -/
+ theorem continuation_parameters {B ω σ : ℝ}
+-    (hω : 0 < ω) (hωB : ω < B - theta) (hσ : 0 < σ) :
+-    let ε := min (B - theta - ω) σ
+-    0 < ε ∧ theta < B - ε ∧ B - ε < B ∧
+-      ∀ offset : ℝ, max (theta + offset + ω) (B + offset - σ) = B + offset - ε := by
++    (hω : 0 < ω) (hωB : ω < B - tightTheta) (hσ : 0 < σ) :
++    let ε := min (B - tightTheta - ω) σ
++    0 < ε ∧ tightTheta < B - ε ∧ B - ε < B ∧
++      ∀ offset : ℝ, max (tightTheta + offset + ω) (B + offset - σ) = B + offset - ε := by
+   dsimp only
+-  have he : 0 < min (B - theta - ω) σ := lt_min (by linarith) hσ
++  have he : 0 < min (B - tightTheta - ω) σ := lt_min (by linarith) hσ
+   refine ⟨he, ?_, by linarith, ?_⟩
+-  · have := min_le_left (B - theta - ω) σ
++  · have := min_le_left (B - tightTheta - ω) σ
+     linarith
+   · intro offset
+-    rcases le_total (B - theta - ω) σ with hh | hh
++    rcases le_total (B - tightTheta - ω) σ with hh | hh
+     · rw [min_eq_left hh, max_eq_left (by linarith)]
+       ring
+     · rw [min_eq_right hh, max_eq_right (by linarith)]
+--- a/QRH/Detector/ActualCubeArithmeticSaving.lean
++++ b/QRH/Detector/ActualCubeArithmeticSaving.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.ActualCubeClassBound
+ import QRH.Detector.OptimizedAdaptiveSaving
+ /-! Counts for the actual amplitude partition of source rows at the optimized
+@@ -25,7 +26,7 @@
+       159*D.ε+D.t+D.t+7*ν≤1/32→
+       QRH.h*(159*D.ε+D.t+D.t+7*ν)+2*ζ+(3/2)*μ+
+         (26*D.e+(nslots+8)*D.eps+loss+D.t*QRH.ell)+
+-        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000:ℝ)→
++        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000000000000000:ℝ)→
+     ∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,
+     1<Z ∧ ∀gap:ℝ,0≤gap→gap≤(1-QRH.kappa0)/2→
+       2*HeckeZeroSupremum.beta-1≤QRH.kappa0+2*gap→
+@@ -49,7 +50,7 @@
+       (ProbeRaySlots.mem_pool _ S.S 1 2 (Y j) P).mp hP |>.2.2.2;
+     ‖cubeArithmeticSum S.S S.exclusions S.maximal η rows T hT
+       (fun _ x=>(S.w x:ℂ)) Y a D.e t‖≤C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-      Z^(QRH.C (QRH.theta+gap)-saving-
++      Z^(QRH.C (QRH.tightTheta+gap)-saving-
+         ((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e)) := by
+   obtain ⟨J,hclass⟩ := actual_uniform_cube_class_bound S nslots lengths hpos hinj hsum hsmall hmin hbeta hfine
+   refine ⟨J,?_⟩
+@@ -69,7 +70,7 @@
+   let Q:=HeckeDetectorPhysicalSelection.physical S.modulus ⊤ (fun u:FreeRow=>u.val)
+     (fun _ x=>(S.w x:ℂ)) (fun _=>2) (fun j=>lengths j/d) (fun _=>z) (Z^d)
+   let bound:ℝ:=C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-    Z^(QRH.C (QRH.theta+gap)-saving-
++    Z^(QRH.C (QRH.tightTheta+gap)-saving-
+       ((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e))
+   have hb:0≤bound:=by dsimp [bound];positivity
+   have hpart:=cubeArithmeticSum_class_uniform S.S S.exclusions S.maximal η rows T hT
+@@ -82,7 +83,7 @@
+       let q:=classMean Finset.univ ((2*a-1)/2) D.t (fun j=>lengths j/d) bin
+       have hqb:=classMean_bounds rows Finset.univ (Z^d) (2*a-1) D.t D.t_pos
+         (fun j=>lengths j/d) Q bin (by linarith) (fun j _=>div_nonneg (hpos j).le hd0.le)
+-        (by rw [←Finset.sum_div,hsum];exact div_pos (by norm_num [QRH.ell,QRH.theta]) hd0) hne'
++        (by rw [←Finset.sum_div,hsum];exact div_pos QRH.NumericFacts.ell_bounds.1 hd0) hne'
+       have hs:=QRHProbeCentralExponent.adaptive_mixed_saving nslots a q gap D.ε D.t D.t ν ζ μ v d
+         D.e D.eps loss D.t (logCost+heightCost+heightCost*(J:ℝ)) saving
+         (by linarith) ha1 hqb.1 hqb.2 hgap hgap1 D.epsilon_pos.le D.t_pos.le D.t_pos.le hν.le
+--- a/QRH/Detector/ActualNonfloorCubeNorm.lean
++++ b/QRH/Detector/ActualNonfloorCubeNorm.lean
+@@ -25,7 +25,7 @@
+       159*D.ε+D.t+D.t+7*ν≤1/32→
+       QRH.h*(159*D.ε+D.t+D.t+7*ν)+2*ζ+(3/2)*μ+
+         (26*D.e+(nslots+8)*D.eps+loss+D.t*QRH.ell)+
+-        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000:ℝ)→
++        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000000000000000:ℝ)→
+     ∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,
+     1<Z ∧ ∀gap:ℝ,0≤gap→gap≤(1-QRH.kappa0)/2→
+       2*HeckeZeroSupremum.beta-1≤QRH.kappa0+2*gap→
+@@ -47,7 +47,7 @@
+     ‖finiteCentralCubeRows S.S S.exclusions S.maximal η rows T hT
+       (fun _ x=>(S.w x:ℂ)) Y S.W S.W (Z^QRH.lx) (Z^QRH.ly) Z D.e
+       (fun _=>a) (fun _=>(3*i+1:ℕ)*Z^τ)‖≤C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-      Z^(QRH.C (QRH.theta+gap)-saving) := by
++      Z^(QRH.C (QRH.tightTheta+gap)-saving) := by
+   obtain ⟨J,harith⟩ := actual_uniform_cube_arithmetic_saving S nslots lengths hpos hinj hsum hsmall hmin hbeta hfine
+   obtain ⟨A,hA,hprofile⟩ := actual_common_cube_aggregate_norm S.W S.W 1 2 1 2
+     (by norm_num) (by norm_num) S.complex_support S.complex_support
+@@ -69,7 +69,7 @@
+       _≤Z^(heightCost-τ)*Z^τ:=mul_le_mul_of_nonneg_right hheight (by positivity)
+       _=Z^heightCost:=by rw [←Real.rpow_add hZ];congr 1;ring
+   let bound:ℝ:=C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-    Z^(QRH.C (QRH.theta+gap)-saving-
++    Z^(QRH.C (QRH.tightTheta+gap)-saving-
+       ((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e))
+   have hb:0≤bound:=by dsimp [bound];positivity
+   have hp:=hprofile D.e a (Z^τ) ((3*i+1:ℕ)*Z^τ) i D.e_pos D.e_small ha.le ha1 hTlarge
+@@ -84,7 +84,7 @@
+   calc
+     _=(A*C)*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+       (Z^((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e)*
+-       Z^(QRH.C (QRH.theta+gap)-saving-((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e))):=by ring
++       Z^(QRH.C (QRH.tightTheta+gap)-saving-((1-QRH.ly)*a+(4/25)*QRH.lx-33/50+(16-6*QRH.ly)*D.e))):=by ring
+     _=_:=by rw [←Real.rpow_add hZ];congr 2;ring
+ 
+ end SevenEighths.QRHUniformDetectorMoment
+--- a/QRH/Detector/ActualNormalizedNonfloorCube.lean
++++ b/QRH/Detector/ActualNormalizedNonfloorCube.lean
+@@ -25,7 +25,7 @@
+       159*D.ε+D.t+D.t+7*ν≤1/32→
+       QRH.h*(159*D.ε+D.t+D.t+7*ν)+2*ζ+(3/2)*μ+
+         (26*D.e+(nslots+8)*D.eps+loss+D.t*QRH.ell)+
+-        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000:ℝ)→
++        (logCost+heightCost+heightCost*(J:ℝ))+saving≤(1/1000000000000000000000000:ℝ)→
+     ∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,
+     1<Z ∧ ∀gap:ℝ,0≤gap→gap≤(1-QRH.kappa0)/2→
+       2*HeckeZeroSupremum.beta-1≤QRH.kappa0+2*gap→
+@@ -51,7 +51,7 @@
+     normer≠0 ∧ ‖finiteCentralCubeRows S.S S.exclusions S.maximal η rows T hT
+       (fun _ x=>(S.w x:ℂ)) Y S.W S.W (Z^QRH.lx) (Z^QRH.ly) Z D.e
+       (fun _=>a) (fun _=>(3*i+1:ℕ)*Z^τ)/normer‖≤C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-      Z^(QRH.C (QRH.theta+gap)-saving/2) := by
++      Z^(QRH.C (QRH.tightTheta+gap)-saving/2) := by
+   obtain ⟨J,hcube⟩ := actual_uniform_nonfloor_cube_norm S nslots lengths hpos hinj hsum hsmall hmin hbeta hfine
+   refine ⟨J,?_⟩
+   intro n τ logCost heightCost loss ν ζ μ saving hτ hτd hτcost hl hh hloss hν hζ hμ hsaving hcount hbudget
+@@ -73,10 +73,10 @@
+   refine ⟨hn.1,?_⟩
+   rw [div_eq_mul_inv,norm_mul]
+   calc
+-    _≤(C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.theta+gap)-saving))*(A*Z^(saving/2)):=
++    _≤(C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.tightTheta+gap)-saving))*(A*Z^(saving/2)):=
+       mul_le_mul hb hn.2 (norm_nonneg _) (by positivity)
+     _=(C*A)*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-        (Z^(QRH.C (QRH.theta+gap)-saving)*Z^(saving/2)):=by ring
++        (Z^(QRH.C (QRH.tightTheta+gap)-saving)*Z^(saving/2)):=by ring
+     _=_:=by rw [←Real.rpow_add hZ];congr 2;ring
+ 
+ end SevenEighths.QRHUniformDetectorMoment
+--- a/QRH/Detector/ActualOptimizedHigh.lean
++++ b/QRH/Detector/ActualOptimizedHigh.lean
+@@ -25,20 +25,20 @@
+     (fun j=>canonicalSlotSupport (T j)) (fun _ y=>(S.w y:ℂ)) Y
+     (Z^QRH.lx) (Z^QRH.ly) Z/normer
+ 
+-theorem exists_actual_optimized_high (hβ:QRH.theta<HeckeZeroSupremum.beta):
+-    ∃D:Parameters.HighData (HeckeZeroSupremum.beta-QRH.theta),∃S:SourceData D,
++theorem exists_actual_optimized_high (hβ:QRH.tightTheta<HeckeZeroSupremum.beta):
++    ∃D:Parameters.HighData (HeckeZeroSupremum.beta-QRH.tightTheta),∃S:SourceData D,
+     ∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,
+       ‖optimizedNormalizedProbe S η Z-
+         HeckeSignal.signal (η.excludePrimes S.S S.exclusions.prime)
+           (sourceCorrection η S.S) (QRH.C 0) Z‖≤
+         C*Z^(QRH.C HeckeZeroSupremum.beta-D.sigma/8) := by
+-  have hgap:0<HeckeZeroSupremum.beta-QRH.theta:=sub_pos.mpr hβ
+-  have hgap1:HeckeZeroSupremum.beta-QRH.theta≤(1-QRH.kappa0)/2:=by
++  have hgap:0<HeckeZeroSupremum.beta-QRH.tightTheta:=sub_pos.mpr hβ
++  have hgap1:HeckeZeroSupremum.beta-QRH.tightTheta≤(1-QRH.kappa0)/2:=by
+     dsimp [QRH.kappa0];linarith [HeckeZeroSupremum.beta_le_one]
+-  have hκbeta:2*HeckeZeroSupremum.beta-1≤QRH.kappa0+2*(HeckeZeroSupremum.beta-QRH.theta):=by
++  have hκbeta:2*HeckeZeroSupremum.beta-1≤QRH.kappa0+2*(HeckeZeroSupremum.beta-QRH.tightTheta):=by
+     dsimp [QRH.kappa0];linarith
+   have hbeta:(51/100:ℝ)≤HeckeZeroSupremum.beta:=by
+-    have hh:(51/100:ℝ)<QRH.theta:=by norm_num [QRH.theta]
++    have hh:(51/100:ℝ)<QRH.tightTheta:=by norm_num [QRH.tightTheta]
+     linarith
+   obtain ⟨D,S,τ,hτ,hτd,hτcost,ht,hε,he,heps,hsmall,hτeps,hrows⟩:=
+     QRHUniformDetectorMoment.exists_optimized_nonfloor_rows_bound_with_parameters
+@@ -95,7 +95,7 @@
+     intro u hu
+     simpa only [Nat.cast_mul,Nat.cast_ofNat] using (hbins u).2.2.1
+   have hb:=(hc.2 rows hrange idx grid hlabel hnext hcurrent).2
+-  have hid:QRH.theta+(HeckeZeroSupremum.beta-QRH.theta)=HeckeZeroSupremum.beta:=by ring
++  have hid:QRH.tightTheta+(HeckeZeroSupremum.beta-QRH.tightTheta)=HeckeZeroSupremum.beta:=by ring
+   rw [hid] at hb
+   have hp:Z^(QRH.C HeckeZeroSupremum.beta-D.sigma/4)≤Z^(QRH.C HeckeZeroSupremum.beta-D.sigma/8):=
+     Real.rpow_le_rpow_of_exponent_le hZ (by linarith)
+--- a/QRH/Detector/ActualOptimizedLow.lean
++++ b/QRH/Detector/ActualOptimizedLow.lean
+@@ -11,7 +11,7 @@
+ 
+ theorem actual_optimized_low {gap:ℝ} {D:Parameters.HighData gap} (S:SourceData D)
+     (loss:ℝ) (hloss:0<loss) (η:Character):
+-    optimizedNormalizedProbe S η=O[atTop](fun Z:ℝ=>Z^(QRH.C QRH.theta+loss)) := by
++    optimizedNormalizedProbe S η=O[atTop](fun Z:ℝ=>Z^(QRH.C QRH.tightTheta+loss)) := by
+   obtain ⟨C,hC,hb⟩:=ProbePhysical.original_normalized_compensatedPhysicalProbe_low_optimized
+     S.modulus ⊤ le_top S.S S.exclusions S.maximal 1 2 1 loss (by norm_num) (by norm_num) hloss
+     (optimizedLengths D) (optimizedLengths_pos D) (optimizedLengths_injective D)
+--- a/QRH/Detector/CompleteNonfloorCubeData.lean
++++ b/QRH/Detector/CompleteNonfloorCubeData.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.ActualNormalizedNonfloorCube
+ import QRH.Detector.OptimizedData
+ 
+@@ -19,7 +20,7 @@
+     (hbeta:(51/100:ℝ)≤HeckeZeroSupremum.beta):
+     ∃D:Parameters.HighData gap,∃S:SourceData D,∃τ:ℝ,0<τ ∧
+     τ<(1/200:ℝ)/2 ∧ 4*τ<(1/200:ℝ)*D.cost ∧
+-    D.t<(1/10000000000000000:ℝ) ∧ 2000*D.ε≤D.t ∧ 2000*D.e≤D.t ∧
++    D.t<(1/10000000000000000000000000000:ℝ) ∧ 2000*D.ε≤D.t ∧ 2000*D.e≤D.t ∧
+     ((D.N:ℝ)+8)*D.eps≤D.t ∧
+     (∀j,QRHParameters.optimizedLengths D j≤D.t/200) ∧ τ*(2+4*D.eps)<D.t ∧
+     ∀n:ℕ,∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,1<Z ∧
+@@ -45,7 +46,7 @@
+     normer≠0 ∧ ‖finiteCentralCubeRows S.S S.exclusions S.maximal η rows T hT
+       (fun _ x=>(S.w x:ℂ)) Y S.W S.W (Z^QRH.lx) (Z^QRH.ly) Z D.e
+       (fun _=>a) (fun _=>(3*i+1:ℕ)*Z^τ)/normer‖≤C*(η.modulus.absNorm:ℝ)^(2*D.eps)*
+-      Z^(QRH.C (QRH.theta+gap)-D.sigma/2) := by
++      Z^(QRH.C (QRH.tightTheta+gap)-D.sigma/2) := by
+   obtain ⟨D,ht,hsmall,hfine,hε,he,heps⟩:=QRHParameters.exists_optimized_data gap hgap
+   obtain ⟨S⟩:=exists_source_data D
+   obtain ⟨J,hcube⟩:=actual_uniform_normalized_nonfloor_cube S D.N (QRHParameters.optimizedLengths D)
+@@ -63,7 +64,7 @@
+   refine ⟨hc.1,?_⟩
+   intro d hd hd1 v a i hi hv hv' hdv ha ha1 rows hne hrows hnorm hnext hcurrent
+   have hv1:v≤1:=by
+-    have hh:QRH.h+QRH.zeta≤1:=by norm_num [QRH.h,QRH.zeta,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.theta]
++    have hh:QRH.h+QRH.zeta≤1:=by linarith [QRH.NumericFacts.h_zeta_upper]
+     exact hv'.trans hh
+   exact hc.2 gap hgap.le hgap1 hκbeta d hd hd1 v a i hi hv hv' hv1 hdv ha ha1 rows hne hrows hnorm hnext hcurrent
+ 
+--- a/QRH/Detector/CompleteNonfloorRowsData.lean
++++ b/QRH/Detector/CompleteNonfloorRowsData.lean
+@@ -20,7 +20,7 @@
+     (hbeta:(51/100:ℝ)≤HeckeZeroSupremum.beta):
+     ∃D:Parameters.HighData gap,∃S:SourceData D,∃τ:ℝ,0<τ ∧
+     τ<(1/200:ℝ)/2 ∧ 4*τ<(1/200:ℝ)*D.cost ∧
+-    D.t<(1/10000000000000000:ℝ) ∧ 2000*D.ε≤D.t ∧ 2000*D.e≤D.t ∧
++    D.t<(1/10000000000000000000000000000:ℝ) ∧ 2000*D.ε≤D.t ∧ 2000*D.e≤D.t ∧
+     ((D.N:ℝ)+8)*D.eps≤D.t ∧
+     (∀j,QRHParameters.optimizedLengths D j≤D.t/200) ∧ τ*(2+4*D.eps)<D.t ∧
+     ∀n m:ℕ,∀η:Character,∃C:ℝ,0<C ∧ ∀ᶠZ:ℝ in atTop,1<Z ∧
+@@ -44,7 +44,7 @@
+     normer≠0 ∧ ‖finiteCentralCubeRows S.S S.exclusions S.maximal η rows T hT
+       (fun _ x=>(S.w x:ℂ)) Y S.W S.W (Z^QRH.lx) (Z^QRH.ly) Z D.e
+       (fun u=>51/100+D.e*grid u) (fun u=>(3*idx u+1:ℕ)*Z^τ)/normer‖≤
+-      C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.theta+gap)-D.sigma/4) := by
++      C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.tightTheta+gap)-D.sigma/4) := by
+   obtain ⟨D,S,τ,hτ,hτd,hτcost,ht,hε,he,heps,hsmall,hτeps,hcube⟩:=exists_optimized_nonfloor_cube_bound_with_parameters gap hgap hgap1 hκbeta hbeta
+   obtain ⟨Cn,hCn,hnormer⟩:=actual_ray_normalizer_inverse_optimized S.modulus ⊤ le_top S.S S.exclusions
+     1 2 (by norm_num) (by norm_num) (QRHParameters.optimizedLengths D)
+@@ -70,7 +70,7 @@
+   have hZ:1<Z:=hb.1
+   have hZp:0<Z:=zero_lt_one.trans hZ
+   let WC:Fin D.N→ℝ→ℂ:=fun _ x=>(S.w x:ℂ)
+-  let bound:ℝ:=C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.theta+gap)-D.sigma/2)
++  let bound:ℝ:=C*(η.modulus.absNorm:ℝ)^(2*D.eps)*Z^(QRH.C (QRH.tightTheta+gap)-D.sigma/2)
+   have hD:0≤bound:=by dsimp [bound];positivity
+   let F:Finset FreeRow→(FreeRow→ℝ)→(FreeRow→ℝ)→ℂ:=fun R a H=>
+     finiteCentralCubeRows S.S S.exclusions S.maximal η R T hT WC Y S.W S.W
+@@ -147,8 +147,8 @@
+       mul_le_mul_of_nonneg_right (hdyad Z (QRH.h+QRH.zeta) hZ.le (by linarith)) (by positivity)
+     _ = _ := by
+       dsimp [bound]
+-      rw [show QRH.C (QRH.theta+gap)-D.sigma/4=
+-        (QRH.C (QRH.theta+gap)-D.sigma/2)+D.sigma/4 by ring,Real.rpow_add hZp]
++      rw [show QRH.C (QRH.tightTheta+gap)-D.sigma/4=
++        (QRH.C (QRH.tightTheta+gap)-D.sigma/2)+D.sigma/4 by ring,Real.rpow_add hZp]
+       ring
+ 
+ end SevenEighths.QRHUniformDetectorMoment
+--- a/QRH/Detector/LowCentralTuple.lean
++++ b/QRH/Detector/LowCentralTuple.lean
+@@ -33,7 +33,7 @@
+           compensationRowTest η (calibrationForSet S hS) W0 W1 (fun i=>(p i).val) J
+             (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) X t*
+           selectedSlotFactor W (fun i=>Z^(ell i)) (fun i=>(p i).val) J t‖≤
+-        C*(1+‖t‖)^degree*Z^(QRH.C QRH.theta+254*ε) := by
++        C*(1+‖t‖)^degree*Z^(QRH.C QRH.tightTheta+254*ε) := by
+   obtain ⟨Cg,hCg,hgram⟩ := compensation_tuple_actual_gram ε hε hε1 W0 W1
+     a0 b0 a1 b1 M ha0 ha1 hab1 hM hW0 hW1 hW0s hW1s hWM S hS hbad
+   obtain ⟨degree,Ci,hCi,hinverse⟩ := low_physical_inverse_normalized_optimized η S hS hbad ell hell hsum
+@@ -64,13 +64,13 @@
+   have hg := hgram K η slots hslots J W Yp (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) X t
+     (by positivity) (by positivity) hX (fun p=>(hs p).1) (fun p=>(hs p).2.1)
+   apply hg.trans
+-  let G := Z^(QRH.C QRH.theta+((QRH.ly/2))*ε:ℝ)
++  let G := Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*ε:ℝ)
+   let V := Ci*(1+‖t‖)^degree*Z^(507*ε/2)
+-  have hly : QRH.ly < 1 := by norm_num [QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.theta]
+-  have hGV : G*V≤Ci*(1+‖t‖)^degree*Z^(QRH.C QRH.theta+254*ε) := by
++  have hly : QRH.ly < 1 := by norm_num [QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.tightTheta]
++  have hGV : G*V≤Ci*(1+‖t‖)^degree*Z^(QRH.C QRH.tightTheta+254*ε) := by
+     dsimp only [G,V]
+     calc
+-      _=Ci*(1+‖t‖)^degree*(Z^(QRH.C QRH.theta+((QRH.ly/2))*ε:ℝ)*Z^(507*ε/2)) := by ring
++      _=Ci*(1+‖t‖)^degree*(Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*ε:ℝ)*Z^(507*ε/2)) := by ring
+       _≤_ := by
+         rw [←Real.rpow_add hz]
+         apply mul_le_mul_of_nonneg_left _ (by positivity)
+@@ -87,7 +87,7 @@
+           (div_pos (by positivity) (lowUnselectedProduct_norm_pos slots hslots J p))
+           (lowSelectedInverseRow Finset.univ (lowSelectedWeight η slots J W Yp t)
+             η S hS (lowSelectedIdeal slots J) X t)≤
+-      (Ci*Real.sqrt (3*q/c)*(1+‖t‖)^degree*Z^(QRH.C QRH.theta+254*ε))*
++      (Ci*Real.sqrt (3*q/c)*(1+‖t‖)^degree*Z^(QRH.C QRH.tightTheta+254*ε))*
+         ‖lowUnselectedWeight slots J W Yp p‖ := by
+     dsimp only
+     let L := elementNorm (∏i : J,(p i).val)
+@@ -137,7 +137,7 @@
+         exact hh3
+       _=‖lowUnselectedWeight slots J W Yp p‖*(Real.sqrt (3*q/L)*P)*(G*V) := by ring
+       _≤‖lowUnselectedWeight slots J W Yp p‖*Real.sqrt (3*q/c)*
+-          (Ci*(1+‖t‖)^degree*Z^(QRH.C QRH.theta+254*ε)) := by
++          (Ci*(1+‖t‖)^degree*Z^(QRH.C QRH.tightTheta+254*ε)) := by
+         apply mul_le_mul
+         · exact mul_le_mul_of_nonneg_left hpen (norm_nonneg _)
+         · exact hGV
+@@ -150,7 +150,7 @@
+   rw [←Finset.mul_sum]
+   have hm := hmass T hT J W Yp hW
+   calc
+-    _≤Cg*((Ci*Real.sqrt (3*q/c)*(1+‖t‖)^degree*Z^(QRH.C QRH.theta+254*ε))*Cu) := by gcongr
++    _≤Cg*((Ci*Real.sqrt (3*q/c)*(1+‖t‖)^degree*Z^(QRH.C QRH.tightTheta+254*ε))*Cu) := by gcongr
+     _=_ := by dsimp [C0];ring
+ 
+ end SevenEighths.ProbePhysical
+--- a/QRH/Detector/LowCommonBound.lean
++++ b/QRH/Detector/LowCommonBound.lean
+@@ -33,10 +33,9 @@
+       (∀i P,P∈T i→a*Z^(ell i)≤(Ideal.absNorm P.val:ℝ) ∧ (Ideal.absNorm P.val:ℝ)≤b*Z^(ell i))→
+       ‖compensatedPhysicalProbe η (calibrationForSet S hS) W0 W1
+         (fun i=>canonicalSlotSupport (T i)) W (fun i=>Z^(ell i))
+-        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.theta+256*ε) := by
++        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.tightTheta+256*ε) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   obtain ⟨V,hV,hbudget,hidentity⟩ := compensatedPhysicalProbe_common_gaussian W
+     (fun _=>|Real.log a|+|Real.log b|) (fun _=>by positivity)
+@@ -65,7 +64,7 @@
+   have hterm (A : Finset (Fin K)) :
+       ‖∑'j : ℕ,lowCommonDyad η (calibrationForSet S hS) W0 W1 (fun i=>canonicalSlotSupport (T i)) W
+         (fun i=>Z^(ell i)) A (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) ((2:ℝ)^j)
+-        (Z*∏i∈Finset.univ\A,Z^(ell i)) (V A) (hV A)‖≤C A*Z^(QRH.C QRH.theta+256*ε) := by
++        (Z*∏i∈Finset.univ\A,Z^(ell i)) (V A) (hV A)‖≤C A*Z^(QRH.C QRH.tightTheta+256*ε) := by
+     have hc : Z*(∏i∈Finset.univ\A,Z^(ell i))=Z^(1+lowSelectedLength ell A) := by
+       rw [lowSelectedScale_product ell A Z hz,Real.rpow_add hz,Real.rpow_one]
+     rw [hc]
+@@ -89,10 +88,9 @@
+     ∃C : ℝ,0<C ∧ ∀ᶠZ : ℝ in Filter.atTop,
+       ‖compensatedPhysicalProbe η (calibrationForSet S hmax) W0 W1
+         (fun i=>canonicalSlotSupport (ProbeRaySlots.pool R S a b (Z^(ell i)))) W (fun i=>Z^(ell i))
+-        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.theta+256*ε) := by
++        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.tightTheta+256*ε) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   obtain ⟨C,hC,he⟩ := compensatedPhysicalProbe_low_optimized η S hmax hS.bad ell hell hsum
+     a b ε ha hε hε1 W hW hWnorm W0 W1 a0 b0 a1 b1 B0 B1 ha0 ha1 hab1 hB0 hB1
+--- a/QRH/Detector/LowGaussianCentral.lean
++++ b/QRH/Detector/LowGaussianCentral.lean
+@@ -32,10 +32,9 @@
+         ‖lowCommonDyad η (calibrationForSet S hS) W0 W1 (fun i=>canonicalSlotSupport (T i))
+           W (fun i=>Z^(ell i)) J (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) ((2:ℝ)^j)
+             (Z^(1+lowSelectedLength ell J)) V hV‖
+-      Summable f ∧ (∑'j : ℕ,f j)≤C*Z^(QRH.C QRH.theta+256*ε) := by
++      Summable f ∧ (∑'j : ℕ,f j)≤C*Z^(QRH.C QRH.tightTheta+256*ε) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   obtain ⟨degree,C,hC,he⟩ := low_central_gaussian_dyad_optimized η S hS hbad ell hell hsum
+     a b ε ha hε hε1 W0 W1 a0 b0 a1 b1 M ha0 ha1 hab1 hM hW0 hW1 hW0s hW1s hWM
+@@ -50,7 +49,7 @@
+       W (fun i=>Z^(ell i)) J (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) ((2:ℝ)^j) R V hV‖
+   have hz : 0<Z := lt_trans zero_lt_one hZ.1
+   obtain ⟨hsm,hmb⟩ := hm R (by dsimp [R];positivity)
+-  have hb (j : ℕ) : f j≤(C*Z^(QRH.C QRH.theta+254*ε))*
++  have hb (j : ℕ) : f j≤(C*Z^(QRH.C QRH.tightTheta+254*ε))*
+       (((2:ℝ)^j)^ε*gaussianJointMoment V hV degree ((2:ℝ)^j/R)) := by
+     dsimp only [f]
+     split_ifs with hj
+@@ -61,18 +60,18 @@
+       apply mul_le_mul_of_nonneg_left _ (by positivity)
+       exact le_mul_of_one_le_left (gaussianJointMoment_nonneg V hV degree _) hp
+   have hn (j : ℕ) : 0≤f j := by dsimp [f];split_ifs <;>positivity
+-  have hsumf := Summable.of_nonneg_of_le hn hb (hsm.mul_left (C*Z^(QRH.C QRH.theta+254*ε)))
++  have hsumf := Summable.of_nonneg_of_le hn hb (hsm.mul_left (C*Z^(QRH.C QRH.tightTheta+254*ε)))
+   refine ⟨hsumf,?_⟩
+   calc
+-    _≤∑'j : ℕ,(C*Z^(QRH.C QRH.theta+254*ε))*(((2:ℝ)^j)^ε*gaussianJointMoment V hV degree ((2:ℝ)^j/R)) :=
++    _≤∑'j : ℕ,(C*Z^(QRH.C QRH.tightTheta+254*ε))*(((2:ℝ)^j)^ε*gaussianJointMoment V hV degree ((2:ℝ)^j/R)) :=
+       hsumf.tsum_le_tsum hb (hsm.mul_left _)
+-    _=(C*Z^(QRH.C QRH.theta+254*ε))*(∑'j : ℕ,((2:ℝ)^j)^ε*gaussianJointMoment V hV degree ((2:ℝ)^j/R)) := tsum_mul_left
+-    _≤(C*Z^(QRH.C QRH.theta+254*ε))*(Cm*R^ε) := mul_le_mul_of_nonneg_left hmb (by positivity)
++    _=(C*Z^(QRH.C QRH.tightTheta+254*ε))*(∑'j : ℕ,((2:ℝ)^j)^ε*gaussianJointMoment V hV degree ((2:ℝ)^j/R)) := tsum_mul_left
++    _≤(C*Z^(QRH.C QRH.tightTheta+254*ε))*(Cm*R^ε) := mul_le_mul_of_nonneg_left hmb (by positivity)
+     _≤_ := by
+       dsimp only [R]
+       rw [←Real.rpow_mul hz.le]
+       calc
+-        _=(C*Cm)*(Z^(QRH.C QRH.theta+254*ε)*Z^((1+lowSelectedLength ell J)*ε)) := by ring
++        _=(C*Cm)*(Z^(QRH.C QRH.tightTheta+254*ε)*Z^((1+lowSelectedLength ell J)*ε)) := by ring
+         _≤_ := by
+           rw [←Real.rpow_add hz]
+           apply mul_le_mul_of_nonneg_left _ (mul_pos hC hCm).le
+--- a/QRH/Detector/LowGaussianDyad.lean
++++ b/QRH/Detector/LowGaussianDyad.lean
+@@ -33,10 +33,9 @@
+       ‖lowCommonDyad η (calibrationForSet S hS) W0 W1 (fun i=>canonicalSlotSupport (T i))
+         W (fun i=>Z^(ell i)) J (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) U
+           (Z^(1+lowSelectedLength ell J)) V hV‖≤
+-        C*Z^(QRH.C QRH.theta+254*ε)*gaussianJointMoment V hV degree (U/Z^(1+lowSelectedLength ell J)) := by
++        C*Z^(QRH.C QRH.tightTheta+254*ε)*gaussianJointMoment V hV degree (U/Z^(1+lowSelectedLength ell J)) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   obtain ⟨degree,C,hC,he⟩ := low_central_compensated_tuple_optimized η S hS hbad ell hell hsum
+     a b ε ha hε hε1 W0 W1 a0 b0 a1 b1 M ha0 ha1 hab1 hM hW0 hW1 hW0s hW1s hWM
+--- a/QRH/Detector/LowGaussianRemote.lean
++++ b/QRH/Detector/LowGaussianRemote.lean
+@@ -24,11 +24,10 @@
+       1≤Z^(QRH.lx:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J) ∧
+       1≤Z^(QRH.ly:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   filter_upwards [Filter.eventually_gt_atTop (1:ℝ),
+-    (tendsto_rpow_atTop (show 0<((QRH.lx-QRH.ell):ℝ) by norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.theta])).eventually
++    (tendsto_rpow_atTop (show 0<((QRH.lx-QRH.ell):ℝ) by norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.tightTheta])).eventually
+       (Filter.eventually_ge_atTop ((max 1 b)^K))] with Z hZ hc
+   refine ⟨hZ,?_⟩
+   intro slots hn hnorm J p
+@@ -42,19 +41,18 @@
+     apply hb.trans
+     calc
+       _≤Z^((QRH.lx-QRH.ell):ℝ)*Z^QRH.ell := mul_le_mul_of_nonneg_right hc (by positivity)
+-      _=_ := by rw [←Real.rpow_add (lt_trans zero_lt_one hZ)];norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.theta]
++      _=_ := by rw [←Real.rpow_add (lt_trans zero_lt_one hZ)];norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.tightTheta]
+   constructor
+   · exact (one_le_div hl).mpr hLX
+   · exact (one_le_div hl).mpr (hLX.trans
+-      (Real.rpow_le_rpow_of_exponent_le hZ.le (by norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.theta])))
++      (Real.rpow_le_rpow_of_exponent_le hZ.le (by norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.tightTheta])))
+ 
+ 
+ lemma low_remote_power_optimized (Z ell ε : ℝ) (N : ℕ) (hZ : 1≤Z) (hell : ell≤QRH.ell)
+     (hN : 5≤(ε/2)*(N:ℝ)) :
+     Z*(Z^(1+ell))^2/(Z^(ε/2))^N≤Z^(-1:ℝ) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   have hz : 0<Z := lt_of_lt_of_le zero_lt_one hZ
+   have hsq : (Z^(1+ell))^2=Z^(2*(1+ell)) := by
+@@ -84,8 +82,7 @@
+             (Z^(1+lowSelectedLength ell J)) V hV‖ else 0
+       Summable f ∧ (∑'j : ℕ,f j)≤C*Z^(-1:ℝ) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   have hep : 0<ε/2 := by linarith
+   obtain ⟨N,hN⟩ := exists_nat_gt ((5:ℝ)/(ε/2))
+--- a/QRH/Detector/LowGaussianSum.lean
++++ b/QRH/Detector/LowGaussianSum.lean
+@@ -32,10 +32,9 @@
+       let f := fun j : ℕ=>lowCommonDyad η (calibrationForSet S hS) W0 W1 (fun i=>canonicalSlotSupport (T i))
+           W (fun i=>Z^(ell i)) J (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) ((2:ℝ)^j)
+             (Z^(1+lowSelectedLength ell J)) V hV
+-      Summable f ∧ ‖∑'j : ℕ,f j‖≤C*Z^(QRH.C QRH.theta+256*ε) := by
++      Summable f ∧ ‖∑'j : ℕ,f j‖≤C*Z^(QRH.C QRH.tightTheta+256*ε) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   obtain ⟨Cc,hCc,hcentral⟩ := low_central_gaussian_dyads_optimized η S hS hbad ell hell hsum
+     a b ε ha hε hε1 V hV W0 W1 a0 b0 a1 b1 B1 ha0 ha1 hab1 hB1 hW0 hW1 hW0s hW1s hWB1
+@@ -50,10 +49,10 @@
+   dsimp only at hc' hr' ⊢
+   have hh := low_dyad_norm_split _ (fun j=>lowRemote Z (lowSelectedLength ell J) ε ((2:ℝ)^j)) hc'.1 hr'.1
+   refine ⟨hh.1,hh.2.trans ?_⟩
+-  have hp : Z^(-1:ℝ)≤Z^(QRH.C QRH.theta+256*ε) := Real.rpow_le_rpow_of_exponent_le hc.1.le (by linarith)
++  have hp : Z^(-1:ℝ)≤Z^(QRH.C QRH.tightTheta+256*ε) := Real.rpow_le_rpow_of_exponent_le hc.1.le (by linarith)
+   calc
+-    _≤Cc*Z^(QRH.C QRH.theta+256*ε)+Cr*Z^(-1:ℝ) := add_le_add hc'.2 hr'.2
+-    _≤Cc*Z^(QRH.C QRH.theta+256*ε)+Cr*Z^(QRH.C QRH.theta+256*ε) := add_le_add le_rfl (mul_le_mul_of_nonneg_left hp hCr.le)
++    _≤Cc*Z^(QRH.C QRH.tightTheta+256*ε)+Cr*Z^(-1:ℝ) := add_le_add hc'.2 hr'.2
++    _≤Cc*Z^(QRH.C QRH.tightTheta+256*ε)+Cr*Z^(QRH.C QRH.tightTheta+256*ε) := add_le_add le_rfl (mul_le_mul_of_nonneg_left hp hCr.le)
+     _=_ := by ring
+ 
+ end SevenEighths.ProbePhysical
+--- a/QRH/Detector/LowGramScale.lean
++++ b/QRH/Detector/LowGramScale.lean
+@@ -13,7 +13,7 @@
+ 
+ lemma source_gram_power_optimized :
+     Z^(QRH.lx:ℝ)*(Z^(QRH.b:ℝ))^(1/6:ℝ)*(Z^(QRH.ly:ℝ))^δ=
+-      Z^((2*QRH.C QRH.theta)+(QRH.ly)*δ:ℝ) := by
++      Z^((2*QRH.C QRH.tightTheta)+(QRH.ly)*δ:ℝ) := by
+   rw [←Real.rpow_mul hZ.le,←Real.rpow_mul hZ.le,←Real.rpow_add hZ,←Real.rpow_add hZ]
+   congr 1
+   dsimp [QRH.C, QRH.h, QRH.lx, QRH.ly, QRH.M, QRH.ell]
+@@ -21,7 +21,7 @@
+ 
+ 
+ lemma source_gram_sqrt_power_optimized :
+-    Real.sqrt (Z^((2*QRH.C QRH.theta)+(QRH.ly)*δ:ℝ))=Z^(QRH.C QRH.theta+((QRH.ly/2))*δ:ℝ) := by
++    Real.sqrt (Z^((2*QRH.C QRH.tightTheta)+(QRH.ly)*δ:ℝ))=Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*δ:ℝ) := by
+   rw [Real.sqrt_eq_rpow,←Real.rpow_mul hZ.le]
+   congr 1
+   dsimp [QRH.C, QRH.h, QRH.lx, QRH.ly, QRH.M, QRH.ell]
+--- a/QRH/Detector/LowNormalized.lean
++++ b/QRH/Detector/LowNormalized.lean
+@@ -38,10 +38,9 @@
+       normer≠0 ∧
+       ‖compensatedPhysicalProbe η (calibrationForSet S hmax) W0 W1
+         (fun j=>canonicalSlotSupport (T j)) WC Yp (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z/normer‖≤
+-        C*Z^(QRH.C QRH.theta+loss) := by
++        C*Z^(QRH.C QRH.tightTheta+loss) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   let WC : Fin K→ℝ→ℂ := fun j y=>(W j y:ℂ)
+@@ -72,9 +71,9 @@
+   refine ⟨hn.1,?_⟩
+   rw [div_eq_mul_inv,norm_mul]
+   calc
+-    _≤(Cp*Z^(QRH.C QRH.theta+loss/2))*(Cn*Z^(loss/2)) :=
++    _≤(Cp*Z^(QRH.C QRH.tightTheta+loss/2))*(Cn*Z^(loss/2)) :=
+       mul_le_mul hp hn.2 (norm_nonneg _) (by positivity)
+-    _=(Cp*Cn)*Z^(QRH.C QRH.theta+loss) := by
++    _=(Cp*Cn)*Z^(QRH.C QRH.tightTheta+loss) := by
+       rw [mul_mul_mul_comm,←Real.rpow_add hZ]
+       congr 2
+       ring
+--- a/QRH/Detector/LowPenaltyAbsorption.lean
++++ b/QRH/Detector/LowPenaltyAbsorption.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.LowReflectedLength
+ import OAI.NumberTheory.DirichletL.Detector.LowCentralTuple
+ 
+@@ -5,7 +6,7 @@
+ noncomputable section
+ 
+ lemma low_penalty_le_length (d : ℝ) (hd : 0 ≤ d) : QRH.lowPenalty d ≤ d := by
+-  have hell : QRH.ell ≤ (1/5:ℝ) := by norm_num [QRH.ell, QRH.theta]
++  have hell := QRH.NumericFacts.ell_upper.le
+   have hm : max (5*QRH.ell+d-1) 0 ≤ d := max_le (by linarith) hd
+   dsimp [QRH.lowPenalty]
+   linarith
+--- a/QRH/Detector/LowRemoteMass.lean
++++ b/QRH/Detector/LowRemoteMass.lean
+@@ -19,8 +19,7 @@
+     (hnorm : ∀i P,P∈T i→(Ideal.absNorm P.val:ℝ)≤b*Z^(ell i)) :
+     (Fintype.card (∀i,canonicalSlotSupport (T i)):ℝ)≤(128*max 1 b)^K*Z^QRH.ell := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   rw [Fintype.card_pi,Nat.cast_prod]
+   calc
+@@ -53,8 +52,7 @@
+       (fun p i=>elementNorm (p i.val).val/Z^(ell i.val))≤
+         (elementNorm C.generator*(128*max 1 b)^K)*Z := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   have hz : 0<Z := lt_of_lt_of_le zero_lt_one hZ
+   have hp (p : ∀i,canonicalSlotSupport (T i)) (i : Fin K) : (p i).val≠0 :=
+@@ -79,7 +77,7 @@
+   apply hc.trans_eq
+   calc
+     _=(elementNorm C.generator*(128*max 1 b)^K)*(Z^QRH.ell*Z^(QRH.M:ℝ)) := by ring
+-    _=_ := by rw [←Real.rpow_add hz];norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.theta]
++    _=_ := by rw [←Real.rpow_add hz];norm_num [QRH.lx, QRH.ly, QRH.M, QRH.b, QRH.ell, QRH.tightTheta]
+ 
+ end SevenEighths.ProbePhysical
+ end
+--- a/QRH/Detector/LowSlotScales.lean
++++ b/QRH/Detector/LowSlotScales.lean
+@@ -42,7 +42,7 @@
+       1≤Z^(QRH.ly:ℝ)/L ∧
+       1≤(Z^(QRH.ly:ℝ)/L)^2/lowPhysicalScale C (Z^(QRH.lx:ℝ)/L) (Z^(QRH.ly:ℝ)/L) ∧
+       ∀δ : ℝ,0≤δ→lowGramFactor C (Z^(QRH.lx:ℝ)/L) (Z^(QRH.ly:ℝ)/L) δ≤
+-        Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.theta+((QRH.ly/2))*δ:ℝ) := by
++        Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*δ:ℝ) := by
+   filter_upwards [eventually_compensated_source_scales_optimized C (b^K)] with Z hZ
+   refine ⟨hZ.1,?_⟩
+   intro slots hslots hnorm J a
+--- a/QRH/Detector/LowSourceScales.lean
++++ b/QRH/Detector/LowSourceScales.lean
+@@ -15,13 +15,13 @@
+ lemma source_scale_ratio_optimized :
+     Z^(QRH.ly:ℝ)/Z^(QRH.lx:ℝ)=Z^(QRH.b:ℝ) := by
+   rw [←Real.rpow_sub hZ]
+-  norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M]
++  norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M]
+ 
+ 
+ lemma source_scale_square_optimized :
+     Z^((2*QRH.lx-QRH.ly):ℝ)*Z^(QRH.ly:ℝ)=(Z^(QRH.lx:ℝ))^2 := by
+   rw [←Real.rpow_add hZ,←Real.rpow_natCast,←Real.rpow_mul hZ.le]
+-  norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M]
++  norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M]
+ 
+ 
+ end
+@@ -35,7 +35,7 @@
+   have hl : 0<L := lt_of_lt_of_le zero_lt_one hL
+   constructor
+   · apply (le_div_iff₀ hl).mpr
+-    simpa using hLl.trans (Real.rpow_le_rpow_of_exponent_le hZ (show ((2*QRH.lx-QRH.ly):ℝ)≤QRH.ly by norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M]))
++    simpa using hLl.trans (Real.rpow_le_rpow_of_exponent_le hZ (show ((2*QRH.lx-QRH.ly):ℝ)≤QRH.ly by norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M]))
+   constructor
+   · apply (le_div_iff₀ (Real.rpow_pos_of_pos hz (QRH.lx))).mp
+     rwa [source_scale_ratio_optimized Z hz]
+@@ -54,7 +54,7 @@
+       (1+((Z^(QRH.ly:ℝ)/L)^2/(q*(Z^(QRH.lx:ℝ)/L)*(Z^(QRH.ly:ℝ)/L)))^(1/6:ℝ)+
+         ((Z^(QRH.ly:ℝ)/L)^2/(q*(Z^(QRH.lx:ℝ)/L)*(Z^(QRH.ly:ℝ)/L)))^2/(Z^(QRH.ly:ℝ)/L))*
+       (Z^(QRH.ly:ℝ)/L)^δ ≤
+-        (3*q/L)*Z^((2*QRH.C QRH.theta)+(QRH.ly)*δ:ℝ) := by
++        (3*q/L)*Z^((2*QRH.C QRH.tightTheta)+(QRH.ly)*δ:ℝ) := by
+   have hz : 0<Z := lt_of_lt_of_le zero_lt_one hZ
+   have hq0 : 0<q := lt_of_lt_of_le zero_lt_one hq
+   have hL0 : 0<L := lt_of_lt_of_le zero_lt_one hL
+@@ -66,7 +66,7 @@
+     rw [←source_scale_ratio_optimized Z hz]
+     exact div_le_div_of_nonneg_left (by positivity) (by positivity)
+       (le_mul_of_one_le_left (by positivity) hq)
+-  have hp := Real.rpow_le_rpow (by positivity : 0≤Z^(QRH.ly:ℝ)/(q*Z^(QRH.lx:ℝ))) hratio (show 0≤(1/6:ℝ) by norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M])
++  have hp := Real.rpow_le_rpow (by positivity : 0≤Z^(QRH.ly:ℝ)/(q*Z^(QRH.lx:ℝ))) hratio (show 0≤(1/6:ℝ) by norm_num)
+   calc
+     _≤3*(q*Z^(QRH.lx:ℝ)/L)*(Z^(QRH.b:ℝ))^(1/6:ℝ)*(Z^(QRH.ly:ℝ))^δ := by gcongr
+     _=(3*q/L)*(Z^(QRH.lx:ℝ)*(Z^(QRH.b:ℝ))^(1/6:ℝ)*(Z^(QRH.ly:ℝ))^δ) := by ring
+@@ -78,7 +78,7 @@
+       (1+((Z^(QRH.ly:ℝ)/L)^2/(q*(Z^(QRH.lx:ℝ)/L)*(Z^(QRH.ly:ℝ)/L)))^(1/6:ℝ)+
+         ((Z^(QRH.ly:ℝ)/L)^2/(q*(Z^(QRH.lx:ℝ)/L)*(Z^(QRH.ly:ℝ)/L)))^2/(Z^(QRH.ly:ℝ)/L))*
+       (Z^(QRH.ly:ℝ)/L)^δ) ≤
+-        Real.sqrt (3*q/L)*Z^(QRH.C QRH.theta+((QRH.ly/2))*δ:ℝ) := by
++        Real.sqrt (3*q/L)*Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*δ:ℝ) := by
+   apply (Real.sqrt_le_sqrt (source_compensated_gram_scale_optimized q Z L δ hq hZ hL hql hLl hδ)).trans_eq
+   rw [Real.sqrt_mul (by positivity),source_gram_sqrt_power_optimized Z δ (lt_of_lt_of_le zero_lt_one hZ)]
+ 
+@@ -89,7 +89,7 @@
+     (hL : 1≤L) (hql : elementNorm C.generator≤Z^(QRH.b:ℝ))
+     (hLl : L≤Z^((2*QRH.lx-QRH.ly):ℝ)) (hδ : 0≤δ) :
+     lowGramFactor C (Z^(QRH.lx:ℝ)/L) (Z^(QRH.ly:ℝ)/L) δ≤
+-      Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.theta+((QRH.ly/2))*δ:ℝ) :=
++      Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*δ:ℝ) :=
+   source_compensated_gram_sqrt_optimized _ Z L δ (calibration_elementNorm_ge_one C) hZ hL hql hLl hδ
+ 
+ 
+@@ -99,10 +99,10 @@
+         1≤Z^(QRH.ly:ℝ)/L ∧
+         1≤(Z^(QRH.ly:ℝ)/L)^2/lowPhysicalScale C (Z^(QRH.lx:ℝ)/L) (Z^(QRH.ly:ℝ)/L) ∧
+         ∀δ : ℝ,0≤δ→lowGramFactor C (Z^(QRH.lx:ℝ)/L) (Z^(QRH.ly:ℝ)/L) δ≤
+-          Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.theta+((QRH.ly/2))*δ:ℝ) := by
+-  have hq := (tendsto_rpow_atTop (show 0<(QRH.b:ℝ) by norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M])).eventually
++          Real.sqrt (3*elementNorm C.generator/L)*Z^(QRH.C QRH.tightTheta+((QRH.ly/2))*δ:ℝ) := by
++  have hq := (tendsto_rpow_atTop (show 0<(QRH.b:ℝ) by norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M])).eventually
+     (Filter.eventually_ge_atTop (elementNorm C.generator))
+-  have hb := (tendsto_rpow_atTop (show 0<((2*QRH.lx-QRH.ly-QRH.ell):ℝ) by norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M])).eventually
++  have hb := (tendsto_rpow_atTop (show 0<((2*QRH.lx-QRH.ly-QRH.ell):ℝ) by norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M])).eventually
+     (Filter.eventually_ge_atTop B)
+   filter_upwards [Filter.eventually_ge_atTop (1:ℝ),hq,hb] with Z hZ hq hb
+   refine ⟨hZ,hq,?_⟩
+@@ -112,7 +112,7 @@
+   have hLl : L≤Z^((2*QRH.lx-QRH.ly):ℝ) := calc
+     L≤B*Z^QRH.ell := hLB
+     _≤Z^((2*QRH.lx-QRH.ly-QRH.ell):ℝ)*Z^QRH.ell := mul_le_mul_of_nonneg_right hb (by positivity)
+-    _=Z^((2*QRH.lx-QRH.ly):ℝ) := by rw [←Real.rpow_add hz];norm_num [QRH.b, QRH.ell, QRH.theta, QRH.lx, QRH.ly, QRH.M]
++    _=Z^((2*QRH.lx-QRH.ly):ℝ) := by rw [←Real.rpow_add hz];norm_num [QRH.b, QRH.ell, QRH.tightTheta, QRH.lx, QRH.ly, QRH.M]
+   obtain ⟨hy,hp,_⟩ := source_compensated_scale_admissible_optimized _ Z L (calibration_elementNorm_ge_one C) hZ hL hq hLl
+   refine ⟨hy,?_,fun δ hδ=>lowGramFactor_source_bound_optimized C Z L δ hZ hL hq hLl hδ⟩
+   rw [lowPhysicalScale,compensated_gram_ratio _ _ _ _ (calibration_elementNorm_pos C)
+--- a/QRH/Detector/LowWindowBound.lean
++++ b/QRH/Detector/LowWindowBound.lean
+@@ -27,10 +27,9 @@
+     ∀η : HeckeFamily.Character,∃C : ℝ,0<C ∧ ∀ᶠZ : ℝ in Filter.atTop,
+       ‖compensatedPhysicalProbe η (calibrationForSet S hmax) W0 W1
+         (fun i=>canonicalSlotSupport (ProbeRaySlots.pool R S a b (Z^(ell i)))) W (fun i=>Z^(ell i))
+-        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.theta+loss) := by
++        (Z^(QRH.lx:ℝ)) (Z^(QRH.ly:ℝ)) Z‖≤C*Z^(QRH.C QRH.tightTheta+loss) := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   let D := max 1 B
+   have hD : 0<D := lt_of_lt_of_le zero_lt_one (le_max_left _ _)
+@@ -66,8 +65,8 @@
+   rw [hscale] at heq
+   rw [heq,norm_mul,norm_pow,Complex.norm_real,Real.norm_eq_abs,abs_of_pos hD]
+   calc
+-    _≤D^K*(C*Z^(QRH.C QRH.theta+256*ε)) := mul_le_mul_of_nonneg_left hb (by positivity)
+-    _≤D^K*(C*Z^(QRH.C QRH.theta+loss)) := by gcongr
++    _≤D^K*(C*Z^(QRH.C QRH.tightTheta+256*ε)) := mul_le_mul_of_nonneg_left hb (by positivity)
++    _≤D^K*(C*Z^(QRH.C QRH.tightTheta+loss)) := by gcongr
+     _=_ := by ring
+ 
+ end SevenEighths.ProbePhysical
+--- a/QRH/Detector/OptimizedAdaptiveSaving.lean
++++ b/QRH/Detector/OptimizedAdaptiveSaving.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.OptimizedMixedSaving
+ 
+ namespace OAI
+@@ -8,7 +9,7 @@
+     (hδ : 5/6≤δ) (hd : δ≤1) (hq : q≤δ/2)
+     (hg : 0≤gap) (hl : 0≤loss) (hl1 : loss≤1/32)
+     (hζ : 0≤ζ) (hv : v≤QRH.h+ζ) (hμ : 0≤μ) (hdv : d-v≤μ) :
+-    mixedSourceExponent ((1+δ)/2) v d (1-δ+loss) q-QRH.C (QRH.theta+gap)<
++    mixedSourceExponent ((1+δ)/2) v d (1-δ+loss) q-QRH.C (QRH.tightTheta+gap)<
+       -(7/100:ℝ)+QRH.h*loss+2*ζ+μ := by
+   have hlo : 0≤1-δ+loss+δ/2-17/50 := by linarith
+   have hhi : 1-δ+loss+δ/2-17/50≤2 := by linarith
+@@ -31,10 +32,10 @@
+     (hζ : 0≤ζ) (hv : v≤QRH.h+ζ) (hv1 : v≤1)
+     (hμ : 0≤μ) (hdv : d-v≤μ) (he : 0≤e) (heps : 0≤eps)
+     (hbudget : QRH.h*(159*ε+εm+slotMesh+7*ν)+2*ζ+(3/2)*μ+
+-      (26*e+(N+8)*eps+loss+mesh*QRH.ell)+overhead+saving≤(1/1000000000000:ℝ)) :
++      (26*e+(N+8)*eps+loss+mesh*QRH.ell)+overhead+saving≤(1/1000000000000000000000000:ℝ)) :
+     mixedSourceExponent a v d
+       (QRHProbeHighRowFamily.adaptiveRowExponent (2*a-1) q gap ε εm slotMesh ν) q+
+-      realLoss N v e eps loss mesh+overhead≤QRH.C (QRH.theta+gap)-saving := by
++      realLoss N v e eps loss mesh+overhead≤QRH.C (QRH.tightTheta+gap)-saving := by
+   have hδ : 0<2*a-1 := by linarith
+   have hx : 0≤q/(2*a-1) := div_nonneg hq hδ.le
+   have hx1 : q/(2*a-1)≤1/2 := (div_le_iff₀ hδ).mpr (by linarith)
+@@ -52,7 +53,7 @@
+       (le_of_lt (lt_of_not_ge hd)) (by linarith) hq1 hg (by positivity) (by linarith)
+       hζ hv hμ hdv
+     rw [haeq] at hh
+-    have hH : 0≤QRH.h := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.theta]
++    have hH : 0≤QRH.h := by linarith [QRH.NumericFacts.h_lower]
+     have hcost:=mul_le_mul_of_nonneg_left (show 78*ε+εm≤159*ε+εm+slotMesh+7*ν by linarith) hH
+     simp only [QRHProbeHighRowFamily.adaptiveRowExponent,ite_eq_right hd]
+     simp only [add_assoc] at hh ⊢
+--- a/QRH/Detector/OptimizedBatchWidths.lean
++++ b/QRH/Detector/OptimizedBatchWidths.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import OAI.NumberTheory.DirichletL.Detector.DetectorBatch
+ import QRH.Geometry
+ /-! Width gates for the optimized positive slot vector. -/
+@@ -11,8 +12,8 @@
+     (hsum : ∑j,lengths j=QRH.ell) :
+     (∀j,0<lengths j/d) ∧ (∀j,lengths j/d≤mesh) ∧ 7/37≤∑j,lengths j/d := by
+   have hd0 : 0<d := hdmin.trans_le hd
+-  have hell0 : 0<QRH.ell := by norm_num [QRH.ell,QRH.theta]
+-  have hellmin : (1/6:ℝ)≤QRH.ell := by norm_num [QRH.ell,QRH.theta]
++  have hell0 := QRH.NumericFacts.ell_bounds.1
++  have hellmin : (1/6:ℝ)≤QRH.ell := by norm_num [QRH.ell,QRH.tightTheta]
+   have hm : 0≤mesh := by
+     by_contra hn
+     have hm : mesh<0 := lt_of_not_ge hn
+--- a/QRH/Detector/OptimizedCentralExponent.lean
++++ b/QRH/Detector/OptimizedCentralExponent.lean
+@@ -17,7 +17,7 @@
+   (16-6*QRH.ly)*e+12*v*e+v*eps*(N+8)+heightLoss+mesh*QRH.ell
+ 
+ lemma manuscript_exponent_identity (a d R q : ℝ) :
+-    sourceExponent a d R q=QRH.C QRH.theta+QRH.exponent d (2*a-1) q R := by
++    sourceExponent a d R q=QRH.C QRH.tightTheta+QRH.exponent d (2*a-1) q R := by
+   unfold sourceExponent QRH.C QRH.exponent QRH.h QRH.lx QRH.ly QRH.M
+   ring
+ 
+@@ -33,7 +33,7 @@
+ lemma realLoss_bound (N : ℕ) (v e eps heightLoss mesh : ℝ)
+     (hv : v≤1) (he : 0≤e) (heps : 0≤eps) :
+     realLoss N v e eps heightLoss mesh≤26*e+(N+8)*eps+heightLoss+mesh*QRH.ell := by
+-  have hly : (1/3:ℝ)≤QRH.ly := by norm_num [QRH.ly,QRH.M,QRH.ell,QRH.b,QRH.theta]
++  have hly : (1/3:ℝ)≤QRH.ly := by norm_num [QRH.ly,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]
+   have h1 := mul_le_mul_of_nonneg_right hv he
+   have h2 := mul_le_mul_of_nonneg_right hv (show 0≤eps*(N+8) by positivity)
+   have h3 := mul_nonneg (show 0≤QRH.ly-1/3 by linarith) he
+--- a/QRH/Detector/OptimizedContinuation.lean
++++ b/QRH/Detector/OptimizedContinuation.lean
+@@ -8,17 +8,17 @@
+ open HeckeFamily HeckeSignal Continuation
+ 
+ theorem nonzero_of_probe_bounds (χ:Character) (H:ℂ→ℂ) (J:ℝ→ℂ)
+-    (β ω σ c:ℝ) (hβ:β≤1) (hω0:0<ω) (hω:ω<β-QRH.theta) (hσ:0<σ)
++    (β ω σ c:ℝ) (hβ:β≤1) (hω0:0<ω) (hω:ω<β-QRH.tightTheta) (hσ:0<σ)
+     (hH:AnalyticOnNhd ℂ H {s:ℂ|87/100<s.re})
+     (hb:∀s:ℂ,87/100<s.re→‖H s-1‖≤1/2)
+-    (hJ:J=O[atTop](fun x:ℝ=>x^(QRH.theta+c+ω)))
++    (hJ:J=O[atTop](fun x:ℝ=>x^(QRH.tightTheta+c+ω)))
+     (herror:(fun x=>J x-signal χ H c x)=O[atTop](fun x:ℝ=>x^(β+c-σ)))
+-    {ρ:ℂ} (hρ:β-min (β-QRH.theta-ω) σ<ρ.re)
++    {ρ:ℂ} (hρ:β-min (β-QRH.tightTheta-ω) σ<ρ.re)
+     (hpole:ρ≠1∨χ.residue≠1):LFunction χ ρ≠0 := by
+-  let ε:=min (β-QRH.theta-ω) σ
++  let ε:=min (β-QRH.tightTheta-ω) σ
+   let a:=β-ε
+   obtain ⟨hε,hboundary,_,hexp⟩:=QRH.continuation_parameters hω0 hω hσ
+-  have hθ:(87/100:ℝ)<QRH.theta:=by norm_num [QRH.theta]
++  have hθ:(87/100:ℝ)<QRH.tightTheta:=by norm_num [QRH.tightTheta]
+   have ha2:a<2:=by dsimp [a,ε];linarith
+   have hH7:AnalyticOnNhd ℂ H {s:ℂ|7/8<s.re}:=
+     hH.mono (fun s hs=>by change 7/8<s.re at hs;change 87/100<s.re;linarith)
+@@ -50,7 +50,7 @@
+     intro h
+     rw [h] at hρ
+     norm_num at hρ
+-    have hpos:0<QRH.theta:=by norm_num [QRH.theta]
++    have hpos:0<QRH.tightTheta:=by norm_num [QRH.tightTheta]
+     linarith
+ 
+ end SevenEighths.QRHContinuation
+--- a/QRH/Detector/OptimizedData.lean
++++ b/QRH/Detector/OptimizedData.lean
+@@ -22,17 +22,17 @@
+   ring
+ 
+ lemma optimizedLengths_pos (j:Fin D.N):0<optimizedLengths D j:=by
+-  have he:0<QRH.ell:=by norm_num [QRH.ell,QRH.theta]
++  have he:=QRH.NumericFacts.ell_bounds.1
+   exact mul_pos (by positivity) (D.slots_bounds j).1
+ 
+ lemma optimizedLengths_injective:Function.Injective (optimizedLengths D):=by
+-  have he:6*QRH.ell≠0:=by norm_num [QRH.ell,QRH.theta]
++  have he:6*QRH.ell≠0:=by norm_num [QRH.ell,QRH.tightTheta]
+   intro j k h
+   exact D.slots_injective (mul_left_cancel₀ he h)
+ 
+ lemma optimizedLengths_lower (j:Fin D.N):
+     (7/8:ℝ)*D.rmin≤optimizedLengths D j:=by
+-  have he:1≤6*QRH.ell:=by norm_num [QRH.ell,QRH.theta]
++  have he:1≤6*QRH.ell:=by norm_num [QRH.ell,QRH.tightTheta]
+   have hp:=mul_le_mul_of_nonneg_right he (D.slots_bounds j).1.le
+   dsimp [optimizedLengths]
+   linarith [(D.slots_bounds j).2.1]
+@@ -43,12 +43,12 @@
+ before any height degree. A height may subsequently be chosen by D.height_choice. -/
+ theorem exists_optimized_data (gap:ℝ) (hgap:0<gap):
+     ∃D:HighData gap,
+-      D.t<(1/10000000000000000:ℝ) ∧
++      D.t<(1/10000000000000000000000000000:ℝ) ∧
+       (∀j,optimizedLengths D j≤D.t/200) ∧
+       (∀j,optimizedLengths D j≤dynamicMesh D.t/200) ∧
+       2000*D.ε≤D.t ∧ 2000*D.e≤D.t ∧ ((D.N:ℝ)+8)*D.eps≤D.t:=by
+-  have he:0<6*QRH.ell:=by norm_num [QRH.ell,QRH.theta]
+-  obtain ⟨D,hfine,ht,hε,he',heps⟩:=exists_high_data_fine_small gap (1/10000000000000000) hgap
++  have he:0<6*QRH.ell:=by norm_num [QRH.ell,QRH.tightTheta]
++  obtain ⟨D,hfine,ht,hε,he',heps⟩:=exists_high_data_fine_small gap (1/10000000000000000000000000000) hgap
+     (by norm_num) (fun t=>min t (dynamicMesh t)/(6*QRH.ell))
+     (fun t ht=>div_pos (lt_min ht (dynamicMesh_pos t ht)) he)
+   have hsmall (j:Fin D.N):optimizedLengths D j≤min D.t (dynamicMesh D.t)/200:=by
+@@ -71,14 +71,14 @@
+ 
+ 
+ lemma optimized_central_budget
+-    (ht:D.t<(1/10000000000000000:ℝ)) (hε:2000*D.ε≤D.t)
++    (ht:D.t<(1/10000000000000000000000000000:ℝ)) (hε:2000*D.ε≤D.t)
+     (he:2000*D.e≤D.t) (heps:((D.N:ℝ)+8)*D.eps≤D.t)
+     (J:ℕ)(τ:ℝ)(hτ:0<τ)(hheight:2*τ*(1+(J:ℝ))≤D.t):
+     QRH.h*(159*D.ε+D.t+D.t+7*D.t)+2*QRH.zeta+(3/2)*(2*D.t)+
+       (26*D.e+(D.N+8)*D.eps+D.t+D.t*QRH.ell)+
+-      (D.t+2*τ+2*τ*(J:ℝ))+D.sigma≤(1/1000000000000:ℝ):=by
+-  have hh:QRH.h≤1:=by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.theta]
+-  have hel:QRH.ell≤1:=by norm_num [QRH.ell,QRH.theta]
++      (D.t+2*τ+2*τ*(J:ℝ))+D.sigma≤(1/1000000000000000000000000:ℝ):=by
++  have hh:QRH.h≤1:=by linarith [QRH.NumericFacts.h_upper]
++  have hel:QRH.ell≤1:=by linarith [QRH.NumericFacts.ell_upper]
+   have hε0:=D.epsilon_pos
+   have ht0:=D.t_pos
+   have h1:=mul_le_mul_of_nonneg_right hh
+--- a/QRH/Detector/OptimizedFloorMargin.lean
++++ b/QRH/Detector/OptimizedFloorMargin.lean
+@@ -1,11 +1,12 @@
++import QRH.NumericFacts
+ import QRH.Detector.OptimizedCentralExponent
+ namespace OAI
+ noncomputable section
+ namespace SevenEighths.QRHProbeCentralExponent
+ lemma floor_source_margin (q ζ v : ℝ) (hq:q≤1/100) (hζ:0≤ζ) (hv:v≤QRH.h+ζ) :
+-    sourceExponent (51/100) v 1 q-QRH.C QRH.theta≤-(1/200:ℝ)+2*ζ := by
++    sourceExponent (51/100) v 1 q-QRH.C QRH.tightTheta≤-(1/200:ℝ)+2*ζ := by
+   have he:=QRH.floor_saving
+-  have hell:0≤QRH.ell:=by norm_num [QRH.ell,QRH.theta]
++  have hell:=QRH.NumericFacts.ell_bounds.1.le
+   have hq':=mul_le_mul_of_nonneg_right hq hell
+   rw [manuscript_exponent_identity]
+   norm_num only at *
+--- a/QRH/Detector/OptimizedMixedSaving.lean
++++ b/QRH/Detector/OptimizedMixedSaving.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.OptimizedCentralExponent
+ import QRH.PrimeRows.DynamicSourceCount
+ 
+@@ -17,7 +18,7 @@
+     unfold QRH.adaptiveCount QRH.Certificate.witness
+     ring
+   have hg2 : gap≤1/6 := by
+-    have hk : (2/3:ℝ)≤QRH.kappa0 := by norm_num [QRH.kappa0,QRH.theta]
++    have hk : (2/3:ℝ)≤QRH.kappa0 := by linarith [QRH.NumericFacts.kappa_lower]
+     linarith
+   have hlo:=mul_nonneg (show 0≤5/6-δ by linarith) (show 0≤QRH.Certificate.witness δ x-1 by linarith)
+   have hhi:=mul_le_mul_of_nonneg_left (show QRH.Certificate.witness δ x-1≤1/2 by linarith)
+@@ -31,8 +32,8 @@
+     (hg : 0≤gap) (hg1 : gap≤(1-QRH.kappa0)/2) (hl : 0≤loss) (hl1 : loss≤1/32)
+     (hζ : 0≤ζ) (hv : v≤QRH.h+ζ) (hμ : 0≤μ) (hdv : d-v≤μ) :
+     let R:=QRH.adaptiveCount δ x+(30/169)*gap+loss;
+-    mixedSourceExponent ((1+δ)/2) v d R (δ*x)-QRH.C (QRH.theta+gap)<
+-      -(2/1000000000000:ℝ)+QRH.h*loss+2*ζ+(3/2)*μ := by
++    mixedSourceExponent ((1+δ)/2) v d R (δ*x)-QRH.C (QRH.tightTheta+gap)<
++      -(2/1000000000000000000000000:ℝ)+QRH.h*loss+2*ζ+(3/2)*μ := by
+   let R:=QRH.adaptiveCount δ x+(30/169)*gap+loss
+   have hr:=adaptive_count_range δ x gap loss hδ hd hx hx1 hg hg1 hl hl1
+   have hlo : 0≤R+δ/2-17/50 := by dsimp [R];linarith [hr.1]
+@@ -43,7 +44,7 @@
+   have hi:=QRH.endpoint_is_manuscript δ x
+   have hs:=mixed_source_slack ((1+δ)/2) v d R (δ*x) μ (3/2)
+     (by dsimp [R];linarith [hr.1]) hr.2 hμ hdv
+-  have hh : QRH.h≤1 := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.theta]
++  have hh : QRH.h≤1 := by linarith [QRH.NumericFacts.h_upper]
+   have hgprod:=mul_nonneg (show 0≤1-QRH.h*(30/169) by linarith) hg
+   rw [manuscript_exponent_identity] at hs
+   have hδeq : 2*((1+δ)/2)-1=δ := by ring
+@@ -58,9 +59,9 @@
+     (hδ : 0≤δ) (hd : δ≤5/6) (hx : 0≤x) (hx1 : x≤1/2)
+     (hg : 0≤gap) (hg1 : gap≤(1-QRH.kappa0)/2) (hl : 0≤loss) (hl1 : loss≤1/32)
+     (hζ : 0≤ζ) (hv : v≤QRH.h+ζ) (hμ : 0≤μ) (hdv : d-v≤μ)
+-    (hb : QRH.h*loss+2*ζ+(3/2)*μ+other+saving≤(1/1000000000000:ℝ)) :
++    (hb : QRH.h*loss+2*ζ+(3/2)*μ+other+saving≤(1/1000000000000000000000000:ℝ)) :
+     mixedSourceExponent ((1+δ)/2) v d
+-      (QRH.adaptiveCount δ x+(30/169)*gap+loss) (δ*x)+other≤QRH.C (QRH.theta+gap)-saving := by
++      (QRH.adaptiveCount δ x+(30/169)*gap+loss) (δ*x)+other≤QRH.C (QRH.tightTheta+gap)-saving := by
+   have hm:=balanced_mixed_margin δ x gap loss ζ μ v d hδ hd hx hx1 hg hg1 hl hl1 hζ hv hμ hdv
+   linarith
+ 
+--- a/QRH/Detector/OptimizedPrincipalRemainders.lean
++++ b/QRH/Detector/OptimizedPrincipalRemainders.lean
+@@ -588,8 +588,8 @@
+ 
+ lemma source_w_strict_exponent :
+     QRH.C (β+e)+QRH.h*e-QRH.ly/20≤QRH.C β-1/3000 := by
+-  have hh : 0<QRH.h ∧ QRH.h<1 := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
+-  have hy : (2/5:ℝ)≤QRH.ly := by norm_num [QRH.ly,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  have hh : 0<QRH.h ∧ QRH.h<1 := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
++  have hy : (2/5:ℝ)≤QRH.ly := by norm_num [QRH.ly,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
+   have hhE := mul_le_mul_of_nonneg_left he hh.1.le
+   simp only [QRH.C]
+   nlinarith
+--- a/QRH/Detector/OptimizedSupremum.lean
++++ b/QRH/Detector/OptimizedSupremum.lean
+@@ -10,17 +10,17 @@
+ namespace SevenEighths.QRHFinalAssembly
+ open HeckeFamily HeckeZeroSupremum ProbeFinalAssembly PrincipalSignalComparison
+ 
+-theorem beta_le_theta : beta≤QRH.theta := by
++theorem beta_le_tightTheta : beta≤QRH.tightTheta := by
+   by_contra hn
+-  have hβ:QRH.theta<beta:=lt_of_not_ge hn
++  have hβ:QRH.tightTheta<beta:=lt_of_not_ge hn
+   obtain ⟨D,S,hhigh⟩:=exists_actual_optimized_high hβ
+-  let ω:ℝ:=(beta-QRH.theta)/2
++  let ω:ℝ:=(beta-QRH.tightTheta)/2
+   let σ:ℝ:=D.sigma/8
+   have hω0:0<ω:=by dsimp [ω];linarith
+-  have hω:ω<beta-QRH.theta:=by dsimp [ω];linarith
++  have hω:ω<beta-QRH.tightTheta:=by dsimp [ω];linarith
+   have hσ:0<σ:=by dsimp [σ];exact div_pos D.sigma_pos (by norm_num)
+   obtain ⟨hε,hboundary,_,_⟩:=QRH.continuation_parameters hω0 hω hσ
+-  have hθhalf:(1/2:ℝ)<QRH.theta:=by norm_num [QRH.theta]
++  have hθhalf:(1/2:ℝ)<QRH.tightTheta:=by norm_num [QRH.tightTheta]
+   obtain ⟨η,ρ,_,hhalf,_,hpole,hz,hnear⟩:=
+     HeckePrimitiveSupremum.exists_primitive_zero_near_beta hε (by linarith)
+   let χ:=η.excludePrimes S.S S.exclusions.prime
+@@ -42,6 +42,9 @@
+   · convert hlow using 1;unfold QRH.C;ring_nf
+   · convert herr using 1;dsimp [σ];unfold QRH.C;ring_nf
+ 
++theorem beta_le_theta : beta ≤ QRH.theta :=
++  beta_le_tightTheta.trans QRH.tightTheta_le_theta
++
+ end SevenEighths.QRHFinalAssembly
+ end
+ end OAI
+--- a/QRH/Detector/OptimizedTransportBudget.lean
++++ b/QRH/Detector/OptimizedTransportBudget.lean
+@@ -7,20 +7,19 @@
+ open Parameters
+ 
+ lemma optimized_transport_budgets {gap:ℝ} (D:HighData gap)
+-    (ht:D.t<(1/10000000000000000:ℝ))
++    (ht:D.t<(1/10000000000000000000000000000:ℝ))
+     (he:2000*D.e≤D.t) (heps:((D.N:ℝ)+8)*D.eps≤D.t):
+     D.sigma/8+8*D.e+D.sigma/16+1/200≤QRH.ly/2-(13/75)*QRH.h-1/50 ∧
+     D.sigma/8+D.sigma/16≤1/3000 ∧
+     D.sigma/8+D.e≤(87/100)*(D.rmin/2) ∧
+-    D.sigma/8+D.sigma/16≤1+QRH.C QRH.theta ∧
++    D.sigma/8+D.sigma/16≤1+QRH.C QRH.tightTheta ∧
+     2*QRH.zeta+26*D.e+(D.N+8)*D.eps+D.t+D.t*QRH.ell+D.sigma/16+D.sigma/8≤1/200 ∧
+     QRH.h+QRH.zeta≤7/8-D.t := by
+   have hgeo : (7/100:ℝ)≤QRH.ly/2-(13/75)*QRH.h-1/50 := by
+-    norm_num [QRH.ly,QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
+-  have hC : 0≤QRH.C QRH.theta := by
+-    norm_num [QRH.C,QRH.ly,QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
++    norm_num [QRH.ly,QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
++  have hC := QRH.NumericFacts.C_pos.le
+   have hcap := QRH.NumericFacts.h_zeta_upper
+-  have hell : QRH.ell≤1 := by norm_num [QRH.ell,QRH.theta]
++  have hell : QRH.ell≤1 := by linarith [QRH.NumericFacts.ell_upper]
+   have htel := mul_le_mul_of_nonneg_left hell D.t_pos.le
+   have hs : D.sigma≤D.t := by linarith [D.high_saving,D.t_pos]
+   have hemin : D.e≤D.rmin/100 := by
+--- a/QRH/Detector/UniformAllMoments.lean
++++ b/QRH/Detector/UniformAllMoments.lean
+@@ -21,7 +21,7 @@
+ open HeckeDetectorRowwisePolynomial HeckeDetectorDyadicProfiles ProbeHighRowFamily
+ open CenteredMomentDetectorDictionary
+ 
+-/- The original Moments structure uses the coordinate 3/4+2*gap. Here gap=(κ−3/4)/2 merely expresses the exact proved capacity κ; every field is discharged below. It is unrelated to the positive beta−theta gap in count optimization. -/
++/- The original Moments structure uses the coordinate 3/4+2*gap. Here gap=(κ−3/4)/2 merely expresses the exact proved capacity κ; every field is discharged below. It is unrelated to the positive beta−tightTheta gap in count optimization. -/
+ theorem actual_uniform_four_moment_fields {Δ:ℝ}{D:Parameters.HighData Δ}
+     (S:SourceData D)(nslots:ℕ)(lengths:Fin nslots→ℝ)(hpos:∀s,0<lengths s)(hinj:Function.Injective lengths)
+     (cB kB cH kH:ℝ)(hcB:0<cB)(hkB:0<kB)(hcH:0<cH)(hkH:0<kH)
+--- a/QRH/Geometry.lean
++++ b/QRH/Geometry.lean
+@@ -9,15 +9,23 @@
+ noncomputable section
+ 
+ def theta : ℝ := (874957019421 / 1000000000000 : ℝ)
+-def ell : ℝ := 11 / 3 - 4 * theta
+-def kappa0 : ℝ := 2 * theta - 1
++
++def tightTheta : ℝ := (874957019420098946128604623 / 1000000000000000000000000000 : ℝ)
++
++theorem tightTheta_lt_theta : tightTheta < theta := by
++  norm_num [tightTheta, theta]
++
++theorem tightTheta_le_theta : tightTheta ≤ theta := tightTheta_lt_theta.le
++
++def ell : ℝ := 11 / 3 - 4 * tightTheta
++def kappa0 : ℝ := 2 * tightTheta - 1
+ def b : ℝ := -(3 * ell + 1) * (36 * ell ^ 2 - 75 * ell + 19) /
+   (3 * (114 * ell ^ 2 - 159 * ell - 7))
+ def M : ℝ := 1 - ell
+ def lx : ℝ := (M - b) / 2
+ def ly : ℝ := (M + b) / 2
+ def h : ℝ := 1 - lx + ell
+-def zeta : ℝ := 1 / 100000000000000
++def zeta : ℝ := 1 / 100000000000000000000000000
+ def C (s : ℝ) : ℝ := s + lx / 2 - 1 + h / 6
+ 
+ 
+--- a/QRH/Hecke/DynamicCountOptimization.lean
++++ b/QRH/Hecke/DynamicCountOptimization.lean
+@@ -19,7 +19,7 @@
+     (hP : r≤crossing x t → m<1/2 → ν<(1-2*m)/(6*kappa0+12*Δ) →
+       B≤C*U^(1-2*δ*m-2*(δ*x)*(1-2*m)/(6*kappa0+12*Δ)+ε)) :
+     B≤C*U^(max (shortExponent δ x t) (longExponent δ t)+(30/169)*Δ+ε+6*ν+5*γ) := by
+-  have hk0 : (13/18:ℝ)≤kappa0 := by norm_num [kappa0, QRH.theta]
++  have hk0 : (13/18:ℝ)≤kappa0 := by norm_num [kappa0, QRH.tightTheta]
+   have hdsmall : Δ≤1/6 := by linarith
+   let target := max (shortExponent δ x t) (longExponent δ t)+(30/169)*Δ+ε+6*ν+5*γ
+   have hshort : shortExponent δ x t≤max (shortExponent δ x t) (longExponent δ t) := le_max_left _ _
+--- a/QRH/Hecke/DynamicCrossing.lean
++++ b/QRH/Hecke/DynamicCrossing.lean
+@@ -25,9 +25,9 @@
+ def longExponent (δ t : ℝ) : ℝ := 1-δ+(5/6-δ)*(t-1)
+ 
+ lemma denominator_lower {x : ℝ} (hx : x≤1/2) : 2≤denominator x := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   unfold denominator
+   nlinarith [mul_nonneg (show 0≤c by linarith) (show 0≤1/2-x by linarith)]
+@@ -36,9 +36,9 @@
+     (ht : 1≤t) (ht' : t≤3/2) :
+     23/37≤crossing x t ∧ crossing x t≤1 ∧
+       1/3≤t-crossing x t ∧ t-crossing x t≤1/2 := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hd : 0<denominator x := lt_of_lt_of_le (by norm_num) (denominator_lower hx')
+   have hp : 0≤2-2*c*x := by nlinarith
+@@ -75,9 +75,9 @@
+ 
+ lemma inverse_at_crossing :
+     inverseExponent δ x (crossing x t)=shortExponent δ x t := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   unfold inverseExponent crossing shortExponent primeWeight
+   field_simp
+@@ -86,9 +86,9 @@
+ 
+ lemma plain_at_crossing :
+     plainExponent δ x t (crossing x t)=shortExponent δ x t := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   unfold plainExponent crossing shortExponent primeWeight
+   field_simp
+@@ -100,9 +100,9 @@
+ theorem selected_short_bound {δ x t r : ℝ} (hδ : 0≤δ) (_hx : 0≤x) (hx' : x≤1/2) :
+     (r≤crossing x t → plainExponent δ x t r≤shortExponent δ x t) ∧
+       (crossing x t≤r → inverseExponent δ x r≤shortExponent δ x t) := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hd : denominator x≠0 := ne_of_gt (lt_of_lt_of_le (by norm_num) (denominator_lower hx'))
+   constructor
+@@ -125,9 +125,9 @@
+ 
+ lemma short_ge_base {δ x t : ℝ} (hδ : 0≤δ) (_hx : 0≤x) (hx' : x≤1/2)
+     (ht : t≤3/2) : 1-δ≤shortExponent δ x t := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hd : 0<denominator x := lt_of_lt_of_le (by norm_num) (denominator_lower hx')
+   have hp : 0≤primeWeight x := mul_nonneg (by nlinarith) (by linarith)
+@@ -139,9 +139,9 @@
+ theorem capacity_loss {q m Δ γ : ℝ} (_hq : 0≤q) (hq' : q≤5/12)
+     (hm : 1/3-γ≤m) (hm' : m≤1/2) (hΔ : 0≤Δ) (hΔ' : Δ≤1/6) (hγ : 0≤γ) :
+     2*q*(1-2*m)*(1/(6*kappa0)-1/(6*kappa0+12*Δ))≤(30/169)*Δ+2*γ := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hd : 0<6*kappa0+12*Δ := by linarith
+   have hden : (169/9 : ℝ)≤(6*kappa0)*(6*kappa0+12*Δ) := by nlinarith
+@@ -161,9 +161,9 @@
+     (hΔ : 0≤Δ) (hΔ' : Δ≤1/6) (hm : 1/3-γ≤m) (hm' : m≤1/2)
+     (hγ : 0≤γ) (hlength : t-r-γ≤m) :
+     1-2*δ*m-2*(δ*x)*(1-2*m)/(6*kappa0+12*Δ)≤plainExponent δ x t r+(30/169)*Δ+4*γ := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hq : 0≤δ*x := mul_nonneg hδ hx
+   have hq' : δ*x≤5/12 := (mul_le_mul hδ' hx' hx (by norm_num)).trans_eq (by ring)
+@@ -184,9 +184,9 @@
+ 
+ lemma inverse_zero_capacity {δ r ν : ℝ} (hδ : 0≤δ)
+     (hcap : (1-r)/2≤ν) : 1-δ*r≤1-δ+2*δ*ν := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hh := mul_le_mul_of_nonneg_left hcap hδ
+   nlinarith
+@@ -194,9 +194,9 @@
+ lemma plain_zero_capacity {δ m κ ν : ℝ} (hδ : 0≤δ) (hκ : 0<κ)
+     (hκ' : κ≤1) (hν : 0≤ν) (hcap : (1-2*m)/(6*κ)≤ν) :
+     1-2*δ*m≤1-δ+6*δ*ν := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hh := (div_le_iff₀ (show 0<6*κ by positivity)).mp hcap
+   have hk := mul_le_mul_of_nonneg_right hκ' hν
+@@ -207,9 +207,9 @@
+ lemma long_count_bound {δ r t γ : ℝ} (hδ : δ≤5/6) (_hγ : 0≤γ)
+     (hr : r≤t+γ) :
+     1-5/6+(5/6-δ)*r≤longExponent δ t+(5/6-δ)*γ := by
+-  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.theta]
+-  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.theta]
++  have hc0 : (4/9:ℝ) ≤ c := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hc1 : c ≤ (6/13:ℝ) := by norm_num [c, QRH.kappa0, QRH.tightTheta]
++  have hk0 : (13/18:ℝ) ≤ kappa0 := by norm_num [kappa0, QRH.tightTheta]
+ 
+   have hh := mul_le_mul_of_nonneg_left hr (show 0≤5/6-δ by linarith)
+   unfold longExponent
+--- a/QRH/NumericFacts.lean
++++ b/QRH/NumericFacts.lean
+@@ -5,36 +5,39 @@
+ namespace QRH.NumericFacts
+ 
+ theorem kappa_lower : (13/18:ℝ)≤QRH.kappa0 := by
+-  norm_num [QRH.kappa0,QRH.theta]
++  norm_num [QRH.kappa0,QRH.tightTheta]
+ 
+ theorem h_zeta_upper : QRH.h+QRH.zeta≤(17/20:ℝ) := by
+-  norm_num [QRH.h,QRH.zeta,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.theta]
++  norm_num [QRH.h,QRH.zeta,QRH.lx,QRH.M,QRH.ell,QRH.b,QRH.tightTheta]
+ 
+ theorem ell_upper : QRH.ell < (1/5:ℝ) := by
+-  norm_num [QRH.ell, QRH.theta]
++  norm_num [QRH.ell, QRH.tightTheta]
+ 
+ theorem ell_ne_zero : QRH.ell≠0 := by
+-  norm_num [QRH.ell,QRH.theta]
++  norm_num [QRH.ell,QRH.tightTheta]
+ 
+ theorem h_lower : (4/5:ℝ)≤QRH.h := by
+-  norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
+ 
+ theorem h_upper : QRH.h≤9/10 := by
+-  norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
+ 
+ theorem lx_bounds : 0≤QRH.lx ∧ QRH.lx≤1 := by
+-  norm_num [QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  norm_num [QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
+ 
+ theorem ly_nonneg : 0≤QRH.ly := by
+-  norm_num [QRH.ly,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  norm_num [QRH.ly,QRH.M,QRH.b,QRH.ell,QRH.tightTheta]
+ 
+-theorem theta_lower : (87/100:ℝ)≤QRH.theta := by
+-  norm_num [QRH.theta]
++theorem theta_lower : (87/100:ℝ)≤QRH.tightTheta := by
++  norm_num [QRH.tightTheta]
+ 
+ theorem ell_bounds : 0 < QRH.ell ∧ QRH.ell < (1/5:ℝ) := by
+-  norm_num [QRH.ell, QRH.theta]
++  norm_num [QRH.ell, QRH.tightTheta]
+ 
+ theorem mass_bounds : (49/100:ℝ) + 2*QRH.ell < QRH.M ∧ QRH.M ≤ 1 := by
+-  norm_num [QRH.M, QRH.ell, QRH.theta]
++  norm_num [QRH.M, QRH.ell, QRH.tightTheta]
++
++theorem C_pos : 0 < QRH.C QRH.tightTheta := by
++  rw [QRH.C_formula]; norm_num [QRH.tightTheta, QRH.b, QRH.ell]
+ 
+ end QRH.NumericFacts
+--- a/QRH/OtherRanges.lean
++++ b/QRH/OtherRanges.lean
+@@ -5,7 +5,7 @@
+ 
+ /-- Equation `eq:E`, before choosing a row-count exponent. -/
+ def exponent (d δ q R : ℝ) : ℝ :=
+-  (1 + δ) / 2 - theta + h * (17 / 50 - 1 / 6) -
++  (1 + δ) / 2 - tightTheta + h * (17 / 50 - 1 / 6) -
+     (1 + δ) / 2 * ly - ell / 2 + q * ell + d * (R + δ / 2 - 17 / 50)
+ 
+ def adaptiveCount (δ x : ℝ) : ℝ :=
+@@ -18,13 +18,13 @@
+ 
+ theorem exponent_mono_amplitude {d δ q R : ℝ} (hq : q ≤ δ / 2) :
+     exponent d δ q R ≤ exponent d δ (δ / 2) R := by
+-  have hell : 0 ≤ ell := by norm_num [ell, theta]
++  have hell : 0 ≤ ell := by norm_num [ell, tightTheta]
+   have hh := mul_le_mul_of_nonneg_right hq hell
+   unfold exponent
+   linarith
+ 
+ theorem floor_saving : exponent h (1 / 50) (1 / 100) 1 < -(1 / 200 : ℝ) := by
+-  norm_num [exponent, h, lx, ly, M, b, ell, theta]
++  norm_num [exponent, h, lx, ly, M, b, ell, tightTheta]
+ 
+ 
+ 
+@@ -39,7 +39,7 @@
+     exponent h δ q (1 - δ) < -(7 / 100 : ℝ) := by
+   apply lt_of_le_of_lt (exponent_mono_amplitude hq)
+   rw [large_formula]
+-  norm_num [b, ell, theta]
++  norm_num [b, ell, tightTheta]
+   linarith
+ 
+ 
+--- a/QRH/PrimeRows/CubeNormalizer.lean
++++ b/QRH/PrimeRows/CubeNormalizer.lean
+@@ -34,8 +34,7 @@
+           (slotMass T (residueWeights W (fun j=>Z^(ell j)))) : ℂ)
+       normer≠0 ∧ ‖normer⁻¹‖≤C*Z^nu := by
+   have hQRHell := QRH.NumericFacts.ell_upper
+-  have hQRHC : 0 < QRH.C QRH.theta := by
+-    rw [QRH.C_formula]; norm_num [QRH.theta, QRH.b, QRH.ell]
++  have hQRHC := QRH.NumericFacts.C_pos
+ 
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   let cs := sourceResidueConstant W0 W1 (∏P∈S,P)
+--- a/QRH/PrimeRows/OptimizedCubeFiniteError.lean
++++ b/QRH/PrimeRows/OptimizedCubeFiniteError.lean
+@@ -51,7 +51,7 @@
+     exact (hR u hu).2.trans hrange)
+   have hcT : (Fintype.card (∀j,T j):ℝ)≤(128*b)^K*Z :=
+     (central_prime_tuple_count T Z b hZ0 hb.le length hl hp).trans
+-      (mul_le_mul_of_nonneg_left (by simpa using Real.rpow_le_rpow_of_exponent_le hZ (show QRH.ell≤1 by norm_num [QRH.ell,QRH.theta])) (by positivity))
++      (mul_le_mul_of_nonneg_left (by simpa using Real.rpow_le_rpow_of_exponent_le hZ (show QRH.ell≤1 by linarith [QRH.NumericFacts.ell_upper])) (by positivity))
+   let E := C*(η.modulus.absNorm:ℝ)^2*Z^(-(saving+2))
+   have hE : 0≤E := by dsimp [E];positivity
+   have herr (u : FreeRow) (hu : u∈R) (P : ∀j,T j) :
+--- a/QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean
++++ b/QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean
+@@ -1,3 +1,4 @@
++import QRH.NumericFacts
+ import QRH.Detector.OptimizedFloorMargin
+ import QRH.PrimeRows.OptimizedSlotExponent
+ import OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm
+@@ -48,7 +49,7 @@
+       ‖cubeArithmeticSum S hS hmax η rows T (floorPoolOutside M H S N c b Y) W Y (51/100) e t‖≤
+         C*(η.modulus.absNorm:ℝ)^(2*eps)*
+           Z^(v*(67/100+12*e+eps*(N+8))+loss-(3/20)*QRH.ell+mesh*QRH.ell) := by
+-  have hellQRHpos : 0<QRH.ell := by norm_num [QRH.ell,QRH.theta]
++  have hellQRHpos := QRH.NumericFacts.ell_bounds.1
+   obtain ⟨C,hC,hbound⟩ := actual_fixed_cube_prime_bound M H hH N n e eps c b A R dmin dmax rmin τ ε κ cost mesh δ margin loss
+     he he1 heps hc hcb hA hR hdmin hdmax hdRange hrmin hτ hε hκ hcost hmesh hδ hbudget hgap hmargin hheight hloss
+     S hS hfirst hmax ell hell hello hellhi W hWs hW hWB
+--- a/QRH/PrimeRows/OptimizedCubeFloorCollected.lean
++++ b/QRH/PrimeRows/OptimizedCubeFloorCollected.lean
+@@ -59,7 +59,7 @@
+       normer≠0 ∧ ‖finiteCentralCubeRows S hS hmax η rows T (collectedFloorPoolOutside M H S N c b Yp) (fun j y=>(W j y:ℂ)) Yp
+         W0 W1 (Z^QRH.lx) (Z^QRH.ly) Z e (fun _=>51/100) (fun u=>(3*idx u+1:ℕ)*Z^τ)/normer‖≤
+         C*(η.modulus.absNorm:ℝ)^(2*eps)*
+-          Z^(QRH.C QRH.theta-saving) := by
++          Z^(QRH.C QRH.tightTheta-saving) := by
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   obtain ⟨C,hC,hbound⟩ := actual_floor_cube_saving M H hH N n e eps c b A R dmin dmax rmin τ ε κ cost mesh δ margin loss
+     he he1 heps hc hcb hA hR hdmin hdmax hdRange hrmin hτ hε hκ hcost hmesh hδ hbudget hgap hmargin hheight hloss
+@@ -94,7 +94,7 @@
+   have hboundi (i : ℕ) (hi : i∈Finset.range (n+1)) :
+       ‖finiteCentralCubeRows S hS hmax η (Ri i) T hT WC Yp W0 W1
+         (Z^QRH.lx) (Z^QRH.ly) Z e (fun _=>51/100) (fun _=>(3*i+1:ℕ)*Z^τ)/normer‖≤
+-      C*(η.modulus.absNorm:ℝ)^(2*eps)*Z^(QRH.C QRH.theta-saving) := by
++      C*(η.modulus.absNorm:ℝ)^(2*eps)*Z^(QRH.C QRH.tightTheta-saving) := by
+     have hsub : Ri i⊆rows := Finset.filter_subset _ _
+     have hbi : ∀u∈Ri i,detectorMaximum (sourceDetectorFamily S hS.prime η u (rayCubeFamily M H hH u))
+         (3*(i+1:ℕ)*Z^τ)<51/100+2*e := by
+@@ -104,7 +104,7 @@
+     exact (hb d hd hd' v hv hvhi (Ri i) (fun u hu=>hrows u (hsub hu))
+       (fun u hu=>hnorm u (hsub hu)) i (Nat.le_of_lt_succ (Finset.mem_range.mp hi)) hbi).2
+   calc
+-    _ ≤ ∑i∈Finset.range (n+1),C*(η.modulus.absNorm:ℝ)^(2*eps)*Z^(QRH.C QRH.theta-saving) := Finset.sum_le_sum hboundi
++    _ ≤ ∑i∈Finset.range (n+1),C*(η.modulus.absNorm:ℝ)^(2*eps)*Z^(QRH.C QRH.tightTheta-saving) := Finset.sum_le_sum hboundi
+     _ = _ := by simp only [Finset.sum_const,Finset.card_range,nsmul_eq_mul];ring
+ 
+ end SevenEighths.QRHProbeHighRowFamily
+--- a/QRH/PrimeRows/OptimizedCubeFloorSaving.lean
++++ b/QRH/PrimeRows/OptimizedCubeFloorSaving.lean
+@@ -58,7 +58,7 @@
+       normer≠0 ∧ ‖finiteCentralCubeRows S hS hmax η rows T (savingFloorPoolOutside M H S N c b Yp) (fun j y=>(W j y:ℂ)) Yp
+         W0 W1 (Z^QRH.lx) (Z^QRH.ly) Z e (fun _=>51/100) (fun _=>(3*i+1:ℕ)*Z^τ)/normer‖≤
+         C*(η.modulus.absNorm:ℝ)^(2*eps)*
+-          Z^(QRH.C QRH.theta-saving) := by
++          Z^(QRH.C QRH.tightTheta-saving) := by
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   obtain ⟨C,hC,hbound⟩ := actual_normalized_floor_cube M H hH N n e eps c b A R dmin dmax rmin τ ε κ cost mesh δ margin loss
+     he he1 heps hc hcb hA hR hdmin hdmax hdRange hrmin hτ hε hκ hcost hmesh hδ hbudget hgap hmargin hheight hloss
+--- a/QRH/PrimeRows/OptimizedNonfloorTransport.lean
++++ b/QRH/PrimeRows/OptimizedNonfloorTransport.lean
+@@ -28,7 +28,7 @@
+ theorem actual_nonfloor_probe_transport (K : ℕ) (e δ a b B ζ saving τ ellMin nu : ℝ)
+     (he : 0<e) (he' : e<1/1000) (hδ : 0<δ) (hδ' : δ≤1/2) (hζ : 0<ζ) (hζ' : ζ≤1/48) (hτ : 0<τ)
+     (ha : 0<a) (hab : a≤b) (hB : 0≤B) (hmin : 0<ellMin) (hnu : 0<nu)
+-    (hβ : QRH.theta≤HeckeZeroSupremum.beta)
++    (hβ : QRH.tightTheta≤HeckeZeroSupremum.beta)
+     (S : Finset (Ideal O)) (hS : SourceExclusions S) (hmax : ∀P∈S,P.IsMaximal)
+     (hfirst : FirstTail (4*e) S)
+     (ell : Fin K→ℝ) (hell : ∀j,ellMin≤ell j) (hellinj : Function.Injective ell) (hellsum : ∑j,ell j=QRH.ell)
+@@ -40,7 +40,7 @@
+     (hp0 : ∀y,0≤(W0 y).re) (hp1 : ∀y,0≤(W1 y).re) (hn0 : W0≠0) (hn1 : W1≠0)
+     (sigma : ℝ) (hsigma : 0<sigma)
+     (hgeometric : sigma+8*e+nu+1/200≤QRH.ly/2-(13/75)*QRH.h-1/50) (hprincipal : sigma+nu≤1/3000)
+-    (hwindow : sigma+e≤(87/100)*ellMin) (hlarge : sigma+nu≤saving+QRH.C QRH.theta)
++    (hwindow : sigma+e≤(87/100)*ellMin) (hlarge : sigma+nu≤saving+QRH.C QRH.tightTheta)
+     (eps R dmin dmax rmin ε κ cost mesh margin loss : ℝ)
+     (heps : 0<eps) (hR : 0≤R) (hdmin : 0<dmin) (hdmax : 0≤dmax) (hdRange : dmin≤dmax)
+     (hrmin : 0<rmin) (hε : 0<ε) (hκ : 0<κ) (hcost : 0≤cost) (hmesh : 0<mesh) (hmargin : 0<margin)
+@@ -86,8 +86,8 @@
+           W0 W1 (Z^QRH.lx) (Z^QRH.ly) Z e alpha height/normer‖≤
+         C*Z^(QRH.C HeckeZeroSupremum.beta-sigma) := by
+   have htheta := QRH.NumericFacts.theta_lower
+-  have hCbeta : QRH.C QRH.theta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
+-  have hhpos : 0≤QRH.h := by norm_num [QRH.h,QRH.lx,QRH.M,QRH.b,QRH.ell,QRH.theta]
++  have hCbeta : QRH.C QRH.tightTheta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
++  have hhpos : 0≤QRH.h := by linarith [QRH.NumericFacts.h_lower]
+   have hhcap := QRH.NumericFacts.h_upper
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   obtain ⟨n,hn,htransport⟩ := actual_normalized_probe_transport_saving M H hH K e δ a b B ζ saving τ ellMin nu
+@@ -138,7 +138,7 @@
+   rw [hsplit] at herror
+   have hh := normalized_nonfloor_error _ _ _ _ _ _ _ herror hb
+   apply hh.trans
+-  have hp : Z^(QRH.C QRH.theta-sigma)≤Z^(QRH.C HeckeZeroSupremum.beta-sigma) :=
++  have hp : Z^(QRH.C QRH.tightTheta-sigma)≤Z^(QRH.C HeckeZeroSupremum.beta-sigma) :=
+     Real.rpow_le_rpow_of_exponent_le hZ (by linarith)
+   calc
+     _ ≤ Ct*Z^(QRH.C HeckeZeroSupremum.beta-sigma)+
+--- a/QRH/PrimeRows/OptimizedNormalizedTransport.lean
++++ b/QRH/PrimeRows/OptimizedNormalizedTransport.lean
+@@ -36,7 +36,7 @@
+ theorem actual_normalized_probe_transport (K : ℕ) (e δ a b B ζ saving τ ellMin nu : ℝ)
+     (he : 0<e) (he' : e<1/1000) (hδ : 0<δ) (hδ' : δ≤1/2) (hζ : 0<ζ) (hζ' : ζ≤1/48) (hτ : 0<τ)
+     (ha : 0<a) (hab : a≤b) (hB : 0≤B) (hmin : 0<ellMin) (hnu : 0<nu)
+-    (hβ : QRH.theta≤HeckeZeroSupremum.beta)
++    (hβ : QRH.tightTheta≤HeckeZeroSupremum.beta)
+     (S : Finset (Ideal O)) (hS : SourceExclusions S) (hmax : ∀P∈S,P.IsMaximal)
+     (hfirst : FirstTail (4*e) S)
+     (ell : Fin K→ℝ) (hell : ∀j,ellMin≤ell j) (hellinj : Function.Injective ell) (hellsum : ∑j,ell j=QRH.ell)
+@@ -84,7 +84,7 @@
+           Z^(QRH.C HeckeZeroSupremum.beta-1/3000+nu)+
+           Z^(QRH.C HeckeZeroSupremum.beta+e-(87/100)*ellMin)) := by
+   have htheta := QRH.NumericFacts.theta_lower
+-  have hCbeta : QRH.C QRH.theta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
++  have hCbeta : QRH.C QRH.tightTheta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
+   have hhcap := QRH.NumericFacts.h_upper
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   obtain ⟨Ca,hCa,n,hn,hcanonical⟩ := canonical_probe_exists_ray_cube M H hH K e δ a b B ζ saving τ
+--- a/QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean
++++ b/QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean
+@@ -25,7 +25,7 @@
+ theorem actual_normalized_probe_transport_saving (K : ℕ) (e δ a b B ζ saving τ ellMin nu : ℝ)
+     (he : 0<e) (he' : e<1/1000) (hδ : 0<δ) (hδ' : δ≤1/2) (hζ : 0<ζ) (hζ' : ζ≤1/48) (hτ : 0<τ)
+     (ha : 0<a) (hab : a≤b) (hB : 0≤B) (hmin : 0<ellMin) (hnu : 0<nu)
+-    (hβ : QRH.theta≤HeckeZeroSupremum.beta)
++    (hβ : QRH.tightTheta≤HeckeZeroSupremum.beta)
+     (S : Finset (Ideal O)) (hS : SourceExclusions S) (hmax : ∀P∈S,P.IsMaximal)
+     (hfirst : FirstTail (4*e) S)
+     (ell : Fin K→ℝ) (hell : ∀j,ellMin≤ell j) (hellinj : Function.Injective ell) (hellsum : ∑j,ell j=QRH.ell)
+@@ -37,7 +37,7 @@
+     (hp0 : ∀y,0≤(W0 y).re) (hp1 : ∀y,0≤(W1 y).re) (hn0 : W0≠0) (hn1 : W1≠0)
+     (sigma : ℝ) (hsigma : 0<sigma)
+     (_hgeometric : sigma+8*e+nu+1/200≤QRH.ly/2-(13/75)*QRH.h-1/50) (hprincipal : sigma+nu≤1/3000)
+-    (hwindow : sigma+e≤(87/100)*ellMin) (hlarge : sigma+nu≤saving+QRH.C QRH.theta) :
++    (hwindow : sigma+e≤(87/100)*ellMin) (hlarge : sigma+nu≤saving+QRH.C QRH.tightTheta) :
+     let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+     ∃n : ℕ,0<n ∧ ∀η : Character,∃C : ℝ,0<C ∧ ∀ᶠ Z : ℝ in atTop,
+       let Yp := fun j=>Z^(ell j)
+@@ -74,7 +74,7 @@
+           W0 W1 (Z^QRH.lx) (Z^QRH.ly) Z e alpha height/normer‖≤
+         C*Z^(QRH.C HeckeZeroSupremum.beta-sigma) := by
+   have htheta := QRH.NumericFacts.theta_lower
+-  have hCbeta : QRH.C QRH.theta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
++  have hCbeta : QRH.C QRH.tightTheta≤QRH.C HeckeZeroSupremum.beta := by simp only [QRH.C]; linarith
+   have hhcap := QRH.NumericFacts.h_upper
+   let : NeZero (∏P∈S,P) := ⟨fixedPrimeProduct_ne_zero S hS.prime⟩
+   obtain ⟨n,hn,hbound⟩ := actual_normalized_probe_transport M H hH K e δ a b B ζ saving τ ellMin nu
+--- /dev/null
++++ b/QRH/TighterNonvanishing.lean
+@@ -0,0 +1,40 @@
++import QRH.Nonvanishing
++
++/-! Stronger nonvanishing at `tightTheta`. The original `theta` and its final
++theorems remain unchanged; `tightTheta_lt_theta` certifies strict improvement. -/
++namespace QRH
++open scoped _root_.DirichletCharacter
++
++theorem Hecke.LFunction_ne_zero_of_tightTheta_lt_re
++    (χ : OAI.SevenEighths.HeckeFamily.Character) (s : ℂ)
++    (hs : tightTheta < s.re) (hpole : s ≠ 1 ∨ χ.residue ≠ 1) :
++    OAI.SevenEighths.HeckeFamily.LFunction χ s ≠ 0 :=
++  OAI.SevenEighths.HeckeZeroSupremum.LFunction_ne_zero_of_beta_lt χ
++    (OAI.SevenEighths.QRHFinalAssembly.beta_le_tightTheta.trans_lt hs) hpole
++
++theorem DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re
++    {q : ℕ} [NeZero q] (χ : _root_.DirichletCharacter ℂ q) {s : ℂ}
++    (hs : tightTheta < s.re) (hexc : ¬ (χ = 1 ∧ s = 1)) :
++    _root_.DirichletCharacter.LFunction χ s ≠ 0 := by
++  by_cases hge : 1 ≤ s.re
++  · exact χ.LFunction_ne_zero_of_one_le_re (not_and_or.mp hexc) hge
++  have hs1 : s ≠ 1 := by intro h; simp [h] at hge
++  have hs0 : s ≠ 0 := by intro h; norm_num [h, tightTheta] at hs
++  have hh := Hecke.LFunction_ne_zero_of_tightTheta_lt_re
++    (OAI.SevenEighths.HeckeDirichlet.character χ) s hs (Or.inl hs1)
++  rw [OAI.SevenEighths.HeckeDirichlet.LFunction_eq_dirichlet_product χ hs0 hs1] at hh
++  exact (mul_ne_zero_iff.mp hh).1
++
++theorem riemannZeta_ne_zero_of_tightTheta_lt_re {s : ℂ}
++    (hs : tightTheta < s.re) : riemannZeta s ≠ 0 := by
++  by_cases h : s = 1
++  · subst s; exact riemannZeta_one_ne_zero
++  · simpa only [_root_.DirichletCharacter.LFunction_modOne_eq] using
++      DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re
++        (1 : _root_.DirichletCharacter ℂ 1) hs (fun hexc => h hexc.2)
++
++theorem riemannZeta_zero_re_le_tightTheta {s : ℂ}
++    (hz : riemannZeta s = 0) : s.re ≤ tightTheta :=
++  le_of_not_gt fun hs => riemannZeta_ne_zero_of_tightTheta_lt_re hs hz
++
++end QRH

@@ -67,9 +67,9 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 4,
+    () => document.querySelectorAll("[data-dot]").length === 5,
   );
-  assert.equal(await page.locator("tbody tr").count(), 4);
+  assert.equal(await page.locator("tbody tr").count(), 5);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -78,6 +78,12 @@ try {
     "proofs/qrh-20261009/Nonvanishing.lean",
     "proofs/qrh-20261009/verification.json",
     "proofs/qrh-20261009/SHA256SUMS.txt",
+    "proofs/nielstron-20261009-tightening/native-lean-verification.json",
+    "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean",
+    "proofs/nielstron-20261009-tightening/collection.json",
+    "proofs/nielstron-20261009-kernels/result.json",
+    "proofs/nielstron-20261009-kernels/control-results.json",
+    "proofs/nielstron-20261009-kernels/collection.json",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
@@ -118,7 +124,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, four dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

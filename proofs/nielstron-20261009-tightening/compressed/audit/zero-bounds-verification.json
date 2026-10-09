@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "original_exact_three_targets_proved": true,
+  "three_zero_classifications_proved_equivalent_to_independent_targets": true,
+  "public_results": 5,
+  "declarations": {
+    "QRH.riemannZeta_zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.zero_re_le_or_exception": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.zero_re_le_or_exception": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.ZeroBoundsEquivalence.zeta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.ZeroBoundsEquivalence.dirichlet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.ZeroBoundsEquivalence.hecke": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "thread_budget": 16,
+  "artifacts": {
+    "audit/ZeroBoundsEquivalence.lean": {
+      "sha256": "2cc5649651ab4e7ea203d9cdff951f43394a195c86159bbd310a6016530cc794"
+    },
+    "logs/local-zero-bounds-equivalence.log": {
+      "sha256": "9209c04e3adff51e8457ba8a8eb9a0caf515d245769dd324e74e3533134ecf0a"
+    },
+    "formalization/QRH/ZeroBounds.lean": {
+      "sha256": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac"
+    },
+    "build/local/QRH/ZeroBounds.olean": {
+      "sha256": "d3200d43b3085475da281372a1bd2342f299936deb66946e87fe396c3e5380b7"
+    },
+    "audit/local-verification.json": {
+      "sha256": "94fa73653a2f6a3badce80924969c941a1df9b584cf1ef89b3d33c6514f1f8bd"
+    }
+  }
+}

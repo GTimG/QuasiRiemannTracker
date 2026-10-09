@@ -1,0 +1,35 @@
+{
+  "identity": "F(e,b,deltaStar(e),0)=height(e,b)*cubic(e)/(12*(3*e+1)^2*(5-3*e))",
+  "caveat": "Obstruction to this parameter/counting model only; not an impossibility result for other analytic methods.",
+  "optimized_margin_monotonicity": {
+    "ell_interval": [
+      "1/6",
+      "1/5"
+    ],
+    "theta_interval": [
+      "13/15",
+      "7/8"
+    ],
+    "derivative_numerator_degree": 8,
+    "derivative_numerator_bernstein_coefficients": [
+      "-2815246575/32",
+      "-58944740793/640",
+      "-539565603471/5600",
+      "-705072651489/7000",
+      "-9206798866941/87500",
+      "-480536127324/4375",
+      "-12531243404304/109375",
+      "-1865965969152/15625",
+      "-48588124962816/390625"
+    ],
+    "all_strictly_negative": true,
+    "consequence": "Optimized Dv strictly decreases in ell, hence strictly increases in theta on this interval; exact grid bisection is valid."
+  },
+  "failed_candidate": {
+    "theta": "43747850971/50000000000",
+    "ell": "6256447087/37500000000",
+    "deltaStar": "43730658739/112538682522",
+    "cubic": "-562288469787706812281/5859375000000000000000000000000",
+    "consequence": "The modeled uniform positive F certificate fails at this point for every shape b with positive height."
+  }
+}

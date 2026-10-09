@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "original_exact_three_targets_proved": true,
+  "original_protected_sources_unchanged": [
+    "QRH/DirichletTargets.lean",
+    "QRH/HeckeTargets.lean",
+    "QRH/IndependentTargets.lean",
+    "QRH/Nonvanishing.lean",
+    "QRH/StatementParity.lean",
+    "QRH/ZeroBounds.lean",
+    "QRH/ZetaTransfer.lean"
+  ],
+  "tighter_exact_three_targets_proved": true,
+  "original_threshold": "874957019421/1000000000000",
+  "threshold": "874957019420871/1000000000000000",
+  "exact_improvement": "129/1000000000000000",
+  "strict_improvement_proved_in_lean": true,
+  "specification_compiled_without_QRH_imports": true,
+  "declarations": {
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_zero_re_le_tightTheta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.tightTheta_lt_theta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "thread_budget": 16,
+  "artifacts": {
+    "audit/TightIndependentTargets.lean": {
+      "sha256": "925981893ba2d2b7888bed4adfaad3cc8029e5c28ea1dbf6b67a6495b76c7e36"
+    },
+    "audit/TightTargetsRequired.lean": {
+      "sha256": "82fd985a40c43ef66e36f2896c878a0520636a6f4ca0dfd574ba22245694d539"
+    },
+    "logs/local-tight-targets-required.log": {
+      "sha256": "f90dd5b1b46b9a7b0f145746860ae1d68203d428f3e3a0735c1fd1b155fd575d"
+    },
+    "build/tight-gate/TightIndependentTargets.olean": {
+      "sha256": "9eb5b366e3d07310a6399c19282c2b803c8e2c4ba37197ce707c922abcfbb52e"
+    },
+    "audit/local-verification.json": {
+      "sha256": "87bbb7320c205c8879c9f506d137bbe3daff265e8ca41e668283db251578b073"
+    },
+    "audit/zero-bounds-verification.json": {
+      "sha256": "b8d0c334dea7c10f54c2ae0b0e392f15bc9defb750733dc5756649979f946a48"
+    },
+    "formalization/QRH/TighterNonvanishing.lean": {
+      "sha256": "80338e1b6e4c8b98d26a9d11d97d3f3418921ca2d184f6a5bcd9d92d43216276"
+    }
+  },
+  "external_checker_status": "Not checked by Comparator, NanoDa or con-ron in this local Lean gate."
+}
