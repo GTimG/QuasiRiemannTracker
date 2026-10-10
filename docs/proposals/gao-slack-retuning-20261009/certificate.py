@@ -141,7 +141,7 @@ def report():
                 tracker_commit=PIN, script_sha256=digest(Path(__file__)),
                 input_sha256={p: digest(ROOT/p) for p in (OWNER,)},
                 certificate=result, arithmetic="Exact rational polynomial and Bernstein identities",
-                scope="Continuous endpoint and finite recovery-budget arithmetic only. New numerical wrappers and the complete analytic argument are proved separately relative to pinned inputs.",
+                scope="Continuous endpoint and finite recovery-budget arithmetic only. Analytic source re-instantiation and the complete nonvanishing proof remain unverified.",
                 analytic_bound_certified=False, new_arithmetic_gain_proved=False,
                 runs_Lean=False, runs_kernel_replay=False)
 

@@ -1,0 +1,1541 @@
+{
+  "acyclic_local_import_graph": true,
+  "all_local_sources_reinstantiated_under_new_geometry": true,
+  "all_qrh_modules_require_source_cohort_review_and_rebuild": [
+    "QRH",
+    "QRH.Adaptive",
+    "QRH.Analytic",
+    "QRH.Certificate",
+    "QRH.Continuation",
+    "QRH.Detector.ActualAdaptiveBatchCount",
+    "QRH.Detector.ActualAmplitudeClassCount",
+    "QRH.Detector.ActualCubeArithmeticSaving",
+    "QRH.Detector.ActualCubeClassBound",
+    "QRH.Detector.ActualDetectorFiberCount",
+    "QRH.Detector.ActualFixedNonfloorData",
+    "QRH.Detector.ActualNonfloorCubeNorm",
+    "QRH.Detector.ActualNonfloorRows",
+    "QRH.Detector.ActualNormalizedNonfloorCube",
+    "QRH.Detector.ActualOptimizedHigh",
+    "QRH.Detector.ActualOptimizedLow",
+    "QRH.Detector.ActualPlainUnmarkedInput",
+    "QRH.Detector.ActualSourceCount",
+    "QRH.Detector.CompleteNonfloorCubeData",
+    "QRH.Detector.CompleteNonfloorRowsData",
+    "QRH.Detector.DetectorInverseFields",
+    "QRH.Detector.DetectorInverseMarkedField",
+    "QRH.Detector.DetectorMomentPrimeGeometry",
+    "QRH.Detector.DetectorPlainMarkedFineField",
+    "QRH.Detector.DetectorPlainMarkedSlots",
+    "QRH.Detector.DynamicMomentInput",
+    "QRH.Detector.DynamicSlotMomentInput",
+    "QRH.Detector.ExtendedEulerRegion",
+    "QRH.Detector.ExtendedFiniteProduct",
+    "QRH.Detector.ExtendedFiniteProductX",
+    "QRH.Detector.ExtendedGlobalCorrection",
+    "QRH.Detector.ExtendedGlobalHolomorphic",
+    "QRH.Detector.ExtendedGlobalRegion",
+    "QRH.Detector.ExtendedHeckeSignalBounds",
+    "QRH.Detector.ExtendedHeckeSignalShift",
+    "QRH.Detector.ExtendedPrincipalContours",
+    "QRH.Detector.ExtendedPrincipalPhysical",
+    "QRH.Detector.ExtendedPrincipalSlots",
+    "QRH.Detector.ExtendedPrincipalTransport",
+    "QRH.Detector.ExtendedRayPoolThresholds",
+    "QRH.Detector.FineSmallData",
+    "QRH.Detector.InverseRawParameters",
+    "QRH.Detector.LowCentralTuple",
+    "QRH.Detector.LowCommonBound",
+    "QRH.Detector.LowGaussianCentral",
+    "QRH.Detector.LowGaussianDyad",
+    "QRH.Detector.LowGaussianRemote",
+    "QRH.Detector.LowGaussianSum",
+    "QRH.Detector.LowGramScale",
+    "QRH.Detector.LowInverseNormalize",
+    "QRH.Detector.LowNominalEnergy",
+    "QRH.Detector.LowNominalGeometry",
+    "QRH.Detector.LowNormalized",
+    "QRH.Detector.LowPenaltyAbsorption",
+    "QRH.Detector.LowPhysicalInverseBound",
+    "QRH.Detector.LowReflectedLength",
+    "QRH.Detector.LowRemoteMass",
+    "QRH.Detector.LowSelectedBound",
+    "QRH.Detector.LowSlotScales",
+    "QRH.Detector.LowSourceScales",
+    "QRH.Detector.LowUnselectedMass",
+    "QRH.Detector.LowWindowBound",
+    "QRH.Detector.OptimizedAdaptiveSaving",
+    "QRH.Detector.OptimizedBatchWidths",
+    "QRH.Detector.OptimizedCentralExponent",
+    "QRH.Detector.OptimizedClassArithmetic",
+    "QRH.Detector.OptimizedContinuation",
+    "QRH.Detector.OptimizedData",
+    "QRH.Detector.OptimizedFloorMargin",
+    "QRH.Detector.OptimizedMixedSaving",
+    "QRH.Detector.OptimizedPrincipalNormalized",
+    "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+    "QRH.Detector.OptimizedPrincipalRemainders",
+    "QRH.Detector.OptimizedPrincipalResidueActual",
+    "QRH.Detector.OptimizedPrincipalSignal",
+    "QRH.Detector.OptimizedProbe",
+    "QRH.Detector.OptimizedSlots",
+    "QRH.Detector.OptimizedSourceAmplitudeClasses",
+    "QRH.Detector.OptimizedSourceBatch",
+    "QRH.Detector.OptimizedSupremum",
+    "QRH.Detector.OptimizedTransportBudget",
+    "QRH.Detector.PlainUnmarkedRetainedSlots",
+    "QRH.Detector.PlainUnmarkedSlots",
+    "QRH.Detector.UniformAllMoments",
+    "QRH.Detector.UniformDetectorCount",
+    "QRH.Detector.UniformDetectorMoment",
+    "QRH.DirichletTargets",
+    "QRH.DynamicLoss",
+    "QRH.Energy.CappedAnalyticSuccessor",
+    "QRH.Energy.CappedLowStage",
+    "QRH.Energy.CertifiedExistence",
+    "QRH.Energy.DeletedRobustGeometry",
+    "QRH.Energy.FirstSourceParameters",
+    "QRH.Energy.LiveClippingDefect",
+    "QRH.Energy.NaturalHighStage",
+    "QRH.Energy.NaturalLowPhysical",
+    "QRH.Energy.NaturalLowStage",
+    "QRH.Energy.NaturalZeroStage",
+    "QRH.Energy.OriginalHighReflectionBounded",
+    "QRH.Energy.OriginalHighReflectionDeleted",
+    "QRH.Energy.OriginalHighReflectionGeometry",
+    "QRH.Energy.OriginalHighReflectionOriginal",
+    "QRH.Energy.OriginalHighReflectionPower",
+    "QRH.Energy.OriginalHighReflectionSymmetric",
+    "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+    "QRH.Energy.PositiveBalancedAdmission",
+    "QRH.Energy.PositiveHighAssembly",
+    "QRH.Energy.PositiveHighAssemblyBounded",
+    "QRH.Energy.PositiveHighBound",
+    "QRH.Energy.PositiveHighParameters",
+    "QRH.Energy.PositiveHighPhysical",
+    "QRH.Energy.PositiveHighSource",
+    "QRH.Energy.PositiveHighSourceBound",
+    "QRH.Energy.PositiveHighSourceBounded",
+    "QRH.Energy.ReferenceDeletionCapacity",
+    "QRH.Energy.ReferenceDeletionClipped",
+    "QRH.Energy.ReferenceDivisors",
+    "QRH.Energy.ReferenceLiveBounded",
+    "QRH.Energy.ReferenceLivePower",
+    "QRH.Energy.ReferenceLowBranchGeometry",
+    "QRH.Energy.ReferenceLowDeletedGeometry",
+    "QRH.Energy.ReferenceLowWindow",
+    "QRH.Energy.ReferenceRobustBounded",
+    "QRH.Energy.ReferenceRobustDeletedEnergy",
+    "QRH.Energy.ReferenceRobustOriginal",
+    "QRH.Energy.ReferenceRobustPower",
+    "QRH.Energy.ReferenceState",
+    "QRH.Energy.UniformMesh",
+    "QRH.Energy.UniformMoment",
+    "QRH.Energy.ZeroGrowthPhysical",
+    "QRH.Geometry",
+    "QRH.Hecke.DetectorRowCountCrossing",
+    "QRH.Hecke.DynamicBalancedCount",
+    "QRH.Hecke.DynamicBatchCount",
+    "QRH.Hecke.DynamicBranchBudget",
+    "QRH.Hecke.DynamicCountFromMoments",
+    "QRH.Hecke.DynamicCountOptimization",
+    "QRH.Hecke.DynamicCrossing",
+    "QRH.Hecke.DynamicFixedAmplitudeCount",
+    "QRH.Hecke.DynamicRawBranches",
+    "QRH.Hecke.OptimizedAdaptiveCutoff",
+    "QRH.HeckeTargets",
+    "QRH.IndependentTargets",
+    "QRH.Moments.DetectorPlainExceptionalSlots",
+    "QRH.Moments.DetectorPlainMarkedSlots",
+    "QRH.Moments.DetectorPlainMarkedState",
+    "QRH.Moments.DetectorPlainUnmarkedParameters",
+    "QRH.Moments.ReflectionRetainedLength",
+    "QRH.Nonvanishing",
+    "QRH.NumericFacts",
+    "QRH.OtherRanges",
+    "QRH.PlainReflectionGeometry",
+    "QRH.PrimeRows.CubeNormalizer",
+    "QRH.PrimeRows.DynamicNonfloorCount",
+    "QRH.PrimeRows.DynamicSourceCount",
+    "QRH.PrimeRows.OptimizedCanonicalCubeChoice",
+    "QRH.PrimeRows.OptimizedCanonicalCubeReduction",
+    "QRH.PrimeRows.OptimizedCanonicalRayCube",
+    "QRH.PrimeRows.OptimizedCanonicalReduction",
+    "QRH.PrimeRows.OptimizedCanonicalTails",
+    "QRH.PrimeRows.OptimizedCentralCost",
+    "QRH.PrimeRows.OptimizedCentralTupleCount",
+    "QRH.PrimeRows.OptimizedCubeErrorSaving",
+    "QRH.PrimeRows.OptimizedCubeFiniteError",
+    "QRH.PrimeRows.OptimizedCubeFloorArithmetic",
+    "QRH.PrimeRows.OptimizedCubeFloorCollected",
+    "QRH.PrimeRows.OptimizedCubeFloorGlobal",
+    "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral",
+    "QRH.PrimeRows.OptimizedCubeFloorNormalized",
+    "QRH.PrimeRows.OptimizedCubeFloorSaving",
+    "QRH.PrimeRows.OptimizedGeometricTail",
+    "QRH.PrimeRows.OptimizedLargeDyad",
+    "QRH.PrimeRows.OptimizedLargeSaving",
+    "QRH.PrimeRows.OptimizedLargeTail",
+    "QRH.PrimeRows.OptimizedNonfloorTransport",
+    "QRH.PrimeRows.OptimizedNormalizedTransport",
+    "QRH.PrimeRows.OptimizedNormalizedTransportSaving",
+    "QRH.PrimeRows.OptimizedPhysicalLargeTail",
+    "QRH.PrimeRows.OptimizedPhysicalSmallTail",
+    "QRH.PrimeRows.OptimizedSlotExponent",
+    "QRH.PrimeRows.OptimizedSmallTail",
+    "QRH.PrimeRows.OptimizedTailScales",
+    "QRH.Reflection.LowBranchSum",
+    "QRH.Reflection.LowCaps",
+    "QRH.Reflection.LowChoiceEnergy",
+    "QRH.Reflection.LowCompletedFiber",
+    "QRH.Reflection.LowCompletedRows",
+    "QRH.Reflection.LowDyads",
+    "QRH.Reflection.LowExponent",
+    "QRH.Reflection.LowFixedMember",
+    "QRH.Reflection.LowFrozenEnergy",
+    "QRH.Reflection.LowFull",
+    "QRH.Reflection.LowFullBudget",
+    "QRH.Reflection.LowGlobalBudget",
+    "QRH.Reflection.LowInactiveEnergy",
+    "QRH.Reflection.LowMemberBudget",
+    "QRH.Reflection.LowMemberGeometry",
+    "QRH.Reflection.LowOriginalEnergy",
+    "QRH.Reflection.LowRetained",
+    "QRH.Reflection.LowRetainedBudget",
+    "QRH.Reflection.LowSector",
+    "QRH.RobustReflectionGeometry",
+    "QRH.SlackRefinedNonvanishing",
+    "QRH.StatementParity",
+    "QRH.TighterNonvanishing",
+    "QRH.ZeroBounds",
+    "QRH.ZetaTransfer"
+  ],
+  "direct_external_imports": [
+    "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+    "Mathlib.MeasureTheory.Constructions.Polish.Basic",
+    "Mathlib.NumberTheory.Harmonic.ZetaAsymp",
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring",
+    "OAI.NumberTheory.DirichletL.ContinuationPolynomialContour",
+    "OAI.NumberTheory.DirichletL.Detector.Basic",
+    "OAI.NumberTheory.DirichletL.Detector.CanonicalPhysicalRows",
+    "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm",
+    "OAI.NumberTheory.DirichletL.Detector.CentralDyadicWeight",
+    "OAI.NumberTheory.DirichletL.Detector.CentralExponent",
+    "OAI.NumberTheory.DirichletL.Detector.CompensationActual",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorBatch",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField",
+    "OAI.NumberTheory.DirichletL.Detector.EulerCoordinates",
+    "OAI.NumberTheory.DirichletL.Detector.EulerHolomorphic",
+    "OAI.NumberTheory.DirichletL.Detector.EulerRegion",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductX",
+    "OAI.NumberTheory.DirichletL.Detector.GaussianCommon",
+    "OAI.NumberTheory.DirichletL.Detector.GlobalCorrection",
+    "OAI.NumberTheory.DirichletL.Detector.GlobalHolomorphic",
+    "OAI.NumberTheory.DirichletL.Detector.GlobalRegion",
+    "OAI.NumberTheory.DirichletL.Detector.GramIdealSummation",
+    "OAI.NumberTheory.DirichletL.Detector.HighEulerRational",
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralTuple",
+    "OAI.NumberTheory.DirichletL.Detector.LowCommonBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianSum",
+    "OAI.NumberTheory.DirichletL.Detector.LowGramScale",
+    "OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.LowNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowReflectedLength",
+    "OAI.NumberTheory.DirichletL.Detector.LowRemoteMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowSelectedBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowSlotScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowSourceScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowWindowBound",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalContours",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalInput",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalizer",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalProduct",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+    "OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolGood",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds",
+    "OAI.NumberTheory.DirichletL.Detector.SourceBatch",
+    "OAI.NumberTheory.DirichletL.Detector.SourceExclusions",
+    "OAI.NumberTheory.DirichletL.Energy.Bands",
+    "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+    "OAI.NumberTheory.DirichletL.Energy.CappedLowStage",
+    "OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport",
+    "OAI.NumberTheory.DirichletL.Energy.DeletedRobustGeometry",
+    "OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters",
+    "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+    "OAI.NumberTheory.DirichletL.Energy.NaturalHighStage",
+    "OAI.NumberTheory.DirichletL.Energy.NaturalLowPhysical",
+    "OAI.NumberTheory.DirichletL.Energy.NaturalLowStage",
+    "OAI.NumberTheory.DirichletL.Energy.NaturalZeroStage",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionBounded",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionDeleted",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionGeometry",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionOriginal",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionPower",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetric",
+    "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetricBounded",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveBalancedAdmission",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssembly",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssemblyBounded",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighBound",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighParameters",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighPhysical",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighSource",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBound",
+    "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBounded",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionCapacity",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionClipped",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceDivisors",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLiveBounded",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLivePower",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLowDeletedGeometry",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustBounded",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustDeletedEnergy",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustOriginal",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustPower",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceState",
+    "OAI.NumberTheory.DirichletL.Energy.WidthRanges",
+    "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysical",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorAdaptiveCutoff",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorBatchCount",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorBranchBudget",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorCountFromMoments",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorFixedAmplitudeCount",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCount",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing",
+    "OAI.NumberTheory.DirichletL.Hecke.Euler",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge",
+    "OAI.NumberTheory.DirichletL.Hecke.Reciprocal",
+    "OAI.NumberTheory.DirichletL.Hecke.ReciprocalGrowth",
+    "OAI.NumberTheory.DirichletL.Hecke.Signal",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalBounds",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalIdentity",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalShift",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters",
+    "OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength",
+    "OAI.NumberTheory.DirichletL.ParametersHighData",
+    "OAI.NumberTheory.DirichletL.ParametersSlotLengths",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness",
+    "OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorBudget",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCount",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransportSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallSum",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.TailScales",
+    "OAI.NumberTheory.DirichletL.PrincipalMellinGrowth",
+    "OAI.NumberTheory.DirichletL.PrincipalMellinResidues",
+    "OAI.NumberTheory.DirichletL.PrincipalSignalComparison",
+    "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+    "OAI.NumberTheory.DirichletL.Reflection.LowBranchSum",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCaps",
+    "OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows",
+    "OAI.NumberTheory.DirichletL.Reflection.LowDyads",
+    "OAI.NumberTheory.DirichletL.Reflection.LowExponent",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFixedMember",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFull",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFullBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry",
+    "OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetained",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowSector",
+    "OAI.NumberTheory.DirichletL.Supremum"
+  ],
+  "full_transitive_external_closure": "NOT_REBUILT_OR_ENUMERATED",
+  "geometry_budget_reverse_import_closure": [
+    "QRH",
+    "QRH.Adaptive",
+    "QRH.Analytic",
+    "QRH.Certificate",
+    "QRH.Continuation",
+    "QRH.Detector.ActualAdaptiveBatchCount",
+    "QRH.Detector.ActualAmplitudeClassCount",
+    "QRH.Detector.ActualCubeArithmeticSaving",
+    "QRH.Detector.ActualCubeClassBound",
+    "QRH.Detector.ActualDetectorFiberCount",
+    "QRH.Detector.ActualFixedNonfloorData",
+    "QRH.Detector.ActualNonfloorCubeNorm",
+    "QRH.Detector.ActualNonfloorRows",
+    "QRH.Detector.ActualNormalizedNonfloorCube",
+    "QRH.Detector.ActualOptimizedHigh",
+    "QRH.Detector.ActualOptimizedLow",
+    "QRH.Detector.ActualPlainUnmarkedInput",
+    "QRH.Detector.ActualSourceCount",
+    "QRH.Detector.CompleteNonfloorCubeData",
+    "QRH.Detector.CompleteNonfloorRowsData",
+    "QRH.Detector.DynamicMomentInput",
+    "QRH.Detector.DynamicSlotMomentInput",
+    "QRH.Detector.LowCentralTuple",
+    "QRH.Detector.LowCommonBound",
+    "QRH.Detector.LowGaussianCentral",
+    "QRH.Detector.LowGaussianDyad",
+    "QRH.Detector.LowGaussianRemote",
+    "QRH.Detector.LowGaussianSum",
+    "QRH.Detector.LowGramScale",
+    "QRH.Detector.LowInverseNormalize",
+    "QRH.Detector.LowNominalEnergy",
+    "QRH.Detector.LowNominalGeometry",
+    "QRH.Detector.LowNormalized",
+    "QRH.Detector.LowPenaltyAbsorption",
+    "QRH.Detector.LowPhysicalInverseBound",
+    "QRH.Detector.LowReflectedLength",
+    "QRH.Detector.LowRemoteMass",
+    "QRH.Detector.LowSelectedBound",
+    "QRH.Detector.LowSlotScales",
+    "QRH.Detector.LowSourceScales",
+    "QRH.Detector.LowWindowBound",
+    "QRH.Detector.OptimizedAdaptiveSaving",
+    "QRH.Detector.OptimizedBatchWidths",
+    "QRH.Detector.OptimizedCentralExponent",
+    "QRH.Detector.OptimizedClassArithmetic",
+    "QRH.Detector.OptimizedContinuation",
+    "QRH.Detector.OptimizedData",
+    "QRH.Detector.OptimizedFloorMargin",
+    "QRH.Detector.OptimizedMixedSaving",
+    "QRH.Detector.OptimizedPrincipalNormalized",
+    "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+    "QRH.Detector.OptimizedPrincipalRemainders",
+    "QRH.Detector.OptimizedPrincipalResidueActual",
+    "QRH.Detector.OptimizedPrincipalSignal",
+    "QRH.Detector.OptimizedProbe",
+    "QRH.Detector.OptimizedSlots",
+    "QRH.Detector.OptimizedSourceAmplitudeClasses",
+    "QRH.Detector.OptimizedSourceBatch",
+    "QRH.Detector.OptimizedSupremum",
+    "QRH.Detector.OptimizedTransportBudget",
+    "QRH.Detector.UniformAllMoments",
+    "QRH.Detector.UniformDetectorCount",
+    "QRH.Detector.UniformDetectorMoment",
+    "QRH.DirichletTargets",
+    "QRH.DynamicLoss",
+    "QRH.Energy.CappedAnalyticSuccessor",
+    "QRH.Energy.CappedLowStage",
+    "QRH.Energy.CertifiedExistence",
+    "QRH.Energy.DeletedRobustGeometry",
+    "QRH.Energy.FirstSourceParameters",
+    "QRH.Energy.LiveClippingDefect",
+    "QRH.Energy.NaturalHighStage",
+    "QRH.Energy.NaturalLowPhysical",
+    "QRH.Energy.NaturalLowStage",
+    "QRH.Energy.NaturalZeroStage",
+    "QRH.Energy.OriginalHighReflectionBounded",
+    "QRH.Energy.OriginalHighReflectionDeleted",
+    "QRH.Energy.OriginalHighReflectionGeometry",
+    "QRH.Energy.OriginalHighReflectionOriginal",
+    "QRH.Energy.OriginalHighReflectionPower",
+    "QRH.Energy.OriginalHighReflectionSymmetric",
+    "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+    "QRH.Energy.PositiveBalancedAdmission",
+    "QRH.Energy.PositiveHighAssembly",
+    "QRH.Energy.PositiveHighAssemblyBounded",
+    "QRH.Energy.PositiveHighBound",
+    "QRH.Energy.PositiveHighParameters",
+    "QRH.Energy.PositiveHighPhysical",
+    "QRH.Energy.PositiveHighSource",
+    "QRH.Energy.PositiveHighSourceBound",
+    "QRH.Energy.PositiveHighSourceBounded",
+    "QRH.Energy.ReferenceDeletionCapacity",
+    "QRH.Energy.ReferenceDeletionClipped",
+    "QRH.Energy.ReferenceDivisors",
+    "QRH.Energy.ReferenceLiveBounded",
+    "QRH.Energy.ReferenceLivePower",
+    "QRH.Energy.ReferenceLowBranchGeometry",
+    "QRH.Energy.ReferenceLowDeletedGeometry",
+    "QRH.Energy.ReferenceLowWindow",
+    "QRH.Energy.ReferenceRobustBounded",
+    "QRH.Energy.ReferenceRobustDeletedEnergy",
+    "QRH.Energy.ReferenceRobustOriginal",
+    "QRH.Energy.ReferenceRobustPower",
+    "QRH.Energy.ReferenceState",
+    "QRH.Energy.UniformMoment",
+    "QRH.Energy.ZeroGrowthPhysical",
+    "QRH.Geometry",
+    "QRH.Hecke.DetectorRowCountCrossing",
+    "QRH.Hecke.DynamicBalancedCount",
+    "QRH.Hecke.DynamicBatchCount",
+    "QRH.Hecke.DynamicBranchBudget",
+    "QRH.Hecke.DynamicCountFromMoments",
+    "QRH.Hecke.DynamicCountOptimization",
+    "QRH.Hecke.DynamicCrossing",
+    "QRH.Hecke.DynamicFixedAmplitudeCount",
+    "QRH.Hecke.DynamicRawBranches",
+    "QRH.Hecke.OptimizedAdaptiveCutoff",
+    "QRH.HeckeTargets",
+    "QRH.Moments.ReflectionRetainedLength",
+    "QRH.Nonvanishing",
+    "QRH.NumericFacts",
+    "QRH.OtherRanges",
+    "QRH.PlainReflectionGeometry",
+    "QRH.PrimeRows.CubeNormalizer",
+    "QRH.PrimeRows.DynamicNonfloorCount",
+    "QRH.PrimeRows.DynamicSourceCount",
+    "QRH.PrimeRows.OptimizedCanonicalCubeChoice",
+    "QRH.PrimeRows.OptimizedCanonicalCubeReduction",
+    "QRH.PrimeRows.OptimizedCanonicalRayCube",
+    "QRH.PrimeRows.OptimizedCanonicalReduction",
+    "QRH.PrimeRows.OptimizedCanonicalTails",
+    "QRH.PrimeRows.OptimizedCentralCost",
+    "QRH.PrimeRows.OptimizedCentralTupleCount",
+    "QRH.PrimeRows.OptimizedCubeErrorSaving",
+    "QRH.PrimeRows.OptimizedCubeFiniteError",
+    "QRH.PrimeRows.OptimizedCubeFloorArithmetic",
+    "QRH.PrimeRows.OptimizedCubeFloorCollected",
+    "QRH.PrimeRows.OptimizedCubeFloorGlobal",
+    "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral",
+    "QRH.PrimeRows.OptimizedCubeFloorNormalized",
+    "QRH.PrimeRows.OptimizedCubeFloorSaving",
+    "QRH.PrimeRows.OptimizedGeometricTail",
+    "QRH.PrimeRows.OptimizedLargeDyad",
+    "QRH.PrimeRows.OptimizedLargeSaving",
+    "QRH.PrimeRows.OptimizedLargeTail",
+    "QRH.PrimeRows.OptimizedNonfloorTransport",
+    "QRH.PrimeRows.OptimizedNormalizedTransport",
+    "QRH.PrimeRows.OptimizedNormalizedTransportSaving",
+    "QRH.PrimeRows.OptimizedPhysicalLargeTail",
+    "QRH.PrimeRows.OptimizedPhysicalSmallTail",
+    "QRH.PrimeRows.OptimizedSlotExponent",
+    "QRH.PrimeRows.OptimizedSmallTail",
+    "QRH.PrimeRows.OptimizedTailScales",
+    "QRH.Reflection.LowBranchSum",
+    "QRH.Reflection.LowCaps",
+    "QRH.Reflection.LowChoiceEnergy",
+    "QRH.Reflection.LowCompletedFiber",
+    "QRH.Reflection.LowCompletedRows",
+    "QRH.Reflection.LowDyads",
+    "QRH.Reflection.LowExponent",
+    "QRH.Reflection.LowFixedMember",
+    "QRH.Reflection.LowFrozenEnergy",
+    "QRH.Reflection.LowFull",
+    "QRH.Reflection.LowFullBudget",
+    "QRH.Reflection.LowGlobalBudget",
+    "QRH.Reflection.LowInactiveEnergy",
+    "QRH.Reflection.LowMemberBudget",
+    "QRH.Reflection.LowMemberGeometry",
+    "QRH.Reflection.LowOriginalEnergy",
+    "QRH.Reflection.LowRetained",
+    "QRH.Reflection.LowRetainedBudget",
+    "QRH.Reflection.LowSector",
+    "QRH.RobustReflectionGeometry",
+    "QRH.SlackRefinedNonvanishing",
+    "QRH.StatementParity",
+    "QRH.TighterNonvanishing",
+    "QRH.ZeroBounds",
+    "QRH.ZetaTransfer"
+  ],
+  "local_import_graph": {
+    "QRH": [
+      "QRH.SlackRefinedNonvanishing",
+      "QRH.TighterNonvanishing",
+      "QRH.ZeroBounds",
+      "QRH.Nonvanishing",
+      "QRH.Geometry",
+      "QRH.DynamicLoss",
+      "QRH.Certificate",
+      "QRH.Continuation",
+      "QRH.StatementParity",
+      "QRH.OtherRanges",
+      "QRH.Adaptive",
+      "QRH.PlainReflectionGeometry",
+      "QRH.ZetaTransfer"
+    ],
+    "QRH.Adaptive": [
+      "QRH.OtherRanges"
+    ],
+    "QRH.Analytic": [
+      "QRH.Detector.OptimizedSupremum",
+      "QRH.Detector.ActualOptimizedHigh",
+      "QRH.Detector.ActualNonfloorRows",
+      "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+      "QRH.Detector.ActualFixedNonfloorData",
+      "QRH.Detector.ActualNormalizedNonfloorCube",
+      "QRH.PrimeRows.OptimizedCubeFloorCollected",
+      "QRH.Detector.LowNormalized",
+      "QRH.Detector.ActualDetectorFiberCount",
+      "QRH.Detector.ActualAmplitudeClassCount",
+      "QRH.Detector.OptimizedClassArithmetic",
+      "QRH.Detector.OptimizedCentralExponent",
+      "QRH.Detector.OptimizedProbe",
+      "QRH.Detector.OptimizedSlots"
+    ],
+    "QRH.Certificate": [
+      "QRH.Geometry"
+    ],
+    "QRH.Continuation": [
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.ActualAdaptiveBatchCount": [
+      "QRH.NumericFacts",
+      "QRH.Detector.UniformAllMoments",
+      "QRH.PrimeRows.DynamicSourceCount"
+    ],
+    "QRH.Detector.ActualAmplitudeClassCount": [
+      "QRH.Detector.ActualSourceCount",
+      "QRH.Detector.OptimizedSourceAmplitudeClasses"
+    ],
+    "QRH.Detector.ActualCubeArithmeticSaving": [
+      "QRH.NumericFacts",
+      "QRH.Detector.ActualCubeClassBound",
+      "QRH.Detector.OptimizedAdaptiveSaving"
+    ],
+    "QRH.Detector.ActualCubeClassBound": [
+      "QRH.Detector.ActualAmplitudeClassCount",
+      "QRH.Detector.OptimizedClassArithmetic"
+    ],
+    "QRH.Detector.ActualDetectorFiberCount": [
+      "QRH.NumericFacts",
+      "QRH.Detector.UniformAllMoments",
+      "QRH.Hecke.DynamicCountFromMoments"
+    ],
+    "QRH.Detector.ActualFixedNonfloorData": [
+      "QRH.Detector.ActualNormalizedNonfloorCube",
+      "QRH.Detector.OptimizedData"
+    ],
+    "QRH.Detector.ActualNonfloorCubeNorm": [
+      "QRH.Detector.ActualCubeArithmeticSaving"
+    ],
+    "QRH.Detector.ActualNonfloorRows": [
+      "QRH.NumericFacts",
+      "QRH.Detector.ActualFixedNonfloorData"
+    ],
+    "QRH.Detector.ActualNormalizedNonfloorCube": [
+      "QRH.Detector.ActualNonfloorCubeNorm",
+      "QRH.PrimeRows.CubeNormalizer"
+    ],
+    "QRH.Detector.ActualOptimizedHigh": [
+      "QRH.Detector.CompleteNonfloorRowsData",
+      "QRH.Detector.OptimizedTransportBudget",
+      "QRH.PrimeRows.OptimizedNonfloorTransport"
+    ],
+    "QRH.Detector.ActualOptimizedLow": [
+      "QRH.Detector.ActualOptimizedHigh",
+      "QRH.Detector.LowNormalized"
+    ],
+    "QRH.Detector.ActualPlainUnmarkedInput": [
+      "QRH.Detector.DynamicMomentInput",
+      "QRH.Detector.DetectorPlainMarkedSlots",
+      "QRH.Detector.PlainUnmarkedSlots"
+    ],
+    "QRH.Detector.ActualSourceCount": [
+      "QRH.Detector.ActualAdaptiveBatchCount"
+    ],
+    "QRH.Detector.CompleteNonfloorCubeData": [
+      "QRH.NumericFacts",
+      "QRH.Detector.ActualNormalizedNonfloorCube",
+      "QRH.Detector.OptimizedData"
+    ],
+    "QRH.Detector.CompleteNonfloorRowsData": [
+      "QRH.NumericFacts",
+      "QRH.Detector.CompleteNonfloorCubeData"
+    ],
+    "QRH.Detector.DetectorInverseFields": [
+      "QRH.Detector.DetectorInverseMarkedField",
+      "QRH.Detector.InverseRawParameters"
+    ],
+    "QRH.Detector.DetectorInverseMarkedField": [
+      "QRH.Detector.DetectorMomentPrimeGeometry"
+    ],
+    "QRH.Detector.DetectorMomentPrimeGeometry": [],
+    "QRH.Detector.DetectorPlainMarkedFineField": [
+      "QRH.Moments.DetectorPlainMarkedState"
+    ],
+    "QRH.Detector.DetectorPlainMarkedSlots": [
+      "QRH.Detector.DetectorPlainMarkedFineField",
+      "QRH.Moments.DetectorPlainMarkedSlots"
+    ],
+    "QRH.Detector.DynamicMomentInput": [
+      "QRH.Energy.UniformMoment",
+      "QRH.Detector.DetectorPlainMarkedFineField"
+    ],
+    "QRH.Detector.DynamicSlotMomentInput": [
+      "QRH.Detector.DynamicMomentInput",
+      "QRH.Detector.DetectorPlainMarkedSlots"
+    ],
+    "QRH.Detector.ExtendedEulerRegion": [],
+    "QRH.Detector.ExtendedFiniteProduct": [
+      "QRH.Detector.ExtendedGlobalCorrection",
+      "QRH.Detector.ExtendedPrincipalSlots"
+    ],
+    "QRH.Detector.ExtendedFiniteProductX": [
+      "QRH.Detector.ExtendedFiniteProduct"
+    ],
+    "QRH.Detector.ExtendedGlobalCorrection": [
+      "QRH.Detector.ExtendedGlobalHolomorphic"
+    ],
+    "QRH.Detector.ExtendedGlobalHolomorphic": [
+      "QRH.Detector.ExtendedGlobalRegion"
+    ],
+    "QRH.Detector.ExtendedGlobalRegion": [
+      "QRH.Detector.ExtendedEulerRegion"
+    ],
+    "QRH.Detector.ExtendedHeckeSignalBounds": [
+      "QRH.Detector.ExtendedHeckeSignalShift"
+    ],
+    "QRH.Detector.ExtendedHeckeSignalShift": [
+      "QRH.Detector.ExtendedGlobalCorrection"
+    ],
+    "QRH.Detector.ExtendedPrincipalContours": [
+      "QRH.Detector.ExtendedFiniteProductX"
+    ],
+    "QRH.Detector.ExtendedPrincipalPhysical": [
+      "QRH.Detector.ExtendedPrincipalTransport"
+    ],
+    "QRH.Detector.ExtendedPrincipalSlots": [
+      "QRH.Detector.ExtendedEulerRegion"
+    ],
+    "QRH.Detector.ExtendedPrincipalTransport": [
+      "QRH.Detector.ExtendedPrincipalContours"
+    ],
+    "QRH.Detector.ExtendedRayPoolThresholds": [],
+    "QRH.Detector.FineSmallData": [],
+    "QRH.Detector.InverseRawParameters": [],
+    "QRH.Detector.LowCentralTuple": [
+      "QRH.Detector.LowPhysicalInverseBound",
+      "QRH.Detector.LowSlotScales",
+      "QRH.Detector.LowPenaltyAbsorption",
+      "QRH.Detector.LowUnselectedMass"
+    ],
+    "QRH.Detector.LowCommonBound": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowGaussianSum"
+    ],
+    "QRH.Detector.LowGaussianCentral": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowGaussianDyad",
+      "QRH.Detector.LowNominalGeometry"
+    ],
+    "QRH.Detector.LowGaussianDyad": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowCentralTuple"
+    ],
+    "QRH.Detector.LowGaussianRemote": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowRemoteMass",
+      "QRH.Detector.LowNominalGeometry",
+      "QRH.Detector.LowSlotScales"
+    ],
+    "QRH.Detector.LowGaussianSum": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowGaussianRemote",
+      "QRH.Detector.LowGaussianCentral"
+    ],
+    "QRH.Detector.LowGramScale": [
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Detector.LowInverseNormalize": [
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Detector.LowNominalEnergy": [
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Detector.LowNominalGeometry",
+      "QRH.Detector.LowSelectedBound"
+    ],
+    "QRH.Detector.LowNominalGeometry": [
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Detector.LowNormalized": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowCommonBound",
+      "QRH.Detector.LowWindowBound",
+      "QRH.PrimeRows.CubeNormalizer"
+    ],
+    "QRH.Detector.LowPenaltyAbsorption": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Detector.LowPhysicalInverseBound": [
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Detector.LowNominalGeometry",
+      "QRH.Detector.LowInverseNormalize",
+      "QRH.Detector.LowNominalEnergy"
+    ],
+    "QRH.Detector.LowReflectedLength": [
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.LowRemoteMass": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowNominalGeometry"
+    ],
+    "QRH.Detector.LowSelectedBound": [
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowOriginalEnergy"
+    ],
+    "QRH.Detector.LowSlotScales": [
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Detector.LowSourceScales"
+    ],
+    "QRH.Detector.LowSourceScales": [
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Detector.LowGramScale"
+    ],
+    "QRH.Detector.LowUnselectedMass": [],
+    "QRH.Detector.LowWindowBound": [
+      "QRH.NumericFacts",
+      "QRH.Geometry",
+      "QRH.Detector.LowCommonBound"
+    ],
+    "QRH.Detector.OptimizedAdaptiveSaving": [
+      "QRH.NumericFacts",
+      "QRH.Detector.OptimizedMixedSaving"
+    ],
+    "QRH.Detector.OptimizedBatchWidths": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.OptimizedCentralExponent": [
+      "QRH.OtherRanges"
+    ],
+    "QRH.Detector.OptimizedClassArithmetic": [
+      "QRH.PrimeRows.OptimizedSlotExponent"
+    ],
+    "QRH.Detector.OptimizedContinuation": [
+      "QRH.Continuation"
+    ],
+    "QRH.Detector.OptimizedData": [
+      "QRH.NumericFacts",
+      "QRH.Detector.FineSmallData",
+      "QRH.Detector.DynamicMomentInput"
+    ],
+    "QRH.Detector.OptimizedFloorMargin": [
+      "QRH.NumericFacts",
+      "QRH.Detector.OptimizedCentralExponent"
+    ],
+    "QRH.Detector.OptimizedMixedSaving": [
+      "QRH.NumericFacts",
+      "QRH.Detector.OptimizedCentralExponent",
+      "QRH.PrimeRows.DynamicSourceCount"
+    ],
+    "QRH.Detector.OptimizedPrincipalNormalized": [
+      "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+      "QRH.Detector.OptimizedPrincipalResidueActual",
+      "QRH.Detector.ExtendedRayPoolThresholds"
+    ],
+    "QRH.Detector.OptimizedPrincipalPhysicalRemainder": [
+      "QRH.Detector.OptimizedPrincipalRemainders",
+      "QRH.Detector.ExtendedPrincipalPhysical"
+    ],
+    "QRH.Detector.OptimizedPrincipalRemainders": [
+      "QRH.NumericFacts",
+      "QRH.Detector.ExtendedPrincipalTransport",
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.OptimizedPrincipalResidueActual": [
+      "QRH.Detector.OptimizedPrincipalSignal"
+    ],
+    "QRH.Detector.OptimizedPrincipalSignal": [
+      "QRH.Detector.ExtendedHeckeSignalBounds",
+      "QRH.Detector.ExtendedPrincipalSlots",
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.OptimizedProbe": [
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.OptimizedSlots": [
+      "QRH.Geometry"
+    ],
+    "QRH.Detector.OptimizedSourceAmplitudeClasses": [
+      "QRH.Detector.OptimizedSourceBatch",
+      "QRH.Hecke.OptimizedAdaptiveCutoff"
+    ],
+    "QRH.Detector.OptimizedSourceBatch": [
+      "QRH.Detector.OptimizedBatchWidths"
+    ],
+    "QRH.Detector.OptimizedSupremum": [
+      "QRH.Detector.ActualOptimizedLow",
+      "QRH.Detector.OptimizedContinuation"
+    ],
+    "QRH.Detector.OptimizedTransportBudget": [
+      "QRH.NumericFacts",
+      "QRH.Detector.OptimizedData"
+    ],
+    "QRH.Detector.PlainUnmarkedRetainedSlots": [
+      "QRH.Moments.DetectorPlainUnmarkedParameters"
+    ],
+    "QRH.Detector.PlainUnmarkedSlots": [
+      "QRH.Moments.DetectorPlainExceptionalSlots",
+      "QRH.Detector.PlainUnmarkedRetainedSlots"
+    ],
+    "QRH.Detector.UniformAllMoments": [
+      "QRH.Detector.UniformDetectorMoment",
+      "QRH.Detector.ActualPlainUnmarkedInput",
+      "QRH.Detector.DetectorInverseFields"
+    ],
+    "QRH.Detector.UniformDetectorCount": [
+      "QRH.Detector.UniformDetectorMoment"
+    ],
+    "QRH.Detector.UniformDetectorMoment": [
+      "QRH.Detector.DynamicSlotMomentInput"
+    ],
+    "QRH.DirichletTargets": [
+      "QRH.Geometry"
+    ],
+    "QRH.DynamicLoss": [
+      "QRH.Geometry"
+    ],
+    "QRH.Energy.CappedAnalyticSuccessor": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.CappedLowStage",
+      "QRH.Energy.NaturalHighStage",
+      "QRH.Energy.NaturalZeroStage",
+      "QRH.Energy.PositiveHighSourceBound",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.CappedLowStage": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.NaturalLowStage",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.CertifiedExistence": [
+      "QRH.Energy.CappedAnalyticSuccessor"
+    ],
+    "QRH.Energy.DeletedRobustGeometry": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.LiveClippingDefect",
+      "QRH.Energy.ReferenceLowDeletedGeometry"
+    ],
+    "QRH.Energy.FirstSourceParameters": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.LiveClippingDefect": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceLowWindow",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.NaturalHighStage": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.FirstSourceParameters",
+      "QRH.Energy.PositiveBalancedAdmission",
+      "QRH.Energy.PositiveHighPhysical",
+      "QRH.Energy.PositiveHighSourceBound"
+    ],
+    "QRH.Energy.NaturalLowPhysical": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.FirstSourceParameters",
+      "QRH.Energy.PositiveBalancedAdmission",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.NaturalLowStage": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.FirstSourceParameters",
+      "QRH.Energy.NaturalLowPhysical",
+      "QRH.Energy.PositiveBalancedAdmission",
+      "QRH.Energy.PositiveHighSourceBound",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.NaturalZeroStage": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.LiveClippingDefect",
+      "QRH.Energy.OriginalHighReflectionSymmetric",
+      "QRH.Energy.PositiveHighSourceBound",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceLowBranchGeometry",
+      "QRH.Energy.ReferenceLowWindow",
+      "QRH.Energy.ReferenceState",
+      "QRH.Energy.ZeroGrowthPhysical",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.OriginalHighReflectionBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionOriginal",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.OriginalHighReflectionDeleted": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionGeometry"
+    ],
+    "QRH.Energy.OriginalHighReflectionGeometry": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceLowDeletedGeometry"
+    ],
+    "QRH.Energy.OriginalHighReflectionOriginal": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionDeleted",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.OriginalHighReflectionPower": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionOriginal",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.OriginalHighReflectionSymmetric": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionPower"
+    ],
+    "QRH.Energy.OriginalHighReflectionSymmetricBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionBounded",
+      "QRH.Energy.OriginalHighReflectionSymmetric"
+    ],
+    "QRH.Energy.PositiveBalancedAdmission": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.PositiveHighParameters",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighAssembly": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.PositiveHighSource"
+    ],
+    "QRH.Energy.PositiveHighAssemblyBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+      "QRH.Energy.PositiveHighAssembly",
+      "QRH.Energy.PositiveHighSourceBounded"
+    ],
+    "QRH.Energy.PositiveHighBound": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+      "QRH.Energy.PositiveHighAssembly",
+      "QRH.Energy.PositiveHighAssemblyBounded",
+      "QRH.Energy.PositiveHighParameters",
+      "QRH.Energy.PositiveHighSourceBounded",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighParameters": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.PositiveHighSource",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighPhysical": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.FirstSourceParameters",
+      "QRH.Energy.PositiveBalancedAdmission",
+      "QRH.Energy.PositiveHighSourceBound",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighSource": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionSymmetric",
+      "QRH.Energy.ReferenceLivePower",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighSourceBound": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.PositiveHighBound",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.PositiveHighSourceBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.OriginalHighReflectionSymmetric",
+      "QRH.Energy.PositiveHighSource",
+      "QRH.Energy.ReferenceLiveBounded",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.ReferenceDeletionCapacity": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceState"
+    ],
+    "QRH.Energy.ReferenceDeletionClipped": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceDeletionCapacity"
+    ],
+    "QRH.Energy.ReferenceDivisors": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceState"
+    ],
+    "QRH.Energy.ReferenceLiveBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceRobustBounded"
+    ],
+    "QRH.Energy.ReferenceLivePower": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceRobustPower"
+    ],
+    "QRH.Energy.ReferenceLowBranchGeometry": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceDeletionClipped"
+    ],
+    "QRH.Energy.ReferenceLowDeletedGeometry": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceLowWindow",
+      "QRH.Energy.ReferenceDivisors"
+    ],
+    "QRH.Energy.ReferenceLowWindow": [
+      "QRH.PlainReflectionGeometry",
+      "QRH.Energy.ReferenceLowBranchGeometry"
+    ],
+    "QRH.Energy.ReferenceRobustBounded": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceRobustOriginal",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.ReferenceRobustDeletedEnergy": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.DeletedRobustGeometry",
+      "QRH.Energy.ReferenceLowWindow",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.ReferenceRobustOriginal": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceRobustDeletedEnergy",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.ReferenceRobustPower": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceRobustOriginal",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Energy.ReferenceState": [
+      "QRH.PlainReflectionGeometry"
+    ],
+    "QRH.Energy.UniformMesh": [],
+    "QRH.Energy.UniformMoment": [
+      "QRH.Energy.CertifiedExistence",
+      "QRH.Energy.UniformMesh"
+    ],
+    "QRH.Energy.ZeroGrowthPhysical": [
+      "QRH.RobustReflectionGeometry",
+      "QRH.Energy.FirstSourceParameters",
+      "QRH.Energy.LiveClippingDefect",
+      "QRH.Energy.OriginalHighReflectionSymmetric",
+      "QRH.Energy.PositiveHighParameters",
+      "QRH.Energy.ReferenceDivisors",
+      "QRH.Energy.ReferenceLowBranchGeometry",
+      "QRH.Energy.ReferenceLowWindow",
+      "QRH.Energy.ReferenceState",
+      "QRH.Hecke.DetectorRowCountCrossing",
+      "QRH.Moments.ReflectionRetainedLength"
+    ],
+    "QRH.Geometry": [],
+    "QRH.Hecke.DetectorRowCountCrossing": [
+      "QRH.RobustReflectionGeometry"
+    ],
+    "QRH.Hecke.DynamicBalancedCount": [
+      "QRH.Hecke.DynamicCountOptimization"
+    ],
+    "QRH.Hecke.DynamicBatchCount": [
+      "QRH.Hecke.DynamicBranchBudget",
+      "QRH.Hecke.DynamicRawBranches",
+      "QRH.Hecke.DynamicCountFromMoments"
+    ],
+    "QRH.Hecke.DynamicBranchBudget": [
+      "QRH.NumericFacts",
+      "QRH.Hecke.DynamicCountOptimization"
+    ],
+    "QRH.Hecke.DynamicCountFromMoments": [
+      "QRH.Hecke.DynamicBranchBudget",
+      "QRH.Hecke.DynamicRawBranches"
+    ],
+    "QRH.Hecke.DynamicCountOptimization": [
+      "QRH.Hecke.DynamicCrossing"
+    ],
+    "QRH.Hecke.DynamicCrossing": [
+      "QRH.Adaptive",
+      "QRH.DynamicLoss"
+    ],
+    "QRH.Hecke.DynamicFixedAmplitudeCount": [
+      "QRH.Hecke.DynamicCountFromMoments"
+    ],
+    "QRH.Hecke.DynamicRawBranches": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.Hecke.OptimizedAdaptiveCutoff": [
+      "QRH.Adaptive"
+    ],
+    "QRH.HeckeTargets": [
+      "QRH.Geometry"
+    ],
+    "QRH.IndependentTargets": [],
+    "QRH.Moments.DetectorPlainExceptionalSlots": [],
+    "QRH.Moments.DetectorPlainMarkedSlots": [
+      "QRH.Moments.DetectorPlainMarkedState",
+      "QRH.Moments.DetectorPlainExceptionalSlots"
+    ],
+    "QRH.Moments.DetectorPlainMarkedState": [],
+    "QRH.Moments.DetectorPlainUnmarkedParameters": [
+      "QRH.Detector.DetectorPlainMarkedSlots"
+    ],
+    "QRH.Moments.ReflectionRetainedLength": [
+      "QRH.RobustReflectionGeometry"
+    ],
+    "QRH.Nonvanishing": [
+      "QRH.Detector.OptimizedSupremum",
+      "QRH.ZetaTransfer"
+    ],
+    "QRH.NumericFacts": [
+      "QRH.Geometry"
+    ],
+    "QRH.OtherRanges": [
+      "QRH.Certificate"
+    ],
+    "QRH.PlainReflectionGeometry": [
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.CubeNormalizer": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.DynamicNonfloorCount": [
+      "QRH.Hecke.DynamicFixedAmplitudeCount",
+      "QRH.Hecke.DynamicBalancedCount",
+      "QRH.Hecke.OptimizedAdaptiveCutoff"
+    ],
+    "QRH.PrimeRows.DynamicSourceCount": [
+      "QRH.PrimeRows.DynamicNonfloorCount"
+    ],
+    "QRH.PrimeRows.OptimizedCanonicalCubeChoice": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCanonicalCubeReduction",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCanonicalCubeReduction": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCanonicalReduction",
+      "QRH.PrimeRows.OptimizedCubeFiniteError",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCanonicalRayCube": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCanonicalCubeChoice",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCanonicalReduction": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCanonicalTails",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCanonicalTails": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedPhysicalLargeTail",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCentralCost": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCentralTupleCount": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCentralCost",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCubeErrorSaving": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCentralTupleCount",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFiniteError": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCubeErrorSaving",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorArithmetic": [
+      "QRH.NumericFacts",
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedSlotExponent"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorCollected": [
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedCubeFloorSaving"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorGlobal": [
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedCubeFloorArithmetic"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral": [
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedCubeFloorGlobal",
+      "QRH.Detector.OptimizedCentralExponent"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorNormalized": [
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral",
+      "QRH.PrimeRows.CubeNormalizer"
+    ],
+    "QRH.PrimeRows.OptimizedCubeFloorSaving": [
+      "QRH.Detector.OptimizedFloorMargin",
+      "QRH.PrimeRows.OptimizedCubeFloorNormalized"
+    ],
+    "QRH.PrimeRows.OptimizedGeometricTail": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedLargeDyad",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedLargeDyad": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedPhysicalSmallTail",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedLargeSaving": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedLargeTail",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedLargeTail": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedGeometricTail",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedNonfloorTransport": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedNormalizedTransportSaving",
+      "QRH.PrimeRows.OptimizedCubeFloorCollected"
+    ],
+    "QRH.PrimeRows.OptimizedNormalizedTransport": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedCanonicalRayCube",
+      "QRH.PrimeRows.CubeNormalizer",
+      "QRH.Detector.OptimizedPrincipalNormalized"
+    ],
+    "QRH.PrimeRows.OptimizedNormalizedTransportSaving": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedNormalizedTransport"
+    ],
+    "QRH.PrimeRows.OptimizedPhysicalLargeTail": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedLargeSaving",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedPhysicalSmallTail": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedSmallTail",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedSlotExponent": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedSmallTail": [
+      "QRH.NumericFacts",
+      "QRH.PrimeRows.OptimizedTailScales",
+      "QRH.Geometry"
+    ],
+    "QRH.PrimeRows.OptimizedTailScales": [
+      "QRH.NumericFacts",
+      "QRH.Geometry"
+    ],
+    "QRH.Reflection.LowBranchSum": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowExponent"
+    ],
+    "QRH.Reflection.LowCaps": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Reflection.LowChoiceEnergy": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowDyads"
+    ],
+    "QRH.Reflection.LowCompletedFiber": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowFrozenEnergy"
+    ],
+    "QRH.Reflection.LowCompletedRows": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowCompletedFiber"
+    ],
+    "QRH.Reflection.LowDyads": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowFixedMember"
+    ],
+    "QRH.Reflection.LowExponent": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength"
+    ],
+    "QRH.Reflection.LowFixedMember": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowCaps",
+      "QRH.Reflection.LowMemberGeometry"
+    ],
+    "QRH.Reflection.LowFrozenEnergy": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowInactiveEnergy"
+    ],
+    "QRH.Reflection.LowFull": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowRetainedBudget"
+    ],
+    "QRH.Reflection.LowFullBudget": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowFull"
+    ],
+    "QRH.Reflection.LowGlobalBudget": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowFullBudget"
+    ],
+    "QRH.Reflection.LowInactiveEnergy": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowChoiceEnergy"
+    ],
+    "QRH.Reflection.LowMemberBudget": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowGlobalBudget"
+    ],
+    "QRH.Reflection.LowMemberGeometry": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowMemberBudget"
+    ],
+    "QRH.Reflection.LowOriginalEnergy": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowCompletedRows"
+    ],
+    "QRH.Reflection.LowRetained": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowSector"
+    ],
+    "QRH.Reflection.LowRetainedBudget": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowRetained"
+    ],
+    "QRH.Reflection.LowSector": [
+      "QRH.NumericFacts",
+      "QRH.Detector.LowReflectedLength",
+      "QRH.Reflection.LowBranchSum"
+    ],
+    "QRH.RobustReflectionGeometry": [
+      "QRH.PlainReflectionGeometry"
+    ],
+    "QRH.SlackRefinedNonvanishing": [
+      "QRH.TighterNonvanishing"
+    ],
+    "QRH.StatementParity": [
+      "QRH.DirichletTargets",
+      "QRH.HeckeTargets",
+      "QRH.IndependentTargets"
+    ],
+    "QRH.TighterNonvanishing": [
+      "QRH.Nonvanishing"
+    ],
+    "QRH.ZeroBounds": [
+      "QRH.Nonvanishing"
+    ],
+    "QRH.ZetaTransfer": [
+      "QRH.DirichletTargets"
+    ]
+  },
+  "note": "Unchanged source bytes can change meaning through QRH.Geometry.tightTheta; original compiled APIs must not be reused as proofs for this cohort.",
+  "status": "STATIC_DEPENDENCY_INVENTORY_NOT_COMPILED"
+}

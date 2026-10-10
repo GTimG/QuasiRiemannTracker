@@ -156,14 +156,14 @@
     "zeta": "1/100000000000000000000000000000"
   },
   "input_sha256": {
-    "PROOF_NOTE.md": "69f03819ea0e5a8d13261f6e84173e8c410cfdf57d5cb48084beed470291daa6"
+    "PROOF_NOTE.md": "971964ced8ed8671450c872848975419626a92693eabc3d86912cc13f235a27c"
   },
   "new_arithmetic_gain_proved": false,
   "reference_theta": "874957019420098946128604623/1000000000000000000000000000",
   "runs_Lean": false,
   "runs_kernel_replay": false,
-  "scope": "Continuous endpoint and finite recovery-budget arithmetic only. New numerical wrappers and the complete analytic argument are proved separately relative to pinned inputs.",
-  "script_sha256": "4ed23140b042453959f439fc4884fee35cd0b00d400102464430d48f34eb5532",
+  "scope": "Continuous endpoint and finite recovery-budget arithmetic only. Analytic source re-instantiation and the complete nonvanishing proof remain unverified.",
+  "script_sha256": "53835f59326d59e9a17339b62acd4772f5f6c3705859fab0a815129b54c57760",
   "status": "PASS_EXACT_TRACKER_SLACK_CONTROLS",
   "strict_difference": "385833/500000000000000000000000000000",
   "theta": "437478509710049473064301925667/500000000000000000000000000000",

@@ -1,7 +1,7 @@
 {
   "author": "Zhongpai Gao",
   "date": "2026-10-09",
-  "status": "Numerical and manual mathematical proposal; not a verified tracker result.",
+  "status": "Endpoint/recovery arithmetic checked; complete source re-instantiation and validation pending. Not an established stronger strip.",
   "tracker_input_commit": "40844a7614b67840801e65b836b3da2e1f7ff029",
   "current_tracker_theta": "874957019420098946128604623/1000000000000000000000000000",
   "proposed_theta": "437478509710049473064301925667/500000000000000000000000000000",
@@ -9,10 +9,26 @@
   "license": "MIT for the new author text and certificate code; cited OpenAI/ProofCouncil/Nielstron sources retain their upstream terms.",
   "author_repository": "https://github.com/Gaozhongpai/seven-eighths-refinement-certificates",
   "source_note_sha256": "b72b2a2c241ab87e93ce618d065f553ffb51e56abf52a08d7ff605b829f982d9",
-  "source_certificate_sha256": "9bcca02ad85f70aabdd6d8b42365a03e9ac4750a97f83a34c02f0b14bdf2e55f",
+  "source_certificate_sha256": "03bb018818d9fd75ce8f48cf027df4f05f73a6ccec8ee0c0a407755bc1847411",
   "adaptation": "Relative references made local; polynomial helpers inlined for a standalone standard-library certificate. Mathematical identities unchanged.",
   "new_kernel_or_Lean_run": false,
   "verified_badge_requested": false,
   "catalogue_record_requested": false,
-  "manual_proof_review": "Internal model-assisted retuning/assembly review only; not independent validation of every upstream analytic proof."
+  "manual_proof_review": "Internal model-assisted retuning/assembly review only; not independent validation of every upstream analytic proof.",
+  "source_reproof_gap": "Frozen QRH low/count/cube/principal/transport/continuation declarations use the old geometry; they cannot be applied directly in the threshold sliver.",
+  "source_patch": "source_retuning.patch",
+  "source_patch_compiled": false,
+  "source_reinstantiation": {
+    "input_source_files": 209,
+    "output_source_files": 210,
+    "local_modules_requiring_validation": 207,
+    "changed_or_added_files": 13,
+    "status": "UNCOMPILED_SOURCE_RETUNING_ONLY",
+    "source_preparer": "prepare_sources.py",
+    "source_patch": "source_retuning.patch",
+    "working_geometry_intentionally_changes": true,
+    "old_alias_semantics_preserved": false,
+    "original_L_function_and_pole_definitions_preserved": true,
+    "new_exact_targets_checked": false
+  }
 }
