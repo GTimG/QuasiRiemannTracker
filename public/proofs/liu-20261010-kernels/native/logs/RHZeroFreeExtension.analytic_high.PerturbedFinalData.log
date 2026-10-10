@@ -1,0 +1,3 @@
+'RHZeroFreeExtension.AnalyticHigh.exists_source_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.source_count_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.SourceData.probe_low' depends on axioms: [propext, Classical.choice, Quot.sound]

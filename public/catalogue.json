@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "records": [
     {
       "submitted_at": "",
@@ -104,11 +104,11 @@
       "merged_at": "",
       "pr": null,
       "repository": "liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
-      "source_commit": "",
-      "first_verified_at": "",
+      "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+      "first_verified_at": "2026-10-10T02:04:44.198552+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "RHZeroFreeExtension.CombinedPaperVerification",
+        "declaration": "CombinedPaper.algebraic_dirichlet_nonzero"
       },
       "license": "See source and notices",
       "builds_on": [
@@ -139,6 +139,26 @@
       "method": "Optimizes b and ℓ in the OpenAI argument. The exact boundary is algebraic. The plotted rational is a certified upper endpoint less than 10⁻³⁰ above it, used only for rendering.",
       "references": [
         {
+          "label": "Independent Comparator and three-kernel report",
+          "url": "proofs/liu-20261010-kernels/result.json"
+        },
+        {
+          "label": "Independent kernel acceptance log",
+          "url": "proofs/liu-20261010-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/liu-20261010-kernels/src/PalomarCanonical0656db06d575050c3973f7da/Challenge.lean"
+        },
+        {
+          "label": "Proof reconstruction and checking instructions",
+          "url": "proofs/liu-20261010-kernels/README.txt"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/liu-20261010-kernels/control-results.json"
+        },
+        {
           "label": "Paper · arXiv:2610.12234",
           "url": "https://arxiv.org/abs/2610.12234"
         },
@@ -147,10 +167,10 @@
           "url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T16:18:53Z",
       "date_label": "arXiv submission",
-      "verification_note": "The author reports a Lean formalization. We have not independently reproduced it. No Liu proof code is redistributed in this repository."
+      "verification_note": "Liu's pinned original proof passed local Comparator comparison of all three exact statements and their definitions, followed by Lean's fresh kernel, NanoDa and con-ron. The checked boundary is (1507 − 2√921) / 1653; the rational enclosure is only a plotting coordinate. All-Dirichlet, zeta and finite-order Eisenstein Hecke targets were checked with only propext, Classical.choice and Quot.sound allowed. The package restores missing dependencies and import paths without editing proof text. Reproduction tools fetch Liu's sources; no Liu proof code or exports are redistributed. This local mechanical check is proposed for maintainer review and creates no signed receipt or Palomar registration."
     },
     {
       "submitted_at": "",

@@ -1,0 +1,5 @@
+'RHV2.physical_probe_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.beta_star_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.hecke_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.dirichlet_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.zeta_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]

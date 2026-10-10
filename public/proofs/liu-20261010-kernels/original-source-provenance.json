@@ -1,0 +1,35 @@
+{
+  "approach": "Baiying Liu: slightly improved zero-free half-planes",
+  "source_url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
+  "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+  "foundation_url": "https://github.com/openai/math",
+  "foundation_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "license_status": "No LICENSE file or license grant found in the pinned Liu repository; README contains only the mathematical summary. Reproduction scripts fetch source; no Liu source redistribution is authorized by this audit.",
+  "theta_exact": "(1507 − 2√921) / 1653",
+  "theta_decimal": "0.8749570697991687400183400069588792241518",
+  "source_inputs": "source-manifest.json",
+  "source_manifest_sha256": "df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de",
+  "reproduction_scripts": {
+    "prepare.py": "804f720959dc6dd47c7fbb7e23eb04e4b7e65d41b3dcc6d037f79efb81a8f02a",
+    "reproduce.py": "76e66f93dcda902d1b035744370f625a2858ab1c4c3422c3d6217d3775cf499b",
+    "build_native.py": "a3158fe8d3d2816ea2024995792bb563d674e54a9815263a1059f4e51f29b5ae"
+  },
+  "native_package": "package",
+  "native_entry_module": "RHZeroFreeExtension.CombinedPaperVerification",
+  "native_entry_source": "package/RHZeroFreeExtension/CombinedPaperVerification.lean",
+  "canonical_targets": [
+    "CombinedPaper.algebraic_hecke_nonzero",
+    "CombinedPaper.algebraic_dirichlet_nonzero",
+    "CombinedPaper.algebraic_zeta_nonzero"
+  ],
+  "proof_source_changes": false,
+  "packaging_repairs": [
+    "Fetch and verify all 2925 vendor modules by SHA256 and git blob ID at the exact declared OpenAI revision.",
+    "Restore root theorem modules to RHZeroFreeExtension/, retaining RHZeroFreeExtension.lean at root.",
+    "Merge analytic_high_v2/ into RHZeroFreeExtension/analytic_high/, preserving every file byte.",
+    "Restore moment_adapters/ under RHZeroFreeExtension/.",
+    "Restore vendor/LICENSE from the pinned OpenAI repository."
+  ],
+  "native_build_scope": "Compile selected closure, then replay all 22 published axiom targets; imported cached boundary hashes are recorded and independent kernel/comparator replay is separate.",
+  "foundation_compatibility": "All 2925 declared vendor source SHA256 values also match accepted OpenAI fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb files exactly."
+}

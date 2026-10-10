@@ -1,0 +1,51 @@
+WORKSPACE/approaches/liu/package/upstream/PrimeNumberTheoremAnd-lean4341.patch:748: trailing whitespace.
+                                          
+WORKSPACE/approaches/liu/package/upstream/PrimeNumberTheoremAnd-lean4341.patch:752: trailing whitespace.
+                                             
+WORKSPACE/approaches/liu/package/upstream/PrimeNumberTheoremAnd-lean4341.patch:759: trailing whitespace.
+                                                          
+WORKSPACE/approaches/liu/package/upstream/PrimeNumberTheoremAnd-lean4341.patch:770: trailing whitespace.
+                                          
+WORKSPACE/approaches/liu/package/upstream/PrimeNumberTheoremAnd-lean4341.patch:787: trailing whitespace.
+                                          
+warning: squelched 221 whitespace errors
+warning: 226 lines add whitespace errors.
+{
+  "status": "PASS",
+  "scope": "All selected sources in the two compatibility-patched packages equal exact pinned git source plus the author-supplied patch. Unselected dirty working-tree files are not proof inputs.",
+  "packages": [
+    {
+      "package": "PrimeNumberTheoremAnd",
+      "revision": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "patch_sha256": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+      "selected_files": {
+        "PrimeNumberTheoremAnd/Wiener.lean": "20c2be97a648f6f6d190db5cb862efaf4b58de8dba66188b801e2bf625686902",
+        "PrimeNumberTheoremAnd/Fourier.lean": "4d32bf7900ceb3268a44857603eec12333ef605d0d3c966ee6b6261590e9134b",
+        "PrimeNumberTheoremAnd/Sobolev.lean": "a635e667b7a0228f8eb923f210c08598f61d91880855762540431abe3003f95e",
+        "PrimeNumberTheoremAnd/SmoothExistence.lean": "8f36ada60efb4e835f8f2eb92993b899311dd21607459497d58824d9bc034555"
+      }
+    },
+    {
+      "package": "rellich-kondrachov",
+      "revision": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "patch_sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+      "selected_files": {
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Rellich.lean": "82e17a8ce458d7f2df61fb5d4f545a0c2257b11dfa5254c72ba3c9caff51da4b",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateH1.lean": "1a525d749b4616a4ce6043587ad004603c4d799cfb5e989f1b0795bf76640165",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateL2.lean": "1701e17610f9d77f999c88e6d846c646b264ff5478556f6014d3b656b8ea9399",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Translation.lean": "ffc94cb6b55811801735847c6678e83c19aee5f59bcf522cd113d1dadd9702e5",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean": "58ebcc368094602f29b9ff956930bf37f38f9299fc8acec204cfa9c1b4ff94fc",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimate.lean": "1a53acd973c16616f86d5a8eadbae7132831b09d39ff0876d6635c5914208480",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/FrechetKolmogorov.lean": "5ef1afc6a6142cd33e4d8f261ceda91df81ef08ba4b409b33daaf3fd5a3d9d07",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Approximation.lean": "ab8bdb450d98348b0296453ba5d75b8208f6c5ac37702a3c1255c6d67d9457dd",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Smoothing.lean": "7a4539df7c96315d597940be033af0823c62be1f5c28cbff3d5ded047f1106e7",
+        "RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean": "481877b5f297a98b1c8e3d7b8efc1864d0c92f3b9f8ec43faf90f44112330f87",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Transfer.lean": "9e302cfdae869cb4ce5d8516749a4765c4e005a83572c210de64182632aacff2",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/ArzelaAscoli.lean": "bef72fc1a747e7cef82ed3d662176887dd133bca3489e71cf395a665ad5da492",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Compactness.lean": "2404e4a331186212aa7ce2f069a56c621cee6514c9e711ed5f3e61b52300341b",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean": "ae7d26c575370d8414f8a873f45adbe21d123a2ef33da4b7c2dae3ddab272a79",
+        "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/TranslationIntegral.lean": "4238889df823be7edadedb5943769077937bf390d2bfa614741de49d97bf8097"
+      }
+    }
+  ]
+}
