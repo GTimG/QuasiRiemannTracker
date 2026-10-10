@@ -3,8 +3,10 @@ import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { get } from "node:http";
+import { readFileSync } from "node:fs";
 
 const base = process.env.QRH_BASE_PATH || "/qrh-bounds/";
+const resultCount = JSON.parse(readFileSync("dist/catalogue.json", "utf8")).records.length;
 const origin = "http://127.0.0.1:4184";
 const server = spawn(
   process.execPath,
@@ -67,9 +69,10 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 5,
+    (expected) => document.querySelectorAll("[data-dot]").length === expected,
+    resultCount,
   );
-  assert.equal(await page.locator("tbody tr").count(), 5);
+  assert.equal(await page.locator("tbody tr").count(), resultCount);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -124,7 +127,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, ${resultCount} dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();
