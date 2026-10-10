@@ -1,0 +1,24 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "QRHBoundsPR4.allDirichlet",
+    "QRHBoundsPR4.zeta",
+    "QRHBoundsPR4.allHecke"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "external_kernels": {
+    "nanoda": [
+      "CHECKERS/tools/lean-4.35.0-rc2-linux/bin/nanoda_bin"
+    ],
+    "con-ron": [
+      "CHECKERS/tools/lean-4.35.0-rc2-linux/bin/con-ron",
+      "--jobs=2"
+    ]
+  }
+}

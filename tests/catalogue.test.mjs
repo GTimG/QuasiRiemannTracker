@@ -7,19 +7,41 @@ import {
   timelineRecords,
 } from "../core/catalogue.mjs";
 import { frontierHistory, cmp } from "../core/rational.mjs";
+import {
+  EXTERNAL_PINS,
+  validateExternalKernelEvidence,
+} from "../core/external-kernel-evidence.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
-test("all six results advance the plotted frontier while verification stays separate", () => {
+test("the existing contribution selects one current proof revision and preserves its earlier metadata", () => {
+  const d = validateCatalogue(data());
+  const current = d.records.filter((r) => r.id.startsWith("nielstron-"));
+  assert.equal(current.length, 1);
+  assert.equal(current[0].id, "nielstron-20261009-tightening");
+  assert.equal(current[0].proof_revision, "nielstron-algebraic-20261009");
+  assert.equal(d.historical_records.length, 1);
+  assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
+  assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+});
+test("all six current results advance the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
   assert.equal(d.records.length, 6);
   const verified = d.records.filter(verifiedHere);
+  validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
     verified.map((r) => r.id),
-    [
-      "openai-baseline",
-      "proofcouncil-20261009",
-      "nielstron-20261009-tightening",
-      "akashlevy-20261009-weighted-numerator",
-    ],
+    d.records
+      .filter(
+        (r) =>
+          [
+            "openai-baseline",
+            "proofcouncil-20261009",
+            "nielstron-20261009-tightening",
+            "akashlevy-20261009-weighted-numerator",
+          ].includes(r.id) ||
+          (EXTERNAL_PINS.entries[r.id] !== undefined &&
+            EXTERNAL_PINS.entries[r.id] !== null),
+      )
+      .map((r) => r.id),
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
   assert.equal(frontier.length, 6);
@@ -46,6 +68,7 @@ test("catalogue cannot fabricate signed admission or local verification dates fo
   d.records[1].status = "verified";
   assert.throws(() => validateCatalogue(d), /cannot mint/);
   const e = data();
+  e.records[1].status = "verification-pending";
   e.records[1].first_verified_at = "2026-10-09T00:00:00Z";
   assert.throws(() => validateCatalogue(e), /Pending result/);
 });

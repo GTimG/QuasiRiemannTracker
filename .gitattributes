@@ -2,5 +2,20 @@
 proofs/nielstron-20261009-tightening/** -text
 public/proofs/nielstron-20261009-tightening/** -text
 public/proofs/nielstron-20261009-kernels/** -text
+
+# Preserve the original Liu dossier, replay pins and authenticated transcripts.
+public/proofs/liu-20261010-kernels/** -text
+public/proofs/liu-20261010-safe-replay/** -text
+verifier/liu/** -text
+# Whitespace inside compiler output is evidence, not source formatting.
+public/proofs/liu-20261010-safe-replay/**/*.log -whitespace
+
+# Preserve the original Argonaut dossier and independently collected replay.
+public/proofs/argonaut-20261010-kernels/** -text
+public/proofs/argonaut-20261010-safe-replay/** -text
+verifier/argonaut/** -text
+public/proofs/argonaut-20261010-safe-replay/**/*.log -whitespace
+
+# Akash Levy weighted-numerator package: hashed bytes.
 proofs/akashlevy-20261009-weighted-numerator/** -text
 public/proofs/akashlevy-20261009-weighted-numerator/** -text

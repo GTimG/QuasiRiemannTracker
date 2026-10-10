@@ -1,0 +1,6 @@
+'RHZeroFreeExtension.ActualSourceAnalytic.source_analytic_at_new_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.ActualSourceAnalytic.source_contraction_at_new_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

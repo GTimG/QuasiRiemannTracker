@@ -1,0 +1,20 @@
+{
+  "repository": "liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
+  "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+  "source_manifest_sha256": "01bc3b27897887f3ac1603076558328ed9e94e3ea523de0fd05b9e94b316c47c",
+  "theta_exact": "(1507 − 2√921) / 1653",
+  "input_inventory": "WORKSPACE/approaches/liu/judge-input-inventory.json",
+  "source_root": "WORKSPACE",
+  "source_checkout": "WORKSPACE/approaches/liu/upstream",
+  "native_build_report": "WORKSPACE/approaches/liu/native-verification.json",
+  "canonical_root": "WORKSPACE/compressed",
+  "canonical_audit_root": "WORKSPACE/approaches/tracker-liu/proofs/nielstron-20261009-tightening/compressed/audit",
+  "canonical_lean_path": "WORKSPACE/compressed/audit/local-lean-path.txt",
+  "candidate_lean_path": "WORKSPACE/approaches/liu/native/lean-path.txt",
+  "source_toolchain": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux",
+  "wrapper_sources": "WORKSPACE/approaches/liu/wrappers",
+  "challenge_sha256": "c2887494b3cca9c52231f5ca5b5326bf2e5992fd16f9ee4b0dd9e8663ad37aed",
+  "source_provenance": "WORKSPACE/approaches/liu/source-provenance.json",
+  "reproduction_script": "reproduce.py",
+  "workspace": "WORKSPACE"
+}

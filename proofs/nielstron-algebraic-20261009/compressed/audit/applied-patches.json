@@ -1,0 +1,16 @@
+[
+  {
+    "package": "rellich-kondrachov",
+    "patch": "upstream/openai-math/lean/patches/rellich-kondrachov-lean4341.patch",
+    "sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+    "status": " M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Approximation.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/ArzelaAscoli.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Compactness.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/FrechetKolmogorov.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Smoothing.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Transfer.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/TranslationIntegral.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Rellich.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Translation.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimate.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateH1.lean\n M RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateL2.lean\n M RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean\n"
+  },
+  {
+    "package": "PrimeNumberTheoremAnd",
+    "patch": "upstream/openai-math/lean/patches/PrimeNumberTheoremAnd-lean4341.patch",
+    "sha256": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+    "status": " M PrimeNumberTheoremAnd/Fourier.lean\n M PrimeNumberTheoremAnd/IEANTN/Mertens.lean\n M PrimeNumberTheoremAnd/PerronFormula.lean\n M PrimeNumberTheoremAnd/SmoothExistence.lean\n M PrimeNumberTheoremAnd/Sobolev.lean\n M PrimeNumberTheoremAnd/Wiener.lean\n M lakefile.toml\n M lean-toolchain\n?? PrimeNumberTheoremAnd/Catalan.lean\n?? PrimeNumberTheoremAnd/Catalan/\n?? PrimeNumberTheoremAnd/Erdos970.lean\n?? PrimeNumberTheoremAnd/Erdos970/\n?? PrimeNumberTheoremAnd/SiegelZeros/\n?? PrimeNumberTheoremAnd/ZetaFive.lean\n?? PrimeNumberTheoremAnd/ZetaFive/\n"
+  }
+]

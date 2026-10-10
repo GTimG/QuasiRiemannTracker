@@ -1,0 +1,4 @@
+'RHZeroFreeExtension.Arithmetic.universal_new_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.Arithmetic.arbitrarily_small_distinct_perturbed_slots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

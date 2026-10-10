@@ -1,0 +1,4 @@
+WORKSPACE/approaches/argonaut/independent-run-1/src/PalomarCanonical192cb494181515652d3e9fcd/Challenge.lean:7:8: warning: declaration uses `sorry`
+WORKSPACE/approaches/argonaut/independent-run-1/src/PalomarCanonical192cb494181515652d3e9fcd/Challenge.lean:12:8: warning: declaration uses `sorry`
+WORKSPACE/approaches/argonaut/independent-run-1/src/PalomarCanonical192cb494181515652d3e9fcd/Challenge.lean:15:8: warning: declaration uses `sorry`
+

@@ -1,0 +1,3 @@
+'RHZeroFreeExtension.AnalyticHigh.v2_remainder_source_remainders_strict_saving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

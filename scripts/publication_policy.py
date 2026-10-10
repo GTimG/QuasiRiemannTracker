@@ -122,7 +122,12 @@ def check_native_tightening(root):
     digest, archive_name = (public / 'SHA256SUMS.txt').read_text().strip().split('  ')
     if archive_name != archive.name or hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
         raise ValueError('Native archive checksum mismatch')
-    record = next(r for r in json.loads((root / 'catalogue/results.json').read_text())['records'] if r['id'] == name)
+    catalogue = json.loads((root / 'catalogue/results.json').read_text())
+    revisions = catalogue['records'] + catalogue.get('historical_records', [])
+    matches = [r for r in revisions if r.get('proof_revision', r['id']) == name]
+    if len(matches) != 1:
+        raise ValueError('Missing or duplicate native proof revision')
+    record = matches[0]
     report = json.loads((proof / 'compressed/audit/tightening-verification.json').read_text())
     # The native collection remains an immutable historical pending report.
     # A current catalogue upgrade requires a separate authenticated kernel dossier.
@@ -173,6 +178,9 @@ def check_publication(root):
     if name != archive.name or hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
         raise ValueError('Archive checksum mismatch')
     native_count = check_native_tightening(root)
+    subprocess.run(['node', str(root / 'scripts/check-external-kernels.mjs')], cwd=root, check=True)
+    subprocess.run(['python3', str(root / 'scripts/check-algebraic-publication.py')], check=True)
+    subprocess.run(['node', str(root / 'scripts/check-algebraic-kernels.mjs')], check=True)
     subprocess.run(['python3', str(root / 'scripts/check-akashlevy-publication.py')], check=True)
     for directory in [root / 'public/proofs', root / 'evidence']:
         for path in directory.rglob('*'):

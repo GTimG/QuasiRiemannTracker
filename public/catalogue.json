@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "records": [
     {
       "submitted_at": "",
@@ -66,10 +66,10 @@
       "pr": null,
       "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
       "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
-      "first_verified_at": "",
+      "first_verified_at": "2026-10-10T10:09:10.743884+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "PerturbedBoundaryMain",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re"
       },
       "license": "Apache-2.0",
       "builds_on": [
@@ -86,17 +86,49 @@
           "name": "Argonaut Math"
         }
       ],
-      "method": "Refinement of the OpenAI framework to 3499999/4000000. Authors report Lean and native Comparator verification; our independent verification is pending.",
+      "method": "Refinement of the OpenAI framework to 3499999/4000000. The pinned original proof has been independently reproduced and checked with Comparator and three kernels.",
       "references": [
+        {
+          "label": "Independent maintainer replay receipt",
+          "url": "proofs/argonaut-20261010-safe-replay/result.json"
+        },
+        {
+          "label": "Maintainer replay: all three kernel acceptances",
+          "url": "proofs/argonaut-20261010-safe-replay/logs/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/argonaut-20261010-safe-replay/challenge-src/Challenge.lean"
+        },
+        {
+          "label": "Sandboxed reproduction instructions",
+          "url": "proofs/argonaut-20261010-safe-replay/README.txt"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/argonaut-20261010-safe-replay/controls/control-results.json"
+        },
+        {
+          "label": "Reviewed original source package",
+          "url": "proofs/argonaut-20261010-kernels/source-public.tar.gz"
+        },
+        {
+          "label": "Earlier submitted checker report (historical)",
+          "url": "proofs/argonaut-20261010-kernels/result.json"
+        },
+        {
+          "label": "Historical native instructions (unsafe for untrusted submissions)",
+          "url": "proofs/argonaut-20261010-kernels/README.txt"
+        },
         {
           "label": "Argonaut source and release",
           "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T00:00:00Z",
       "date_label": "Public announcement",
-      "verification_note": "Authors report Lean and native Comparator verification. We have inspected sources but have not independently reproduced the complete proof check. This is a verification status, not a claim that the proof is defective."
+      "verification_note": "Argonaut Math's unchanged pinned v0.1.8 proof was independently rebuilt by the maintainer in a genuine offline Linux sandbox. The canonical challenge was exported before candidate execution; Comparator checked the exact all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and definitions, and Lean, NanoDa and con-ron accepted all three targets at exactly 3499999/4000000 with only propext, Classical.choice and Quot.sound. The receipt was written outside candidate-writable paths. Original proof sources, authorship and license notices remain in the historical package. The first verified time records this confined maintainer run; the earlier submitted report remains historical evidence. This is local mechanical verification, not signed registry admission or Palomar registration."
     },
     {
       "submitted_at": "",
@@ -104,11 +136,11 @@
       "merged_at": "",
       "pr": null,
       "repository": "liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
-      "source_commit": "",
-      "first_verified_at": "",
+      "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+      "first_verified_at": "2026-10-10T09:10:59.898288+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "RHZeroFreeExtension.CombinedPaperVerification",
+        "declaration": "CombinedPaper.algebraic_dirichlet_nonzero"
       },
       "license": "See source and notices",
       "builds_on": [
@@ -139,6 +171,38 @@
       "method": "Optimizes b and ℓ in the OpenAI argument. The exact boundary is algebraic. The plotted rational is a certified upper endpoint less than 10⁻³⁰ above it, used only for rendering.",
       "references": [
         {
+          "label": "Independent maintainer replay receipt",
+          "url": "proofs/liu-20261010-safe-replay/result.json"
+        },
+        {
+          "label": "Maintainer replay: all three kernel acceptances",
+          "url": "proofs/liu-20261010-safe-replay/logs/judge.log"
+        },
+        {
+          "label": "Earlier submitted checker report (historical)",
+          "url": "proofs/liu-20261010-kernels/result.json"
+        },
+        {
+          "label": "Earlier submitted checker log (historical)",
+          "url": "proofs/liu-20261010-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/liu-20261010-safe-replay/challenge-src/Challenge.lean"
+        },
+        {
+          "label": "Sandboxed reproduction instructions",
+          "url": "proofs/liu-20261010-safe-replay/README.txt"
+        },
+        {
+          "label": "Historical reconstruction notes (old native scripts are unsafe)",
+          "url": "proofs/liu-20261010-kernels/README.txt"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/liu-20261010-safe-replay/controls/control-results.json"
+        },
+        {
           "label": "Paper · arXiv:2610.12234",
           "url": "https://arxiv.org/abs/2610.12234"
         },
@@ -147,10 +211,10 @@
           "url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T16:18:53Z",
       "date_label": "arXiv submission",
-      "verification_note": "The author reports a Lean formalization. We have not independently reproduced it. No Liu proof code is redistributed in this repository."
+      "verification_note": "Liu's pinned original proof was independently rebuilt by the maintainer in a genuine offline Linux sandbox. The canonical challenge was exported before candidate execution; Comparator checked the exact statements and definitions, and Lean, NanoDa and con-ron accepted all three targets with only propext, Classical.choice and Quot.sound. The checked boundary is (1507 − 2√921) / 1653; its rational enclosure is only a plotting coordinate. The receipt was written outside candidate-writable paths. No Liu proof source or proof exports are redistributed. The first verified time records this confined maintainer run; the earlier submitted report is retained as historical evidence. This is local mechanical verification, not signed registry admission or Palomar registration."
     },
     {
       "submitted_at": "",
@@ -229,13 +293,13 @@
       "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field."
     },
     {
-      "submitted_at": "2026-10-09T17:29:56Z",
+      "submitted_at": "",
       "published_at": "",
       "merged_at": "",
-      "pr": 1,
+      "pr": null,
       "repository": "Nielstron/QuasiRiemannTracker",
-      "source_commit": "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6",
-      "first_verified_at": "2026-10-09T18:25:39.673785+00:00",
+      "source_commit": "2fc2b0b7f2b9510df4618936e1b2ccd58f7d9171",
+      "first_verified_at": "2026-10-09T19:51:12.662856+00:00",
       "entrypoint": {
         "module": "QRH.TighterNonvanishing",
         "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
@@ -246,10 +310,10 @@
         "openai-baseline"
       ],
       "id": "nielstron-20261009-tightening",
-      "title": "Nielstron · compressed rational refinement",
+      "title": "Nielstron · exact algebraic endpoint",
       "theta": {
-        "numerator": "874957019420098946128604623",
-        "denominator": "1000000000000000000000000000"
+        "numerator": "874957019420098946128603850561452983",
+        "denominator": "1000000000000000000000000000000000000"
       },
       "authors": [
         {
@@ -257,66 +321,55 @@
           "url": "https://github.com/Nielstron"
         }
       ],
-      "method": "Compresses the ProofCouncil Lean development, then tightens its exact rational certificate and slack budgets. The all-Dirichlet, zeta and finite-order Eisenstein Hecke targets compile at the smaller rational boundary. Final QRH source tokens decrease from 294,019 to 251,464 under the pinned LeanLeanBench metric.",
+      "method": "Revision of the same compressed Lean contribution to the exact cubic endpoint: 11/12-e/4, where e is the unique real root in [1/6,1/5] of 657e³−954e²+21e+20=0. The plotted rational is a rigorously proved upper bound. The final QRH package uses 259,073 source tokens under the pinned LeanLeanBench metric. The earlier N24 proof and its evidence remain available as historical snapshots.",
       "references": [
         {
-          "label": "Independent Comparator and three-kernel report",
-          "url": "proofs/nielstron-20261009-kernels/result.json"
+          "label": "Seven-target Comparator and three-kernel report",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/result.json"
         },
         {
-          "label": "Independent checker method and reproduction",
-          "url": "proofs/nielstron-20261009-kernels/README.txt"
+          "label": "Independent checking method and reproduction",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/README.txt"
         },
         {
-          "label": "Independent three-kernel acceptance log",
-          "url": "proofs/nielstron-20261009-kernels/judge.log"
+          "label": "All-kernel acceptance log",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/judge.log"
         },
         {
-          "label": "Exact independent checker statements",
-          "url": "proofs/nielstron-20261009-kernels/src/PalomarCanonical852af299eac8f1607f3d35b3/Challenge.lean"
+          "label": "Exact independent statements and root nonvacuity",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/src/PalomarCanonical3d11d053040a6a513a35e5ef/Challenge.lean"
         },
         {
-          "label": "Positive and negative checker controls",
-          "url": "proofs/nielstron-20261009-kernels/control-results.json"
+          "label": "Positive and negative controls",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/control-results.json"
         },
         {
-          "label": "Scope, attribution and reproduction",
+          "label": "Frozen source and native evidence",
+          "url": "proofs/nielstron-algebraic-20261009/source-public.tar.gz"
+        },
+        {
+          "label": "Source and algebraic endpoint explanation",
+          "url": "proofs/nielstron-algebraic-20261009-README.md"
+        },
+        {
+          "label": "Exact LeanLeanBench token counts",
+          "url": "proofs/nielstron-algebraic-20261009/token-counts.json"
+        },
+        {
+          "label": "Previous N24 source and evidence (historical revision)",
           "url": "proofs/nielstron-20261009-tightening/README.txt"
         },
         {
-          "label": "Native Lean result and exact improvement",
-          "url": "proofs/nielstron-20261009-tightening/result.json"
-        },
-        {
-          "label": "Native Lean target and axiom checks",
-          "url": "proofs/nielstron-20261009-tightening/native-lean-verification.json"
-        },
-        {
-          "label": "Exact independent target statements",
-          "url": "proofs/nielstron-20261009-tightening/TightIndependentTargets.lean"
-        },
-        {
-          "label": "Tighter Lean proof source",
-          "url": "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean"
-        },
-        {
-          "label": "Per-file source token counts",
-          "url": "proofs/nielstron-20261009-tightening/token-counts.json"
-        },
-        {
-          "label": "Historical checker setup report",
-          "url": "proofs/nielstron-20261009-tightening/external-checker-status.json"
-        },
-        {
-          "label": "Complete reproducible source and evidence",
-          "url": "proofs/nielstron-20261009-tightening/source-public.tar.gz"
+          "label": "Previous N24 independent kernel report (historical revision)",
+          "url": "proofs/nielstron-20261009-kernels/result.json"
         }
       ],
       "status": "framework-verified",
-      "timeline_at": "2026-10-09T17:21:30.103097+00:00",
-      "date_label": "Author-side Lean check",
-      "verification_note": "The exact submitted proof passed the pinned local Palomar mechanical suite: Comparator compared all three statements and their definitions, then Lean's fresh kernel, NanoDa and con-ron accepted the exports. Matching, mismatched-statement and ill-typed-proof preflight controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical result, proposed for maintainer review; it is not Palomar registration, editorial acceptance or a signed tracker receipt. Earlier native reports and their pending status remain immutable historical evidence.",
-      "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
+      "timeline_at": "2026-10-09T19:51:12.662856+00:00",
+      "date_label": "Independent kernel verification",
+      "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
+      "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
+      "proof_revision": "nielstron-algebraic-20261009"
     },
     {
       "submitted_at": "2026-10-10T03:22:55Z",
@@ -406,6 +459,98 @@
       "date_label": "Author-side three-kernel check",
       "verification_note": "Author-side local run, proposed for maintainer review. Comparator compared the three exact template statements (all-Dirichlet, zeta and finite-order Eisenstein Hecke) at 10499/12000 and their definitions, with the challenge compiled against pristine openai/math fd4aeeb2e and Mathlib d13f23b7; then con-ron, NanoDa and Lean's kernel accepted the exports. Only propext, Classical.choice and Quot.sound were permitted. Matching, mismatched-statement and ill-typed-proof controls behaved as expected. The run used macOS arm64 with the official Lean v4.35.0-rc2 darwin_aarch64 binaries and ran without a sandbox (lake comparator --inadvisably-no-sandbox), unlike the earlier sandboxed Linux Palomar runs. This is not Palomar registration, editorial review or a signed tracker receipt; maintainers may list it as verification pending until an independent sandboxed run.",
       "attribution_note": "Akash Levy (akashlevy) is the human contributor. GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the formalization and submit the result. Builds on the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
+    }
+  ],
+  "historical_records": [
+    {
+      "submitted_at": "2026-10-09T17:29:56Z",
+      "published_at": "",
+      "merged_at": "",
+      "pr": 1,
+      "repository": "Nielstron/QuasiRiemannTracker",
+      "source_commit": "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6",
+      "first_verified_at": "2026-10-09T18:25:39.673785+00:00",
+      "entrypoint": {
+        "module": "QRH.TighterNonvanishing",
+        "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "proofcouncil-20261009",
+        "openai-baseline"
+      ],
+      "id": "nielstron-20261009-tightening",
+      "title": "Nielstron · compressed rational refinement",
+      "theta": {
+        "numerator": "874957019420098946128604623",
+        "denominator": "1000000000000000000000000000"
+      },
+      "authors": [
+        {
+          "name": "Nielstron",
+          "url": "https://github.com/Nielstron"
+        }
+      ],
+      "method": "Compresses the ProofCouncil Lean development, then tightens its exact rational certificate and slack budgets. The all-Dirichlet, zeta and finite-order Eisenstein Hecke targets compile at the smaller rational boundary. Final QRH source tokens decrease from 294,019 to 251,464 under the pinned LeanLeanBench metric.",
+      "references": [
+        {
+          "label": "Independent Comparator and three-kernel report",
+          "url": "proofs/nielstron-20261009-kernels/result.json"
+        },
+        {
+          "label": "Independent checker method and reproduction",
+          "url": "proofs/nielstron-20261009-kernels/README.txt"
+        },
+        {
+          "label": "Independent three-kernel acceptance log",
+          "url": "proofs/nielstron-20261009-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent checker statements",
+          "url": "proofs/nielstron-20261009-kernels/src/PalomarCanonical852af299eac8f1607f3d35b3/Challenge.lean"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/nielstron-20261009-kernels/control-results.json"
+        },
+        {
+          "label": "Scope, attribution and reproduction",
+          "url": "proofs/nielstron-20261009-tightening/README.txt"
+        },
+        {
+          "label": "Native Lean result and exact improvement",
+          "url": "proofs/nielstron-20261009-tightening/result.json"
+        },
+        {
+          "label": "Native Lean target and axiom checks",
+          "url": "proofs/nielstron-20261009-tightening/native-lean-verification.json"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/nielstron-20261009-tightening/TightIndependentTargets.lean"
+        },
+        {
+          "label": "Tighter Lean proof source",
+          "url": "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean"
+        },
+        {
+          "label": "Per-file source token counts",
+          "url": "proofs/nielstron-20261009-tightening/token-counts.json"
+        },
+        {
+          "label": "Historical checker setup report",
+          "url": "proofs/nielstron-20261009-tightening/external-checker-status.json"
+        },
+        {
+          "label": "Complete reproducible source and evidence",
+          "url": "proofs/nielstron-20261009-tightening/source-public.tar.gz"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-09T17:21:30.103097+00:00",
+      "date_label": "Author-side Lean check",
+      "verification_note": "The exact submitted proof passed the pinned local Palomar mechanical suite: Comparator compared all three statements and their definitions, then Lean's fresh kernel, NanoDa and con-ron accepted the exports. Matching, mismatched-statement and ill-typed-proof preflight controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical result, proposed for maintainer review; it is not Palomar registration, editorial acceptance or a signed tracker receipt. Earlier native reports and their pending status remain immutable historical evidence.",
+      "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
     }
   ]
 }

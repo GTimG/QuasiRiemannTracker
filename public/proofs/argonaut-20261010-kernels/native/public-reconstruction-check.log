@@ -1,0 +1,34 @@
+Exact release restored; follow its BUILD.md. No compiler or script was run.
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/PrimeNumberTheoremAnd-lean4341.patch:748: trailing whitespace.
+                                          
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/PrimeNumberTheoremAnd-lean4341.patch:752: trailing whitespace.
+                                             
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/PrimeNumberTheoremAnd-lean4341.patch:759: trailing whitespace.
+                                                          
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/PrimeNumberTheoremAnd-lean4341.patch:770: trailing whitespace.
+                                          
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/PrimeNumberTheoremAnd-lean4341.patch:787: trailing whitespace.
+                                          
+warning: squelched 221 whitespace errors
+warning: 226 lines add whitespace errors.
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/StrongPNT-lean4341.patch:26: trailing whitespace.
+  ·                  
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/StrongPNT-lean4341.patch:28: trailing whitespace.
+  ·                      
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/StrongPNT-lean4341.patch:29: trailing whitespace.
+                                 
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/StrongPNT-lean4341.patch:34: trailing whitespace.
+                                    
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/StrongPNT-lean4341.patch:43: trailing whitespace.
+                              
+warning: squelched 2470 whitespace errors
+warning: 2475 lines add whitespace errors.
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/Zeta3Irrational-lean4341.patch:1094: trailing whitespace.
+  apply Summable.tsum_lt_tsum_of_nonneg (f := fun n => 1 / ((n : ℝ) + 1) ^ 3) 
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/Zeta3Irrational-lean4341.patch:1147: trailing whitespace.
+        exact pow_lt_pow_left₀ Real.exp_one_lt_d9 (n := 3) 
+WORKSPACE/approaches/argonaut/reproduction-check/project/patches/Zeta3Irrational-lean4341.patch:1166: trailing whitespace.
+      have h2 : Real.log ↑n * (↑3 * (1 / 3 * Real.log 21 * ↑n / Real.log ↑n)) = 
+warning: 3 lines add whitespace errors.
+{"source_archive_verification": "PASS", "files": 12055, "written_files": 12055, "compiler_started": false, "recipient_kernel_replay": "NOT_RUN"}
+{"status": "PASS", "dependencies": 42, "reconstructed_files": 12055, "fresh_source_audits": 2}

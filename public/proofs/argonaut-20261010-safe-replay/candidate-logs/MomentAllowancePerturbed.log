@@ -1,0 +1,15 @@
+'OAI.SevenEighths.PerturbedMomentAllowance.gamma_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.gamma_le_eighth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.kappaPlain_ge_three_quarters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.kappaPlain_ge_zero_capacity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.kappaPlain_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.relative_allowance_cost' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.PerturbedMomentAllowance.concrete_boundary_allowance_cost' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

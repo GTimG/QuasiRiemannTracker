@@ -1,6 +1,6 @@
 # Existing formalized claims — selection review
 
-Inspected 9 October 2026. These entries are candidates for the user to select; this document does not admit them to the verified registry. Source declarations, authors' verification reports and QRH Bounds verification are distinct. No external repository code was executed. The inspection hashes are in `evidence/existing-work-inspection.json`.
+This document records the initial source inspection on 9 October 2026. The source observations below describe that inspection; current verification statuses and subsequent checking evidence are in the [reviewed catalogue](../catalogue/results.json). This document does not admit entries to the signed verified registry. Source declarations, authors' verification reports and QRH Bounds verification are distinct. No external repository code was executed during that inspection. The inspection hashes are in `evidence/existing-work-inspection.json`.
 
 | Candidate              | Exact boundary                       | All-Dirichlet public entry                                             | Source revision                            |
 | ---------------------- | ------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------ |
@@ -27,7 +27,7 @@ The repository reports Lean 4.34.1 and native Comparator success. Its checked-in
 
 The repository supplies Lean 4.34.1 declarations for both bounds. Its script attempts a Lean `--trust=0` replay and an axiom audit; it does not invoke Comparator or NanoDa. The pinned tree places `CombinedPaperVerification.lean` at its root, whereas the script expects `RHZeroFreeExtension/CombinedPaperVerification.lean`. The script also expects `vendor/LICENSE`, absent from that tree. These are concrete source-layout prerequisites to resolve before a reproducible build, not a mathematical rejection. No standalone contribution license was found in the complete pinned repository tree; link and attribute the work without vendoring its proof until licensing is clarified.
 
-The algebraic constant is displayed in the catalogue with its exact expression and a certified rational enclosure used only for rendering; independent verification is pending. The separate signed admission contract remains rational-only. A separately proved rational corollary above the algebraic number could be submitted to that pipeline; no rounded decimal is silently substituted as its theorem constant.
+The algebraic constant is displayed in the catalogue with its exact expression and a certified rational enclosure used only for rendering; independent verification was pending at the initial inspection. The separate signed admission contract remains rational-only. A separately proved rational corollary above the algebraic number could be submitted to that pipeline; no rounded decimal is silently substituted as its theorem constant.
 
 ## Other references
 

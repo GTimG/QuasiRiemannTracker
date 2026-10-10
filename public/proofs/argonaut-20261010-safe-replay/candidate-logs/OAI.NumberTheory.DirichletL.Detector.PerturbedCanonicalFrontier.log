@@ -1,0 +1,9 @@
+OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean:355:5: warning: Variable name `hdelta` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdelta
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean:384:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
