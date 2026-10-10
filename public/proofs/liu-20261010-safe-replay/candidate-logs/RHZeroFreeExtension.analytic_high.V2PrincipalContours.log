@@ -1,0 +1,7 @@
+'RHZeroFreeExtension.AnalyticHigh.v2_source_uniform_joint_tails' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_residue_uniform_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_raw_source_uniform_high_slices' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

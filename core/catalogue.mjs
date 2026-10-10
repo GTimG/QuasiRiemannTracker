@@ -1,4 +1,5 @@
 import { cmp, fraction, rational, sub } from "./rational.mjs";
+import { catalogueProofRecords, proofRevision } from "./catalogue-revisions.mjs";
 
 // Catalogue evidence is separate from the signed Comparator/NanoDa registry.
 export const contributionDate = (r) => r.timeline_at || r.first_verified_at;
@@ -19,10 +20,13 @@ export function validateCatalogue(data) {
   if (data.schema_version !== 1 || !Array.isArray(data.records))
     throw Error("Invalid catalogue");
   const ids = new Set();
-  for (const r of data.records) {
-    if (!/^[a-z0-9][a-z0-9-]+$/.test(r.id) || ids.has(r.id))
+  const proofRecords = catalogueProofRecords(data);
+  if (new Set(data.records.map((record) => record.id)).size !== data.records.length)
+    throw Error("Invalid or duplicate catalogue ID");
+  for (const r of proofRecords) {
+    if (!/^[a-z0-9][a-z0-9-]+$/.test(r.id) || ids.has(proofRevision(r)))
       throw Error("Invalid or duplicate catalogue ID");
-    ids.add(r.id);
+    ids.add(proofRevision(r));
     rational(r.theta.numerator, r.theta.denominator);
     if (!["framework-verified", "verification-pending"].includes(r.status))
       throw Error("Catalogue cannot mint signed verification status");
@@ -76,7 +80,7 @@ export function validateCatalogue(data) {
         throw Error("Invalid certified enclosure for Liu's bound");
     }
   }
-  for (const r of data.records)
+  for (const r of proofRecords)
     for (const p of r.builds_on) {
       const parent = data.records.find((x) => x.id === p);
       if (!parent || parent.timeline_at >= r.timeline_at)

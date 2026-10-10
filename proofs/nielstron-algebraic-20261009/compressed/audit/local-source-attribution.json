@@ -1,0 +1,1809 @@
+{
+  "upstream_pin": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "notice": "Local extensions adapt the OpenAI DirichletL source modules named in imports and file headers; originals remain unchanged. Exact modified/new files are listed below. Pure numerical geometry formalizes the accepted manuscript. Dependency licenses and notices remain in their pinned repositories.",
+  "modules": [
+    {
+      "module": "QRH",
+      "source": "formalization/QRH.lean",
+      "sha256": "770f22177b8be20b0d22698500161b7f242ca7715659a23c5dc82df77d9664a9",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Adaptive",
+      "source": "formalization/QRH/Adaptive.lean",
+      "sha256": "8d4ed5b061de2e7d69b3562215f36e54f171ba1b53d2d7cd0e5cd3d1fc299407",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Analytic",
+      "source": "formalization/QRH/Analytic.lean",
+      "sha256": "0c7aca75632d5db811b136202cc9285a0e3e8646768f898679560aa6a8c8590f",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Certificate",
+      "source": "formalization/QRH/Certificate.lean",
+      "sha256": "81593ad51d079c6f14e20f093a49f777aed578884fe4ba3ee08e2e229b76d290",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Continuation",
+      "source": "formalization/QRH/Continuation.lean",
+      "sha256": "ad97047979a5db6195969d348003357b03baa30df4293498cf9856d8bf65b6d5",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Supremum"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualAdaptiveBatchCount",
+      "source": "formalization/QRH/Detector/ActualAdaptiveBatchCount.lean",
+      "sha256": "b605f9643e60b9f83aabb73c922855e52435e829e22c05516fb9814007728491",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualAmplitudeClassCount",
+      "source": "formalization/QRH/Detector/ActualAmplitudeClassCount.lean",
+      "sha256": "f2d3d32f2852af28e51b46f06faa3d332656784059a83a92a1382bb617548f80",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualCubeArithmeticSaving",
+      "source": "formalization/QRH/Detector/ActualCubeArithmeticSaving.lean",
+      "sha256": "8b74eb2cb73abd5ea6379d3f726daf0bd145b3a9ee76a9c76152ec02568e126a",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualCubeClassBound",
+      "source": "formalization/QRH/Detector/ActualCubeClassBound.lean",
+      "sha256": "d86e3dd62977de5a2e3f8f9371f0f3898a7e3f7180c3b9585e628cc77a87d446",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualDetectorFiberCount",
+      "source": "formalization/QRH/Detector/ActualDetectorFiberCount.lean",
+      "sha256": "985af76ec39975ba8b4bff6f47cb845c14faedae87275ab5b37f4c64694877c7",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualFixedNonfloorData",
+      "source": "formalization/QRH/Detector/ActualFixedNonfloorData.lean",
+      "sha256": "752d4b467ee3d4921973f8f1cb6366b1f0804222ca8c727a17f7f1765ccac0a7",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualNonfloorCubeNorm",
+      "source": "formalization/QRH/Detector/ActualNonfloorCubeNorm.lean",
+      "sha256": "95f0ad476f5a8c168bd9c086a4e7c363794132afc1b3679ff199a89a380eda31",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualNonfloorRows",
+      "source": "formalization/QRH/Detector/ActualNonfloorRows.lean",
+      "sha256": "5a14ef8890ded0931439151460389841dbd97b16f6270c811049102063d7c663",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualNormalizedNonfloorCube",
+      "source": "formalization/QRH/Detector/ActualNormalizedNonfloorCube.lean",
+      "sha256": "769d229ce0ff3df6939e2af75cef5db55227da9ab982bca3f9f2ed1c0766c3ba",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualOptimizedHigh",
+      "source": "formalization/QRH/Detector/ActualOptimizedHigh.lean",
+      "sha256": "25c7e3b42a45d7348f3478a7da4a002ff06e535bc3b4b6e0d7d48f0c489fa2cc",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualOptimizedLow",
+      "source": "formalization/QRH/Detector/ActualOptimizedLow.lean",
+      "sha256": "c58a525ca78bc34c5fe485b32098cc3a5a6057a1ba5bc73bcc6dcd959f200136",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualPlainUnmarkedInput",
+      "source": "formalization/QRH/Detector/ActualPlainUnmarkedInput.lean",
+      "sha256": "28910962032ada4c3f9709a6b9df25910c6eb3b8b1da733823e09b65c37ad2d6",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ActualSourceCount",
+      "source": "formalization/QRH/Detector/ActualSourceCount.lean",
+      "sha256": "d2d259b8f1c5c53d18ec8ac0629fa5adaee113be14b29bf032d7d07d6ed87d51",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.CompleteNonfloorCubeData",
+      "source": "formalization/QRH/Detector/CompleteNonfloorCubeData.lean",
+      "sha256": "f11285e4d39a1e4591312bc0dbcc1b3dc846818346f2d827ce10037e5961c63c",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.CompleteNonfloorRowsData",
+      "source": "formalization/QRH/Detector/CompleteNonfloorRowsData.lean",
+      "sha256": "192e9fa93ba7d6a04c7582009142dcff6fd4327a92803ff83740ebe9b3670e0e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DetectorInverseFields",
+      "source": "formalization/QRH/Detector/DetectorInverseFields.lean",
+      "sha256": "0803a862851db943e9955522b48b699f0e4fd6b01837426cbdec0fd049ac9f60",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DetectorInverseMarkedField",
+      "source": "formalization/QRH/Detector/DetectorInverseMarkedField.lean",
+      "sha256": "954e3a7f905dcac1ad9ff874003f019324980df80096c3e602acd64184312fa4",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DetectorMomentPrimeGeometry",
+      "source": "formalization/QRH/Detector/DetectorMomentPrimeGeometry.lean",
+      "sha256": "d5c6b2ace42e7c9fec00d2b0747b3e01325076af0fea61788cade8da56e685c7",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DetectorPlainMarkedFineField",
+      "source": "formalization/QRH/Detector/DetectorPlainMarkedFineField.lean",
+      "sha256": "84b56bc93ae22f0ba15310092f02e9ba3698c55aaedb39b860889a785bd187fe",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DetectorPlainMarkedSlots",
+      "source": "formalization/QRH/Detector/DetectorPlainMarkedSlots.lean",
+      "sha256": "1d7531cf8b5468bb0493cc3a433886404286abadc67b3879f30022ca9ee0149e",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DynamicMomentInput",
+      "source": "formalization/QRH/Detector/DynamicMomentInput.lean",
+      "sha256": "c667abf0d306914fcbd0ef09e2129282fa71e4aaed901dbbfcb51e3b469d4312",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.DynamicSlotMomentInput",
+      "source": "formalization/QRH/Detector/DynamicSlotMomentInput.lean",
+      "sha256": "703d3ef9f790d8c451181b48e35843530d9b5bd0561ed6ea6e551ac156fa09c5",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedEulerRegion",
+      "source": "formalization/QRH/Detector/ExtendedEulerRegion.lean",
+      "sha256": "f0ca427a3007029a95012492abcf6fa2898e29bc5395734b45ff053f8b8fdcf5",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.EulerRegion",
+        "OAI.NumberTheory.DirichletL.Detector.EulerCoordinates"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedFiniteProduct",
+      "source": "formalization/QRH/Detector/ExtendedFiniteProduct.lean",
+      "sha256": "24a29c91541efd38abfb57898b802f51d6905780189d50174b86bd0c135a9b0c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds",
+        "OAI.NumberTheory.DirichletL.Detector.CompensationActual",
+        "OAI.NumberTheory.DirichletL.PrincipalMellinGrowth",
+        "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedFiniteProductX",
+      "source": "formalization/QRH/Detector/ExtendedFiniteProductX.lean",
+      "sha256": "fc64601aae5090982c34a72910bbac6fe6e545d746a7b558b76e491c2e96a582",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.FiniteProductX",
+        "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds",
+        "OAI.NumberTheory.DirichletL.Hecke.Reciprocal"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedGlobalCorrection",
+      "source": "formalization/QRH/Detector/ExtendedGlobalCorrection.lean",
+      "sha256": "6b6dcedc3652504e1574def2fcc417545d6f2981e20a4510eb6b255974d54f70",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.GlobalCorrection",
+        "OAI.NumberTheory.DirichletL.Detector.GlobalHolomorphic",
+        "OAI.NumberTheory.DirichletL.Detector.HighEulerRational",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalProduct",
+        "OAI.NumberTheory.DirichletL.Hecke.Euler"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedGlobalHolomorphic",
+      "source": "formalization/QRH/Detector/ExtendedGlobalHolomorphic.lean",
+      "sha256": "c2bf8072bb03c7a62b9949427898f79f3e57053eb79b413493858a614ffdf74a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.GlobalHolomorphic",
+        "OAI.NumberTheory.DirichletL.Detector.GlobalRegion",
+        "OAI.NumberTheory.DirichletL.Detector.EulerHolomorphic"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedGlobalRegion",
+      "source": "formalization/QRH/Detector/ExtendedGlobalRegion.lean",
+      "sha256": "d07b37fa4392349c2b41ab439041aa12b1f6b11d354650cbb6c8bc7ec3c88921",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.GlobalRegion",
+        "OAI.NumberTheory.DirichletL.Detector.EulerRegion"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedHeckeSignalBounds",
+      "source": "formalization/QRH/Detector/ExtendedHeckeSignalBounds.lean",
+      "sha256": "6be72bfd6184d45213d645a00bc7a9310fe24a2b868cc5ae5b28a3fa1af331b9",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.SignalBounds",
+        "OAI.NumberTheory.DirichletL.Hecke.SignalShift",
+        "OAI.NumberTheory.DirichletL.Hecke.ReciprocalGrowth"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedHeckeSignalShift",
+      "source": "formalization/QRH/Detector/ExtendedHeckeSignalShift.lean",
+      "sha256": "2ab450d7c3409fd5b1bcc74ed5358242c214adff3ba1608173ddac3cfcef63c2",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.SignalShift",
+        "OAI.NumberTheory.DirichletL.Hecke.Signal",
+        "OAI.NumberTheory.DirichletL.ContinuationPolynomialContour"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedPrincipalContours",
+      "source": "formalization/QRH/Detector/ExtendedPrincipalContours.lean",
+      "sha256": "46ef3d7a396e7eb267ce43eb5212335baa025b26a486aa9494ab3113ed0f7ed4",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalContours",
+        "OAI.NumberTheory.DirichletL.Detector.FiniteProductX",
+        "OAI.NumberTheory.DirichletL.Hecke.ReciprocalGrowth"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedPrincipalPhysical",
+      "source": "formalization/QRH/Detector/ExtendedPrincipalPhysical.lean",
+      "sha256": "e8dedd6dd8dc67195a9f145cef467e008a4ae18b06698cc5fbe66b699c781f2c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalInput",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+        "OAI.NumberTheory.DirichletL.Detector.CanonicalPhysicalRows"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedPrincipalSlots",
+      "source": "formalization/QRH/Detector/ExtendedPrincipalSlots.lean",
+      "sha256": "533c1d375ba7fdbdfbca8d0d566490530e93738b9858fa3ef7d3bc89dfa4e6ed",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+        "OAI.NumberTheory.DirichletL.Detector.EulerRegion"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedPrincipalTransport",
+      "source": "formalization/QRH/Detector/ExtendedPrincipalTransport.lean",
+      "sha256": "8f7b49aee9d60f150dac1118361fb4c15daf8af399eca6c9f8e9f258d7ccc2a2",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalContours",
+        "OAI.NumberTheory.DirichletL.ContinuationPolynomialContour"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.ExtendedRayPoolThresholds",
+      "source": "formalization/QRH/Detector/ExtendedRayPoolThresholds.lean",
+      "sha256": "8fa9f73d6720b1aba90d029569ca28f0688d74a2c8d7f8c54f6b5054d0471b2f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds",
+        "OAI.NumberTheory.DirichletL.Detector.RayPoolGood",
+        "OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.FineSmallData",
+      "source": "formalization/QRH/Detector/FineSmallData.lean",
+      "sha256": "3261e5adb1f79f908d2bf45950a6633a67a859f26d214b308e64179e568da4e1",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.ParametersHighData"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.InverseRawParameters",
+      "source": "formalization/QRH/Detector/InverseRawParameters.lean",
+      "sha256": "8991581592bb6bb3f5e914c061e555240c66954dfa606e2a0d3730cf4fc289bd",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowCentralTuple",
+      "source": "formalization/QRH/Detector/LowCentralTuple.lean",
+      "sha256": "bd4832e91dc18b0e0c9abe91204abda132e06d04129926e0563cb0af805f5874",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowCommonBound",
+      "source": "formalization/QRH/Detector/LowCommonBound.lean",
+      "sha256": "0b1d6866cda9a909c96605bd0d356326e1588175043bc83842b9f53e05dfbeae",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowCommonBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowGaussianCentral",
+      "source": "formalization/QRH/Detector/LowGaussianCentral.lean",
+      "sha256": "112a71d2f064e06571fdc45af0912ce54884dbf5551866aac220fa84e6ee93a1",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowGaussianDyad",
+      "source": "formalization/QRH/Detector/LowGaussianDyad.lean",
+      "sha256": "f3594a556d8a24965c7db5b9ca0ed4449176dc967ab20c05facb7a8cfa1e465a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowGaussianRemote",
+      "source": "formalization/QRH/Detector/LowGaussianRemote.lean",
+      "sha256": "3fd2054255a1c93a87a1b1a77095c2cc3dc51704db9d03282d053abc7bc41a2a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowGaussianSum",
+      "source": "formalization/QRH/Detector/LowGaussianSum.lean",
+      "sha256": "fe170106ac1838678b72f6050a43457c7a6df0c2cf4f65ccb1ddd4980795bfa3",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowGaussianSum"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowGramScale",
+      "source": "formalization/QRH/Detector/LowGramScale.lean",
+      "sha256": "8484d1524eda180d356beb93dbf70c91a6c5a30ef4617530a406bcc7f0e5e686",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowGramScale"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowInverseNormalize",
+      "source": "formalization/QRH/Detector/LowInverseNormalize.lean",
+      "sha256": "a37c514cef67ad842cc3c0e7c25466e510684a66699b7ad25e3d3b7b4e003b26",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowNominalEnergy",
+      "source": "formalization/QRH/Detector/LowNominalEnergy.lean",
+      "sha256": "165fe3bcff38b0ab59c13e92c9e76e20971a2d709612c3d76fb7993c79edda3b",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowNominalGeometry",
+      "source": "formalization/QRH/Detector/LowNominalGeometry.lean",
+      "sha256": "001cc132bd20820b669bd3ed335a1e8e75aede0aa10766f41da5d737caa2f26e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowNormalized",
+      "source": "formalization/QRH/Detector/LowNormalized.lean",
+      "sha256": "e9d9f38768ca7089ed8f7ef59133834f8390422f17940b498fd0cfcb2a315afe",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowNormalized"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowPenaltyAbsorption",
+      "source": "formalization/QRH/Detector/LowPenaltyAbsorption.lean",
+      "sha256": "6f5f023d3421225b09a08a272a95b0925e039708c265ffd74bba29580ee11415",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowCentralTuple"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowPhysicalInverseBound",
+      "source": "formalization/QRH/Detector/LowPhysicalInverseBound.lean",
+      "sha256": "542a5a3b466a9ed1bde01d5644a609a7e8445bb2ec5168c1630c82d440147e18",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowReflectedLength",
+      "source": "formalization/QRH/Detector/LowReflectedLength.lean",
+      "sha256": "3c2cd7fa1d9ea46885c9252ba688ce096d2ea68b6412afc18c4e4336d36d029f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowReflectedLength"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowRemoteMass",
+      "source": "formalization/QRH/Detector/LowRemoteMass.lean",
+      "sha256": "048b0ffcbdc58c252fc7fd3d999dcf1e16e3feb4b1550c4e4fae06028c68eb06",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowRemoteMass"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowSelectedBound",
+      "source": "formalization/QRH/Detector/LowSelectedBound.lean",
+      "sha256": "f086bb217e06cb1c0536b95ac5493fa5466b2672ebb73fe3ac80b5b3e6484706",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowSelectedBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowSlotScales",
+      "source": "formalization/QRH/Detector/LowSlotScales.lean",
+      "sha256": "b4bce1ad0ce4e962db9ee278438a60bfedb76a310dc6e56c9daa2def75415c9f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowSlotScales"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowSourceScales",
+      "source": "formalization/QRH/Detector/LowSourceScales.lean",
+      "sha256": "7424791972a58fa420c98c32e267e2ca1e08c14c7d7af6628eace23162b891f4",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowSourceScales"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowUnselectedMass",
+      "source": "formalization/QRH/Detector/LowUnselectedMass.lean",
+      "sha256": "0004e89b7a8295e40fa806e8bc0574987affed7414c0998cb540db0a892c040f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass",
+        "OAI.NumberTheory.DirichletL.Detector.GramIdealSummation"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.LowWindowBound",
+      "source": "formalization/QRH/Detector/LowWindowBound.lean",
+      "sha256": "649280d35a41fefc9d7b2d11891f30eeb06b355e83cfa73c6d149189c474066f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.LowWindowBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedAdaptiveSaving",
+      "source": "formalization/QRH/Detector/OptimizedAdaptiveSaving.lean",
+      "sha256": "9739dcb633a5f6125f61be3b9e02e6bd066fe47da5a1df666205eb2a73645061",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedBatchWidths",
+      "source": "formalization/QRH/Detector/OptimizedBatchWidths.lean",
+      "sha256": "75922d6e9c6003e78efcac813767aa1878e71016b33e94ca5b67cc46cb663e77",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorBatch"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedCentralExponent",
+      "source": "formalization/QRH/Detector/OptimizedCentralExponent.lean",
+      "sha256": "2de66f57333b8aaa3ea1b0b79a9cca98db43e465d2c8d54e090eb9588324296a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.CentralExponent"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedClassArithmetic",
+      "source": "formalization/QRH/Detector/OptimizedClassArithmetic.lean",
+      "sha256": "55696cc93a3232133f74a33bd2432cc0e268150cb378c9e946df9e8c951a2c7c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.CentralDyadicWeight"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedContinuation",
+      "source": "formalization/QRH/Detector/OptimizedContinuation.lean",
+      "sha256": "da5877000cc84ada2367891849989ff525958d33b5038a5dc1452020b9022797",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.SignalIdentity"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedData",
+      "source": "formalization/QRH/Detector/OptimizedData.lean",
+      "sha256": "89b7c6455da3ce6bdc494403c2981c2c37c3cf60a2b7ec9901cbdcccab3ae322",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedFloorMargin",
+      "source": "formalization/QRH/Detector/OptimizedFloorMargin.lean",
+      "sha256": "30a63c34dea0461360d51b1f864c4f1c8df6d6aac2458b6f0023e60ab5f3442e",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedMixedSaving",
+      "source": "formalization/QRH/Detector/OptimizedMixedSaving.lean",
+      "sha256": "c22f726c6044c9d87621ffa93a8c3bfbfd1b3a91ee5be6178bc5ec01ea5b8548",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedPrincipalNormalized",
+      "source": "formalization/QRH/Detector/OptimizedPrincipalNormalized.lean",
+      "sha256": "748f44c88e1db7320754c1db3e02cfb66ceb7fabb1e1847688166500cac6852a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual",
+        "OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedPrincipalPhysicalRemainder",
+      "source": "formalization/QRH/Detector/OptimizedPrincipalPhysicalRemainder.lean",
+      "sha256": "bb30a5ee4d2bc861e7069a2cc43a143f1114e31c929f5842f7cadc0c8bebbda6",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedPrincipalRemainders",
+      "source": "formalization/QRH/Detector/OptimizedPrincipalRemainders.lean",
+      "sha256": "33107f84e2916eda705bc686f67cf8da63fa0f81c77dc0edcb8ec239c5985f72",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+        "OAI.NumberTheory.DirichletL.PrincipalSignalComparison"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedPrincipalResidueActual",
+      "source": "formalization/QRH/Detector/OptimizedPrincipalResidueActual.lean",
+      "sha256": "cd094f7f347fb4c814b5d06b58615030bd56d22089cf63cf6c4597b5c2bc21f4",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual",
+        "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalizer",
+        "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedPrincipalSignal",
+      "source": "formalization/QRH/Detector/OptimizedPrincipalSignal.lean",
+      "sha256": "58299b7ac130ea12c808a2a90f478b20824284eed13369a34a983f096d7b6f9f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrincipalSignalComparison",
+        "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+        "OAI.NumberTheory.DirichletL.PrincipalMellinResidues",
+        "OAI.NumberTheory.DirichletL.Hecke.SignalBounds",
+        "OAI.NumberTheory.DirichletL.Detector.SourceExclusions",
+        "OAI.NumberTheory.DirichletL.Detector.CompensationActual",
+        "OAI.NumberTheory.DirichletL.Detector.Basic"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedProbe",
+      "source": "formalization/QRH/Detector/OptimizedProbe.lean",
+      "sha256": "e81da1f55724e1948e4c7deb94bc751802600ad3c0fb2a32914907b5831651ef",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.CanonicalPhysicalRows",
+        "OAI.NumberTheory.DirichletL.Detector.GaussianCommon"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedSlots",
+      "source": "formalization/QRH/Detector/OptimizedSlots.lean",
+      "sha256": "1f09ea5010b91761e7a526f6936e9bb3ba11267bfce6462008efd6517a55c281",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.ParametersSlotLengths"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedSourceAmplitudeClasses",
+      "source": "formalization/QRH/Detector/OptimizedSourceAmplitudeClasses.lean",
+      "sha256": "773f8382329b66aec0fe76dca0ae63b4189582ad8efc20c52135452850b46fce",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.SourceBatch",
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedSourceBatch",
+      "source": "formalization/QRH/Detector/OptimizedSourceBatch.lean",
+      "sha256": "84ddd2897c789b8291a520ba72d4396286fa6b75d5a45d8a7f9c2d7715d1e6cd",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorBatch",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedSupremum",
+      "source": "formalization/QRH/Detector/OptimizedSupremum.lean",
+      "sha256": "1224d7f8163b52dc4472fbebcc82359d22ea5a8dc48fcb975d621f8d18b9931f",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.OptimizedTransportBudget",
+      "source": "formalization/QRH/Detector/OptimizedTransportBudget.lean",
+      "sha256": "5d0db609cafc1581bb4b8361151dff4312186e56350e4a77d9a07bd437147cc8",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.PlainUnmarkedRetainedSlots",
+      "source": "formalization/QRH/Detector/PlainUnmarkedRetainedSlots.lean",
+      "sha256": "95ce687a25b0d9da1448acf21928f1aca82faab30c6b9b39c4a042196942221d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.PlainUnmarkedSlots",
+      "source": "formalization/QRH/Detector/PlainUnmarkedSlots.lean",
+      "sha256": "abb7693fd074df983206ba8b97783039b5b342f26e7015b01e064057fc29ac6c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.UniformAllMoments",
+      "source": "formalization/QRH/Detector/UniformAllMoments.lean",
+      "sha256": "2d6edb00a50ff974856074c9e51cb71ba07da13fded1a53b44b6354e5e762239",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Detector.UniformDetectorMoment",
+      "source": "formalization/QRH/Detector/UniformDetectorMoment.lean",
+      "sha256": "edd65b3c3c91bffef08bd27933b13f24a5b7a3f4f1e29dc77921ac8489a33b52",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.DirichletTargets",
+      "source": "formalization/QRH/DirichletTargets.lean",
+      "sha256": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.DynamicLoss",
+      "source": "formalization/QRH/DynamicLoss.lean",
+      "sha256": "3d11ee6388bfdc21abaffc16ee3dd402cef1a23d9a22780e99675db57842e573",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.CappedAnalyticSuccessor",
+      "source": "formalization/QRH/Energy/CappedAnalyticSuccessor.lean",
+      "sha256": "4b8750d2bcda92df77ae96a6001d19bc43f7edeab269f1a54360ccfdc19bdf13",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.CappedLowStage",
+      "source": "formalization/QRH/Energy/CappedLowStage.lean",
+      "sha256": "b303090cdb264c6b75a8e0f271c1465b57b2c51aab02ed588409acc92346766d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.CappedLowStage"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.CertifiedExistence",
+      "source": "formalization/QRH/Energy/CertifiedExistence.lean",
+      "sha256": "805e1d3522727388404b1a1dacf9954be0526bd71a142b96b22334f8b87d06c7",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.DeletedRobustGeometry",
+      "source": "formalization/QRH/Energy/DeletedRobustGeometry.lean",
+      "sha256": "aab03fedaf80a15375dacda9e89d6ef56b6cae2c51ee6aa62d4109ebe0534170",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.DeletedRobustGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.FirstSourceParameters",
+      "source": "formalization/QRH/Energy/FirstSourceParameters.lean",
+      "sha256": "ecba8f5aa07adb32f8546c7a1b68b8bbfb676e83a34c07d9473745e776ab769f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.LiveClippingDefect",
+      "source": "formalization/QRH/Energy/LiveClippingDefect.lean",
+      "sha256": "91b025b460534c533328bb4480c39d172db66401035d790ca983081cf3de83d8",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.NaturalHighStage",
+      "source": "formalization/QRH/Energy/NaturalHighStage.lean",
+      "sha256": "ebd5788aa4edf11c58b758a0da7581e26c71f48ec94a5e6f22df3e1ed6aeb317",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.NaturalHighStage"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.NaturalLowPhysical",
+      "source": "formalization/QRH/Energy/NaturalLowPhysical.lean",
+      "sha256": "9e4d013f8784fd5af1f56a07a35c4f0b080bc237dd125d7945fc341eb75fb86e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.NaturalLowPhysical"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.NaturalLowStage",
+      "source": "formalization/QRH/Energy/NaturalLowStage.lean",
+      "sha256": "1c2aa3b751a3a7aaa08a63d10f31f96d403639ebb6c25ba996efecf88f59b1ea",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.NaturalLowStage"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.NaturalZeroStage",
+      "source": "formalization/QRH/Energy/NaturalZeroStage.lean",
+      "sha256": "273fde25a185bf426faa19dada926b3c9c9e914deea6b44e6d7fe4a1f5ec4261",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.NaturalZeroStage"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionBounded",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionBounded.lean",
+      "sha256": "c586ca8b211f896891f8e8915e73c0cb9a0073624fb0162989532c2f6746f878",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionDeleted",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionDeleted.lean",
+      "sha256": "7817d5d23bd62ab5965c6ea2152d815ecfc52b241e74f71ab0c70ac022b2b16f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionDeleted"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionGeometry",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionGeometry.lean",
+      "sha256": "1fdd0f9918289d617a5bd666c85123734d4ff1840cc28be177d32aa8e9b241ea",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionOriginal",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionOriginal.lean",
+      "sha256": "d3dcc1e8715ef9e950a624fe9d93a5c437e9967e8d27b7e7bf52bdd72a067016",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionOriginal"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionPower",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionPower.lean",
+      "sha256": "59e4dc5ba13c5d7554a040579dd084721066b0096a5653dc4feac788d64050b6",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionPower"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionSymmetric",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionSymmetric.lean",
+      "sha256": "17ee862f17219c32c1a8ab814fa9631af4294caa7b5c1ce39b76fca971ea620c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetric"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.OriginalHighReflectionSymmetricBounded",
+      "source": "formalization/QRH/Energy/OriginalHighReflectionSymmetricBounded.lean",
+      "sha256": "28681e692abd27a483466ba5136eff059d6068eaf58d56e82adf1ed5d1f6e854",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetricBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveBalancedAdmission",
+      "source": "formalization/QRH/Energy/PositiveBalancedAdmission.lean",
+      "sha256": "48bc94067056bab673843883d26f670e775d98fb9a8b825ca3579ba43b950549",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveBalancedAdmission"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighAssembly",
+      "source": "formalization/QRH/Energy/PositiveHighAssembly.lean",
+      "sha256": "d1196870d66f6b458295cdc1cb58fafcc7b1ddb4f31d1e2ddb59ca06b6c014d6",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssembly"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighAssemblyBounded",
+      "source": "formalization/QRH/Energy/PositiveHighAssemblyBounded.lean",
+      "sha256": "eb9e754e79fac1bb8ea7e9b682334ce2babf27dc00933e2e1fa1acf62c24f37c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssemblyBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighBound",
+      "source": "formalization/QRH/Energy/PositiveHighBound.lean",
+      "sha256": "2fb8668ffb5d04f5d526206ccbb8660b734fba3194fa732500d51bbba53ed27e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighParameters",
+      "source": "formalization/QRH/Energy/PositiveHighParameters.lean",
+      "sha256": "132936a489a1e78c393d992ad365a598d7050777f4fcabd9de01630f6f925ad5",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighParameters"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighPhysical",
+      "source": "formalization/QRH/Energy/PositiveHighPhysical.lean",
+      "sha256": "35850fb1877a759afbb7800cf030c9fe15f74d22a7a85fb2dfa1a9d93b4c581a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighPhysical"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighSource",
+      "source": "formalization/QRH/Energy/PositiveHighSource.lean",
+      "sha256": "d5d07e3eeda721d0bde5159d4c3c686f88a18624b44b6349a75b35369ceea242",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighSource"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighSourceBound",
+      "source": "formalization/QRH/Energy/PositiveHighSourceBound.lean",
+      "sha256": "38f4dffd07ea29d1bd805d931e612a4a4254fd5c8ae5dfe87ca3cb0430d7da4e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBound"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.PositiveHighSourceBounded",
+      "source": "formalization/QRH/Energy/PositiveHighSourceBounded.lean",
+      "sha256": "424a0db2e0bc218c1d2ba1d9b87997817d4c0dfcb61352c2a0faaaef94c3e359",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceDeletionCapacity",
+      "source": "formalization/QRH/Energy/ReferenceDeletionCapacity.lean",
+      "sha256": "dc9ea5a4c30bad409a3f89acc827a82a058a42735e70a8573c547a76214e08a8",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionCapacity"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceDeletionClipped",
+      "source": "formalization/QRH/Energy/ReferenceDeletionClipped.lean",
+      "sha256": "0d7830d49b2601afdf1ddc5bd548b3a409230ae1d1823670b9b0c7159435e9d1",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionClipped"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceDivisors",
+      "source": "formalization/QRH/Energy/ReferenceDivisors.lean",
+      "sha256": "f87af6fc2dccae2fb88d11083848b599bcd6088747feaf5bc6e817f58ead777d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceDivisors"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceLiveBounded",
+      "source": "formalization/QRH/Energy/ReferenceLiveBounded.lean",
+      "sha256": "1e621cca8f0fedc124188b82189d8a5d5b2e1b80aa34270b3e77798879b9313c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceLiveBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceLivePower",
+      "source": "formalization/QRH/Energy/ReferenceLivePower.lean",
+      "sha256": "c2ba17d1ae77e70eb429cf6a4c33d79e5fccf774df7fd9aa00d5b8f2170d7a91",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceLivePower"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceLowBranchGeometry",
+      "source": "formalization/QRH/Energy/ReferenceLowBranchGeometry.lean",
+      "sha256": "885e25e558b0816e810fdb487dd69ff04ed931be1b89a8d2dc6b378fd4b27cd3",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceLowDeletedGeometry",
+      "source": "formalization/QRH/Energy/ReferenceLowDeletedGeometry.lean",
+      "sha256": "2d29f71283a944e15377921dad50a18c64eed07a97c8c52ea9f5cfb597be1266",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceLowDeletedGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceLowWindow",
+      "source": "formalization/QRH/Energy/ReferenceLowWindow.lean",
+      "sha256": "3e496dce068c9a3242455b810c6312a8e17d1f1567a7fc50a36655ae4f72cfb3",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceRobustBounded",
+      "source": "formalization/QRH/Energy/ReferenceRobustBounded.lean",
+      "sha256": "ac550b01bdc7b18cad5709bb8c37bde99ba47dc4e76bda035a9c8702d292e389",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustBounded"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceRobustDeletedEnergy",
+      "source": "formalization/QRH/Energy/ReferenceRobustDeletedEnergy.lean",
+      "sha256": "305d33c486a2ebd9faaa1ff7df0528eb3106cc8ff0ead954879c613b39285491",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustDeletedEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceRobustOriginal",
+      "source": "formalization/QRH/Energy/ReferenceRobustOriginal.lean",
+      "sha256": "012985f5d24742c97f52010fc2ab2bce66ddee6b74756896d723a37ba9d5cc3e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustOriginal"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceRobustPower",
+      "source": "formalization/QRH/Energy/ReferenceRobustPower.lean",
+      "sha256": "6f1b1f3184f87e4f00de8c4982670f473b2e3c4ef7993ff2f8fb6a907ded55ff",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustPower"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ReferenceState",
+      "source": "formalization/QRH/Energy/ReferenceState.lean",
+      "sha256": "258dbb44c8161db0e57c45044130b400a642320e74e676302a24f18c84034bae",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ReferenceState"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.UniformMesh",
+      "source": "formalization/QRH/Energy/UniformMesh.lean",
+      "sha256": "1d27142b6825a902d561cd644c753cb839b90b32caa1df02ecc1e29e7b55c7d8",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.WidthRanges",
+        "OAI.NumberTheory.DirichletL.Energy.Bands"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.UniformMoment",
+      "source": "formalization/QRH/Energy/UniformMoment.lean",
+      "sha256": "3ad9ff434e04bcb97e7d43114593deb4bb84021a79e98416c5648736e187f687",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Energy.ZeroGrowthPhysical",
+      "source": "formalization/QRH/Energy/ZeroGrowthPhysical.lean",
+      "sha256": "074a45ce801fc609d7c545a9606c64138563c16cc147beeaf55c930793e74244",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysical"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Geometry",
+      "source": "formalization/QRH/Geometry.lean",
+      "sha256": "9699c076c5e2f9c47262a7534cc30c1df40e887556a36f98b685e30a53955e01",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DetectorRowCountCrossing",
+      "source": "formalization/QRH/Hecke/DetectorRowCountCrossing.lean",
+      "sha256": "802547581954bec1ccb48fb5b3f1004b984804ade60b04fcbd53dff041b8785a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicBalancedCount",
+      "source": "formalization/QRH/Hecke/DynamicBalancedCount.lean",
+      "sha256": "ec1d8a8807ff514537086f51185968e03cbecb47f098214f6c37122f974cda03",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicBranchBudget",
+      "source": "formalization/QRH/Hecke/DynamicBranchBudget.lean",
+      "sha256": "b95b1c3a009084bbb3c690a426859cf42aa7b16b2fc3ca84412ce1496c9ffc0d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorBranchBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicCountFromMoments",
+      "source": "formalization/QRH/Hecke/DynamicCountFromMoments.lean",
+      "sha256": "e73d287b3c04d913b1063fe4f8cdf5a61c11e9fefdaeb9a5c4a722a67232cf2f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorCountFromMoments"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicCountOptimization",
+      "source": "formalization/QRH/Hecke/DynamicCountOptimization.lean",
+      "sha256": "be2a2eca3d00719010f0a501cb6a73ae74879cda20a1a0849e2df3c2d497c17e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCount"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicCrossing",
+      "source": "formalization/QRH/Hecke/DynamicCrossing.lean",
+      "sha256": "ef49ca4ddc24c213b49436255ad381cc14c57ae255ded03212988271d9126211",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicFixedAmplitudeCount",
+      "source": "formalization/QRH/Hecke/DynamicFixedAmplitudeCount.lean",
+      "sha256": "f81fdcb790af97eb7fb33559e053d4ef7586ef14b4949b3c70c4c8bb94b0616f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorFixedAmplitudeCount"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.DynamicRawBranches",
+      "source": "formalization/QRH/Hecke/DynamicRawBranches.lean",
+      "sha256": "6e1fc12ce3b6092bb1cb944152a68d08a5d29dcbf4acdeec056a687feecbecb6",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Hecke.OptimizedAdaptiveCutoff",
+      "source": "formalization/QRH/Hecke/OptimizedAdaptiveCutoff.lean",
+      "sha256": "e97be073597db25221d3ab1bf793328abc55e5ef91547167afe817ac52879c04",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.DetectorAdaptiveCutoff"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.HeckeTargets",
+      "source": "formalization/QRH/HeckeTargets.lean",
+      "sha256": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.IndependentTargets",
+      "source": "formalization/QRH/IndependentTargets.lean",
+      "sha256": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Moments.DetectorPlainExceptionalSlots",
+      "source": "formalization/QRH/Moments/DetectorPlainExceptionalSlots.lean",
+      "sha256": "32cfd622bf41d997d7839da04c065424c5209d1ab33a3c9dc057fbd60b483904",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Moments.DetectorPlainMarkedSlots",
+      "source": "formalization/QRH/Moments/DetectorPlainMarkedSlots.lean",
+      "sha256": "0ea1f8a9a25dc1992e502e28dbb921853e315cc0c3cc82700a8f84fa0ad91176",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Moments.DetectorPlainMarkedState",
+      "source": "formalization/QRH/Moments/DetectorPlainMarkedState.lean",
+      "sha256": "9d580f9689c513dee6e95d74f4a93c1bb6c71744a9c41fc809550669184fec74",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Moments.DetectorPlainUnmarkedParameters",
+      "source": "formalization/QRH/Moments/DetectorPlainUnmarkedParameters.lean",
+      "sha256": "4d80809178bd618d3f8b3f51ffeb1de3090e4c14ac75951ef2af2f63264a9712",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Moments.ReflectionRetainedLength",
+      "source": "formalization/QRH/Moments/ReflectionRetainedLength.lean",
+      "sha256": "dfa1b2a4a7974dedb537de5a425658b385c606a927d82850a7d294f1efe2ea0a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Nonvanishing",
+      "source": "formalization/QRH/Nonvanishing.lean",
+      "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.OtherRanges",
+      "source": "formalization/QRH/OtherRanges.lean",
+      "sha256": "ed36df1d64808726daa725b666b641884cf01a15f4bc86b91355b51cb0fd5771",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PlainReflectionGeometry",
+      "source": "formalization/QRH/PlainReflectionGeometry.lean",
+      "sha256": "cb0fe7b3248b122422ccdcc87c44017bfcec5e4c95ed5d1eb30ec3a6e6662449",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.CubeNormalizer",
+      "source": "formalization/QRH/PrimeRows/CubeNormalizer.lean",
+      "sha256": "19385f5782bc0c1d600bffe3a952421e973fa6ca0fe418ec194d53cf91c5391d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.DynamicNonfloorCount",
+      "source": "formalization/QRH/PrimeRows/DynamicNonfloorCount.lean",
+      "sha256": "b8d62fe091c8ba05608f66e4a3c17919dee1d86b9f1a09e42ad63b2b50df00c0",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCount"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.DynamicSourceCount",
+      "source": "formalization/QRH/PrimeRows/DynamicSourceCount.lean",
+      "sha256": "148604226ac10c8188457c0489815cd51e543dd559f655c5eb0ced3b2c2761d0",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCanonicalCubeChoice",
+      "source": "formalization/QRH/PrimeRows/OptimizedCanonicalCubeChoice.lean",
+      "sha256": "abc27f19eb36541f0c102ef519b04fad1450a0aebf503e11c9b1e0fa019061a1",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCanonicalCubeReduction",
+      "source": "formalization/QRH/PrimeRows/OptimizedCanonicalCubeReduction.lean",
+      "sha256": "c284b6f68d7bc8e283e6aa55406ed30cf5fc74b2a91fb8321ca9b16035a566b0",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCanonicalRayCube",
+      "source": "formalization/QRH/PrimeRows/OptimizedCanonicalRayCube.lean",
+      "sha256": "eaf6fbdb1ca42f7f1eee268ce6e26ee07d2ab8f1e2709b7e7ee5cbc4cc51de43",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice",
+        "OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCanonicalReduction",
+      "source": "formalization/QRH/PrimeRows/OptimizedCanonicalReduction.lean",
+      "sha256": "48b8e4a9d8a755239e02b72ce09e146f5594d9f9d8d86408654cf987c1bdbdcd",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCanonicalTails",
+      "source": "formalization/QRH/PrimeRows/OptimizedCanonicalTails.lean",
+      "sha256": "4d35391635c1398b8991a3e750ee64d10ad782aca8af8becb3e8b324c2628dd3",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails",
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition",
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCentralCost",
+      "source": "formalization/QRH/PrimeRows/OptimizedCentralCost.lean",
+      "sha256": "18ad8b4e34f3df50e53a04d01fb519d77ddaf6b2d0ef3ed8cd8a4945f2d3e7b6",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCentralTupleCount",
+      "source": "formalization/QRH/PrimeRows/OptimizedCentralTupleCount.lean",
+      "sha256": "04f3314662b1ef12d713314e1c4455f2d503046dbeea555d19f1211639e7a53d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeErrorSaving",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeErrorSaving.lean",
+      "sha256": "1b04f784421948b372f33e29ca656d132e781e0380d1ee07fd086d5d991d15ad",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralCube"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFiniteError",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFiniteError.lean",
+      "sha256": "af9f6c0535c60b53b6ad99fa43f6f72a8ef85e589138d87740d70b2df6b26b4a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorArithmetic",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorArithmetic.lean",
+      "sha256": "45edbdc8d2119063a20c5c6d3401a5c4c56830748935da6191d5205d375e1469",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorCollected",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorCollected.lean",
+      "sha256": "0d0385d7396970eaa59ec8a9d2c72d0c1f1fb9398a6d49969f6fca1fdf345e19",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorGlobal",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorGlobal.lean",
+      "sha256": "2fb5543cc47c93cf75e520f4ae7d818e4ea5fec01733ca9fb0feeb9bddf994d9",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorGlobalIntegral",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorGlobalIntegral.lean",
+      "sha256": "10c1c18a5ed306267411ee1d5c7f647f909563b324e5c6c1347aca0356236cd5",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorNormalized",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorNormalized.lean",
+      "sha256": "d4de9d5c5b7f36005764cdbfb84d80edad74edb79079138ac2f05b598d643385",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedCubeFloorSaving",
+      "source": "formalization/QRH/PrimeRows/OptimizedCubeFloorSaving.lean",
+      "sha256": "eb62ac13e2e4439d92c9bdd98d004e895bce884f9ad5074da8fb9277584f4b1c",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedGeometricTail",
+      "source": "formalization/QRH/PrimeRows/OptimizedGeometricTail.lean",
+      "sha256": "f51ccc0fe74704bcd99895b6918c728648c76b18e0d3ec9868182037e5cb694a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedLargeDyad",
+      "source": "formalization/QRH/PrimeRows/OptimizedLargeDyad.lean",
+      "sha256": "8fbdd26eaf4b3d88d191454178ea67f242e743f26653ced590c82c000060488b",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad",
+        "OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedLargeSaving",
+      "source": "formalization/QRH/PrimeRows/OptimizedLargeSaving.lean",
+      "sha256": "cc4f0f6a6d1286e7d08dc2f71fa1b4a336a9fb441426f05167939d28af0131fd",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeTail"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedLargeTail",
+      "source": "formalization/QRH/PrimeRows/OptimizedLargeTail.lean",
+      "sha256": "7a94136000f18b3dd911819aca99e0b57d44bf2763801772e599c982c77d310f",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedNonfloorTransport",
+      "source": "formalization/QRH/PrimeRows/OptimizedNonfloorTransport.lean",
+      "sha256": "f1300e86505e7cf0c94b0044d5bfd6ca1cdc80fe17ecc57a748c2209cc0217dd",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransportSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedNormalizedTransport",
+      "source": "formalization/QRH/PrimeRows/OptimizedNormalizedTransport.lean",
+      "sha256": "a6e53b0c9c53c995236694dd60c09abd316c4f4512bf0340d93604878f4336d2",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedNormalizedTransportSaving",
+      "source": "formalization/QRH/PrimeRows/OptimizedNormalizedTransportSaving.lean",
+      "sha256": "f44a71949667d0eb4bcfff841b055e2827c5310736a8cc573daff9be9cc8f753",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedPhysicalLargeTail",
+      "source": "formalization/QRH/PrimeRows/OptimizedPhysicalLargeTail.lean",
+      "sha256": "9b126e515801de29abfea1a1a12d5e4353b6f6424b37eb7d6fdc9f32a661c3a9",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving",
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedPhysicalSmallTail",
+      "source": "formalization/QRH/PrimeRows/OptimizedPhysicalSmallTail.lean",
+      "sha256": "574f90e7a10b4036b441783d3dd8092fed400a95cab56e77e2fac34497aed64e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.SmallTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedSlotExponent",
+      "source": "formalization/QRH/PrimeRows/OptimizedSlotExponent.lean",
+      "sha256": "a62d16a032ccb742ef59b40cc007da9e77a03eb903471e4ec313ee2f10b0a98d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedSmallTail",
+      "source": "formalization/QRH/PrimeRows/OptimizedSmallTail.lean",
+      "sha256": "f3cc4658d3cb0f0f38b9f28118c2aa9122f5945be9fe7732796302b15de56919",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.SmallTail",
+        "OAI.NumberTheory.DirichletL.PrimeRows.SmallSum"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.PrimeRows.OptimizedTailScales",
+      "source": "formalization/QRH/PrimeRows/OptimizedTailScales.lean",
+      "sha256": "0aaa820a5f761fc72aa4dc35c88fc6f795c5426fdb73976904b2a9e10087d420",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.PrimeRows.TailScales",
+        "OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowBranchSum",
+      "source": "formalization/QRH/Reflection/LowBranchSum.lean",
+      "sha256": "9a93423020bd4fab7deceadc4a12ea24d6db83ad6012af34548935acdcb809cf",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowBranchSum"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowCaps",
+      "source": "formalization/QRH/Reflection/LowCaps.lean",
+      "sha256": "db7fda3bdaefa0740cda42abd94243ec7ba8af03891fb992b7a45d568b8b5bf3",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowCaps"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowChoiceEnergy",
+      "source": "formalization/QRH/Reflection/LowChoiceEnergy.lean",
+      "sha256": "8aa5e19be0b4e495a0b9cec0a5b803200d89c3cbca778786aa16fbd1189aaf73",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowCompletedFiber",
+      "source": "formalization/QRH/Reflection/LowCompletedFiber.lean",
+      "sha256": "f3dc4013cacc1980ed6adc5c41e97ba7f3b4aeb2e949b171d96ba9fd34b04bc8",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowCompletedRows",
+      "source": "formalization/QRH/Reflection/LowCompletedRows.lean",
+      "sha256": "25e70ccf69837b62294cf8d30a10c1c26b4a99092e897a68670eb871e8dd8935",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowDyads",
+      "source": "formalization/QRH/Reflection/LowDyads.lean",
+      "sha256": "1b0182b8a3fbd88e825e24d93bf40304eb9d771470b37311e1bbaaff71cbfe7e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowDyads"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowExponent",
+      "source": "formalization/QRH/Reflection/LowExponent.lean",
+      "sha256": "f5b544448c717920f473be5a4dcb78bef6b0a9231510115a3a0f16526c57f3ac",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowExponent"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowFixedMember",
+      "source": "formalization/QRH/Reflection/LowFixedMember.lean",
+      "sha256": "99db9174cef413838f38fad7d06b73318961685fa045ea34c2297640a5f7ab35",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowFixedMember"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowFrozenEnergy",
+      "source": "formalization/QRH/Reflection/LowFrozenEnergy.lean",
+      "sha256": "3f1b3750ff681c1bb60d458989e50d73e134a61a48dabe6268738a8ad3b7c307",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowFull",
+      "source": "formalization/QRH/Reflection/LowFull.lean",
+      "sha256": "ebfdd66da04060774c74deaa7e6a8b7ad220a41a0ac9efbfa92a88e3b5b66e5d",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowFull"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowFullBudget",
+      "source": "formalization/QRH/Reflection/LowFullBudget.lean",
+      "sha256": "d1bc440c345388d97d5ebb6df19fced7b307b51c2b43b9576b7e28724fe4b04e",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowFullBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowGlobalBudget",
+      "source": "formalization/QRH/Reflection/LowGlobalBudget.lean",
+      "sha256": "71a7c4642646b9701d1b79a2a5a97fb92599f41ef1430692002f4837f83efd5a",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowInactiveEnergy",
+      "source": "formalization/QRH/Reflection/LowInactiveEnergy.lean",
+      "sha256": "4624c7bdd60b4723b743a904a9dcd7b1ba4ecf0e9c5337370c1ea3677de8a516",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowMemberBudget",
+      "source": "formalization/QRH/Reflection/LowMemberBudget.lean",
+      "sha256": "ded41c82375963412f1d8b50dc918659a2c836413dd7c320836790c354ddeae5",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowMemberGeometry",
+      "source": "formalization/QRH/Reflection/LowMemberGeometry.lean",
+      "sha256": "5714493cb5bc21793a8266df067e07ab24322123ae461661f4a39a2e5346aae8",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowOriginalEnergy",
+      "source": "formalization/QRH/Reflection/LowOriginalEnergy.lean",
+      "sha256": "7824ce82cb9124531deaefdf5fce4f9d741de641bfd779bbab4e98947ddbe004",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowRetained",
+      "source": "formalization/QRH/Reflection/LowRetained.lean",
+      "sha256": "4f97da01251a4f9e43abadbf7ab02774110e93164f340f129d0d95f9244c9762",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowRetained"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowRetainedBudget",
+      "source": "formalization/QRH/Reflection/LowRetainedBudget.lean",
+      "sha256": "e1927f07a048ed589a252f3dc47e35ec07f8009498e2be4fe41af6cb5b10231c",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.Reflection.LowSector",
+      "source": "formalization/QRH/Reflection/LowSector.lean",
+      "sha256": "4ad35e2718f4eaa312fef1904aca3c43148d1683c845361728332006b595fa33",
+      "direct_pinned_openai_imports": [
+        "OAI.NumberTheory.DirichletL.Reflection.LowSector"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.RobustReflectionGeometry",
+      "source": "formalization/QRH/RobustReflectionGeometry.lean",
+      "sha256": "f978168ce5f0eaa7b10ac7e7caf973089cecb64005d6156d03f32f8cd1169f3d",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.StatementParity",
+      "source": "formalization/QRH/StatementParity.lean",
+      "sha256": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    },
+    {
+      "module": "QRH.ZetaTransfer",
+      "source": "formalization/QRH/ZetaTransfer.lean",
+      "sha256": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+      "direct_pinned_openai_imports": [],
+      "license": "Apache-2.0"
+    }
+  ]
+}

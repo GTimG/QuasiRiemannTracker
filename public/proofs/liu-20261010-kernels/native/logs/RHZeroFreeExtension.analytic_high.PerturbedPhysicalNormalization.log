@@ -1,0 +1,6 @@
+'RHZeroFreeExtension.AnalyticHigh.perturbed_source_power_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.perturbed_normalized_source_double_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

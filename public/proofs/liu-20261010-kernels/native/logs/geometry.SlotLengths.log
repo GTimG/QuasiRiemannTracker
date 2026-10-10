@@ -1,0 +1,3 @@
+'RHSlotLengths.exists_distinct_slot_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHSlotLengths.exists_physical_slot_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHSlotLengths.exists_even_distinct_slot_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]

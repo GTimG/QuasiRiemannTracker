@@ -1,0 +1,11 @@
+{
+  "stage": 1,
+  "previous_bound": "3499999/4000000",
+  "bound": "874957019421/1000000000000",
+  "directory": "/data/output/accepted/001-874957019421-1000000000000",
+  "sha256": "c8b9994d6a55521b53fe4664ba190e46dc0a02f7d85221e25d39efa4dcd34de9",
+  "pages": 160,
+  "accepted_at": "2026-10-09T06:33:27Z",
+  "recorded_cost_usd": 507.25332000000003,
+  "fresh_critic_accepted": true
+}

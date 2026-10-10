@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "kind": "read-only independent challenge source and compiled-artifact provenance audit",
+  "status": "PASS",
+  "started_at_utc": "2026-10-09T18:05:54.824319+00:00",
+  "finished_at_utc": "2026-10-09T18:05:58.174080+00:00",
+  "proof_root": "compressed",
+  "independent_specification": "audit/TightIndependentTargets.lean",
+  "root_modules": [
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+  ],
+  "root_module_count": 2,
+  "per_root_closure_module_counts": {
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation": 3617,
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge": 4386
+  },
+  "transitive_module_count_including_roots": 4386,
+  "transitive_import_edge_count": 13867,
+  "QRH_modules_in_challenge_closure": [],
+  "build_modes": {
+    "local-source": 321,
+    "official-mathlib-cache": 4065
+  },
+  "source_hashes_checked": 4386,
+  "source_hashes_match_recorded_build_graph": true,
+  "olean_hashes_checked": 4386,
+  "olean_hashes_match_recorded_build_records": true,
+  "sorted_source_inventory_sha256": "727f04906ea127256bc29fdc46860fb08860c5b0dab09483f1de50e0641507fe",
+  "sorted_olean_inventory_sha256": "4d1d9e1b77e53036fa8b863a7e3eee95257bea6e833c98d1439b8d2a18c0ae14",
+  "mathematical_dependency_pins": [
+    {
+      "repository": "formalization/.lake/packages/mathlib",
+      "commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_worktree_clean": true
+    },
+    {
+      "repository": "upstream/openai-math",
+      "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "tracked_worktree_clean": true
+    }
+  ],
+  "protected_definition_files": [
+    {
+      "repository": "formalization/.lake/packages/mathlib",
+      "commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "path": "Mathlib/NumberTheory/LSeries/DirichletContinuation.lean",
+      "sha256": "7ef38fb53f462e19dfd6746fc1826423e55bb5e2672c2b5667e2fd4889f401b6",
+      "matches_pinned_git_blob": true
+    },
+    {
+      "repository": "formalization/.lake/packages/mathlib",
+      "commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "path": "Mathlib/NumberTheory/LSeries/RiemannZeta.lean",
+      "sha256": "8d24b729a30f1fef0820f0f7c9cdbb5910df30dfac2c597eb666794bead08b1c",
+      "matches_pinned_git_blob": true
+    },
+    {
+      "repository": "upstream/openai-math",
+      "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean",
+      "sha256": "9871d175749b34ec40cf66ccc14b4faa0a9ef08831cb3fa901c944e57c7b9ec6",
+      "matches_pinned_git_blob": true
+    },
+    {
+      "repository": "upstream/openai-math",
+      "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean",
+      "sha256": "6c1fc33b7372108323bf3af3d4ab6f6e454ea9896b89e78964463a8e35df735f",
+      "matches_pinned_git_blob": true
+    }
+  ],
+  "original_final_theorem_source_unchanged": true,
+  "audit_inputs": {
+    "audit/local-selected-source-graph.json": {
+      "sha256": "7364b78eb62004edfe9d7c3ebacd0b4f8cbc65f53e07dd6200816a92338cca7e"
+    },
+    "audit/local-build-records.json": {
+      "sha256": "530332d9c117d87456183de122ac4fc685661f0d7aa671253d91d31bd9018b00"
+    },
+    "audit/local-build-status.json": {
+      "sha256": "e59279bcc8bcaacfc331ecf1fda65d6e791dddaeacd264993d0491dd39d2168c"
+    },
+    "audit/actual-definition-provenance.json": {
+      "sha256": "0719e878188eab84373fe8324097d9a5fc15b5f48c12c3112d8d6f6acd7f2f62"
+    },
+    "audit/TightIndependentTargets.lean": {
+      "sha256": "6f703e4d03017ca044c5c298e7432670664f5379751d46f5b5405ac43c68a9a5"
+    },
+    "formalization/QRH/TighterNonvanishing.lean": {
+      "sha256": "80338e1b6e4c8b98d26a9d11d97d3f3418921ca2d184f6a5bcd9d92d43216276"
+    },
+    "formalization/QRH/Nonvanishing.lean": {
+      "sha256": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f"
+    }
+  },
+  "limitations": [
+    "This is source and artifact integrity evidence, not an independent proof-kernel acceptance result.",
+    "Official mathlib cache artifacts are hash-matched to the recorded local build; this audit does not claim their local source recompilation or independent authentication of the cache provider.",
+    "The selected closure is computed from the recorded source import graph; the independent exporter/comparator run must still compare the actual statement-definition closure and replay the exported proof.",
+    "The Hecke target concerns the pinned finite-order Eisenstein character family, not arbitrary number fields or arbitrary Hecke characters."
+  ],
+  "mutations": "Only this report was written; mathematical source files and compiled artifacts were not modified."
+}

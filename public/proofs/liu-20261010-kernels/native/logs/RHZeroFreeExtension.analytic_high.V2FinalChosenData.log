@@ -1,0 +1,4 @@
+'RHZeroFreeExtension.AnalyticHigh.V2.physical_probe_estimates_of_chosen_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.V2.beta_le_of_fine_moments' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,4 @@
+'RHV2.source_kernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.kernel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.kernel_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.kernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]

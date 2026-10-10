@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-10T09:14:46.531731+00:00",
+  "scope": "Additional recorded positive/negative control replay after the successful proof run. The same controls also passed before that run; the pinned upstream helper checks their output in memory.",
+  "main_receipt_sha256": "15b550ed8dd47845a3afa96e87fa370c56221848ee648d757ac993f773eb4976",
+  "cases": [
+    {
+      "name": "PalomarPreflightSolution",
+      "exit_code": 0,
+      "log": "PalomarPreflightSolution.log"
+    },
+    {
+      "name": "PalomarPreflightWrong",
+      "exit_code": 1,
+      "log": "PalomarPreflightWrong.log"
+    },
+    {
+      "name": "PalomarPreflightIllTyped",
+      "exit_code": 1,
+      "log": "PalomarPreflightIllTyped.log"
+    }
+  ]
+}

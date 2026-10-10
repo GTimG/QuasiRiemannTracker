@@ -1,3 +1,4 @@
+import { findProofRevision } from "../core/catalogue-revisions.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
@@ -24,7 +25,7 @@ const catalogue = () =>
 const absent = resolve(".work/no-such-independent-acceptance-dossier");
 test("native evidence alone cannot upgrade the catalogue verification label", () => {
   const data = catalogue(),
-    record = data.records.find((r) => r.id === NATIVE_ID);
+    record = findProofRevision(data, NATIVE_ID);
   record.status = "verification-pending";
   record.first_verified_at = "";
   assert.equal(validateNativeKernelEvidence(process.cwd(), data, absent), null);
@@ -85,7 +86,7 @@ test("repackaging preserves the historical receipt and every checked proof sourc
 });
 test("native evidence alone cannot acquire an independent verification timestamp", () => {
   const data = catalogue(),
-    record = data.records.find((r) => r.id === NATIVE_ID);
+    record = findProofRevision(data, NATIVE_ID);
   record.status = "verification-pending";
   record.first_verified_at = "2026-10-09T17:21:30Z";
   assert.throws(
@@ -98,7 +99,7 @@ test("accepted kernel evidence binds the exact source revision and actual comple
   const data = catalogue();
   const report = validateNativeKernelEvidence(process.cwd(), data);
   assert.equal(report.status, "PASS");
-  const record = data.records.find((r) => r.id === NATIVE_ID);
+  const record = findProofRevision(data, NATIVE_ID);
   record.first_verified_at = "2026-10-09T17:21:30Z";
   assert.throws(
     () => validateNativeKernelEvidence(process.cwd(), data),

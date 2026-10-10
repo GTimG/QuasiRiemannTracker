@@ -1,0 +1,34 @@
+import QRH.NumericFacts
+import QRH.Detector.OptimizedData
+
+namespace OAI
+noncomputable section
+namespace SevenEighths.QRHParameters
+open Parameters
+
+lemma optimized_transport_budgets {gap:ℝ} (D:HighData gap)
+    (he:2000*D.e≤D.t) (heps:((D.N:ℝ)+8)*D.eps≤D.t):
+    D.sigma/8+8*D.e+D.sigma/16+1/200≤QRH.ly/2-(13/75)*QRH.h-1/50 ∧
+    D.sigma/8+D.sigma/16≤1/3000 ∧
+    D.sigma/8+D.e≤(87/100)*(D.rmin/2) ∧
+    D.sigma/8+D.sigma/16≤1+QRH.C QRH.tightTheta ∧
+    2*D.t+26*D.e+(D.N+8)*D.eps+D.t+D.t*QRH.ell+D.sigma/16+D.sigma/8≤1/200 ∧
+    QRH.h+D.t≤7/8-D.t := by
+  have htcap := D.t_small
+  have hgeo : (7/100:ℝ)≤QRH.ly/2-(13/75)*QRH.h-1/50 := by
+    linarith [QRH.NumericFacts.ly_lower,QRH.NumericFacts.h_sharp_upper]
+  have hC := QRH.NumericFacts.C_pos.le
+  have hcap := QRH.NumericFacts.h_sharp_upper
+  have hell : QRH.ell≤1 := by linarith [QRH.NumericFacts.ell_upper]
+  have htel := mul_le_mul_of_nonneg_left hell D.t_pos.le
+  have hs : D.sigma≤D.t := by linarith [D.high_saving,D.t_pos]
+  have hemin : D.e≤D.rmin/100 := by
+    have hrt := mul_le_mul_of_nonneg_left (show D.t≤1 by linarith [D.t_small]) D.rmin_pos.le
+    nlinarith [D.epsilon_gap,D.detector_budget,D.kappa_pos,D.cost_pos]
+  refine ⟨by linarith,by linarith,?_,by linarith,?_,by linarith⟩
+  · nlinarith [D.window_budget,D.e_pos]
+  · linarith
+
+end SevenEighths.QRHParameters
+end
+end OAI
