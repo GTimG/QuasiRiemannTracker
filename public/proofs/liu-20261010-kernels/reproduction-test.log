@@ -1,0 +1,168 @@
+Initialized empty Git repository in WORKSPACE/approaches/liu/reproduction-test/liu-source/.git/
+From https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis
+ * branch            7d10420de90efa2f082a06a342fc7accbd57ab37 -> FETCH_HEAD
+HEAD is now at 7d10420 Add files via upload
+Initialized empty Git repository in WORKSPACE/approaches/liu/reproduction-test/openai-source/.git/
+From https://github.com/openai/math
+ * branch                adc7f1241b42e322a6451854ab7e4b4c146bf78a -> FETCH_HEAD
+HEAD is now at adc7f1241 Initial commit
+{
+  "status": "PASS",
+  "files": 3152,
+  "vendor_modules": 2925,
+  "output": "WORKSPACE/approaches/liu/reproduction-test/package"
+}
+{
+  "status": "PASS",
+  "scope": "Exact original Liu proofs, restored layout; strict native replay of all 22 published targets. Independent kernel/comparator verification is separate.",
+  "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+  "source_inputs": "source-manifest.json",
+  "reconstructed_package_manifest_sha256": "df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de",
+  "native_build_report": "native/build-result.json",
+  "native_build_sha256": "aa7535bfd0b330854eaac2e31a84a4a18e086b5641a8553b2d4aa9db81fe35eb",
+  "command": [
+    "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+    "--trust=0",
+    "-j8",
+    "-DautoImplicit=false",
+    "-DwarningAsError=true",
+    "RHZeroFreeExtension/CombinedPaperVerification.lean"
+  ],
+  "lean_path": "WORKSPACE/approaches/liu/native/lib:WORKSPACE/compressed/build/local:WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "package_root": "WORKSPACE/approaches/liu/reproduction-test/package",
+  "entry_module": "RHZeroFreeExtension.CombinedPaperVerification",
+  "target_count": 22,
+  "axioms": {
+    "CombinedPaper.rational_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.balanced_signal_matching": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_boundary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_boundary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.boundary_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.original_family_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.preliminary_family_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_family_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_hecke_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_dirichlet_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_zeta_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_family_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_hecke_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_dirichlet_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_zeta_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.original_hecke_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.original_dirichlet_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.original_zeta_nonzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.rational_endpoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.algebraic_endpoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CombinedPaper.scalar_obstruction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_log": "native/kernel.log",
+  "kernel_log_sha256": "0fd698c77f15da1582c6214dd2f1e66ffd6db900fe3445ff1aa811b9496877e5",
+  "source_provenance": "source-provenance.json",
+  "reproduction_script": "reproduce.py",
+  "entry_source_sha256": "8dd8af17775597dd3adca267db58c90a1435b73a48b0cabdf177b15d67f18270",
+  "entry_artifact_sha256": "266a4bd9a084a28f2f76d0d5d351a9cb5de7895ff6520ece1d485993347c195a"
+}
+{
+  "status": "PASS",
+  "mode": "fresh-source-reconstruction-with-authenticated-artifact-replay",
+  "liu_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+  "openai_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "reconstructed_package_manifest_sha256": "df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de",
+  "proof_source_changes": false,
+  "clean_cache_free_dependency_build_tested": false,
+  "original_author_lean_entry_replayed": true,
+  "original_author_python_lake_driver_run": false,
+  "scope": "Uses the original 22-target Lean verification entry, with our native scheduler/replay driver; cached dependencies are explicit inputs and require the separate independent kernel judge.",
+  "reused_inventory_sha256": "bec4beba107576156a1cbaf2a2deab429c1a95d0e60971ebe404e6d8cc8d0a60",
+  "reused_native_build_sha256": "aa7535bfd0b330854eaac2e31a84a4a18e086b5641a8553b2d4aa9db81fe35eb",
+  "reused_artifact_root": "WORKSPACE/approaches/liu/native/lib"
+}

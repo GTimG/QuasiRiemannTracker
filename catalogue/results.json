@@ -104,11 +104,11 @@
       "merged_at": "",
       "pr": null,
       "repository": "liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis",
-      "source_commit": "",
-      "first_verified_at": "",
+      "source_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+      "first_verified_at": "2026-10-10T09:10:59.898288+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "RHZeroFreeExtension.CombinedPaperVerification",
+        "declaration": "CombinedPaper.algebraic_dirichlet_nonzero"
       },
       "license": "See source and notices",
       "builds_on": [
@@ -139,6 +139,38 @@
       "method": "Optimizes b and ℓ in the OpenAI argument. The exact boundary is algebraic. The plotted rational is a certified upper endpoint less than 10⁻³⁰ above it, used only for rendering.",
       "references": [
         {
+          "label": "Independent maintainer replay receipt",
+          "url": "proofs/liu-20261010-safe-replay/result.json"
+        },
+        {
+          "label": "Maintainer replay: all three kernel acceptances",
+          "url": "proofs/liu-20261010-safe-replay/logs/judge.log"
+        },
+        {
+          "label": "Earlier submitted checker report (historical)",
+          "url": "proofs/liu-20261010-kernels/result.json"
+        },
+        {
+          "label": "Earlier submitted checker log (historical)",
+          "url": "proofs/liu-20261010-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/liu-20261010-safe-replay/challenge-src/Challenge.lean"
+        },
+        {
+          "label": "Sandboxed reproduction instructions",
+          "url": "proofs/liu-20261010-safe-replay/README.txt"
+        },
+        {
+          "label": "Historical reconstruction notes (old native scripts are unsafe)",
+          "url": "proofs/liu-20261010-kernels/README.txt"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/liu-20261010-safe-replay/controls/control-results.json"
+        },
+        {
           "label": "Paper · arXiv:2610.12234",
           "url": "https://arxiv.org/abs/2610.12234"
         },
@@ -147,10 +179,10 @@
           "url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T16:18:53Z",
       "date_label": "arXiv submission",
-      "verification_note": "The author reports a Lean formalization. We have not independently reproduced it. No Liu proof code is redistributed in this repository."
+      "verification_note": "Liu's pinned original proof was independently rebuilt by the maintainer in a genuine offline Linux sandbox. The canonical challenge was exported before candidate execution; Comparator checked the exact statements and definitions, and Lean, NanoDa and con-ron accepted all three targets with only propext, Classical.choice and Quot.sound. The checked boundary is (1507 − 2√921) / 1653; its rational enclosure is only a plotting coordinate. The receipt was written outside candidate-writable paths. No Liu proof source or proof exports are redistributed. The first verified time records this confined maintainer run; the earlier submitted report is retained as historical evidence. This is local mechanical verification, not signed registry admission or Palomar registration."
     },
     {
       "submitted_at": "",

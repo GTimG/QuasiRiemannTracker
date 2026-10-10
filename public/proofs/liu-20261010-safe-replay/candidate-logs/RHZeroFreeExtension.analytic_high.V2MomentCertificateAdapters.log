@@ -1,0 +1,12 @@
+'OAI.SevenEighths.V2HeckeDetectorMomentPrimeGeometry.sourceMoment_fiber_prime_geometry_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.V2DetectorDictionaryInverseMarkedReference.deleted_source_live_prime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.V2DetectorDictionaryInverseMarkedReference.deleted_source_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.V2DetectorDictionaryInverseMarkedReference.fiber_reference_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

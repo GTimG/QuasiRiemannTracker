@@ -1,0 +1,4 @@
+'RHZeroFreeExtension.beta_star_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.hecke_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.dirichlet_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.zeta_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]

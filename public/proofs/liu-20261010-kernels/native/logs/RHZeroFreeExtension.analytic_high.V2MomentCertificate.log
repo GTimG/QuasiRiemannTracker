@@ -1,0 +1,6 @@
+'OAI.SevenEighths.V2ProbeFinalAssemblyCertifiedBands.fine_moments_of_original_headline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.V2ProbeFinalAssemblyCertifiedBands.chosen_moments_of_original_headline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

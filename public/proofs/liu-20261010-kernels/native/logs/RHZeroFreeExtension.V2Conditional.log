@@ -1,0 +1,4 @@
+'RHV2.beta_star_le_of_probes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.hecke_nonzero_of_probes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.dirichlet_nonzero_of_probes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.zeta_nonzero_of_probes' depends on axioms: [propext, Classical.choice, Quot.sound]

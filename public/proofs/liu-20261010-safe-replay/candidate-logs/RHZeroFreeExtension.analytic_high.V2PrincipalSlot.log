@@ -1,0 +1,9 @@
+'RHZeroFreeExtension.AnalyticHigh.v2_actual_principal_slot_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_weighted_principal_product_error_linear' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_actual_region_slot_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

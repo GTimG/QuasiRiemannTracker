@@ -1,0 +1,2 @@
+'RHV2.balanced_physical_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.balanced_physical_saving' depends on axioms: [propext, Classical.choice, Quot.sound]

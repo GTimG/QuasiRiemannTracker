@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mode": "fresh-source-reconstruction-with-authenticated-artifact-replay",
+  "liu_commit": "7d10420de90efa2f082a06a342fc7accbd57ab37",
+  "openai_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "reconstructed_package_manifest_sha256": "df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de",
+  "proof_source_changes": false,
+  "clean_cache_free_dependency_build_tested": false,
+  "original_author_lean_entry_replayed": true,
+  "original_author_python_lake_driver_run": false,
+  "scope": "Uses the original 22-target Lean verification entry, with our native scheduler/replay driver; cached dependencies are explicit inputs and require the separate independent kernel judge.",
+  "reused_inventory_sha256": "bec4beba107576156a1cbaf2a2deab429c1a95d0e60971ebe404e6d8cc8d0a60",
+  "reused_native_build_sha256": "aa7535bfd0b330854eaac2e31a84a4a18e086b5641a8553b2d4aa9db81fe35eb",
+  "reused_artifact_root": "WORKSPACE/approaches/liu/native/lib"
+}

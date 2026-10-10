@@ -7,6 +7,10 @@ import {
   timelineRecords,
 } from "../core/catalogue.mjs";
 import { frontierHistory, recordHistory, cmp } from "../core/rational.mjs";
+import {
+  EXTERNAL_PINS,
+  validateExternalKernelEvidence,
+} from "../core/external-kernel-evidence.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
 test("the existing contribution selects one current proof revision and preserves its earlier metadata", () => {
   const d = validateCatalogue(data());
@@ -22,13 +26,21 @@ test("non-record alternatives retain the plotted frontier while verification sta
   const d = validateCatalogue(data());
   assert.equal(d.records.length, 6);
   const verified = d.records.filter(verifiedHere);
+  validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
     verified.map((r) => r.id),
-    [
-      "openai-baseline",
-      "proofcouncil-20261009",
-      "nielstron-20261009-tightening",
-    ],
+    d.records
+      .filter(
+        (r) =>
+          [
+            "openai-baseline",
+            "proofcouncil-20261009",
+            "nielstron-20261009-tightening",
+          ].includes(r.id) ||
+          (EXTERNAL_PINS.entries[r.id] !== undefined &&
+            EXTERNAL_PINS.entries[r.id] !== null),
+      )
+      .map((r) => r.id),
   );
   const alternativeId = "single-prime-29-33-20261010";
   const earlier = d.records.filter((r) => r.id !== alternativeId);

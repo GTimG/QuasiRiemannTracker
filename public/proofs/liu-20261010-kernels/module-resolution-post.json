@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-10T02:05:30.579007+00:00",
+  "scope": "Actual namespace-first module resolution and byte-hash equality; independent supplement to the frozen judge run.",
+  "canonical_count": 4386,
+  "candidate_count": 13812,
+  "supplementary_native_artifact_count": 0,
+  "supplementary_native_artifacts_all_rehashed": true,
+  "wrapper_bindings": {
+    "Challenge.lean": {
+      "path": "WORKSPACE/approaches/liu/wrappers/Challenge.lean",
+      "sha256": "c2887494b3cca9c52231f5ca5b5326bf2e5992fd16f9ee4b0dd9e8663ad37aed",
+      "import_roots": [
+        "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+        "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+      ]
+    },
+    "Solution.lean": {
+      "path": "WORKSPACE/approaches/liu/wrappers/Solution.lean",
+      "sha256": "fe65b4cdbc14df7e3f0cff431d7ad288efa10e4b1b7e263a16a99c156e97bd48",
+      "import_roots": [
+        "RHZeroFreeExtension.CombinedPaperVerification",
+        "Mathlib.NumberTheory.Harmonic.ZetaAsymp"
+      ]
+    }
+  },
+  "sidecar_scope": "All present private/server sidecars are inventoried; those in the native artifact manifest are rehashed against it. The old canonical metadata pins main .olean files only. Any separate official-cache provenance audit must be retained, and is not inferred from this main-olean check.",
+  "bindings": {
+    "config": {
+      "path": "WORKSPACE/approaches/liu/judge-config.json",
+      "sha256": "8d60f753ca4bff8944cb150a8913cf857496789c961a35d113e984647e41d104"
+    },
+    "canonical_lean_path": {
+      "path": "WORKSPACE/compressed/audit/local-lean-path.txt",
+      "sha256": "b457846b3bd24ed7b4b1b3260ecb7ee5c472c2d45bdca0f0db3de91713314eea"
+    },
+    "candidate_lean_path": {
+      "path": "WORKSPACE/approaches/liu/native/lean-path.txt",
+      "sha256": "26b30bc873a8cd917169ece2025fc6a84e787c0dff8056e8d89a4baff0c786ad"
+    },
+    "input_inventory": {
+      "path": "WORKSPACE/approaches/liu/judge-input-inventory.json",
+      "sha256": "bec4beba107576156a1cbaf2a2deab429c1a95d0e60971ebe404e6d8cc8d0a60"
+    },
+    "run_driver": {
+      "path": "WORKSPACE/approaches/liu/independent-run-1/verify_external.py",
+      "sha256": "0a38720984c2955260fc4ffa8196db92fb6f6e83b7831f75766629688ce80135"
+    },
+    "this_audit": {
+      "path": "WORKSPACE/approaches/verification/audit_module_resolution.py",
+      "sha256": "edbdf90544062e1382170d6c49fb3070dd3c3a2dc82f587c0390cd83248f5d8b"
+    },
+    "lean_resolution_source": {
+      "path": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/src/lean/Lean/Util/Path.lean",
+      "sha256": "52cf9aa41a82db18d0d3c93bf6257d064f773af9e62b8b43be89ce1b0e00055f"
+    },
+    "source_lean_binary": {
+      "path": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+      "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+    },
+    "canonical_graph": {
+      "path": "WORKSPACE/approaches/tracker-liu/proofs/nielstron-20261009-tightening/compressed/audit/local-selected-source-graph.json",
+      "sha256": "7364b78eb62004edfe9d7c3ebacd0b4f8cbc65f53e07dd6200816a92338cca7e"
+    },
+    "canonical_build_records": {
+      "path": "WORKSPACE/approaches/tracker-liu/proofs/nielstron-20261009-tightening/compressed/audit/local-build-records.json",
+      "sha256": "530332d9c117d87456183de122ac4fc685661f0d7aa671253d91d31bd9018b00"
+    }
+  },
+  "canonical_lean_path_contents": "WORKSPACE/compressed/build/local:WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean\n",
+  "candidate_lean_path_contents": "WORKSPACE/approaches/liu/native/lib:WORKSPACE/compressed/build/local:WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean\n",
+  "actual_search_paths": {
+    "canonical": [
+      "WORKSPACE/approaches/liu/independent-run-1/lib",
+      "WORKSPACE/approaches/liu/independent-run-1/canonical-dependencies",
+      "WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/lib/lean"
+    ],
+    "candidate": [
+      "WORKSPACE/approaches/liu/independent-run-1/lib",
+      "WORKSPACE/approaches/liu/native/lib",
+      "WORKSPACE/compressed/build/local",
+      "WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean",
+      "WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/lib/lean"
+    ]
+  },
+  "checker_sources": {
+    "commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+    "tracked_script_count": 22,
+    "files": {
+      "scripts/__init__.py": "7e0c8455d9e8f146ed94c7bef905f2b2888f9a54b1701e085c2419e43079be6b",
+      "scripts/browser_preflight_policy.py": "5ed8123eac7ad281b7471af6ca5d389c724b9b5d47e97007b8ffb622ab0ae09c",
+      "scripts/cgroup_delegate.py": "c8a44ea58ed9a94db2caf21c66cee3f664c86370fabd50ba56e22fa9d9345824",
+      "scripts/core_notation_audit.lean": "47ee22447f312db83e764e8eab015a0db49b7317d2fccb4314f52b6a6cad2e3d",
+      "scripts/detect_license.rb": "7cc4ad2c63633b307c42808cbe29b6df799ef93f6c7560456e2637bc376f35f8",
+      "scripts/install_bwrap.sh": "c290df6cebdf1cb26edb69ed4164d9551062bfeb65243b93d1d1d3b77eac0a35",
+      "scripts/measure_resources.py": "d465e7ef200e9a1c908da51a8b8f90898995df05a56066ea6a3e15b027b2e183",
+      "scripts/orcid_validation.py": "2f368bf27a27f150da1a03f502ff0f45845fce1d5ebcf8dcfcf10908b5d360b7",
+      "scripts/render_challenge.py": "0cde8c3082a672fe99435ed0bed237b719e8041288e4ffa535cebbfbdb1395b9",
+      "scripts/render_report.py": "5a8dc3cbd803cd4bb302c7a30a51879b207677ee6b18cdf3e91a9bc388eaa455",
+      "scripts/seccomp_filter.py": "ef2a7ac79d696d7eafdcaed06dc840701318b8da5a28ea3090c282ffee97d85a",
+      "scripts/smoke_render_module_identity.py": "17654358fb622836928d301baf7f5f7274cc387745faf9dd657d134a9fba6113",
+      "scripts/smoke_trusted_challenge.py": "d8fd184c172e4a6edd5e4b031a5c17c102315502745947d1f2edbf7421f60589",
+      "scripts/source_requirements.py": "971950a45500ad8ba8c9061eb51716bc1c38f411ff877c447b6de527b23d2c6d",
+      "scripts/submission_contract.py": "724f82211ef702e2d1b4e5012183e532bd8f8ba03ba676022e4722a420c5be75",
+      "scripts/supervise_cgroup.py": "3cf9af4fa405e0e2e1bf1e06abe4b53887c1e4a7d5ebe9a6f20b5cf6a66f0e58",
+      "scripts/trusted_download.py": "6f1f74e8006d52d4fc5337df163cf8b4ead641631dfe3b5cdaaa66ae23666426",
+      "scripts/trusted_git_fetch.py": "ad0b3e79afc606d6532d3f7f110feae25eb9a8b0c27159e03fe06f67aa447f5c",
+      "scripts/verification_errors.py": "ce58c4adc2f896a8ce69961d1f49ada7f571d86f9638a196f34197e3293cc776",
+      "scripts/verification_profile.py": "5990b4da4074cabb79dfb5c9c8c4dc75d8d409553b3e023627ec3b485e2d26e4",
+      "scripts/verify_submission.py": "c575759d82c506f181b3736a110950fd32931c08a1be454262027d6205f178a2",
+      "scripts/workflow_report.py": "0e12d151daa789e734ec3e2cb30b8033b13561ec338a7f27bff6c9af1f3a957e"
+    },
+    "scope": "Tracked helper/source bytes match pinned git blobs; this is not a host-process attestation."
+  },
+  "reference_comparison": {
+    "path": "WORKSPACE/approaches/liu/module-resolution-pre.json",
+    "sha256": "46963e0d5f6fa5e0102882b7b5d971d5211460689c49b9ffbf5de4e13dfc2f62",
+    "all_recorded_module_fields_equal": true,
+    "families": [
+      {
+        "family": "canonical",
+        "modules": 4386,
+        "sidecars_compared_to_reference": false
+      },
+      {
+        "family": "candidate",
+        "modules": 13812,
+        "sidecars_compared_to_reference": false
+      }
+    ],
+    "fresh_complete_map_sha256": "3f1035957173112758420da47e16dd6df0cc8f8b3627b3167beb446e32d2b9a6"
+  }
+}
