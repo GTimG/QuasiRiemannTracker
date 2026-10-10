@@ -1,9 +1,9 @@
-"""Authenticate the akashlevy-20261009-weighted-numerator proof package.
+"""Validate publication packaging and require independent acceptance for verified status.
 
 The default mode is read-only and never runs Lean, Lake, Comparator or a kernel. It
 checks the reviewed allowlist and snapshot manifest, the public downloads, their
-archive and checksums, binds the recorded three-kernel report to the catalogue
-record, and scans every published file (snapshot files, archive members, public
+archive and checksums, retains the historical author-side report, and scans every
+published file (snapshot files, archive members, public
 downloads and the manuscript PDF) for private metadata: the shared publication
 patterns plus local temporary and agent scratch paths, bare UUIDs and e-mail
 addresses other than GitHub and Anthropic no-reply addresses.
@@ -21,6 +21,7 @@ import io
 import json
 import re
 import sys
+import subprocess
 import tarfile
 import zlib
 
@@ -29,6 +30,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from publication_policy import PATTERNS, approved_files, check_archive, check_content  # noqa: E402
 
 ID = 'akashlevy-20261009-weighted-numerator'
+REPLAY_PREFIX = 'proofs/akashlevy-20261010-safe-replay/'
+REPLAY_REFERENCES = {'result.json', 'logs/judge.log', 'README.txt',
+                     'contract-audit.json', 'controls/control-results.json'}
 THETA = '10499/12000'
 NAMES = ['QRHPalomar.allDirichlet', 'QRHPalomar.zeta', 'QRHPalomar.allHecke']
 AXIOMS = ['Classical.choice', 'Quot.sound', 'propext']
@@ -407,15 +411,14 @@ def check(root, catalogue_path):
     for ref in record['references']:
         url = ref['url']
         if not url.startswith('https://'):
-            demand(url.startswith(f'proofs/{ID}/') and url[len(f'proofs/{ID}/'):] in inventory,
+            demand((url.startswith(f'proofs/{ID}/') and url[len(f'proofs/{ID}/'):] in inventory)
+                   or (url.startswith(REPLAY_PREFIX) and url[len(REPLAY_PREFIX):] in REPLAY_REFERENCES),
                    f'Reference outside this package: {url}')
     if record['status'] == 'framework-verified':
-        demand(collection['status'] == 'framework-verified', 'Public collection does not support the status')
-        demand(record['first_verified_at'] == verified_at, 'first_verified_at differs from the kernel report')
-        demand(re.fullmatch(r'[0-9a-f]{40}', record['source_commit'] or '') is not None, 'Missing source commit')
-        if 'Sandbox disabled' in judge:
-            note = record['verification_note'].lower()
-            demand('sandbox' in note and 'macos' in note, 'Verification note omits the unsandboxed macOS run')
+        # Historical author logs cannot grant the site's independently verified status.
+        # The protected maintainer receipt binds every source file and the actual run.
+        subprocess.run(['node', str(Path(__file__).resolve().parent / 'check-akashlevy-kernels.mjs'),
+                        str(root), str(catalogue_path)], check=True)
     else:
         demand(record['status'] == 'verification-pending' and record['first_verified_at'] == '',
                'Pending record cannot carry a verification date')
@@ -434,7 +437,7 @@ def main():
         regenerate(root, args.status)
         return
     snapshot, downloads = check(root, args.catalogue or root / 'catalogue/results.json')
-    print(f'{ID}: {snapshot} snapshot files, {downloads} public downloads and the three-kernel report authenticated.')
+    print(f'{ID}: {snapshot} snapshot files and {downloads} historical downloads checked; catalogue verification status validated separately.')
 
 
 if __name__ == '__main__':

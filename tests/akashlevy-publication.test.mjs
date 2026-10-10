@@ -4,6 +4,7 @@ import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
   cpSync,
+  existsSync,
   mkdirSync,
   mkdtempSync,
   readFileSync,
@@ -34,7 +35,10 @@ function copy() {
     `public/proofs/${ID}`,
     "catalogue/results.json",
     "public/proofs/palomar-20261009/qrh/src/Challenge.lean",
+    "verifier/akashlevy",
+    "public/proofs/akashlevy-20261010-safe-replay",
   ]) {
+    if (!existsSync(path)) continue;
     mkdirSync(dirname(join(root, path)), { recursive: true });
     cpSync(path, join(root, path), { recursive: true });
   }
@@ -65,10 +69,13 @@ function mutateRecord(root, change) {
   writeFileSync(path, JSON.stringify(data, null, 2) + "\n");
 }
 
-test("the weighted-numerator package, archive and three-kernel report are authenticated", () => {
+test("the historical weighted-numerator package and independent verification status are checked", () => {
   const result = run();
   assert.equal(result.status, 0, result.stderr || result.stdout);
-  assert.match(result.stdout, /three-kernel report authenticated/);
+  assert.match(
+    result.stdout,
+    /catalogue verification status validated separately/,
+  );
 });
 
 test("tampered weighted-numerator evidence and overstated catalogue claims are rejected", () => {
@@ -84,6 +91,19 @@ test("tampered weighted-numerator evidence and overstated catalogue claims are r
         writeFileSync(file, readFileSync(file, "utf8") + "\n");
       },
       /Snapshot checksum mismatch/,
+    ],
+    [
+      (root) =>
+        mutateSnapshot(
+          root,
+          "formalization/WeightedQRH/Statements.lean",
+          (text) =>
+            text.replace(
+              "  WeightedQRH.dirichlet_nonzero χ s hs hpole",
+              "  True.intro",
+            ),
+        ),
+      /checked source changed.*re-verification required/,
     ],
     [
       (root) => writeFileSync(join(root, "proofs", ID, "unreviewed.txt"), "x"),
@@ -155,20 +175,15 @@ test("tampered weighted-numerator evidence and overstated catalogue claims are r
           root,
           (r) => (r.first_verified_at = "2026-10-10T02:00:00+00:00"),
         ),
-      /first_verified_at differs/,
+      /timeline must use/,
     ],
     [
       (root) => mutateRecord(root, (r) => (r.status = "verification-pending")),
       /Pending record cannot carry/,
     ],
     [
-      (root) =>
-        mutateRecord(
-          root,
-          (r) =>
-            (r.verification_note = "Checked by Comparator and three kernels."),
-        ),
-      /unsandboxed macOS run/,
+      (root) => mutateRecord(root, (r) => (r.source_commit = "0".repeat(40))),
+      /source revision differs/,
     ],
     [
       (root) =>

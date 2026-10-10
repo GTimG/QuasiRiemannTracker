@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "protected_tracker_base_commit": "c4806753858945a008a92c564130809548e8c4bb",
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "upstream_template_sha256": "8fb13ad977bca104591fcbc6ef01a58496e7385053c9b1445f95749afc0eff54",
+  "generated_challenge_sha256": "4cfd82ee08988e729c8611039fb5b80b4eb200d260f15e974c9990903182b591",
+  "only_mathematical_change": "7/8 replaced by the exact rational 10499/12000",
+  "normalization": "Theorem name, namespace qualification and whitespace only.",
+  "definition_identity_checked_by_comparator": true,
+  "receipt_sha256": "487e7118c8b7479d8711e03e039e4446abceadfa84f520525b515bd271a9ff82"
+}

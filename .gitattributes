@@ -19,3 +19,6 @@ public/proofs/argonaut-20261010-safe-replay/**/*.log -whitespace
 # Akash Levy weighted-numerator package: hashed bytes.
 proofs/akashlevy-20261009-weighted-numerator/** -text
 public/proofs/akashlevy-20261009-weighted-numerator/** -text
+public/proofs/akashlevy-20261010-safe-replay/** -text
+verifier/akashlevy/** -text
+public/proofs/akashlevy-20261010-safe-replay/**/*.log -whitespace
