@@ -14,7 +14,7 @@ import { validateMaintainerReplay } from "../core/maintainer-replay.mjs";
 const sha = (data) => createHash("sha256").update(data).digest("hex");
 const H = "a".repeat(64);
 // Synthetic receipt-protocol fixtures only. These do not check any mathematics.
-function fixture(t) {
+function fixture(t, argonaut = false) {
   const root = mkdtempSync(join(tmpdir(), "qrh-maintainer-replay-"));
   t.after(() => rmSync(root, { recursive: true, force: true }));
   const directory = "public/proofs/replay-fixture";
@@ -23,11 +23,24 @@ function fixture(t) {
     mkdirSync(dirname(p), { recursive: true });
     writeFileSync(p, data);
   };
-  write("verifier/liu/replay.py", "# synthetic trusted driver\n");
-  write("verifier/liu/pins.json", "{}\n");
+  const driverDirectory = `verifier/${argonaut ? "argonaut" : "liu"}`;
+  const replayInputs = argonaut
+    ? {
+        theta_exact: "3499999/4000000",
+        pr_head_commit: "d".repeat(40),
+        trusted_base_commit: "e".repeat(40),
+        release: { tag: "v0.1.8", sha256: H },
+      }
+    : {};
+  const pinsText = JSON.stringify(replayInputs) + "\n";
+  write(`${driverDirectory}/replay.py`, "# synthetic trusted driver\n");
+  write(`${driverDirectory}/pins.json`, pinsText);
   const contribution = {
     source_commit: "b".repeat(40),
-    repository: "Example/proof",
+    repository: argonaut
+      ? "Argonaut-Math/argonaut-math-quasi-riemann-boundary"
+      : "Example/proof",
+    ...(argonaut ? { theta: "3499999/4000000" } : {}),
     source_compiler: "4.34.1",
     judge_toolchain: "4.35.0-rc2",
     palomar_commit: "c".repeat(40),
@@ -36,26 +49,33 @@ function fixture(t) {
     status: "PASS",
     judge_exit_code: 0,
     source_commit: contribution.source_commit,
-    source_repository: "https://github.com/Example/proof",
-    theta_exact: "(1507 - 2*sqrt(921))/1653",
+    source_repository: `https://github.com/${contribution.repository}`,
+    theta_exact: argonaut ? "3499999/4000000" : "(1507 - 2*sqrt(921))/1653",
+    ...(argonaut
+      ? {
+          reviewed_pr_head: replayInputs.pr_head_commit,
+          trusted_base_commit: replayInputs.trusted_base_commit,
+          release: structuredClone(replayInputs.release),
+        }
+      : {}),
     source_content_sha256: H,
     driver_sha256: sha("# synthetic trusted driver\n"),
-    pins_sha256: sha("{}\n"),
+    pins_sha256: sha(pinsText),
     source_compiler: contribution.source_compiler,
     judge_toolchain: contribution.judge_toolchain,
     verifier_commit: contribution.palomar_commit,
     kernels: ["Lean default", "nanoda", "con-ron"],
     allowed_axioms: ["Classical.choice", "Quot.sound", "propext"],
     targets: [
-      "QRHBoundsPR3.allDirichlet",
-      "QRHBoundsPR3.zeta",
-      "QRHBoundsPR3.allHecke",
+      `QRHBoundsPR${argonaut ? 4 : 3}.allDirichlet`,
+      `QRHBoundsPR${argonaut ? 4 : 3}.zeta`,
+      `QRHBoundsPR${argonaut ? 4 : 3}.allHecke`,
     ],
     sandbox_preflight: "PASS",
     candidate_mount_preflight: "PASS",
     receipt_outside_candidate: true,
     challenge_exported_before_candidate_execution: true,
-    candidate_modules_rebuilt: 238,
+    candidate_modules_rebuilt: argonaut ? 152 : 238,
     approved_dependency_modules: 7026,
     extra_official_cache_modules: 4807,
     verified_at: "2026-10-10T09:00:00Z",
@@ -70,6 +90,7 @@ function fixture(t) {
     "source-manifest.json": "{}\n",
     "tool-pins.json": "{}\n",
     "dependency-pins.json": "{}\n",
+    "trusted-library-manifest.json": "{}\n",
   };
   const putJSON = (name, data) => {
     files[name] = JSON.stringify(data) + "\n";
@@ -91,6 +112,7 @@ function fixture(t) {
     exported_before_candidate_execution: true,
   });
   const pin = {
+    ...(argonaut ? { replay_profile: "argonaut-v0.1.8" } : {}),
     directory,
     theta_exact: report.theta_exact,
     source_content_sha256: H,
@@ -174,6 +196,48 @@ function fixture(t) {
     validate: () => validateMaintainerReplay(root, pin, contribution),
   };
 }
+
+test("Argonaut receipt binds its own runner, release and three target names", (t) => {
+  const f = fixture(t, true);
+  assert.equal(f.validate().status, "PASS");
+  f.report.release.sha256 = "f".repeat(64);
+  f.seal();
+  assert.throws(f.validate, /Argonaut source release/);
+});
+
+test("Argonaut cannot reuse a Liu profile or receipt from another PR revision", (t) => {
+  const f = fixture(t, true);
+  f.report.reviewed_pr_head = "f".repeat(40);
+  f.seal();
+  assert.throws(f.validate, /revision/);
+  f.pin.replay_profile = "liu-algebraic-v1";
+  assert.throws(f.validate);
+  f.pin.replay_profile = "arbitrary-candidate-profile";
+  assert.throws(f.validate, /unknown replay profile/);
+});
+
+test("a later replay preserves the authenticated first success time for the same source", (t) => {
+  const f = fixture(t, true);
+  const first = structuredClone(f.report);
+  first.verified_at = "2026-10-10T08:00:00Z";
+  f.putJSON("earlier/result.json", first);
+  f.files["earlier/replay.py"] = "# synthetic trusted driver\n";
+  f.files["earlier/judge.log"] = f.files["logs/judge.log"];
+  f.pin.first_acceptance = {
+    receipt: "earlier/result.json",
+    driver: "earlier/replay.py",
+    log: "earlier/judge.log",
+    receipt_sha256: sha(f.files["earlier/result.json"]),
+    verified_at: first.verified_at,
+  };
+  f.seal();
+  assert.equal(f.validate().first_verified_at, first.verified_at);
+  first.source_commit = "f".repeat(40);
+  f.putJSON("earlier/result.json", first);
+  f.pin.first_acceptance.receipt_sha256 = sha(f.files["earlier/result.json"]);
+  f.seal();
+  assert.throws(f.validate, /different source or scope/);
+});
 
 test("reviewed maintainer receipt binds exact proof revision, driver and three kernel results", (t) => {
   const f = fixture(t);

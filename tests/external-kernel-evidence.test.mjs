@@ -25,6 +25,20 @@ const axioms = ["Classical.choice", "Quot.sound", "propext"];
 const kernels = ["Lean default", "nanoda", "con-ron"];
 const accepted = `${kernels.map((name) => `${name} kernel accepts the solution`).join("\n")}\nYour solution is okay!\n`;
 
+test("Argonaut cannot promote submitted logs without an isolated maintainer receipt", () => {
+  const catalogue = {
+    records: [{ id: "argonaut-20261008", status: "framework-verified" }],
+  };
+  assert.throws(
+    () =>
+      validateExternalKernelEvidence("/unused", catalogue, {
+        schema_version: 1,
+        entries: { "argonaut-20261008": { directory: "public/proofs/old" } },
+      }),
+    /isolated maintainer replay/,
+  );
+});
+
 // Synthetic protocol fixtures test authentication failures, not mathematics.
 function fixture(t, mode = "archived-source", algebraic = false) {
   const root = mkdtempSync(join(tmpdir(), "qrh-external-evidence-"));

@@ -1,0 +1,24 @@
+OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean:16:5: warning: Variable name `hxy` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hxy
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean:16:28: warning: Variable name `hElx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hElx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean:16:47: warning: Variable name `hlxly` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlxly
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean:17:5: warning: Variable name `hgap` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgap
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

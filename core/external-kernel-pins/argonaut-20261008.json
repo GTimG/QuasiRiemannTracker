@@ -24,5 +24,23 @@
       "WORKSPACE/tightening-research/checkers/tools/lean-4.35.0-rc2-linux/bin/nanoda_bin"
     ]
   },
-  "publication_mode": "archived-source"
+  "publication_mode": "archived-source",
+  "maintainer_replay": {
+    "replay_profile": "argonaut-v0.1.8",
+    "directory": "public/proofs/argonaut-20261010-safe-replay",
+    "collection_sha256": "43b465d6338115f5bb601757d99f428f092e07324749d1bdc868acb42420520b",
+    "receipt_sha256": "fd16f2d56c4d17a0086a13ec4e848ea707f135237f2cc54ab52fe26ae57e9192",
+    "theta_exact": "3499999/4000000",
+    "source_content_sha256": "37602f9379f833c1b9ad3a6c7c628f961670f4219a9ac0f4190f8eb9b7655a93",
+    "driver_sha256": "678b147f54e0cbb332f4fb3dc39221c18a22b9d0aa202a5a83fe556b5afcc1ca",
+    "pins_sha256": "00129a3a5a743a00d7366fb7c670cab5f413a5ee59927dffc3b18bd44ea90d00",
+    "challenge_sha256": "bbea7b53db9ba826b0f3707604ff86be27c4875cd426453073c673a7c8cf9b1e",
+    "first_acceptance": {
+      "receipt": "earlier-acceptance/result.json",
+      "receipt_sha256": "17c66f81140d42e6424feb2821816d65e125b352182460c26ab5d594a9f76f97",
+      "driver": "earlier-acceptance/replay.py",
+      "log": "earlier-acceptance/judge.log",
+      "verified_at": "2026-10-10T10:09:10.743884+00:00"
+    }
+  }
 }

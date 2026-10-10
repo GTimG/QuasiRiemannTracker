@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "main_receipt_sha256": "fd16f2d56c4d17a0086a13ec4e848ea707f135237f2cc54ab52fe26ae57e9192",
+  "executed_before_candidate": true,
+  "cases": [
+    {
+      "name": "PalomarPreflightSolution",
+      "exit_code": 0,
+      "log": "PalomarPreflightSolution.log"
+    },
+    {
+      "name": "PalomarPreflightWrong",
+      "exit_code": 1,
+      "log": "PalomarPreflightWrong.log"
+    },
+    {
+      "name": "PalomarPreflightIllTyped",
+      "exit_code": 1,
+      "log": "PalomarPreflightIllTyped.log"
+    }
+  ]
+}

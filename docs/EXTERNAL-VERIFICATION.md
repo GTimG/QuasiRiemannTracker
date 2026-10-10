@@ -7,10 +7,22 @@ proofs pass Lean, NanoDa and con-ron. The only permitted axioms are `propext`,
 These are local mechanical checks proposed for maintainer review; they create no
 signed tracker receipt or Palomar registration.
 
+Current maintainer reproduction routes are the [isolated Liu runner](../verifier/liu/README.md)
+and [isolated Argonaut runner](../verifier/argonaut/README.md). Both freeze the
+canonical challenge before candidate execution and write receipts outside
+candidate-writable mounts. Argonaut's verified status requires its own reviewed
+maintainer receipt; its earlier submitted native logs cannot grant that status.
+Historical dossiers remain immutable, including their unsafe native scripts.
+
 Keep the existing catalogue identity, authors, original publication date and
 exact bound. Set `first_verified_at` to the actual independent check completion
 time. Liu's algebraic expression must remain the checked target; its certified
 rational enclosure is only a plotting coordinate.
+Repeating a successful check must not move that first-verification time forward.
+An earlier maintainer acceptance can supply it only when its authenticated
+receipt, executed driver and kernel log bind the same source revision/content,
+target statements, dependencies, tools, isolation guarantees and checking scope.
+The latest receipt remains mandatory for the current replay driver.
 
 ## Evidence package
 

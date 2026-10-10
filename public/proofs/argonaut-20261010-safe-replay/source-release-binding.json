@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "repository": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary",
+  "reviewed_repository_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+  "release_tag": "v0.1.8",
+  "release_tag_commit": "193a1ab879f635b8873e4e0d4021884783bed6fb",
+  "release_asset_sha256": "37602f9379f833c1b9ad3a6c7c628f961670f4219a9ac0f4190f8eb9b7655a93",
+  "release_asset_bytes": 37595224,
+  "release_source_manifest_matches_git_blob": "38d88358530c3d589f8b3421ddaa6a227a727383",
+  "release_dependency_pins_match_git_blob": "aedc65f0c4cb4fb5ef3018957d0da7ae5f7ea869",
+  "changes_from_release_tag_to_reviewed_commit": [
+    "ANNOUNCEMENT.md",
+    "README.md"
+  ],
+  "method": "Downloaded the exact public release as inert data; matched published asset SHA256 and size, and matched source/dependency-manifest Git blob IDs at the pinned repository revision."
+}

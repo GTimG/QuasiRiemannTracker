@@ -1,0 +1,18 @@
+OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean:71:24: warning: Variable name `hEtotal` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hEtotal
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean:71:45: warning: Variable name `hEtotal1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hEtotal1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean:73:5: warning: Variable name `hgap` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgap
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

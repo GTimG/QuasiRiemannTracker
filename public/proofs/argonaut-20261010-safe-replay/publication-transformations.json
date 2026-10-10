@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "path": "comparator.json",
+      "original_sha256": "9b030f2c7f4562245ac6b1afca65886f04210bce708652534c4fd6a665872c06",
+      "published_sha256": "52f6f76ee376c31d07e2ba5456ee3c686ec8132ffde6ecb73a2d045c2eb18ca3",
+      "operation": "Replace only local filesystem prefixes by WORKSPACE, BASELINE and CHECKERS."
+    },
+    {
+      "path": "tool-pins.json",
+      "original_sha256": "4d4054d2f6c07f58db70b3c248f642e69c20a7a420c90377d41d942c300288a5",
+      "published_sha256": "f4580be0fc36fd0f3243411835c7080912234339fc37affa1f36c8576e5b289e",
+      "operation": "Replace only local filesystem prefixes by WORKSPACE, BASELINE and CHECKERS."
+    }
+  ],
+  "proof_sources_and_exports_published": false,
+  "receipt_unchanged": true
+}
