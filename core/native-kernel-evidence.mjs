@@ -2,6 +2,7 @@
 import { readFileSync, existsSync, readdirSync, lstatSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
+import { findProofRevision } from "./catalogue-revisions.mjs";
 
 export const NATIVE_ID = "nielstron-20261009-tightening";
 export const KERNEL_DIRECTORY = "public/proofs/nielstron-20261009-kernels";
@@ -76,7 +77,7 @@ export function validateNativeKernelEvidence(
   catalogue,
   evidenceDirectory,
 ) {
-  const record = catalogue.records.find((r) => r.id === NATIVE_ID);
+  const record = findProofRevision(catalogue, NATIVE_ID);
   if (!record) return null;
   const directory = evidenceDirectory || join(root, KERNEL_DIRECTORY);
   if (!existsSync(directory)) {

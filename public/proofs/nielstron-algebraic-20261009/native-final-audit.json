@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "scope": "native final wrapper and original-target audit",
+  "verified_at_utc": "2026-10-09T19:22:58.033625+00:00",
+  "independent_kernel_status": "not established by this gate",
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axioms": {
+    "QRHPalomar.allDirichlet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.zeta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.allHecke": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.allDirichletExact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.zetaExact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.allHeckeExact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.existsUniqueRoot": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.LFunction_ne_zero_of_theta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.LFunction_ne_zero_of_tightTheta_lt_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.riemannZeta_zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.zero_re_le_or_exception": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.DirichletCharacter.zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.zero_re_le_or_exception": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Hecke.zero_re_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Algebraic.exists_unique_root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Algebraic.limitingTheta_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRH.Algebraic.limitingTheta_lt_N24": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.NativeAudit.n24Dirichlet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.NativeAudit.n24Zeta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "QRHPalomar.NativeAudit.n24Hecke": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "protected_files_unchanged": {
+    "DirichletTargets.lean": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+    "HeckeTargets.lean": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+    "IndependentTargets.lean": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+    "Nonvanishing.lean": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+    "StatementParity.lean": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+    "ZetaTransfer.lean": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+    "ZeroBounds.lean": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac"
+  },
+  "files": {
+    "src/NativeAudit.lean": "12bf5edf418bb9a0f4476c81b837e0de248613a14dd975c69ce68a55e7f7e095",
+    "src/Challenge.lean": "ddc6604d21a5d259dcb9af83398890413cc022f8da0281a86a66178d8cafd338",
+    "src/Solution.lean": "92fa68dcc3c5d627dd70cc4bca5136c92ff38e262a1128981ca825cb25117c26"
+  },
+  "logs": {
+    "Solution-native-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "NativeAudit-native-compile.log": "5093d9e321c3998f270e5b3975ad346585b66b3ae8a95a611d213571aae68622"
+  }
+}

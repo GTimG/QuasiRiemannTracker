@@ -10,6 +10,9 @@ The complete Linux verification worker development is in [`proofs/qrh-20261009/`
 
 Open a pull request, let site checks pass, and merge it. The workflow automatically deploys the tested website from `main` to GitHub Pages. See [deployment details](docs/DEPLOYMENT.md).
 
+Nielstron's existing catalogue entry is updated to the exact algebraic endpoint;
+the earlier N24 source and verification remain available as historical revisions.
+
 ## Run locally
 
 Requires Node 22.17 or later.

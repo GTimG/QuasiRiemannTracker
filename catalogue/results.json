@@ -72,7 +72,9 @@
         "declaration": ""
       },
       "license": "Apache-2.0",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "argonaut-20261008",
       "title": "Argonaut · perturbed boundary",
       "theta": {
@@ -109,7 +111,9 @@
         "declaration": ""
       },
       "license": "See source and notices",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "liu-20261008",
       "title": "Baiying Liu · optimized parameters",
       "theta": {
@@ -161,7 +165,9 @@
         "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re"
       },
       "license": "Apache-2.0 (Lean development; retained upstream notices)",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "proofcouncil-20261009",
       "title": "ProofCouncil · certified uniform descent",
       "theta": {
@@ -222,6 +228,139 @@
       "verification_note": "The original proof passed local verification with Palomar’s mechanical checker: Comparator compared the exact statements and their definitions, then con-ron, NanoDa and Lean’s fresh kernel accepted the exported proofs. All-Dirichlet, zeta and finite-order Eisenstein Hecke targets were checked, with only propext, Classical.choice and Quot.sound allowed. This is a local check; Palomar registration and editorial review are separate.",
       "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field."
     },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "Nielstron/QuasiRiemannTracker",
+      "source_commit": "2fc2b0b7f2b9510df4618936e1b2ccd58f7d9171",
+      "first_verified_at": "2026-10-09T19:51:12.662856+00:00",
+      "entrypoint": {
+        "module": "QRH.TighterNonvanishing",
+        "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "proofcouncil-20261009",
+        "openai-baseline"
+      ],
+      "id": "nielstron-20261009-tightening",
+      "title": "Nielstron · exact algebraic endpoint",
+      "theta": {
+        "numerator": "874957019420098946128603850561452983",
+        "denominator": "1000000000000000000000000000000000000"
+      },
+      "authors": [
+        {
+          "name": "Nielstron",
+          "url": "https://github.com/Nielstron"
+        }
+      ],
+      "method": "Revision of the same compressed Lean contribution to the exact cubic endpoint: 11/12-e/4, where e is the unique real root in [1/6,1/5] of 657e³−954e²+21e+20=0. The plotted rational is a rigorously proved upper bound. The final QRH package uses 259,073 source tokens under the pinned LeanLeanBench metric. The earlier N24 proof and its evidence remain available as historical snapshots.",
+      "references": [
+        {
+          "label": "Seven-target Comparator and three-kernel report",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/result.json"
+        },
+        {
+          "label": "Independent checking method and reproduction",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/README.txt"
+        },
+        {
+          "label": "All-kernel acceptance log",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent statements and root nonvacuity",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/src/PalomarCanonical3d11d053040a6a513a35e5ef/Challenge.lean"
+        },
+        {
+          "label": "Positive and negative controls",
+          "url": "proofs/nielstron-algebraic-20261009-kernels/control-results.json"
+        },
+        {
+          "label": "Frozen source and native evidence",
+          "url": "proofs/nielstron-algebraic-20261009/source-public.tar.gz"
+        },
+        {
+          "label": "Source and algebraic endpoint explanation",
+          "url": "proofs/nielstron-algebraic-20261009-README.md"
+        },
+        {
+          "label": "Exact LeanLeanBench token counts",
+          "url": "proofs/nielstron-algebraic-20261009/token-counts.json"
+        },
+        {
+          "label": "Previous N24 source and evidence (historical revision)",
+          "url": "proofs/nielstron-20261009-tightening/README.txt"
+        },
+        {
+          "label": "Previous N24 independent kernel report (historical revision)",
+          "url": "proofs/nielstron-20261009-kernels/result.json"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-09T19:51:12.662856+00:00",
+      "date_label": "Independent kernel verification",
+      "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
+      "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
+      "proof_revision": "nielstron-algebraic-20261009"
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "HaileyStorm/QuasiRiemannTracker",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "ZetaZeroFree.Analytic.Final",
+        "declaration": "ZetaZeroFree.Analytic.dirichletL_ne_zero_of_twenty_nine_thirty_thirds_lt_re"
+      },
+      "license": "Apache-2.0 for the OpenAI-derived Lean sources; manuscript licensing is separate, see NOTICE.md",
+      "builds_on": [
+        "openai-baseline"
+      ],
+      "id": "single-prime-29-33-20261010",
+      "title": "Single compensating prime · 29/33 (non-record)",
+      "theta": {
+        "numerator": "29",
+        "denominator": "33"
+      },
+      "authors": [
+        {
+          "name": "Hailey Collet"
+        }
+      ],
+      "method": "A non-record single-compensating-prime alternative proof, with an independently usable unconditional moving-radical mixed moment. Intermediate OpenAI foundations are reused; the previous terminal 7/8 result is excluded.",
+      "references": [
+        {
+          "label": "Rendered manuscript (PDF)",
+          "url": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf"
+        },
+        {
+          "label": "Source and reproduction",
+          "url": "https://github.com/GTimG/QuasiRiemannTracker/tree/main/proofs/single-prime-29-33-20261010"
+        },
+        {
+          "label": "Verification and exact scope",
+          "url": "proofs/single-prime-29-33-20261010/Verification.md"
+        },
+        {
+          "label": "Three-kernel report",
+          "url": "proofs/single-prime-29-33-20261010/multi-kernel-report.json"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-10T07:47:35.881822+00:00",
+      "date_label": "Contributor three-kernel verification",
+      "verification_note": "Contributor Lean audit and local Comparator, Lean, NanoDa and con-ron checks passed for the four main theorem closures. Exact source, statements, checker pins and logs are retained for maintainer review. No signed registry receipt. Non-record contribution; repository status pending review.",
+      "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing."
+    }
+  ],
+  "historical_records": [
     {
       "submitted_at": "2026-10-09T17:29:56Z",
       "published_at": "",
@@ -311,56 +450,6 @@
       "date_label": "Author-side Lean check",
       "verification_note": "The exact submitted proof passed the pinned local Palomar mechanical suite: Comparator compared all three statements and their definitions, then Lean's fresh kernel, NanoDa and con-ron accepted the exports. Matching, mismatched-statement and ill-typed-proof preflight controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical result, proposed for maintainer review; it is not Palomar registration, editorial acceptance or a signed tracker receipt. Earlier native reports and their pending status remain immutable historical evidence.",
       "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
-    },
-    {
-      "submitted_at": "",
-      "published_at": "",
-      "merged_at": "",
-      "pr": null,
-      "repository": "HaileyStorm/QuasiRiemannTracker",
-      "source_commit": "",
-      "first_verified_at": "",
-      "entrypoint": {
-        "module": "ZetaZeroFree.Analytic.Final",
-        "declaration": "ZetaZeroFree.Analytic.dirichletL_ne_zero_of_twenty_nine_thirty_thirds_lt_re"
-      },
-      "license": "Apache-2.0 for the OpenAI-derived Lean sources; manuscript licensing is separate, see NOTICE.md",
-      "builds_on": ["openai-baseline"],
-      "id": "single-prime-29-33-20261010",
-      "title": "Single compensating prime · 29/33 (non-record)",
-      "theta": {
-        "numerator": "29",
-        "denominator": "33"
-      },
-      "authors": [
-        {
-          "name": "Hailey Collet"
-        }
-      ],
-      "method": "A non-record single-compensating-prime alternative proof, with an independently usable unconditional moving-radical mixed moment. Intermediate OpenAI foundations are reused; the previous terminal 7/8 result is excluded.",
-      "references": [
-        {
-          "label": "Rendered manuscript (PDF)",
-          "url": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf"
-        },
-        {
-          "label": "Source and reproduction",
-          "url": "https://github.com/GTimG/QuasiRiemannTracker/tree/main/proofs/single-prime-29-33-20261010"
-        },
-        {
-          "label": "Verification and exact scope",
-          "url": "proofs/single-prime-29-33-20261010/Verification.md"
-        },
-        {
-          "label": "Three-kernel report",
-          "url": "proofs/single-prime-29-33-20261010/multi-kernel-report.json"
-        }
-      ],
-      "status": "verification-pending",
-      "timeline_at": "2026-10-10T07:47:35.881822+00:00",
-      "date_label": "Contributor three-kernel verification",
-      "verification_note": "Contributor Lean audit and local Comparator, Lean, NanoDa and con-ron checks passed for the four main theorem closures. Exact source, statements, checker pins and logs are retained for maintainer review. No signed registry receipt. Non-record contribution; repository status pending review.",
-      "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing."
     }
   ]
 }

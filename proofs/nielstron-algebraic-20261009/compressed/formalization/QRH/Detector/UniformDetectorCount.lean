@@ -1,0 +1,26 @@
+import QRH.Detector.UniformDetectorMoment
+import OAI.NumberTheory.DirichletL.Hecke.DetectorRowCount
+
+/-! Actual dynamic-capacity detector row sum, uniform in κ, with an independent
+physical slot vector. No unproved analytic estimate is a premise. -/
+namespace OAI
+noncomputable section
+open scoped Classical BigOperators SchwartzMap ContDiff ComplexConjugate
+open Filter
+namespace SevenEighths.QRHUniformDetectorMoment
+open HeckeFamily ProbeFinalAssembly CenteredMomentEnergyBands
+open CenteredMomentEnergyWidthRanges CenteredMomentDetectorPlainMomentParameters
+open CenteredMomentDetectorPlainSlotProfile CenteredMomentNaturalFixedRaySource
+open ProbeDetectorPlainMarkedFineField QRHPlainMoment
+open CenteredMomentDetectorEnergyInitialState
+
+open QRHDynamicMomentInput
+open HeckeDyadic HeckeInverseAmplification HeckeDetectorRawFiber HeckeDetectorBatch
+open HeckeDetectorRowwisePolynomial HeckeDetectorDyadicProfiles ProbeHighRowFamily
+open CenteredMomentDetectorDictionary
+
+
+
+end SevenEighths.QRHUniformDetectorMoment
+end
+end OAI

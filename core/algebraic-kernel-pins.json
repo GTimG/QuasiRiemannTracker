@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "nielstron-algebraic-20261009",
+  "theta": "874957019420098946128603850561452983/1000000000000000000000000000000000000",
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ],
+  "source_commit": "2fc2b0b7f2b9510df4618936e1b2ccd58f7d9171",
+  "source_prefix": "proofs/nielstron-algebraic-20261009/compressed/formalization",
+  "source_manifest_sha256": "bccaf56bd16eaa2f8d0581df5db8bb81d21cc583a7093bba4b3b51793b70fa5d",
+  "source_archive_sha256": "9ceab677dedfc3065bb45d741a24542d3b8de68de957727c84b0aaa5a243f23a",
+  "evidence_collection_sha256": "40e7b329900232958041d0200e6e033bbb3f9de4c20527b95e06eeed65144075",
+  "source_files": 211,
+  "wrappers": {
+    "Challenge.lean": "ddc6604d21a5d259dcb9af83398890413cc022f8da0281a86a66178d8cafd338",
+    "Solution.lean": "92fa68dcc3c5d627dd70cc4bca5136c92ff38e262a1128981ca825cb25117c26"
+  },
+  "wrapper_manifest_sha256": "053812f0bf8d395ce66093862bd2207b6eff6f9ba62422b84d1896f61f112303",
+  "driver_sha256": "01e578521bfaacd4cbc49d73de25deb755c79688187f7a8b7ae727fd6495a445",
+  "build_modules": 7233,
+  "qrh_modules": 207,
+  "frozen_metadata_sha256": {
+    "audit/algebraic-reproduction.json": "ae66370eb3942b12ed06c9bc98119dac0d46101b80627ab96af328d82226d7af",
+    "audit/local-selected-source-graph.json": "f3abf9f85b016a27ab06ce1f0ba728083cfc9bbaf2427a99407223a895b4c2b4",
+    "audit/local-build-records.json": "a11930ddda41fa21c3d3d1f61adff7fed4269dbe210afc0ac7c3d0123b90a2de",
+    "audit/local-build-status.json": "2b123ff18ee463ea801595d8b3e2b060eea04a94e1ad8ddffb4dd1775ca5a9d3",
+    "audit/local-lean-path.txt": "23b0b9e1dceb0e34242b220ddd21efe64b1c2d5e116694e445daf17a4691a55a"
+  },
+  "purpose": "Frozen inputs and the complete reviewed evidence collection; pin changes require independent verification and maintainer review",
+  "remote_availability_checked": false
+}
