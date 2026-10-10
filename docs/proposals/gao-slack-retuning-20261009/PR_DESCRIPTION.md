@@ -1,8 +1,10 @@
-This PR proposes a small numerical retuning of the pinned Nielstron boundary, with reproducible arithmetic and source-preparation evidence.
+This PR proposes a small numerical retuning of the pinned historical Nielstron N24 boundary, with reproducible arithmetic and source-preparation evidence.
 
 The proposed rational is
 `437478509710049473064301925667 / 500000000000000000000000000000`
-(`0.874957019420098946128603851334`). Its exact difference from the current reference is `7.71666e-25`. This recovers numerical slack in the existing argument; it introduces no new arithmetic estimate.
+(`0.874957019420098946128603851334`). Its exact difference from the pinned N24 reference is `7.71666e-25`. This recovers numerical slack in the existing argument; it introduces no new arithmetic estimate.
+
+**Current-record clarification (10 October):** the tracker now records Nielstron's exact algebraic endpoint, `11/12 - e/4`, where `e` is the unique root in `[1/6,1/5]` of `657e^3 - 954e^2 + 21e + 20 = 0`. That result is stronger than this proposal. This PR does **not** improve the current record.
 
 ### What is included
 

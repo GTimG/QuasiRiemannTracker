@@ -32,5 +32,9 @@
     "new_exact_targets_checked": false,
     "manual_review": "SOURCE_REVIEW.md"
   },
-  "exact_geometry_and_endpoint_checks": 34
+  "exact_geometry_and_endpoint_checks": 34,
+  "reference_status": "Historical N24 reference; no longer the current tracker record as of2026-10-10.",
+  "current_tracker_pin": "c4806753858945a008a92c564130809548e8c4bb",
+  "current_exact_boundary": "11/12-e/4, with657e^3-954e^2+21e+20=0 and1/6<=e<=1/5",
+  "improves_current_record": false
 }

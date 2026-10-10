@@ -8,10 +8,15 @@ This draft records an endpoint candidate, not an established stronger strip. Its
  =0.874957019420098946128603851334.
 \]
 
-It is below the catalogue's Nielstron value by exactly
+It is below the pinned historical Nielstron N24 value by exactly
 `385833/500000000000000000000000000000`, or `7.71666e-25`.
 The improvement recovers numerical slack in the existing argument;
 it adds no new arithmetic estimate.
+
+**Current-record clarification (10 October):** Nielstron's exact cubic
+endpoint is now listed as framework-verified. It is stronger than this
+rational proposal, which therefore does not improve the current record.
+See the [pinned current catalogue](https://github.com/GTimG/QuasiRiemannTracker/blob/c4806753858945a008a92c564130809548e8c4bb/catalogue/results.json).
 
 ## Evidence supplied
 
