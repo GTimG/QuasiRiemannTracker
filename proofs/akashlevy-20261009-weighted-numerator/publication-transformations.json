@@ -1,0 +1,163 @@
+{
+  "changes": [
+    {
+      "path": "evidence/comparator/comparator-NegControl.log",
+      "original_sha256": "39763e98b480d91df7231b36bfdac8e48bcfe5c72f39a40536e84be2d2beff9d",
+      "published_sha256": "c4e2e8365ff0af297983c706e16a23d197a837fc1182c7f6dc487a36a698f097",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 3
+      }
+    },
+    {
+      "path": "evidence/comparator/comparator-WeightedQRHDirichlet.log",
+      "original_sha256": "6bf5b8045806e110e0cdbe4484411a3a2e1b03accd77a32176407f47b2cf3ded",
+      "published_sha256": "00af7b8e882cc7e1e7b79a2b79bb3f7c6fb7bbe4bda8486dd993ab399912a93e",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 3
+      }
+    },
+    {
+      "path": "evidence/comparator/comparator-WeightedQRHHecke.log",
+      "original_sha256": "489266f8c6baaa1ae15019ac885f070e7cf3763cea645d562f1b3d517bc5677c",
+      "published_sha256": "186406e794c79e23f43b82b0860ae68ab1e3621c76924667634390c560a98c4c",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 3
+      }
+    },
+    {
+      "path": "evidence/comparator/comparator-WeightedQRHZeta.log",
+      "original_sha256": "c31980be663b125a7f7e3e07cdcc2e85d89eb1c26f68e77291af7f5bedb189cb",
+      "published_sha256": "e9246f9052848f87efb081df3a740352d7caf3a15a821bfd97ae5e83b67c093d",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 3
+      }
+    },
+    {
+      "path": "evidence/isolated-rebuild/final_rebuild_verification.json",
+      "original_sha256": "2a3faedaa36d9e806eba03214e73f0a15f257c288183843d1f3f56deceec0ef0",
+      "published_sha256": "17a22073442ecc1952131cd0613efcb6d29335d649e08c671382e4d9d1587101",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 238,
+        "/work/qrh-proof/tools/lean-4.34.1": 3,
+        "/work/qrh-proof/workspace": 32
+      }
+    },
+    {
+      "path": "evidence/isolated-rebuild/lean_environment.json",
+      "original_sha256": "4a4b456ebb15855a90000ef8f2cbfbc37dd49fc51b3b2532ba0142d1422f96a3",
+      "published_sha256": "a90589a47d208b50e33c29795421ccf5548621798ea5dc7c91f64c0dd7e0443c",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/development": 1,
+        "/work/qrh-proof/tools/lean-4.34.1": 2,
+        "/work/qrh-proof/workspace": 16
+      }
+    },
+    {
+      "path": "evidence/isolated-rebuild/run_comparator.sh",
+      "original_sha256": "76469230a5bd4a0a420424d431cd9d011deedb9157d1db2473fccb40a2930f28",
+      "published_sha256": "f076d81e3057376dee3c25fe84a1255bf8b367ff396c97d6b1ac3c5c2a2dbc78",
+      "change": "Script source fix, not a log rewrite: line 12 hard-coded the author's local tools directory (/work/qrh-proof/tools); it now reads the required environment variable QRH_TOOLS. No other byte changed. The recorded runs in evidence/comparator/ used the original script."
+    },
+    {
+      "path": "evidence/kernels/comparator.json",
+      "original_sha256": "46bd53bf573c95ebb8c887b499f25102262b2a73fb784171cfc8191066fdcebf",
+      "published_sha256": "77bff1920376ce2a9c65039886713db0656c4bb82baa9d01254ecb1a09468e8c",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/tools/lean-4.35.0-rc2-darwin_aarch64": 2
+      }
+    },
+    {
+      "path": "evidence/kernels/controls/comparator.json",
+      "original_sha256": "167e9709a67291c95ac5c85d2864a89e511807dd7e38ae60267c1d2b6b699a17",
+      "published_sha256": "5ed6cf62ea2c0617f0579b76d5a34878838e408af2d3d05c6f6145073eda6485",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/tools/lean-4.35.0-rc2-darwin_aarch64": 2
+      }
+    },
+    {
+      "path": "evidence/kernels/logs/Challenge-compile.log",
+      "original_sha256": "cf50399ef19b86cd29332b28318c961ae21cc9fe4cc3c109569be3cd5d8fa139",
+      "published_sha256": "26d7c8c754ca81bfdb36a84bcdbc068473cdf5a52fa6b802cae3320a9b042e3a",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/kernels": 3
+      }
+    },
+    {
+      "path": "evidence/kernels/pristine-workspace/lake-build.log",
+      "original_sha256": "4c27ad0547eaa1fa6ecb14ab0c43478d1e17bfed9564ec27e1e5055c4510c931",
+      "published_sha256": "d359f171a1c7f4f986d7a0f139613b9e650122d71daaa56a51b7158b99125472",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/pristine": 2
+      }
+    },
+    {
+      "path": "evidence/kernels/result.json",
+      "original_sha256": "6077c93c0034f2ff778f1c2aee33c4a8e16b83d0717f7af997ad1e8f56d07e50",
+      "published_sha256": "23c6cda0a417d513fecf9fa66fe3c655c48e597ff81426f2905b7ad63c1d2064",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 1,
+        "/work/qrh-proof/pristine": 1,
+        "/work/qrh-proof/tools/lean-4.34.1": 2,
+        "/work/qrh-proof/workspace": 30
+      }
+    },
+    {
+      "path": "evidence/lake/comparator-lake-WeightedQRHDirichlet.log",
+      "original_sha256": "53a5d88a6a018768895a1fefc4ae00b3ef6873ca35eb153507f1b361c988e026",
+      "published_sha256": "e52fdb9b6e42f4eb967cf43db96f58dfb00ff3a7757529ae268be1975646f81f",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 6
+      }
+    },
+    {
+      "path": "evidence/lake/comparator-lake-WeightedQRHHecke.log",
+      "original_sha256": "e5de37c0a102f3a490f22b6f41a6673661539d34cc9b87257564c69c79d24275",
+      "published_sha256": "3f225e96e6c80db12dfdbc8405b8a73955b8c6cc784ecfab79cf023d2332ab3c",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 6
+      }
+    },
+    {
+      "path": "evidence/lake/comparator-lake-WeightedQRHZeta.log",
+      "original_sha256": "10e35b0d05848ca89f67417fb525bce6517bb797392ed516ea318d3ddf58b6d8",
+      "published_sha256": "cfc0854ad6acf361e47ad6f72a7bc7f68c6aa5a9ef4b939bbce4aa9c2a1d1b84",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 6
+      }
+    },
+    {
+      "path": "evidence/lake/lake-build.log",
+      "original_sha256": "2647a79d24869229a15af802727714367a7edc02697a6e34a50755547c844a94",
+      "published_sha256": "706f349d154450387692c900c727100d2bcaf0f65ce017fe4f9aa36b966debce",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 2
+      }
+    },
+    {
+      "path": "evidence/lake/lake-no-build-rehash.log",
+      "original_sha256": "462a388afcc65650faf38761e06c531e08072de702ab7032a079314c843305d4",
+      "published_sha256": "6699f5b2a9d0d4582b51d11a88c27e982cc7f4323849917fac99acbbca04e4b2",
+      "change": "Neutralised local path prefixes in runtime metadata only (see PUBLICATION.md).",
+      "replacements": {
+        "/work/qrh-proof/formalization": 2
+      }
+    }
+  ],
+  "source_policy": "Lean sources, TeX manuscripts, scripts and license texts retain their original bytes, except the one recorded script fix. Only runtime logs and JSON reports were neutralised.",
+  "omitted": "Compiled objects, proof exports (sizes and SHA-256 in evidence/kernels/result.json), control exports, judge scratch directories, binaries, toolchains, .lake directories, caches, upstream checkouts, credentials and private operational records are not published."
+}

@@ -1,0 +1,51 @@
+Cycle25/Numerator/Imported/NumeratorActualError.lean:26:22: warning: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [CubicCoefficients.vector, CubicCoefficients.mass, cubicMass, Fin.sum_univ_four, norm_pow,
+    Complex.norm_cpow_eq_rpow_re_of_pos hQ, Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:60:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:74:52: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:75:26: warning: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:75:37: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:74:52: warning: This simp argument is unused:
+  if_neg hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rawErrorSlot, actualErrorCoefficients, supportedCorrection, dif_pos hs, if_neg hd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:94:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:136:39: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:147:39: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:148:6: warning: `if_false` has been deprecated: Use `ite_false` instead
+Cycle25/Numerator/Imported/NumeratorActualError.lean:136:39: warning: This simp argument is unused:
+  if_pos hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualErrorCoefficients, errorSize, repeatedDeficit, hd, true_and, primeScale] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:147:39: warning: This simp argument is unused:
+  if_neg hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualErrorCoefficients, errorSize, repeatedDeficit, hd, false_and, if_false, NNReal.coe_one,
+    Real.one_rpow, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:141:32: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Numerator/Imported/NumeratorActualError.lean:144:32: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

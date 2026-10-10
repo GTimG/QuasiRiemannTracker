@@ -1,0 +1,378 @@
+% Standalone fragment.  Requires amsmath, amssymb, amsthm and hyperref.
+% Proof relative to the explicit analytic lemmas of the original manuscript.
+\subsection{A weighted moment for the reconstructed physical numerator}
+\label{sec:new-weighted-numerator}
+
+The following is a new analytic amendment to the high estimate.  Its
+inputs are the exact local identities, smooth reflection and scale
+supremum lemmas, and the fourth moment with short prime factors
+\textup{(Lemma \texttt{lem:plain})} of the original manuscript.  Those
+inputs are imported, rather than reproved here. The coefficient bounds,
+literal Mellin reconstruction, original-numerator fourth moment, and
+their composition over the amplitude bins are checked in Lean
+(Section~\ref{sec:lean-correspondence}); the composition is
+\nolinkurl{WeightedQRH.Numerator.source_integrated_amplitude_classes},
+on which \nolinkurl{WeightedQRH.Numerator.actual_raw_fullW_input} is
+built. The argument below requires coefficient estimates for the Euler
+correction, not merely pointwise bounds for an Euler product.
+
+Write $z_0=17/50$, $\kappa=3/4$, let $\theta$ denote the target exponent
+($\theta=B$ in Section~\ref{sec:new-certificate}), and assume the
+already proved global bound $\beta_*\le7/8$.  Thus the zero-free premise of the imported plain
+moment holds.  This choice of $\kappa$ is fixed throughout and uses no
+feedback improvement.
+
+\paragraph{The estimate.}
+Let $U=Z^d$, $Y=Z^{l_y}$, and let $\mathcal B$ be a fixed dynamic bin of
+nonprincipal physical rows $u$ with $q_u\asymp U$.  Put
+$\delta=2a-1$, where $51/100\le a\le7/8$. Let $\ell$ be the total physical
+prime-slot length.  Suppose
+\begin{equation}\label{eq:new-capacity-supply}
+ \frac d2<l_y<d,\qquad
+ 0<\frac{2l_y-d}{6\kappa}\le\ell.
+\end{equation}
+For each pointwise amplitude and witness subdivision $\mathcal C$ of
+this bin, suppose the original row-count argument gives
+\[
+ \#\mathcal C\ll U^{R+\epsilon}(1+T_1)^A,
+ \qquad 0\le q\le\delta/2,
+\]
+where $q\ell$ is the sum of slot length times amplitude, assigning
+amplitude zero to every error slot.  Up to arbitrarily small exponent
+losses and a fixed polynomial in the retained heights, its contribution
+to the high comparison is bounded by the supremum of
+\begin{equation}\label{eq:new-weighted-high-exponent}
+ \begin{split}
+ E_W(d)={}&a-\theta+h(z_0-1/6)-\frac{l_y}{2}-\frac\ell2+q\ell\\
+ &+d\left(\frac{3R}{4}+\frac14-z_0\right)
+       -\frac{q(2l_y-d)}{12\kappa}.
+ \end{split}
+\end{equation}
+The supremum is taken after continuing the whole fixed dynamic bin.
+Individual amplitude sets are not continued separately.  In particular,
+choosing between this estimate and the original high estimate for a
+whole bin gives
+$\min\{\sup_q E_{\rm old},\sup_q E_W\}$, without requiring an
+interchange of the minimum and supremum.
+
+\paragraph{Coefficient norms and the local correction.}
+Fix the retained $s,z$ with $\Re s=a+16e$ and $\Re z=z_0$.
+Set
+\[
+ \rho=\delta/4,\qquad \sigma_-=1/2-\rho.
+\]
+Then $\sigma_->0$ and
+$\Re s+\sigma_--1\ge\delta/4>0$.  Both $\Re w=1/2$ and
+$\Re w=\sigma_-$ lie in the first Euler region.  For a polynomial in
+$Q^{-w}$ define
+\[
+ \left\|\sum_j b_jQ^{-jw}\right\|_\sigma
+       =\sum_j|b_j|Q^{-j\sigma}.
+\]
+The local denominators $1-D$, $1-R$, and $1-V$ in the original
+manuscript are independent of $w$ and uniformly separated from zero.
+The factor $H_p$ is a polynomial of degree at most two in $Q^{-w}$ at
+$p\nmid u$, and at most one at $p\mid u$.  The exact defect identity
+\[
+ H_p-1=
+ \frac{D(V+W-VW)-VW+(1-V)(1-W)\mathcal E_p}{1-D},
+ \qquad \mathcal E_p=P_p^*+D,
+\]
+therefore gives, by taking absolute coefficients \emph{after} this
+cancellation,
+\[
+ \|H_p-1\|_{\sigma_-}\ll
+ \begin{cases}
+ Q^{-1-\epsilon_H},&p\nmid u,\\
+ Q^{-\epsilon_H},&p\mid u,
+ \end{cases}
+\]
+for a fixed $\epsilon_H>0$.  The same holds at $\sigma=1/2$.
+The convergent prime product and the divisor-product estimate imply
+that every unselected product, excluding any tuple of distinct slot
+labels, has absolute coefficient norm $\ll U^\epsilon$ on both lines.
+These assertions are uniform in the retained imaginary parts.
+
+Write
+$E_p=G_p+\overline{\chi_p}(u)H_p$.  For an error-slot subset $I$,
+the quotient-free part of the correction is
+\begin{equation}\label{eq:new-error-coefficient-product}
+ F_I(w)=\sum_{(p_i)_{i\in I}}
+ \prod_{i\in I}\left[
+ W_i(q_{p_i}/P_i)q_{p_i}^{z-1}E_{p_i}\right]
+ \prod_{\substack{p\notin S\\p\notin\{p_i:i\in I\}}}H_p.
+\end{equation}
+All remaining slots retain their actual main factors
+$-P_i^{z-1/2}Q_i(u;z)$.  Equation
+\eqref{eq:new-error-coefficient-product} follows by expanding the
+holomorphic selected-tuple identity.  It does not divide by $H_p$ and
+does not alter a main-slot mask or coefficient.
+
+At $p\nmid u$, the exact local error cancellation
+\textup{(original equation \texttt{old-eq:5.13b})} yields
+\[
+ \|E_p\|_\sigma\ll
+ Q^{-s_r}+Q^{-6z_0}+Q^{4-5s_r-6z_0}+Q^{1-\sigma-6z_0}
+ \qquad(\sigma\in\{1/2,\sigma_-\}).
+\]
+Each exponent is at most $-1/2$ with a fixed margin.  The ideal count
+therefore bounds the sum over a slot, including $Q^{z-1}$, by
+$O(P_i^{z_0-1/2})$.
+
+At $p\mid u$, with $j=v_p(u)$, the main factor is zero and
+\[
+ E_p=G_p=\overline{\eta(p)}Q^s(1-V)\mathcal E_p-Q^{-w}H_p.
+\]
+After dividing the slot factor by $Q^{z_0-1/2}$, the non-tail boundary
+terms of the six-valuation table have the following exponents on
+$\Re w=\sigma_-$, at $e=0$:
+\[
+\begin{array}[b]{c|ccccc}
+ j&1&2&3&4&5\\ \hline
+ \text{exponents}&-1+\rho&-\delta&-\delta+\rho\ \text{and}\ {-3\delta/2}
+   &-3\delta/2+\rho&-5\delta/2
+\end{array}.
+\]
+All are negative; positive $e$ improves them.  The $R,V$ tails and
+$-Q^{-w}H_p$ are smaller.  The only exception is the strict term
+\[
+ -\eta(p)(Q-1)Q^{-s-w},\qquad j\ge2,
+\]
+whose normalized slot factor costs at most $Q^\rho$ on the left line
+and at most one on the central line.  Ramified labels are divisor-many.
+For any fixed triangle-expanded tuple, let $J$ consist precisely of
+its strict ramified labels.  They are distinct.  Choose the original
+small-presentation character, whose ideal coefficients agree with the
+physical row. Let $C_u$ be the product of its primitive conductor norm
+and full redundant Euler-ideal norm. This combined scale satisfies
+the original conductor allocation
+\[
+ C_u\le C_S\operatorname{rad}(u)
+ \le C_*U\prod_{p\in J}Q^{-(j-1)}.
+\]
+Consequently
+$(C_u/(C_*U))^\rho\prod_{p\in J}Q^\rho\le1$.
+The single conductor deficit is applied to the whole tuple.
+
+Expand $F_I(w)=\sum_k A_{I,u}(k)q_k^{-w}$ and put
+$B_I=\prod_{i\in I}P_i^{z_0-1/2}$.  The preceding estimates prove
+\begin{align}
+ \sum_k|A_{I,u}(k)|q_k^{-1/2}&\ll U^\epsilon B_I,
+ \label{eq:new-central-coefficient-norm}\\
+ \left(\frac{C_u}{C_*U}\right)^\rho
+ \sum_k|A_{I,u}(k)|q_k^{-1/2+\rho}&\ll U^\epsilon B_I.
+ \label{eq:new-left-coefficient-norm}
+\end{align}
+Combining them gives the useful weighted form
+\begin{equation}\label{eq:new-weighted-coefficient-norm}
+ \sum_k|A_{I,u}(k)|q_k^{-1/2}
+ \max\left(1,\frac{C_uq_k}{C_*U}\right)^\rho
+ \ll U^\epsilon B_I.
+\end{equation}
+This also explains why a strict ramified error does not consume prime
+capacity: its forced dilation is paid for by a distinct factor in the
+conductor deficit.
+
+\paragraph{Reconstructing and reflecting the numerator.}
+For each fixed nonprincipal physical row, move the complete $w$
+integral to $\Re w=1/2$.  The numerator is entire; the correction is
+holomorphic throughout this move, and the Mellin profile has arbitrary
+decay.  The bin itself is independent of $w$.  The absolute coefficient
+norm just proved and polynomial strip growth justify termwise Mellin
+inversion:
+\begin{equation}\label{eq:new-exact-w-reconstruction}
+ \begin{split}
+ &\frac1{2\pi i}\int_{(1/2)}
+ Y^{w-1}\widehat W_1(w)L^S(w,\chi_u)F_I(w)\,dw\\
+ &\hspace{8mm}=
+ Y^{-1/2}\sum_k A_{I,u}(k)q_k^{-1/2}
+              S_{\chi_u}(Y/q_k;W_1).
+ \end{split}
+\end{equation}
+Here $S$ denotes the original centrally normalized plain sum.  Since
+$W_1$ has compact support, say in $[r_-,r_+]$, terms with $q_k>r_+Y$
+vanish identically before reflection.  Thus all relevant scales lie
+in a fixed polynomial range.
+
+The imported smooth functional equation replaces $S_{\chi_u}(X;W_1)$ by reflected sums
+with conjugate character and fixed transformed profiles. Restoring
+natural zeros follows the original reflection proof. The redundant
+Euler restoration need not be supported on fixed $S$: every restoration
+subset has norm at most the full redundant ideal norm, and every
+smooth-ideal denominator decreases the reflected scale. Consequently
+all reflected scales are at most $C_u/X$, with the combined $C_u$
+defined above. The original restoration coefficient mass is subpower
+in the small modulus. Fixed constants enter $C_*$. No extra weighted
+restoration mass or new moving mask is needed.
+
+Use \eqref{eq:new-weighted-coefficient-norm} to remove all row-dependent
+coefficients before applying a moment.  It leaves a rowwise supremum
+of reflected sums of scale at most
+$C_*(U/Y)T$, multiplied by $T^{-\rho}$, where
+\[
+ T=\max(1,C_uq_k/(C_*U)).
+\]
+The imported smooth scale-supremum lemma handles the row-dependent
+scale using logarithmically many boxes and finitely many derivatives.
+Annular decomposition of the reflected profile gives the usual
+arbitrarily small length loss, summable lower annuli and arbitrarily
+decaying upper tails.  Since $q_k\le r_+Y$, all main reflected scales
+are $O(U)$ and the declared lengths stay bounded.  Thus no uniform
+moment assertion for unbounded lengths is being used.
+
+\begin{proposition}[Checked original-numerator moment]\label{prop:checked-original-fourth}
+Assume $51/100\le\beta_*$. \textup{(}The bound $\beta_*\le7/8$ of
+\cite{openai} is available throughout but is not needed here; the Lean
+statement assumes only the lower bound.\textup{)}
+Fix the original weighted source data, its moment loss $t>0$, a
+Schwartz profile $G$, and positive constants $\lambda,\xi,b$.
+For sufficiently large $U$, let $\mathcal R$ be any finite set of
+nonprincipal physical rows with $U^{1/100}\le q_u\le U$.
+For every row choose $0<N_u\le bY$, where $Y>0$, and its actual
+combined conductor $C_u$. Suppose, for a common $m\ge0$,
+\[
+ m+\xi\le2,\qquad
+ C_u\le C_S U^m\frac{Y}{N_u}.
+\]
+Let $T$ be any selected family of original prime slots with nonnegative
+widths $r_i$ below the certified mesh
+$\operatorname{fineMesh}(2,0,1,3/4,t/4)$, and let
+$\Re z_i=17/50$, $|\Im z_i|\le H$, $H\ge0$. Assume
+\[
+ 2(m+\xi)+\frac92\sum_{i\in T}r_i\le1
+ \quad\hbox{or}\quad T=\varnothing,
+ \qquad
+ \left|\prod_{i\in T}Q_i(u;z_i)\right|\le U.
+\]
+Then there are a fixed integer $J\ge0$ and $C>0$ such that
+\[
+ \sum_{u\in\mathcal R}
+ \left|S_{\chi_u}(Y/N_u;G)\right|^4
+ \left|\prod_{i\in T}Q_i(u;z_i)\right|^2
+ \le C(1+H)^J U^{1+t+\lambda}.
+\]
+The constants and threshold precede all choices of rows, scales,
+selected slots, and heights. They may depend on the fixed source data,
+profile and displayed fixed positive constants.
+\end{proposition}
+\begin{proof}
+Use the actual smooth reflection identity with unit-modulus phase and
+cutoff $U^{\xi/4}$. The certified retained-profile theorem bounds the
+weighted fourth moment of the retained part by
+$C_r(1+H)^J U^{1+t+\lambda}$. It uses the positive-capacity source
+moment when $T\ne\varnothing$ and the unrestricted bounded-length
+zero-slot source moment otherwise. Both applications preserve the
+original physical coefficients and selected factors.
+
+For the discarded part, $C_u\le C_S q_u\le C_SU$ and $N_u\le bY$
+give a uniform reflected-scale bound $C_uN_u/Y\le bC_SU$.
+The original arbitrary-order discarded-tail estimate therefore gives
+any power saving, uniformly over these rowwise choices. The elementary
+row count is at most $128U$, and the assumed selected product is at
+most $U$. Choosing sufficient tail decay bounds its weighted fourth
+moment by a constant $C_d$. Finally,
+$|r+d|^4\le8(|r|^4+|d|^4)$, the reflection phase has modulus one,
+and $(1+H)^J U^{1+t+\lambda}\ge1$. The result follows with
+$C=8(C_r+C_d)$. The Lean theorem allows the more general fixed bound
+$C_{\rm slot}U^{q_{\rm tail}}$ on the selected product; the displayed
+statement specializes both constants to one.
+\end{proof}
+
+\paragraph{Selecting prime factors inside the fourth moment.}
+Fix an amplitude set $\mathcal C$ after the full $w$ integration, at
+one retained $(s,z)$ and witness tuple.  Put
+\[
+ L=\ell/d,\qquad n_0=1-l_y/d,
+ \qquad z_P=\frac{1-2n_0}{6\kappa}.
+\]
+For a scale dyad $T=U^v$, allow length $n(v)=n_0+v$ and define
+\[
+ z(v)=\max\left(0,z_P-\frac{2v}{6\kappa}\right).
+\]
+The supply condition gives $z_P\le L$.  Select the largest positive
+amplitude main slots up to this capacity.  If their total length is
+smaller, select all of them.  The original selection lemma, with a
+sufficiently fine mesh, gives
+\[
+ |Q_{\rm selected}|\ge U^{qz(v)-o(1)},
+ \qquad |Q_{\rm all}|\le U^{qL+o(1)}
+\]
+on $\mathcal C$.  Actual selected length never exceeds $z(v)$; no
+zero-amplitude factor is required for this lower bound.  The reflected
+numerator has character $\overline{\chi_\bullet}(u)$, exactly matching
+the physical main slots $\overline{\chi_p}(u)$.  Conjugating the whole
+plain/selected-slot product inside its absolute value gives the positive
+row orientation in the statement of the imported plain moment; it only
+conjugates the profiles and fixed finite-ray coefficients, and preserves
+every zero extension.  For sufficiently large $U$ in the moderate
+dyads, a physical row cannot induce a character in the fixed exceptional
+group $\Theta$, since a good prime of that row ramifies.  The finitely
+many unit or fixed-prime-supported exceptions belong to the separate
+small-row estimate.
+
+H\"older's inequality and the imported plain moment give
+\begin{align*}
+ \sum_{u\in\mathcal C}|S_{\bar\chi_u}(n(v))Q_{\rm all}(u)|
+ &\ll U^{qL-qz(v)/2+o(1)}(\#\mathcal C)^{3/4}
+ \left(\sum_u |S_{\bar\chi_u}(n(v))|^4
+                     |Q_{\rm selected}(u)|^2\right)^{1/4}\\
+ &\ll U^{qL-qz(v)/2+3R/4+1/4+o(1)}.
+\end{align*}
+If $z(v)>0$, the capacity equation is $2n(v)+6\kappa z(v)=1$.
+If $z(v)=0$, use the original lemma's stronger zero-slot assertion:
+it gives $U^{1+o(1)}$ for bounded nonnegative plain lengths, without
+a length restriction. This is the certified \texttt{ZeroAt} input,
+not the weaker downstream detector estimate with exponent
+$\max(1,2n)$. Small slack is reserved for annuli and scale boxes.
+The derivative versions used by the scale supremum have the same
+exponent and a fixed height cost.
+
+The coefficient weight adds $-\rho v$.  Before the capacity is
+exhausted, the exponent relative to $v=0$ is
+\[
+ \left(\frac q{6\kappa}-\rho\right)v
+ \le-\frac{5\delta}{36}v,
+\]
+because $\kappa=3/4$, $q\le\delta/2$, and $\rho=\delta/4$.
+After capacity is exhausted, its slope is $-\rho$. Thus every
+dilation dyad is controlled by $v=0$, with room for the small fixed
+losses. All error subsets satisfy the same estimate; no lower bound
+for an error factor is used.
+
+Restoring the main-slot normalizers, the $w$-integrated bin is bounded
+by
+\[
+ Y^{-1/2}Z^{\ell(z_0-1/2)+q\ell}
+ U^{3R/4+1/4-qz_P/2+o(1)}.
+\]
+The remaining $q_u^{-z}$ factor, reciprocal-denominator estimate and
+$X,Z$ Mellin weights are those of the original high-bin proof.
+They give exactly \eqref{eq:new-weighted-high-exponent}.  The finite
+amplitude, witness and error subdivisions are used only in this
+estimate of the already continued whole bin.  Rapid external Mellin
+decay and the fixed height orders treat the joins and discarded
+coordinates with the original cumulative height allocation.
+
+\paragraph{Dependence on the row scale.}
+In the positive-capacity range the coefficient of $d$ in
+\eqref{eq:new-weighted-high-exponent} is
+\[
+ \frac{3R}{4}+\frac14-z_0+\frac q{12\kappa}.
+\]
+For the original selected count $R\ge1-\delta$ and
+$\delta\le5/6$, this is at least $7/200>0$.  Thus $d=h$ controls
+the moderate row range whenever \eqref{eq:new-capacity-supply} holds
+throughout that range.  The small and far row estimates can remain
+those of the original proof.
+
+Finally, at fixed $R,q$ the difference from the original high exponent
+is
+\[
+ E_W-E_{\rm old}
+ =\frac{\delta l_y}{2}
+   +d\left(\frac{1-R}{4}-\frac\delta2\right)
+   -\frac{q(2l_y-d)}{12\kappa}.
+\]
+The final term is the additional saving supplied by the reconstructed
+physical numerator and the existing prime-weighted fourth moment.
+It is independent of any parameter-feedback argument.

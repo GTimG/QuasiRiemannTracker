@@ -3,6 +3,13 @@ import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { get } from "node:http";
+import { readFileSync } from "node:fs";
+const records = JSON.parse(
+  readFileSync("catalogue/results.json", "utf8"),
+).records;
+const verifiedCount = records.filter((r) =>
+  ["verified", "framework-verified"].includes(r.status),
+).length;
 
 const base = process.env.QRH_BASE_PATH || "/qrh-bounds/";
 const origin = "http://127.0.0.1:4184";
@@ -67,10 +74,14 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 6,
+    (count) => document.querySelectorAll("[data-dot]").length === count,
+    verifiedCount,
   );
-  assert.equal(await page.locator("tbody tr").count(), 6);
+  assert.equal(await page.locator("tbody tr").count(), records.length);
   for (const name of [
+    "proofs/cycle25-20261010-safe-replay/result.json",
+    "proofs/cycle25-20261010-safe-replay/logs/judge.log",
+    "proofs/cycle25-20261010-safe-replay/README.txt",
     "proofs/cycle25-quartic-20261010/result.json",
     "proofs/cycle25-quartic-20261010/control-results.json",
     "proofs/cycle25-quartic-20261010/paper.tex",
@@ -88,6 +99,17 @@ try {
     "proofs/nielstron-20261009-kernels/result.json",
     "proofs/nielstron-20261009-kernels/control-results.json",
     "proofs/nielstron-20261009-kernels/collection.json",
+    "proofs/akashlevy-20261009-weighted-numerator/result.json",
+    "proofs/akashlevy-20261009-weighted-numerator/judge.log",
+    "proofs/akashlevy-20261009-weighted-numerator/control-results.json",
+    "proofs/akashlevy-20261009-weighted-numerator/Challenge.lean",
+    "proofs/akashlevy-20261009-weighted-numerator/manuscript.pdf",
+    "proofs/akashlevy-20261009-weighted-numerator/collection.json",
+    "proofs/akashlevy-20261010-safe-replay/result.json",
+    "proofs/akashlevy-20261010-safe-replay/collection.json",
+    "proofs/akashlevy-20261010-safe-replay/README.txt",
+    "proofs/akashlevy-20261010-safe-replay/logs/judge.log",
+    "proofs/akashlevy-20261010-safe-replay/contract-audit.json",
     "proofs/nielstron-algebraic-20261009/collection.json",
     "proofs/nielstron-algebraic-20261009/native-final-audit.json",
     "proofs/nielstron-algebraic-20261009/token-counts.json",
@@ -125,6 +147,7 @@ try {
     "qrh-20261009",
     "nielstron-algebraic-20261009",
     "argonaut-20261010-kernels",
+    "akashlevy-20261009-weighted-numerator",
   ]) {
     const proofBase = origin + base + `proofs/${id}/`;
     const checksum = await (
@@ -176,7 +199,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, ${verifiedCount} verified dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

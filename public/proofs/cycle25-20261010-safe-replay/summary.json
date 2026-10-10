@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-10-10T16:09:09.733191+00:00",
+  "pull_request": "https://github.com/GTimG/QuasiRiemannTracker/pull/9",
+  "reviewed_pr_head": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  "proof_source_commit": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  "worker_receipt_sha256": "7bd5988d958c5baab80d283be299b2a735355fee035045e61b11df9ce2e1ddd6",
+  "driver_sha256": "4b5ab322656e48658ec1643c568e685de1eebf14f26826b622d23dd27236d3b3",
+  "pins_sha256": "c19c191f918161b965a47d1639d97f2515044166bc4551f0db528a6d5538b502",
+  "theta_exact": "683505193/781250000",
+  "algebraic_endpoint": "11/12 - ell/4, unique root in [1/6,1/5] of 927 ell^4 - 3135 ell^3 + 2433 ell^2 + 275 ell - 100",
+  "targets": [
+    "QRHBoundsPR9.allDirichlet",
+    "QRHBoundsPR9.zeta",
+    "QRHBoundsPR9.allHecke",
+    "QRHBoundsPR9.exactAllDirichlet",
+    "QRHBoundsPR9.exactZeta",
+    "QRHBoundsPR9.exactAllHecke",
+    "QRHBoundsPR9.quarticRootExistsUnique",
+    "QRHBoundsPR9.plainMoment"
+  ],
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "candidate_modules_rebuilt": 3224,
+  "submission_modules": 301,
+  "upstream_modules_rebuilt": 2923,
+  "approved_dependency_modules": 7026,
+  "extra_official_cache_modules": 4807,
+  "trusted_challenge_exported_before_candidate": true,
+  "isolation_preflight": "PASS",
+  "candidate_mount_preflight": "PASS",
+  "canonical_contract_audit": "PASS; contract-audit.json",
+  "evidence_transport": "Authenticated SSH; all collected artifacts checked against the outside-sandbox receipt",
+  "limitations": [
+    "Reuses a separately approved source-built canonical library; not a cache-free bootstrap.",
+    "Extra candidate dependencies fetched from pinned official cache and kernel-replayed; they never supply canonical definitions.",
+    "This is a local maintainer replay, not a production submission service or signed publication receipt."
+  ]
+}

@@ -1,10 +1,19 @@
 # Catalogue evidence and signed admission
 
-The main graphic now includes native-Lean-checked results and external formalizations awaiting our independent verification. **Verified in our framework** requires Comparator statement, definition and axiom checks, plus acceptance by Lean, NanoDa and con-ron, with retained source and checking reports. Only `propext`, `Classical.choice` and `Quot.sound` are permitted. On 9 October both our proof and the original OpenAI 7/8 proof also passed Palomar’s unmodified mechanical judge locally: Comparator checked statements and definitions, and Lean, NanoDa and con-ron accepted the exports. The reports and tool hashes are in `public/proofs/palomar-20261009/`. Earlier 7/8 evidence was a corollary; the original proof is now checked directly. This does not constitute Palomar registration or editorial review. **Verification pending** does not allege a mathematical defect. The progress line includes pending results and tracks the best listed bound; the amber dots and verification labels distinguish their status.
+The main graphic includes only independently verified results; submissions awaiting our checks remain in the searchable table. **Verified in our framework** requires Comparator statement, definition and axiom checks, plus acceptance by Lean, NanoDa and con-ron, with retained source and checking reports. Only `propext`, `Classical.choice` and `Quot.sound` are permitted. On 9 October both our proof and the original OpenAI 7/8 proof also passed Palomar’s unmodified mechanical judge locally: Comparator checked statements and definitions, and Lean, NanoDa and con-ron accepted the exports. The reports and tool hashes are in `public/proofs/palomar-20261009/`. Earlier 7/8 evidence was a corollary; the original proof is now checked directly. This does not constitute Palomar registration or editorial review. **Verification pending** does not allege a mathematical defect. The progress line tracks the best independently verified bound. Pending results cannot add a dot or advance the line.
 
 The catalogue (`catalogue/results.json`) is reviewed metadata, kept separate from signed registry records. Dates on its timeline are publication/announcement or local verification dates, explicitly identified. Status is the current audit status; no historical verification time is invented. Liu’s algebraic expression is retained exactly.
 
 The complete native Lean snapshot is distributed with hashes, logs and immutable inputs. Build-time hash checking verifies packaging integrity; it does not replay Lean. The separate signed Comparator + NanoDa admission service remains uncommissioned. The policy below still governs that separate admission process, and its requirements are not waived by a catalogue badge.
+
+The weighted-numerator contribution uses the maintainer replay described in
+`verifier/akashlevy/README.md`. Its publication gate requires the isolated
+run's receipt and all 302 submitted package files to match the reviewed pins,
+including all 228 new proof modules and the exact dependency-fork revision.
+Changing a proof and regenerating its public archive/checksums cannot retain
+verified status. The author's unsandboxed report is historical evidence only;
+the contribution's verification time comes from the first successful independent
+run. The catalogue build checks this gate as well as the publication checker.
 
 # Trust model and limits
 

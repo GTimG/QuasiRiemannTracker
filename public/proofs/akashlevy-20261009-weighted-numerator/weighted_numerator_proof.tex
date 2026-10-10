@@ -1,0 +1,959 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Weighted numerator moments in the quasi-Riemann
+argument},pdfauthor={Akash Levy}}
+\setlength{\emergencystretch}{2em}
+\Urlmuskip=0mu plus 1mu
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\Bstar}{\beta_*}
+\newcommand{\F}{\mathbb Q(\sqrt{-3})}
+\title{Weighted numerator moments in the quasi-Riemann argument}
+\author{Akash Levy\thanks{GPT-6 Astra (Ultra) was used to discover the
+proof and perform partial formalization; Opus 5.5 Ultracode was used to
+complete the formalization and submit the result.}\\[2pt]
+{\normalsize GitHub: \texttt{akashlevy}}}
+\date{9 October 2026 (PDT)}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We replace a pointwise numerator bound in the cubic-theta probe by a
+weighted fourth-moment estimate for its actual smoothed numerator sum.
+Mellin inversion and the Hecke functional equation expose a shorter plain
+polynomial, leaving capacity for selected prime factors. A coefficient
+norm argument controls the original Euler correction, including its
+ramified error terms, without inserting arbitrary row-dependent
+coefficients into the moment theorem. Using the original moment parameter
+$\kappa=3/4$, the resulting comparison gives
+$\beta_*\le10499/12000=0.874916666\ldots$ for the original Hecke family
+and hence for every Dirichlet $L$-function: none has a zero with
+$\Re s>10499/12000$, the pole of the trivial character at $s=1$ being
+excluded. The finite exponent checks are exact rational certificates.
+The complete argument is proved in Lean~4 with Mathlib, on top of the
+Lean development of the original quasi-Riemann paper. The endpoint
+theorems depend only on the axioms \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}. A Lake build in the
+proof package's workspace, with a fresh clone of the pinned fork of the
+original development, compiled the 2670 modules of that development
+which the proof imports and all 228 modules of the proof. The Lean FRO
+Comparator matched the tracker's three template statements for zeta,
+for all Dirichlet $L$-functions and for the original Hecke family at
+$10499/12000$ against definitions compiled from unmodified upstream
+sources; the con-ron and NanoDa kernels and Lean's own kernel accepted
+the exported proof. All checks were run by the author on one macOS machine,
+the three-kernel check without Comparator's sandbox; they are not a
+tracker receipt. No external human peer review has taken place.
+\end{abstract}
+
+\section{Statement, scope, and source inputs}
+
+Let $\Bstar$ be the supremum of $1/2$ and the real parts of nontrivial
+zeros of the primitive finite-order Hecke $L$-functions over
+$\F=\mathbb Q(\zeta_3)$, with arbitrary conductor and height. Principal
+poles are excluded.
+
+\begin{theorem}[Improved zero-free half-plane]\label{thm:weighted-main}
+\[
+ \Bstar\le B:=\frac{10499}{12000}=0.874916666\ldots.
+\]
+Every finite-order Hecke $L$-function over $\F$, and every Dirichlet
+$L$-function including the Riemann zeta function, is therefore zero-free
+on the open half-plane $\Re s>B$. Only the pole at $s=1$ of the principal
+(trivial) characters is excluded.
+\end{theorem}
+
+\paragraph{Lean statements.}
+Theorem~\ref{thm:weighted-main} is proved in Lean by the following
+unconditional theorems of \nolinkurl{Final.lean}. Lean file names in this
+paper are relative to \nolinkurl{formalization/WeightedQRH/} in the
+accompanying proof package (Section~\ref{sec:verification}).
+\begingroup
+\raggedright
+\begin{itemize}
+\item \nolinkurl{WeightedQRH.beta_le_theta}:
+\nolinkurl{HeckeZeroSupremum.beta} $\le10499/12000$.
+\item \nolinkurl{WeightedQRH.hecke_nonzero}: for every
+\nolinkurl{HeckeFamily.Character} $\chi$ and every $s\in\mathbb C$ with
+$10499/12000<\Re s$ and ($s\ne1$ or
+$\chi.\mathrm{residue}\ne1$), \nolinkurl{HeckeFamily.LFunction}
+$\chi\;s\ne0$.
+\item \nolinkurl{WeightedQRH.dirichlet_nonzero}: for every modulus $q$
+with \texttt{[NeZero q]}, every complex Dirichlet character $\chi$
+modulo $q$ and every $s$ with $10499/12000<\Re s$ and
+$\neg(\chi=1\wedge s=1)$, Mathlib's $L$-function
+\nolinkurl{DirichletCharacter.LFunction} $\chi\;s$ is nonzero.
+\item \nolinkurl{WeightedQRH.zeta_nonzero}: for every $s$ with
+$10499/12000<\Re s$ and $s\ne1$, Mathlib's \nolinkurl{riemannZeta} is
+analytic at $s$ and \nolinkurl{riemannZeta} $s\ne0$.
+\end{itemize}
+\endgroup
+Here \nolinkurl{HeckeZeroSupremum.beta} is the definition of the original
+development \cite{openai,fork}. It is the supremum of $1/2$ and the real
+parts of all zeros with $\Re s>0$, other than the pole, of
+\nolinkurl{HeckeFamily.LFunction} $\chi$. The supremum runs over every
+\nolinkurl{HeckeFamily.Character} $\chi$, given by a nonzero ideal modulus
+of the integers of $\F$ and a residue character trivial on the global
+units; $\chi$ need not be primitive. This supremum equals $\Bstar$.
+Passing to the primitive character removes finitely many Euler factors
+$1-\chi(\mathfrak p)N\mathfrak p^{-s}$, whose zeros lie on $\Re s=0$.
+The zeros of a primitive $L$-function with $\Re s>0$ are its nontrivial
+zeros. The Hecke statements concern exactly these finite-order Hecke
+characters of $\F$ in the original definition. They are not a statement
+of the generalized Riemann hypothesis, and nothing is claimed for other
+fields.
+
+We use the original physical probe, its zero extensions, common masks,
+and fixed excluded prime set. No modified zero-free theorem from another
+refinement is an input. In particular, the moment parameter remains
+$\kappa=3/4$ throughout; no lower-$\kappa$ feedback is used.
+The starting theorem $\Bstar\le7/8$ makes the original hypothesis
+$\Bstar\le(1+\kappa)/2$ available.
+
+The indispensable source results are:
+\begin{itemize}
+\item the original zero-free theorem and \texttt{lem:plain}
+(fourth moment with short prime factors);
+\item \texttt{lem:marked}, \texttt{lem:inverse-amplification}, and
+\texttt{prop:detector-witness};
+\item \texttt{lem:reflected-energy} and \texttt{prop:probe-gram};
+\item \texttt{lem:local-euler} and the exact local formulas underlying
+\texttt{prop:probe-errors};
+\item the natural-character reflection and \texttt{lem:smooth-calculus};
+\item the original contour/tail lemmas and continuation criterion\\
+\texttt{lem:continuation-criterion};
+\item the transfer theorem \texttt{prop:hecke-dirichlet-transfer}.
+\end{itemize}
+Labels refer to the \LaTeX{} source of \cite{openai} at the pinned
+commit given in the bibliography.
+Our new estimate is proved below; it is not assumed as an additional
+moment or probe hypothesis. The written proof below cites the source
+theorems listed above and accepts them as proved in \cite{openai}. The
+Lean proof does not rest on accepting the paper. It uses the Lean
+formalization of the corresponding source results in the original
+development \cite{fork}, together with Mathlib, and its endpoints depend
+only on the standard axioms (Sections~\ref{sec:lean-correspondence}
+and~\ref{sec:verification}).
+
+\section{Geometry and the direct bound}
+
+Choose
+\begin{equation}\label{eq:new-geometry}
+ \ell=\frac{167}{1000},\quad b=\frac{43}{500},\quad
+ l_x=\frac{747}{2000},\quad l_y=\frac{919}{2000},\quad
+ h=\frac{1587}{2000},\quad \kappa=\frac34.
+\end{equation}
+Thus $M=l_x+l_y=1-\ell$, $b=l_y-l_x$, and $h=1-l_x+\ell$.
+The physical lengths are $X=Z^{l_x}$, $Y=Z^{l_y}$ and
+$\prod_iP_i=Z^\ell$, with a fixed even number of disjoint prime slots.
+Let $I_{\eta,\mathrm{modified}}(Z)$ be the finite compensated probe
+in the source equation \texttt{eq:compensated-probe-definition},
+evaluated at these lengths, with the same marked-minus-rescaled
+operations and the same original slot windows. Set
+\[
+ S_i(Z)=\sum_{p\in\mathcal P_i(Z)}W_i(q_p/P_i)q_p^{-5/6},\qquad
+ A_\eta(Z)=(-1)^K Z^{-\ell/6}\prod_{i=1}^K S_i(Z),
+\]
+and define
+\[
+ J_\eta(Z)=\frac{I_{\eta,\mathrm{modified}}(Z)}{c_S A_\eta(Z)}.
+\]
+Here $c_S>0$ is the fixed scalar from the source equation
+\texttt{eq:shared-principal-data}. The source ray-prime asymptotic gives
+$|A_\eta(Z)|\asymp(\log Z)^{-K}$ for sufficiently large $Z$.
+Both low and high estimates below concern this same normalized probe.
+The normalized principal signal has exponent
+\[
+ C(s)=s-\frac{4+b}{6}.
+\]
+
+For completeness, the direct estimate at these changed lengths follows
+from the original estimates without a new cancellation input. For a
+rescaled subset of total length $v\in[0,\ell]$, put
+$M'=M-2v$ and $\ell'=\ell-v$. Then
+$M'+\ell'-1=-3v$. The source reflected-energy proof consequently gives
+\[
+ E_{\rm ref}\le M'+\frac{(1+3\ell'-2M')_+}{4}+o(1)
+ =M'+\frac{(5\ell-1+v)_+}{4}+o(1).
+\]
+After the Gram bound, Cauchy--Schwarz, tuple counting and rescaling, the
+additional exponent is
+\[
+ -v+\frac{(5\ell-1+v)_+}{8}\le0.
+\]
+Indeed it is zero at $v=0$ and has slopes $-1$ and $-7/8$, since
+$\ell<1/5$. The required Gram domination is
+$l_y-\ell-11b/6>0$, and every rescaled length is positive. Therefore
+the normalized physical probe satisfies
+\begin{equation}\label{eq:new-low}
+ |J_\eta(Z)|\ll_{\eta,\epsilon}Z^{l_x/2+b/12+\epsilon}
+ =Z^{C(B)+\epsilon},\qquad B=\frac{11}{12}-\frac\ell4.
+\end{equation}
+All strict scale inequalities used here are checked by the certificate
+in Section~\ref{sec:new-certificate}.
+
+\section{Available row counts}\label{sec:row-counts}
+
+Write $U=Z^d$ for a physical row dyad. A dynamic zero bin has
+$a=(1+\delta)/2$, with $1/50<\delta\le3/4$ after using $\Bstar\le7/8$.
+The floor bin $\delta=1/50$ is handled separately. For the physical main
+prime factors, let $q=\delta x$ be their length-weighted mean amplitude,
+where $0\le x\le1/2$; assign amplitude zero to an error slot.
+
+Set $\alpha=5/6$, $c=2/9$, and
+\begin{align*}
+ D_x&=3-(1+4c)x,& P_x&=(2-4cx)(1-x),\\
+ J&=(\alpha-\delta)D_x+\delta P_x,&
+ R&=1-\delta+\frac{(\alpha-\delta)\delta P_x}{2J}.
+\end{align*}
+The original selected-witness argument gives
+$\#\mathcal C\ll U^{R+\epsilon}(1+T)^A$ for every amplitude/witness
+subdivision $\mathcal C$. Here the plain capacity is exactly
+$(1-2m)/(6\kappa)=2(1-2m)/9$. At fixed $\kappa=3/4$ there is no
+capacity-replacement loss. To see the count directly, the two short
+exponents are
+\[
+ 1-\delta\{x+(1-x)r\},\qquad
+ 1-\delta\{2cx+(2-4cx)(t-r)\}.
+\]
+Balance their crossing against the long-witness exponent
+$1-\delta+(\alpha-\delta)(t-1)$ by choosing
+$t=1+\delta P_x/(2J)$. This gives the displayed $R$.
+The selected inverse capacity is at most $7/37$, and the plain one at
+most $2/27$. Since $\ell/h>7/37$, the original whole-slot selection
+and its small capacity decrements apply. The original zero-capacity
+arguments are retained. In particular $R\ge1-\delta$.
+
+The row count is first applied to the original amplitude class containing
+\emph{all} physical slots. Its full mean $q_{\rm full}$ is at least the
+main-slot mean $q$ obtained by setting error-slot amplitudes to zero;
+both means are divided by the full slot length. For fixed $\delta$,
+$R(\delta,x)$ is nonincreasing on $0\le x\le1/2$. Hence the original
+bound with $R(\delta,q_{\rm full}/\delta)$ implies the bound with
+$R(\delta,q/\delta)$ used below. This is the Lean theorem
+\nolinkurl{WeightedQRH.masked_amplitude_class_count} in
+\nolinkurl{HighRows/MaskedCount.lean}. It requires no new moment
+assertion for a masked slot family.
+
+\section{The weighted physical numerator estimate}
+
+The useful distinction is between a pointwise bound for
+$L(w,\chi_\bullet(u))$ and its smoothed inverse Mellin transform at
+the actual scale $Y$. In the latter, reflection produces a plain
+polynomial of length at most $U/Y$, rather than the square-root
+conductor length used in a generic approximate functional equation.
+The unused length supports selected prime factors in the existing fourth
+moment. The next proof includes the Euler correction and every error
+subset; using only its all-main term would be insufficient.
+
+\input{weighted_numerator_lemma.tex}
+
+\section{Exact exponent comparison}\label{sec:new-certificate}
+
+Let $z_c=17/50$. The source pointwise numerator argument gives, relative
+to $C(B)$,
+\begin{equation}\label{eq:old-high-new-geometry}
+ E_{\rm old}(d)=a-B+h(z_c-1/6)-a l_y-\ell/2+q\ell
+                  +d(R+\delta/2-z_c).
+\end{equation}
+For $1/2\le d\le h$, we have $l_y<d<2l_y$. The new weighted estimate
+instead gives $E_{\rm wt}=E_W$, that is \eqref{eq:new-weighted-high-exponent}
+with $\theta=B$ and $z_0=z_c$:
+\begin{equation}\label{eq:weighted-high}
+ E_{\rm wt}(d)=a-B+h(z_c-1/6)-l_y/2-\ell/2+q\ell
+       +d\left(\frac{3R+1}{4}-z_c\right)
+       -\frac{q(2l_y-d)}{12\kappa}.
+\end{equation}
+The last term is the additional saving from the prime factors in the
+numerator moment. At a fixed zero bin we choose the source contour when
+$\delta\le1/3$, and the new numerator treatment when $\delta\ge1/3$.
+This choice is made for the original dynamic-bin sum before any pointwise
+amplitude subdivision. It does not choose a contour according to $x$.
+
+\begin{lemma}\label{lem:new-certificate}
+For the geometry \eqref{eq:new-geometry},
+\begin{align*}
+ E_{\rm old}(h)&\le-10^{-4}
+ &&(0\le\delta\le1/3,\ 0\le x\le1/2),\\
+ E_{\rm wt}(h)&\le-10^{-4}
+ &&(1/3\le\delta\le3/4,\ 0\le x\le1/2).
+\end{align*}
+All prime-supply, rescaling, remaining row-range, and Euler-region
+inequalities needed in this proof hold with the stated strict margins.
+\end{lemma}
+\begin{proof}
+Here is an exact, reproducible finite certificate. Put
+$A_P=(\alpha-\delta)\delta P_x$, so that the first identity below holds,
+and form the polynomial $T$:
+\[
+ RJ=(1-\delta)J+\frac{A_P}2,\qquad
+ T=\frac{(1+\delta)(1-l_y)}2-\frac\ell2
+       +q\ell+\frac{h\delta}{2}-\frac h6-B.
+\]
+Then the two endpoint numerators are
+\begin{align*}
+ J E_{\rm old}(h)&=JT+h(RJ),\\
+ J E_{\rm wt}(h)&=J E_{\rm old}(h)
+   +\frac h4[J-RJ]+\frac{\delta(l_y-h)}2J
+   -\frac{q(2l_y-h)}{12\kappa}J.
+\end{align*}
+All their coefficients are rational and $J>0$ on the full rectangle.
+The script
+\nolinkurl{evidence/certificate/weighted_numerator_certificate.py} in the
+proof package proves that $-J(E+10^{-4})\ge0$, using the convex-hull property
+of the Bernstein basis: one rectangle suffices for the first branch,
+and nine exact rational subrectangles suffice for the second.
+The endpoints and lower Bernstein coefficients are stored in
+\nolinkurl{evidence/certificate/weighted_numerator_certificate.json}.
+No floating-point sign decision is used. Lean proves the two branch
+inequalities separately, in the extended form used by the proof
+(Section~\ref{sec:lean-correspondence}).
+
+The same script checks 32 auxiliary rational comparisons, including
+\[
+ \frac\ell h>\frac7{37},\qquad 5\ell-h>0,\qquad
+ 2l_y-h>0,\qquad l_y<\frac12,
+ \qquad \ell>\frac{2l_y-1/2}{6\kappa}.
+\]
+The last inequality supplies every numerator capacity on $d\in[1/2,h]$.
+For $d\le1/2$, use the original no-slot count
+$R=76/75-2\delta/3$; its exponent at $d=1/2$ is strictly negative
+at $\delta=1/50$ and $\delta=3/4$, hence throughout by affinity.
+The floor-bin estimate with $R=1$, $q=1/100$ is strictly negative
+at $d=h$.
+For $d\le1/100$ the original absolute small-row comparison has saving
+\[
+ -\{h(z_c-1/6)-l_y/2+63/5000\}>0
+\]
+directly relative to $C(\Bstar)$.
+
+Both endpoint estimates control the full main row interval. The source
+frequency slope $R+\delta/2-z_c$ is positive. The new slope is
+\[
+ \frac{3R+1}{4}-z_c+\frac q{12\kappa}
+ \ge \frac{7}{16}-\frac{17}{50}>0,
+\]
+using $\delta\le3/4$ and $R\ge1-\delta$. All these slopes have a
+fixed upper bound, so a sufficiently small fixed extension above $h$
+preserves the strict endpoint and prime-supply margins.
+\end{proof}
+
+\section{Euler regions, parameter choices, and continuation}
+
+The principal comparison uses the same residue as the source. Its second
+Euler region extends to $\Re s\ge B$ with $\Re w\ge19/20$ and
+$\Re z\ge33/200$: the good-prime defect exponents
+$4-6\Re s-6\Re z$ and $1-\Re s-\Re w-6\Re z$ remain strictly below
+$-1$. The four principal approximation exponents
+\[
+ -\Re s,\quad -6\Re z,\quad 4-5\Re s-6\Re z,
+ \quad 1-\Re w-6\Re z
+\]
+are at most $-B$. All local denominators stay uniformly separated from
+zero. Thus the principal multiplier is $-1+O(q_p^{-B})$; the normalized
+correction $H_\eta(s)=\mathcal H_{\eta,1}(s,1,1/6)$ is holomorphic
+on $\Re s>B$ and can be made
+within $1/2$ of one by increasing the fixed excluded-prime cutoff.
+The principal normalization has a subpower reciprocal.
+The source contour lemmas with a printed $7/8$ lower endpoint extend
+to $B$ by precisely these local checks. On the absolute small-row line,
+choose their first-region buffer below $B-1/2$.
+
+Suppose for contradiction that $\Delta=\Bstar-B>0$.
+First choose a fixed row extension $\zeta>0$ smaller than the endpoint,
+supply, and $2l_y-h$ margins. Choose the moment, capacity, reflection
+truncation, and rounding losses relative to $10^{-4}$ and $\Delta$.
+Both the original row counts and the new numerator moment use the
+original uniform mesh assertion, so one common mesh suffices.
+Next choose the fixed even number of disjoint slots and their windows.
+Only after this choice fix the principal approximation loss
+$0<\mu<B\min_i\ell_i$. Choose the remaining bin widths, contour buffers,
+normalization losses and detector losses small relative to the already
+fixed margins and $\mu$. The uniform coefficient norm and reflected
+scale arguments in the new lemma consume arbitrarily small losses;
+they do not change this order of choices.
+
+All these real choices precede the target character. For each target
+choose its fixed arithmetic data, cutoff, and finite internal seminorm
+orders. Finally use the source's late height closure: choose the positive
+height exponent, then the external tail order, then the threshold.
+The new moment/reflection estimates have the same finite-seminorm and
+polynomial-height form as the cited source lemmas. To ensure that the
+new Mellin identity uses the full $w$ line, the checked transport first
+uses the original physical-row-to-central-cube theorem, with
+$\Re s=a+16e$, $\Re w=1-a-6e$ and $\Re z=z_c$.
+Extend only the truncated $w$ interval to its entire vertical line;
+the original polynomial kernel bounds and arbitrary Mellin decay bound
+the added tail, uniformly on the retained $s,z$ rectangle.
+Then move this complete $w$ line to $1/2$. Along the move
+$\Re(s+w)\ge1+10e$, the numerator is entire, and the denominator is
+independent of $w$. The first Euler-region bounds and Mellin decay
+control the horizontal joins. Both tail errors have arbitrary power
+saving, including after summing actual rows and prime tuples.
+This does not extend the buffered reciprocal beyond its authorized
+$s$ height range. Fubini then gives the full numerator integral inside
+the two remaining Mellin integrals. Their Gaussian and radial-Mellin
+profile has uniformly bounded moments, so integrating the numerator
+estimate introduces no additional contour-height loss. No amplitude
+indicator is analytically continued.
+
+Rows above $Z^{h+\zeta}$ use the unchanged absolute large-row contour;
+small and intermediate rows use the comparisons certified above. The
+normalized probe therefore obeys, for some $0<\omega<\Delta$ and
+$\sigma>0$ independent of the target,
+\[
+ |J_\eta(Z)|\ll_\eta Z^{C(B)+\omega},\qquad
+ |J_\eta(Z)-f_\eta(Z)|\ll_\eta Z^{C(\Bstar)-\sigma},
+\]
+where
+\[
+ f_\eta(Z)=\frac1{2\pi i}\int_{(2)}
+ Z^{C(s)}e^{(s-5/6)^2}\frac{H_\eta(s)}{L_F^S(s,\eta)}\,ds.
+\]
+These are the source continuation criterion's hypotheses at $B$,
+contradicting $\Bstar>B$. This proves the Hecke conclusion.
+Restoring finite Euler factors introduces no zeros in this positive
+half-plane. The norm-pullback factorization
+$L_F(s,\chi\circ N)=L(s,\chi)L(s,\chi\chi_{-3})$ gives the Dirichlet
+conclusion exactly as in the source transfer theorem. \qed
+
+\section{Public comparison and limits}
+
+The strongest comparable public unconditional claim located by a dated
+search, completed on 10 October 2026 at 00:16 UTC, is the unique root
+$B_{\rm public}$ in $(0.8749570194,0.8749570195)$ of
+\[
+ 7884B_{\rm public}^3-18819B_{\rm public}^2
+ +14643B_{\rm public}-3686=0.
+\]
+It is approximately $0.87495701942009894613$. The endpoint appears in
+written manuscripts of Shunia with GPT-6 Astra \cite{shunia} and of Guo
+\cite{guo}. A Lean package for it by Nielstron is in an open, unmerged
+pull request to the QuasiRiemannTracker \cite{nielstron}; its author
+reports local Comparator and Lean/NanoDa/con-ron checks of seven targets.
+The best value then catalogued by the tracker, with status
+framework-verified, is the rational
+$874957019420098946128604623/10^{27}$ \cite{tracker}. These reports were
+read, not rerun. The present $B=10499/12000$ is smaller than
+$B_{\rm public}$ by about $4.0353\cdot10^{-5}$. This is plain arithmetic:
+\[
+ \frac{10499}{12000}=0.8749166\ldots<0.8749570194<B_{\rm public},
+\]
+where $0.8749570194$ is the lower endpoint of the interval above. The
+comparison with the tracker's rational,
+$10499/12000<874957019420098946128604623/10^{27}$, is the Lean theorem
+\mbox{\nolinkurl{WeightedQRH.theta_lt_public}} in
+\nolinkurl{Parameters.lean}, a module in the endpoints' import closure;
+the proof itself does not use it. The only smaller public value
+found, Guo's $328/375$ \cite{guo}, is explicitly conditional on an
+unproved mean-square hypothesis (Hypothesis~11.1 there). The search is
+dated and is not an exhaustive novelty or priority certificate. The
+public records were consulted as benchmarks only; no outside refinement
+proof code was fetched, used or reproduced here.
+The new ingredient is the selected-prime saving in a moment of the
+\emph{physical numerator}, which is absent when one bounds that
+numerator pointwise and uses moments only to count zero witnesses.
+The initial unweighted numerator fourth-moment variant did not improve
+the global comparison; retaining the actual reflected length is essential.
+
+The zero-slot argument uses the stronger
+certified source theorem, with no restriction on bounded plain lengths;
+a weaker detector estimate would not suffice there. Exact exponent
+certificates alone do not verify the analytic deduction; that deduction
+is checked by the Lean development of
+Sections~\ref{sec:lean-correspondence} and~\ref{sec:verification}.
+No external human peer review is claimed.
+
+This change invalidates the applicability of the old
+row-count/pointwise-numerator optimization barrier to the new high bound. It does not remove
+the unchanged direct estimate's obstruction to GRH. Let $g$ be the
+extra Gram exponent and $e_{\rm row}$ the extra completed-row energy
+exponent, distinct from the small contour buffer used above. If they
+satisfy
+\[
+ g\ge b/6,\quad e_{\rm row}\ge0,\quad
+ e_{\rm row}\ge(1+3\ell-2M)/4,\quad e_{\rm row}\ge M+\ell-1,
+\]
+then the low comparison requires
+$B\ge5/6+M/12-\ell/6+e_{\rm row}/2$, and
+\begin{align*}
+ \frac M{12}-\frac\ell6+\frac{e_{\rm row}}2-\frac1{30}
+ ={}&\frac15\left[e_{\rm row}-\frac{1+3\ell-2M}{4}\right]\\
+ &+\frac1{60}[e_{\rm row}-(M+\ell-1)]
+       +\frac{17e_{\rm row}}{60}\ge0.
+\end{align*}
+Thus those particular low estimates still force $B\ge13/15$.
+Reaching $1/2$ needs a change on that side as well, such as a proved
+arithmetic cancellation estimate that survives the reflection phase.
+This is a limitation of the stated low estimates only, not a lower bound
+for actual zeros or a theorem excluding other methods.
+
+\section{Correspondence with the checked Lean theorems}
+\label{sec:lean-correspondence}
+
+\begingroup
+\raggedright
+The new modules are under \nolinkurl{formalization/WeightedQRH/} in the
+proof package. They import the original Lean development \cite{fork} at
+the pin given in Section~\ref{sec:verification}. Some of them, for
+example the low-side detector and reflection modules, adapt original
+modules to the changed lengths and record that origin in their headers.
+The following list maps the steps of the written proof to the theorems
+composed by the endpoints of \nolinkurl{Final.lean} and
+\nolinkurl{Statements.lean}. Apart from the standalone arithmetic barrier
+\nolinkurl{physical_low_barrier}, every theorem named in the list lies on
+the proof path of one of these endpoints. The names are the actual
+theorem declarations in the Lean sources, not additional hypotheses
+standing in for the corresponding proofs. Names
+from \nolinkurl{HighRows/SourceProbe.lean},
+\nolinkurl{HighRows/WeightedSourceRawCells.lean} and
+\nolinkurl{HighRows/ConditionalFinal.lean} lie in the namespace
+\nolinkurl{OAI.SevenEighths.WeightedHighFinalAssembly}; the others lie in
+\nolinkurl{WeightedQRH} or one of its subnamespaces.
+
+\begin{itemize}
+\item The low-side comparison at the changed lengths is the actual
+\nolinkurl{sourceProbe_low} theorem in \nolinkurl{HighRows/SourceProbe.lean}.
+The arithmetic geometry and scoped $13/15$ obstruction are in
+\nolinkurl{Parameters.lean}; the obstruction is
+\nolinkurl{physical_low_barrier}, which the proof does not use.
+\item The polynomial certificates and their real-rectangle implications
+are in \nolinkurl{CertificateBernstein.lean} and
+\nolinkurl{ExponentCertificate.lean}. In particular,
+\nolinkurl{weighted_extended_bound} (with \nolinkurl{old_extended_bound}
+for the source branch) includes the fixed row extension and
+the $1/20000$ margin. These arithmetic theorems alone imply no
+zero-free result.
+\item The masked row count of Section~\ref{sec:row-counts} is
+\nolinkurl{masked_amplitude_class_count} in
+\nolinkurl{HighRows/MaskedCount.lean}.
+\item The combined primitive and redundant conductor bound is
+\nolinkurl{physical_reflection_data_exists} in
+\nolinkurl{NumeratorReflectionData.lean}. The coefficient mass
+\eqref{eq:new-weighted-coefficient-norm} is
+\nolinkurl{actual_physical_label_mass} in
+\nolinkurl{NumeratorPhysicalPacketMass.lean}; it is stated for a general
+scale $C_u$ and is applied with this combined conductor.
+\item On the line $\Re w=1/2$, each error-label numerator of the
+complete $w$ integral is identified with its coefficient packet, as in
+\eqref{eq:new-exact-w-reconstruction}, by
+\nolinkurl{errorLabelNumerator_reconstruction} in
+\nolinkurl{NumeratorLabelReconstruction.lean}. The theorems
+\nolinkurl{normalized_prime_tuple_reconstruction} and
+\nolinkurl{integratedDyadValue_reconstruction} in
+\nolinkurl{NumeratorReconstruction.lean} give the complete finite row and
+error-subset decomposition.
+\item Proposition~\ref{prop:checked-original-fourth} is
+\nolinkurl{certified_original_numerator_fourth} in
+\nolinkurl{NumeratorOriginalFourth.lean}. It is proved using the actual
+certified source moments, rather than assuming a new reflection or
+fourth-moment estimate.
+\item The full-$w$ contour transport and uniform remaining Mellin
+integration are in \nolinkurl{FullWContour.lean} through
+\nolinkurl{FullWBound.lean}, including \nolinkurl{SourceSZBound.lean}; the
+transfer from the central cube to the full $w$ line is in
+\nolinkurl{HighRows/CubeFullWTransfer.lean} and
+\nolinkurl{HighRows/CubeFullWNormalized.lean}. The endpoint integration
+theorem is \nolinkurl{FullWContour.finiteFullW_uniform_norm_bound}.
+\item Final assembly.
+\nolinkurl{Numerator.source_integrated_amplitude_classes} in
+\nolinkurl{NumeratorSourceCollect.lean} collects the actual physical error
+masks and the original full amplitude classes over all rows of a dyad,
+with one constant fixed before the row scale and all target, height and
+contour choices. Combined with the masked count, the scalar, conductor
+and prime-supply estimates, it proves
+\nolinkurl{Numerator.actual_raw_fullW_input}, of type
+\nolinkurl{RawFullWAnalyticInput}, in
+\nolinkurl{NumeratorActualSource.lean}: the raw full-$w$ bound for every
+source row dyad. The theorem \nolinkurl{fullW_input_of_raw_source} in
+\nolinkurl{HighRows/WeightedSourceRawCells.lean} adds the source geometry,
+height absorption, remaining Mellin integration and normalization, and
+yields \nolinkurl{FullWAnalyticInput}. This gives
+\nolinkurl{WeightedQRH.fullW_analytic_input} in \nolinkurl{Final.lean}.
+\item The implications \nolinkurl{beta_le_theta_of_fullW_input},
+\nolinkurl{hecke_of_fullW_input}, \nolinkurl{dirichlet_of_fullW_input} and
+\nolinkurl{zeta_of_fullW_input} in
+\nolinkurl{HighRows/ConditionalFinal.lean} pass from
+\nolinkurl{FullWAnalyticInput} to the common probe bounds
+(\nolinkurl{common_probe_of_fullW_input}) and through the continuation
+argument of \nolinkurl{Continuation.lean} to the zero-free conclusions.
+Applied to \nolinkurl{WeightedQRH.fullW_analytic_input}, they give the
+unconditional endpoints \nolinkurl{beta_le_theta},
+\nolinkurl{hecke_nonzero}, \nolinkurl{dirichlet_nonzero} and
+\nolinkurl{zeta_nonzero} of \nolinkurl{Final.lean}. No hypothesis
+remains. The docstring of \nolinkurl{HighRows/ConditionalFinal.lean}
+predates \nolinkurl{Final.lean} and describes that module in isolation,
+where \nolinkurl{FullWAnalyticInput} is still a hypothesis; the input is
+discharged in \nolinkurl{Final.lean}.
+\item \nolinkurl{Statements.lean} restates the endpoints exactly in the
+form of the Comparator challenges of Section~\ref{sec:verification}:
+\nolinkurl{OAI.riemannZeta_ne_zero_of_10499_12000_lt_re},
+\nolinkurl{OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re}
+and
+\nolinkurl{OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re}.
+\end{itemize}
+
+The endpoint audit \nolinkurl{FinalAxioms.lean} prints the statements
+and the axioms of \nolinkurl{actual_raw_fullW_input},
+\nolinkurl{fullW_analytic_input}, the four endpoints of
+\nolinkurl{Final.lean} and the three statements of
+\nolinkurl{Statements.lean}, and the axioms (not the statement) of
+\nolinkurl{source_integrated_amplitude_classes}. Each of these ten
+declarations depends only on \nolinkurl{propext},
+\nolinkurl{Classical.choice} and \nolinkurl{Quot.sound}. No analytic
+axiom is introduced anywhere.
+\par
+\endgroup
+
+\section{Formal verification and reproducibility}\label{sec:verification}
+
+\begingroup
+\raggedright
+\paragraph{Proof package.}
+The Lean proof accompanies this manuscript in the proof package
+\nolinkurl{proofs/akashlevy-20261009-weighted-numerator/} prepared for
+the QuasiRiemannTracker \cite{tracker}. Paths in this section are
+relative to that directory; Lean file names remain relative to
+\nolinkurl{formalization/WeightedQRH/}. The package contains:
+\begin{itemize}
+\item \nolinkurl{formalization/}: a Lake workspace with
+\nolinkurl{lakefile.toml}, \nolinkurl{lean-toolchain},
+\nolinkurl{lake-manifest.json}, the scripts \nolinkurl{setup.sh} and
+\nolinkurl{run_comparator.sh}, the 228 Lean modules of the proof in
+\nolinkurl{WeightedQRH/}, the three Comparator challenges with their
+configurations in \nolinkurl{ComparatorChallenges/}, and the
+three-kernel driver \nolinkurl{kernels/judge_three_kernels.py}. The 228
+modules are the 227 local modules in the import closure of the endpoint
+modules \nolinkurl{Final} and \nolinkurl{Statements}, plus the audit
+module \nolinkurl{FinalAxioms};
+\item \nolinkurl{manuscript/}: the \LaTeX{} sources of this paper;
+\item \nolinkurl{evidence/certificate/}: the exact exponent certificate
+\nolinkurl{weighted_numerator_certificate.py} and its output
+\nolinkurl{weighted_numerator_certificate.json};
+\item \nolinkurl{evidence/kernels/}: the report, judge log,
+configuration, export targets, control logs, source audit, tool pins,
+compile and export logs and the Lean sources \nolinkurl{src/Challenge.lean}
+and \nolinkurl{src/Solution.lean} of the three-kernel run, and, in
+\nolinkurl{pristine-workspace/}, the Lake configuration and build log of
+its challenge workspace;
+\item \nolinkurl{evidence/lake/}: the logs of the Lake build, of its
+rehash check and of the Comparator runs in that workspace;
+\item \nolinkurl{evidence/isolated-rebuild/} and
+\nolinkurl{evidence/comparator/}: the record of an earlier isolated
+rebuild and its Comparator runs;
+\item \nolinkurl{evidence/source-scan.txt}, and the license and notice
+files \nolinkurl{LICENSE}, \nolinkurl{NOTICE},
+\nolinkurl{UPSTREAM-NOTICE} and \nolinkurl{third-party-notices/}.
+\end{itemize}
+
+\paragraph{Toolchain and source pins.}
+Lean v4.34.1 (commit
+\nolinkurl{5045d0056413266e57c625dcd7c365b10e377c52}); Mathlib commit
+\nolinkurl{d13f23b723b8a846827a245b89c10fc7d3f11612} \cite{mathlib};
+PrimeNumberTheoremAnd commit
+\nolinkurl{c39a751132c88b6e8080b74c74023fd95b3d8be0} and
+rellich-kondrachov commit
+\nolinkurl{70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23}, each with the
+Lean 4.34.1 compatibility patch \nolinkurl{lean/patches/*-lean4341.patch}
+of the original development. All modules are compiled with
+\nolinkurl{autoImplicit} disabled. The original Lean development is
+\nolinkurl{github.com/akashlevy/math} commit
+\nolinkurl{c388e88e6519d139ad2ca5571ef0c7fbf0e245b5}, branch
+\nolinkurl{qrh-23-24-pruned} \cite{fork}. This fork commit is
+\nolinkurl{github.com/openai/math} commit
+\nolinkurl{fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb} with the declarations
+that no QRH result uses pruned in place, plus 23/24 modules
+(\nolinkurl{OAI.NumberTheory.DirichletL.QRH*}) that the present proof
+does not import. The \LaTeX{} source of \cite{openai} is byte-identical
+at both commits. One adapted module,
+\nolinkurl{LowDetector/LowOriginalPools.lean}, previously imported an
+original module that the pruning deleted; it now imports that module's
+own imports (\nolinkurl{OAI.NumberTheory.DirichletL.Detector.LowSlotScales}
+and \nolinkurl{OAI.NumberTheory.DirichletL.Detector.RayPoolGood}) instead.
+The three-kernel check additionally uses the official Lean v4.35.0-rc2
+release for \nolinkurl{darwin_aarch64}. The Challenge and Solution
+exports of that check, and the Comparator runs in the Lake workspace and
+on the isolated rebuild, use lean4export commit \nolinkurl{076e8e57}
+built with Lean 4.34.1; the preflight controls of the three-kernel check
+were compiled and exported with the \nolinkurl{lean} and
+\nolinkurl{leanexport} of the v4.35.0-rc2 judge toolchain.
+
+\paragraph{Source scan.}
+The file \nolinkurl{evidence/source-scan.txt} records a scan, with
+comments stripped, of the 231 Lean files in \nolinkurl{formalization/}
+(228 in \nolinkurl{WeightedQRH/}, 3 in \nolinkurl{ComparatorChallenges/})
+for \nolinkurl{sorry}, \nolinkurl{admit}, \nolinkurl{axiom},
+\nolinkurl{unsafe}, \nolinkurl{implemented_by}, \nolinkurl{extern},
+\nolinkurl{skipKernelTC}, \nolinkurl{native_decide},
+\nolinkurl{ofReduceBool}, \nolinkurl{trustCompiler},
+\nolinkurl{run_cmd}, \nolinkurl{run_elab}, \nolinkurl{run_meta},
+\nolinkurl{addDecl}, \nolinkurl{elab}, \nolinkurl{macro_rules},
+\nolinkurl{macro}, \nolinkurl{syntax}, \nolinkurl{opaque},
+\nolinkurl{partial}, \nolinkurl{csimp}, \nolinkurl{initialize} and
+\texttt{\#eval}. No module in \nolinkurl{WeightedQRH/} contains any of
+them. The three challenge modules contain \nolinkurl{sorry} by design,
+since their statements are the targets. The only options set are
+\nolinkurl{maxHeartbeats} and \nolinkurl{maxRecDepth}. The scan does not
+cover the original development or Mathlib; the axiom checks and kernel
+replays below cover every declaration that the endpoints use.
+
+\paragraph{Lake build from public sources.}
+The script \nolinkurl{formalization/setup.sh} clones
+\nolinkurl{github.com/akashlevy/math} at \nolinkurl{c388e88e6} into
+\nolinkurl{formalization/math/} (a sparse checkout of
+\nolinkurl{lean/OAI/NumberTheory/DirichletL/}, \nolinkurl{lean/patches/}
+and \nolinkurl{LICENSE}), lets Lake fetch the dependencies pinned in
+\nolinkurl{lake-manifest.json}, applies the two compatibility patches,
+downloads Mathlib's build cache, and runs
+\texttt{lake build WeightedQRH ComparatorChallenges}. In the recorded
+run, \nolinkurl{formalization/math/} was a fresh sparse clone of the
+fork at that commit. The dependency directory \nolinkurl{.lake/packages}
+was instead an existing checkout of the pinned dependencies with the two
+patches applied, and the build directory had been seeded with a copy of
+an earlier build of the original development. The build reported
+``Build completed successfully (11847 jobs)'' after 39 minutes
+(\nolinkurl{evidence/lake/lake-build.log}). Its log lists as built in
+that run the 2670 modules of the original development in the import
+closure of the proof, all 228 proof modules and the 3 challenge modules; Mathlib and the other dependencies entered as
+prebuilt objects of the existing checkout. A subsequent
+\texttt{lake build -{}-no-build -{}-rehash WeightedQRH ComparatorChallenges},
+which rehashes the sources and builds nothing, reported ``All targets
+up-to-date (11847 jobs)'' (\nolinkurl{evidence/lake/lake-no-build-rehash.log}).
+The output of \nolinkurl{FinalAxioms.lean} in the build log shows only
+\nolinkurl{propext}, \nolinkurl{Classical.choice} and
+\nolinkurl{Quot.sound} for each of the ten audited declarations
+(Section~\ref{sec:lean-correspondence}). Every theorem on the
+endpoints' proof paths therefore uses at most these axioms. The recorded
+run did not exercise the dependency fetch, patch and cache steps of
+\nolinkurl{setup.sh}; its patch step was tested separately on a fresh
+clone of rellich-kondrachov at the pinned revision.
+
+\paragraph{Comparator in the Lake workspace.}
+The Lean FRO Comparator \cite{comparator} exports a solution theorem with
+all its dependencies. It checks that the statement and the definitions it
+uses match the challenge, checks the axioms against the permitted list
+\nolinkurl{propext}, \nolinkurl{Quot.sound}, \nolinkurl{Classical.choice},
+and replays the whole export in the kernel. The challenges in
+\nolinkurl{formalization/ComparatorChallenges/} import only Mathlib.
+\nolinkurl{WeightedQRHZeta} and \nolinkurl{WeightedQRHDirichlet} use only
+Mathlib definitions. \nolinkurl{WeightedQRHHecke} is OpenAI's upstream
+\nolinkurl{HeckeSevenEighths} challenge with only the theorem name and the
+constant changed. Their solution module is
+\nolinkurl{WeightedQRH.Statements}. The script
+\nolinkurl{formalization/run_comparator.sh} runs Comparator (commit
+\nolinkurl{d03acab1}, default Lean kernel, NanoDa disabled) under
+\texttt{lake env} in the workspace above; Comparator's own
+\texttt{lake build} step ran as usual. For each of the three challenges,
+the log \nolinkurl{evidence/lake/comparator-lake-WeightedQRH*.log} shows
+``Lean default kernel accepts the solution'' and ``Your solution is
+okay!'', with exit status 0. Like OpenAI's upstream $7/8$ challenge, the
+zeta challenge has no hypothesis $s\ne1$. It holds at $s=1$ only because
+Mathlib's total \nolinkurl{riemannZeta} assigns a nonzero value at the
+pole, which is not an analytic statement there. The analytic statement is
+\nolinkurl{WeightedQRH.zeta_nonzero}.
+
+\paragraph{Three-kernel check of the tracker template.}
+The driver \nolinkurl{formalization/kernels/judge_three_kernels.py} was
+written for this run. It follows the protocol of the tracker's earlier
+kernel dossiers (PalomarSubmission \nolinkurl{d4e41c1}, driving
+\texttt{lake comparator} from Lean v4.35.0-rc2) and re-implements their
+preflight controls, ill-typed export and export targets; it does not
+import their script. The challenge is the tracker's three-target template
+\nolinkurl{public/proofs/palomar-20261009/qrh/src/Challenge.lean} at the
+catalogue commit of \cite{tracker}, with only the literal
+$874957019421/1000000000000$ replaced by $10499/12000$ in all three
+statements. The resulting \nolinkurl{evidence/kernels/src/Challenge.lean}
+has SHA-256
+\nolinkurl{4624fc67bbd5792408525558a48481a5cd3acd258c78caf1ec4d29528703c287}.
+It was compiled with Lean 4.34.1 against an unmodified checkout of
+\nolinkurl{github.com/openai/math} at \nolinkurl{fd4aeeb2e} (306 modules
+of the closure of \nolinkurl{Hecke/IdealBridge} built from source) and
+Mathlib \nolinkurl{d13f23b7}. The definition files
+\nolinkurl{Hecke/Family.lean} and \nolinkurl{Hecke/IdealBridge.lean} of
+\nolinkurl{openai/math} and \nolinkurl{DirichletContinuation.lean} and
+\nolinkurl{RiemannZeta.lean} of Mathlib match their pinned git blobs
+(\nolinkurl{evidence/kernels/challenge-source-audit.json}). The module
+\nolinkurl{Solution} (\nolinkurl{evidence/kernels/src/Solution.lean})
+imports \nolinkurl{WeightedQRH.Statements}, compiled in the Lake
+workspace above, and proves the three template theorems
+\nolinkurl{QRHPalomar.allDirichlet}, \nolinkurl{QRHPalomar.zeta} and
+\nolinkurl{QRHPalomar.allHecke} from the endpoints. Both modules were
+exported with lean4export and judged by \texttt{lake comparator} of the
+official Lean v4.35.0-rc2 \nolinkurl{darwin_aarch64} release, whose
+archive digest matches the digest GitHub publishes for that asset
+(\nolinkurl{evidence/kernels/tool-pins.json}). After Comparator's
+statement, definition and axiom checks, the external kernels con-ron
+(with two jobs) and NanoDa, and then Lean's default kernel, each
+replayed the export. Before judging, three controls on the same toolchain behaved as
+expected (\nolinkurl{evidence/kernels/control-results.json}): a matching
+pair was accepted by all three kernels; a mismatched statement was
+rejected with ``Challenge and solution theorem statement do not match'';
+and an ill-typed proof, a theorem whose value was replaced by its type in
+the export, was rejected by con-ron, NanoDa and Lean's kernel. The judge
+phase ran on 10 October 2026 from 01:44:59 to 01:53:26 UTC and exited
+with status 0 (\nolinkurl{evidence/kernels/judge.log}). Its log reports
+``con-ron: accepted 123717 declarations (-{}-verified)'', ``con-ron kernel
+accepts the solution'', ``nanoda kernel accepts the solution'', ``Lean
+default kernel accepts the solution'' and ``Your solution is okay!''. The
+report \nolinkurl{evidence/kernels/result.json} has status
+\nolinkurl{PASS}, verified at \nolinkurl{2026-10-10T01:53:26.235107+00:00}.
+The two exports are not published; they were deleted after the run.
+\nolinkurl{Challenge.export} had 382347462 bytes and SHA-256
+\nolinkurl{f553d092b0690188ea806d9daadef9ec71179fd2d8e22a754dba6e40da9fbacb};
+\nolinkurl{Solution.export} had 1772535340 bytes and SHA-256
+\nolinkurl{7ea84555c740c3840fd7f3a3d8cdf1ec987edb60d2825425511c52e6304358a3}.
+The template's zeta statement, like the zeta challenge above, has no
+hypothesis $s\ne1$.
+
+\paragraph{Earlier isolated rebuild.}
+An earlier route is kept as an additional record in
+\nolinkurl{evidence/isolated-rebuild/} and \nolinkurl{evidence/comparator/}.
+The script \nolinkurl{verify_parallel.py} (with \nolinkurl{verify.py},
+which it imports, and the configuration \nolinkurl{lean_environment.json})
+rebuilt the 228 proof modules and the 3 challenge modules into a fresh
+output directory, all with exit status 0, on 10 October 2026 from
+00:21:47 to 00:28:17 UTC (\nolinkurl{final_rebuild_verification.json}).
+The live development directory was excluded from the Lean search path,
+so every local import could resolve only to an object rebuilt in that
+run. The challenge modules were compiled first, against Mathlib and its
+dependencies only. Mathlib, its dependencies and the original development
+entered as prebuilt objects. The source hashes recorded in the Lake build
+traces of those prebuilt objects of the original development were
+compared with the sources at \nolinkurl{c388e88e6} and agree; that
+comparison is not among the evidence files. The same object directory
+also held stale objects of 253 modules deleted by the pruning; the
+rebuild admitted an external import only if its module is tracked at
+\nolinkurl{c388e88e6}, which excludes them. The Lake build above does not
+depend on these objects. The audit log \nolinkurl{WeightedQRH.FinalAxioms.log}
+of this run shows the same three axioms. With the script
+\nolinkurl{run_comparator.sh} of that directory, Comparator ran against
+the objects of the isolated rebuild, with its \texttt{lake build} step
+replaced by a shim that only confirms that the prebuilt objects exist.
+All three challenges printed ``Lean default kernel accepts the solution''
+and ``Your solution is okay!''. As a negative control, the zeta
+challenge with $1/2$ in place of $10499/12000$ was rejected with
+``Challenge and solution theorem statement do not match''
+(\nolinkurl{evidence/comparator/comparator-NegControl.log}).
+
+\paragraph{Trust caveats.}
+All these checks were run by the author on one macOS arm64 machine. They
+are not a Palomar registration, an editorial review or a signed tracker
+receipt, and no independent rerun has been made. The three-kernel check
+used the official Lean v4.35.0-rc2 \nolinkurl{darwin_aarch64} binaries
+and ran without a sandbox (\texttt{lake comparator
+-{}-inadvisably-no-sandbox}); its log begins with Comparator's warning
+``Sandbox disabled, this run is not trustworthy''. The tracker's
+earlier kernel dossiers ran on Linux x86\_64 inside a bubblewrap
+sandbox. The driver of this check was written for this run, and its
+challenge module is named \nolinkurl{Challenge} rather than a random
+alias. In the default-kernel Comparator runs, Comparator's Landrun
+sandbox was replaced by an unsandboxed stand-in, and Comparator's
+\nolinkurl{lean-toolchain} was set to v4.34.1 (pinned v4.34.0) to match
+the objects; its source is otherwise unchanged. The recorded Lake build
+did not exercise the dependency steps of \nolinkurl{setup.sh}, as stated
+above. No external human peer review has taken place.
+
+\paragraph{File digests.}
+Every published file of the package is listed with its SHA-256 digest in
+the adjacent manifest
+\nolinkurl{../akashlevy-20261009-weighted-numerator.sha256.json} (tracker
+path \nolinkurl{proofs/akashlevy-20261009-weighted-numerator.sha256.json}),
+which lies beside the package directory rather than inside it.
+Machine-specific path prefixes in the published logs and JSON reports
+were replaced by neutral prefixes under \nolinkurl{/work/qrh-proof/};
+\nolinkurl{publication-transformations.json} records each replacement and
+the original digest of every file so changed. The digests quoted above,
+of \nolinkurl{Challenge.lean} and of the two unpublished exports, do not
+change on publication.
+
+\paragraph{Reproduction.}
+The certificate runs from the package root. The other commands run in
+\nolinkurl{formalization/}, the last two after \nolinkurl{setup.sh}. The
+package stores its files without the executable bit, so the two shell
+scripts are run with \texttt{bash}. The Comparator variables name a Comparator build at the pins above, its
+lean4export, and Landrun or a stand-in. For the three-kernel driver,
+\nolinkurl{<pristine>} is a Lake workspace with the
+\nolinkurl{lakefile.toml} and \nolinkurl{lake-manifest.json} of
+\nolinkurl{evidence/kernels/pristine-workspace/}, the
+\nolinkurl{lean-toolchain} of \nolinkurl{formalization/}, an unmodified
+checkout of \nolinkurl{github.com/openai/math} at \nolinkurl{fd4aeeb2e} in
+\nolinkurl{math/}, and the same two patches applied to its dependencies,
+built by running \texttt{lake build OAI.NumberTheory.DirichletL.Hecke.IdealBridge}
+in \nolinkurl{<pristine>}; \nolinkurl{<tracker>} is a checkout of the
+tracker; \nolinkurl{--judge-lean} is the Lean v4.35.0-rc2 release
+directory, whose \nolinkurl{bin/} holds \nolinkurl{nanoda_bin} and
+\nolinkurl{con-ron}; and \nolinkurl{<fresh>} must not exist.
+\par\endgroup
+{\small
+\begin{verbatim}
+# package root: exact exponent certificate
+python3 evidence/certificate/weighted_numerator_certificate.py \
+    --output <certificate.json>
+# formalization/: Lake build from public sources
+cd formalization && bash setup.sh
+# formalization/: Comparator, default Lean kernel
+export COMPARATOR=<comparator> COMPARATOR_LEAN4EXPORT=<lean4export> \
+    COMPARATOR_LANDRUN=<landrun>
+for c in Zeta Dirichlet Hecke; do bash run_comparator.sh $c; done
+# formalization/: three-kernel check of the tracker template
+python3 kernels/judge_three_kernels.py --solution-workspace . \
+    --challenge-workspace <pristine> \
+    --template <tracker>/public/proofs/palomar-20261009/qrh/src/Challenge.lean \
+    --source-lean <lean-4.34.1> --judge-lean <lean-4.35.0-rc2> \
+    --lean4export <lean4export> --out <fresh>
+\end{verbatim}}
+{\raggedright\noindent
+The certificate output coincides with
+\nolinkurl{evidence/certificate/weighted_numerator_certificate.json}.
+The scripts of the earlier isolated route are a record; they expect
+prebuilt objects at machine-specific locations, set in
+\nolinkurl{lean_environment.json} and in the scripts, which must be
+adapted before reuse.\par}
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{openai} OpenAI, \emph{The Quasi-Riemann Hypothesis:
+A Zero-Free Half-Plane $\Re s>7/8$}, 30 September 2026.
+\nolinkurl{github.com/openai/math} commit \nolinkurl{fd4aeeb2e},
+\nolinkurl{preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/}.
+\href{https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf}{Pinned manuscript}.
+\bibitem{fork} OpenAI, Lean development of \cite{openai}, pruned fork by
+A.~Levy: \nolinkurl{github.com/akashlevy/math}, branch
+\nolinkurl{qrh-23-24-pruned}, commit
+\nolinkurl{c388e88e6519d139ad2ca5571ef0c7fbf0e245b5}, derived from
+\nolinkurl{github.com/openai/math} commit \nolinkurl{fd4aeeb2e}.
+\href{https://github.com/akashlevy/math/tree/c388e88e6519d139ad2ca5571ef0c7fbf0e245b5}{Pinned source}.
+\bibitem{mathlib} The mathlib Community, \emph{Mathlib}, commit
+\nolinkurl{d13f23b723b8a846827a245b89c10fc7d3f11612}.
+\href{https://github.com/leanprover-community/mathlib4/tree/d13f23b723b8a846827a245b89c10fc7d3f11612}{Pinned source}.
+\bibitem{comparator} Lean FRO, \emph{Comparator}, commit
+\nolinkurl{d03acab154d269c06e60e4de7e4cc85deebff94b}, with
+\emph{lean4export} commit
+\nolinkurl{076e8e57707e813375e8f9da8bf989799ace9680}.
+\href{https://github.com/leanprover/comparator/tree/d03acab154d269c06e60e4de7e4cc85deebff94b}{Comparator};
+\href{https://github.com/leanprover/lean4export/tree/076e8e57707e813375e8f9da8bf989799ace9680}{lean4export}.
+\bibitem{shunia} GPT-6 Astra and J.~M. Shunia, manuscript
+\nolinkurl{compensated_half_plane_refinement.pdf}, repository
+\nolinkurl{jshunia/rhtm}, revision \nolinkurl{c3abed0cae8f}.
+\href{https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf}{Pinned manuscript}.
+\bibitem{guo} J.~Guo, written proof and exact-arithmetic certificates,
+directory \nolinkurl{zero-free-beyond-7-8} of repository
+\nolinkurl{aster2024/openai-math-followups}, revision
+\nolinkurl{5750cc81}.
+\href{https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md}{Pinned record}.
+\bibitem{nielstron} Nielstron, Lean package for the algebraic endpoint,
+QuasiRiemannTracker pull request~\#2, open and unmerged as of
+10 October 2026, 00:16 UTC, head \nolinkurl{0284b10d}.
+\href{https://github.com/GTimG/QuasiRiemannTracker/pull/2}{Pull request};
+\href{https://github.com/nielstron/QuasiRiemannTracker/blob/0284b10d3c8c92b4d8995c36f24728be03815b4a/public/proofs/nielstron-algebraic-20261009-kernels/result.json}{pinned report}.
+\bibitem{tracker} QuasiRiemannTracker (QRH Bounds), maintained by
+T.~Gehrunger, catalogue at commit \nolinkurl{40844a76}, as of
+10 October 2026, 00:16 UTC.
+\href{https://gtimg.github.io/QuasiRiemannTracker/}{Website};
+\href{https://github.com/GTimG/QuasiRiemannTracker/blob/40844a7614b67840801e65b836b3da2e1f7ff029/catalogue/results.json}{pinned catalogue}.
+\end{thebibliography}
+\end{document}

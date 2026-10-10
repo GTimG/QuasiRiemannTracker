@@ -1,0 +1,161 @@
+{
+  "status": "Exact exponent certificate only; requires the new weighted-numerator analytic lemma",
+  "theta": "10499/12000",
+  "ell": "167/1000",
+  "b": "43/500",
+  "lx": "747/2000",
+  "ly": "919/2000",
+  "h": "1587/2000",
+  "kappa": "3/4",
+  "endpoint_margin": "1/10000",
+  "checks": {
+    "low comparison identity": "0",
+    "improves public benchmark": "121058260296838385813869/3000000000000000000000000000",
+    "original kappa admissible from 7/8": "0",
+    "positive b": "43/500",
+    "ell <= 1/5": "33/1000",
+    "X rescaled length": "413/2000",
+    "Y rescaled length": "117/400",
+    "row rescaled length": "499/1000",
+    "Gram domination": "809/6000",
+    "row-count prime supply": "1249/58719",
+    "row extension supply": "83/2000",
+    "reflected numerator short": "251/2000",
+    "Y below intermediate cutoff": "81/2000",
+    "numerator prime supply at d=1/2": "133/900",
+    "numerator capacity supply all d": "133/1800",
+    "weighted frequency slope": "39/400",
+    "Euler-tail decay gap /delta": "5/36",
+    "small rows": "7961/100000",
+    "w residue margin": "919/40000",
+    "z residue margin": "529/400000",
+    "low rescaled tuple 0": "0",
+    "low rescaled tuple 167/1000": "667/4000",
+    "Euler principal local 0": "0",
+    "Euler principal local 1": "1381/12000",
+    "Euler principal local 2": "1469/3000",
+    "Euler principal local 3": "781/12000",
+    "Euler defect A": "2479/2000",
+    "Euler defect B": "9779/12000",
+    "floor bin": "893/75000",
+    "intermediate 1/50": "125131/600000",
+    "intermediate 3/4": "4459/400000",
+    "J positive": "163/216"
+  },
+  "branches": [
+    {
+      "name": "original numerator",
+      "box": [
+        "0",
+        "1/3",
+        "0",
+        "1/2"
+      ],
+      "leaf_count": 1,
+      "leaves": [
+        {
+          "box": [
+            "0",
+            "1/3",
+            "0",
+            "1/2"
+          ],
+          "lower": "3307/2160000"
+        }
+      ]
+    },
+    {
+      "name": "weighted reflected numerator",
+      "box": [
+        "1/3",
+        "3/4",
+        "0",
+        "1/2"
+      ],
+      "leaf_count": 9,
+      "leaves": [
+        {
+          "box": [
+            "1/3",
+            "3/4",
+            "0",
+            "1/4"
+          ],
+          "lower": "6660067/933120000"
+        },
+        {
+          "box": [
+            "1/3",
+            "13/24",
+            "1/4",
+            "3/8"
+          ],
+          "lower": "5147/2048000"
+        },
+        {
+          "box": [
+            "1/3",
+            "7/16",
+            "3/8",
+            "1/2"
+          ],
+          "lower": "631459/2488320000"
+        },
+        {
+          "box": [
+            "7/16",
+            "13/24",
+            "3/8",
+            "7/16"
+          ],
+          "lower": "223300079/95551488000"
+        },
+        {
+          "box": [
+            "7/16",
+            "47/96",
+            "7/16",
+            "15/32"
+          ],
+          "lower": "1821656869/1698693120000"
+        },
+        {
+          "box": [
+            "7/16",
+            "89/192",
+            "15/32",
+            "1/2"
+          ],
+          "lower": "1652699/39813120000"
+        },
+        {
+          "box": [
+            "89/192",
+            "47/96",
+            "15/32",
+            "1/2"
+          ],
+          "lower": "346471/59719680000"
+        },
+        {
+          "box": [
+            "47/96",
+            "13/24",
+            "7/16",
+            "1/2"
+          ],
+          "lower": "3312353/29859840000"
+        },
+        {
+          "box": [
+            "13/24",
+            "3/4",
+            "1/4",
+            "1/2"
+          ],
+          "lower": "227017/207360000"
+        }
+      ]
+    }
+  ]
+}

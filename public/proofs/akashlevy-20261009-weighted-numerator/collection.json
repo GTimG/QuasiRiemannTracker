@@ -1,0 +1,37 @@
+{
+  "status": "framework-verified",
+  "files": {
+    "Challenge.lean": "4624fc67bbd5792408525558a48481a5cd3acd258c78caf1ec4d29528703c287",
+    "NOTICE.txt": "06c5e5487f4cccd5443b65d324f661a83ee7103c23541154996bdaf7c1fd1ce7",
+    "PUBLICATION.txt": "d80fb7389aea04ebb174edccb3e600e0cab2982f8e90ba394faf3aad56617a32",
+    "README.txt": "55c49f7388281e6593ed974d3e985c26fc14bb3df501b774df73c3c0db7d2637",
+    "SHA256SUMS.txt": "62f8435baf4032d233145ab74e400778c897f13e849d5583b78e89d58a0766f6",
+    "Solution.lean": "dc7aea9b1922fa31a46efd52d172d179f0a5a474d459877c2f2b94d0ac842fde",
+    "challenge-source-audit.json": "1e56b478e0b2e074af5af926630a85abd9ad536143a6ea4f760110179f6c35d3",
+    "comparator.json": "77bff1920376ce2a9c65039886713db0656c4bb82baa9d01254ecb1a09468e8c",
+    "control-results.json": "10fa2cc6545c5343fbf1922c3166930c8e17f4de627f14a767ef0e48d2b58f02",
+    "export-targets.json": "eee9665f3da3c39ed28c21f2b36355811e442694a2aa4368741715efd90727a6",
+    "judge.log": "96af2784aab90af6e17ad816b714cf7c4ef67d05cdb2916a8f49232eee88b7ce",
+    "manuscript.pdf": "228cc5b06c3c1fdad3767ae9de1cb1183b9141f63d71dd1cec3dbf9dc6f81b36",
+    "result.json": "23c6cda0a417d513fecf9fa66fe3c655c48e597ff81426f2905b7ad63c1d2064",
+    "source-public.tar.gz": "c18ca8007689ef33e80a5f939a90f2787e34e8b4111bc4ef3eb6d0f513469ba3",
+    "source-sha256.json": "a233fad6ef25613bbf56cc8a232f0cb50ed45068367dd554f90e2fac250a49cf",
+    "weighted_numerator_lemma.tex": "01018c660f039a29796732f2258c3c34ab04b6f9d3b6768ad3bfd97ab273389f",
+    "weighted_numerator_proof.tex": "6ce20a9525bf985036d4ce0b5ba942eba4a56aee6e66ef6ed3f1957e7cdd60ff"
+  },
+  "snapshot_exports": {
+    "README.txt": "README.md",
+    "NOTICE.txt": "NOTICE",
+    "PUBLICATION.txt": "PUBLICATION.md",
+    "weighted_numerator_proof.tex": "manuscript/weighted_numerator_proof.tex",
+    "weighted_numerator_lemma.tex": "manuscript/weighted_numerator_lemma.tex",
+    "Challenge.lean": "evidence/kernels/src/Challenge.lean",
+    "Solution.lean": "evidence/kernels/src/Solution.lean",
+    "comparator.json": "evidence/kernels/comparator.json",
+    "judge.log": "evidence/kernels/judge.log",
+    "result.json": "evidence/kernels/result.json",
+    "control-results.json": "evidence/kernels/control-results.json",
+    "export-targets.json": "evidence/kernels/export-targets.json",
+    "challenge-source-audit.json": "evidence/kernels/challenge-source-audit.json"
+  }
+}

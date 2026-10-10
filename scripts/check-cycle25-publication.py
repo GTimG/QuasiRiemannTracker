@@ -6,6 +6,8 @@ independent maintainer replay or authorize a verification-status upgrade.
 from pathlib import Path, PurePosixPath
 import hashlib
 import json
+import subprocess
+import argparse
 from publication_policy import approved_files, check_archive
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,7 +66,7 @@ def check(root=ROOT):
     require(len(expected) == 3224 and actual == set(expected), 'finished Lean closure differs')
     require(all(manifest[p] == h for p, h in expected.items()), 'frozen mathematical source differs')
     record, = [r for r in load(root / 'catalogue/results.json')['records'] if r['id'] == NAME]
-    require(record['status'] == 'verification-pending' and record['first_verified_at'] == '', 'contributor evidence cannot mint maintainer verification')
+    subprocess.run(['node', str(ROOT / 'scripts/check-cycle25-kernels.mjs'), str(root)], check=True)
     require('/'.join(record['theta'][k] for k in ('numerator', 'denominator')) == THETA, 'catalogue boundary differs')
     require(record['entrypoint'] == {'module': 'Cycle25.Assembly.Final.Endpoint', 'declaration': 'Cycle25.dirichlet_nonzero_catalogue'}, 'catalogue entrypoint differs')
     evidence = proof / 'evidence/multi-kernel'
@@ -88,4 +90,7 @@ def check(root=ROOT):
 
 
 if __name__ == '__main__':
-    print(f'Cycle25 contributor publication checks passed: {check()} source files; maintainer review remains pending.')
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--root', type=Path, default=ROOT)
+    args = parser.parse_args()
+    print(f'Cycle25 historical contributor evidence and independent maintainer acceptance validated: {check(args.root.resolve())} source files.')

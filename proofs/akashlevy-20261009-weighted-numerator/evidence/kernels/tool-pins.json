@@ -1,0 +1,41 @@
+{
+  "judge_toolchain": {
+    "release": "leanprover/lean4 v4.35.0-rc2 lean-4.35.0-rc2-darwin_aarch64.tar.zst",
+    "release_sha256": "e721cf30671d3830fa6120c7b1a4e6b22624650ce1d618c0ca28a4889f5ef324",
+    "release_digest_source": "GitHub release asset digest (api.github.com/repos/leanprover/lean4/releases/tags/v4.35.0-rc2)",
+    "binaries_sha256": {
+      "lake": "d2d63c80ca10bd2cc9557d11d59221b95c6eefb078c9652a11ef887ab8a068a5",
+      "lean": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+      "leanexport": "f533d8829d2f6507816a3c784055bf2eb8f9a7e53a3134affbe320eba5dc27c1",
+      "leanchecker": "41662275cb7d624d0f0fdf8cb3dc7d5c15e99b233be3ebec576a5c38df181844",
+      "nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+      "con-ron": "7e04504e38276e0e2edb9b4fa992a9206424091b3cfa509ebe8024696b4ad8b0",
+      "source_lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+      "lean4export": "17da1e168bf5d41484c940e41c1f68230798ebb38d09174b564e955895279d0f"
+    }
+  },
+  "source_compiler": {
+    "version": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)"
+  },
+  "exporter": {
+    "repository": "https://github.com/leanprover/lean4export",
+    "commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "built_with": "Lean 4.34.1 (lake build lean4export)"
+  },
+  "comparator_standalone": {
+    "repository": "https://github.com/leanprover/comparator",
+    "commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "local_change": "lean-toolchain v4.34.0 -> v4.34.1",
+    "used_for": "evidence/comparator and evidence/lake Mathlib-only challenge runs (Lean default kernel)"
+  },
+  "driver": {
+    "path": "formalization/kernels/judge_three_kernels.py",
+    "sha256": "51495aba11b6addc5cfe4a05c647530e85ac36983e0c91bcfe12a41bdf8cd5c7"
+  },
+  "runner": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "python": "3.13.13"
+  },
+  "sandbox": "none: lake comparator --inadvisably-no-sandbox (bubblewrap needs Linux)"
+}

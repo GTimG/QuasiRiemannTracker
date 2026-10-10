@@ -315,8 +315,8 @@ export default function App() {
                 <div className="research-main">
                   {tab === "Timeline" && (
                     <Chart
-                      records={records}
-                      allRecords={all}
+                      records={records.filter(verifiedHere)}
+                      allRecords={all.filter(verifiedHere)}
                       events={events}
                       selected={selected}
                       onSelect={(r) => setSelected(r.id)}
@@ -665,7 +665,7 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
         <p>
           <strong>Verification pending:</strong> the authors report a
           formalization that we have not independently reproduced. These results
-          also contribute to the line.
+          appear in the table, outside the verified chart.
         </p>
         <p>Each result links to its source and available checking logs.</p>
       </article>

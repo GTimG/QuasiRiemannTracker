@@ -2,7 +2,10 @@ import { test, expect, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
 const liveRecords = JSON.parse(
-  readFileSync(new URL("../../catalogue/results.json", import.meta.url), "utf8"),
+  readFileSync(
+    new URL("../../catalogue/results.json", import.meta.url),
+    "utf8",
+  ),
 ).records;
 const verifiedCount = liveRecords.filter(
   (record: { status: string }) => record.status === "framework-verified",
@@ -53,13 +56,13 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
   isMobile,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("[data-dot]")).toHaveCount(liveRecords.length);
   if (!isMobile) {
     const newest = page.locator(
-      '[data-id="nielstron-20261009-tightening"] .point-label',
+      '[data-id="cycle25-quartic-20261010"] .point-label',
     );
     const previous = page.locator(
-      '[data-id="proofcouncil-20261009"] .point-label',
+      '[data-id="nielstron-20261009-tightening"] .point-label',
     );
     await expect(newest).toBeVisible();
     await expect(previous).toBeVisible();
