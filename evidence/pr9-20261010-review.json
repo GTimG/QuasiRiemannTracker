@@ -1,0 +1,32 @@
+{
+  "kind": "local merge preparation; independent receipt reused only for byte-identical source",
+  "pull_request": 9,
+  "verified_original_pr_head": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  "merged_main_revision": "0f78cd9b99ba745c7b475f76a971d6107229906b",
+  "proof_source_commit": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  "submission_git_tree": "5888287e541a13e887c089e01b122f2d457840c2",
+  "submission_files_checked": 3609,
+  "submission_manifest_sha256": "b5a5c8786d8bc780f08b187fb703aafbdd4bbecb58dc35bdf4f3af8c05f9def5",
+  "independent_receipt_sha256": "7bd5988d958c5baab80d283be299b2a735355fee035045e61b11df9ce2e1ddd6",
+  "source_bytes_unchanged": true,
+  "tested_driver_unchanged": true,
+  "tests": {
+    "unit_security": {
+      "passed": 75
+    },
+    "replay_ingestion_contract": {
+      "passed": 8
+    },
+    "browser": {
+      "passed": 21,
+      "skipped": 1,
+      "skip_reason": "Persistent chart labels are omitted on narrow screens."
+    },
+    "production_build": "PASS",
+    "github_pages_subpath_downloads": "PASS",
+    "immutable_history": "PASS"
+  },
+  "verification_status": "PASS",
+  "verification_scope": "Eight independent literal targets; all 3224 source modules rebuilt; Comparator, Lean, NanoDa and con-ron accepted with only the three permitted axioms.",
+  "publication_status": "Prepared locally; commit, push, remote CI and merge remain separate actions."
+}

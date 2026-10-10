@@ -401,6 +401,7 @@ export default function Chart({
           <g clipPath="url(#plotClip)">
             {allRecords.length > 0 && (
               <path
+                className="verified-frontier"
                 d={path}
                 fill="none"
                 stroke="#178e82"
@@ -514,11 +515,7 @@ export default function Chart({
       <div className="chart-bottom">
         <span>
           <i className="legend-line" />
-          Best listed bound
-        </span>
-        <span>
-          <i className="legend-dot pending-dot" />
-          Verification pending
+          Best verified bound
         </span>
         <span className="pan-hint">
           <Move size={13} />
@@ -559,8 +556,8 @@ export default function Chart({
         <Info size={14} />
         <span>
           {tiny && <>Local axis origin θ₀ = {fraction(low)}. </>}
-          Dates in UTC. The line includes results awaiting verification. Filters
-          affect dots.
+          Dates in UTC. The line includes independently verified results only.
+          Filters affect dots.
         </span>
       </p>
     </section>

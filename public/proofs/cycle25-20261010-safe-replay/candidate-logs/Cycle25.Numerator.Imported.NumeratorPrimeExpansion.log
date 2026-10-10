@@ -1,0 +1,11 @@
+Cycle25/Numerator/Imported/NumeratorPrimeExpansion.lean:23:24: warning: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [QuadraticCoefficients.vector, QuadraticCoefficients.mass, quadraticMass, Fin.sum_univ_three, norm_pow,
+    Complex.norm_cpow_eq_rpow_re_of_pos hQ, Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Cycle25/Numerator/Imported/NumeratorPrimeExpansion.lean:56:4: warning: Unused tactic linter: `change _ = 1 + (unramifiedDefectCoefficients _ _ _ _ _ _).eval _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

@@ -22,3 +22,10 @@ public/proofs/akashlevy-20261009-weighted-numerator/** -text
 public/proofs/akashlevy-20261010-safe-replay/** -text
 verifier/akashlevy/** -text
 public/proofs/akashlevy-20261010-safe-replay/**/*.log -whitespace
+
+# Cycle25 original package and independent replay: preserve authenticated bytes.
+proofs/cycle25-quartic-20261010/** -text
+public/proofs/cycle25-quartic-20261010/** -text
+public/proofs/cycle25-20261010-safe-replay/** -text
+verifier/cycle25/** -text
+public/proofs/cycle25-20261010-safe-replay/**/*.log -whitespace

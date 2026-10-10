@@ -1,0 +1,11 @@
+{
+  "replay_profile": "cycle25-quartic-v1",
+  "directory": "public/proofs/cycle25-20261010-safe-replay",
+  "collection_sha256": "6b584f8fa1de4bf3e45e9e86484cdbd3155a57b16be41767ef19936b4ce9c889",
+  "receipt_sha256": "7bd5988d958c5baab80d283be299b2a735355fee035045e61b11df9ce2e1ddd6",
+  "theta_exact": "683505193/781250000",
+  "source_content_sha256": "04ea28f69ef34350b6cbce40999450bef9842f6bf97f9070dc0aa29c5ae5e301",
+  "driver_sha256": "4b5ab322656e48658ec1643c568e685de1eebf14f26826b622d23dd27236d3b3",
+  "pins_sha256": "c19c191f918161b965a47d1639d97f2515044166bc4551f0db528a6d5538b502",
+  "challenge_sha256": "0af184bc31571398f868dc1b4f48d38fefede399005c8f9d10649a092ce062b1"
+}

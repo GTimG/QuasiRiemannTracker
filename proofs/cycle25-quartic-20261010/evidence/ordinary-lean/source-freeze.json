@@ -1,0 +1,37 @@
+{
+  "status": "frozen mathematical source; Audit continues separately",
+  "files": [
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Baseline.lean",
+      "sha256": "40d7e77bd7fa85a64038501839107c0b6b178c23053aab72511ff6e319dc2dd3"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/CommonProbe.lean",
+      "sha256": "6b07421c06a9e777374a77edf4b45e2039de8534d130074a4f9a71e4756b9b5e"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Data.lean",
+      "sha256": "e800ddf4b4cdfd52daeb0413c417947a53f63e1d7fb3b9ce604772c89f7c1f74"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Endpoint.lean",
+      "sha256": "e1bf8afcde4f89f95aa1a05fadfedc48740a759163cacc0e6bbf883d66495a66"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/FixedHigh.lean",
+      "sha256": "da6fba716cfb612907af077f86ba345bdc9ca8665af6af811df0d86bf194de4e"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Geometry.lean",
+      "sha256": "e15c6b2fec7ce33b2244d9facfc0d7b743bc98724ed1fa590f9dbee612ac184a"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Height.lean",
+      "sha256": "4e9aa32942dbd73dc1ecc97d78c42b88fb6e281e9a1d56781e7876def1b8bde1"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/SourceContract.lean",
+      "sha256": "625dca2382d0936b40aff940a79344f7963b313c6887a1b412b6b2724db4af48"
+    }
+  ]
+}

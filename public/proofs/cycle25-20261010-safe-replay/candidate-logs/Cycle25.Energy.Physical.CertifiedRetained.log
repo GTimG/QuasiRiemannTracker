@@ -1,0 +1,18 @@
+Cycle25/Energy/Physical/CertifiedRetained.lean:110:92: warning: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Energy/Physical/CertifiedRetained.lean:128:105: warning: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Energy/Physical/CertifiedRetained.lean:110:92: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Energy/Physical/CertifiedRetained.lean:128:105: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Energy/Physical/CertifiedRetained.lean:131:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Energy/Physical/CertifiedRetained.lean:131:42: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

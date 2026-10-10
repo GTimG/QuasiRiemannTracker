@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "frozen_source_modules": 3224,
+  "module_counts": {
+    "Cycle25": 298,
+    "ZetaZeroFree": 3,
+    "OAI": 2923
+  },
+  "pnt_needed_source_paths": [
+    "PrimeNumberTheoremAnd/Fourier.lean",
+    "PrimeNumberTheoremAnd/SmoothExistence.lean",
+    "PrimeNumberTheoremAnd/Sobolev.lean",
+    "PrimeNumberTheoremAnd/Wiener.lean"
+  ],
+  "pnt_patch_files": [
+    {
+      "path": "PrimeNumberTheoremAnd/Fourier.lean",
+      "baseline_sha256": "44d2c28b251be0296f897e43a75a055f346a6199849b54ab204240fe4099e6c2",
+      "patched_sha256": "4d32bf7900ceb3268a44857603eec12333ef605d0d3c966ee6b6261590e9134b",
+      "matches_current_used_source": true,
+      "role": "needed compatibility source"
+    },
+    {
+      "path": "PrimeNumberTheoremAnd/SmoothExistence.lean",
+      "baseline_sha256": "e689045a2d7f92c71c68fda6aa69a89d4a8692187475ba432ed010f453110ea0",
+      "patched_sha256": "8f36ada60efb4e835f8f2eb92993b899311dd21607459497d58824d9bc034555",
+      "matches_current_used_source": true,
+      "role": "needed compatibility source"
+    },
+    {
+      "path": "PrimeNumberTheoremAnd/Sobolev.lean",
+      "baseline_sha256": "fe06e13fad5b47dbd324307ba246110515c4cb50f4c41d6cb15764fd53b1b8ef",
+      "patched_sha256": "a635e667b7a0228f8eb923f210c08598f61d91880855762540431abe3003f95e",
+      "matches_current_used_source": true,
+      "role": "needed compatibility source"
+    },
+    {
+      "path": "PrimeNumberTheoremAnd/Wiener.lean",
+      "baseline_sha256": "7bd40c9cffedc1d9a0f675ea971c6719e490b1b106807459d549145f30d70f05",
+      "patched_sha256": "20c2be97a648f6f6d190db5cb862efaf4b58de8dba66188b801e2bf625686902",
+      "matches_current_used_source": true,
+      "role": "needed compatibility source"
+    },
+    {
+      "path": "lakefile.toml",
+      "baseline_sha256": "9e96d9ca794e004bc441a19ecccdd365b33a1b4053d88a0ad1501f19e6c9f31c",
+      "patched_sha256": "8540ab5ee281b3e1786f0b8ae6103c5f6308ebcc1b2f176459e3b3d539a40fdf",
+      "matches_current_used_source": false,
+      "role": "configuration-only pruning"
+    },
+    {
+      "path": "lean-toolchain",
+      "baseline_sha256": "3f9803cfd3bce5e50120efa5412d1c92f58adbe802154353d29ac98e5722269e",
+      "patched_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "matches_current_used_source": true,
+      "role": "compiler pin"
+    }
+  ],
+  "pnt_excluded_untracked_lean_modules": 46,
+  "pnt_excluded_tracked_source_paths": [
+    "PrimeNumberTheoremAnd/IEANTN/Mertens.lean",
+    "PrimeNumberTheoremAnd/PerronFormula.lean"
+  ],
+  "rellich_needed_source_modules": 15,
+  "original_patch_hashes": {
+    "PrimeNumberTheoremAnd": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "rellich-kondrachov": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8"
+  },
+  "new_patch_hashes": {
+    "PrimeNumberTheoremAnd": "e6e3e2931a6fc4d3e99f7217756ce6ba8aaa5467a59bd11078c85550c9e7ff33",
+    "rellich-kondrachov": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8"
+  },
+  "no_math_source_changed": true,
+  "note": "New PNT config removes unused research libraries/default targets and tooling; all 4 used PNT Lean files and all 15 Rellich Lean files retain exact accepted-run source bytes. Source identity evidence is not fresh kernel acceptance."
+}

@@ -10,6 +10,81 @@ const verifiedCount = liveRecords.filter(
   (record: { status: string }) => record.status === "framework-verified",
 ).length;
 const pendingCount = liveRecords.length - verifiedCount;
+test("Cycle25 independent acceptance, lineage and historical paper evidence are accessible", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", {
+      name: "Hailey Collet · quartic boundary",
+      exact: true,
+    })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText(
+    "683505193/781250000",
+  );
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Verified in our framework",
+  );
+  await expect(page.locator(".proof-detail")).not.toContainText(
+    "Signed verification receipt",
+  );
+  const link = page.getByRole("link", {
+    name: "Historical contributor seven-target report",
+    exact: true,
+  });
+  const report = await (
+    await request.get((await link.getAttribute("href")) as string)
+  ).json();
+  expect(report.status).toBe("PASS");
+  expect(report.theta_rational).toBe("683505193/781250000");
+  expect(report.declarations).toHaveLength(7);
+  expect(report.declarations).toContain("Cycle25Verification.plainMoment");
+  expect(report.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
+  expect(report.statement_definitions_compared).toBe(true);
+  const independent = page.getByRole("link", {
+    name: "Independent maintainer replay receipt",
+    exact: true,
+  });
+  const receipt = await (
+    await request.get((await independent.getAttribute("href")) as string)
+  ).json();
+  expect(receipt.status).toBe("PASS");
+  expect(receipt.source_commit).toBe(
+    "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  );
+  expect(receipt.theta_exact).toBe("683505193/781250000");
+  expect(receipt.targets).toHaveLength(8);
+  expect(receipt.targets).toContain("QRHBoundsPR9.quarticRootExistsUnique");
+  expect(receipt.candidate_modules_rebuilt).toBe(3224);
+  expect(receipt.challenge_exported_before_candidate_execution).toBe(true);
+  expect(receipt.receipt_outside_candidate).toBe(true);
+  await expect(page.locator(".proof-detail")).toContainText(
+    "akashlevy-20261009-weighted-numerator",
+  );
+  const catalogue = await (await request.get("/catalogue.json")).json();
+  const record = catalogue.records.find(
+    (r: { id: string }) => r.id === "cycle25-quartic-20261010",
+  );
+  expect(record.timeline_at).toBe(receipt.verified_at);
+  expect(record.first_verified_at).toBe(receipt.verified_at);
+  expect(record.submitted_at).toBe("2026-10-10T12:08:27Z");
+  expect(record.published_at).toBe("");
+  expect(record.merged_at).toBe("");
+  const pdfLink = page.getByRole("link", { name: "Paper (PDF)", exact: true });
+  const pdf = await request.get((await pdfLink.getAttribute("href")) as string);
+  expect(pdf.ok()).toBe(true);
+  expect(pdf.headers()["content-type"]).toContain("application/pdf");
+  expect((await pdf.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  const texLink = page.getByRole("link", {
+    name: "Paper source (TeX)",
+    exact: true,
+  });
+  const tex = await request.get((await texLink.getAttribute("href")) as string);
+  expect(tex.ok()).toBe(true);
+  expect(await tex.text()).toContain("\\documentclass");
+});
 const chartFixtures = () =>
   JSON.parse(
     readFileSync(
@@ -131,13 +206,13 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("six real results, verification statuses and source downloads", async ({
+test("current results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(6);
-  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("tbody tr")).toHaveCount(liveRecords.length);
+  await expect(page.locator("[data-dot]")).toHaveCount(liveRecords.length);
   await expect(page.locator("tbody .tag.teal")).toHaveCount(verifiedCount);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(pendingCount);
   await page
@@ -275,7 +350,9 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
-  await expect(page.locator("tbody tr").first()).toContainText("Akash Levy");
+  await expect(page.locator("tbody tr").first()).toContainText(
+    "quartic boundary",
+  );
   await page.getByLabel("Contribution type").selectOption("verified");
   await expect(page.locator("tbody tr")).toHaveCount(verifiedCount);
   await page.getByLabel("Contribution type").selectOption("pending");
@@ -373,4 +450,52 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBeTruthy();
+});
+
+test("a stronger pending submission stays in the table and cannot move the verified curve", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("[data-dot]")).toHaveCount(verifiedCount);
+  const before = await page.locator(".verified-frontier").getAttribute("d");
+  const best = await page.locator(".best-bound").textContent();
+  const pending = {
+    ...liveRecords.find(
+      (r: { id: string }) => r.id === "cycle25-quartic-20261010",
+    ),
+    id: "pending-test-only",
+    title: "Pending test contribution",
+    status: "verification-pending",
+    first_verified_at: "",
+    builds_on: [],
+    theta: { numerator: "1", denominator: "2" },
+    timeline_at: "2026-10-11T00:00:00Z",
+    date_label: "Submitted",
+  };
+  await page.route("**/catalogue.json", (route) =>
+    route.fulfill({
+      json: {
+        schema_version: 1,
+        records: [...liveRecords, pending],
+      },
+    }),
+  );
+  await page.reload();
+  await expect(page.locator("tbody tr")).toHaveCount(liveRecords.length + 1);
+  await expect(page.locator("[data-dot]")).toHaveCount(verifiedCount);
+  await expect(page.locator('[data-id="pending-test-only"]')).toHaveCount(0);
+  await expect(page.locator(".best-bound")).toHaveText(best!);
+  await expect(page.locator(".verified-frontier")).toHaveAttribute(
+    "d",
+    before!,
+  );
+  await page.getByLabel("Contribution type").selectOption("pending");
+  await expect(page.locator("tbody tr")).toHaveCount(1);
+  await expect(page.locator("[data-dot]")).toHaveCount(0);
+  await page
+    .getByRole("button", { name: "Pending test contribution", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Verification pending",
+  );
 });

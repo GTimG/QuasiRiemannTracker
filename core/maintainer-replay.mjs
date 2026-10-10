@@ -33,19 +33,25 @@ function filesAt(root, prefix = "") {
 export function validateMaintainerReplay(root, pin, contribution) {
   const profile = pin?.replay_profile ?? "liu-algebraic-v1";
   demand(
-    ["liu-algebraic-v1", "argonaut-v0.1.8", "akashlevy-weighted-v1"].includes(
-      profile,
-    ),
+    [
+      "liu-algebraic-v1",
+      "argonaut-v0.1.8",
+      "akashlevy-weighted-v1",
+      "cycle25-quartic-v1",
+    ].includes(profile),
     "unknown replay profile",
   );
+  const cycle25 = profile === "cycle25-quartic-v1";
   const argonaut = profile === "argonaut-v0.1.8";
   const akashlevy = profile === "akashlevy-weighted-v1";
-  const driverDirectory = `verifier/${akashlevy ? "akashlevy" : argonaut ? "argonaut" : "liu"}`;
-  const targetNamespace = akashlevy
-    ? "QRHBoundsPR6"
-    : argonaut
-      ? "QRHBoundsPR4"
-      : "QRHBoundsPR3";
+  const driverDirectory = `verifier/${cycle25 ? "cycle25" : akashlevy ? "akashlevy" : argonaut ? "argonaut" : "liu"}`;
+  const targetNamespace = cycle25
+    ? "QRHBoundsPR9"
+    : akashlevy
+      ? "QRHBoundsPR6"
+      : argonaut
+        ? "QRHBoundsPR4"
+        : "QRHBoundsPR3";
   demand(
     pin && safe(pin.directory) && pin.directory.startsWith("public/proofs/"),
     "missing reviewed replay pin",
@@ -160,6 +166,15 @@ export function validateMaintainerReplay(root, pin, contribution) {
       `${targetNamespace}.allDirichlet`,
       `${targetNamespace}.zeta`,
       `${targetNamespace}.allHecke`,
+      ...(cycle25
+        ? [
+            "exactAllDirichlet",
+            "exactZeta",
+            "exactAllHecke",
+            "quarticRootExistsUnique",
+            "plainMoment",
+          ].map((name) => `${targetNamespace}.${name}`)
+        : []),
     ]),
     "target scope differs",
   );
@@ -172,7 +187,7 @@ export function validateMaintainerReplay(root, pin, contribution) {
   );
   demand(
     report.candidate_modules_rebuilt ===
-      (akashlevy ? 2898 : argonaut ? 152 : 238) &&
+      (cycle25 ? 3224 : akashlevy ? 2898 : argonaut ? 152 : 238) &&
       report.approved_dependency_modules === 7026 &&
       report.extra_official_cache_modules === 4807,
     "dependency/build scope differs",
@@ -193,7 +208,7 @@ export function validateMaintainerReplay(root, pin, contribution) {
       "Argonaut source release, revision or exact bound differs",
     );
   }
-  if (akashlevy) {
+  if (akashlevy || cycle25) {
     const inputs = JSON.parse(
       readFileSync(join(root, driverDirectory, "pins.json")),
     );
@@ -205,7 +220,7 @@ export function validateMaintainerReplay(root, pin, contribution) {
         same(report.dependency_fork, inputs.dependency_fork) &&
         report.source_content_sha256 === inputs.source_bundle.sha256 &&
         report.submission_manifest_sha256 === inputs.submission_manifest_sha256,
-      "Akash Levy source bundle, dependency fork or reviewed revision differs",
+      "source bundle, dependency fork or reviewed revision differs",
     );
   }
   demand(
@@ -277,7 +292,7 @@ export function validateMaintainerReplay(root, pin, contribution) {
       `required receipt binding missing: ${name}`,
     );
   const published = (name) => read(collection.artifact_publication[name].path);
-  if (akashlevy) {
+  if (akashlevy || cycle25) {
     const inputs = JSON.parse(
       readFileSync(join(root, driverDirectory, "pins.json")),
     );

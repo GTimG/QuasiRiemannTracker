@@ -3,6 +3,13 @@ import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { get } from "node:http";
+import { readFileSync } from "node:fs";
+const records = JSON.parse(
+  readFileSync("catalogue/results.json", "utf8"),
+).records;
+const verifiedCount = records.filter((r) =>
+  ["verified", "framework-verified"].includes(r.status),
+).length;
 
 const base = process.env.QRH_BASE_PATH || "/qrh-bounds/";
 const origin = "http://127.0.0.1:4184";
@@ -67,10 +74,18 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 6,
+    (count) => document.querySelectorAll("[data-dot]").length === count,
+    verifiedCount,
   );
-  assert.equal(await page.locator("tbody tr").count(), 6);
+  assert.equal(await page.locator("tbody tr").count(), records.length);
   for (const name of [
+    "proofs/cycle25-20261010-safe-replay/result.json",
+    "proofs/cycle25-20261010-safe-replay/logs/judge.log",
+    "proofs/cycle25-20261010-safe-replay/README.txt",
+    "proofs/cycle25-quartic-20261010/result.json",
+    "proofs/cycle25-quartic-20261010/control-results.json",
+    "proofs/cycle25-quartic-20261010/paper.tex",
+    "proofs/cycle25-quartic-20261010/paper.pdf",
     "registry.json",
     "catalogue.json",
     "site.json",
@@ -122,8 +137,13 @@ try {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
     if (name.endsWith(".json")) await response.json();
+    if (name.endsWith("/paper.pdf")) {
+      assert.ok(response.headers()["content-type"].includes("application/pdf"));
+      assert.equal((await response.body()).subarray(0, 5).toString(), "%PDF-");
+    }
   }
   for (const id of [
+    "cycle25-quartic-20261010",
     "qrh-20261009",
     "nielstron-algebraic-20261009",
     "argonaut-20261010-kernels",
@@ -179,7 +199,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, ${verifiedCount} verified dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

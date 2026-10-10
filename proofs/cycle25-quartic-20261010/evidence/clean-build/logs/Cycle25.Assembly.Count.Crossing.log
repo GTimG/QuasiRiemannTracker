@@ -1,0 +1,6 @@
+Cycle25/Assembly/Count/Crossing.lean:18:37: warning: Variable name `hp1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

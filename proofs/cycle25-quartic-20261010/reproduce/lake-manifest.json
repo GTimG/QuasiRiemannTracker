@@ -1,0 +1,108 @@
+{
+  "version": "1.2.0",
+  "packagesDir": ".lake/packages",
+  "name": "Cycle25",
+  "lakeDir": ".lake",
+  "fixedToolchain": false,
+  "packages": [
+    {
+      "type": "path",
+      "dir": ".lake/packages/mathlib",
+      "name": "mathlib",
+      "scope": "",
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/PrimeNumberTheoremAnd",
+      "name": "PrimeNumberTheoremAnd",
+      "scope": "",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/rellich-kondrachov",
+      "name": "«rellich-kondrachov»",
+      "scope": "",
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/plausible",
+      "name": "plausible",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/LeanSearchClient",
+      "name": "LeanSearchClient",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/importGraph",
+      "name": "importGraph",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/proofwidgets",
+      "name": "proofwidgets",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/aesop",
+      "name": "aesop",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/Qq",
+      "name": "Qq",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/batteries",
+      "name": "batteries",
+      "scope": "leanprover-community",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    },
+    {
+      "type": "path",
+      "dir": ".lake/packages/Cli",
+      "name": "Cli",
+      "scope": "leanprover",
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "inherited": true
+    }
+  ]
+}

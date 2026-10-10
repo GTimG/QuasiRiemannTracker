@@ -1,0 +1,3 @@
+Cycle25/Assembly/Low/Reflection/LowCaps.lean:54:56: warning: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

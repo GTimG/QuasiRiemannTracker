@@ -4,7 +4,7 @@
 
 A static React/TypeScript dashboard for uniform all-Dirichlet nonvanishing bounds, with exact constants, source links, proof downloads and a GitHub contribution workflow. Apache-2.0 for the new website and Lean development; upstream notices are retained.
 
-The main graphic includes **OpenAI, ProofCouncil, Argonaut, Baiying Liu, Nielstron and Akash Levy**. Current verification statuses and links to the corresponding checking evidence are recorded in the [reviewed catalogue](catalogue/results.json). Pending points are shown as hollow amber dots and contribute to the progress line, which tracks the best listed bound. Verification labels remain separate. These labels describe our evidence, not the validity of other authors’ work.
+The main graphic includes independently checked results from **OpenAI, ProofCouncil, Argonaut, Baiying Liu, Nielstron, Akash Levy and Hailey Collet**. The [reviewed catalogue](catalogue/results.json) links each result to its checking evidence. Pending submissions remain searchable in the table but do not appear in the verified chart or advance its progress line.
 
 The complete Linux verification worker development is in [`proofs/qrh-20261009/`](proofs/qrh-20261009/), with 201 local Lean modules, immutable manuscript inputs, pinned dependencies, license records, independent statements and build logs. The source closure of 7,227 modules passed, using matching previously source-built dependencies; the final proof source and audits were rechecked. Both our proof and the original OpenAI 7/8 proof also passed Palomar’s mechanical verifier locally, including Comparator and the Lean, NanoDa and con-ron kernels. Reports, exact statements, tool hashes and logs are in [`public/proofs/palomar-20261009/`](public/proofs/palomar-20261009/). This is separate from Palomar registration or editorial review. The separate signed **Comparator + NanoDa admission service remains uncommissioned**, and its registry remains empty. No signed receipt has been invented or acceptance rule relaxed.
 
@@ -18,6 +18,13 @@ independent sandboxed rebuild and Comparator plus three-kernel verification.
 Its [independent replay instructions](verifier/akashlevy/README.md) describe the
 pinned source, isolated rebuild, checker controls and complete source binding.
 The author's original macOS evidence remains an immutable historical report.
+
+Hailey Collet's quartic-bound contribution passed an independent rebuild of all
+3,224 submitted Lean modules and eight-target Comparator/Lean/NanoDa/con-ron
+verification. The [safe replay instructions](verifier/cycle25/README.md) cover
+reproduction and its exact source binding. The original contributor package is
+retained unchanged as historical material; use the maintainer's isolated runner
+instead of executing its original bootstrap or Lean commands on your host.
 
 ## Run locally
 

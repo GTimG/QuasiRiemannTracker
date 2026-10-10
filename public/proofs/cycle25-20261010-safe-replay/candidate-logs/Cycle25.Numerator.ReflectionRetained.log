@@ -1,0 +1,5 @@
+Cycle25/Numerator/ReflectionRetained.lean:93:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/ReflectionRetained.lean:95:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/ReflectionRetained.lean:95:20: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/ReflectionRetained.lean:98:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+Cycle25/Numerator/ReflectionRetained.lean:101:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

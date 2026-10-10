@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "PalomarPreflightSolution",
+      "exit_code": 0,
+      "log": "PalomarPreflightSolution.log"
+    },
+    {
+      "name": "PalomarPreflightWrong",
+      "exit_code": 1,
+      "log": "PalomarPreflightWrong.log"
+    },
+    {
+      "name": "PalomarPreflightIllTyped",
+      "exit_code": 1,
+      "log": "PalomarPreflightIllTyped.log"
+    }
+  ],
+  "executed_before_candidate": true,
+  "finished_at": "2026-10-10T14:47:39.359361+00:00"
+}

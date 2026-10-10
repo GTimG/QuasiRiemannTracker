@@ -1,0 +1,160 @@
+{
+  "status": "frozen final mathematical assembly; development compile and dependency audit passed",
+  "public_module": "Cycle25.Assembly.Final.Endpoint",
+  "exact_endpoints": [
+    "Cycle25.beta_le_theta",
+    "Cycle25.hecke_nonzero",
+    "Cycle25.dirichlet_nonzero",
+    "Cycle25.zeta_nonzero"
+  ],
+  "development_check": {
+    "compiler": "Lean 4.34.1",
+    "driver": "python3 dev_lean.py Cycle25/Assembly/Final/<module>.lean",
+    "math_modules": [
+      "Baseline",
+      "Height",
+      "Data",
+      "SourceContract",
+      "Geometry",
+      "FixedHigh",
+      "CommonProbe",
+      "Endpoint"
+    ],
+    "exit_code": 0,
+    "warnings": false,
+    "uses_pinned_cache": true
+  },
+  "audit": {
+    "command": "python3 dev_lean.py Cycle25/Assembly/Final/Audit.lean",
+    "exit_code": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reachable_project_constants": {
+      "baseline_beta": 26657,
+      "beta_le_theta": 28666,
+      "hecke_nonzero": 28667,
+      "dirichlet_nonzero": 28696,
+      "zeta_nonzero": 28697
+    },
+    "denied": [],
+    "missing": [],
+    "new_physical_path_old_low_endpoints": [],
+    "coarse_initialization_exception": "Only the second old-low-endpoint-specific traversal cuts Cycle25.FinalAssembly.baseline_beta. The full transitive traversal still audits the entire baseline for all stronger-bound, legacy weighted, beta-large wrapper, clone and sorry denies.",
+    "deny_rules_source": "formalization/Cycle25/Assembly/Final/Audit.lean"
+  },
+  "frozen_source_hashes_match": true,
+  "upstream": {
+    "weighted_revision": "2fd60c0926b66ea18d7436f5ed55250fd006ab5d",
+    "attribution": "OpenAI/math family003; Apache-2.0"
+  },
+  "independent_acceptance": "Controller owns clean compilation, Lean/NanoDa/con-ron gates and conditional PR submission; not certified by this development report.",
+  "artifacts": [
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Audit.lean",
+      "sha256": "30a383e455dc959f9ee96b5f5fd0193165124b05238dfc42da2a7607459f735c"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Baseline.lean",
+      "sha256": "40d7e77bd7fa85a64038501839107c0b6b178c23053aab72511ff6e319dc2dd3"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/CommonProbe.lean",
+      "sha256": "6b07421c06a9e777374a77edf4b45e2039de8534d130074a4f9a71e4756b9b5e"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Data.lean",
+      "sha256": "e800ddf4b4cdfd52daeb0413c417947a53f63e1d7fb3b9ce604772c89f7c1f74"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Endpoint.lean",
+      "sha256": "e1bf8afcde4f89f95aa1a05fadfedc48740a759163cacc0e6bbf883d66495a66"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/FixedHigh.lean",
+      "sha256": "da6fba716cfb612907af077f86ba345bdc9ca8665af6af811df0d86bf194de4e"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Geometry.lean",
+      "sha256": "e15c6b2fec7ce33b2244d9facfc0d7b743bc98724ed1fa590f9dbee612ac184a"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/Height.lean",
+      "sha256": "4e9aa32942dbd73dc1ecc97d78c42b88fb6e281e9a1d56781e7876def1b8bde1"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/README.md",
+      "sha256": "b5bbec7ad3ce0797f39c7d5216c8636d4831e43b2262a69626a3f5cd471ee8bf"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/SourceContract.lean",
+      "sha256": "625dca2382d0936b40aff940a79344f7963b313c6887a1b412b6b2724db4af48"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/audit-report.txt",
+      "sha256": "7bf9932da28e581558b4c31f8b8b91a99814658f9c0888237ed654c60e1cfbe7"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/source-freeze.json",
+      "sha256": "ea5eea3860570c3c48d8603dd3d54a5b5ec23f04ea8ee4a714191f804e896073"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/used-Cycle25.FinalAssembly.baseline_beta.txt",
+      "sha256": "e1b61cd5a1d93b0a5e0a4eea8b6755ca1479c288a7fb9460c11fd5ca43329a6f"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/used-Cycle25.beta_le_theta.txt",
+      "sha256": "fffdd8148162878321f1ea7e8a240383951a60305769eb1c74f228616d396996"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/used-Cycle25.dirichlet_nonzero.txt",
+      "sha256": "b3f0ddcae10cafc8a6af07a2ba0b763990ad6c505b5c2bba681974e5c39fd5f4"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/used-Cycle25.hecke_nonzero.txt",
+      "sha256": "2c2388f0f39c4341d232b7c0ba4bd162823e5380dd15722f1bdd8ef13be632ab"
+    },
+    {
+      "path": "formalization/Cycle25/Assembly/Final/used-Cycle25.zeta_nonzero.txt",
+      "sha256": "a7de59fb35c9f79890c8f226cf9c00fa8a03d189601c7d6b4612139811cf49ba"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Audit.olean",
+      "sha256": "5a20f148bdabb1e6c96c2905446df9674858ff9b1a280ce44b62a8ce41819513"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Baseline.olean",
+      "sha256": "ec75b5c5b52afc4474b5d5e7af2f1b4e01f021c1fb81ed9817ab13e107a042d0"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/CommonProbe.olean",
+      "sha256": "1e19a2328bc10620c4e38a673cf029bab7f4a3ff9c49d8a8376d667c9ebdfa01"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Data.olean",
+      "sha256": "09d4aa6579ab9efd125e5e80055b5484cdd446154f14f673fdd495c666ef86ae"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Endpoint.olean",
+      "sha256": "f219918f139aa38af2ab02609d5051c8aadf7ebb80e71c4d623576ebb1a090fe"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/FixedHigh.olean",
+      "sha256": "63e6541e837eeb1cef63d27e156ab3ebc2b51c6cf0016b4b33292467f40846ba"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Geometry.olean",
+      "sha256": "5f5455a37b5772f1b4109861ffd53b1326655751c9f2cdabd02359481697b98e"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/Height.olean",
+      "sha256": "1f13fb7e5e125a8628a7d89218b9f6e67fe9cf58f549d148c4415aa24891fb70"
+    },
+    {
+      "path": "formalization/.lake/build/lib/lean/Cycle25/Assembly/Final/SourceContract.olean",
+      "sha256": "15bdbb222cd6a732815be32ad662f788d00189af088123a9712c48bca195a5bd"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Cycle25": {
+    "modules": 298,
+    "lines": 34278,
+    "bytes": 1893375
+  },
+  "OAI": {
+    "modules": 2923,
+    "lines": 486457,
+    "bytes": 25007954
+  },
+  "ZetaZeroFree": {
+    "modules": 3,
+    "lines": 14157,
+    "bytes": 761502
+  }
+}
