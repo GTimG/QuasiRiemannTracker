@@ -17,11 +17,7 @@ test("the classical baseline and results advance the frontier while verification
   const verified = d.records.filter(verifiedHere);
   assert.deepEqual(
     verified.map((r) => r.id),
-    [
-      "openai-baseline",
-      "proofcouncil-20261009",
-      "nielstron-20261009-tightening",
-    ],
+    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening"],
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
   assert.equal(frontier.length, d.records.length);
