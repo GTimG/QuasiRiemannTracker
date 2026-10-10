@@ -1,5 +1,12 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
+const liveRecords = JSON.parse(
+  readFileSync(new URL("../../catalogue/results.json", import.meta.url), "utf8"),
+).records;
+const verifiedCount = liveRecords.filter(
+  (record: { status: string }) => record.status === "framework-verified",
+).length;
+const pendingCount = liveRecords.length - verifiedCount;
 const chartFixtures = () =>
   JSON.parse(
     readFileSync(
@@ -44,8 +51,8 @@ test("five real results, verification statuses and source downloads", async ({
   await page.goto("/");
   await expect(page.locator("tbody tr")).toHaveCount(5);
   await expect(page.locator("[data-dot]")).toHaveCount(5);
-  await expect(page.locator("tbody .tag.teal")).toHaveCount(3);
-  await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
+  await expect(page.locator("tbody .tag.teal")).toHaveCount(verifiedCount);
+  await expect(page.locator("tbody .tag.amber")).toHaveCount(pendingCount);
   await page
     .getByRole("button", {
       name: "Baiying Liu · optimized parameters",
@@ -56,7 +63,10 @@ test("five real results, verification statuses and source downloads", async ({
     "(1507 − 2√921) / 1653",
   );
   await expect(page.locator(".proof-detail")).toContainText(
-    "Verification pending",
+    liveRecords.find((record: { id: string }) => record.id === "liu-20261008")
+      .status === "framework-verified"
+      ? "Verified in our framework"
+      : "Verification pending",
   );
   await expect(page.locator(".proof-detail")).not.toContainText(
     "Signed verification receipt",
@@ -121,9 +131,9 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByLabel("Sort contributions").selectOption("bound");
   await expect(page.locator("tbody tr").first()).toContainText("Nielstron");
   await page.getByLabel("Contribution type").selectOption("verified");
-  await expect(page.locator("tbody tr")).toHaveCount(3);
+  await expect(page.locator("tbody tr")).toHaveCount(verifiedCount);
   await page.getByLabel("Contribution type").selectOption("pending");
-  await expect(page.locator("tbody tr")).toHaveCount(2);
+  await expect(page.locator("tbody tr")).toHaveCount(pendingCount);
   await page.getByLabel("Contribution type").selectOption("all");
   await page.getByLabel("Search contributions").fill("Tim Gehrunger");
   await expect(page.locator("tbody tr")).toHaveCount(1);

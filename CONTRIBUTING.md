@@ -12,6 +12,12 @@ Liu's existing algebraic constant retains its exact expression and a certified r
 
 No author can grant themselves a verified badge merely by passing a website build. Status and evidence changes require maintainer review. The automatic signed admission path below is not running. It must be updated to require all three kernels and tested before it can admit verified results.
 
+For independent reproduction of an existing pending result, use the
+[external verification evidence format](docs/EXTERNAL-VERIFICATION.md). It binds
+the exact checked source and target to a reviewed immutable dossier, with separate
+licensed-archive and remote-source publication modes. It does not alter the
+signed admission protocol.
+
 ## Signed Comparator + NanoDa admission (separate, not yet commissioned)
 
 The track admits only the fixed all-Dirichlet theorem. It quantifies over every natural modulus with `NeZero q`, every complex Dirichlet character and every complex `s` with `θ < s.re`, retaining `¬ (χ = 1 ∧ s = 1)` and `_root_.DirichletCharacter.LFunction`. Zeta-only, conditional and restricted-character results do not qualify. A manuscript, a successful Lean build or an AI critic's approval is not admission evidence.

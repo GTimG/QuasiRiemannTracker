@@ -173,6 +173,7 @@ def check_publication(root):
     if name != archive.name or hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
         raise ValueError('Archive checksum mismatch')
     native_count = check_native_tightening(root)
+    subprocess.run(['node', str(root / 'scripts/check-external-kernels.mjs')], cwd=root, check=True)
     for directory in [root / 'public/proofs', root / 'evidence']:
         for path in directory.rglob('*'):
             if path.is_symlink():

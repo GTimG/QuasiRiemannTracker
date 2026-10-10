@@ -7,14 +7,30 @@ import {
   timelineRecords,
 } from "../core/catalogue.mjs";
 import { frontierHistory, cmp } from "../core/rational.mjs";
+import {
+  EXTERNAL_PINS,
+  validateExternalKernelEvidence,
+} from "../core/external-kernel-evidence.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
 test("all five results advance the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
   assert.equal(d.records.length, 5);
   const verified = d.records.filter(verifiedHere);
+  validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
     verified.map((r) => r.id),
-    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening"],
+    d.records
+      .filter(
+        (r) =>
+          [
+            "openai-baseline",
+            "proofcouncil-20261009",
+            "nielstron-20261009-tightening",
+          ].includes(r.id) ||
+          (EXTERNAL_PINS.entries[r.id] !== undefined &&
+            EXTERNAL_PINS.entries[r.id] !== null),
+      )
+      .map((r) => r.id),
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
   assert.equal(frontier.length, 5);
