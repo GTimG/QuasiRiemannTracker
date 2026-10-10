@@ -1,4 +1,11 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const catalogueCount = JSON.parse(
+  readFileSync(
+    new URL("../../catalogue/results.json", import.meta.url),
+    "utf8",
+  ),
+).records.length;
 const repository = "GTimG/QuasiRiemannTracker";
 const sample = {
   id: "test-proof",
@@ -28,8 +35,8 @@ test("pending submissions share table and details with verified results and appe
     }),
   );
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(6);
-  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("tbody tr")).toHaveCount(catalogueCount + 1);
+  await expect(page.locator("[data-dot]")).toHaveCount(catalogueCount + 1);
   const row = page.locator("tbody tr").filter({ hasText: sample.title });
   await expect(row).toContainText("Verification pending");
   await expect(row).toContainText("3/4");
@@ -93,8 +100,8 @@ test("nonimproving pending bounds do not expand the initial plot", async ({
     }),
   );
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(7);
-  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("tbody tr")).toHaveCount(catalogueCount + 2);
+  await expect(page.locator("[data-dot]")).toHaveCount(catalogueCount + 1);
   await expect(
     page.locator('[data-id="pending-123-test-proof"]'),
   ).toBeVisible();
@@ -107,5 +114,5 @@ test("absence of the status branch leaves the existing website working", async (
     route.fulfill({ status: 404, body: "Not found" }),
   );
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(5);
+  await expect(page.locator("tbody tr")).toHaveCount(catalogueCount);
 });

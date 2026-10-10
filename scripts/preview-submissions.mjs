@@ -79,7 +79,7 @@ for (const pr of prs) {
         head_sha: pr.head.sha,
         head_repository: pr.head.repo.full_name,
         title: pr.title,
-        authors: [{ name: `${pr.user.login} (proposal)` }],
+        authors: [{ name: pr.user.login }],
         theta: { numerator: match[1], denominator: match[2] },
         method:
           "Exact retuning proposal with a standalone arithmetic certificate; full-cohort elaboration and independent kernel replay remain pending.",
