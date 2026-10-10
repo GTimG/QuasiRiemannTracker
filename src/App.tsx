@@ -352,12 +352,14 @@ export default function App() {
                                   >
                                     {contributionTitle(r)}
                                   </button>
-                                  <span
+                                  <button
                                     className={
                                       "tag verification-badge " +
                                       (verifiedHere(r) ? "teal" : "amber")
                                     }
                                     title={statusLabel(r)}
+                                    aria-label={`Read verification protocol for ${contributionTitle(r)}`}
+                                    onClick={() => setTab("Protocol")}
                                   >
                                     {verifiedHere(r) ? (
                                       <BadgeCheck
@@ -370,7 +372,7 @@ export default function App() {
                                     <span className="sr-only">
                                       {statusLabel(r)}
                                     </span>
-                                  </span>
+                                  </button>
                                 </div>
                               </td>
                               <td data-label="Author" className="author-cell">
