@@ -1,0 +1,18 @@
+{
+  "author": "Zhongpai Gao",
+  "date": "2026-10-09",
+  "status": "Numerical and manual mathematical proposal; not a verified tracker result.",
+  "tracker_input_commit": "40844a7614b67840801e65b836b3da2e1f7ff029",
+  "current_tracker_theta": "874957019420098946128604623/1000000000000000000000000000",
+  "proposed_theta": "437478509710049473064301925667/500000000000000000000000000000",
+  "difference": "385833/500000000000000000000000000000",
+  "license": "MIT for the new author text and certificate code; cited OpenAI/ProofCouncil/Nielstron sources retain their upstream terms.",
+  "author_repository": "https://github.com/Gaozhongpai/seven-eighths-refinement-certificates",
+  "source_note_sha256": "b72b2a2c241ab87e93ce618d065f553ffb51e56abf52a08d7ff605b829f982d9",
+  "source_certificate_sha256": "9bcca02ad85f70aabdd6d8b42365a03e9ac4750a97f83a34c02f0b14bdf2e55f",
+  "adaptation": "Relative references made local; polynomial helpers inlined for a standalone standard-library certificate. Mathematical identities unchanged.",
+  "new_kernel_or_Lean_run": false,
+  "verified_badge_requested": false,
+  "catalogue_record_requested": false,
+  "manual_proof_review": "Internal model-assisted retuning/assembly review only; not independent validation of every upstream analytic proof."
+}
