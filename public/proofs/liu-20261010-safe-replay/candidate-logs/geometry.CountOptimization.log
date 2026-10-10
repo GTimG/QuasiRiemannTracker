@@ -1,0 +1,7 @@
+'RHCount.balanced_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.weighted_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.rstar_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.complementary_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.strict_inverse_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.affine_choice_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHCount.balance_is_minimax' depends on axioms: [propext, Classical.choice, Quot.sound]

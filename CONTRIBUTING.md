@@ -52,3 +52,13 @@ The track admits only the fixed all-Dirichlet theorem. It quantifies over every 
 Published IDs and receipts are immutable. New revisions need a new contribution ID; use explicit predecessors and, when appropriate, a signed supersession event. Withdrawals do not delete historical evidence.
 
 The example's mathematical authorship belongs to OpenAI, not to QRH Bounds. The original-terminal-proof example is currently infrastructure-blocked in this stricter admission pipeline. OpenAI’s original proof was checked separately on Linux verification worker with Comparator, Lean, NanoDa and con-ron; its reports are linked in the catalogue.
+
+### Replaying the pinned Liu contribution
+
+Use the [sandboxed maintainer command](verifier/liu/README.md) from a protected,
+reviewed checkout. The immutable Liu dossier's earlier native scripts are
+historical evidence and must not be used as untrusted-submission entrypoints.
+The replacement exports the canonical challenge before candidate code executes,
+clears the candidate environment, runs every compilation offline under genuine
+Linux confinement, and requires all three independent kernels. A maintainer
+must review tool/profile changes separately from proof PRs.

@@ -1,0 +1,10 @@
+'RHZeroFreeExtension.AnalyticHigh.actual_detector_certified_bands' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.actual_fine_moment_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.actual_beta_le_new_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.actual_hecke_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.actual_dirichlet_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.actual_zeta_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]

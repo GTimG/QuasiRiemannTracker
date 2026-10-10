@@ -25,5 +25,15 @@
       "WORKSPACE/tightening-research/checkers/tools/lean-4.35.0-rc2-linux/bin/nanoda_bin"
     ]
   },
-  "publication_mode": "remote-source"
+  "publication_mode": "remote-source",
+  "maintainer_replay": {
+    "directory": "public/proofs/liu-20261010-safe-replay",
+    "collection_sha256": "d326a637352a0a4c97cf826a21bd1629956c1c64a2ef4d5721869d0eb39e7e77",
+    "receipt_sha256": "15b550ed8dd47845a3afa96e87fa370c56221848ee648d757ac993f773eb4976",
+    "theta_exact": "(1507 - 2*sqrt(921))/1653",
+    "source_content_sha256": "df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de",
+    "driver_sha256": "ce4bc6b68c716a6c1d005a08bcb160fb017b4c36e2e4f5f3b7e8e3563c7848b0",
+    "pins_sha256": "a379078c656dc80d1827f186a657e5d46b3b0c61d2a4252ca3dfdd83c97d51c7",
+    "challenge_sha256": "9c57ad630ec4e630c9d567a63258c0eefc7edc01b92c03c15e954d5a04a9db8b"
+  }
 }

@@ -3,6 +3,7 @@
 import { readFileSync, readdirSync, lstatSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
+import { validateMaintainerReplay } from "./maintainer-replay.mjs";
 
 export const EXTERNAL_PINS = {
   schema_version: 1,
@@ -446,9 +447,13 @@ export function validateExternalKernelEvidence(
         );
       }
     }
+    const replay = pin.maintainer_replay
+      ? validateMaintainerReplay(root, pin.maintainer_replay, pin)
+      : null;
     demand(
       (record.status === "framework-verified" &&
-        record.first_verified_at === report.verified_at_utc) ||
+        record.first_verified_at ===
+          (replay?.verified_at ?? report.verified_at_utc)) ||
         (record.status === "verification-pending" && !record.first_verified_at),
       "catalogue status/date does not match actual checker acceptance",
     );
