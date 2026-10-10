@@ -1,0 +1,6 @@
+'RHZeroFreeExtension.AnalyticHigh.v2_source_initial_joint_ordered_at_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_raw_uniform_high_x_joins' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

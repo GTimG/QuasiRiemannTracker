@@ -1,0 +1,16 @@
+{
+  "status": "temporary_profile_active",
+  "recorded_at_utc": "2026-10-10T02:18:14.962857+00:00",
+  "record_kind": "Read-only observation during the external contribution verification runs, before cleanup",
+  "profile_name": "qrh-pinned-bwrap",
+  "profile_path": "/opt/qrh-verifier-20261009/apparmor-profile",
+  "profile_sha256": "6a879fe0f567da02d734d4880252446d3c1b58c5eaf3ec6c25e40a3df8835cf7",
+  "profile_loaded": true,
+  "binary_path": "/opt/qrh-verifier-20261009/bwrap",
+  "binary_sha256": "bb807d18eaee5dad15afd5cf48c8de1c3206ff97e852af693d679d62394eb5a2",
+  "binary_owner_uid": 0,
+  "binary_mode": "0o755",
+  "global_userns_restriction_current": "1",
+  "persistent_configuration_created": false,
+  "cleanup_receipt": "namespace-cleanup.json"
+}

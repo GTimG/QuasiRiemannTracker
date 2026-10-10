@@ -1,0 +1,7 @@
+'RHZeroFreeExtension.AnalyticHigh.balanced_mixed_physical_saving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.high_mixed_physical_saving' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.perturbed_adaptive_mixed_saving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

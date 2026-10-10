@@ -1,0 +1,3 @@
+'RHV2.source_power_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.normalized_source_double_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHV2.sourceResidueIntegral_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]

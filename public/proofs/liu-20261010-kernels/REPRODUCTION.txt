@@ -1,0 +1,128 @@
+Baiying Liu proof reproduction: pinned source, restored packaging
+
+Source: https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis
+Revision: 7d10420de90efa2f082a06a342fc7accbd57ab37
+Exact bound: (1507 - 2 sqrt(921)) / 1653
+Approximation: 0.8749570697991687400183400069588792241518
+
+The published repository does not build as laid out: its 2,925 declared vendor
+modules are absent, several proof directories do not match import namespaces,
+and vendor/LICENSE is missing. prepare.py restores those paths and fetches the
+exact vendor git objects named by the author's manifest. Every proof byte is
+unchanged. The initial failed verifier invocation reported a missing vendor
+Continuation.lean file. The repaired package is local only.
+
+No LICENSE or source redistribution grant was found in the pinned Liu tree or
+README. The public reproduction package contains our scripts, hashes, reports,
+and upstream links. It must not contain the reconstructed Liu source or proof
+exports. Running the fetch scripts obtains source directly from upstream.
+
+TESTED
+
+1. Reconstructed 3,152 input files from exact Liu and openai/math revisions.
+   All 2,925 vendor SHA256 and git blob IDs match the published closure manifest.
+2. Compiled 238 selected modules (219 Liu modules and 19 previously uncached OAI
+   modules), with eight one-thread Lean 4.34.1 jobs. Cached dependency boundaries
+   were retained as explicit inputs. This is not a cache-free build.
+3. Replayed the author's unmodified CombinedPaperVerification.lean entry using
+   --trust=0, autoImplicit=false, warningAsError=true. All 22 expected target
+   reports passed with only propext, Classical.choice, and Quot.sound.
+4. Audited the explicit-import closure: 13,820 source/config files and
+   13,812 main .olean artifacts, no missing explicit-source exemptions and no
+   QRH imports. The subsequent compiler supplement adds 95 implicit Init modules:
+   corrected totals 13,915 sources, 13,907 main objects, 21,488 optional sidecars
+   (35,395 compiled input files). Compiler inputs match the pinned release
+   archive; dependency-cache inputs match fresh official archives. Original
+   manifest hashes remain unchanged.
+   All imported dependency revisions match their declared pins. Packages absent
+   locally have no selected imported modules. The 19 selected PNT/Rellich inputs
+   also match exact pinned git content plus the author-supplied patches.
+5. Ran reproduce.py in a distinct empty work directory. It fetched both source
+   repositories over HTTPS, reconstructed the identical 3,152-file manifest,
+   authenticated and rehashed the previously verified inputs, and successfully
+   replayed the original 22-target Lean entry at the new package path.
+
+Independent kernel and canonical-definition checks are a separate report. A
+native --trust=0 replay alone does not recheck all imported cached declarations.
+The protected stronger proof is not an imported dependency or replacement for
+Liu's proof. The three exact canonical source targets are:
+  CombinedPaper.algebraic_hecke_nonzero
+  CombinedPaper.algebraic_dirichlet_nonzero
+  CombinedPaper.algebraic_zeta_nonzero
+All are in module RHZeroFreeExtension.CombinedPaperVerification.
+
+The author's Python verify.py frontend requires Lake's complete dependency
+materialization and invokes lake build. We did not run that frontend to
+completion. Our tested driver uses its exact expected target inventory and its
+original Lean correspondence entry. A clean Lake build of every declared
+package remains untested; no lake update result or manifest rewrite is trusted.
+
+REPRODUCTION COMMANDS
+
+Python 3.11+, Git, and the declared Lean 4.34.1 compiler are required. Fetch and
+restore the exact proof source, with no build or cache assumptions:
+
+  python3 reproduce.py --work /absolute/path/to/fresh-work
+
+To compile using an existing, explicit dependency artifact cache:
+
+  python3 reproduce.py --work /absolute/path/to/fresh-work --build \
+    --lean /absolute/path/to/lean-4.34.1/bin/lean \
+    --lean-path-file /absolute/path/to/cache-lean-path.txt --workers 8
+
+The cache path file contains colon-separated absolute Lean library roots. The
+build-native report records reused artifact hashes. After this build, run the
+source/artifact closure inventory with the actual dependency source roots, then
+run the separate independent kernel judge. Cached inputs must not be described
+as newly compiled. The original tested native invocation was equivalent to:
+
+  python3 build_native.py --package approaches/liu/package \
+    --lean compressed/toolchains/lean-4.34.1-linux/bin/lean \
+    --lean-path-file compressed/audit/local-lean-path.txt --workers 8
+  python3 verify_native.py --work approaches/liu --workers 8
+  python3 inventory.py --work approaches/liu --source-root WORKSPACE \
+    --dependencies compressed/formalization/.lake/packages
+
+To test fresh source reconstruction against the authenticated recorded build:
+
+  python3 reproduce.py --work /absolute/path/to/another-empty-work \
+    --replay-from WORKSPACE/approaches/liu \
+    --inventory-sha256 bec4beba107576156a1cbaf2a2deab429c1a95d0e60971ebe404e6d8cc8d0a60 \
+    --workers 8
+
+This last command requires access to the recorded local artifacts and source
+roots. It is explicitly artifact replay, not a portable binary download or a
+new clean build. It authenticates the entire inventory, compiler/build report,
+all recorded source and artifact hashes, and the fresh reconstruction before
+replaying the original Lean entry. No Liu source is bundled by these scripts.
+
+HASH CONVENTIONS
+
+source-manifest.json binds the reconstructed 3,152-file package. Its file SHA256
+is df09f115c9f03c999abc6e375e12246ebfc7f8ef5198f0f6a783fbc74c51d7de.
+The original native-verification.json uses source_manifest_sha256 for this FILE
+hash; newer replay reports name it reconstructed_package_manifest_sha256.
+
+judge-input-inventory.json binds the entire actual source and artifact closure.
+Its source_manifest_sha256 is SHA256 of the canonical JSON source_files mapping
+(sorted keys, compact separators), namely
+01bc3b27897887f3ac1603076558328ed9e94e3ea523de0fd05b9e94b316c47c.
+Its inventory FILE hash is
+bec4beba107576156a1cbaf2a2deab429c1a95d0e60971ebe404e6d8cc8d0a60.
+These two manifests have deliberately different scopes.
+
+COMPILER INPUT SUPPLEMENT
+
+The historical inventory script is retained as inventory-olean-only-executed.py
+(SHA256 2377737e95a202c50d0fb577b54a43da72cfdb63ac9e723289eecfdb2ed86ada).
+The updated inventory.py also includes implicit Init and optional server/private
+parts; it did not produce the historical original inventory. The subsequent
+compiler-input-supplements.json binds the additional release/cache comparisons.
+All live source and compiler artifact files remained unchanged.
+
+INDEPENDENT RESULT
+
+Comparator, Lean default, NanoDa, and con-ron accepted the three exact final
+targets at 2026-10-10T02:04:44.198552+00:00. Canonical definitions were built
+separately, and the genuine positive and negative controls passed. The actual
+checker result is authoritative; no signed registry admission is claimed.

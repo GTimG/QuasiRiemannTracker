@@ -3,12 +3,14 @@ import { createHash } from "node:crypto";
 import { validateCatalogue } from "../core/catalogue.mjs";
 import { catalogueProofRecords } from "../core/catalogue-revisions.mjs";
 import { validateNativeKernelEvidence } from "../core/native-kernel-evidence.mjs";
+import { validateExternalKernelEvidence } from "../core/external-kernel-evidence.mjs";
 import { validateAlgebraicKernelEvidence } from "../core/algebraic-kernel-evidence.mjs";
 
 const data = validateCatalogue(
   JSON.parse(readFileSync("catalogue/results.json", "utf8")),
 );
 validateNativeKernelEvidence(process.cwd(), data);
+validateExternalKernelEvidence(process.cwd(), data);
 validateAlgebraicKernelEvidence(process.cwd(), data);
 const proof = "proofs/qrh-20261009/";
 const sha = (p) => createHash("sha256").update(readFileSync(p)).digest("hex");

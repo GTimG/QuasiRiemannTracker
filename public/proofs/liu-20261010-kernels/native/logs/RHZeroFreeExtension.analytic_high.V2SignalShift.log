@@ -1,0 +1,6 @@
+'RHZeroFreeExtension.AnalyticHigh.V2HeckeSignalShift.v2_contour_shift_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.V2HeckeSignalShift.v2_signal_bound_at_infinity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

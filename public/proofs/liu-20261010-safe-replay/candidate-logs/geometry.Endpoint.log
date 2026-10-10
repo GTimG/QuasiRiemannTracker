@@ -1,0 +1,3 @@
+'RHGeometry.baseline_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHGeometry.perturbed_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHGeometry.exact_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]

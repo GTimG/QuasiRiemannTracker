@@ -1,0 +1,9 @@
+'RHZeroFreeExtension.PerturbedCentralExponent.physical_scale_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.PerturbedCentralExponent.floor_source_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.PerturbedCentralExponent.intermediate_source_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

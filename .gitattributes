@@ -2,3 +2,10 @@
 proofs/nielstron-20261009-tightening/** -text
 public/proofs/nielstron-20261009-tightening/** -text
 public/proofs/nielstron-20261009-kernels/** -text
+
+# Preserve the original Liu dossier, replay pins and authenticated transcripts.
+public/proofs/liu-20261010-kernels/** -text
+public/proofs/liu-20261010-safe-replay/** -text
+verifier/liu/** -text
+# Whitespace inside compiler output is evidence, not source formatting.
+public/proofs/liu-20261010-safe-replay/**/*.log -whitespace

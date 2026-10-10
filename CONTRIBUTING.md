@@ -20,6 +20,11 @@ Liu's existing algebraic constant retains its exact expression and a certified r
 
 No author can grant themselves a verified badge merely by passing a website build. Status and evidence changes require maintainer review. The automatic signed admission path below is not running. It must be updated to require all three kernels and tested before it can admit verified results.
 
+For independent reproduction of an existing pending result, use the
+[external verification evidence format](docs/EXTERNAL-VERIFICATION.md). It binds
+the exact checked source and target to a reviewed immutable dossier, with separate
+licensed-archive and remote-source publication modes. It does not alter the
+signed admission protocol.
 The algebraic endpoint dossier's complete `collection.json` is pinned by
 `evidence_collection_sha256` in `core/algebraic-kernel-pins.json`. Its digest
 authenticates the exact manifest bytes; the manifest then binds every evidence
@@ -47,3 +52,13 @@ The track admits only the fixed all-Dirichlet theorem. It quantifies over every 
 Published IDs and receipts are immutable. New revisions need a new contribution ID; use explicit predecessors and, when appropriate, a signed supersession event. Withdrawals do not delete historical evidence.
 
 The example's mathematical authorship belongs to OpenAI, not to QRH Bounds. The original-terminal-proof example is currently infrastructure-blocked in this stricter admission pipeline. OpenAI’s original proof was checked separately on Linux verification worker with Comparator, Lean, NanoDa and con-ron; its reports are linked in the catalogue.
+
+### Replaying the pinned Liu contribution
+
+Use the [sandboxed maintainer command](verifier/liu/README.md) from a protected,
+reviewed checkout. The immutable Liu dossier's earlier native scripts are
+historical evidence and must not be used as untrusted-submission entrypoints.
+The replacement exports the canonical challenge before candidate code executes,
+clears the candidate environment, runs every compilation offline under genuine
+Linux confinement, and requires all three independent kernels. A maintainer
+must review tool/profile changes separately from proof PRs.

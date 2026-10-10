@@ -90,6 +90,15 @@ try {
     "proofs/nielstron-algebraic-20261009-kernels/result.json",
     "proofs/nielstron-algebraic-20261009-kernels/control-results.json",
     "proofs/nielstron-algebraic-20261009-kernels/collection.json",
+    "proofs/liu-20261010-safe-replay/README.txt",
+    "proofs/liu-20261010-safe-replay/result.json",
+    "proofs/liu-20261010-safe-replay/collection.json",
+    "proofs/liu-20261010-safe-replay/contract-audit.json",
+    "proofs/liu-20261010-safe-replay/controls/control-results.json",
+    "proofs/liu-20261010-safe-replay/challenge-src/Challenge.lean",
+    "proofs/liu-20261010-kernels/result.json",
+    "proofs/liu-20261010-kernels/collection.json",
+    "proofs/liu-20261010-kernels/compiler-input-supplements.json",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
@@ -97,26 +106,34 @@ try {
   }
   for (const id of ["qrh-20261009", "nielstron-algebraic-20261009"]) {
     const proofBase = origin + base + `proofs/${id}/`;
-    const checksum = await (await page.request.get(proofBase + "SHA256SUMS.txt")).text();
+    const checksum = await (
+      await page.request.get(proofBase + "SHA256SUMS.txt")
+    ).text();
     const [digest, archiveName] = checksum.trim().split("  ");
     assert.equal(archiveName, "source-public.tar.gz");
     // Read wire bytes: browser clients transparently decode Vite's gzip response.
     const archive = await new Promise((resolve, reject) => {
       const request = get(proofBase + archiveName, (response) => {
-        if (response.statusCode !== 200) return reject(Error("Archive unavailable"));
+        if (response.statusCode !== 200)
+          return reject(Error("Archive unavailable"));
         const chunks = [];
         response.on("data", (chunk) => chunks.push(chunk));
         response.on("error", reject);
         response.on("end", () => resolve(Buffer.concat(chunks)));
       });
       request.on("error", reject);
-      request.setTimeout(30000, () => request.destroy(Error("Archive download timed out")));
+      request.setTimeout(30000, () =>
+        request.destroy(Error("Archive download timed out")),
+      );
     });
     assert.equal(createHash("sha256").update(archive).digest("hex"), digest);
   }
   const proofBase = origin + base + "proofs/qrh-20261009/";
   const retired = await page.request.get(proofBase + "source.tar.gz");
-  assert.notDeepEqual((await retired.body()).subarray(0, 2), Buffer.from([0x1f, 0x8b]));
+  assert.notDeepEqual(
+    (await retired.body()).subarray(0, 2),
+    Buffer.from([0x1f, 0x8b]),
+  );
   await page
     .getByRole("button", {
       name: "ProofCouncil · certified uniform descent",

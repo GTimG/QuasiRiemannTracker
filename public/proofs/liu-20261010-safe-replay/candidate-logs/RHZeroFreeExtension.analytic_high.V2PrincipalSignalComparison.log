@@ -1,0 +1,6 @@
+'RHZeroFreeExtension.AnalyticHigh.v2_exists_normalized_actual_source_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHZeroFreeExtension.AnalyticHigh.v2_actualSlotResidue_isBigO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
