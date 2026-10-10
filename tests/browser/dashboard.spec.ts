@@ -37,14 +37,14 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("five real results, verification statuses and source downloads", async ({
+test("six real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(5);
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
-  await expect(page.locator("tbody .tag.teal")).toHaveCount(3);
+  await expect(page.locator("tbody tr")).toHaveCount(6);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await expect(page.locator("tbody .tag.teal")).toHaveCount(4);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
   await page
     .getByRole("button", {
@@ -94,6 +94,18 @@ test("five real results, verification statuses and source downloads", async ({
   expect(independentReport.status).toBe("PASS");
   expect(independentReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
   expect(independentReport.source_commit).toBe("49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+  await page
+    .getByRole("button", { name: "Akash Levy · weighted numerator", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText("Verified in our framework");
+  await expect(page.locator(".proof-detail")).toContainText("10499/12000");
+  await expect(page.locator(".proof-detail")).toContainText("without a sandbox");
+  const weighted = await request.get("/proofs/akashlevy-20261009-weighted-numerator/result.json");
+  expect(weighted.ok()).toBeTruthy();
+  const weightedReport = await weighted.json();
+  expect(weightedReport.status).toBe("PASS");
+  expect(weightedReport.theta).toBe("10499/12000");
+  expect(weightedReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
   await page.getByRole("button", { name: "Close proof details" }).click();
@@ -119,9 +131,9 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
-  await expect(page.locator("tbody tr").first()).toContainText("Nielstron");
+  await expect(page.locator("tbody tr").first()).toContainText("Akash Levy");
   await page.getByLabel("Contribution type").selectOption("verified");
-  await expect(page.locator("tbody tr")).toHaveCount(3);
+  await expect(page.locator("tbody tr")).toHaveCount(4);
   await page.getByLabel("Contribution type").selectOption("pending");
   await expect(page.locator("tbody tr")).toHaveCount(2);
   await page.getByLabel("Contribution type").selectOption("all");

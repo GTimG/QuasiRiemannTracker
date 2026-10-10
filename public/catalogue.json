@@ -317,6 +317,95 @@
       "date_label": "Author-side Lean check",
       "verification_note": "The exact submitted proof passed the pinned local Palomar mechanical suite: Comparator compared all three statements and their definitions, then Lean's fresh kernel, NanoDa and con-ron accepted the exports. Matching, mismatched-statement and ill-typed-proof preflight controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical result, proposed for maintainer review; it is not Palomar registration, editorial acceptance or a signed tracker receipt. Earlier native reports and their pending status remain immutable historical evidence.",
       "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "akashlevy/QuasiRiemannTracker",
+      "source_commit": "ec626ec9c0e7ab7b29f6c916314932caeb4df39a",
+      "first_verified_at": "2026-10-10T01:53:26.235107+00:00",
+      "entrypoint": {
+        "module": "WeightedQRH.Statements",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "openai-baseline"
+      ],
+      "id": "akashlevy-20261009-weighted-numerator",
+      "title": "Akash Levy · weighted numerator",
+      "theta": {
+        "numerator": "10499",
+        "denominator": "12000"
+      },
+      "authors": [
+        {
+          "name": "Akash Levy",
+          "url": "https://github.com/akashlevy"
+        }
+      ],
+      "method": "Replaces the pointwise numerator bound in the cubic-theta probe of OpenAI's argument by a weighted fourth moment of the reflected physical numerator: Mellin inversion and the Hecke functional equation reduce the actual smoothed numerator sum to a plain polynomial of length at most U/Y, and the unused length carries selected prime factors in the original fourth moment, while a coefficient-norm argument controls the original Euler correction and its ramified error terms. The moment parameter stays at the original kappa = 3/4; with ell = 167/1000, theta = 11/12 - ell/4 = 10499/12000, and the finite exponent comparisons are exact rational certificates. Lean 4.34.1 development of 228 modules on the akashlevy/math fork (c388e88e6) of OpenAI/math fd4aeeb, with Mathlib d13f23b7; it proves zeta, all-Dirichlet and finite-order Hecke nonvanishing for Re s > 10499/12000.",
+      "references": [
+        {
+          "label": "Three-kernel check report and artifact hashes",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/result.json"
+        },
+        {
+          "label": "Comparator, con-ron, NanoDa and Lean kernel acceptance log",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/judge.log"
+        },
+        {
+          "label": "Exact checked statements (tracker template at 10499/12000)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/Challenge.lean"
+        },
+        {
+          "label": "Solution wrapper",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/Solution.lean"
+        },
+        {
+          "label": "Comparator configuration",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/comparator.json"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/control-results.json"
+        },
+        {
+          "label": "Post-run audit of the challenge definition files against pinned upstream blobs",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/challenge-source-audit.json"
+        },
+        {
+          "label": "Scope, checks, caveats, attribution and reproduction",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/README.txt"
+        },
+        {
+          "label": "Manuscript (PDF)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/manuscript.pdf"
+        },
+        {
+          "label": "Manuscript (TeX)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/weighted_numerator_proof.tex"
+        },
+        {
+          "label": "Manuscript lemma (TeX, input by the manuscript)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/weighted_numerator_lemma.tex"
+        },
+        {
+          "label": "Complete Lean source, manuscript source and evidence",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/source-public.tar.gz"
+        },
+        {
+          "label": "Lean base: akashlevy/math fork of OpenAI/math",
+          "url": "https://github.com/akashlevy/math/tree/c388e88e6519d139ad2ca5571ef0c7fbf0e245b5"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-10T01:53:26.235107+00:00",
+      "date_label": "Author-side three-kernel check",
+      "verification_note": "Author-side local run, proposed for maintainer review. Comparator compared the three exact template statements (all-Dirichlet, zeta and finite-order Eisenstein Hecke) at 10499/12000 and their definitions, with the challenge compiled against pristine openai/math fd4aeeb2e and Mathlib d13f23b7; then con-ron, NanoDa and Lean's kernel accepted the exports. Only propext, Classical.choice and Quot.sound were permitted. Matching, mismatched-statement and ill-typed-proof controls behaved as expected. The run used macOS arm64 with the official Lean v4.35.0-rc2 darwin_aarch64 binaries and ran without a sandbox (lake comparator --inadvisably-no-sandbox), unlike the earlier sandboxed Linux Palomar runs. This is not Palomar registration, editorial review or a signed tracker receipt; maintainers may list it as verification pending until an independent sandboxed run.",
+      "attribution_note": "Akash Levy (akashlevy) is the human contributor. GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the formalization and submit the result. Builds on the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
     }
   ]
 }

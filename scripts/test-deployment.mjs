@@ -67,9 +67,9 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 5,
+    () => document.querySelectorAll("[data-dot]").length === 6,
   );
-  assert.equal(await page.locator("tbody tr").count(), 5);
+  assert.equal(await page.locator("tbody tr").count(), 6);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -84,28 +84,41 @@ try {
     "proofs/nielstron-20261009-kernels/result.json",
     "proofs/nielstron-20261009-kernels/control-results.json",
     "proofs/nielstron-20261009-kernels/collection.json",
+    "proofs/akashlevy-20261009-weighted-numerator/result.json",
+    "proofs/akashlevy-20261009-weighted-numerator/judge.log",
+    "proofs/akashlevy-20261009-weighted-numerator/control-results.json",
+    "proofs/akashlevy-20261009-weighted-numerator/Challenge.lean",
+    "proofs/akashlevy-20261009-weighted-numerator/manuscript.pdf",
+    "proofs/akashlevy-20261009-weighted-numerator/collection.json",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
     if (name.endsWith(".json")) await response.json();
   }
   const proofBase = origin + base + "proofs/qrh-20261009/";
-  const checksum = await (await page.request.get(proofBase + "SHA256SUMS.txt")).text();
-  const [digest, archiveName] = checksum.trim().split("  ");
-  assert.equal(archiveName, "source-public.tar.gz");
   // Read wire bytes: browser clients transparently decode Vite's gzip response.
-  const archive = await new Promise((resolve, reject) => {
-    const request = get(proofBase + archiveName, (response) => {
-      if (response.statusCode !== 200) return reject(Error("Archive unavailable"));
-      const chunks = [];
-      response.on("data", (chunk) => chunks.push(chunk));
-      response.on("error", reject);
-      response.on("end", () => resolve(Buffer.concat(chunks)));
+  const download = (url) =>
+    new Promise((resolve, reject) => {
+      const request = get(url, (response) => {
+        if (response.statusCode !== 200) return reject(Error("Archive unavailable"));
+        const chunks = [];
+        response.on("data", (chunk) => chunks.push(chunk));
+        response.on("error", reject);
+        response.on("end", () => resolve(Buffer.concat(chunks)));
+      });
+      request.on("error", reject);
+      request.setTimeout(30000, () => request.destroy(Error("Archive download timed out")));
     });
-    request.on("error", reject);
-    request.setTimeout(30000, () => request.destroy(Error("Archive download timed out")));
-  });
-  assert.equal(createHash("sha256").update(archive).digest("hex"), digest);
+  for (const archiveBase of [
+    proofBase,
+    origin + base + "proofs/akashlevy-20261009-weighted-numerator/",
+  ]) {
+    const checksum = await (await page.request.get(archiveBase + "SHA256SUMS.txt")).text();
+    const [digest, archiveName] = checksum.trim().split("  ");
+    assert.equal(archiveName, "source-public.tar.gz");
+    const archive = await download(archiveBase + archiveName);
+    assert.equal(createHash("sha256").update(archive).digest("hex"), digest);
+  }
   const retired = await page.request.get(proofBase + "source.tar.gz");
   assert.notDeepEqual((await retired.body()).subarray(0, 2), Buffer.from([0x1f, 0x8b]));
   await page
@@ -124,7 +137,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();
