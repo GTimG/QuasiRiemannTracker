@@ -1,0 +1,53 @@
+{
+  "status": "verification-pending",
+  "native_status": "PASS",
+  "independent_kernel_status": "pending; recorded later in a separate immutable dossier",
+  "exact_threshold": "11/12-e/4, where e is the unique real root in [1/6,1/5] of 657e^3-954e^2+21e+20",
+  "catalogue_rational_upper_bound": "874957019420098946128603850561452983/1000000000000000000000000000000000000",
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ],
+  "native_verified_at_utc": "2026-10-09T19:22:58.033625+00:00",
+  "source_manifest_sha256": "bccaf56bd16eaa2f8d0581df5db8bb81d21cc583a7093bba4b3b51793b70fa5d",
+  "qrh_package": {
+    "scope": "Every counted Lean source in the QRH formalization package",
+    "before_files": 203,
+    "after_files": 207,
+    "before_tokens": 294019,
+    "after_tokens": 259073,
+    "saved_tokens": 34946,
+    "reduction_percent": 11.885626439107677,
+    "after_over_before": 0.8811437356089232
+  },
+  "qrh_plus_unchanged_oai": {
+    "scope": "QRH source package plus unchanged baseline OAI import closure; all other fixed dependencies excluded",
+    "before_tokens": 6103780,
+    "after_tokens": 6068834,
+    "saved_tokens": 34946,
+    "reduction_percent": 0.5725304647284142,
+    "after_over_before": 0.9942746953527158
+  },
+  "protected_files_unchanged": {
+    "DirichletTargets.lean": "2fa4c70126b5fb84fbd843a6915dcf5e729a265b597a4a2f6991bf00a4b24daa",
+    "HeckeTargets.lean": "44067a1eef24650c8cf80b37d108e0e2e9b9616473ebe2cce68097e0f3c85099",
+    "IndependentTargets.lean": "d94779ac34ff986c2619ff3b98b9d35bd58e403fb4bb28f932d5e5075bd67dca",
+    "Nonvanishing.lean": "22f3bc70ad34306037602b633e2d024a7fc86da419bcc1d1bd9b443c21fc471f",
+    "StatementParity.lean": "8dcee7d9b0864a4d6567f0fa33ad012a524b25b7f3c975cf6c4318477a2b54c0",
+    "ZetaTransfer.lean": "2cd10a71b48e0c194bb588544b0832378f25af651beb5d5cd48a2f0515988dd8",
+    "ZeroBounds.lean": "d110a2bff6c8393ff1c32048e70f926b2c4c8b59ab7d54a5e9ef5b1f4b179aac"
+  },
+  "lineage": [
+    "nielstron-20261009-tightening",
+    "qrh-20261009",
+    "openai-baseline"
+  ],
+  "human_contributor": "Nielstron",
+  "ai_assisted": true,
+  "signed_admission": false
+}

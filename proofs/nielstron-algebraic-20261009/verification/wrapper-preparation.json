@@ -1,0 +1,26 @@
+{
+  "status": "PREPARED; full Solution compilation pending final theorem rebuild",
+  "challenge_compile_exit": 0,
+  "challenge_imports": [
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+  ],
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke",
+    "QRHPalomar.allDirichletExact",
+    "QRHPalomar.zetaExact",
+    "QRHPalomar.allHeckeExact",
+    "QRHPalomar.existsUniqueRoot"
+  ],
+  "literal_rational": {
+    "numerator": "874957019420098946128603850561452983",
+    "denominator": "1000000000000000000000000000000000000"
+  },
+  "signatures_textually_identical": true,
+  "files": {
+    "src/Challenge.lean": "ddc6604d21a5d259dcb9af83398890413cc022f8da0281a86a66178d8cafd338",
+    "src/Solution.lean": "92fa68dcc3c5d627dd70cc4bca5136c92ff38e262a1128981ca825cb25117c26"
+  }
+}

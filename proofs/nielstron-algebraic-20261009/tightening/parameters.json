@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "name": "N24 exact rational tightening",
+  "theta": {
+    "numerator": "874957019420098946128604623",
+    "denominator": "1000000000000000000000000000"
+  },
+  "original_theta": {
+    "numerator": "874957019421",
+    "denominator": "1000000000000"
+  },
+  "certificate": {
+    "f_margin_numerator": "5",
+    "f_margin_denominator": "1000000000000000000000000",
+    "source_f_margin": "5/1000000000000",
+    "source_parameter_name": "tightTheta"
+  },
+  "zeta": {
+    "old_denominator": "100000000000000",
+    "denominator": "100000000000000000000000000"
+  },
+  "budget_denominator_changes": {
+    "Detector/OptimizedAdaptiveSaving.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/ActualCubeArithmeticSaving.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/ActualNormalizedNonfloorCube.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/OptimizedMixedSaving.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 2
+      }
+    },
+    "Detector/OptimizedData.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 1
+      },
+      "10000000000000000": {
+        "replace_with": "10000000000000000000000000000",
+        "occurrences": 3
+      }
+    },
+    "Detector/ActualNonfloorCubeNorm.lean": {
+      "1000000000000": {
+        "replace_with": "1000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/OptimizedTransportBudget.lean": {
+      "10000000000000000": {
+        "replace_with": "10000000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/CompleteNonfloorCubeData.lean": {
+      "10000000000000000": {
+        "replace_with": "10000000000000000000000000000",
+        "occurrences": 1
+      }
+    },
+    "Detector/CompleteNonfloorRowsData.lean": {
+      "10000000000000000": {
+        "replace_with": "10000000000000000000000000000",
+        "occurrences": 1
+      }
+    }
+  },
+  "baseline_source_manifest_sha256": "1830ca565da71dcaf512ac8a79bd853ca8532adf910d3f6fb2e4f825c1fa031e",
+  "tracker_commit": "290d9c5463344c3e2fab93b878f3281e77e3fd6f",
+  "tokenizer_commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+  "protected_files": [
+    "QRH/DirichletTargets.lean",
+    "QRH/HeckeTargets.lean",
+    "QRH/IndependentTargets.lean",
+    "QRH/Nonvanishing.lean",
+    "QRH/StatementParity.lean",
+    "QRH/ZeroBounds.lean",
+    "QRH/ZetaTransfer.lean"
+  ],
+  "new_final_source": "tightening/QRH/TighterNonvanishing.lean",
+  "support_asset": "compressed/formalization/proof_length.py",
+  "source_only": true,
+  "validation": "Source reproduction is separate from Lean compilation and the original/stronger target gates."
+}

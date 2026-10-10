@@ -1,0 +1,22 @@
+[
+  {
+    "path": "formalization/.lake/packages/importGraph/html-template/LICENSE_source",
+    "sha256": "49110e6ed9990dbd0869c66bdae2882a9e74776094a12e87f25067979e777502",
+    "scope": "unimported graph UI assets, MIT"
+  },
+  {
+    "path": "formalization/.lake/packages/importGraph/html-template/vendor/graphology-LICENSE",
+    "sha256": "9d396b4882c329077f32861c0d6822dcee48f2d0ff6196d8459af70844196275",
+    "scope": "unimported graph UI assets, MIT"
+  },
+  {
+    "path": "formalization/.lake/packages/importGraph/html-template/vendor/sigma-LICENSE",
+    "sha256": "27cbfd441bbb1b37315afdc35f8d3911b9ddfc48c8489ee2c895194808dd7568",
+    "scope": "unimported graph UI assets, MIT"
+  },
+  {
+    "path": "upstream/openai-math/lean/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "scope": "OpenAI Lean source tree, Apache-2.0"
+  }
+]

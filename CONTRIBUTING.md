@@ -8,9 +8,28 @@
 4. Run `npm ci --ignore-scripts`, `npm run check`, and `npm run test:browser` (install Chromium with `npx playwright install chromium` if necessary).
 5. Open a pull request describing the result and its evidence. After site checks and maintainer review, merging updates the public website automatically through GitHub Pages.
 
+For an update to the same catalogue contribution, retain its displayed `id` and
+point `proof_revision` to the reviewed new proof snapshot. Preserve the previous
+metadata in `historical_records`; it remains authenticated but does not create
+another chart point. Both revisions' proof archives and checker evidence stay
+immutable. Add the explicit revision mapping and its evidence checks when
+introducing a revision. This catalogue workflow does not change the separate
+signed registry's immutable contribution IDs or supersession rules below.
+
 Liu's existing algebraic constant retains its exact expression and a certified rational enclosure for plotting. The validator checks the enclosure with integer arithmetic; a truncated decimal must not replace the theorem's constant. New algebraic forms need a reviewed exact representation and comparison method.
 
 No author can grant themselves a verified badge merely by passing a website build. Status and evidence changes require maintainer review. The automatic signed admission path below is not running. It must be updated to require all three kernels and tested before it can admit verified results.
+
+The algebraic endpoint dossier's complete `collection.json` is pinned by
+`evidence_collection_sha256` in `core/algebraic-kernel-pins.json`. Its digest
+authenticates the exact manifest bytes; the manifest then binds every evidence
+file, including the original report, publication transformations and logs. A
+contributor cannot replace the reports and recalculate their checksums without
+invalidating this pin. Maintainers set or update it only after independent proof
+verification and evidence review, with the code-owner review required for `core/`.
+Do not regenerate the pin automatically to fix a failing build. Preserve existing
+dossiers and introduce later runs as separate evidence. This integrity check
+does not rerun Lean or create a signed registry admission.
 
 ## Signed Comparator + NanoDa admission (separate, not yet commissioned)
 

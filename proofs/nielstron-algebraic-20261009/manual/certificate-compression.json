@@ -1,0 +1,48 @@
+{
+  "file": "manual/QRH/Certificate.lean",
+  "before_tokens": 3242,
+  "after_tokens": 2247,
+  "sha256": "f964db475587185ae17de5125d13f7f67dae9bef282c3c3d2ad53928e955ccd8",
+  "compilation_exit": 0,
+  "compilation_log": "manual/certificate-build.log",
+  "lean_version": "4.34.1",
+  "tokenizer_commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+  "changes": [
+    {
+      "theorem": "QRH.Certificate.near_margin",
+      "statement_unchanged": true,
+      "before_proof_tokens": 229,
+      "after_proof_tokens": 42,
+      "new_proof_body": "  have hu : 0 ≤ δ - 1 / 3 := sub_nonneg.mpr hδ\n  have hA := Av_pos.le\n  rw [square_identity]\n  apply lt_of_lt_of_le Dv_margin\n  iterate 3 apply le_trans ?_ (le_add_of_nonneg_right (by positivity))\n  exact le_add_of_nonneg_left (by positivity)\n"
+    },
+    {
+      "theorem": "QRH.Certificate.bernstein_margin_0",
+      "statement_unchanged": true,
+      "before_proof_tokens": 346,
+      "after_proof_tokens": 38,
+      "new_proof_body": "  have ht' : 0 ≤ 1 - t := sub_nonneg.mpr ht1\n  have hv' : 0 ≤ 1 - v := sub_nonneg.mpr hv1\n  rw [bernstein_identity_0]\n  repeat' apply lt_of_lt_of_le ?_ (le_add_of_nonneg_right (by positivity))\n  norm_num\n"
+    },
+    {
+      "theorem": "QRH.Certificate.bernstein_margin_1",
+      "statement_unchanged": true,
+      "before_proof_tokens": 346,
+      "after_proof_tokens": 38,
+      "new_proof_body": "  have ht' : 0 ≤ 1 - t := sub_nonneg.mpr ht1\n  have hv' : 0 ≤ 1 - v := sub_nonneg.mpr hv1\n  rw [bernstein_identity_1]\n  repeat' apply lt_of_lt_of_le ?_ (le_add_of_nonneg_right (by positivity))\n  norm_num\n"
+    },
+    {
+      "theorem": "QRH.Certificate.denominator_bounds",
+      "statement_unchanged": true,
+      "before_proof_tokens": 286,
+      "after_proof_tokens": 115,
+      "new_proof_body": "  have bounds : (10 / 13 : ℝ) ≤ P x ∧ P x ≤ D x ∧ D x ≤ 3 := by\n    norm_num [P, D, c, kappa0, theta]\n    refine ⟨?_, ?_, hx0⟩ <;>\n      nlinarith [sq_nonneg (x - 1 / 2), mul_nonneg hx0 (sub_nonneg.mpr hx1)]\n  have hweight : 0 ≤ 5 / 6 - δ := by linarith\n  have hl0 := mul_le_mul_of_nonneg_left (bounds.1.trans bounds.2.1) hweight\n  have hl1 := mul_le_mul_of_nonneg_left bounds.1 hd0\n  have hu0 := mul_le_mul_of_nonneg_left bounds.2.2 hweight\n  have hu1 := mul_le_mul_of_nonneg_left (bounds.2.1.trans bounds.2.2) hd0\n  dsimp [J]\n  constructor <;> nlinarith\n"
+    },
+    {
+      "theorem": "QRH.Certificate.F_E_identity",
+      "statement_unchanged": true,
+      "before_proof_tokens": 33,
+      "after_proof_tokens": 12,
+      "new_proof_body": "  simp only [F, E, sub_sub_cancel]\n  field_simp\n  <;> ring\n"
+    }
+  ],
+  "saved_tokens": 995
+}

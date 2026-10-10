@@ -1,0 +1,38 @@
+{
+  "status": "verification-pending",
+  "files": {
+    "AlgebraicRoot.lean": "1a3ee2e23b5e234f54e09f42bc5db1a888725b6843974be6411fe4be7227603a",
+    "Challenge.lean": "ddc6604d21a5d259dcb9af83398890413cc022f8da0281a86a66178d8cafd338",
+    "NOTICE.txt": "655721247379ac95384f4b1af80e01b4fb8e943547b443a4ad5ccaccc1a80610",
+    "NativeAudit.lean": "12bf5edf418bb9a0f4476c81b837e0de248613a14dd975c69ce68a55e7f7e095",
+    "PUBLICATION.txt": "a7c3e36070d07b59ab8904e0d7a5eaf914e71066872bacd24468ec2dc7d1b78d",
+    "README.txt": "479167821539116f84d0de0bf845b23bf853173ce50bca5f192a6d0c4387c73e",
+    "SHA256SUMS.txt": "b65cb049a73d5c46364dd87b94db770290d8c7033aa94233cf3de7db996c71db",
+    "Solution.lean": "92fa68dcc3c5d627dd70cc4bca5136c92ff38e262a1128981ca825cb25117c26",
+    "build-status.json": "2b123ff18ee463ea801595d8b3e2b060eea04a94e1ad8ddffb4dd1775ca5a9d3",
+    "native-final-audit.json": "951037b0aa79afeb32f5c283c7bbc1a6d0839f5078421a221561002ea196af88",
+    "native-gate.log": "5093d9e321c3998f270e5b3975ad346585b66b3ae8a95a611d213571aae68622",
+    "reproduction.json": "b93afccd20b005cb1ab001772a7f5899d68cb1da76e747b50ad7058b428930a9",
+    "result.json": "ea126f68fb080cff8371665d3621eb7068e98a099116fedaa25ea8b9212e853c",
+    "source-inputs.json": "0d05e1b34f891b09a05e2f3272d0e86784a666e7cf07316d54017a7a827ea52b",
+    "source-public.tar.gz": "9ceab677dedfc3065bb45d741a24542d3b8de68de957727c84b0aaa5a243f23a",
+    "source-sha256.json": "83bf374d88fcc94f9890ac448556f052d418c5172a88b015893717d6a25f1a1a",
+    "token-counts.json": "046233884ce2d6bf0eda92ce35c0e4eb4520f674993e5da7ed3a904a63ee36bd"
+  },
+  "snapshot_exports": {
+    "README.txt": "README.md",
+    "NOTICE.txt": "NOTICE",
+    "PUBLICATION.txt": "PUBLICATION.md",
+    "result.json": "result.json",
+    "native-final-audit.json": "verification/native-final-audit.json",
+    "build-status.json": "compressed/audit/local-build-status.json",
+    "token-counts.json": "compressed/audit/token-counts.json",
+    "source-inputs.json": "source-inputs.json",
+    "Challenge.lean": "verification/src/Challenge.lean",
+    "Solution.lean": "verification/src/Solution.lean",
+    "NativeAudit.lean": "verification/src/NativeAudit.lean",
+    "AlgebraicRoot.lean": "compressed/formalization/QRH/AlgebraicRoot.lean",
+    "reproduction.json": "compressed/audit/algebraic-reproduction.json",
+    "native-gate.log": "verification/NativeAudit-native-compile.log"
+  }
+}

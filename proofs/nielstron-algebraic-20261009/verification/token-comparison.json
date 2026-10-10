@@ -1,0 +1,32 @@
+{
+  "status": "source metric only; proof verification separate",
+  "tokenizer": {
+    "name": "LeanLeanBench repository Lean source tokens",
+    "repository": "https://github.com/eth-sri/lean-lean",
+    "commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+    "path": "src/leanlean/metrics/tokens.py",
+    "sha256": "7167627283ad810fc2b2a0007c9a61c3d2dc7a71649afe9664d0e370457d2d2b",
+    "implementation": "Exact unmodified pinned Python tokenizer, loaded from Git object",
+    "counts": "All non-comment, non-import source tokens, including declarations and proof statements",
+    "excludes": [
+      ".lake directories",
+      "lakefile.lean files",
+      "non-.lean files"
+    ],
+    "not_llm_tokens": true
+  },
+  "original_baseline": 294019,
+  "independently_verified_N24": 251464,
+  "algebraic_candidate": 259073,
+  "extra_tokens_vs_N24": 7609,
+  "saved_vs_original": 34946,
+  "supporting_oai_scope": {
+    "scope": "QRH source package plus unchanged baseline OAI import closure; all other fixed dependencies excluded",
+    "before_tokens": 6103780,
+    "after_tokens": 6068834,
+    "saved_tokens": 34946,
+    "reduction_percent": 0.5725304647284142,
+    "after_over_before": 0.9942746953527158
+  },
+  "verification_wrappers_scope": "outside QRH package, as in previous audit-gate accounting"
+}

@@ -1,0 +1,49 @@
+Independent statement review
+
+Challenge imports exactly the two accepted template imports. It contains
+literal polynomial coefficients, interval endpoints and the N36 numerator
+and denominator. It imports neither QRH geometry nor a candidate alias.
+The seven declaration signatures are textually identical in Solution.
+Only Challenge has seven expected placeholders; Solution contains none.
+
+The three rational targets preserve the existing scope: every nonzero
+Dirichlet modulus and character (excluding only its principal pole), the
+original Mathlib riemannZeta, and every member of the original finite-order
+Eisenstein Hecke family (excluding only its pole). No real/imaginary part,
+height, exceptional-zero or primitivity restrictions were added.
+
+Each exact target universally quantifies a REAL e in [1/6,1/5] satisfying
+657e^3-954e^2+21e+20=0. The conclusion uses the literal threshold
+11/12-e/4. Solution proves that every such e equals the constructed root,
+using strict antitonicity on the interval and the proved root equation.
+
+The seventh theorem is existential UNIQUE existence, with interval
+membership AND the polynomial equation inside its predicate. It therefore
+proves that the three exact antecedents are inhabited; it is not a
+uniqueness implication with existence omitted. RootProofCheck.lean already
+compiled this existence theorem and the root-equality argument against the
+fresh algebraic module, with only propext, Classical.choice, and Quot.sound.
+
+The rational upper threshold is exactly
+874957019420098946128603850561452983 / 10^36.
+The exact root threshold lies strictly below it. This rational number also
+lies strictly below the independently checked N24 threshold. NativeAudit
+checks both inequalities and preserves the original three literal targets.
+It also proves all three previous literal N24 targets directly by
+limitingTheta_lt_N24 and monotonicity, without relying on definitional
+equality between tightTheta and the previous rational constant.
+
+The seven kernel targets certify both the exact algebraic theorem and a
+strictly improved rational theorem. They do not assert that the root is a
+rational number, and they do not claim any bound below the cubic barrier.
+
+Pending execution after the complete fresh candidate native build:
+  python3 further-research/algebraic-verification/verify_native.py
+
+Pending measurement after the final Certificate and package freeze:
+  python3 further-research/algebraic-verification/count_final_tokens.py
+
+The native audit checks 24 theorem axiom closures, rejecting any axiom
+outside {propext, Classical.choice, Quot.sound}. The independent Comparator,
+Lean, NanoDa and con-ron run remains a separate required step. Its results
+must not be inferred from the native audit or the statement review.
