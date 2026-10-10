@@ -21,6 +21,8 @@ import {
   verifiedHere,
   statusLabel,
   timelineRecords,
+  historicalBaseline,
+  formatContributionDate,
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
 import CatalogueDetail from "./CatalogueDetail";
@@ -112,10 +114,12 @@ export default function App() {
               (method === "record"
                 ? r.is_record
                 : method === "pending"
-                  ? !verifiedHere(r)
-                  : method === "verified"
-                    ? verifiedHere(r)
-                    : verifiedHere(r) && !r.is_record)) &&
+                  ? r.status === "verification-pending"
+                  : method === "historical"
+                    ? historicalBaseline(r)
+                    : method === "verified"
+                      ? verifiedHere(r)
+                      : verifiedHere(r) && !r.is_record)) &&
             (!query ||
               `${r.title} ${r.id} ${r.method} ${r.authors.map((a) => a.name).join(" ")} ${boundLabel(r)}`
                 .toLowerCase()
@@ -295,6 +299,7 @@ export default function App() {
                   <option value="all">All contributions</option>
                   <option value="verified">Verified here</option>
                   <option value="pending">Verification pending</option>
+                  <option value="historical">Historical baseline</option>
                   <option value="record">Verified record improvements</option>
                   <option value="alternative">Alternative proofs</option>
                 </select>
@@ -378,16 +383,21 @@ export default function App() {
                                 <small>{decimal(r.theta, 14)}</small>
                               </td>
                               <td>
-                                {date(contributionDate(r))}
+                                {formatContributionDate(r)}
                                 <small>
-                                  {r.date_label || "First verified"} · UTC
+                                  {r.date_label || "First verified"}
+                                  {r.date_precision === "year" ? "" : " · UTC"}
                                 </small>
                               </td>
                               <td>
                                 <span
                                   className={
                                     "tag " +
-                                    (verifiedHere(r) ? "teal" : "amber")
+                                    (historicalBaseline(r)
+                                      ? "historical"
+                                      : verifiedHere(r)
+                                        ? "teal"
+                                        : "amber")
                                   }
                                 >
                                   {withdrawn.has(r.id)

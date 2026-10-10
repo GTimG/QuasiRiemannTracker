@@ -1,7 +1,54 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "records": [
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "",
+        "declaration": ""
+      },
+      "license": "Historical references linked; no source reproduction",
+      "builds_on": [],
+      "id": "classical-euler-product",
+      "title": "Classical baseline · θ = 1",
+      "theta": {
+        "numerator": "1",
+        "denominator": "1"
+      },
+      "authors": [
+        {
+          "name": "Classical Euler-product theorem"
+        }
+      ],
+      "method": "Absolute convergence of the Euler products gives nonvanishing of the Riemann zeta function and every Dirichlet L-function for Re(s) > 1. This is the classical starting bound; quasi-RH asks for a fixed boundary strictly below 1.",
+      "references": [
+        {
+          "label": "Hardy–Littlewood, Partitio numerorum III, p. 4 (Hypothesis R); scan printed in 1922",
+          "url": "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/5327-11511_2006_Article_BF02403921.pdf"
+        },
+        {
+          "label": "Publisher catalogue: Acta Mathematica 44 (1923), pp. 1–70",
+          "url": "https://link.springer.com/article/10.1007/BF02403921"
+        },
+        {
+          "label": "Pinned Mathlib proof of all-Dirichlet nonvanishing for Re(s) > 1",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/d13f23b723b8a846827a245b89c10fc7d3f11612/Mathlib/NumberTheory/LSeries/Dirichlet.lean#L228"
+        }
+      ],
+      "status": "historical-baseline",
+      "timeline_at": "1922-01-01T00:00:00Z",
+      "date_precision": "year",
+      "date_label": "Early QRH-era formulation",
+      "verification_note": "A classical theorem included as historical context. This entry has no local Comparator or kernel verification run and carries no verified badge. The linked Mathlib theorem states the all-Dirichlet bound; the historical paper is the date anchor, not a proof of the tracker’s three-family target.",
+      "attribution_note": "The point is placed in 1922, the printing year shown in Hardy and Littlewood’s Partitio numerorum III; the publisher catalogues the volume in 1923. This is an early fixed-half-plane formulation, not an established first use of the term quasi-Riemann hypothesis. The θ = 1 bound was already classical and is not attributed to Hardy and Littlewood."
+    },
     {
       "submitted_at": "",
       "published_at": "",

@@ -22,6 +22,7 @@ export type Contribution = {
   status: string;
   timeline_at?: string;
   date_label?: string;
+  date_precision?: "day" | "year";
   exact_bound?: string;
   verification_note?: string;
   attribution_note?: string;

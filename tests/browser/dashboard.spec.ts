@@ -37,13 +37,13 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("five real results, verification statuses and source downloads", async ({
+test("real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(5);
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("tbody tr")).toHaveCount(6);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
   await expect(page.locator("tbody .tag.teal")).toHaveCount(3);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
   await page
@@ -79,21 +79,38 @@ test("five real results, verification statuses and source downloads", async ({
     "theorem DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
   );
   await page
-    .getByRole("button", { name: "Nielstron · compressed rational refinement", exact: true })
+    .getByRole("button", {
+      name: "Nielstron · compressed rational refinement",
+      exact: true,
+    })
     .click();
-  await expect(page.locator(".proof-detail")).toContainText("Verified in our framework");
-  await expect(page.locator(".proof-detail")).toContainText("874957019420098946128604623/1000000000000000000000000000");
-  const native = await request.get("/proofs/nielstron-20261009-tightening/native-lean-verification.json");
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Verified in our framework",
+  );
+  await expect(page.locator(".proof-detail")).toContainText(
+    "874957019420098946128604623/1000000000000000000000000000",
+  );
+  const native = await request.get(
+    "/proofs/nielstron-20261009-tightening/native-lean-verification.json",
+  );
   expect(native.ok()).toBeTruthy();
   const nativeReport = await native.json();
   expect(nativeReport.status).toBe("PASS");
   expect(nativeReport.external_checker_status).toContain("Not checked");
-  const independent = await request.get("/proofs/nielstron-20261009-kernels/result.json");
+  const independent = await request.get(
+    "/proofs/nielstron-20261009-kernels/result.json",
+  );
   expect(independent.ok()).toBeTruthy();
   const independentReport = await independent.json();
   expect(independentReport.status).toBe("PASS");
-  expect(independentReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
-  expect(independentReport.source_commit).toBe("49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+  expect(independentReport.kernels).toEqual([
+    "Lean default",
+    "nanoda",
+    "con-ron",
+  ]);
+  expect(independentReport.source_commit).toBe(
+    "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6",
+  );
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
   await page.getByRole("button", { name: "Close proof details" }).click();

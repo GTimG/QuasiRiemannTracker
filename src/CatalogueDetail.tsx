@@ -1,5 +1,11 @@
 import { X, ExternalLink, GitBranch } from "lucide-react";
-import { boundLabel, verifiedHere, statusLabel } from "../core/catalogue.mjs";
+import {
+  boundLabel,
+  verifiedHere,
+  statusLabel,
+  historicalBaseline,
+  formatContributionDate,
+} from "../core/catalogue.mjs";
 import { decimal } from "../core/rational.mjs";
 import type { Contribution } from "./types";
 import { publicUrl } from "./urls";
@@ -28,7 +34,9 @@ export default function CatalogueDetail({
       <div className="detail-body">
         <h2>{r.title}</h2>
         <p className="authors">{r.authors.map((a) => a.name).join(", ")}</p>
-        <span className={`tag ${verifiedHere(r) ? "teal" : "amber"}`}>
+        <span
+          className={`tag ${historicalBaseline(r) ? "historical" : verifiedHere(r) ? "teal" : "amber"}`}
+        >
           {statusLabel(r)}
         </span>
         <div className="exact-result">
@@ -42,7 +50,11 @@ export default function CatalogueDetail({
             enclosure is used only to position its dot.
           </p>
         )}
-        <h3>Verification in this project</h3>
+        <h3>
+          {historicalBaseline(r)
+            ? "Historical context"
+            : "Verification in this project"}
+        </h3>
         <p>{r.verification_note}</p>
         <h3>Method</h3>
         <p>{r.method}</p>
@@ -55,12 +67,17 @@ export default function CatalogueDetail({
         <h3>Dates & provenance</h3>
         <dl>
           <dt>{r.date_label}</dt>
-          <dd>{r.timeline_at?.slice(0, 10)} (UTC)</dd>
+          <dd>
+            {formatContributionDate(r)}
+            {r.date_precision === "year" ? " (year only)" : " (UTC)"}
+          </dd>
           <dt>Verified here</dt>
           <dd>
             {r.first_verified_at
               ? r.first_verified_at.replace("T", " ").replace("Z", " UTC")
-              : "Pending"}
+              : historicalBaseline(r)
+                ? "No local checker run; historical reference"
+                : "Pending"}
           </dd>
           <dt>License</dt>
           <dd>{r.license}</dd>

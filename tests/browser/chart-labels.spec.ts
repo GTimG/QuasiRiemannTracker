@@ -46,7 +46,10 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
   isMobile,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
+  await page
+    .getByRole("button", { name: "Recent results", exact: true })
+    .click();
   if (!isMobile) {
     const newest = page.locator(
       '[data-id="nielstron-20261009-tightening"] .point-label',
@@ -129,6 +132,9 @@ test("a crowded cluster retains its newest name and every selectable dot", async
     }),
   );
   await page.goto("/");
+  await page
+    .getByRole("button", { name: "Recent results", exact: true })
+    .click();
   await expect(page.locator('[data-id^="label-fixture-"]')).toHaveCount(8);
   await expect(
     page.locator('[data-id="label-fixture-7"] .point-label'),

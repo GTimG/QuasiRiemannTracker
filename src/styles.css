@@ -431,6 +431,7 @@ select {
 }
 .chart-toolbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 23px 14px;
@@ -708,6 +709,13 @@ td small {
 .tag.teal {
   color: #268b7c;
   background: #e9f6f1;
+}
+.tag.historical {
+  color: #465b74;
+  background: #edf0f5;
+}
+.historical-dot {
+  background: #7184a2;
 }
 .tag.amber {
   color: #9e7528;

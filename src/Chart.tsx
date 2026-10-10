@@ -18,6 +18,8 @@ import {
   verifiedHere,
   statusLabel,
   timelineRecords,
+  historicalBaseline,
+  formatContributionDate,
 } from "../core/catalogue.mjs";
 export default function Chart({
   records,
@@ -33,6 +35,7 @@ export default function Chart({
   onSelect: (r: Contribution) => void;
 }) {
   const [window, setWindow] = useState<[number, number]>([0, 100]),
+    [period, setPeriod] = useState<"all" | "recent">("all"),
     [vertical, setVertical] = useState({ scale: 1, offset: 0 }),
     [hover, setHover] = useState<Contribution | null>(null);
   const dragging = useRef<{
@@ -59,8 +62,13 @@ export default function Chart({
     B = 60;
   const width = W - L - R,
     height = H - T - B;
+  const hasHistory = allRecords.some(historicalBaseline);
+  const periodRecords =
+    period === "recent"
+      ? allRecords.filter((r) => !historicalBaseline(r))
+      : allRecords;
   const times = [
-      ...allRecords.map((r) => Date.parse(contributionDate(r))),
+      ...periodRecords.map((r) => Date.parse(contributionDate(r))),
       ...events.map((e) => Date.parse(e.at)),
     ],
     minTime = times.length ? Math.min(...times) : Date.UTC(2026, 9, 1),
@@ -268,6 +276,28 @@ export default function Chart({
         <span className="chart-axis-description">
           Bound θ · smaller is better
         </span>
+        {hasHistory && (
+          <div className="segmented" aria-label="Timeline period">
+            <button
+              aria-pressed={period === "all"}
+              onClick={() => {
+                setPeriod("all");
+                fit();
+              }}
+            >
+              Full history
+            </button>
+            <button
+              aria-pressed={period === "recent"}
+              onClick={() => {
+                setPeriod("recent");
+                fit();
+              }}
+            >
+              Recent results
+            </button>
+          </div>
+        )}
         <div className="chart-tools">
           <button
             className="icon"
@@ -390,7 +420,9 @@ export default function Chart({
               >
                 {new Date(start + t * (end - start)).toLocaleDateString(
                   "en-GB",
-                  { day: "2-digit", month: "short", timeZone: "UTC" },
+                  end - start > 2 * 365.25 * 86400000
+                    ? { year: "numeric", timeZone: "UTC" }
+                    : { day: "2-digit", month: "short", timeZone: "UTC" },
                 )}
               </text>
             </g>
@@ -445,7 +477,7 @@ export default function Chart({
                   <title>
                     {r.title} · {boundLabel(r)} ·{" "}
                     {r.authors.map((a) => a.name).join(", ")} ·{" "}
-                    {contributionDate(r)}
+                    {formatContributionDate(r)}
                   </title>
                   <circle cx={px} cy={py} r={16} fill="transparent" />
                   {selected === r.id && (
@@ -456,13 +488,19 @@ export default function Chart({
                     cy={py}
                     r={selected === r.id ? 6 : 5}
                     fill={
-                      !verifiedHere(r)
-                        ? "white"
-                        : r.is_record
-                          ? "#148d80"
-                          : "#7184a2"
+                      historicalBaseline(r)
+                        ? "#7184a2"
+                        : !verifiedHere(r)
+                          ? "white"
+                          : r.is_record
+                            ? "#148d80"
+                            : "#7184a2"
                     }
-                    stroke={!verifiedHere(r) ? "#ad761e" : "white"}
+                    stroke={
+                      historicalBaseline(r) || verifiedHere(r)
+                        ? "white"
+                        : "#ad761e"
+                    }
                     strokeWidth={2}
                   />
                   {W > 600 &&
@@ -520,6 +558,12 @@ export default function Chart({
           <i className="legend-dot pending-dot" />
           Verification pending
         </span>
+        {hasHistory && (
+          <span>
+            <i className="legend-dot historical-dot" />
+            Historical baseline
+          </span>
+        )}
         <span className="pan-hint">
           <Move size={13} />
           Drag to pan · + / − to zoom
