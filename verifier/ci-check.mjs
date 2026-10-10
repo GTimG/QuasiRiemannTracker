@@ -16,6 +16,12 @@ if (
   throw Error("Trusted default-branch orchestration required");
 const source = await inspectPR(repo, pr);
 if (source.is_draft) throw Error("Draft submission");
+if (source.state !== "open") throw Error("Submission PR is no longer open");
+if (
+  process.env.QRH_EXPECTED_HEAD &&
+  source.head_sha !== process.env.QRH_EXPECTED_HEAD
+)
+  throw Error("Submission changed after automatic dispatch");
 const dir = mkdtempSync(path.join(tmpdir(), "qrh-source-"));
 mkdirSync("out", { recursive: true });
 try {

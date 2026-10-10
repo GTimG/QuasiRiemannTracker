@@ -2,6 +2,7 @@ export type Rational = { numerator: string; denominator: string };
 export type Contribution = {
   id: string;
   proof_revision?: string;
+  submission_state?: string;
   title: string;
   theta: Rational;
   authors: { name: string; url?: string }[];

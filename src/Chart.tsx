@@ -59,8 +59,15 @@ export default function Chart({
     B = 60;
   const width = W - L - R,
     height = H - T - B;
+  const bestVerified = allRecords
+    .filter(verifiedHere)
+    .map((r) => r.theta)
+    .sort(cmp)[0];
+  const focused = allRecords.filter(
+    (r) => verifiedHere(r) || !bestVerified || cmp(r.theta, bestVerified) < 0,
+  );
   const times = [
-      ...allRecords.map((r) => Date.parse(contributionDate(r))),
+      ...focused.map((r) => Date.parse(contributionDate(r))),
       ...events.map((e) => Date.parse(e.at)),
     ],
     minTime = times.length ? Math.min(...times) : Date.UTC(2026, 9, 1),
@@ -70,7 +77,7 @@ export default function Chart({
   const span = domain[1] - domain[0],
     start = domain[0] + (span * window[0]) / 100,
     end = domain[0] + (span * window[1]) / 100;
-  const inTime = allRecords.filter(
+  const inTime = focused.filter(
     (r) =>
       Date.parse(contributionDate(r)) >= start &&
       Date.parse(contributionDate(r)) <= end,
@@ -120,7 +127,8 @@ export default function Chart({
     return () => element.removeEventListener("wheel", wheel);
   }, [window]);
   const curve = useMemo(
-    () => frontierHistory(timelineRecords(allRecords), events),
+    () =>
+      frontierHistory(timelineRecords(allRecords.filter(verifiedHere)), events),
     [allRecords, events],
   );
   let path = "",
@@ -485,7 +493,9 @@ export default function Chart({
                           visibility={label ? "visible" : "hidden"}
                           className="point-label"
                         >
-                          {r.title.split(" · ")[0]}
+                          {r.submission_state
+                            ? r.authors[0].name
+                            : r.title.split(" · ")[0]}
                         </text>
                       </>
                     )}
@@ -514,7 +524,7 @@ export default function Chart({
       <div className="chart-bottom">
         <span>
           <i className="legend-line" />
-          Best listed bound
+          Best verified bound
         </span>
         <span>
           <i className="legend-dot pending-dot" />
@@ -559,8 +569,8 @@ export default function Chart({
         <Info size={14} />
         <span>
           {tiny && <>Local axis origin θ₀ = {fraction(low)}. </>}
-          Dates in UTC. The line includes results awaiting verification. Filters
-          affect dots.
+          Dates in UTC. Hollow dots show pending submissions; the line tracks
+          verified results. Filters affect dots.
         </span>
       </p>
     </section>

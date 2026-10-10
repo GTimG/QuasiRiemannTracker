@@ -24,6 +24,7 @@ import {
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
 import CatalogueDetail from "./CatalogueDetail";
+import { usePendingSubmissions, pendingContribution } from "./submissions";
 const upstream =
   "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/";
 const initial: Registry = {
@@ -84,9 +85,14 @@ export default function App() {
     if (modal && !dialog.current?.open) dialog.current?.showModal();
     if (!modal && dialog.current?.open) dialog.current?.close();
   }, [modal]);
+  const { pending: pendingSubmissions, error: pendingError } =
+    usePendingSubmissions(repository, registry.records);
+  const submitted = repository
+    ? pendingSubmissions.map((r) => pendingContribution(r, repository))
+    : [];
   const combined = [
     ...new Map(
-      [...catalogue, ...registry.records].map((r) => [r.id, r]),
+      [...catalogue, ...registry.records, ...submitted].map((r) => [r.id, r]),
     ).values(),
   ];
   const ranked = new Map(
@@ -427,6 +433,11 @@ export default function App() {
                       </div>
                     )}
                   </section>
+                  {pendingError && (
+                    <p className="notice error" role="status">
+                      {pendingError}
+                    </p>
+                  )}
                 </div>
                 {detail && (
                   <aside className="details" aria-live="polite">

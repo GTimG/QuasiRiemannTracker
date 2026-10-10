@@ -63,6 +63,11 @@ try {
   const failures = [];
   page.on("pageerror", (e) => failures.push(e.message));
   page.on("response", (r) => {
+    if (
+      r.status() === 404 &&
+      r.url().endsWith("/submission-status/submissions.json")
+    )
+      return;
     if (r.status() >= 400) failures.push(`${r.status()} ${r.url()}`);
   });
   await page.goto(origin + base);

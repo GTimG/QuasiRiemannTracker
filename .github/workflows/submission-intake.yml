@@ -1,0 +1,47 @@
+name: Track pending submissions
+on:
+  pull_request_target:
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        ready_for_review,
+        converted_to_draft,
+        closed,
+      ]
+  workflow_run:
+    workflows: [Verify submission (trusted dispatch)]
+    types: [requested, in_progress, completed]
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions: {}
+# Serialize writes; periodic reconciliation also recovers events displaced from the queue.
+concurrency:
+  group: submission-status
+  cancel-in-progress: false
+jobs:
+  intake:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: read
+      actions: write
+    steps:
+      # Only immutable trusted orchestration. Never check out a submission PR or consume its artifacts.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validate submission data, record pending status, and queue isolated verification
+        run: node verifier/update-submissions.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

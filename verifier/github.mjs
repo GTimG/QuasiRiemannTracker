@@ -67,6 +67,7 @@ export async function inspectPR(repo, number) {
     head_sha: p.head.sha,
     author: p.user.login,
     is_draft: p.draft,
+    state: p.state,
     submitted_at: p.created_at,
     merged_at: p.merged_at,
     merge_commit: p.merge_commit_sha,

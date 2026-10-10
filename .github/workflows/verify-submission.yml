@@ -1,5 +1,5 @@
 name: Verify submission (trusted dispatch)
-run-name: Verify PR ${{ inputs.pr }} at its exact head
+run-name: Verify PR ${{ inputs.pr }} at ${{ inputs.head_sha || 'current head' }}
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +7,10 @@ on:
         description: Submission PR number
         type: number
         required: true
+      head_sha:
+        description: Expected exact PR head (set by automatic intake)
+        type: string
+        required: false
 permissions: {}
 concurrency:
   group: verify-${{ inputs.pr }}
@@ -35,6 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           QRH_PR: ${{ inputs.pr }}
+          QRH_EXPECTED_HEAD: ${{ inputs.head_sha }}
           GITHUB_WORKFLOW_SHA: ${{ github.workflow_sha }}
           QRH_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
