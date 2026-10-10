@@ -4,9 +4,20 @@ import { readFileSync, readdirSync, lstatSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 
-export const EXTERNAL_PINS = JSON.parse(
-  readFileSync(new URL("./external-kernel-pins.json", import.meta.url), "utf8"),
-);
+export const EXTERNAL_PINS = {
+  schema_version: 1,
+  entries: Object.fromEntries(
+    ["argonaut-20261008", "liu-20261008"].map((id) => [
+      id,
+      JSON.parse(
+        readFileSync(
+          new URL(`./external-kernel-pins/${id}.json`, import.meta.url),
+          "utf8",
+        ),
+      ),
+    ]),
+  ),
+};
 const AXIOMS = ["Classical.choice", "Quot.sound", "propext"];
 const KERNELS = ["Lean default", "nanoda", "con-ron"];
 const DECLARATIONS = [

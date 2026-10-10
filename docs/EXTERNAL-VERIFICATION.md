@@ -20,10 +20,10 @@ Each reviewed run has a new immutable directory under `public/proofs/`. Its
 digests. Every file except `collection.json` itself must occur exactly once in
 this inventory. Symlinks, unsafe paths and unlisted files are rejected.
 
-The reviewed table `core/external-kernel-pins.json` binds the **collection's own
+The reviewed files `core/external-kernel-pins/<entry-id>.json` bind the **collection's own
 digest**, repository, source commit, exact bound, catalogue entrypoint, canonical
 challenge digest, source input manifest and checker versions. An entry with null
-pins must remain pending. A contributor cannot acquire a badge by rewriting both
+pins must remain pending. Separate pin files let verification PRs merge independently. A contributor cannot acquire a badge by rewriting both
 an artifact and its self-reported checksum.
 
 The package includes:
