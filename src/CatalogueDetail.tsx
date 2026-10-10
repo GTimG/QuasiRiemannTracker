@@ -16,7 +16,6 @@ export default function CatalogueDetail({
   return (
     <section className="panel proof-detail">
       <div className="panel-heading">
-        <span className="eyebrow">RESULT & EVIDENCE</span>
         <button
           className="icon"
           aria-label="Close proof details"
@@ -78,18 +77,23 @@ export default function CatalogueDetail({
           </>
         )}
         <h3>Sources & downloads</h3>
-        {r.references.map((ref) => (
-          <a
-            className="reference"
-            key={ref.url}
-            href={publicUrl(ref.url)}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {ref.label}
-            <ExternalLink size={13} />
-          </a>
-        ))}
+        {r.references
+          .filter(
+            (ref) =>
+              !(ref.url.endsWith(".lean") && /statement/i.test(ref.label)),
+          )
+          .map((ref) => (
+            <a
+              className="reference"
+              key={ref.url}
+              href={publicUrl(ref.url)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {ref.label}
+              <ExternalLink size={13} />
+            </a>
+          ))}
         <h3>Builds on</h3>
         {r.builds_on.length ? (
           r.builds_on.map((id) => (

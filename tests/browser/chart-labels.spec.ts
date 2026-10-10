@@ -51,7 +51,7 @@ async function expectReadableLabels(page: Page) {
   expect(problems).toEqual([]);
 }
 
-test("nearby chart names stay readable through resizing, filtering and zoom", async ({
+test("nearby chart names stay readable through resizing and zoom", async ({
   page,
   isMobile,
 }) => {
@@ -92,9 +92,6 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
       else await expect(newest).toHaveCount(0);
       await expectReadableLabels(page);
     }
-    await page.getByLabel("Contribution type").selectOption("verified");
-    await expect(page.locator("[data-dot]")).toHaveCount(verifiedCount);
-    await expectReadableLabels(page);
     await page.getByRole("button", { name: "Zoom out", exact: true }).click();
     await expectReadableLabels(page);
     await page.getByRole("button", { name: "Fit chart", exact: true }).click();

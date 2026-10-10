@@ -1,14 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { MathJax } from "better-react-mathjax";
 import {
-  Activity,
-  Code2,
   ExternalLink,
   GitBranch,
+  Github,
   GitPullRequest,
-  Info,
-  Search,
-  ShieldCheck,
-  Table2,
+  BadgeCheck,
+  Clock,
   X,
   FileCheck2,
 } from "lucide-react";
@@ -24,6 +22,7 @@ import {
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
 import CatalogueDetail from "./CatalogueDetail";
+import LeanCode from "./LeanCode";
 const upstream =
   "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/";
 const initial: Registry = {
@@ -40,17 +39,64 @@ const date = (s: string) =>
     timeZone: "UTC",
   });
 const timestamp = (s: string) =>
-  new Date(s).toISOString().replace("T", " ").replace(".000Z", " UTC");
+  new Date(s)
+    .toISOString()
+    .replace("T", " ")
+    .replace(".000Z", "Z")
+    .replace("Z", " UTC");
+type SortKey = "title" | "author" | "bound" | "date";
+const contributionTitle = (r: Contribution) =>
+  r.title.includes(" · ") ? r.title.split(" · ").slice(1).join(" · ") : r.title;
+const columns: { key: SortKey; label: string }[] = [
+  { key: "title", label: "Contribution" },
+  { key: "author", label: "Author" },
+  { key: "bound", label: "Exact bound θ" },
+  { key: "date", label: "Date" },
+];
 const theorem = `∀ {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ},\n  (θ < s.re) → ¬ (χ = 1 ∧ s = 1) →\n  DirichletCharacter.LFunction χ s ≠ 0`;
+const proofSolutionUrl = (r: Contribution) => {
+  const explicit = r.references.find((ref) => /\/Solution\.lean$/.test(ref.url));
+  if (explicit) {
+    return explicit.url.startsWith("https://")
+      ? explicit.url
+      : `https://github.com/GTimG/QuasiRiemannTracker/blob/main/public/${explicit.url}`;
+  }
+  const statement = r.references.find(
+    (ref) =>
+      ref.url.startsWith("proofs/") &&
+      ref.url.endsWith(".lean") &&
+      /statement/i.test(ref.label),
+  );
+  if (statement) {
+    const solution = statement.url
+      .replace(/challenge-src\/Challenge\.lean$/, "solution-src/Solution.lean")
+      .replace(/src\/(?:[^/]+\/)?Challenge\.lean$/, "src/Solution.lean");
+    // An unfamiliar layout must never link the challenge template as a proof.
+    if (solution === statement.url) return;
+    return `https://github.com/GTimG/QuasiRiemannTracker/blob/main/public/${solution}`;
+  }
+};
+const projectUrl = (r: Contribution) => {
+  if (r.repository) return `https://github.com/${r.repository}`;
+  const publication = r.references.find((ref) =>
+    /publication|paper|manuscript|writeup|homepage/i.test(ref.label),
+  );
+  if (publication) return publicUrl(publication.url);
+};
+const leanTheorem = `theorem quasi_riemann_bound
+    {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
+    (hs : (θ : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
+    LFunction χ s ≠ 0 := by
+  sorry`;
 export default function App() {
   const [registry, setRegistry] = useState<Registry>(initial),
     [catalogue, setCatalogue] = useState<Contribution[]>([]),
     [repository, setRepository] = useState<string | null>(null),
     [tab, setTab] = useState("Timeline"),
-    [query, setQuery] = useState(""),
-    [method, setMethod] = useState("all"),
-    [sort, setSort] = useState("latest"),
-    [status, setStatus] = useState("active"),
+    [sort, setSort] = useState<{
+      key: SortKey;
+      direction: "ascending" | "descending";
+    }>({ key: "bound", direction: "ascending" }),
     [selected, setSelected] = useState<string | null>(null),
     [error, setError] = useState(""),
     [modal, setModal] = useState<"submit" | "policy" | null>(null);
@@ -105,31 +151,24 @@ export default function App() {
   const records = useMemo(
     () =>
       all
-        .filter(
-          (r) =>
-            (status === "all" || !withdrawn.has(r.id)) &&
-            (method === "all" ||
-              (method === "record"
-                ? r.is_record
-                : method === "pending"
-                  ? !verifiedHere(r)
-                  : method === "verified"
-                    ? verifiedHere(r)
-                    : verifiedHere(r) && !r.is_record)) &&
-            (!query ||
-              `${r.title} ${r.id} ${r.method} ${r.authors.map((a) => a.name).join(" ")} ${boundLabel(r)}`
-                .toLowerCase()
-                .includes(query.toLowerCase())),
-        )
-        .sort((a, b) =>
-          sort === "bound"
-            ? cmp(a.theta, b.theta) ||
-              contributionDate(a).localeCompare(contributionDate(b))
-            : sort === "oldest"
-              ? contributionDate(a).localeCompare(contributionDate(b))
-              : contributionDate(b).localeCompare(contributionDate(a)),
-        ),
-    [all, status, method, query, sort, events],
+        .filter((r) => !withdrawn.has(r.id))
+        .sort((a, b) => {
+          const comparison =
+            sort.key === "bound"
+              ? cmp(a.theta, b.theta)
+              : sort.key === "title"
+                ? contributionTitle(a).localeCompare(contributionTitle(b))
+                : sort.key === "author"
+                  ? a.authors
+                      .map((author) => author.name)
+                      .join(", ")
+                      .localeCompare(
+                        b.authors.map((author) => author.name).join(", "),
+                      )
+                  : contributionDate(a).localeCompare(contributionDate(b));
+          return comparison * (sort.direction === "ascending" ? 1 : -1);
+        }),
+    [all, sort, events],
   );
   const active = all.filter((r) => !withdrawn.has(r.id)),
     best = [...active]
@@ -182,64 +221,77 @@ export default function App() {
   }, [all]);
   return (
     <div className="shell">
-      <aside className="sidebar">
-        <a className="brand" href="#main" aria-label="QRH Bounds home">
-          <span className="brand-symbol">
-            q<span>↘</span>
-          </span>
-          <span>
-            QRH<span>BOUNDS</span>
-          </span>
-        </a>
-        <nav aria-label="Research views">
-          {[
-            { name: "Timeline", icon: Activity },
-            { name: "Contributions", icon: Table2 },
-            { name: "Protocol", icon: ShieldCheck },
-          ].map(({ name, icon: Icon }) => (
-            <button
-              key={name}
-              className={tab === name ? "nav-active" : ""}
-              aria-current={tab === name ? "page" : undefined}
-              onClick={() => setTab(name)}
-            >
-              <Icon size={18} />
-              <span>{name}</span>
-              {name === "Contributions" && <small>{all.length}</small>}
-            </button>
-          ))}
-        </nav>
-        <div className="sidebar-foot">
-          <Code2 size={16} />
-          <span>Apache 2.0</span>
-        </div>
-      </aside>
       <main id="main">
         <header className="topbar">
-          <a href={publicUrl("proofs/qrh-20261009/source-public.tar.gz")}>
-            Lean sources
+          <a className="brand" href="#main" onClick={() => setTab("Timeline")}>
+            <img src={publicUrl("favicon.svg")} alt="" width="36" height="36" />
+            QRH Leaderboard
           </a>
-          <button className="button primary" onClick={() => setModal("submit")}>
-            <GitPullRequest size={16} />
-            Submit a proof
-          </button>
+          <div className="header-links">
+            {repository && (
+              <a
+                className="github-badge"
+                href={`https://github.com/${repository}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size={16} aria-hidden="true" />
+                GitHub
+              </a>
+            )}
+            <button
+              className="pr-button"
+              aria-label="Submit a proof"
+              title="Submit a proof"
+              onClick={() => setModal("submit")}
+            >
+              <GitPullRequest size={19} aria-hidden="true" />
+              <span>Submit</span>
+            </button>
+          </div>
         </header>
         <div className="content">
-          <div className="page-title">
-            <div>
-              <h1>
-                {tab === "Protocol" ? "Verification" : "Quasi-Riemann bounds"}
+          <section
+            className="bound-summary"
+            aria-label="Quasi-Riemann hypothesis and current bound"
+          >
+            <div className="qrh-statement">
+              <h1 className="statement-description">
+                All nontrivial zeros of Dirichlet L-functions lie in the strip{" "}
+                <MathJax
+                  inline
+                >{String.raw`\(\operatorname{Re}(s)\in[1-\theta,\theta]\)`}</MathJax>
+                .
               </h1>
-              {tab !== "Protocol" && best && (
-                <p className="best-bound">
-                  Best verified: θ ={" "}
-                  <button onClick={() => setSelected(best.id)}>
-                    {decimal(best.theta, 16)}
-                  </button>
-                </p>
+            </div>
+            <div className="current-bound">
+              {best ? (
+                <button
+                  className="best-bound"
+                  aria-label="View best verified proof"
+                  onClick={() => setSelected(best.id)}
+                >
+                  <MathJax dynamic>
+                    {`\\(\\theta \\le ${decimal(best.theta, 16).replace("…", "\\ldots")}\\)`}
+                  </MathJax>
+                </button>
+              ) : (
+                <p className="muted">No verified bound yet.</p>
               )}
             </div>
-          </div>
+          </section>
+          <nav className="view-nav" aria-label="Research views">
+            {["Timeline", "Leaderboard", "Protocol"].map((name) => (
+              <button
+                key={name}
+                aria-current={tab === name ? "page" : undefined}
+                onClick={() => setTab(name)}
+              >
+                {name}
+                {name === "Leaderboard" && <small>{all.length}</small>}
+              </button>
+            ))}
+          </nav>
           {error && (
             <div className="notice error" role="alert">
               {error}
@@ -249,66 +301,6 @@ export default function App() {
             <Protocol commissioned={commissioned} />
           ) : (
             <>
-              <div className="statement">
-                <div>
-                  <span className="theta-symbol">θ</span>
-                  <span>
-                    For every positive modulus q and complex Dirichlet character
-                    χ,
-                  </span>
-                  <strong className="math">
-                    Re(s) &gt; θ <span>⟹</span> L(χ, s) ≠ 0
-                  </strong>
-                  <small>excluding χ = 1 ∧ s = 1</small>
-                </div>
-                <button
-                  className="icon"
-                  aria-label="Read exact theorem"
-                  onClick={() => setModal("policy")}
-                >
-                  <Info size={18} />
-                </button>
-              </div>
-              <div className="filters">
-                <div className="search">
-                  <Search size={17} />
-                  <input
-                    aria-label="Search contributions"
-                    placeholder="Search proofs, authors, methods…"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                  />
-                  {query && (
-                    <button
-                      aria-label="Clear search"
-                      onClick={() => setQuery("")}
-                    >
-                      <X size={14} />
-                    </button>
-                  )}
-                </div>
-                <select
-                  aria-label="Contribution type"
-                  value={method}
-                  onChange={(e) => setMethod(e.target.value)}
-                >
-                  <option value="all">All contributions</option>
-                  <option value="verified">Verified here</option>
-                  <option value="pending">Verification pending</option>
-                  <option value="record">Verified record improvements</option>
-                  <option value="alternative">Alternative proofs</option>
-                </select>
-                {events.length > 0 && (
-                  <select
-                    aria-label="Historical status"
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value)}
-                  >
-                    <option value="active">Active records</option>
-                    <option value="all">Include withdrawn</option>
-                  </select>
-                )}
-              </div>
               <div
                 className={"research-layout" + (detail ? " has-detail" : "")}
               >
@@ -323,77 +315,127 @@ export default function App() {
                     />
                   )}{" "}
                   <section className="panel contribution-table">
-                    <div className="panel-heading">
-                      <div>
-                        <h2>
-                          Contributions{" "}
-                          <span className="count">{records.length}</span>
-                        </h2>
-                      </div>
-                      <select
-                        aria-label="Sort contributions"
-                        value={sort}
-                        onChange={(e) => setSort(e.target.value)}
-                      >
-                        <option value="latest">Newest result</option>
-                        <option value="oldest">Oldest result</option>
-                        <option value="bound">Smallest θ (exact)</option>
-                      </select>
-                    </div>
                     <div className="table-scroll">
-                      <table>
+                      <table role="table">
                         <caption className="sr-only">
                           Equivalent keyboard-accessible table of every plotted
                           contribution
                         </caption>
                         <thead>
                           <tr>
-                            <th>CONTRIBUTION / AUTHOR</th>
-                            <th>EXACT BOUND θ</th>
-                            <th>RESULT DATE</th>
-                            <th>VERIFICATION</th>
+                            {columns.map(({ key, label }) => (
+                              <th
+                                key={key}
+                                scope="col"
+                                aria-sort={
+                                  sort.key === key ? sort.direction : "none"
+                                }
+                              >
+                                <button
+                                  onClick={() =>
+                                    setSort({
+                                      key,
+                                      direction:
+                                        sort.key === key &&
+                                        sort.direction === "ascending"
+                                          ? "descending"
+                                          : "ascending",
+                                    })
+                                  }
+                                >
+                                  {label}
+                                  {sort.key === key && (
+                                    <span aria-hidden="true">
+                                      {sort.direction === "ascending"
+                                        ? "↑"
+                                        : "↓"}
+                                    </span>
+                                  )}
+                                </button>
+                              </th>
+                            ))}
                           </tr>
                         </thead>
                         <tbody>
                           {records.map((r) => (
                             <tr
                               key={r.id}
+                              onClick={() => setSelected(r.id)}
                               className={
                                 selected === r.id ? "selected-row" : ""
                               }
                             >
-                              <td>
-                                <button
-                                  className="row-title"
-                                  onClick={() => setSelected(r.id)}
-                                >
-                                  {r.title}
-                                </button>
-                                <small>
-                                  {r.authors.map((a) => a.name).join(", ")}
-                                </small>
+                              <td data-label="Contribution">
+                                <div className="contribution-name">
+                                  <button
+                                    className="row-title"
+                                    aria-label={r.title}
+                                    onClick={() => setSelected(r.id)}
+                                  >
+                                    {contributionTitle(r)}
+                                  </button>
+                                  <a
+                                    className={
+                                      "tag verification-badge " +
+                                      (verifiedHere(r) ? "teal" : "amber")
+                                    }
+                                    title={`${statusLabel(r)} · View checked solution`}
+                                    aria-label={`Verified solution for ${contributionTitle(r)}`}
+                                    href={proofSolutionUrl(r)}
+                                    onClick={(event) => event.stopPropagation()}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    {verifiedHere(r) ? (
+                                      <BadgeCheck
+                                        size={18}
+                                        aria-hidden="true"
+                                      />
+                                    ) : (
+                                      <Clock size={18} aria-hidden="true" />
+                                    )}
+                                    <span className="sr-only">
+                                      {statusLabel(r)}
+                                    </span>
+                                  </a>
+                                  {projectUrl(r) && (
+                                    <a
+                                      className="source-link"
+                                      href={projectUrl(r)}
+                                      onClick={(event) =>
+                                        event.stopPropagation()
+                                      }
+                                      aria-label={`Project homepage for ${contributionTitle(r)}`}
+                                      title="Project homepage"
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      <ExternalLink
+                                        size={16}
+                                        aria-hidden="true"
+                                      />
+                                    </a>
+                                  )}
+                                </div>
                               </td>
-                              <td className="fraction-cell">
+                              <td data-label="Author" className="author-cell">
+                                {r.authors.map((a) => a.name).join(", ")}
+                              </td>
+                              <td
+                                data-label="Exact bound θ"
+                                className="fraction-cell"
+                              >
                                 {boundLabel(r)}
                                 <small>{decimal(r.theta, 14)}</small>
                               </td>
-                              <td>
-                                {date(contributionDate(r))}
-                                <small>
-                                  {r.date_label || "First verified"} · UTC
-                                </small>
-                              </td>
-                              <td>
-                                <span
-                                  className={
-                                    "tag " +
-                                    (verifiedHere(r) ? "teal" : "amber")
-                                  }
+                              <td data-label="Date">
+                                <time
+                                  dateTime={contributionDate(r)}
+                                  title={timestamp(contributionDate(r))}
                                 >
-                                  {withdrawn.has(r.id)
-                                    ? "Withdrawn"
-                                    : statusLabel(r)}
-                                </span>
+                                  {date(contributionDate(r))}
+                                </time>
+                                <small>{r.date_label || "First verified"}</small>
                               </td>
                             </tr>
                           ))}
@@ -403,27 +445,11 @@ export default function App() {
                     {!records.length && (
                       <div className="empty-table">
                         <FileCheck2 size={24} />
-                        <h3>
-                          {all.length
-                            ? "No matching contributions"
-                            : "No verified contributions yet"}
-                        </h3>
+                        <h3>No active contributions yet</h3>
                         <p>
-                          {all.length
-                            ? "Try another author, method or fraction."
-                            : "Successful Lean and NanoDa checks, followed by attribution review, unlock publication."}
+                          Successful Lean and NanoDa checks, followed by
+                          attribution review, unlock publication.
                         </p>
-                        {all.length > 0 && (
-                          <button
-                            onClick={() => {
-                              setQuery("");
-                              setMethod("all");
-                              setStatus("all");
-                            }}
-                          >
-                            Reset filters
-                          </button>
-                        )}
                       </div>
                     )}
                   </section>
@@ -451,12 +477,6 @@ export default function App() {
               )}
             </>
           )}
-          <footer>
-            <span>QRH Bounds</span>
-            <button onClick={() => setModal("policy")}>
-              Verification details
-            </button>
-          </footer>
         </div>
       </main>
       <dialog
@@ -532,7 +552,6 @@ function ProofDetail({
   return (
     <section className="panel proof-detail">
       <div className="panel-heading">
-        <span className="eyebrow">PROOF DETAILS</span>
         <button
           className="icon"
           aria-label="Close proof details"
@@ -642,43 +661,37 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
     <section className="protocol-grid">
       <article className="panel">
         <h2>Statement</h2>
+        <p>The formal theorem to prove is:</p>
         <p>
-          For every positive modulus q, complex Dirichlet character χ and
-          complex s with Re(s) &gt; θ, L(χ, s) ≠ 0, excluding χ = 1 and s = 1. A
-          smaller θ gives a stronger result.
+          For every{" "}
+          <MathJax inline>{String.raw`\(q\in\mathbb{N}_{>0}\)`}</MathJax>,{" "}
+          <MathJax
+            inline
+          >{String.raw`\(\chi\in\widehat{(\mathbb{Z}/q\mathbb{Z})^\times}\)`}</MathJax>
+          , <MathJax inline>{String.raw`\(s\in\mathbb{C}\)`}</MathJax> with{" "}
+          <MathJax inline>{String.raw`\((\chi,s)\ne(1,1)\)`}</MathJax>,
         </p>
-        <pre>{theorem}</pre>
-        <a
-          href={upstream + "ComparatorChallenges/DirichletSevenEighths.lean"}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Upstream theorem specification <ExternalLink size={14} />
-        </a>
+        <div className="statement-equation-row">
+          <MathJax className="statement-equation">
+            {String.raw`\(\operatorname{Re}(s)>\theta \;\Longrightarrow\; L(\chi,s)\ne 0\)`}
+          </MathJax>
+        </div>
+        <p>
+          Formulated in{" "}
+          <a href="https://lean-lang.org/" target="_blank" rel="noreferrer">
+            Lean
+          </a>{" "}
+          as:
+        </p>
+        <LeanCode
+          code={leanTheorem}
+          source={upstream + "ComparatorChallenges/DirichletSevenEighths.lean"}
+        />
       </article>
+
       <article className="panel">
-        <h2>Verification labels</h2>
-        <p>
-          <strong>Verified in our framework:</strong> the result has passed all
-          required proof checks listed below.
-        </p>
-        <p>
-          <strong>Verification pending:</strong> the authors report a
-          formalization that we have not independently reproduced. These results
-          appear in the table, outside the verified chart.
-        </p>
-        <p>Each result links to its source and available checking logs.</p>
-      </article>
-      <article className="panel">
-        <h2>Dates</h2>
-        <p>
-          Dates are in UTC and refer to publication, announcement or the first
-          local Lean check, as indicated in the table. Verification dates are
-          recorded separately in the result details.
-        </p>
-      </article>
-      <article className="panel">
-        <h2>Required proof checks</h2>
+        <h2>Verification</h2>
+        <h3>Requirements</h3>
         <p>
           Every result marked verified must pass Comparator’s statement,
           definition and axiom checks, followed by proof replay in Lean, NanoDa
@@ -700,6 +713,26 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
         <p>
           Only propext, Classical.choice and Quot.sound are allowed. These local
           checks are separate from Palomar registration and editorial review.
+        </p>
+        <h3>Labels</h3>
+        <p>
+          <strong>Verified in our framework:</strong> the result has passed all
+          requirements above.
+        </p>
+        <p>
+          <strong>Verification pending:</strong> the authors report a
+          formalization that we have not independently reproduced. These results
+          appear in the table, outside the verified chart.
+        </p>
+        <p>Each result links to its source and available checking logs.</p>
+      </article>
+      <article className="panel">
+        <h2>Dates</h2>
+        <p>
+          Dates are in UTC and refer to publication, announcement or the first
+          local Lean check, as indicated in the table. Hover over a date for its full
+          timestamp. Verification dates are recorded separately in the result
+          details.
         </p>
       </article>
     </section>
