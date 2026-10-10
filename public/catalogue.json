@@ -319,10 +319,10 @@
       "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
     },
     {
-      "submitted_at": "",
+      "submitted_at": "2026-10-10T03:22:55Z",
       "published_at": "",
       "merged_at": "",
-      "pr": null,
+      "pr": 6,
       "repository": "akashlevy/QuasiRiemannTracker",
       "source_commit": "ec626ec9c0e7ab7b29f6c916314932caeb4df39a",
       "first_verified_at": "2026-10-10T01:53:26.235107+00:00",
