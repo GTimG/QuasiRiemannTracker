@@ -1,0 +1,9 @@
+Comparator starting: NegControl (objects /work/qrh-proof/development/.verification/final2_20261009/lib/lean)
+Building ComparatorChallenges.WeightedQRHNegControl
+lake shim: prebuilt /work/qrh-proof/development/.verification/negcontrol_20261009/challenges/ComparatorChallenges/WeightedQRHNegControl.olean
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_10499_12000_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.WeightedQRHNegControl
+Building WeightedQRH.Statements
+lake shim: prebuilt /work/qrh-proof/development/.verification/final2_20261009/lib/lean/WeightedQRH/Statements.olean
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_10499_12000_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from WeightedQRH.Statements
+uncaught exception: Challenge and solution theorem statement do not match: 'OAI.riemannZeta_ne_zero_of_10499_12000_lt_re'
+EXIT 1

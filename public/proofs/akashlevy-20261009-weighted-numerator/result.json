@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-10T01:42:55.138432+00:00",
+  "theta": "10499/12000",
+  "declarations": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "phases": [
+    {
+      "name": "preflight-controls",
+      "started_utc": "2026-10-10T01:42:55.257163+00:00",
+      "finished_utc": "2026-10-10T01:43:05.676690+00:00",
+      "passed": true
+    },
+    {
+      "name": "compile-Challenge",
+      "exit_code": 0,
+      "seconds": 2.2
+    },
+    {
+      "name": "export-Challenge",
+      "exit_code": 0,
+      "seconds": 13.4,
+      "header_ok": true
+    },
+    {
+      "name": "compile-Solution",
+      "exit_code": 0,
+      "seconds": 21.4
+    },
+    {
+      "name": "export-Solution",
+      "exit_code": 0,
+      "seconds": 74.4,
+      "header_ok": true
+    },
+    {
+      "name": "compile-and-export",
+      "started_utc": "2026-10-10T01:43:07.389858+00:00",
+      "finished_utc": "2026-10-10T01:44:59.761133+00:00"
+    },
+    {
+      "name": "judge",
+      "started_utc": "2026-10-10T01:44:59.761556+00:00",
+      "finished_utc": "2026-10-10T01:53:26.235095+00:00",
+      "exit_code": 0,
+      "seconds": 506.5
+    }
+  ],
+  "runner": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "python": "3.13.13"
+  },
+  "sandbox": "none: lake comparator --inadvisably-no-sandbox (bubblewrap needs Linux)",
+  "source_compiler": "4.34.1",
+  "judge_toolchain": "4.35.0-rc2",
+  "tool_sha256": {
+    "lake": "d2d63c80ca10bd2cc9557d11d59221b95c6eefb078c9652a11ef887ab8a068a5",
+    "lean": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+    "leanexport": "f533d8829d2f6507816a3c784055bf2eb8f9a7e53a3134affbe320eba5dc27c1",
+    "leanchecker": "41662275cb7d624d0f0fdf8cb3dc7d5c15e99b233be3ebec576a5c38df181844",
+    "nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+    "con-ron": "7e04504e38276e0e2edb9b4fa992a9206424091b3cfa509ebe8024696b4ad8b0",
+    "source_lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "lean4export": "17da1e168bf5d41484c940e41c1f68230798ebb38d09174b564e955895279d0f"
+  },
+  "preflight": "passed",
+  "challenge_template_sha256": "eee59775c5f4f892199f7456f85f7664a14ef3010fc1b3df97ed2c0f8a1db4e6",
+  "challenge_sha256": "4624fc67bbd5792408525558a48481a5cd3acd258c78caf1ec4d29528703c287",
+  "solution_sha256": "dc7aea9b1922fa31a46efd52d172d179f0a5a474d459877c2f2b94d0ac842fde",
+  "challenge_LEAN_PATH": "/work/qrh-proof/workspace/.lake/packages/Cli/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/batteries/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/Qq/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/aesop/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/plausible/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/leancert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/work/qrh-proof/pristine/.lake/build/lib/lean:/work/qrh-proof/tools/lean-4.34.1/lib/lean",
+  "solution_LEAN_PATH": "/work/qrh-proof/workspace/.lake/packages/Cli/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/batteries/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/Qq/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/aesop/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/plausible/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/leancert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/work/qrh-proof/formalization/.lake/build/lib/lean:/work/qrh-proof/tools/lean-4.34.1/lib/lean",
+  "exports": {
+    "Challenge": {
+      "sha256": "f553d092b0690188ea806d9daadef9ec71179fd2d8e22a754dba6e40da9fbacb",
+      "bytes": 382347462
+    },
+    "Solution": {
+      "sha256": "7ea84555c740c3840fd7f3a3d8cdf1ec987edb60d2825425511c52e6304358a3",
+      "bytes": 1772535340
+    }
+  },
+  "acceptance_markers": {
+    "con-ron": true,
+    "nanoda": true,
+    "Lean default": true
+  },
+  "judge_exit_code": 0,
+  "verified_at_utc": "2026-10-10T01:53:26.235107+00:00",
+  "artifacts": {
+    "comparator.json": "46bd53bf573c95ebb8c887b499f25102262b2a73fb784171cfc8191066fdcebf",
+    "control-results.json": "10fa2cc6545c5343fbf1922c3166930c8e17f4de627f14a767ef0e48d2b58f02",
+    "controls/PreflightChallenge-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/PreflightChallenge-export.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/PreflightSolution-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/PreflightSolution-export.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/PreflightWrong-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/PreflightWrong-export.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/comparator.json": "167e9709a67291c95ac5c85d2864a89e511807dd7e38ae60267c1d2b6b699a17",
+    "controls/ill-typed.log": "7adfd92a1565fbfad85ebe6c5e48b197cfa14e805976ad5e6722fa471de860c1",
+    "controls/matching.log": "8b9388684e2e178ff6cb73d40b0a565aa9b42b6b6c59873e61b5ed449e551fa6",
+    "controls/mismatched.log": "15e768a36d33f98564199c0ae369a6171034e8fa069ea1dfb9478e717ef53c00",
+    "controls/src/PreflightChallenge.lean": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+    "controls/src/PreflightSolution.lean": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+    "controls/src/PreflightWrong.lean": "06ad1f6b739394b7c8f59d9cda6710f53c4736c3a689ed9fcbafb8d00ecc6477",
+    "export-targets.json": "eee9665f3da3c39ed28c21f2b36355811e442694a2aa4368741715efd90727a6",
+    "judge.log": "96af2784aab90af6e17ad816b714cf7c4ef67d05cdb2916a8f49232eee88b7ce",
+    "logs/Challenge-compile.log": "cf50399ef19b86cd29332b28318c961ae21cc9fe4cc3c109569be3cd5d8fa139",
+    "logs/Challenge-export.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/Solution-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/Solution-export.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/Challenge.lean": "4624fc67bbd5792408525558a48481a5cd3acd258c78caf1ec4d29528703c287",
+    "src/Solution.lean": "dc7aea9b1922fa31a46efd52d172d179f0a5a474d459877c2f2b94d0ac842fde"
+  }
+}

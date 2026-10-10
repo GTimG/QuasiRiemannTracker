@@ -1,0 +1,1881 @@
+{
+  "started_utc": "2026-10-10T00:21:47.866894+00:00",
+  "targets": [
+    "ComparatorChallenges.WeightedQRHZeta",
+    "ComparatorChallenges.WeightedQRHDirichlet",
+    "ComparatorChallenges.WeightedQRHHecke",
+    "WeightedQRH.FinalAxioms"
+  ],
+  "lean": "/work/qrh-proof/tools/lean-4.34.1/bin/lean",
+  "LEAN_PATH": "/work/qrh-proof/development/.verification/final2_20261009/lib/challenges:/work/qrh-proof/development/.verification/final2_20261009/lib/lean:/work/qrh-proof/workspace/.lake/packages/Cli/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/batteries/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/Qq/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/aesop/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/plausible/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/leancert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/work/qrh-proof/workspace/upstream/.lake/build/lib/lean:/work/qrh-proof/tools/lean-4.34.1/lib/lean",
+  "output_root": "/work/qrh-proof/development/.verification/final2_20261009/lib/lean",
+  "live_dev_dir_excluded": "/work/qrh-proof/development",
+  "local_modules": 231,
+  "source_checkout": "/work/qrh-proof/workspace/math",
+  "source_commit": "c388e88e6519d139ad2ca5571ef0c7fbf0e245b5",
+  "challenge_root": "/work/qrh-proof/development/.verification/final2_20261009/lib/challenges",
+  "challenge_LEAN_PATH": "/work/qrh-proof/development/.verification/final2_20261009/lib/challenges:/work/qrh-proof/workspace/.lake/packages/Cli/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/batteries/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/Qq/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/aesop/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/plausible/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/leancert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/work/qrh-proof/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/work/qrh-proof/tools/lean-4.34.1/lib/lean",
+  "flags": [
+    "-DautoImplicit=false",
+    "-M",
+    "8192",
+    "-j",
+    "2",
+    "-R",
+    "/work/qrh-proof/development"
+  ],
+  "external_imports": [
+    "Mathlib",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Analysis.Complex.Basic",
+    "Mathlib.Analysis.Normed.Group.FunctionSeries",
+    "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+    "Mathlib.Analysis.SpecialFunctions.Complex.Log",
+    "Mathlib.Analysis.SpecialFunctions.Log.Summable",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+    "Mathlib.Tactic",
+    "Mathlib.Topology.Algebra.InfiniteSum.Real",
+    "OAI.NumberTheory.DirichletL.Detector.CentralClassArithmetic",
+    "OAI.NumberTheory.DirichletL.Detector.CentralClassPartition",
+    "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm",
+    "OAI.NumberTheory.DirichletL.Detector.CentralDyadicWeight",
+    "OAI.NumberTheory.DirichletL.Detector.CentralExponent",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorBatch",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorMomentFiberGates",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField",
+    "OAI.NumberTheory.DirichletL.Detector.Euler",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductX",
+    "OAI.NumberTheory.DirichletL.Detector.GlobalCorrection",
+    "OAI.NumberTheory.DirichletL.Detector.HighRowsCentralSelected",
+    "OAI.NumberTheory.DirichletL.Detector.HighRowsCentralStrictSelected",
+    "OAI.NumberTheory.DirichletL.Detector.HighRowsClosed",
+    "OAI.NumberTheory.DirichletL.Detector.Local",
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralTuple",
+    "OAI.NumberTheory.DirichletL.Detector.LowCommonBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianSum",
+    "OAI.NumberTheory.DirichletL.Detector.LowGramScale",
+    "OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.LowNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowReflectedLength",
+    "OAI.NumberTheory.DirichletL.Detector.LowRemoteMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowSelectedBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowSlotScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowSourceScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowWindowBound",
+    "OAI.NumberTheory.DirichletL.Detector.MellinBoundary",
+    "OAI.NumberTheory.DirichletL.Detector.PhysicalAnalytic",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalContours",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+    "OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily",
+    "OAI.NumberTheory.DirichletL.Detector.RayPhaseAmplitude",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolGood",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds",
+    "OAI.NumberTheory.DirichletL.Detector.RowRadicalConductor",
+    "OAI.NumberTheory.DirichletL.Detector.SelectedPrimeIndexed",
+    "OAI.NumberTheory.DirichletL.Detector.SourceAmplitudeClasses",
+    "OAI.NumberTheory.DirichletL.Detector.SourceBatch",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedPhysicalRows",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeleted",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeletedEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePaddedEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePrimeGates",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceShift",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedUniform",
+    "OAI.NumberTheory.DirichletL.Endpoint",
+    "OAI.NumberTheory.DirichletL.Energy.Bands",
+    "OAI.NumberTheory.DirichletL.Energy.CappedWidthInduction",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceChild",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceChildProfiles",
+    "OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow",
+    "OAI.NumberTheory.DirichletL.Energy.State",
+    "OAI.NumberTheory.DirichletL.Hecke.CommonProbe",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorSlotSelection",
+    "OAI.NumberTheory.DirichletL.Hecke.Dirichlet",
+    "OAI.NumberTheory.DirichletL.Hecke.DyadicContour",
+    "OAI.NumberTheory.DirichletL.Hecke.ExceptionalRows",
+    "OAI.NumberTheory.DirichletL.Hecke.ModulusRefinement",
+    "OAI.NumberTheory.DirichletL.Hecke.PrimeRow",
+    "OAI.NumberTheory.DirichletL.Hecke.PrimitiveSupremum",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalBounds",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalIdentity",
+    "OAI.NumberTheory.DirichletL.Inversion.InitialPhysicalSlots",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySlots",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformHeight",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformTests",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainFiberSource",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainProfileControl",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainSlotProfile",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainUnmarkedState",
+    "OAI.NumberTheory.DirichletL.Moments.FrequencyScaleSupremum",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFiber",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceInternal",
+    "OAI.NumberTheory.DirichletL.Moments.OneReflectionEnergy",
+    "OAI.NumberTheory.DirichletL.Moments.OneReflectionScaleEnergy",
+    "OAI.NumberTheory.DirichletL.Moments.PositiveSummability",
+    "OAI.NumberTheory.DirichletL.Moments.ReflectedNormalization",
+    "OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength",
+    "OAI.NumberTheory.DirichletL.Moments.ReflectionWeightedEnergy",
+    "OAI.NumberTheory.DirichletL.Moments.RelativeCapacityRemoval",
+    "OAI.NumberTheory.DirichletL.Moments.RetainedEnergy",
+    "OAI.NumberTheory.DirichletL.Moments.RetainedWeightedSource",
+    "OAI.NumberTheory.DirichletL.Moments.UniformReflectionApproximation",
+    "OAI.NumberTheory.DirichletL.Moments.UniformReflectionProfile",
+    "OAI.NumberTheory.DirichletL.Moments.UniformRetainedEnergy",
+    "OAI.NumberTheory.DirichletL.ParametersDetectorScales",
+    "OAI.NumberTheory.DirichletL.ParametersFixedSource",
+    "OAI.NumberTheory.DirichletL.ParametersHighData",
+    "OAI.NumberTheory.DirichletL.ParametersHighDataFine",
+    "OAI.NumberTheory.DirichletL.ParametersSlotLengths",
+    "OAI.NumberTheory.DirichletL.PrimeRows.BufferedIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralNormalized",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralTargetCost",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFixedPrimes",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubePhaseBins",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness",
+    "OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.FirstContinuation",
+    "OAI.NumberTheory.DirichletL.PrimeRows.FirstProduct",
+    "OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.MarkedExclusions",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorSourceCount",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonprincipalBoundary",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.RestoreCorrection",
+    "OAI.NumberTheory.DirichletL.PrimeRows.RowCount",
+    "OAI.NumberTheory.DirichletL.PrimeRows.RowPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallSum",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.TailScales",
+    "OAI.NumberTheory.DirichletL.PrimeRows.TupleGrowth",
+    "OAI.NumberTheory.DirichletL.PrimeRows.WeightedTuple",
+    "OAI.NumberTheory.DirichletL.PrincipalSignalComparison",
+    "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+    "OAI.NumberTheory.DirichletL.Reflection.LowBranchSum",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCaps",
+    "OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows",
+    "OAI.NumberTheory.DirichletL.Reflection.LowDyads",
+    "OAI.NumberTheory.DirichletL.Reflection.LowExponent",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFixedMember",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFull",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFullBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry",
+    "OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetained",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowSector"
+  ],
+  "modules": {
+    "ComparatorChallenges.WeightedQRHZeta": {
+      "source_sha256": "3e7bee511711a0eac5f10b95f76beddd3a60b299631afe4fd8f8d138d9f0cf12",
+      "exit_code": 0,
+      "seconds": 27,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/ComparatorChallenges.WeightedQRHZeta.log",
+      "log_sha256": "748c05b75b21dfca741d4134f6bd38b58f606b7141bda7b3c7b5fdf8dd57def2"
+    },
+    "ComparatorChallenges.WeightedQRHDirichlet": {
+      "source_sha256": "7a963f76b42ad2591683d518028df422acef135c25f80c5f920e6227b2498cdc",
+      "exit_code": 0,
+      "seconds": 27,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/ComparatorChallenges.WeightedQRHDirichlet.log",
+      "log_sha256": "df3902ad1418b6b6d4cb87b560adafc25445dc1af8ac0c1205da5c8016f1df27"
+    },
+    "ComparatorChallenges.WeightedQRHHecke": {
+      "source_sha256": "62c18a33a7c09506095af70b1aa9a0cb5b136b8c695d5b721bcfc8475f921fd3",
+      "exit_code": 0,
+      "seconds": 28,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/ComparatorChallenges.WeightedQRHHecke.log",
+      "log_sha256": "37cad7c144f7b1be364be781d85af9c7c6a3aa54354bda5d51c9c7f817849839"
+    },
+    "WeightedQRH.NumeratorLocalCoefficients": {
+      "source_sha256": "181da31faa12be7cf39145586aebe6a3bdcbe3cb7210aaaf76bb32d31bd22916",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorLocalCoefficients.log",
+      "log_sha256": "921e8018b9459fdf5ffa90db96b5146a0aac34ce61f9bbde7bffeff56959ae36"
+    },
+    "WeightedQRH.MellinReconstruction": {
+      "source_sha256": "43f72633232dde692071fca2cae04ef88c7078a4989d692ed9660e89eaea4031",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MellinReconstruction.log",
+      "log_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164"
+    },
+    "WeightedQRH.Parameters": {
+      "source_sha256": "723b5d351e2cf83fb3464e4136ae9e4f63fcb6d1977b48ef0b191714ac9e30c6",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.Parameters.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.FullWContour": {
+      "source_sha256": "a8efcba933c7da648c866cf29b87b352f3ae2a90ca3ac4e42404ca331dd93335",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWContour.log",
+      "log_sha256": "45a3d5dc916f014ef8ca0a4a5787fddc4e1fbfac354fa22e79be5e00a32637e2"
+    },
+    "WeightedQRH.NumeratorReflectionMass": {
+      "source_sha256": "ca71cea711087dd6219fd5497a0aee413735d1febbaacc2bf3c0f43a763afaf7",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReflectionMass.log",
+      "log_sha256": "91a121c5caa2ae6409ad4bacb9c513b8fb26692cfb8e53e2f254ffeeacb83fae"
+    },
+    "WeightedQRH.NumeratorPolynomialMass": {
+      "source_sha256": "dcd87d438a9c2a430c128fd7fcf1e82e80bd11fb46107fc7ef192d904ecb75af",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPolynomialMass.log",
+      "log_sha256": "6cc86b76ce04e2fa9fbac599e9d6ca4b2d47c97c90bee01c04bdc313d50381dd"
+    },
+    "WeightedQRH.NumeratorReflectionProfiles": {
+      "source_sha256": "b5198af5798741d4f9e9b63dd05da69043c10ed199edf53b18264bf575980ab5",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReflectionProfiles.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.RowConductor": {
+      "source_sha256": "19e5d42cfea300e0ab50cbac688880e24693fb8a33057ff57fd575db423cdfd2",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.RowConductor.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorRamifiedMass": {
+      "source_sha256": "47ac75121ddb7022d7067f3877ac7b07b1dc88677cd3fde05db5715cd007a188",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorRamifiedMass.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorHolder": {
+      "source_sha256": "2591d1b184ed66a67db989c329b766eb53daf0a934ae90dd526e086d9c862a51",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorHolder.log",
+      "log_sha256": "e927e48654e61fcf6997dd80f26052fee642bd8a6b82fcdca3265998d2413c8e"
+    },
+    "WeightedQRH.NumeratorReflectionRetained": {
+      "source_sha256": "6624547280aca6262f89c74618444bc594b37fa7f37b39bfb2c00481ffad08e8",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReflectionRetained.log",
+      "log_sha256": "78ea470fcdbad67d9ab9615e944a6282c427bc17adfbc962e05036ce96f5a58c"
+    },
+    "WeightedQRH.FullWTransport": {
+      "source_sha256": "cdc7cda3a8437b7e0f5c73bf81cd7550bd1413e44ad4d4b317ec341602652c02",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWTransport.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorUnramifiedMass": {
+      "source_sha256": "7b3b4397205c1351b953c2b6389f130b8e5dc2038fa6c4416bc6ce1815428565",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorUnramifiedMass.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorDamping": {
+      "source_sha256": "4761dd0b21500c91f21d83d6076f1b36fa04067a190749524b84aed45cef0112",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorDamping.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorEulerExpansion": {
+      "source_sha256": "5899d741c5e810759e5653d96b37f68140548f85196cbefb1f5b5864aedd6717",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorEulerExpansion.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorErrorMass": {
+      "source_sha256": "eab4d2ccd86d0775e0bf4346088cdb9b11efd441ae1e85935bbdb24494e4b59c",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorErrorMass.log",
+      "log_sha256": "80b23044d9a795f779e7d82c3b9f226493fd7bd11da657a9779ee5e692f64b82"
+    },
+    "WeightedQRH.NumeratorPrimeExpansion": {
+      "source_sha256": "95bbedb5abdd6ef704451ddb468f33f8d615676fcf987b7c8e482c7a30470dd6",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPrimeExpansion.log",
+      "log_sha256": "1f952a84879851d76c9155efd5b26f303de32f8afff81b4d66c3c479a37469a5"
+    },
+    "WeightedQRH.NumeratorAmplitudeHolder": {
+      "source_sha256": "f166b3bcba7de7396f744599fb3f95c3891c02d33ab0e6c413ca1332078c8403",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorAmplitudeHolder.log",
+      "log_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164"
+    },
+    "WeightedQRH.FullWFiniteError": {
+      "source_sha256": "ee9ab2bc51950807913cc82c4c917d97bc915c8d1e067454e3afc9d25a177b4c",
+      "exit_code": 0,
+      "seconds": 11,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWFiniteError.log",
+      "log_sha256": "fda224bd516476659f85654717d9ffcd8c82a4eb08f9524715eb2ea725d0f1ec"
+    },
+    "WeightedQRH.NumeratorRamifiedProduct": {
+      "source_sha256": "ec0efff078fc48b1c229c8bd3989b4f6adfbec5ad2ecde59d8a13f96d719d40f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorRamifiedProduct.log",
+      "log_sha256": "c53f2e04fccbf7bee09224e5b587dc82006e9a7e5f72e773b1a284965dc935f2"
+    },
+    "WeightedQRH.HighRows.SlotWidths": {
+      "source_sha256": "12707a0cf0159bb1ade42b1534faf2a0d2c6c7bd74a3598c5a9473febb038d4f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SlotWidths.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.CertificateBernstein": {
+      "source_sha256": "f40605e43d2e781a7160c1484ae4589952e4c72fa4a3d2b71613aea6d071b9f9",
+      "exit_code": 0,
+      "seconds": 15,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.CertificateBernstein.log",
+      "log_sha256": "cf26420690030ce19e2e23a5322bdcc7d1f1075542cfffb79fd7377afd3c5684"
+    },
+    "WeightedQRH.FullWAggregate": {
+      "source_sha256": "a056d544596b64ca88ed3122003d4b32b0dcfbf5cc7d9c7aff0b7699b9ef94e7",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWAggregate.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.SourceBatch": {
+      "source_sha256": "629803432d27af3199a813ed3cffd57b0dda530dcc9ed9060ec8ba7b8631d9f8",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SourceBatch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorCorrectionExpansion": {
+      "source_sha256": "0e03854fe2b63715456a0ce43e45eaa4aaa170d06191ea7d18ccc5b8d3b79f5d",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorCorrectionExpansion.log",
+      "log_sha256": "106b64e0010ab466ba56ef4a5e15482e0e6616793501a105844d62409278410b"
+    },
+    "WeightedQRH.HighRows.SourceAmplitudeClasses": {
+      "source_sha256": "7aa859d67900c42dff071eb5d6e4a410207a66644ee558af812da774f99103bf",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SourceAmplitudeClasses.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.ExponentCertificate": {
+      "source_sha256": "c54fb2e42cbb4b2fe60fd38f9d728930b2972a0adf00019d878a96bcaa348873",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.ExponentCertificate.log",
+      "log_sha256": "bba5f10b45c6c2f08cbd43463a31cd8bd141be04e1ca030590a05f7cf1b137f4"
+    },
+    "WeightedQRH.FullWReconstruction": {
+      "source_sha256": "fa5728df88e296dacf6606264cee8e939ef5c3a7c7cd4ea4613ec0d52e6ce339",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWReconstruction.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentData": {
+      "source_sha256": "ae84b2c827dd5094c6a3c5cf00d91ca0e199a9dee34e98cddd91392244e97c0c",
+      "exit_code": 0,
+      "seconds": 2,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentData.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorActualError": {
+      "source_sha256": "d6560c9d2d88509670f8ff246c57a4a7a9d29edef678a3202c6fd5cd107e6900",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorActualError.log",
+      "log_sha256": "b04eb71a5331c07511d48c0d6e9e7c8270f4aab16513a764e08479b27e42fbe7"
+    },
+    "WeightedQRH.MomentFinalAssemblyData": {
+      "source_sha256": "d4aea49dfd8da435fa135553e7743f6a122a7fd4862faf4714f68f3283f0136a",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentFinalAssemblyData.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorErrorPrimeSum": {
+      "source_sha256": "a9527a164ba2408a6134b036d242986ad7c9fb5c557f528cebc17cbc3a4e34a0",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorErrorPrimeSum.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.SlotLengths": {
+      "source_sha256": "01f5e56175d7b5d48544ab18558ea62936cfcadf8754e356cee6b82132a627b5",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SlotLengths.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CountIdentity": {
+      "source_sha256": "6c69b779b1943703bb77404700a9213f56c6c5c881b91f3fb0836ab25c778a21",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CountIdentity.log",
+      "log_sha256": "b92269170bc2c9caa33a3a4db6c1a28937e061bf080915ae884dc3b42803127e"
+    },
+    "WeightedQRH.NumeratorFinitePacket": {
+      "source_sha256": "2de7281788638e7229d2e8f91f63b6a64eac66b184de78d94231587951c15244",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFinitePacket.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorTupleRestoration": {
+      "source_sha256": "f1bbf9355f2de3d7200e7a6b08b2a73388521150c93bceb6dff752c378f05ddd",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorTupleRestoration.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorDeficit": {
+      "source_sha256": "9f7525e953c13f51af7f2693d96f927fecec2c29dfc2e8fb65b880033e3ad9c1",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorDeficit.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorErrorPacket": {
+      "source_sha256": "e91540a2ceb1e5c0753042bb9c2b736969283f53d8d61f593e719e35d5246bc2",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorErrorPacket.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.MaskedCount": {
+      "source_sha256": "a1d65f9dbb22dff1b66344c276f12509b0b92f39f8abd03be25f27d08673e168",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.MaskedCount.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPrimeSeparation": {
+      "source_sha256": "bdf11286c9d7cd308d8155cf87ae472c0399d5e99ad5d77cfe2f59ab632c3b0c",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPrimeSeparation.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentNaturalFixedRaySourceFixedIdeal": {
+      "source_sha256": "d8edc22cea906926a67f414191563533d3c0b9445959c960f675de5305e7b921",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentNaturalFixedRaySourceFixedIdeal.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.HighData": {
+      "source_sha256": "e39c175c357e6d94c6e933232e11ddeeab872cb360fc6fc9870dc703463a0fa3",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.HighData.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPhysicalFront": {
+      "source_sha256": "c3a08cdc562c6dfeeba64e63d5468b61e58229a684a2c18d30d2470d4ca6df3f",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPhysicalFront.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorMassDamping": {
+      "source_sha256": "0a0cfe8056ad1b0ae11559baa7540825daacdd25a12095a421c258713164b871",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorMassDamping.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentNaturalFixedRaySourceFreeExceptional": {
+      "source_sha256": "4e1494c68cc1e9f150b25343aca286e9c5d8fce415fb990b56521c6362792710",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentNaturalFixedRaySourceFreeExceptional.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.HighDataFine": {
+      "source_sha256": "d22a5c8587e21dd377b18e3212d5356347107ca90368466304b36bd0a67183a8",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.HighDataFine.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorReflectionData": {
+      "source_sha256": "6aef5609672710f6084f5d28bfa06aec3c167540af40a0393b96fab6610da44a",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReflectionData.log",
+      "log_sha256": "f28d094990ca49c4e6a9404c3db73658305cd6ad07d8c1db937889acc0d2eaeb"
+    },
+    "WeightedQRH.NumeratorErrorLabels": {
+      "source_sha256": "f0f00a02247a865507b05dcb3143a83157dcfcf72bee7a96a06b93784a6131ae",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorErrorLabels.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPacketMellin": {
+      "source_sha256": "e733772dfd523bf44bd6c00791e5a942fd03869983dc7ee4e701dc208fa57cc2",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPacketMellin.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorEnergyInitialState": {
+      "source_sha256": "1d2ead23b9c179f10eb66331d0cfdd3b1a8f75747f6d6f53740cf15e83bb939d",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorEnergyInitialState.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorRetainedGeometry": {
+      "source_sha256": "33feafae6f4be80f498a7cb03c713afe12cd8b1ce0772f38c312a8cc3cd09e8f",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorRetainedGeometry.log",
+      "log_sha256": "51ace82184f5bb7f63f81735335358e70df97761585bd5a8fe03006cac7dc62a"
+    },
+    "WeightedQRH.NumeratorDiscarded": {
+      "source_sha256": "1a61deb60de1b63d0319e6ae75d8b899f4ae7277efe72bc0928aa4562ada5c3b",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorDiscarded.log",
+      "log_sha256": "fd05518f7fe490662aa3c5e8871beb25a4312c73ad63f396102738bf63c6f4f4"
+    },
+    "WeightedQRH.NumeratorLabelPacket": {
+      "source_sha256": "d45820dd62cd0d00cf405d6d3225737e752ea11fbfedd697d5a449eba97c3807",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorLabelPacket.log",
+      "log_sha256": "b1fb4784aadfd03c942b56fb6fb089f47bcb6b3987c81d1d381e77f4227201de"
+    },
+    "WeightedQRH.NumeratorIntegral": {
+      "source_sha256": "a2ebd354a6325421735cd8e24e97ac39df769125312edcfd81459243c2f0035a",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorIntegral.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainSlotProfile": {
+      "source_sha256": "0f2eb8a783b4ea6658785a95921b5a4f60626be99a1c8c148ef16c2b1c3dcbcc",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainSlotProfile.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPacketFourth": {
+      "source_sha256": "ef6c337321f1c8f7f9929dd87ddea764d8b9082c044c83828d4ce682b54b5e78",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPacketFourth.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorLabelPrimeBound": {
+      "source_sha256": "a72b5b47a3566e9ea7501fd97ff87de9421fb537dd5a250f6285eec6e2c3e754",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorLabelPrimeBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainCapacity": {
+      "source_sha256": "8b9fc67fc619858949ce12abcc11ef847fb9dfd207438d9913ab71a24924ae1c",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainCapacity.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorErrorIntegrable": {
+      "source_sha256": "07a4bf74263e57189b4c6fe5dbb87f5a458910e70e73cc5cae03e43ac0598691",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorErrorIntegrable.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorReflectionGeometry": {
+      "source_sha256": "0167780d1c872fbff2c62a9da5d8f1786590c4063a57766f1803f3c9526f4b6a",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReflectionGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorDilationBoxes": {
+      "source_sha256": "46242f50bbd81b1bf0b493ba265f1067a234aa2044acc5b99f02654f72ac7268",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorDilationBoxes.log",
+      "log_sha256": "e0114478c01ee44fae1e037befb7cbf2c10762efe965b98ab755bf081c150500"
+    },
+    "WeightedQRH.MomentDetectorPlainExceptional": {
+      "source_sha256": "36f590903330964849110425ef5f51b31c5233e823158a04977add31701ead63",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainExceptional.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorReconstruction": {
+      "source_sha256": "d9ee1097b5de526056c96ff9d8f5db967ea2ac19cf2fc3c36bb1a824939a75b4",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorReconstruction.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainMarkedState": {
+      "source_sha256": "9865f130d6848d7516c21515c456b677036f5bc81dbdb269742beb1efc0eafaa",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainMarkedState.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSelectedCrude": {
+      "source_sha256": "5f53c0e84bd64a9563e6ac3b62482564667214778f2fcb38ee0a2288c1d9eb10",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSelectedCrude.log",
+      "log_sha256": "f32e670b9d29d456cbfff0492e81eac8267802358217aacb218cb5f1e918fb5a"
+    },
+    "WeightedQRH.NumeratorPacketBoxes": {
+      "source_sha256": "b15966fd6746d89aa4c51bbaf169da05c22079e7acfc9988e8ea14aa245e507e",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPacketBoxes.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainMomentParameters": {
+      "source_sha256": "09b24f3536a1cfa0e0307e3a902024538a311ffce6e31d883fa5eee303082321",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainMomentParameters.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorLabelReconstruction": {
+      "source_sha256": "580ca9e649e96540702a5b2cec13662bfc7c1284083ab60493b081959711dae6",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorLabelReconstruction.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorBoxGeometry": {
+      "source_sha256": "8ede3fe34bb58cd5f97911a2644fb0ca4d648546c45fef254eb441bdf3c1cc68",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorBoxGeometry.log",
+      "log_sha256": "79802ba317d43c987fd77a925410c8f4a011253f3117abda1a20071c6df5796d"
+    },
+    "WeightedQRH.NumeratorFiniteBins": {
+      "source_sha256": "a6ff35226c96bae658d57bfa44134eabb161e405b4bac269a9e1ee5d15521130",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFiniteBins.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentParametersHighDataFine": {
+      "source_sha256": "77bfca642e859eced9bf6fb088fe8b8bc4ea9b4372855ba63fc152acf4287b33",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentParametersHighDataFine.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPhysicalPacketMass": {
+      "source_sha256": "e4d6dcda69b621a4fc1d2af0530087a44d4b398b1bbfe9ddfc8223315135e697",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPhysicalPacketMass.log",
+      "log_sha256": "a74767e736695707e50d4ac2b384f96e12becc45c8f80db0bd0e50d9cc84b98b"
+    },
+    "WeightedQRH.MomentDetectorMomentPrimeGeometry": {
+      "source_sha256": "e438406e3858e26938dc719ae502f1611f558a0b65e5e072893a08f8dd2269d6",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorMomentPrimeGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentTerminalInput": {
+      "source_sha256": "7302b88bb6e50de6a2a1ae4c9d7a10ffec5be58dc0a15716ee2be8b8b9867787",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentTerminalInput.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorBoxReconstruction": {
+      "source_sha256": "2dbb43981915dc78bd10645b0519e798c7cbc03d8baa10e5d808e12f508d76de",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorBoxReconstruction.log",
+      "log_sha256": "fd2de19bb5f7559eefa072511e3335bd78af96258191ba6d7dd9ea6b1cb013eb"
+    },
+    "WeightedQRH.NumeratorFreeScalarBound": {
+      "source_sha256": "90ff097f2a2fd2af7227af41ecae2b7986b40d997f95731e6e5b78ed70db55e1",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFreeScalarBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentInverseMarkedReferencePrimeGates": {
+      "source_sha256": "090f381d9db099a938fb448f876059043ea9e67b96065daa06f59ed65918178f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentInverseMarkedReferencePrimeGates.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentTerminalLongZero": {
+      "source_sha256": "4bbbc1f8fe702a52587464eaa99bd140d0d24c0d4b00e7d1dfc3e2d4c307c131",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentTerminalLongZero.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPacketBinBound": {
+      "source_sha256": "af6bb6ec51e3e72cfce5e4118b800ac635b796c37a3e65ec814475e9427e83ba",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPacketBinBound.log",
+      "log_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164"
+    },
+    "WeightedQRH.HighRows.CentralErrorSaving": {
+      "source_sha256": "155fba923de9524dbf4c00bf8faccf525e2e082a6e60145b3b7ed6a7fe37cb43",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CentralErrorSaving.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentInverseMarkedReferenceDeletedEnergy": {
+      "source_sha256": "28f02cec57056cca4991701e1040f668b5c4ebd5a103b792f7b4b60c571bf7a2",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentInverseMarkedReferenceDeletedEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.TailScales": {
+      "source_sha256": "f57c1b35f98be19c413941f719ab01e2dda114ffc73e8177058627b8a39e9dd6",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.TailScales.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CentralFiniteError": {
+      "source_sha256": "d212544f480deef0fcd8e672202eb89cee71a51ed821b19c582f9dfa7bbbfa79",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CentralFiniteError.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeErrorSaving": {
+      "source_sha256": "caec07391f76b0bfe98c1a43a90ca536c8428abf7b3dfa00d9a9f533dc198319",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeErrorSaving.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorAmplitudeLoss": {
+      "source_sha256": "fefe9e152ada1a615bf342139cccc8f2c137d8045273afd5f5d023bbb861c257",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorAmplitudeLoss.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentInverseMarkedReferenceFiberEnergy": {
+      "source_sha256": "28dd63100671adb67777fac544fec6f76b1e71c7817a65acf23e96c425092e17",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentInverseMarkedReferenceFiberEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.LargeDyad": {
+      "source_sha256": "cef111c9efed0c53edef359e24ea1346c8ef8f22d4056db6c22e4a3d35ca0801",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.LargeDyad.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFiniteError": {
+      "source_sha256": "7f32be26543ceecf7ddd88eb0b7ca627b502e8db1fb3f360c418f10a4cd2ccad",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFiniteError.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorInverseMarkedField": {
+      "source_sha256": "dc82744103fc57e353b955f8ba5190778354d93af93da3668e7f3f5b4bdb47c0",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorInverseMarkedField.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.GeometricTail": {
+      "source_sha256": "bdba15491c9fe1829d112d04978c16439787065ee4e25637f7edec2e84bd9367",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.GeometricTail.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorActualBin": {
+      "source_sha256": "6f53da39e3f6bfd2164da92b6acb31bc21e60bf40356e1071295242f6d7a2d7c",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorActualBin.log",
+      "log_sha256": "8743d7bf071682079f83acde759c075afc9658e31e37150751d73145d7a55c29"
+    },
+    "WeightedQRH.HighRows.SmallTail": {
+      "source_sha256": "a390440f364429aec5e5f3964988f7db103a1f6ca14a05469bc33fba944cc02e",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SmallTail.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorInverseFields": {
+      "source_sha256": "90f4eb2c7292bab21afbff972224b5450a51c75fdc46bba4a74bc6a04d41e7be",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorInverseFields.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.LargeTail": {
+      "source_sha256": "5fa9c70d35810c1b8ba178c288a04a88176783dca0239fc812184f8d1b01a3a3",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.LargeTail.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.PhysicalSmallTail": {
+      "source_sha256": "cede4e961ca68ed3ca483638926fb25053311144d3a2110eb21afb3f862cf323",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.PhysicalSmallTail.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorFiniteCollect": {
+      "source_sha256": "4be1d5c77ead7a0befc04a062d3d3e17918bf04bd8bf5c3dd81af0ef9d81e23c",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFiniteCollect.log",
+      "log_sha256": "3efd5f3f85fb6112caa2e6c2f5bee3868b6ebe317e001fe70bc35281e8ee9d5b"
+    },
+    "WeightedQRH.HighRows.LargeSaving": {
+      "source_sha256": "7287476850652590b886f2d76333bcc8e84914dc9f4bb56ae3c52aaaf2baaba9",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.LargeSaving.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainUnmarkedField": {
+      "source_sha256": "9ca3250119f98bc2adac31eba1057a28a825c653f31f3b65cba9831f4704f9ea",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainUnmarkedField.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowNormalizer": {
+      "source_sha256": "f65e2e67533fbfb1505123814baa7c1a63373d81e3dd3eafcaf3cd6de9833859",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowNormalizer.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.PhysicalLargeTail": {
+      "source_sha256": "a649e9e8b585e6eed6e0f547f41afb62ddea90d63f2c7d6a262c7360fde072c6",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.PhysicalLargeTail.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainUnmarkedRestrictedField": {
+      "source_sha256": "c0f0b82358ef7bd0a98de19ac244f216974572392f44ee9c043a154e2105f389",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainUnmarkedRestrictedField.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPhysicalCollect": {
+      "source_sha256": "2d74244677af2034e1aace9186aeab11621041958490694d8bc8f321f88a4d41",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPhysicalCollect.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CanonicalTails": {
+      "source_sha256": "498f522a54f52bbd16b191c332d412af9d1d71a8f5b48c58508044fe4cf113d4",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CanonicalTails.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentDetectorPlainMarkedFineField": {
+      "source_sha256": "b34019ae5c585919ac751b0936f288f9d983736404832675c44e54f2845fec8b",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentDetectorPlainMarkedFineField.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CanonicalReduction": {
+      "source_sha256": "c37772aa2dc70226955131f630e827c2b70f25fca1f5cbd043797ceb4eed3106",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CanonicalReduction.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderRegion": {
+      "source_sha256": "94750ef8501185fa903d4b4146f9bfeddb1c1c56350c5662f2290addf59dc0d0",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderRegion.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentFinalAssemblyMomentInput": {
+      "source_sha256": "993c4455e8185c996f65631de16c315869ab71f6bb20d2d60a5a9db131db1782",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentFinalAssemblyMomentInput.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CanonicalCubeReduction": {
+      "source_sha256": "aa4afdb763d4449505380fc8eba6e572dc063c93c46308f862d474412a264500",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CanonicalCubeReduction.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.RegionalCorrection": {
+      "source_sha256": "b7641cebd1d28616f250ba415a05c30e50cd5eb6511280567b47a61aa782f8e6",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.RegionalCorrection.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentFinalAssemblyCertifiedBands": {
+      "source_sha256": "bffe3e73e6385d4ec43a13b971c98d835eaae4a118d0443b19d5d474eeb4771a",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentFinalAssemblyCertifiedBands.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.SignalShift": {
+      "source_sha256": "dde4680dc47d31215db5a5e53fabfcf9b4ca6c8d3bbabb23e1d1e977cace785f",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.SignalShift.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CanonicalCubeChoice": {
+      "source_sha256": "53696a05ce2d1c4f4b31a8a7c26fbc085a3d12c590812d719f8a4fc591b4e3b1",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CanonicalCubeChoice.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.MomentSourceMoments": {
+      "source_sha256": "beea6533f55cafcd0e1a7b15edc835cd2d2b1d2aeee2198eefef2523f7c9c8af",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.MomentSourceMoments.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CanonicalRayCube": {
+      "source_sha256": "03b2b08bfc8e507ce7c226d1accf3d64dceea35a9dd59afe079aea4f36efcabe",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CanonicalRayCube.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderRayThresholds": {
+      "source_sha256": "0301408e4c5f840e71f2b15059309bc844d11d14390879d7aed639de89e1dedc",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderRayThresholds.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalSlots": {
+      "source_sha256": "888363ec963110452e81b700e4284f8b5e201ed26511cb638c8ed2ff01628038",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalSlots.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorPhysicalMoment": {
+      "source_sha256": "712b4eaeade5f5ff020dd1f16acd36dfbcf5aea077ec639bfd47029d1fcd5cb7",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPhysicalMoment.log",
+      "log_sha256": "e8399eca5820f947fbc87b1202a1ce97e53c4a2c8f288074abb8a30c9f913636"
+    },
+    "WeightedQRH.HighRows.WeightedSourceCount": {
+      "source_sha256": "89eea1ba6d5e334460b6f1fd0a7c69548a6b77f7a7315ae1260b8ed466ce5303",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceCount.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSlotSelection": {
+      "source_sha256": "c493ba7d8e642f8df0f5c6ded3480e3a238bc2938de4631e07878761b0692c8f",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSlotSelection.log",
+      "log_sha256": "6f4fcd62ce0dbf83811acbc43e63f410c4d39eb521e2db4262df12a2f4b3929d"
+    },
+    "WeightedQRH.NumeratorPhysicalMomentInput": {
+      "source_sha256": "dcafd8869fc203575456914a2310e1d8873231f9f23b1ea2eaf5cb243b3a4ccf",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorPhysicalMomentInput.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderFiniteProduct": {
+      "source_sha256": "0c8c80bd4cb31e2a9229b6bfb97d34a76411704a26cc088dded439c24118ced2",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderFiniteProduct.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorFourierProfiles": {
+      "source_sha256": "b5de6a6baf8844e74731de16da32f2e3ecd65e815ba36865210e29de1ef042a9",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFourierProfiles.log",
+      "log_sha256": "1cc7953d80273b90dc4429ed5a5599efae34dcee92ea5ba793818946e267f8b9"
+    },
+    "WeightedQRH.HighRows.WeightedSourcePrimeBins": {
+      "source_sha256": "f9219f08bb58e0b17bcca2797f196533688a1309f64db752c8a2986246880f85",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourcePrimeBins.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalSignal": {
+      "source_sha256": "ba4c37883b567befd71a1ca83ffedf262805caa8ff73ef15544abcdaa3c5fead",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalSignal.log",
+      "log_sha256": "6906697b3e7c40a72dacdaeac35e2db5235ee4cb128e8642259b612d045df54f"
+    },
+    "WeightedQRH.PrincipalRemainderFiniteProductX": {
+      "source_sha256": "25b07ab1c6d2e1188e5c346aa6090aa397f451b63826bf0beb006ad07140b679",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderFiniteProductX.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorCertifiedFourier": {
+      "source_sha256": "1cc386ab21fc02d773313a4a7aa11b293a4fddbbd77e71fb4e8de3d14dc1d618",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorCertifiedFourier.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderResidueActual": {
+      "source_sha256": "896d0fca467c0197d195aba5664cffc8bf9fdd2feacca22c4ac7281f45c84b6c",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderResidueActual.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceSelection": {
+      "source_sha256": "82abe795a6cb9e825c7e7138c7adea80772249302076c82d564d1a2628555e80",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceSelection.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorCertifiedZero": {
+      "source_sha256": "a3f22a68809fe1718d44e45c8c0c82c7d2aa7bcaadd728ef02b84f2cd0beece2",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorCertifiedZero.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceParameters": {
+      "source_sha256": "a73ee8209c4b2d054c2c6882d6dbcdca8fd83ab86c69c7ca399f280b4738cf68",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceParameters.log",
+      "log_sha256": "6e20049891aa47eec4921ac210cd563643ab3ed288f4263a814349f2320679d1"
+    },
+    "WeightedQRH.HighRows.CentralExponent": {
+      "source_sha256": "61b617bb356af9fd8156ed221a323f4ddb7494e923f0cc2e0240a16c9820d4e2",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CentralExponent.log",
+      "log_sha256": "4ab91efab4badc8054b18e656d0283fbf915c776af413093d06bc0cce80fd291"
+    },
+    "WeightedQRH.PrincipalRemainderContours": {
+      "source_sha256": "6df5434d2898713f9c1bc8ed52f3f063bdd9e6a39c12d6c154981eca1fc5447b",
+      "exit_code": 0,
+      "seconds": 9,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderContours.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeSlotExponent": {
+      "source_sha256": "33a84cb5f9c1c0fcbb425514217ebc0e40d39ee60262c1f7d44492bfd5cd1219",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeSlotExponent.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorCertifiedRetained": {
+      "source_sha256": "2f9e0cdbe61afd49cfe761727a9dd404dd10fab24e9436617dcd8a01bac6df89",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorCertifiedRetained.log",
+      "log_sha256": "d4f827de6866b4807289f632d55eb0a4c06b42608137511dc82121e151a9cbe9"
+    },
+    "WeightedQRH.HighRows.CubeFullWTransfer": {
+      "source_sha256": "6a5cf9a4a6d7f7a5c4215e6238412dadf3cf5c0bceea9ea410d107d2f69875ec",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFullWTransfer.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderTransport": {
+      "source_sha256": "5e6a77edfdeda0ec6dc758eeced25c40a4c67490d46b40c44463355ac751a94f",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderTransport.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFloorArithmetic": {
+      "source_sha256": "dbf2521abeb0c6f8406556cbf0e91fd5eb5431bc9a223a82d71d14a499eea851",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorArithmetic.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CentralClassArithmetic": {
+      "source_sha256": "4e0ab5c71cd479c782f3538eed61a8be8746b21bbd8c56cbc75052b6f6298457",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CentralClassArithmetic.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorRetainedFixed": {
+      "source_sha256": "5343e0bc1f466f23cb817167a68ae676725f8062ced0167f8f8057d31d410fb9",
+      "exit_code": 0,
+      "seconds": 9,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorRetainedFixed.log",
+      "log_sha256": "e6bae3ddbd9ab51ccb53c9c8b3c2cf574ff0d03398a0cae21144e9fd25683c85"
+    },
+    "WeightedQRH.PrincipalRemainderPhysical": {
+      "source_sha256": "8019f19a27fbe597c2cfaa87e7e0685d75d8a277740af4b92b49ecf62747d298",
+      "exit_code": 0,
+      "seconds": 9,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderPhysical.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFloorGlobal": {
+      "source_sha256": "1735a0974a5e907e74c27e6bc25323b33bf746d7ba6907bd06aef544d10bbe29",
+      "exit_code": 0,
+      "seconds": 10,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorGlobal.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorClass": {
+      "source_sha256": "9d1bc4e83c1330098ac9e94220c087d720288c53a7800da243e5f1c76dfc4468",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorClass.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorOriginalFourth": {
+      "source_sha256": "60ed9d8bc612fd9bc4951c7eccd526513f62d64642a38b538c54092b7d40ec7f",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorOriginalFourth.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderBounds": {
+      "source_sha256": "d30f9487b19e35c4e1968fec02a3573e6507fc4bd942834b3abffc14e33649c3",
+      "exit_code": 0,
+      "seconds": 15,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderBounds.log",
+      "log_sha256": "5a0c2c7f743a80f04d7a9a5ec537751a1978cab2229e412fb2e4af272e5c4d10"
+    },
+    "WeightedQRH.HighRows.CubeFloorGlobalIntegral": {
+      "source_sha256": "2a09988401e6026c09a4e8982c558d23394c2e70ab4f2667d35618bfe683c892",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorGlobalIntegral.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorArithmetic": {
+      "source_sha256": "ba9b510b8ca7558fc0e073c08b91c541250fd242b1176afd57bf6c902d991493",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorArithmetic.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorActiveFourth": {
+      "source_sha256": "2154c8966185b5f2a2d0b04d77ed01bb740243651affc0bcc162ed97349bfc20",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorActiveFourth.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderPhysicalBounds": {
+      "source_sha256": "60b108ba567ddaa2d84e575a0c15ebef06e9f4490e15b4cd2e56dd4983af035a",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderPhysicalBounds.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFloorNormalized": {
+      "source_sha256": "764c9fbeb7c849d06d974f482b6600311183c3a6b01f69c2b3fa8ada5333ed2d",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorNormalized.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorIntegral": {
+      "source_sha256": "afe84c1124e6196b883aa4fc9dfbb96984ced570931cbf92fff9260273515cd9",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorIntegral.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceBin": {
+      "source_sha256": "1a3299ec7aadf3713ee3bb7e82fd5eee4dfcaf0aca35605dcceeb32aafcb9ade",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceBin.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.PrincipalRemainderNormalized": {
+      "source_sha256": "ed7d93cf1be07ee145c1f73db95a3784bb3ddb1dec0a036289f1ad7ce2e3ff28",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.PrincipalRemainderNormalized.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFloorSaving": {
+      "source_sha256": "52d0d70d7c87dd735325c076949c0d100812c65eca50f4e89572303519d45c15",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorSaving.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorNormalized": {
+      "source_sha256": "ab578794f5ba07683b7ecbd0cf09005fa090af8f25b3d8a02075a00809c0e325",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorNormalized.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceClass": {
+      "source_sha256": "3944b12e732e88fd7a0fd9db440bd4b241e0628e671a44fb60ebb6011bc5e039",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceClass.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFloorCollected": {
+      "source_sha256": "74fec0e015e39f848c7a728f99d34d73b6e00f85a5390e4dd4ed806c44f9957d",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFloorCollected.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NormalizedTransport": {
+      "source_sha256": "b7dd45028ca069ef03d267f54eb0af9daa74af526306fa61c64e49a3194e420e",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NormalizedTransport.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowReflectedLength": {
+      "source_sha256": "fb5803c53b702e3f97e42b1406200babf8b4b0ba5267b27a0e659a535bec68da",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowReflectedLength.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.CubeFullWNormalized": {
+      "source_sha256": "c7f4732c4edbb853d4cf5493b308e540de0174e9c8b1718e53a52b6c8e2281b0",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.CubeFullWNormalized.log",
+      "log_sha256": "904141c988dbacba1619a29a37b447c91b56756adbbce36ce3b898d63788449c"
+    },
+    "WeightedQRH.HighRows.NormalizedTransportSaving": {
+      "source_sha256": "9897b5ad1228b23eab9acd4e8e0e4565e649a0bc303a774187ef651bf0e90b06",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NormalizedTransportSaving.log",
+      "log_sha256": "a286cb87c32ef44805ce77e2d0a374e4e9b8a3106c1396c78cce6e855fa500c7"
+    },
+    "WeightedQRH.LowReflection.LowExponent": {
+      "source_sha256": "991969e276ff7ff5e4945a5e4259859ffda656167c3812caf02a982d2db4b7b4",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowExponent.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorCollected": {
+      "source_sha256": "67425fbff9956e85046e3a94bf6147141c12c175fd5e9a89073e433631e2313a",
+      "exit_code": 0,
+      "seconds": 11,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorCollected.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowCaps": {
+      "source_sha256": "d00d4fbc3af94f727d986ceacc8bdb1e026af4dee94aa586276ced510393807c",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowCaps.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowBranchSum": {
+      "source_sha256": "e49b27fa27f6b6250668933698c0f8c98b0ac7f2a5ab7e4b436ebfcc06a5bb1e",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowBranchSum.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowGramScale": {
+      "source_sha256": "5d96efcbd0c6fdc1052cdbb3943f0a6320e0bc2f2f4f23660adab310059dc6d0",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowGramScale.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.NonfloorTransport": {
+      "source_sha256": "2507ad03bc2b3649f16d02f1f47558c982e0f76db55e8b92060b4ccc769566e1",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.NonfloorTransport.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowSourceScales": {
+      "source_sha256": "9820318e83b039f06d8f2e0b13b04d887912ed912f7079ca979898ba27adedb4",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowSourceScales.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowSector": {
+      "source_sha256": "5fd9f0ee42e12bf378f802f493a2978f7dfa8269603fc45a1176f9cc77b16e6c",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowSector.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.MixedFullWCollected": {
+      "source_sha256": "47834ee6840bc4a317420e3adcf3a9d88590d3b20a126b800cf5b124a2fc58b3",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.MixedFullWCollected.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowSlotScales": {
+      "source_sha256": "9504f83b553e0bb37ac211949a87db0cabbf0ab7ab4c716bb5fe4e3418275ee4",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowSlotScales.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowRetained": {
+      "source_sha256": "839f20581aa874a3628e620f9827497eb060716d14f91866b4023a4df9153121",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowRetained.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.SourceSZBound": {
+      "source_sha256": "2b10b4e6d6963de839bba4d9005b76d37227392254ae32d0f5f087668b52f0fc",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.SourceSZBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowOriginalPools": {
+      "source_sha256": "6e04a774f5eed412ffafe9d7d7f65a8105c57a4d7d3e1586bbb804a56a8e60f9",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowOriginalPools.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.HighAssembly": {
+      "source_sha256": "22d0f0ef2cec958bf46111619459090a43c39e08872c02373b58450f5c5fcb43",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.HighAssembly.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowNominalGeometry": {
+      "source_sha256": "73b9764b657315a7826e3c8dfa10ed8fd5f6ecb3c55089930dee91e1a7268def",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowNominalGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.FullWBound": {
+      "source_sha256": "3608091de62a50e28f70aadab999e9b0c9dc1b1a466f1dfb35d2266b75182706",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FullWBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceScalar": {
+      "source_sha256": "aa60d3103469f91166614b37afd63b5eef66acc4dcd85c7cc021922b0d4f9813",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceScalar.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowCentralGeometry": {
+      "source_sha256": "b07121fc6207e539749791013803dc57a0ea52ae0fbf712f43bdfec26d2505cc",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowCentralGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowRetainedBudget": {
+      "source_sha256": "997a60d091419d35b383b29b8f5aa1269a1002938d5d8c004d565fb6a34c7029",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowRetainedBudget.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowUnselectedMass": {
+      "source_sha256": "2f986b8dd11d777833b71c8cb5c03b61a872c28c103cb0cd308986aff5498452",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowUnselectedMass.log",
+      "log_sha256": "66ceed6bd3b365862c16b5764ae961ac3b4b42ad369dfaf000a24e2a89c96736"
+    },
+    "WeightedQRH.LowDetector.LowInverseNormalize": {
+      "source_sha256": "bb124e55219e5e101a3fb77f467cebd8780c59d1310cb111f855ec6a92c01248",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowInverseNormalize.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowRemoteMass": {
+      "source_sha256": "bd7c42786b375c4a1553cdc6abcdb59f329253d71555eb62a5c5cc938d039fe3",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowRemoteMass.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.WeightedCellExponent": {
+      "source_sha256": "6c0a7ae94903cc924a00d6ef72ecb7dbea0b8916e3e16908a9115040a68c2fdb",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.WeightedCellExponent.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorFiniteHeight": {
+      "source_sha256": "9be5eae6428e5aad60a8a4765446d4999c5224e3627690013cc6eb99b6936904",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorFiniteHeight.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.Continuation": {
+      "source_sha256": "b0faf515f3d290eb3fdf911a860f0eb470c1bb0f6def4cc3f078a8a2bf9d14bd",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.Continuation.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowFull": {
+      "source_sha256": "2cc0d714d603c5b75dedb13cb1bf39ad74142c075eb9ecc019983500230618a5",
+      "exit_code": 0,
+      "seconds": 9,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowFull.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceMaskedCount": {
+      "source_sha256": "bf86f2ae43adab88f0d687ab233aa5d7738bb0e549299a0593406bc8956e968f",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceMaskedCount.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowFullBudget": {
+      "source_sha256": "68b18df2ff8d6167a30b3da6b9aff71224b6b471d7ed6546b6e42be5c80bb184",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowFullBudget.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowGlobalBudget": {
+      "source_sha256": "0b93d5519a7a2ce58605ab98e44b9a496008e5985d994dadc5c28bbc202d802d",
+      "exit_code": 0,
+      "seconds": 8,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowGlobalBudget.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowMemberBudget": {
+      "source_sha256": "8052d6a78ce0b972bfdab121ea4531796d2f2770861dd2fed0c7554d058c7063",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowMemberBudget.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowMemberGeometry": {
+      "source_sha256": "e969710f1a7b15e63fd6a4c8fb93622576f501684eb8e7f8edc6f29c19faa996",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowMemberGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowFixedMember": {
+      "source_sha256": "83a3ba66c7d554cd528739a8a8951960c0b74d6c278d9a5db01b13f01a79cc06",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowFixedMember.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowDyads": {
+      "source_sha256": "5219c76d10eeff7949ca299a67e8c3cadf88c437a617b5af581c3ab37f7c36a1",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowDyads.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowChoiceEnergy": {
+      "source_sha256": "211be8595a5a229f67809facfea8a591587704512f234c22a67980581f46026f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowChoiceEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowInactiveEnergy": {
+      "source_sha256": "edd72b63dcf0c4d74050a5af9113eed3314052ae47e5df703f2aa977619f3d30",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowInactiveEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowFrozenEnergy": {
+      "source_sha256": "183cab31054da22d6b8e615978866157d23cd39a65203a4968dec7b214646ed3",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowFrozenEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowCompletedFiber": {
+      "source_sha256": "9d6331e673a0618bc1ebd18f156d539e443cc2f5c71f9e562ca407f4892c3dd4",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowCompletedFiber.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowCompletedRows": {
+      "source_sha256": "3b7f080f655eb427bcb105fac5f101b120deccc9f0cd64a947084224799b5026",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowCompletedRows.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowReflection.LowOriginalEnergy": {
+      "source_sha256": "1bb9b199a18a07a8cfc01cd3f10c9243b322d20aec91b4b8eefe655b03ac8211",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowReflection.LowOriginalEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowSelectedBound": {
+      "source_sha256": "4d25c44a72adef1d9556f1781430ddcf996e27b968f8006421e0553ec03a3bf9",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowSelectedBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowNominalEnergy": {
+      "source_sha256": "e6ee9e10404d7c02a3e61f65f203e7396c7e6b3eafb229441465692bbb311554",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowNominalEnergy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowPhysicalInverseBound": {
+      "source_sha256": "03265cc20407ba3da89a47eebf5ee702deaf751fc37c4dadb23b908690445f82",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowPhysicalInverseBound.log",
+      "log_sha256": "28ebab7a66edf36de784d6c982ef93de87a0d1a59bdf974bf96b9bd762850e2f"
+    },
+    "WeightedQRH.LowDetector.LowCentralTuple": {
+      "source_sha256": "723dc8f70be68ddd8d35b547d8c001758c7ebaf59f84118f5103699ed64ba2af",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowCentralTuple.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowGaussianDyad": {
+      "source_sha256": "4c86abeb572a00bc11d40374963d35d8b4ba06611e230eea1f08d4fa01d6965f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowGaussianDyad.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowGaussianRemote": {
+      "source_sha256": "e3199d648d86afced60329f4a37dc2c94be232e84a29b2c97b430689a25a8f7b",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowGaussianRemote.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowGaussianCentral": {
+      "source_sha256": "9135028a3c413ea1ad51e5d2951cc7989ed0d8b1605f12689352083858b671d4",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowGaussianCentral.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowGaussianSum": {
+      "source_sha256": "c424a1867bde15f31ed4b54af16b87243104a6a3d8344b7ad8d349715d378a88",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowGaussianSum.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowCommonBound": {
+      "source_sha256": "5739aab6978c8600dc8fa963fa88dbe004c815f805dd0f6f6d11fe2b38e3384b",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowCommonBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowWindowBound": {
+      "source_sha256": "b97374d819370571f4ce8681a6559392cbb7952579c5071f5772262aba6c358f",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowWindowBound.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.LowDetector.LowNormalized": {
+      "source_sha256": "b71d6d677735e1d17e2cf04179e0e0934900f8aa948c95ff376695438fd92985",
+      "exit_code": 0,
+      "seconds": 3,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.LowDetector.LowNormalized.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.SourceProbe": {
+      "source_sha256": "5024a391bae373a9f84e72a619e22c34b22bfdaa4a80e196c3ba1b7ccf82b7e3",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.SourceProbe.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.FullWCellInput": {
+      "source_sha256": "f4673f8bed797382acb9b0b3c0dc69d95913e14acad90b710c616b966de80ec8",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.FullWCellInput.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceFinish": {
+      "source_sha256": "c8b7e7bf64aa095ebdd787beb6a5ea62549654a8da65c8d94666bf8f9bb7ec34",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceFinish.log",
+      "log_sha256": "33e24d1524dc19f234a518b9914c8dbf7aa72d609b53b76d6a411f1d55e23bd5"
+    },
+    "WeightedQRH.HighRows.FixedHigh": {
+      "source_sha256": "4c1dc3ee0bf7f4f194cca63144a88057fcea8f98b93308dea6463c5311b94785",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.FixedHigh.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceCellGeometry": {
+      "source_sha256": "38f8bc191e38dcb29399240dcf525e7c329746bbfb5d8151daa4aa30d3889f8d",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceCellGeometry.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceLoss": {
+      "source_sha256": "337bf0aa16cd7e1ac6760ea7e96947fafc6d601522323209880075e3e72735f4",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceLoss.log",
+      "log_sha256": "9af67e75b9b4c663c463a4877f909ac5567a79462a4df61dfaa1dbf03b26aae9"
+    },
+    "WeightedQRH.HighRows.ConditionalFinal": {
+      "source_sha256": "e4b2aeb1454cf970d143a2b83d9dd0f63b0c2b9f2118b32e15662d41bc8302b7",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.ConditionalFinal.log",
+      "log_sha256": "b569b93347ab99222c3c30352b974e328b3aad3c3a49859878df9cfffc9651b5"
+    },
+    "WeightedQRH.HighRows.WeightedSourceFinalAssembly": {
+      "source_sha256": "78fed4a17d98a059d0f634f51744ae3a069f149ec24574e47c89d4103e41959e",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceFinalAssembly.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.HighRows.WeightedSourceScalar": {
+      "source_sha256": "3fdba8c6e4aee087644a9d73b8dd3ae4cc7b4a6e96b6d0f0edd2a7abe96a3abf",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceScalar.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceExponent": {
+      "source_sha256": "07b6cd5d2e4813c1f0dffd2d311b43fa3c64568818b54443fb6e7263b6b2ffe7",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceExponent.log",
+      "log_sha256": "7917e004013c3f155459575b1b5a8dc805a9129376e42a9de0119e2505bc9f27"
+    },
+    "WeightedQRH.HighRows.WeightedSourceRawCells": {
+      "source_sha256": "3ee1772ff16a4af8eda9b83c8cd1ef10baecfcdc6e0534ae842d6673eba991f3",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.HighRows.WeightedSourceRawCells.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorActualSourceHelpers": {
+      "source_sha256": "2fd61e7b90265209743bdc640ae6a814f0ecd0155021c2a0ab5c7f69879d1039",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorActualSourceHelpers.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceMask": {
+      "source_sha256": "d6399723a93f2346ad125c26e0c86073df03fec9439b5ca7d60712941bcb4bc0",
+      "exit_code": 0,
+      "seconds": 7,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceMask.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorSourceCollect": {
+      "source_sha256": "db4f4ef2ef8132b130504fd63c3d8d802abe8e9b4315e91d40d63d35ca5627ab",
+      "exit_code": 0,
+      "seconds": 6,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorSourceCollect.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.NumeratorActualSource": {
+      "source_sha256": "03f14a1688d1b458ac918d2267bfa9f559653f782f2d413a79345c60df9ae694",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.NumeratorActualSource.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.Final": {
+      "source_sha256": "4b1722e34bf07a8b36caf90d9bda0c79f85a578e638ab7f08b190a8305bd0c33",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.Final.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.Statements": {
+      "source_sha256": "371bb603fbbfa26c84afce9547b04cc58c54aaf4849a184422b84b2307a33ab9",
+      "exit_code": 0,
+      "seconds": 5,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.Statements.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "WeightedQRH.FinalAxioms": {
+      "source_sha256": "b79e8bb88f1aae73b102019cf07a250eff05683cf0d9838a8dec043fcd7f09d1",
+      "exit_code": 0,
+      "seconds": 4,
+      "log": "/work/qrh-proof/development/.verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log",
+      "log_sha256": "e9788e6c2adbc6919bf4e37afe5cd9fd0b21429896dea3b77c9ac9c874d6eccc"
+    }
+  },
+  "status": "compiled",
+  "failed": [],
+  "changed_modules": [],
+  "finished_utc": "2026-10-10T00:28:17.257990+00:00"
+}

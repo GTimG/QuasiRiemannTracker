@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.WeightedQRHDirichlet",
+  "solution_module": "WeightedQRH.Statements",
+  "theorem_names": [
+    "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
