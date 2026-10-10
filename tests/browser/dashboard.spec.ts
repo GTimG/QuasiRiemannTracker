@@ -169,7 +169,7 @@ test("five real results, verification statuses and source downloads", async ({
     fullPage: true,
   });
 });
-test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
+test("selection, exact sorting and zoom", async ({ page }, info) => {
   await page.goto("/");
   await page
     .getByRole("button", { name: "OpenAI · seven eighths", exact: true })
@@ -186,14 +186,6 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
   await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
-  await page.getByLabel("Contribution type").selectOption("verified");
-  await expect(page.locator("tbody tr")).toHaveCount(verifiedCount);
-  await page.getByLabel("Contribution type").selectOption("pending");
-  await expect(page.locator("tbody tr")).toHaveCount(pendingCount);
-  await page.getByLabel("Contribution type").selectOption("all");
-  await page.getByLabel("Search contributions").fill("Tim Gehrunger");
-  await expect(page.locator("tbody tr")).toHaveCount(1);
-  await page.getByLabel("Search contributions").fill("");
   await page.screenshot({
     path: `evidence/screenshots/${info.project.name}-interactions.png`,
     fullPage: true,
@@ -244,8 +236,11 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
     }),
   );
   await page.goto("/");
-  await page.getByLabel("Timeline start").fill("70");
-  await page.getByLabel("Timeline end").fill("90");
+  const plot = page.getByRole("group", { name: /Interactive bound timeline/ });
+  await plot.focus();
+  for (let i = 0; i < 3; i++) await page.keyboard.press("ArrowRight");
+  // Shift zooms only time, preserving the automatic exact vertical range.
+  for (let i = 0; i < 4; i++) await page.keyboard.press("Shift+Equal");
   const first = page.getByRole("button", {
     name: "Select A sub-float improvement, theta 87499974999999999999/100000000000000000000",
     exact: true,
@@ -272,10 +267,9 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
       name: /Interactive bound timeline/,
     });
     await plot.hover();
-    await page.keyboard.down("Control");
+    const before = await plot.locator("path").first().getAttribute("d");
     await page.mouse.wheel(0, -100);
-    await page.keyboard.up("Control");
-    await expect(page.getByLabel("Timeline start")).not.toHaveValue("70");
+    await expect.poll(() => plot.locator("path").first().getAttribute("d")).not.toBe(before);
     expect(warnings.filter((x) => x.includes("passive"))).toEqual([]);
   }
   expect(

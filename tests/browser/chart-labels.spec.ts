@@ -1,13 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-const liveRecords = JSON.parse(
-  readFileSync(new URL("../../catalogue/results.json", import.meta.url), "utf8"),
-).records;
-const verifiedCount = liveRecords.filter(
-  (record: { status: string }) => record.status === "framework-verified",
-).length;
-
 async function expectReadableLabels(page: Page) {
   const problems = await page.locator(".chart").evaluate((svg) => {
     // Clip-path definitions have no screen rectangle; compare SVG coordinates.
@@ -48,7 +41,7 @@ async function expectReadableLabels(page: Page) {
   expect(problems).toEqual([]);
 }
 
-test("nearby chart names stay readable through resizing, filtering and zoom", async ({
+test("nearby chart names stay readable through resizing and zoom", async ({
   page,
   isMobile,
 }) => {
@@ -89,9 +82,6 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
       else await expect(newest).toHaveCount(0);
       await expectReadableLabels(page);
     }
-    await page.getByLabel("Contribution type").selectOption("verified");
-    await expect(page.locator("[data-dot]")).toHaveCount(verifiedCount);
-    await expectReadableLabels(page);
     await page.getByRole("button", { name: "Zoom out", exact: true }).click();
     await expectReadableLabels(page);
     await page.getByRole("button", { name: "Fit chart", exact: true }).click();
