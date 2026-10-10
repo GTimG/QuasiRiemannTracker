@@ -6,6 +6,15 @@ The catalogue (`catalogue/results.json`) is reviewed metadata, kept separate fro
 
 The complete native Lean snapshot is distributed with hashes, logs and immutable inputs. Build-time hash checking verifies packaging integrity; it does not replay Lean. The separate signed Comparator + NanoDa admission service remains uncommissioned. The policy below still governs that separate admission process, and its requirements are not waived by a catalogue badge.
 
+The weighted-numerator contribution uses the maintainer replay described in
+`verifier/akashlevy/README.md`. Its publication gate requires the isolated
+run's receipt and all 302 submitted package files to match the reviewed pins,
+including all 228 new proof modules and the exact dependency-fork revision.
+Changing a proof and regenerating its public archive/checksums cannot retain
+verified status. The author's unsandboxed report is historical evidence only;
+the contribution's verification time comes from the first successful independent
+run. The catalogue build checks this gate as well as the publication checker.
+
 # Trust model and limits
 
 ## The mathematical boundary

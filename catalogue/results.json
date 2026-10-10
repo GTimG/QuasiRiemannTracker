@@ -370,6 +370,115 @@
       "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
       "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
       "proof_revision": "nielstron-algebraic-20261009"
+    },
+    {
+      "submitted_at": "2026-10-10T03:22:55Z",
+      "published_at": "",
+      "merged_at": "",
+      "pr": 6,
+      "repository": "akashlevy/QuasiRiemannTracker",
+      "source_commit": "ec626ec9c0e7ab7b29f6c916314932caeb4df39a",
+      "first_verified_at": "2026-10-10T13:35:18.422104+00:00",
+      "entrypoint": {
+        "module": "WeightedQRH.Statements",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "openai-baseline"
+      ],
+      "id": "akashlevy-20261009-weighted-numerator",
+      "title": "Akash Levy · weighted numerator",
+      "theta": {
+        "numerator": "10499",
+        "denominator": "12000"
+      },
+      "authors": [
+        {
+          "name": "Akash Levy",
+          "url": "https://github.com/akashlevy"
+        }
+      ],
+      "method": "Replaces the pointwise numerator bound in the cubic-theta probe of OpenAI's argument by a weighted fourth moment of the reflected physical numerator: Mellin inversion and the Hecke functional equation reduce the actual smoothed numerator sum to a plain polynomial of length at most U/Y, and the unused length carries selected prime factors in the original fourth moment, while a coefficient-norm argument controls the original Euler correction and its ramified error terms. The moment parameter stays at the original kappa = 3/4; with ell = 167/1000, theta = 11/12 - ell/4 = 10499/12000, and the finite exponent comparisons are exact rational certificates. Lean 4.34.1 development of 228 modules on the akashlevy/math fork (c388e88e6) of OpenAI/math fd4aeeb, with Mathlib d13f23b7; it proves zeta, all-Dirichlet and finite-order Hecke nonvanishing for Re s > 10499/12000.",
+      "references": [
+        {
+          "label": "Independent maintainer replay receipt",
+          "url": "proofs/akashlevy-20261010-safe-replay/result.json"
+        },
+        {
+          "label": "Independent Comparator and three-kernel acceptance log",
+          "url": "proofs/akashlevy-20261010-safe-replay/logs/judge.log"
+        },
+        {
+          "label": "Sandboxed reproduction instructions",
+          "url": "proofs/akashlevy-20261010-safe-replay/README.txt"
+        },
+        {
+          "label": "Canonical all-Dirichlet contract audit",
+          "url": "proofs/akashlevy-20261010-safe-replay/contract-audit.json"
+        },
+        {
+          "label": "Independent positive and negative checker controls",
+          "url": "proofs/akashlevy-20261010-safe-replay/controls/control-results.json"
+        },
+        {
+          "label": "Historical author-side checker report (unsandboxed macOS)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/result.json"
+        },
+        {
+          "label": "Historical author-side acceptance log (unsandboxed)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/judge.log"
+        },
+        {
+          "label": "Exact checked statements (tracker template at 10499/12000)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/Challenge.lean"
+        },
+        {
+          "label": "Solution wrapper",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/Solution.lean"
+        },
+        {
+          "label": "Comparator configuration",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/comparator.json"
+        },
+        {
+          "label": "Historical author-side checker controls",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/control-results.json"
+        },
+        {
+          "label": "Post-run audit of the challenge definition files against pinned upstream blobs",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/challenge-source-audit.json"
+        },
+        {
+          "label": "Original author README and reproduction notes (historical)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/README.txt"
+        },
+        {
+          "label": "Manuscript (PDF)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/manuscript.pdf"
+        },
+        {
+          "label": "Manuscript (TeX)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/weighted_numerator_proof.tex"
+        },
+        {
+          "label": "Manuscript lemma (TeX, input by the manuscript)",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/weighted_numerator_lemma.tex"
+        },
+        {
+          "label": "Complete Lean source, manuscript source and evidence",
+          "url": "proofs/akashlevy-20261009-weighted-numerator/source-public.tar.gz"
+        },
+        {
+          "label": "Lean base: akashlevy/math fork of OpenAI/math",
+          "url": "https://github.com/akashlevy/math/tree/c388e88e6519d139ad2ca5571ef0c7fbf0e245b5"
+        }
+      ],
+      "status": "framework-verified",
+      "timeline_at": "2026-10-10T13:35:18.422104+00:00",
+      "date_label": "Independent sandboxed verification",
+      "verification_note": "The exact submitted proof was independently rebuilt by the maintainer in a genuine offline Linux sandbox: all 228 new Lean modules and 2,670 modules from the pinned dependency fork were rebuilt. The canonical challenge was exported first from the approved upstream library. Comparator checked all-Dirichlet, zeta and Eisenstein Hecke statements and their definitions at exactly 10499/12000; Lean, NanoDa and con-ron accepted the exports with only propext, Classical.choice and Quot.sound. Isolation tests and matching, mismatched and ill-typed checker controls passed. The receipt was written outside candidate-writable paths and binds the complete source, dependency and tool pins. The timeline records this first independent acceptance, not the discovery date. The original unsandboxed author-side report remains historical evidence. This is a maintainer mechanical replay, not signed registry admission or Palomar registration.",
+      "attribution_note": "Akash Levy (akashlevy) is the human contributor. GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the formalization and submit the result. Builds on the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
     }
   ],
   "historical_records": [

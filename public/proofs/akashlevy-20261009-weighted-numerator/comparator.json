@@ -1,0 +1,24 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "QRHPalomar.allDirichlet",
+    "QRHPalomar.zeta",
+    "QRHPalomar.allHecke"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "external_kernels": {
+    "nanoda": [
+      "/work/qrh-proof/tools/lean-4.35.0-rc2-darwin_aarch64/bin/nanoda_bin"
+    ],
+    "con-ron": [
+      "/work/qrh-proof/tools/lean-4.35.0-rc2-darwin_aarch64/bin/con-ron",
+      "--jobs=2"
+    ]
+  }
+}

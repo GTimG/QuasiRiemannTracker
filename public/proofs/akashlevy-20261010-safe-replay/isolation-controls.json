@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "sandbox": "real bubblewrap, cgroups, seccomp, empty-root allowlist",
+  "controls": [
+    "filesystem",
+    "network",
+    "process namespaces",
+    "environment",
+    "positive acceptance",
+    "statement mismatch",
+    "ill-typed export"
+  ]
+}

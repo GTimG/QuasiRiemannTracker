@@ -1,0 +1,19 @@
+WeightedQRH/NumeratorPhysicalMoment.lean:98:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+WeightedQRH/NumeratorPhysicalMoment.lean:58:44: warning: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+WeightedQRH/NumeratorPhysicalMoment.lean:59:5: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+WeightedQRH/NumeratorPhysicalMoment.lean:60:5: warning: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

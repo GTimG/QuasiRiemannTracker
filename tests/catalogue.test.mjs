@@ -22,9 +22,9 @@ test("the existing contribution selects one current proof revision and preserves
   assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
   assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
 });
-test("all five current results advance the plotted frontier while verification stays separate", () => {
+test("all six current results advance the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
-  assert.equal(d.records.length, 5);
+  assert.equal(d.records.length, 6);
   const verified = d.records.filter(verifiedHere);
   validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
@@ -36,6 +36,7 @@ test("all five current results advance the plotted frontier while verification s
             "openai-baseline",
             "proofcouncil-20261009",
             "nielstron-20261009-tightening",
+            "akashlevy-20261009-weighted-numerator",
           ].includes(r.id) ||
           (EXTERNAL_PINS.entries[r.id] !== undefined &&
             EXTERNAL_PINS.entries[r.id] !== null),
@@ -43,7 +44,7 @@ test("all five current results advance the plotted frontier while verification s
       .map((r) => r.id),
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
-  assert.equal(frontier.length, 5);
+  assert.equal(frontier.length, 6);
   for (let i = 0; i < frontier.length; i++) {
     assert.equal(cmp(frontier[i].theta, d.records[i].theta), 0);
     if (i) assert.equal(cmp(frontier[i].theta, frontier[i - 1].theta), -1);

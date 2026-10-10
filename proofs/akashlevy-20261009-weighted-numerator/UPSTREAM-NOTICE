@@ -1,0 +1,6 @@
+QRH Bounds — new code licensed under Apache-2.0.
+Canonical statement and baseline mathematics: OpenAI math, commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Apache-2.0. Upstream license preserved in verifier/UPSTREAM-LICENSE. The example imports the upstream theorem and makes no claim to authorship of its proof.
+Lean Comparator: Lean FRO, LLC, authors including Henrik Böving, Apache-2.0. Worker fetches pinned source with original notices intact.
+NanoDa: ammkrn/nanoda_lib, Apache-2.0. Worker fetches pinned source with original notices intact.
+Functional inspiration only: Paureel/beyond-n-log-n d8e39034757365b948c8d7e0e18d859a26a98227. No license file found at that revision; no source or assets reused.
+PalomarSubmission: Copyright (c) 2026 Kim Morrison, MIT License. Local proof-checking helpers are imported from pinned commit d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44. License retained in public/proofs/palomar-20261009/PalomarSubmission-LICENSE.txt. These independent checks do not imply Palomar registration or endorsement.
