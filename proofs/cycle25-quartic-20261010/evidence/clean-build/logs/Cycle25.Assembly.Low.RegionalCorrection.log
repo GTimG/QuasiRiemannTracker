@@ -1,0 +1,45 @@
+Cycle25/Assembly/Low/RegionalCorrection.lean:38:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:39:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:48:88: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:55:97: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:58:97: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:74:83: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:40:69: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:56:93: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:57:93: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:38:73: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:39:73: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:48:88: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:55:97: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:58:97: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Cycle25/Assembly/Low/RegionalCorrection.lean:74:83: warning: Unused tactic linter: `linarith` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

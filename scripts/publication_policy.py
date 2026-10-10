@@ -181,6 +181,8 @@ def check_publication(root):
     subprocess.run(['node', str(root / 'scripts/check-external-kernels.mjs')], cwd=root, check=True)
     subprocess.run(['python3', str(root / 'scripts/check-algebraic-publication.py')], check=True)
     subprocess.run(['node', str(root / 'scripts/check-algebraic-kernels.mjs')], check=True)
+    subprocess.run(['python3', str(root / 'scripts/check-cycle25-publication.py')], check=True)
+    subprocess.run(['python3', str(root / 'scripts/check-akashlevy-publication.py')], check=True)
     for directory in [root / 'public/proofs', root / 'evidence']:
         for path in directory.rglob('*'):
             if path.is_symlink():

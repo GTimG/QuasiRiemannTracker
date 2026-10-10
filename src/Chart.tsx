@@ -98,10 +98,12 @@ export default function Chart({
     anchorY = 0.5,
     scaleVertical = true,
   ) => {
-    const span = window[1] - window[0],
-      nextSpan = Math.max(0.0001, span * factor),
-      anchor = window[0] + span * anchorX;
-    setWindow([anchor - nextSpan * anchorX, anchor + nextSpan * (1 - anchorX)]);
+    setWindow((current) => {
+      const span = current[1] - current[0],
+        nextSpan = Math.max(0.0001, span * factor),
+        anchor = current[0] + span * anchorX;
+      return [anchor - nextSpan * anchorX, anchor + nextSpan * (1 - anchorX)];
+    });
     if (scaleVertical)
       setVertical((v) => {
         const scale = Math.max(0.0001, Math.min(1e6, v.scale / factor)),
@@ -123,8 +125,10 @@ export default function Chart({
       event.preventDefault();
       const bounds = element.getBoundingClientRect();
       if (event.deltaX) {
-        const delta = (event.deltaX / width) * (window[1] - window[0]);
-        setWindow([window[0] + delta, window[1] + delta]);
+        setWindow((current) => {
+          const delta = (event.deltaX / width) * (current[1] - current[0]);
+          return [current[0] + delta, current[1] + delta];
+        });
       }
       if (event.deltaY) {
         const unit =
@@ -419,6 +423,7 @@ export default function Chart({
           <g clipPath="url(#plotClip)">
             {allRecords.length > 0 && (
               <path
+                className="verified-frontier"
                 d={path}
                 fill="none"
                 stroke="#1d5d74"
@@ -532,14 +537,8 @@ export default function Chart({
       <div className="chart-bottom">
         <span>
           <i className="legend-line" />
-          Best listed bound
+          Best verified bound
         </span>
-        {allRecords.some((r) => !verifiedHere(r)) && (
-          <span>
-            <i className="legend-dot pending-dot" />
-            Verification pending
-          </span>
-        )}
         <span className="pan-hint">
           <Move size={13} />
           Drag to pan · scroll to zoom

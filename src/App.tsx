@@ -51,17 +51,28 @@ const columns: { key: SortKey; label: string }[] = [
   { key: "title", label: "Contribution" },
   { key: "author", label: "Author" },
   { key: "bound", label: "Exact bound θ" },
-  { key: "date", label: "Publication" },
+  { key: "date", label: "Date" },
 ];
 const theorem = `∀ {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ},\n  (θ < s.re) → ¬ (χ = 1 ∧ s = 1) →\n  DirichletCharacter.LFunction χ s ≠ 0`;
 const proofSolutionUrl = (r: Contribution) => {
+  const explicit = r.references.find((ref) => /\/Solution\.lean$/.test(ref.url));
+  if (explicit) {
+    return explicit.url.startsWith("https://")
+      ? explicit.url
+      : `https://github.com/GTimG/QuasiRiemannTracker/blob/main/public/${explicit.url}`;
+  }
   const statement = r.references.find(
-    (ref) => ref.url.endsWith(".lean") && /statement/i.test(ref.label),
+    (ref) =>
+      ref.url.startsWith("proofs/") &&
+      ref.url.endsWith(".lean") &&
+      /statement/i.test(ref.label),
   );
   if (statement) {
     const solution = statement.url
       .replace(/challenge-src\/Challenge\.lean$/, "solution-src/Solution.lean")
       .replace(/src\/(?:[^/]+\/)?Challenge\.lean$/, "src/Solution.lean");
+    // An unfamiliar layout must never link the challenge template as a proof.
+    if (solution === statement.url) return;
     return `https://github.com/GTimG/QuasiRiemannTracker/blob/main/public/${solution}`;
   }
 };
@@ -296,8 +307,8 @@ export default function App() {
                 <div className="research-main">
                   {tab === "Timeline" && (
                     <Chart
-                      records={records}
-                      allRecords={all}
+                      records={records.filter(verifiedHere)}
+                      allRecords={all.filter(verifiedHere)}
                       events={events}
                       selected={selected}
                       onSelect={(r) => setSelected(r.id)}
@@ -417,13 +428,14 @@ export default function App() {
                                 {boundLabel(r)}
                                 <small>{decimal(r.theta, 14)}</small>
                               </td>
-                              <td data-label="Publication">
+                              <td data-label="Date">
                                 <time
                                   dateTime={contributionDate(r)}
                                   title={timestamp(contributionDate(r))}
                                 >
                                   {date(contributionDate(r))}
                                 </time>
+                                <small>{r.date_label || "First verified"}</small>
                               </td>
                             </tr>
                           ))}
@@ -710,7 +722,7 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
         <p>
           <strong>Verification pending:</strong> the authors report a
           formalization that we have not independently reproduced. These results
-          also contribute to the line.
+          appear in the table, outside the verified chart.
         </p>
         <p>Each result links to its source and available checking logs.</p>
       </article>
@@ -718,7 +730,7 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
         <h2>Dates</h2>
         <p>
           Dates are in UTC and refer to publication, announcement or the first
-          local Lean check. Hover over a publication date for its full
+          local Lean check, as indicated in the table. Hover over a date for its full
           timestamp. Verification dates are recorded separately in the result
           details.
         </p>

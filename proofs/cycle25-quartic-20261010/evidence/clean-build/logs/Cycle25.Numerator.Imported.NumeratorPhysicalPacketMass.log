@@ -1,0 +1,18 @@
+Cycle25/Numerator/Imported/NumeratorPhysicalPacketMass.lean:18:22: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Cycle25/Numerator/Imported/NumeratorPhysicalPacketMass.lean:20:7: warning: Variable name `hdis` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdis
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Cycle25/Numerator/Imported/NumeratorPhysicalPacketMass.lean:21:7: warning: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

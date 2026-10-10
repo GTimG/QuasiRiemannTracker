@@ -1,0 +1,6 @@
+{
+  "baseline": "/srv/qrh/approved-baseline",
+  "checkers": "/srv/qrh/checkers",
+  "evidence": "/srv/qrh/dependency-provenance",
+  "source_bundle": "/srv/qrh/akashlevy-source.zip"
+}

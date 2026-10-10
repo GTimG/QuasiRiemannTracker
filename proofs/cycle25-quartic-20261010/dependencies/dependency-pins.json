@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "toolchain": {
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "commit": "5045d0056413266e57c625dcd7c365b10e377c52"
+  },
+  "packages": [
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "name": "PrimeNumberTheoremAnd",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/abenenson/rellich-kondrachov.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "name": "«rellich-kondrachov»",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "e928b72544873815af278d38681b31c0293588e3",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.34.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "patches": [
+    {
+      "package": "PrimeNumberTheoremAnd",
+      "path": "patches/PrimeNumberTheoremAnd-lean4341-minimal.patch",
+      "sha256": "e6e3e2931a6fc4d3e99f7217756ce6ba8aaa5467a59bd11078c85550c9e7ff33"
+    },
+    {
+      "package": "rellich-kondrachov",
+      "path": "patches/rellich-kondrachov-lean4341.patch",
+      "sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8"
+    }
+  ],
+  "removed_configuration_dependencies": [
+    "LeanArchitect",
+    "PrimeCert",
+    "checkdecls",
+    "leancert"
+  ],
+  "configuration_note": "The 11-package lock retains Mathlib configuration dependencies, including Cli through importGraph. Only unused PNT tooling is removed; used Lean source bytes are unchanged.",
+  "omitted_archive_symlinks": {
+    "mathlib": [
+      "scripts/bench/build/fake-root/bin/lean.py",
+      "scripts/bench/size/run.py"
+    ],
+    "batteries": [
+      "docs/README.md"
+    ]
+  }
+}

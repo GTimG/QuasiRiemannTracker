@@ -1,0 +1,22 @@
+{
+  "challenge_module": "PalomarPreflightChallenge",
+  "definition_names": [],
+  "external_kernels": {
+    "con-ron": [
+      "<VERIFICATION_TOOLS>/tools/lean-4.35.0-rc2-linux/bin/con-ron",
+      "--jobs=2"
+    ],
+    "nanoda": [
+      "<VERIFICATION_TOOLS>/tools/lean-4.35.0-rc2-linux/bin/nanoda_bin"
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "solution_module": "PalomarPreflightSolution",
+  "theorem_names": [
+    "palomar_preflight"
+  ]
+}

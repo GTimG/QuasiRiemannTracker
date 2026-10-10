@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "cycle25-quartic-20261010",
+  "status": "verification-pending",
+  "snapshot_exports": {
+    "README.md": "README.md",
+    "REPRODUCE.md": "REPRODUCE.md",
+    "Verification.md": "Verification.md",
+    "PROVENANCE.md": "PROVENANCE.md",
+    "paper.tex": "manuscript/paper.tex",
+    "paper.md": "manuscript/paper.md",
+    "result.json": "evidence/multi-kernel/result.json",
+    "control-results.json": "evidence/multi-kernel/control-results.json",
+    "Challenge.lean": "evidence/multi-kernel/Challenge.lean",
+    "judge.log": "evidence/multi-kernel/judge.log",
+    "tool-pins.json": "evidence/multi-kernel/tool-pins.json",
+    "source-size.json": "evidence/source-size.json"
+  },
+  "files": {
+    "Challenge.lean": "6710026e0aa4f9d832fb96d8854d7a32aab51f21c170920649bced7094b6c4a1",
+    "PROVENANCE.md": "d58b4473cd6e3dbdf848741b67874f887bc89b0510b65c02bb6062a7383d127b",
+    "README.md": "0736cf9291a64e937fe77d77ce88d8a78ab7728c599fd927937971a826418211",
+    "REPRODUCE.md": "bed98b06c5b61c02be529c2a6e4dc6e9b7982267aa4b53f3316b305c967bdb5c",
+    "SHA256SUMS.txt": "c83f45f5a02178daaaf6683aab1c70d68f442347829c5263fd483e999eb2849a",
+    "Verification.md": "c81744676754069dbb06756f0ce361e490f8b076cd04bceb8f16212b1f21f50f",
+    "control-results.json": "7f6d3a0c51965ee1a2505651efae733ebe1feaf45644acccabdafd7b91096600",
+    "judge.log": "a4dfd27f1a00199e14053580a3160a7d14fa6d8270d0b86ec082747b110d0a60",
+    "paper.md": "2b4c67c3e817d7854ee57e451cea1789c8a4a1d03a72ddb83b980421167096d8",
+    "paper.pdf": "1cc922ebabd00d26fc7bfebbb8ff45739c3e2461f02847260622a4060b94f411",
+    "paper.tex": "75f6c1f71cbeca47f3c16e248d2c01694362d1a906ae844a22e7c6620b8f28a1",
+    "result.json": "9f5545f73fb30f11050fc2a3de7231567bb490bc26c40f1f93a872af64088f0b",
+    "source-public.tar.gz": "23171d67353bc555b48be2e4a77ff7cbcd559489fdf03ba665b9dae637ea1ef5",
+    "source-sha256.json": "b5a5c8786d8bc780f08b187fb703aafbdd4bbecb58dc35bdf4f3af8c05f9def5",
+    "source-size.json": "abf2d1fa7d449bd40630d4a1d3c09fe285f2c8a840ee883dd8cf64dfb3d0dfd8",
+    "tool-pins.json": "87e0b69faed052c01ed9ce9cc580f1effc1dff1dbbbc1c36fddc608802575c9e"
+  },
+  "paper_sha256": "1cc922ebabd00d26fc7bfebbb8ff45739c3e2461f02847260622a4060b94f411",
+  "scope": "Contributor Comparator and three-kernel evidence; maintainer review requested; no signed registry admission."
+}

@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-10-10T13:35:18.422104+00:00",
+  "pull_request": "https://github.com/GTimG/QuasiRiemannTracker/pull/6",
+  "reviewed_pr_head": "2fd60c0926b66ea18d7436f5ed55250fd006ab5d",
+  "proof_source_commit": "ec626ec9c0e7ab7b29f6c916314932caeb4df39a",
+  "worker_receipt_sha256": "487e7118c8b7479d8711e03e039e4446abceadfa84f520525b515bd271a9ff82",
+  "driver_sha256": "5d57155d82ea5e26c5b537adf7f4a84bf9c0ced9ae3873428210241b4baf21c4",
+  "pins_sha256": "52c8337c39742b1817b97f94b02025b55a37c477e15ee5f070ce62320c4f7511",
+  "theta_exact": "10499/12000",
+  "targets": [
+    "QRHBoundsPR6.allDirichlet",
+    "QRHBoundsPR6.zeta",
+    "QRHBoundsPR6.allHecke"
+  ],
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "candidate_modules_rebuilt": 2898,
+  "submission_modules": 228,
+  "dependency_fork_modules": 2670,
+  "approved_dependency_modules": 7026,
+  "extra_official_cache_modules": 4807,
+  "trusted_challenge_exported_before_candidate": true,
+  "isolation_preflight": "PASS",
+  "candidate_mount_preflight": "PASS",
+  "canonical_contract_audit": "PASS; contract-audit.json",
+  "evidence_transport": "Authenticated SSH; all artifacts checked against the outside-sandbox receipt",
+  "limitations": [
+    "Reuses a separately approved source-built canonical library; not a cache-free bootstrap.",
+    "Extra candidate dependencies fetched from pinned official cache and kernel-replayed; they never supply canonical definitions.",
+    "This is a local maintainer replay, not a production submission service or signed publication receipt."
+  ]
+}

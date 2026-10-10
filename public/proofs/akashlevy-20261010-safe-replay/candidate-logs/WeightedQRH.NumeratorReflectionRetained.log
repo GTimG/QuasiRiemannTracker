@@ -1,0 +1,5 @@
+WeightedQRH/NumeratorReflectionRetained.lean:93:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+WeightedQRH/NumeratorReflectionRetained.lean:95:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+WeightedQRH/NumeratorReflectionRetained.lean:95:20: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+WeightedQRH/NumeratorReflectionRetained.lean:98:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+WeightedQRH/NumeratorReflectionRetained.lean:101:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

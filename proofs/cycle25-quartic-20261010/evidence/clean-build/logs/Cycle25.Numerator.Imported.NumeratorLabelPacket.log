@@ -1,0 +1,30 @@
+Cycle25/Numerator/Imported/NumeratorLabelPacket.lean:18:0: warning: automatically included section variable(s) unused in theorem `Cycle25.Weighted.Numerator.labelSupported`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Cycle25/Numerator/Imported/NumeratorLabelPacket.lean:51:0: warning: automatically included section variable(s) unused in theorem `Cycle25.Weighted.Numerator.labelPacketScale_one_le`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Cycle25/Numerator/Imported/NumeratorLabelPacket.lean:58:22: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Cycle25/Numerator/Imported/NumeratorLabelPacket.lean:60:7: warning: Variable name `hdis` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdis
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Cycle25/Numerator/Imported/NumeratorLabelPacket.lean:61:7: warning: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

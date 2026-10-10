@@ -1,0 +1,11 @@
+{
+  "replay_profile": "akashlevy-weighted-v1",
+  "directory": "public/proofs/akashlevy-20261010-safe-replay",
+  "collection_sha256": "412feb8267bd757ac9fd6a556536e48d8163d1652823e2652146019b5e0a497c",
+  "receipt_sha256": "487e7118c8b7479d8711e03e039e4446abceadfa84f520525b515bd271a9ff82",
+  "theta_exact": "10499/12000",
+  "source_content_sha256": "4dfba7c6594b411d3c1681d36487f8649c1565ff45b649f91ec9172b18ada612",
+  "driver_sha256": "5d57155d82ea5e26c5b537adf7f4a84bf9c0ced9ae3873428210241b4baf21c4",
+  "pins_sha256": "52c8337c39742b1817b97f94b02025b55a37c477e15ee5f070ce62320c4f7511",
+  "challenge_sha256": "4cfd82ee08988e729c8611039fb5b80b4eb200d260f15e974c9990903182b591"
+}

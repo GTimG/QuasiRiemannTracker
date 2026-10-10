@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "completed_utc": "2026-10-10T11:46:15.865529+00:00",
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "checks": [
+    {
+      "check": "Python syntax",
+      "passed": true
+    },
+    {
+      "check": "Idempotent offline preparation from pristine pinned Git archives; all 11 packages, all needed source/config hashes",
+      "passed": true
+    },
+    {
+      "check": "Exact frozen 3224-module source inventory",
+      "passed": true
+    },
+    {
+      "check": "Frozen source corruption rejected",
+      "passed": true
+    },
+    {
+      "check": "Dependency source corruption rejected",
+      "passed": true
+    },
+    {
+      "check": "Archive traversal rejected",
+      "passed": true
+    },
+    {
+      "check": "Archive symlink rejected",
+      "passed": true
+    },
+    {
+      "check": "Offline Lake path-lock/configuration loading (lake env lean --version)",
+      "passed": true
+    }
+  ],
+  "compatibility_module_rebuild": {
+    "passed": true,
+    "scope": "All 4 needed PNT modules and all 15 modified Rellich modules rebuilt from pruned archive sources, reusing pinned third-party libraries only. No original PNT or Rellich libraries on LEAN_PATH.",
+    "outcomes": [
+      {
+        "module": "PrimeNumberTheoremAnd.SmoothExistence",
+        "returncode": 0,
+        "seconds": 1.726
+      },
+      {
+        "module": "PrimeNumberTheoremAnd.Sobolev",
+        "returncode": 0,
+        "seconds": 4.177
+      },
+      {
+        "module": "PrimeNumberTheoremAnd.Fourier",
+        "returncode": 0,
+        "seconds": 2.011
+      },
+      {
+        "module": "PrimeNumberTheoremAnd.Wiener",
+        "returncode": 0,
+        "seconds": 19.486
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.H1",
+        "returncode": 0,
+        "seconds": 3.292
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Kernels",
+        "returncode": 0,
+        "seconds": 1.779
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Translation",
+        "returncode": 0,
+        "seconds": 2.01
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimate",
+        "returncode": 0,
+        "seconds": 2.149
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateL2",
+        "returncode": 0,
+        "seconds": 2.921
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateH1",
+        "returncode": 0,
+        "seconds": 2.374
+      },
+      {
+        "module": "RellichKondrachov.MeasureTheory.Function.LpSpace.Restrict",
+        "returncode": 0,
+        "seconds": 2.265
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Smoothing",
+        "returncode": 0,
+        "seconds": 2.543
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Approximation",
+        "returncode": 0,
+        "seconds": 4.776
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Compactness",
+        "returncode": 0,
+        "seconds": 1.887
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.ArzelaAscoli",
+        "returncode": 0,
+        "seconds": 4.038
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Transfer",
+        "returncode": 0,
+        "seconds": 3.552
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.FrechetKolmogorov",
+        "returncode": 0,
+        "seconds": 2.449
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.TranslationIntegral",
+        "returncode": 0,
+        "seconds": 2.334
+      },
+      {
+        "module": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Rellich",
+        "returncode": 0,
+        "seconds": 5.608
+      }
+    ]
+  },
+  "scope_limitations": [
+    "Full 3224-module portable source-only rebuild not rerun.",
+    "Earlier clean-001 compiled 301 modules and reused 2923 pinned OAI libraries.",
+    "Source identity and compatibility rebuild do not replace the separate contributor three-kernel evidence.",
+    "Cache service and online archive download not exercised; exact offline Git archives were used."
+  ],
+  "publication_files": [
+    {
+      "path": "dependencies/NOTICE.md",
+      "sha256": "44151e9c769f04ef2495183d9d0a0faf366a39cabba600ef7bd636030af8980b",
+      "bytes": 1601
+    },
+    {
+      "path": "dependencies/compatibility-evidence.json",
+      "sha256": "3a36a5c3c431b335db79c66ff3fc59803f4e6334a836e0231674f5f7bb2f6ffd",
+      "bytes": 3301
+    },
+    {
+      "path": "dependencies/dependency-pins.json",
+      "sha256": "8709d2816c837b6d151595660864c0300a71871144235bf08a47eb17ab41106b",
+      "bytes": 5318
+    },
+    {
+      "path": "dependencies/licenses/PrimeNumberTheoremAnd-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "dependencies/licenses/rellich-kondrachov-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "path": "dependencies/needed-package-sources.json",
+      "sha256": "0c45ef79d5bb8af0fcf69b8626ad31966d69e42fc04980dc64daa364da4ac947",
+      "bytes": 3053547
+    },
+    {
+      "path": "dependencies/patches/PrimeNumberTheoremAnd-lean4341-minimal.patch",
+      "sha256": "e6e3e2931a6fc4d3e99f7217756ce6ba8aaa5467a59bd11078c85550c9e7ff33",
+      "bytes": 257736
+    },
+    {
+      "path": "dependencies/patches/rellich-kondrachov-lean4341.patch",
+      "sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+      "bytes": 147331
+    },
+    {
+      "path": "reproduce/README.md",
+      "sha256": "a9e102dd3040faf39bffc138d2f8b3f1c9830cbbfbf7dc25ec158ca4885d4165",
+      "bytes": 4416
+    },
+    {
+      "path": "reproduce/bootstrap_dependencies.py",
+      "sha256": "2634f9c9d590069aed1dae0ec0d15818dadc0f1d5aec1b3d5152251a7a6d7cb8",
+      "bytes": 6473
+    },
+    {
+      "path": "reproduce/frozen-source-inventory.json",
+      "sha256": "1baca5ae4985262fda4c8220ff7af1a00b6ee1699137fcbf9a95012d575cb94b",
+      "bytes": 1410270
+    },
+    {
+      "path": "reproduce/lake-manifest.json",
+      "sha256": "a575d80b910e68e17007f13b79dd44bb5802c5d10f8d8a181d4c8e0a69b578d9",
+      "bytes": 2832
+    },
+    {
+      "path": "reproduce/lakefile.lean",
+      "sha256": "f0c51468711e0910057b53a91c5811826371fdc266a91f22b5951fd3011c6226",
+      "bytes": 427
+    },
+    {
+      "path": "reproduce/lean-toolchain",
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "bytes": 25
+    },
+    {
+      "path": "reproduce/verify_source.py",
+      "sha256": "ad2440c1d401f0da1a2d4745c558ecb72bb20cd850b8b75ff9eb39ef9cf6f564",
+      "bytes": 2309
+    }
+  ]
+}

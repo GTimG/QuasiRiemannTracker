@@ -1,0 +1,6 @@
+Cycle25.Numerator.actual_raw_fullW_input: 103741 constants; axioms = [propext,
+ Classical.choice,
+ Quot.sound]; denied = []; missing = []
+Cycle25.Numerator.actual_fullW_input: 103969 constants; axioms = [propext,
+ Classical.choice,
+ Quot.sound]; denied = []; missing = []

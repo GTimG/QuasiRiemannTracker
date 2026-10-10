@@ -1,0 +1,6 @@
+Source scan of formalization/ (comments stripped; Lean keywords that could bypass or extend the kernel)
+files scanned: 231 (WeightedQRH: 228 , ComparatorChallenges: 3 )
+pattern: \b(sorry|admit|axiom|unsafe|implemented_by|extern|skipKernelTC|native_decide|ofReduceBool|trustCompiler|run_cmd|run_elab|run_meta|addDecl|elab|macro_rules|macro|syntax|opaque|partial|csimp|initialize|#eval)\b
+hits outside ComparatorChallenges: []
+hits in ComparatorChallenges (expected: the challenge statements are `sorry` by design): ['ComparatorChallenges/WeightedQRHDirichlet.lean:12: sorry', 'ComparatorChallenges/WeightedQRHHecke.lean:239: sorry', 'ComparatorChallenges/WeightedQRHZeta.lean:7: sorry']
+set_option names and counts: {'maxHeartbeats': 37, 'maxRecDepth': 2}

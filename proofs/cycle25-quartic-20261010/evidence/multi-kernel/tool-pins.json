@@ -1,0 +1,32 @@
+{
+  "source_compiler": "4.34.1",
+  "source_compiler_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
+  "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "palomar_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "checker_toolchain": "4.35.0-rc2",
+  "checker_release_sha256": "b67d0e0ba959fc74e186f1b44aebca32d6ecb6a28f8e9a029fc4e9f73398a049",
+  "checker_release_bytes": 595391556,
+  "reference_repository_commit": "40844a7614b67840801e65b836b3da2e1f7ff029",
+  "binaries": {
+    "lake": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+    "lean": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+    "leanexport": "c5bc1a10a21e22cbb3671d65987cdef2076833b14182d823ccb2153adf2fa954",
+    "leanchecker": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29",
+    "nanoda_bin": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
+    "con-ron": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef",
+    "bwrap": "e318903862396f96de3df57264e0158682b952fd3fb53ac23d876413e7b30f71"
+  },
+  "proof_exporter_sha256": "8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1",
+  "proof_compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "runner_sha256": "8b067f5c7e0f1a772d8552bd04db1ac7a377098ad2320b5db2805ba09f06725b",
+  "palomar_helper_sha256": "c575759d82c506f181b3736a110950fd32931c08a1be454262027d6205f178a2",
+  "native_judge_sha256": "568069401d12e8860c4ce4aec1fdb4e45c217c33f075864a5e98b41f7e4251fe",
+  "judge_mode": "official Comparator built-in kernel sandboxes and cgroup-supervised parent",
+  "resource_properties": [
+    "MemoryHigh=28G",
+    "MemoryMax=32G",
+    "MemorySwapMax=1G",
+    "CPUQuota=400%"
+  ],
+  "build_report_sha256": "d51589a9feaa838b2ac77f91135eba6b3de73653e6bebcfae4f249d0452728c1"
+}

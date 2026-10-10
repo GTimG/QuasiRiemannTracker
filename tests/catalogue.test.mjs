@@ -19,12 +19,18 @@ test("the existing contribution selects one current proof revision and preserves
   assert.equal(current[0].id, "nielstron-20261009-tightening");
   assert.equal(current[0].proof_revision, "nielstron-algebraic-20261009");
   assert.equal(d.historical_records.length, 1);
-  assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
-  assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+  assert.equal(
+    d.historical_records[0].theta.numerator,
+    "874957019420098946128604623",
+  );
+  assert.equal(
+    d.historical_records[0].source_commit,
+    "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6",
+  );
 });
-test("all five current results advance the plotted frontier while verification stays separate", () => {
+test("the plotted frontier retains the strongest bound while verification stays separate", () => {
   const d = validateCatalogue(data());
-  assert.equal(d.records.length, 5);
+  assert.equal(d.records.length, 7);
   const verified = d.records.filter(verifiedHere);
   validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
@@ -36,6 +42,8 @@ test("all five current results advance the plotted frontier while verification s
             "openai-baseline",
             "proofcouncil-20261009",
             "nielstron-20261009-tightening",
+            "akashlevy-20261009-weighted-numerator",
+            "cycle25-quartic-20261010",
           ].includes(r.id) ||
           (EXTERNAL_PINS.entries[r.id] !== undefined &&
             EXTERNAL_PINS.entries[r.id] !== null),
@@ -43,11 +51,15 @@ test("all five current results advance the plotted frontier while verification s
       .map((r) => r.id),
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
-  assert.equal(frontier.length, 5);
+  assert.equal(frontier.length, 7);
   for (let i = 0; i < frontier.length; i++) {
-    assert.equal(cmp(frontier[i].theta, d.records[i].theta), 0);
-    if (i) assert.equal(cmp(frontier[i].theta, frontier[i - 1].theta), -1);
+    assert.ok(cmp(frontier[i].theta, d.records[i].theta) <= 0);
+    if (i) assert.ok(cmp(frontier[i].theta, frontier[i - 1].theta) <= 0);
   }
+  const strongest = d.records.reduce((best, r) =>
+    cmp(r.theta, best.theta) < 0 ? r : best,
+  );
+  assert.equal(cmp(frontier.at(-1).theta, strongest.theta), 0);
   assert.ok(
     d.records
       .filter((r) => !verifiedHere(r))
@@ -61,6 +73,32 @@ test("Liu's algebraic threshold is enclosed exactly; a truncated decimal is reje
   liu.theta = { numerator: "874957069799", denominator: "1000000000000" };
   liu.bound_interval.upper = liu.theta;
   assert.throws(() => validateCatalogue(d), /enclosure/);
+});
+test("Cycle25 advances the boundary only after independent maintainer verification", () => {
+  const d = validateCatalogue(data());
+  const cycle = d.records.find((r) => r.id === "cycle25-quartic-20261010");
+  assert.deepEqual(cycle.theta, {
+    numerator: "683505193",
+    denominator: "781250000",
+  });
+  assert.equal(cycle.status, "framework-verified");
+  assert.equal(cycle.first_verified_at, "2026-10-10T16:09:09.733191+00:00");
+  assert.equal(verifiedHere(cycle), true);
+  assert.deepEqual(cycle.builds_on, [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+  ]);
+  assert.equal(
+    cycle.entrypoint.declaration,
+    "Cycle25.dirichlet_nonzero_catalogue",
+  );
+  const frontier = frontierHistory(timelineRecords(d.records), []);
+  assert.equal(cmp(frontier.at(-1).theta, cycle.theta), 0);
+  assert.equal(d.records.filter(verifiedHere).length, 7);
+  assert.ok(cycle.references.some((r) => r.url.endsWith("/paper.pdf")));
+  assert.ok(
+    cycle.references.some((r) => r.url.endsWith("/source-public.tar.gz")),
+  );
 });
 test("catalogue cannot fabricate signed admission or local verification dates for pending results", () => {
   const d = data();
