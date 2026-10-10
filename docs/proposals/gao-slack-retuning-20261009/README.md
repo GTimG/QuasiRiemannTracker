@@ -1,6 +1,6 @@
 # A numerical slack retuning for review
 
-This draft records an endpoint candidate, not an established stronger strip. Follow-up review found that several analytic declarations are frozen at the old geometry and require source re-instantiation and validation. The exact rational candidate is
+This draft records an endpoint candidate, not an established stronger strip. Its complete retuned source is prepared and manual branch contracts have been reviewed; full proof verification remains pending. The exact rational candidate is
 
 \[
 \theta=\frac{437478509710049473064301925667}
@@ -21,6 +21,8 @@ it adds no new arithmetic estimate.
 - [certificate.py](certificate.py) and [certificate.json](certificate.json):
   exact rational continuous endpoint and loss-budget checks.
 - [PROVENANCE.json](PROVENANCE.json): attribution, source pins and scope.
+- [SOURCE_REVIEW.md](SOURCE_REVIEW.md): new-instance branch gates, fresh
+  source exclusions and the remaining verification obligations.
 
 With Python 3.10 or later, run from this directory:
 
@@ -32,6 +34,8 @@ The certificate checks the full endpoint rectangle with a square
 identity and two Bernstein patches. It also checks the replacement
 recovery budgets and rejects keeping the previous fixed budgets.
 It does **not** establish the analytic inequalities.
+Its 34 exact checks include the low physical-scale and principal
+contour conditions found during the source review.
 
 ## Source re-instantiation
 

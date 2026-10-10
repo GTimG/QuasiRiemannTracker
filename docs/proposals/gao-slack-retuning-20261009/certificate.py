@@ -114,8 +114,22 @@ def exact_certificate():
         "transport_geometry": ly/2-Q(13, 75)*h-Q(1, 50) >= Q(7, 100),
         "principal_exponent_nonnegative": THETA+lx/2-1+h/6 >= 0,
         "transport_height_gate": h+ZETA+TCAP <= Q(7, 8),
+        # Geometry assumptions used by the full low/principal proof sources,
+        # rather than only by the endpoint polynomial.
+        "strict_principal_region": THETA > Q(87, 100),
+        "ly_principal_lower": ly >= Q(2, 5),
+        "ly_low_upper": ly < 1,
+        "low_remote_scale_gap": lx-ell > 0,
+        "low_gram_admissible_gap": 2*lx-ly-ell > 0,
+        "ordered_physical_lengths": ly >= lx,
+        "slot_mass_identity": (1-ell)+ell == 1,
+        "low_gram_identity": lx+b/6 == 2*(THETA+lx/2-1+h/6),
+        "strict_normalized_exponent": THETA+lx/2-1+h/6 > 0,
+        "certificate_denominator_signs": 3*ell-5 < 0 < 3*ell+1 and 114*ell**2-159*ell-7 < 0,
+        "principal_w_reserve": ly/20-(1+h)/1000-Q(1, 3000) > 0,
+        "principal_z_reserve": h/600-Q(1, 1000)-Q(1, 3000) > 0,
     }
-    assert len(checks) == 22 and all(checks.values()), checks
+    assert len(checks) == 34 and all(checks.values()), checks
     expense = 19*TCAP+2*ZETA
     assert FMARGIN*Q(2, 5) == EMARGIN and expense < CENTRAL < EMARGIN
     assert Q(18)+Q(185, 2000) < 19 and 0 < ZETA <= Q(1, 48)

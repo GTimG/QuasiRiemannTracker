@@ -1,6 +1,6 @@
 # Candidate slack retuning of the tracker boundary
 
-Date: 2026-10-09. Status: **endpoint and recovery budgets checked; complete source re-instantiation and validation pending**. No Lean or kernel replay, tracker admission, or priority claim is attached to this note.
+Date: 2026-10-09; source review updated 2026-10-10. Status: **full candidate source prepared and branch contracts reviewed; complete validation pending**. No Lean or kernel replay or priority claim. The unverified proposal is [PR #7](https://github.com/GTimG/QuasiRiemannTracker/pull/7).
 
 ## Proposition and inputs
 
@@ -108,7 +108,9 @@ For a future formal replay, nine numerical consumer files must receive the new b
 | Principal signal recovery | [actual_ray_principal_comparison][comparison]: exact excluded-character signal, residue constant and \(C(0)\); its \((87/100)\ell_{\min}\) error is retained |
 | Signal identity and continuation | [signalMellin_eq_amplitude][signal] and the proof in [nonzero_of_probe_bounds][continuation]: genuine reciprocal L-signal, Gaussian multiplier, regularizer and principal pole exception |
 
-The frozen count, low, principal and transport chains all need re-instantiation, not just the nine numerical consumer files. Their old source snapshots remain immutable. In the new cohort, changing the working geometry also changes the meaning of dependent alias-based declarations even where their text is unchanged; new explicit-literal targets are required. The original L-functions, character quantifiers and pole predicates must remain source-identical.
+The frozen count, low, principal and transport chains require whole-cohort re-instantiation, not just the nine numerical consumer files. The [prepared source packet](README.md) now does this without changing the published snapshots. In the new cohort, changing the working geometry also changes the meaning of dependent alias-based declarations even where their text is unchanged; new explicit-literal targets are supplied. The original L-functions, character quantifiers and pole predicates remain source-identical.
+
+The [manual source review](SOURCE_REVIEW.md) found no violated listed gate in the low, actual moment/count/cube, principal, transport and continuation branches. It explicitly checks the extra low-scale and principal contour conditions. `SourceData D` must be reconstructed for the new positive `e`, including `FirstTail(4e)`; the incumbent's concrete exclusion set cannot be reused automatically. The existing constructor supplies such data before characters and the large base. This is source-contract review, not complete elaboration or independent proof verification.
 
 Here \(\beta\) is the original supremum of nontrivial Hecke-zero real parts, not a new zero bound assumed as input. Under \(\beta>\theta_*\), \(\beta\ge51/100\) automatically and \(\Delta\le(1-\kappa_0)/2\). Set the moment's dynamic \(\kappa=\kappa_0+2\Delta=2\beta-1\). Its uniform mesh is independent of \(\kappa\) and of the finite coefficient index type. Degrees and fixed data precede characters/tails as required; constants may depend on the fixed character modulus as in the original estimates.
 
@@ -124,7 +126,7 @@ The full finite-order Hecke family is retained, including imprimitive characters
 
 ## What is and is not established
 
-The 22 exact arithmetic checks cover this rational geometry, continuous polynomial representation and fixed reserves. They do not certify analytic inequalities. Earlier internal review checked numerical retuning and proposed assembly contracts, but did not re-establish all frozen analytic APIs for the new geometry. Follow-up source review identified that gap. A copied full proof-source cohort is now being prepared; no new geometry instance has been typechecked or kernel-replayed, and the complete theorem remains unproved here. This is numerical slack recovery, with no new arithmetic estimate, independent verification, or priority determination.
+The 34 exact arithmetic checks cover this rational geometry, continuous polynomial representation, fixed reserves and the newly inspected low/principal gates. They do not certify analytic inequalities. Earlier review missed the frozen-API transfer obligation; the complete source cohort is now prepared, and the branch contracts have been inspected under its new geometry. No new geometry instance has been typechecked or kernel-replayed; the complete theorem remains unverified here. This is numerical slack recovery, with no new arithmetic estimate, independent verification, or priority determination.
 
 The [endpoint obstruction][barrier] for this particular model remains: \(657\ell^3-954\ell^2+21\ell+20=0\) gives the limiting boundary
 \(0.8749570194200989461286038505614529823071518741876328\ldots\). The tracker is only \(7.72438547\ldots\times10^{-25}\) above it. This is not a barrier for other proofs; a meaningful next improvement must change an analytic estimate or the probe architecture.
