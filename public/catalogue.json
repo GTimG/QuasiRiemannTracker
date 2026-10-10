@@ -370,6 +370,86 @@
       "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
       "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
       "proof_revision": "nielstron-algebraic-20261009"
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "HaileyStorm/QuasiRiemannTracker",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "Cycle25.Assembly.Final.Endpoint",
+        "declaration": "Cycle25.dirichlet_nonzero_catalogue"
+      },
+      "license": "Apache-2.0 (retained upstream notices)",
+      "builds_on": [
+        "openai-baseline"
+      ],
+      "id": "cycle25-quartic-20261010",
+      "title": "Hailey Collet · quartic boundary",
+      "theta": {
+        "numerator": "683505193",
+        "denominator": "781250000"
+      },
+      "authors": [
+        {
+          "name": "Hailey Collet"
+        }
+      ],
+      "method": "The exact boundary is 11/12−ℓ/4, where ℓ is the unique root in [1/6,1/5] of 927ℓ⁴−3135ℓ³+2433ℓ²+275ℓ−100=0. The plotted rational 683505193/781250000 is a proved upper bound less than 4×10⁻¹⁴ above it. The proof extends the unconditional common-mesh moving-radical moment and applies weighted low/high estimates and analytic continuation to Dirichlet, zeta and finite-order Eisenstein Hecke L-functions.",
+      "references": [
+        {
+          "label": "Paper (PDF)",
+          "url": "proofs/cycle25-quartic-20261010/paper.pdf"
+        },
+        {
+          "label": "Paper source (TeX)",
+          "url": "proofs/cycle25-quartic-20261010/paper.tex"
+        },
+        {
+          "label": "Contributor seven-target three-kernel report",
+          "url": "proofs/cycle25-quartic-20261010/result.json"
+        },
+        {
+          "label": "Exact checked statements",
+          "url": "proofs/cycle25-quartic-20261010/Challenge.lean"
+        },
+        {
+          "label": "All three kernel acceptances",
+          "url": "proofs/cycle25-quartic-20261010/judge.log"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/cycle25-quartic-20261010/control-results.json"
+        },
+        {
+          "label": "Reproduction and dependency pins",
+          "url": "proofs/cycle25-quartic-20261010/REPRODUCE.md"
+        },
+        {
+          "label": "Scope and verification details",
+          "url": "proofs/cycle25-quartic-20261010/Verification.md"
+        },
+        {
+          "label": "Finished proof source and evidence",
+          "url": "proofs/cycle25-quartic-20261010/source-public.tar.gz"
+        },
+        {
+          "label": "Source checksums",
+          "url": "proofs/cycle25-quartic-20261010/source-sha256.json"
+        },
+        {
+          "label": "Attribution and provenance",
+          "url": "proofs/cycle25-quartic-20261010/PROVENANCE.md"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-10T11:43:39.567644+00:00",
+      "date_label": "Contributor three-kernel verification",
+      "verification_note": "All three official kernels—Lean, NanoDa and con-ron—passed the contributor run. Comparator checked seven exact roots and their definitions: three rational bounds, three exact quartic bounds, and the unconditional moving-radical moment. Positive and negative controls passed; only propext, Classical.choice and Quot.sound were permitted. We request acceptance as verified in the framework after maintainer review of the pinned source and evidence. The entry remains pending that review; this is not a maintainer replay, Palomar registration or signed registry admission.",
+      "attribution_note": "Human contributor: Hailey Collet. AI-assisted research and formalization, reusing OpenAI/math, Mathlib and Akash Levy’s weighted construction. The earlier single-compensating-prime development supplies a reused unconditional moment lemma; its terminal 29/33 bound is not an assumption. Upstream licenses and notices are retained."
     }
   ],
   "historical_records": [

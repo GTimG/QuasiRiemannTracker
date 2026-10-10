@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": [
+    "matching proof accepted",
+    "mismatched statement rejected",
+    "ill-typed proof rejected"
+  ]
+}

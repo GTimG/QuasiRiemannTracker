@@ -1,0 +1,2 @@
+Cycle25/Numerator/Imported/NumeratorErrorMass.lean:66:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+Cycle25/Numerator/Imported/NumeratorErrorMass.lean:79:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

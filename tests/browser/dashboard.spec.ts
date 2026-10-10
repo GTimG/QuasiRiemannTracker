@@ -7,6 +7,30 @@ const verifiedCount = liveRecords.filter(
   (record: { status: string }) => record.status === "framework-verified",
 ).length;
 const pendingCount = liveRecords.length - verifiedCount;
+test("Cycle25 contributor verification and paper downloads retain pending status", async ({ page, request }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Hailey Collet · quartic boundary", exact: true }).click();
+  await expect(page.locator(".proof-detail")).toContainText("683505193/781250000");
+  await expect(page.locator(".proof-detail")).toContainText("Verification pending");
+  await expect(page.locator(".proof-detail")).not.toContainText("Signed verification receipt");
+  const link = page.getByRole("link", { name: "Contributor seven-target three-kernel report", exact: true });
+  const report = await (await request.get((await link.getAttribute("href")) as string)).json();
+  expect(report.status).toBe("PASS");
+  expect(report.theta_rational).toBe("683505193/781250000");
+  expect(report.declarations).toHaveLength(7);
+  expect(report.declarations).toContain("Cycle25Verification.plainMoment");
+  expect(report.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
+  expect(report.statement_definitions_compared).toBe(true);
+  const pdfLink = page.getByRole("link", { name: "Paper (PDF)", exact: true });
+  const pdf = await request.get((await pdfLink.getAttribute("href")) as string);
+  expect(pdf.ok()).toBe(true);
+  expect(pdf.headers()["content-type"]).toContain("application/pdf");
+  expect((await pdf.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  const texLink = page.getByRole("link", { name: "Paper source (TeX)", exact: true });
+  const tex = await request.get((await texLink.getAttribute("href")) as string);
+  expect(tex.ok()).toBe(true);
+  expect(await tex.text()).toContain("\\documentclass");
+});
 const chartFixtures = () =>
   JSON.parse(
     readFileSync(
@@ -81,13 +105,13 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("five real results, verification statuses and source downloads", async ({
+test("six real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(5);
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("tbody tr")).toHaveCount(6);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
   await expect(page.locator("tbody .tag.teal")).toHaveCount(verifiedCount);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(pendingCount);
   await page
@@ -185,7 +209,7 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
   await page.getByLabel("Sort contributions").selectOption("bound");
-  await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
+  await expect(page.locator("tbody tr").first()).toContainText("quartic boundary");
   await page.getByLabel("Contribution type").selectOption("verified");
   await expect(page.locator("tbody tr")).toHaveCount(verifiedCount);
   await page.getByLabel("Contribution type").selectOption("pending");

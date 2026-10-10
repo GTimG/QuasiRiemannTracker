@@ -1,0 +1,15 @@
+{
+  "page_count": 58,
+  "pdf_bytes": 436441,
+  "files": {
+    "paper.md": "2b4c67c3e817d7854ee57e451cea1789c8a4a1d03a72ddb83b980421167096d8",
+    "paper.tex": "75f6c1f71cbeca47f3c16e248d2c01694362d1a906ae844a22e7c6620b8f28a1",
+    "paper.pdf": "1cc922ebabd00d26fc7bfebbb8ff45739c3e2461f02847260622a4060b94f411"
+  },
+  "compiler": "Tectonic 0.17.0",
+  "compiler_exit_code": 0,
+  "overfull_boxes": 0,
+  "missing_character_warnings": 0,
+  "display_math_token_checks": 18,
+  "visual_review_pages": 58
+}

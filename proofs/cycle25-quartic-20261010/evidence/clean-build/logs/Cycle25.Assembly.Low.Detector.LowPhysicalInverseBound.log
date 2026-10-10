@@ -1,0 +1,6 @@
+Cycle25/Assembly/Low/Detector/LowPhysicalInverseBound.lean:94:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Cycle25/Assembly/Low/Detector/LowPhysicalInverseBound.lean:94:86: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

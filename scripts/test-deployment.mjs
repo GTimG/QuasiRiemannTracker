@@ -67,10 +67,14 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 5,
+    () => document.querySelectorAll("[data-dot]").length === 6,
   );
-  assert.equal(await page.locator("tbody tr").count(), 5);
+  assert.equal(await page.locator("tbody tr").count(), 6);
   for (const name of [
+    "proofs/cycle25-quartic-20261010/result.json",
+    "proofs/cycle25-quartic-20261010/control-results.json",
+    "proofs/cycle25-quartic-20261010/paper.tex",
+    "proofs/cycle25-quartic-20261010/paper.pdf",
     "registry.json",
     "catalogue.json",
     "site.json",
@@ -111,8 +115,13 @@ try {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
     if (name.endsWith(".json")) await response.json();
+    if (name.endsWith("/paper.pdf")) {
+      assert.ok(response.headers()["content-type"].includes("application/pdf"));
+      assert.equal((await response.body()).subarray(0, 5).toString(), "%PDF-");
+    }
   }
   for (const id of [
+    "cycle25-quartic-20261010",
     "qrh-20261009",
     "nielstron-algebraic-20261009",
     "argonaut-20261010-kernels",
@@ -167,7 +176,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

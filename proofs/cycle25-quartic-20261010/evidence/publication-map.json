@@ -1,0 +1,2797 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "published_path": "evidence/clean-build/result.json",
+      "source_record": "clean-001/result.json",
+      "original_sha256": "d51589a9feaa838b2ac77f91135eba6b3de73653e6bebcfae4f249d0452728c1",
+      "published_sha256": "d51589a9feaa838b2ac77f91135eba6b3de73653e6bebcfae4f249d0452728c1",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/input-inventory.json",
+      "source_record": "clean-001/input-inventory.json",
+      "original_sha256": "c4323347113097f0664e9ef00c539fdc850a80ecc8586e9ea66b921df15d7e33",
+      "published_sha256": "d7d51f5ab5d5e67513e8f9edca567aafbc5d06f3300da2016d6f7523545575af",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Moments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Moments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Continuation.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Continuation.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.Endpoint.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.Endpoint.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.MomentData.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.MomentData.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.SlotWidths.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.SlotWidths.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Crossing.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Crossing.log",
+      "original_sha256": "47841c73d814e321012d0bcdfa22886386af082a2093561280a02fc5a5ec24da",
+      "published_sha256": "47841c73d814e321012d0bcdfa22886386af082a2093561280a02fc5a5ec24da",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.SourceData.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.SourceData.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.SourceBatch.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.SourceBatch.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Endpoint.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Endpoint.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Budget.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Budget.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorMomentPrimeGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorMomentPrimeGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFixedIdeal.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFixedIdeal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MaskedCount.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MaskedCount.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.Geometry.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.Geometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferencePrimeGates.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferencePrimeGates.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFreeExceptional.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFreeExceptional.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.AlgebraicForms.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.AlgebraicForms.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferenceDeletedEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferenceDeletedEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorEnergyInitialState.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorEnergyInitialState.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Optimization.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Optimization.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.Certificate.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.Certificate.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainSlotProfile.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainSlotProfile.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferenceFiberEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentInverseMarkedReferenceFiberEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainCapacity.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainCapacity.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.FromMoments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.FromMoments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorInverseMarkedField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorInverseMarkedField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.FixedAmplitude.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.FixedAmplitude.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainExceptional.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainExceptional.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Adaptive.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Adaptive.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.SourceAmplitudeClasses.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.SourceAmplitudeClasses.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.GlobalBound.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.GlobalBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainMarkedState.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainMarkedState.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.Parameters.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.Parameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Parameters.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Parameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainMomentParameters.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainMomentParameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.InverseRawField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.InverseRawField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.OriginalInverseRawField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.OriginalInverseRawField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Arithmetic.Perturbation.log",
+      "source_record": "clean-001/logs/Cycle25.Arithmetic.Perturbation.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorInverseFields.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorInverseFields.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainMarkedFineField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainMarkedFineField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Geometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Geometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.SourceParametersCount.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.SourceParametersCount.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.OriginalInverseFields.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.OriginalInverseFields.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedRestrictedField.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedRestrictedField.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.SourceMomentInput.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.SourceMomentInput.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.Baseline.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.Baseline.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowGramScale.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowGramScale.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowReflectedLength.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowReflectedLength.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.MomentInput.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.MomentInput.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.OriginalMomentInput.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.OriginalMomentInput.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowSourceScales.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowSourceScales.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Normalizer.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Normalizer.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.CertifiedMoments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.CertifiedMoments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.OriginalCertifiedMoments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.OriginalCertifiedMoments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowSlotScales.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowSlotScales.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowCaps.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowCaps.log",
+      "original_sha256": "2be83c4c91a911b8b162118fb5a21599391f58d1be6fa4c9248f92080ea46488",
+      "published_sha256": "2be83c4c91a911b8b162118fb5a21599391f58d1be6fa4c9248f92080ea46488",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowOriginalPools.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowOriginalPools.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowExponent.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowExponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.SlotLengths.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.SlotLengths.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowNominalGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowNominalGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowBranchSum.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowBranchSum.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.HighData.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.HighData.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.RegionalCorrection.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.RegionalCorrection.log",
+      "original_sha256": "b5745236af33fed92bfcb86890dc6dfd9e8be0b31d39ee5f120a778e717f2d8f",
+      "published_sha256": "b5745236af33fed92bfcb86890dc6dfd9e8be0b31d39ee5f120a778e717f2d8f",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowCentralGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowCentralGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowUnselectedMass.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowUnselectedMass.log",
+      "original_sha256": "5ae3e25d45e19ccda536a51d48036c2c746371748ad03a43ca0bc8e2c7de0540",
+      "published_sha256": "5ae3e25d45e19ccda536a51d48036c2c746371748ad03a43ca0bc8e2c7de0540",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.HighDataFine.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.HighDataFine.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowInverseNormalize.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowInverseNormalize.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.WeightedSourceCount.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.WeightedSourceCount.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowRemoteMass.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowRemoteMass.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CentralErrorSaving.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CentralErrorSaving.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.GeometryFacts.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.GeometryFacts.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowSector.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowSector.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.SourceAmplitudeClasses.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.SourceAmplitudeClasses.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CentralFiniteError.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CentralFiniteError.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeErrorSaving.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeErrorSaving.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowRetained.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowRetained.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeSlotExponent.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeSlotExponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFiniteError.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFiniteError.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CentralClassArithmetic.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CentralClassArithmetic.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.FloorExponent.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.FloorExponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorArithmetic.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorArithmetic.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.EasyExponent.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.EasyExponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowRetainedBudget.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowRetainedBudget.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorGlobal.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorGlobal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CentralExponent.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CentralExponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorGlobalIntegral.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorGlobalIntegral.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NonfloorClass.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NonfloorClass.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderRayThresholds.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderRayThresholds.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorNormalized.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorNormalized.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NonfloorArithmetic.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NonfloorArithmetic.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowFull.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowFull.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorSaving.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorSaving.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NonfloorIntegral.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NonfloorIntegral.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderRegion.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderRegion.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFloorCollected.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFloorCollected.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowFullBudget.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowFullBudget.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NonfloorNormalized.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NonfloorNormalized.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.SignalShift.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.SignalShift.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.TailScales.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.TailScales.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.Target.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.Target.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.LargeDyad.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.LargeDyad.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.SmallTail.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.SmallTail.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowGlobalBudget.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowGlobalBudget.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.GeometricTail.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.GeometricTail.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalSlots.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalSlots.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PhysicalSmallTail.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PhysicalSmallTail.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowMemberBudget.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowMemberBudget.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.LargeTail.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.LargeTail.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.LargeSaving.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.LargeSaving.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowMemberGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowMemberGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalSignal.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalSignal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PhysicalLargeTail.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PhysicalLargeTail.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderFiniteProduct.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderFiniteProduct.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowFixedMember.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowFixedMember.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CanonicalTails.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CanonicalTails.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.FirstSourceParameters.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.FirstSourceParameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderFiniteProductX.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderFiniteProductX.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowDyads.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowDyads.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderResidueActual.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderResidueActual.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CanonicalReduction.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CanonicalReduction.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.SourceState.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.SourceState.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowChoiceEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowChoiceEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CanonicalCubeReduction.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CanonicalCubeReduction.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.PhysicalMoment.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.PhysicalMoment.log",
+      "original_sha256": "76859540d910af99fc0abfc55c1c121e7048e6785fc9bc6348a6a8e788f5791f",
+      "published_sha256": "76859540d910af99fc0abfc55c1c121e7048e6785fc9bc6348a6a8e788f5791f",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowInactiveEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowInactiveEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CanonicalCubeChoice.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CanonicalCubeChoice.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReflectionRetainedLength.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReflectionRetainedLength.log",
+      "original_sha256": "da388201325a26548edeb95c943e9f196687d8347b8190772b07d927c9f50dfc",
+      "published_sha256": "da388201325a26548edeb95c943e9f196687d8347b8190772b07d927c9f50dfc",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CanonicalRayCube.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CanonicalRayCube.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderContours.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderContours.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowFrozenEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowFrozenEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.KappaGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.KappaGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceState.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceState.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Damping.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Damping.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowCompletedFiber.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowCompletedFiber.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderTransport.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderTransport.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceDivisors.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceDivisors.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceDeletionCapacity.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceDeletionCapacity.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowCompletedRows.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowCompletedRows.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceDeletionClipped.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceDeletionClipped.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderPhysical.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderPhysical.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Reflection.LowOriginalEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Reflection.LowOriginalEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.FiniteHeight.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.FiniteHeight.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceLowBranchGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceLowBranchGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowSelectedBound.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowSelectedBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Holder.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Holder.log",
+      "original_sha256": "ff8f39fb66db2d310990a6035a4bbf3909a0957e56a292ed5a147754f575dd5f",
+      "published_sha256": "ff8f39fb66db2d310990a6035a4bbf3909a0957e56a292ed5a147754f575dd5f",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceLowWindow.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceLowWindow.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderBounds.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderBounds.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowNominalEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowNominalEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.AmplitudeHolder.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.AmplitudeHolder.log",
+      "original_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "published_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowPhysicalInverseBound.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowPhysicalInverseBound.log",
+      "original_sha256": "aaeac52e39f38e330bba44e37459eccac14132a74a4ee942b9f60b960229838e",
+      "published_sha256": "aaeac52e39f38e330bba44e37459eccac14132a74a4ee942b9f60b960229838e",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderPhysicalBounds.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderPhysicalBounds.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceLowDeletedGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceLowDeletedGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.LiveClippingDefect.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.LiveClippingDefect.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowCentralTuple.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowCentralTuple.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.PrincipalRemainderNormalized.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.PrincipalRemainderNormalized.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.DeletedRobustGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.DeletedRobustGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowGaussianDyad.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowGaussianDyad.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NormalizedTransport.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NormalizedTransport.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionDeleted.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionDeleted.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowGaussianRemote.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowGaussianRemote.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceRobustDeletedEnergy.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceRobustDeletedEnergy.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NormalizedTransportSaving.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NormalizedTransportSaving.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionOriginal.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionOriginal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowGaussianCentral.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowGaussianCentral.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceRobustOriginal.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceRobustOriginal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowGaussianSum.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowGaussianSum.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.NonfloorTransport.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.NonfloorTransport.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowCommonBound.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowCommonBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceRobustBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceRobustBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionPower.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionPower.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowWindowBound.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowWindowBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceRobustPower.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceRobustPower.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceLiveBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceLiveBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionSymmetric.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionSymmetric.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.Detector.LowNormalized.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.Detector.LowNormalized.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.ReferenceLivePower.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.ReferenceLivePower.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.OriginalHighReflectionSymmetricBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.OriginalHighReflectionSymmetricBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Low.SourceProbe.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Low.SourceProbe.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.FullWContour.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.FullWContour.log",
+      "original_sha256": "cedd2673c655a76523cd706778f87d539cd9458c15b9c9f5398818db72e8a42b",
+      "published_sha256": "cedd2673c655a76523cd706778f87d539cd9458c15b9c9f5398818db72e8a42b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.SourceContract.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.SourceContract.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighSource.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighSource.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.MellinReconstruction.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.MellinReconstruction.log",
+      "original_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "published_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.Geometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.Geometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighAssembly.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighAssembly.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighParameters.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighParameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighSourceBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighSourceBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorLocalCoefficients.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorLocalCoefficients.log",
+      "original_sha256": "afd55d62ed658b5ce7e954ff33878241ae8a71ee598b301b55cc3ec37f24e9ad",
+      "published_sha256": "afd55d62ed658b5ce7e954ff33878241ae8a71ee598b301b55cc3ec37f24e9ad",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveBalancedAdmission.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveBalancedAdmission.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighAssemblyBounded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighAssemblyBounded.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.FullWTransport.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.FullWTransport.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorPolynomialMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorPolynomialMass.log",
+      "original_sha256": "2de02749ffa985c59ec6fbada32d61150d84cec1f7343acfbe6bfa7425cc0432",
+      "published_sha256": "2de02749ffa985c59ec6fbada32d61150d84cec1f7343acfbe6bfa7425cc0432",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.NaturalLowPhysical.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.NaturalLowPhysical.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.Parameters.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.Parameters.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorRamifiedMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorRamifiedMass.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighBound.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorUnramifiedMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorUnramifiedMass.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.NaturalLowStage.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.NaturalLowStage.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighSourceBound.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighSourceBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.CappedLowStage.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.CappedLowStage.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorErrorMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorErrorMass.log",
+      "original_sha256": "05be43264ff067e44d082377c69d126e6a528b25c4a28929b37b2fc874ca4d4f",
+      "published_sha256": "05be43264ff067e44d082377c69d126e6a528b25c4a28929b37b2fc874ca4d4f",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.PositiveHighPhysical.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.PositiveHighPhysical.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorEulerExpansion.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorEulerExpansion.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.FullWFiniteError.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.FullWFiniteError.log",
+      "original_sha256": "eee2163031c5594e6a02c08b477450bc1befc4004a2509e0399eba2df3994177",
+      "published_sha256": "eee2163031c5594e6a02c08b477450bc1befc4004a2509e0399eba2df3994177",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.RowConductor.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.RowConductor.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorPrimeExpansion.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorPrimeExpansion.log",
+      "original_sha256": "3f6f82750f1ac858399647a8a8da77b3d205571c06c09ea8afbb8037760bd3f0",
+      "published_sha256": "3f6f82750f1ac858399647a8a8da77b3d205571c06c09ea8afbb8037760bd3f0",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.NaturalHighStage.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.NaturalHighStage.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorRamifiedProduct.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorRamifiedProduct.log",
+      "original_sha256": "aca4b96524de85c5bfd2ed06e8efadc8d1782b9d60cd386f65675c8d79e20c30",
+      "published_sha256": "aca4b96524de85c5bfd2ed06e8efadc8d1782b9d60cd386f65675c8d79e20c30",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.FullWFiniteError.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.FullWFiniteError.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.FullWAggregate.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.FullWAggregate.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.Discarded.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.Discarded.log",
+      "original_sha256": "371390a4e0fbdede98e23caeb1abb944569e881a4277cc097b7e52522fbdd5fc",
+      "published_sha256": "371390a4e0fbdede98e23caeb1abb944569e881a4277cc097b7e52522fbdd5fc",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFullWTransfer.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFullWTransfer.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.FullWReconstruction.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.FullWReconstruction.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorReflectionData.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorReflectionData.log",
+      "original_sha256": "a3f58dafecdc4f41fdb9b3ebd8f01bb20ffcc559e8b310e3d3fc2d8e9a84d198",
+      "published_sha256": "a3f58dafecdc4f41fdb9b3ebd8f01bb20ffcc559e8b310e3d3fc2d8e9a84d198",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ReflectionMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ReflectionMass.log",
+      "original_sha256": "bbf00612c7a121bf7849f6e73bcc2dff014d476f7cc1b8635bd3f82a405c50e3",
+      "published_sha256": "bbf00612c7a121bf7849f6e73bcc2dff014d476f7cc1b8635bd3f82a405c50e3",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ReflectionProfiles.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ReflectionProfiles.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.CubeFullWNormalized.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.CubeFullWNormalized.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorCorrectionExpansion.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorCorrectionExpansion.log",
+      "original_sha256": "4edcf9157a5d23cd9b517afb2364167a4382bc98805e3c29639720d4c0eb0f60",
+      "published_sha256": "4edcf9157a5d23cd9b517afb2364167a4382bc98805e3c29639720d4c0eb0f60",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ReflectionRetained.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ReflectionRetained.log",
+      "original_sha256": "a0bf4d23666da903d7edd66e76fab09969847642bf9991dd3934668405da1575",
+      "published_sha256": "a0bf4d23666da903d7edd66e76fab09969847642bf9991dd3934668405da1575",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Scalar.Exponent.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Scalar.Exponent.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorActualError.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorActualError.log",
+      "original_sha256": "b59a091c9d12e654506ee6aa90abc58e04791cfcdb9a263799af16e8721016de",
+      "published_sha256": "b59a091c9d12e654506ee6aa90abc58e04791cfcdb9a263799af16e8721016de",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.RetainedGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.RetainedGeometry.log",
+      "original_sha256": "65710a112955acd920f1a2e7822fa9a246c11aabe27c1fedd27b067a4731c347",
+      "published_sha256": "65710a112955acd920f1a2e7822fa9a246c11aabe27c1fedd27b067a4731c347",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceSZBound.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceSZBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorDeficit.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorDeficit.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.MixedFullWCollected.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.MixedFullWCollected.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorErrorPrimeSum.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorErrorPrimeSum.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorFinitePacket.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorFinitePacket.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorTupleRestoration.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorTupleRestoration.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.FullWBound.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.FullWBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorErrorPacket.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorErrorPacket.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.FreeScalarBound.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.FreeScalarBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Transport.HighAssembly.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Transport.HighAssembly.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorPrimeSeparation.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorPrimeSeparation.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.PhysicalFront.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.PhysicalFront.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorMassDamping.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorMassDamping.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/ZetaZeroFree.Analytic.Moments.Plain.log",
+      "source_record": "clean-001/logs/ZetaZeroFree.Analytic.Moments.Plain.log",
+      "original_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "published_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourcePrimeBins.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourcePrimeBins.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.FullWCellInput.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.FullWCellInput.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorErrorLabels.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorErrorLabels.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorPacketMellin.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorPacketMellin.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceScalar.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceScalar.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorIntegral.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorIntegral.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorLabelPacket.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorLabelPacket.log",
+      "original_sha256": "75de0581f8bdc720b7a79f853d2f0f1a6195103e175158a44e6d1b02bb7c2719",
+      "published_sha256": "75de0581f8bdc720b7a79f853d2f0f1a6195103e175158a44e6d1b02bb7c2719",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.SourceFinish.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.SourceFinish.log",
+      "original_sha256": "79b427425e57f44c6902366b136d10b54439f7ba543a6c4315b7af1a78cc67c4",
+      "published_sha256": "79b427425e57f44c6902366b136d10b54439f7ba543a6c4315b7af1a78cc67c4",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.FixedHigh.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.FixedHigh.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorErrorIntegrable.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorErrorIntegrable.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorLabelPrimeBound.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorLabelPrimeBound.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.CellGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.CellGeometry.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.PacketFourth.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.PacketFourth.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.SourceScalar.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.SourceScalar.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorReconstruction.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorReconstruction.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.DilationBoxes.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.DilationBoxes.log",
+      "original_sha256": "741f956c25ee7c2d2fb177f8d3946559856d7ae303d2d3058e9fb0908c408b0b",
+      "published_sha256": "741f956c25ee7c2d2fb177f8d3946559856d7ae303d2d3058e9fb0908c408b0b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/ZetaZeroFree.Analytic.Moments.Exceptional.log",
+      "source_record": "clean-001/logs/ZetaZeroFree.Analytic.Moments.Exceptional.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.PacketBoxes.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.PacketBoxes.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorLabelReconstruction.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorLabelReconstruction.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.BoxGeometry.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.BoxGeometry.log",
+      "original_sha256": "abb5595845313547daebb6ed761e1416860bbfa95baece4128eefb138875348c",
+      "published_sha256": "abb5595845313547daebb6ed761e1416860bbfa95baece4128eefb138875348c",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.FiniteBins.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.FiniteBins.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Imported.NumeratorPhysicalPacketMass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Imported.NumeratorPhysicalPacketMass.log",
+      "original_sha256": "76be9b8a7ed18278661384a8371844671eef3682b3b819d90e649ece152ebab8",
+      "published_sha256": "76be9b8a7ed18278661384a8371844671eef3682b3b819d90e649ece152ebab8",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.BoxReconstruction.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.BoxReconstruction.log",
+      "original_sha256": "7b9712e047c987741422113a6590785d70bdc0be504f5dd17512ed6945eb2af3",
+      "published_sha256": "7b9712e047c987741422113a6590785d70bdc0be504f5dd17512ed6945eb2af3",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.PacketBinBound.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.PacketBinBound.log",
+      "original_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "published_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.AmplitudeLoss.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.AmplitudeLoss.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ActualBin.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ActualBin.log",
+      "original_sha256": "5d8b3c7ea16f3f7e31b4818e519a884cabf48b255a9adb13dd2dd1bb6095f325",
+      "published_sha256": "5d8b3c7ea16f3f7e31b4818e519a884cabf48b255a9adb13dd2dd1bb6095f325",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.FiniteCollect.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.FiniteCollect.log",
+      "original_sha256": "8229d74a0e4f6eea5ee8a068a853ac492e016c82be85f54e9dbb7c222062d25e",
+      "published_sha256": "8229d74a0e4f6eea5ee8a068a853ac492e016c82be85f54e9dbb7c222062d25e",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.PhysicalCollect.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.PhysicalCollect.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/ZetaZeroFree.Analytic.Moments.Unconditional.log",
+      "source_record": "clean-001/logs/ZetaZeroFree.Analytic.Moments.Unconditional.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.CappedAnalyticSuccessor.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.CappedAnalyticSuccessor.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.CertifiedExistence.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.CertifiedExistence.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Endpoint.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Endpoint.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Mesh.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Mesh.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.Terminal.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.Terminal.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.PlainInput.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.PlainInput.log",
+      "original_sha256": "b37900d3cbb1074a609d85f4cbe896e45214f887597c72ece4df0e3b7d2fd7d9",
+      "published_sha256": "b37900d3cbb1074a609d85f4cbe896e45214f887597c72ece4df0e3b7d2fd7d9",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.PhysicalMomentInput.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.PhysicalMomentInput.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.ActualMoments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.ActualMoments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.OriginalActualMoments.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.OriginalActualMoments.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.Input.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.Input.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Scalar.SourceLoss.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Scalar.SourceLoss.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.FourierProfiles.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.FourierProfiles.log",
+      "original_sha256": "afc813809ca46d067a6c703cfbc4d97591c289f6023fdd8ffac5db52e3f9e0c3",
+      "published_sha256": "afc813809ca46d067a6c703cfbc4d97591c289f6023fdd8ffac5db52e3f9e0c3",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.Height.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.Height.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.Scalar.SourcePacket.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.Scalar.SourcePacket.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Weighted.RawCells.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Weighted.RawCells.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.Data.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.Data.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.CertifiedFourier.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.CertifiedFourier.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SlotSelection.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SlotSelection.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.CertifiedZero.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.CertifiedZero.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceSelection.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceSelection.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Count.WeightedSourceMaskedCount.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Count.WeightedSourceMaskedCount.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceParameters.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceParameters.log",
+      "original_sha256": "a733be90fae5ba2d5f47f7badd03515cd65dc18c3c7e09100d3b7d74ca2d419e",
+      "published_sha256": "a733be90fae5ba2d5f47f7badd03515cd65dc18c3c7e09100d3b7d74ca2d419e",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.CertifiedRetained.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.CertifiedRetained.log",
+      "original_sha256": "3c4c4471886da17bc06c8d28eff4b45d4c0cf42f8024c56061571882de78e5e3",
+      "published_sha256": "3c4c4471886da17bc06c8d28eff4b45d4c0cf42f8024c56061571882de78e5e3",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ActualSourceHelpers.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ActualSourceHelpers.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.RetainedFixed.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.RetainedFixed.log",
+      "original_sha256": "e85e5cf8659ca18a6d30147dda15391835d601d5c87516939df8925358135131",
+      "published_sha256": "e85e5cf8659ca18a6d30147dda15391835d601d5c87516939df8925358135131",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Energy.Physical.OriginalFourth.log",
+      "source_record": "clean-001/logs/Cycle25.Energy.Physical.OriginalFourth.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ActiveFourth.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ActiveFourth.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceBin.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceBin.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceClass.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceClass.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceMask.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceMask.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.SourceCollect.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.SourceCollect.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Numerator.ActualSource.log",
+      "source_record": "clean-001/logs/Cycle25.Numerator.ActualSource.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.CommonProbe.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.CommonProbe.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/logs/Cycle25.Assembly.Final.Endpoint.log",
+      "source_record": "clean-001/logs/Cycle25.Assembly.Final.Endpoint.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/clean-build/runner.py",
+      "source_record": "clean-build runner",
+      "original_sha256": "ddb6df5b68b68be8e4875f1b471f9696c0f2e90b2f4d37b38f02fd50dddd9d58",
+      "published_sha256": "ddb6df5b68b68be8e4875f1b471f9696c0f2e90b2f4d37b38f02fd50dddd9d58",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/result.json",
+      "source_record": "kernels-001/result.json",
+      "original_sha256": "9f5545f73fb30f11050fc2a3de7231567bb490bc26c40f1f93a872af64088f0b",
+      "published_sha256": "9f5545f73fb30f11050fc2a3de7231567bb490bc26c40f1f93a872af64088f0b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/tool-pins.json",
+      "source_record": "kernels-001/tool-pins.json",
+      "original_sha256": "87e0b69faed052c01ed9ce9cc580f1effc1dff1dbbbc1c36fddc608802575c9e",
+      "published_sha256": "87e0b69faed052c01ed9ce9cc580f1effc1dff1dbbbc1c36fddc608802575c9e",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/input-inventory.json",
+      "source_record": "kernels-001/input-inventory.json",
+      "original_sha256": "9944164eca10bb7dc428d029a18fb09d426b1262dd75cb6938614fd5a26affdf",
+      "published_sha256": "c07e21175428de0487d0621988a5d63d39bc9b20d6f1f03851db936aa0e48e88",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/export-pins.json",
+      "source_record": "kernels-001/export-pins.json",
+      "original_sha256": "b4c1233db23d8cb51b0d541cdec50cb1a8542e2266801cd8187e62ed3e5ab7b6",
+      "published_sha256": "b4c1233db23d8cb51b0d541cdec50cb1a8542e2266801cd8187e62ed3e5ab7b6",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/control-results.json",
+      "source_record": "kernels-001/preflight-result.json",
+      "original_sha256": "7f6d3a0c51965ee1a2505651efae733ebe1feaf45644acccabdafd7b91096600",
+      "published_sha256": "7f6d3a0c51965ee1a2505651efae733ebe1feaf45644acccabdafd7b91096600",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/judge.log",
+      "source_record": "kernels-001/judge.log",
+      "original_sha256": "a4dfd27f1a00199e14053580a3160a7d14fa6d8270d0b86ec082747b110d0a60",
+      "published_sha256": "a4dfd27f1a00199e14053580a3160a7d14fa6d8270d0b86ec082747b110d0a60",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/judge.outcome.json",
+      "source_record": "kernels-001/judge.outcome.json",
+      "original_sha256": "e12528a4f2e82931a9e5fb8149837c9c2e0cdd6415bc0bf38c582ce234d058af",
+      "published_sha256": "e12528a4f2e82931a9e5fb8149837c9c2e0cdd6415bc0bf38c582ce234d058af",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Challenge-compile.log",
+      "source_record": "kernels-001/Challenge-compile.log",
+      "original_sha256": "7a4fcc757c90f3fefcaae1ac12178f991809a9155ddcfe8f440b5cb5369ec597",
+      "published_sha256": "39f48f66d64499de9d1a6ae06281741899d6541c3fa643c6e225707dbd91190e",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Solution-compile.log",
+      "source_record": "kernels-001/Solution-compile.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Challenge-export.log",
+      "source_record": "kernels-001/Challenge-export.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Solution-export.log",
+      "source_record": "kernels-001/Solution-export.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/comparator.json",
+      "source_record": "kernels-001/comparator.json",
+      "original_sha256": "df50b460df937212dd08dbd0f3e9a46389aa6105b31d16868b4e88c0245e0dcb",
+      "published_sha256": "969ce32e93ef4989e623d03987d76fb95d3e885333c491d09abc147fee019e0a",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/status.json",
+      "source_record": "kernels-001/status.json",
+      "original_sha256": "e0adfa0ee43a2d6f0e140bf352ee7d3391cb15b5760958af21c8f4d1d5784743",
+      "published_sha256": "e0adfa0ee43a2d6f0e140bf352ee7d3391cb15b5760958af21c8f4d1d5784743",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/judge-execution.json",
+      "source_record": "kernels-001/judge/execution.json",
+      "original_sha256": "84febfdf6394aed24325ea8b526136e691f421631a33f73d044fee8e03bd270a",
+      "published_sha256": "327bae5c45360b87746771e831f6bc44c656fca6211b817522306f2e892101dc",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/judge-supervisor.json",
+      "source_record": "kernels-001/judge/supervisor.json",
+      "original_sha256": "7c25a66357012cac0a159f2a64261a611cb1be74e3f6bc9d55abd9df7d021484",
+      "published_sha256": "b99c68753656621fbe1521b18b1d30218777946507d0c990a927d2a50fd6fefc",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Challenge.lean",
+      "source_record": "kernels-001/src/Challenge.lean",
+      "original_sha256": "6710026e0aa4f9d832fb96d8854d7a32aab51f21c170920649bced7094b6c4a1",
+      "published_sha256": "6710026e0aa4f9d832fb96d8854d7a32aab51f21c170920649bced7094b6c4a1",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/Solution.lean",
+      "source_record": "kernels-001/src/Solution.lean",
+      "original_sha256": "13204150e7d2d03d9dbe79515d71fa9320bfd26615d2506b32bdbe62c775f422",
+      "published_sha256": "13204150e7d2d03d9dbe79515d71fa9320bfd26615d2506b32bdbe62c775f422",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/run-source/runner.py",
+      "source_record": "kernels-001/runner.py",
+      "original_sha256": "8b067f5c7e0f1a772d8552bd04db1ac7a377098ad2320b5db2805ba09f06725b",
+      "published_sha256": "8b067f5c7e0f1a772d8552bd04db1ac7a377098ad2320b5db2805ba09f06725b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/run-source/verification_statements.py",
+      "source_record": "kernels-001/verification_statements.py",
+      "original_sha256": "1f313a1a3df8a8b85d533eb81d5b61bb6455236b5f514aca5c1ff78c79963aed",
+      "published_sha256": "1f313a1a3df8a8b85d533eb81d5b61bb6455236b5f514aca5c1ff78c79963aed",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/run-source/native_judge.py",
+      "source_record": "kernels-001/native_judge.py",
+      "original_sha256": "568069401d12e8860c4ce4aec1fdb4e45c217c33f075864a5e98b41f7e4251fe",
+      "published_sha256": "568069401d12e8860c4ce4aec1fdb4e45c217c33f075864a5e98b41f7e4251fe",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/comparator.json",
+      "source_record": "kernels-001/comparator-preflight/comparator.json",
+      "original_sha256": "cbee6c1c587b5ddc7b328da6a8e1fd63964d16c8fe3a702b374bd6e5fb4e092f",
+      "published_sha256": "78e87611f00b195fa1935fc1f6c0c8a1ad0901662c4a3461c7dbd604a474277b",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/execution.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightIllTyped/execution.json",
+      "original_sha256": "5722a8bcbc62b6db47c4ba169a371ad9bb871a255ff93c757b4eb5a39b204ff1",
+      "published_sha256": "9b8b679cec8ca14bc77ff96161f54149211012bad481790dd184ac2ca3f28d98",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/live.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightIllTyped/live.log",
+      "original_sha256": "57ec740bf9db9e4b06fef6d8b234ca756fc3780083b664b7257e0206ace487f4",
+      "published_sha256": "57ec740bf9db9e4b06fef6d8b234ca756fc3780083b664b7257e0206ace487f4",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/supervisor.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightIllTyped/supervisor.json",
+      "original_sha256": "f66ca3594b0685f9ad8b023f1cce088d4388e325c902666f984aadd7528c2bfd",
+      "published_sha256": "cb0887348b6ad3f39a78f66911c3cd0f6b72019b96c8e8e65208756a07491d8e",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightIllTyped.log",
+      "original_sha256": "0c949a8f6d86858444acff02a39798ccc50df0bc641fcc774464d6b11fc027d6",
+      "published_sha256": "0c949a8f6d86858444acff02a39798ccc50df0bc641fcc774464d6b11fc027d6",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped.outcome.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightIllTyped.outcome.json",
+      "original_sha256": "9ac29e8b45881afe04b48eb267e17f25e886e9e83cb27b8d5addff66680cab94",
+      "published_sha256": "9ac29e8b45881afe04b48eb267e17f25e886e9e83cb27b8d5addff66680cab94",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/execution.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightSolution/execution.json",
+      "original_sha256": "632c7282f61247f1a671eca80fb952b3f203daba524dd1f7419c3c5bc05b047d",
+      "published_sha256": "e48be5482fa8ae5fab864f329f43e5b5fcd21b9133cdbfe42ff74c19ad65121d",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/live.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightSolution/live.log",
+      "original_sha256": "8b405ac187f9ffad019925a9eeb471e366b2db14c0ff9f9ac5a3911889f31a2c",
+      "published_sha256": "8b405ac187f9ffad019925a9eeb471e366b2db14c0ff9f9ac5a3911889f31a2c",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/supervisor.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightSolution/supervisor.json",
+      "original_sha256": "f4b26741dc5a5fc44557c9c76a1f8b35863edc22972c6a24d454575704c99e70",
+      "published_sha256": "b8215fef4742571e380668faa0f7b6fd23a425cd9e4ed890bb7ac8019bbee9b4",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightSolution.log",
+      "original_sha256": "866743ec12e67e236f50d551279b84100f63b823f116ede4dac0f9756963f862",
+      "published_sha256": "866743ec12e67e236f50d551279b84100f63b823f116ede4dac0f9756963f862",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution.outcome.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightSolution.outcome.json",
+      "original_sha256": "5c770ff882923f1073fc883abc18fff48921fa98160dbbd23317ae93c1107b75",
+      "published_sha256": "5c770ff882923f1073fc883abc18fff48921fa98160dbbd23317ae93c1107b75",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/execution.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightWrong/execution.json",
+      "original_sha256": "66a6bbf2542c49da71d32cc945d0133bbce0b7accc88f0d60c15e0e6154a1f82",
+      "published_sha256": "ae37d2b8beb57822d346c2b311c2c094fb260f96fcfeba4e7498ea0e21a72595",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/live.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightWrong/live.log",
+      "original_sha256": "9332afe16de68f0b2c8f1c793ee4c3f6c61a96819095e44337b94e2a0e1346f0",
+      "published_sha256": "9332afe16de68f0b2c8f1c793ee4c3f6c61a96819095e44337b94e2a0e1346f0",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/supervisor.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightWrong/supervisor.json",
+      "original_sha256": "cc86baeae6936633de615062962ce958a6cb0a0942aeba76fa56f6b059b560c7",
+      "published_sha256": "8f15e37c2960c9342c321c0aa85b06c71430bb143122fc160d9ee902c74a6f4d",
+      "byte_identical": false,
+      "transformation": "host paths/process identifiers replaced with symbolic labels"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong.log",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightWrong.log",
+      "original_sha256": "1e5a26b3e69715b5ac01f2e91cf82406bbe36367e8476e689102cbc9ad2785c7",
+      "published_sha256": "1e5a26b3e69715b5ac01f2e91cf82406bbe36367e8476e689102cbc9ad2785c7",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong.outcome.json",
+      "source_record": "kernels-001/comparator-preflight/judge-PalomarPreflightWrong.outcome.json",
+      "original_sha256": "9ec7681dfca28df0449d0e19020382164f4d9d0fcadcdb01b712a55e95aca312",
+      "published_sha256": "9ec7681dfca28df0449d0e19020382164f4d9d0fcadcdb01b712a55e95aca312",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/src/PalomarPreflightChallenge.lean",
+      "source_record": "kernels-001/comparator-preflight/src/PalomarPreflightChallenge.lean",
+      "original_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "published_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/src/PalomarPreflightSolution.lean",
+      "source_record": "kernels-001/comparator-preflight/src/PalomarPreflightSolution.lean",
+      "original_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "published_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/multi-kernel/controls/src/PalomarPreflightWrong.lean",
+      "source_record": "kernels-001/comparator-preflight/src/PalomarPreflightWrong.lean",
+      "original_sha256": "06ad1f6b739394b7c8f59d9cda6710f53c4736c3a689ed9fcbafb8d00ecc6477",
+      "published_sha256": "06ad1f6b739394b7c8f59d9cda6710f53c4736c3a689ed9fcbafb8d00ecc6477",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/Audit.lean",
+      "source_record": "Final/Audit.lean",
+      "original_sha256": "30a383e455dc959f9ee96b5f5fd0193165124b05238dfc42da2a7607459f735c",
+      "published_sha256": "30a383e455dc959f9ee96b5f5fd0193165124b05238dfc42da2a7607459f735c",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/audit-report.txt",
+      "source_record": "Final/audit-report.txt",
+      "original_sha256": "7bf9932da28e581558b4c31f8b8b91a99814658f9c0888237ed654c60e1cfbe7",
+      "published_sha256": "7bf9932da28e581558b4c31f8b8b91a99814658f9c0888237ed654c60e1cfbe7",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/source-freeze.json",
+      "source_record": "Final/source-freeze.json",
+      "original_sha256": "ea5eea3860570c3c48d8603dd3d54a5b5ec23f04ea8ee4a714191f804e896073",
+      "published_sha256": "ea5eea3860570c3c48d8603dd3d54a5b5ec23f04ea8ee4a714191f804e896073",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/freeze-evidence.json",
+      "source_record": "Final/freeze-evidence.json",
+      "original_sha256": "0ecc36749a2a438a60cb146f848938b98c7da39f268559c242763f1ba85cd96b",
+      "published_sha256": "0ecc36749a2a438a60cb146f848938b98c7da39f268559c242763f1ba85cd96b",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/numerator-audit.json",
+      "source_record": "numerator-audit.json",
+      "original_sha256": "0d43ad28ccbed89eebf69900251b3a84796f8e2bb3ec11a58c30b61018d5d658",
+      "published_sha256": "0d43ad28ccbed89eebf69900251b3a84796f8e2bb3ec11a58c30b61018d5d658",
+      "byte_identical": true,
+      "transformation": "none"
+    },
+    {
+      "published_path": "evidence/ordinary-lean/numerator-audit.log",
+      "source_record": "numerator-audit.log",
+      "original_sha256": "f9eb4e140f245b5a9e24cef1595795285c313c4c36360c1646f082b1e7b531c5",
+      "published_sha256": "f9eb4e140f245b5a9e24cef1595795285c313c4c36360c1646f082b1e7b531c5",
+      "byte_identical": true,
+      "transformation": "none"
+    }
+  ]
+}
