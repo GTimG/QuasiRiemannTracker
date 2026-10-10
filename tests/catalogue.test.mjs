@@ -57,6 +57,7 @@ test("catalogue cannot fabricate signed admission or local verification dates fo
   d.records[1].status = "verified";
   assert.throws(() => validateCatalogue(d), /cannot mint/);
   const e = data();
+  e.records[1].status = "verification-pending";
   e.records[1].first_verified_at = "2026-10-09T00:00:00Z";
   assert.throws(() => validateCatalogue(e), /Pending result/);
 });

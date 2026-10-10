@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "source_manifest_sha256": "6560e71ac743c062a16987c19ef830e14c46aa4ae9a72867818f65c8791a7e0f",
+  "sources_and_oleans_rehashed": true,
+  "challenge_imports_no_candidate": true,
+  "candidate_imports_no_QRH": true,
+  "candidate_source_count": 25657,
+  "candidate_artifact_count": 35309,
+  "canonical_dependency_count": 4386,
+  "canonical_source_graph_sha256": "7364b78eb62004edfe9d7c3ebacd0b4f8cbc65f53e07dd6200816a92338cca7e",
+  "canonical_build_records_sha256": "530332d9c117d87456183de122ac4fc685661f0d7aa671253d91d31bd9018b00",
+  "canonical_imports": [
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+  ],
+  "native_inventory_sha256": "67e7ffe84f22b512482e892782f920af94b32a775a8854feb701774654f78fac",
+  "native_build_report_sha256": "d076ef7bab8d5d3f9f5af97b26c89a9a413d6dad07cff06585172709eb783f62",
+  "trust_note": "Canonical source/artifacts match the accepted independent-check baseline. Pinned dependency caches and fresh candidate builds are distinguished in the native inventory. The exported proof closure is subsequently replayed in three kernels."
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "records": [
     {
       "submitted_at": "",
@@ -66,13 +66,15 @@
       "pr": null,
       "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
       "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
-      "first_verified_at": "",
+      "first_verified_at": "2026-10-10T02:21:37.471247+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "PerturbedBoundaryMain",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re"
       },
       "license": "Apache-2.0",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "argonaut-20261008",
       "title": "Argonaut · perturbed boundary",
       "theta": {
@@ -84,17 +86,41 @@
           "name": "Argonaut Math"
         }
       ],
-      "method": "Refinement of the OpenAI framework to 3499999/4000000. Authors report Lean and native Comparator verification; our independent verification is pending.",
+      "method": "Refinement of the OpenAI framework to 3499999/4000000. The pinned original proof has been independently reproduced and checked with Comparator and three kernels.",
       "references": [
+        {
+          "label": "Independent Comparator and three-kernel report",
+          "url": "proofs/argonaut-20261010-kernels/result.json"
+        },
+        {
+          "label": "Independent kernel acceptance log",
+          "url": "proofs/argonaut-20261010-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/argonaut-20261010-kernels/src/PalomarCanonical192cb494181515652d3e9fcd/Challenge.lean"
+        },
+        {
+          "label": "Proof reconstruction and checking instructions",
+          "url": "proofs/argonaut-20261010-kernels/README.txt"
+        },
+        {
+          "label": "Reviewed original source package",
+          "url": "proofs/argonaut-20261010-kernels/source-public.tar.gz"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/argonaut-20261010-kernels/control-results.json"
+        },
         {
           "label": "Argonaut source and release",
           "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T00:00:00Z",
       "date_label": "Public announcement",
-      "verification_note": "Authors report Lean and native Comparator verification. We have inspected sources but have not independently reproduced the complete proof check. This is a verification status, not a claim that the proof is defective."
+      "verification_note": "Argonaut Math's unchanged v0.1.8 proof passed local Comparator comparison of the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and their definitions, followed by Lean's fresh kernel, NanoDa and con-ron. Only propext, Classical.choice and Quot.sound were allowed. The source package retains the original licensed proof additions, notices, exact dependency pins and a hash-checked route to reconstruct the complete release. Native import resolution, optional Lean sidecars and the independent canonical definition closure have separate retained audits. This local mechanical check is proposed for maintainer review and creates no signed receipt or Palomar registration."
     },
     {
       "submitted_at": "",
@@ -109,7 +135,9 @@
         "declaration": ""
       },
       "license": "See source and notices",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "liu-20261008",
       "title": "Baiying Liu · optimized parameters",
       "theta": {
@@ -161,7 +189,9 @@
         "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re"
       },
       "license": "Apache-2.0 (Lean development; retained upstream notices)",
-      "builds_on": ["openai-baseline"],
+      "builds_on": [
+        "openai-baseline"
+      ],
       "id": "proofcouncil-20261009",
       "title": "ProofCouncil · certified uniform descent",
       "theta": {

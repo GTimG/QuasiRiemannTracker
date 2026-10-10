@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-10T01:47:37.589611+00:00",
+  "candidate": "Argonaut Math v0.1.8",
+  "entry_module": "PerturbedBoundaryMain",
+  "targets": [
+    "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re",
+    "OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re",
+    "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re"
+  ],
+  "threshold": "3499999/4000000",
+  "compiler": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "compiler_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "native_build_report": "WORKSPACE/approaches/argonaut/native/build-result.json",
+  "native_build_report_sha256": "08b73fee8d9536a96dde01daa363d78124a01dd540ad3ee2903b166f1a80beeb",
+  "inventory": "WORKSPACE/approaches/argonaut/evidence/operator-inventory.json",
+  "inventory_sha256": "67e7ffe84f22b512482e892782f920af94b32a775a8854feb701774654f78fac",
+  "lean_path": "WORKSPACE/approaches/argonaut/native/lib:WORKSPACE/compressed/build/local:WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "standard_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audits": [
+    {
+      "status": "PASS",
+      "returncode": 0,
+      "source": "WORKSPACE/approaches/argonaut/project/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean",
+      "source_sha256": "2a2a4b3064c3500456398e0cb32ab8b5e78add1d685e403fd5c820d8d034ab57",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j4",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "WORKSPACE/approaches/argonaut/project/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean"
+      ],
+      "log": "WORKSPACE/approaches/argonaut/evidence/PerturbedBoundaryMainCurrentFullAuditV2.lean.log",
+      "log_sha256": "e4571b25ad99f00687217fc36c17884dfa9e9ae737c15fc91c9764e784613bec",
+      "seconds": 4.072,
+      "printed_axioms": {
+        "OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.sigmaBoundary_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.principal_request_le_sameDataCutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.assembly_cutoff_le_sameDataCutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.hecke_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    {
+      "status": "PASS",
+      "returncode": 0,
+      "source": "WORKSPACE/approaches/argonaut/project/audits/HUBBLE-PrincipalV2-TerminalAudit.lean",
+      "source_sha256": "537f7335eae91ffb34b8e66d8b646b6dd9a4e80ae7ac235b7b513277c0c03fc6",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j4",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "WORKSPACE/approaches/argonaut/project/audits/HUBBLE-PrincipalV2-TerminalAudit.lean"
+      ],
+      "log": "WORKSPACE/approaches/argonaut/evidence/HUBBLE-PrincipalV2-TerminalAudit.lean.log",
+      "log_sha256": "d9f10836538f82b0c488a6f86601317ef4a1be3f82eea0c7265188f3609fc985",
+      "seconds": 4.096,
+      "printed_axioms": {
+        "OAI.SevenEighths.PerturbedMomentConstruction.exists_D_first_cutoff_source_counts_chosen_height": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_raw_of_D_first_cutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_comparison_of_D_first_cutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedCanonicalLocalPrep.same_data_canonical_physical_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta_spec": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.PerturbedBoundaryMain.hecke_current": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    }
+  ],
+  "build_scope": "All candidate additions and missing foundation modules compiled unchanged. Canonical caches matched original sources, allowing only CRLF/LF normalization.",
+  "stronger_local_result_used": false,
+  "independent_kernel_replay": "Performed separately by the shared verification driver; not claimed by this native-only report."
+}

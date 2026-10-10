@@ -1,0 +1,21 @@
+{
+  "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
+  "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+  "source_manifest_sha256": "6560e71ac743c062a16987c19ef830e14c46aa4ae9a72867818f65c8791a7e0f",
+  "input_inventory": "WORKSPACE/approaches/argonaut/evidence/operator-inventory.json",
+  "source_root": "WORKSPACE",
+  "source_checkout": "WORKSPACE/approaches/argonaut/upstream",
+  "native_build_report": "WORKSPACE/approaches/argonaut/evidence/native-build.json",
+  "canonical_root": "WORKSPACE/compressed",
+  "canonical_audit_root": "WORKSPACE/approaches/tracker-liu/proofs/nielstron-20261009-tightening/compressed/audit",
+  "canonical_lean_path": "WORKSPACE/compressed/audit/local-lean-path.txt",
+  "candidate_lean_path": "WORKSPACE/approaches/argonaut/native/lean-path.txt",
+  "source_toolchain": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux",
+  "wrapper_sources": "WORKSPACE/approaches/argonaut/wrappers",
+  "challenge_sha256": "e1c931eb82f568de5fc3310bb6885b8a90178e20e730242a6eeb77973e902e3f",
+  "source_provenance": "WORKSPACE/approaches/argonaut/evidence/source-provenance.json",
+  "reproduction_script": "fetch_source.py",
+  "workspace": "WORKSPACE",
+  "theta": "3499999/4000000",
+  "wait_for_report": "WORKSPACE/approaches/liu/independent-run-1/result.json"
+}
