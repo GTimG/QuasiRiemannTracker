@@ -270,14 +270,14 @@ export default function App() {
             </div>
           </section>
           <nav className="view-nav" aria-label="Research views">
-            {["Timeline", "Contributions", "Protocol"].map((name) => (
+            {["Timeline", "Leaderboard", "Protocol"].map((name) => (
               <button
                 key={name}
                 aria-current={tab === name ? "page" : undefined}
                 onClick={() => setTab(name)}
               >
                 {name}
-                {name === "Contributions" && <small>{all.length}</small>}
+                {name === "Leaderboard" && <small>{all.length}</small>}
               </button>
             ))}
           </nav>
@@ -304,14 +304,6 @@ export default function App() {
                     />
                   )}{" "}
                   <section className="panel contribution-table">
-                    <div className="panel-heading">
-                      <div>
-                        <h2>
-                          Contributions{" "}
-                          <span className="count">{records.length}</span>
-                        </h2>
-                      </div>
-                    </div>
                     <div className="table-scroll">
                       <table role="table">
                         <caption className="sr-only">
