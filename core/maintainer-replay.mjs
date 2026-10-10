@@ -33,12 +33,19 @@ function filesAt(root, prefix = "") {
 export function validateMaintainerReplay(root, pin, contribution) {
   const profile = pin?.replay_profile ?? "liu-algebraic-v1";
   demand(
-    ["liu-algebraic-v1", "argonaut-v0.1.8"].includes(profile),
+    ["liu-algebraic-v1", "argonaut-v0.1.8", "akashlevy-weighted-v1"].includes(
+      profile,
+    ),
     "unknown replay profile",
   );
   const argonaut = profile === "argonaut-v0.1.8";
-  const driverDirectory = `verifier/${argonaut ? "argonaut" : "liu"}`;
-  const targetNamespace = argonaut ? "QRHBoundsPR4" : "QRHBoundsPR3";
+  const akashlevy = profile === "akashlevy-weighted-v1";
+  const driverDirectory = `verifier/${akashlevy ? "akashlevy" : argonaut ? "argonaut" : "liu"}`;
+  const targetNamespace = akashlevy
+    ? "QRHBoundsPR6"
+    : argonaut
+      ? "QRHBoundsPR4"
+      : "QRHBoundsPR3";
   demand(
     pin && safe(pin.directory) && pin.directory.startsWith("public/proofs/"),
     "missing reviewed replay pin",
@@ -164,7 +171,8 @@ export function validateMaintainerReplay(root, pin, contribution) {
     "isolation or challenge ordering missing",
   );
   demand(
-    report.candidate_modules_rebuilt === (argonaut ? 152 : 238) &&
+    report.candidate_modules_rebuilt ===
+      (akashlevy ? 2898 : argonaut ? 152 : 238) &&
       report.approved_dependency_modules === 7026 &&
       report.extra_official_cache_modules === 4807,
     "dependency/build scope differs",
@@ -183,6 +191,21 @@ export function validateMaintainerReplay(root, pin, contribution) {
         same(report.release, inputs.release) &&
         report.release?.sha256 === report.source_content_sha256,
       "Argonaut source release, revision or exact bound differs",
+    );
+  }
+  if (akashlevy) {
+    const inputs = JSON.parse(
+      readFileSync(join(root, driverDirectory, "pins.json")),
+    );
+    demand(
+      report.reviewed_pr_head === inputs.pr_head_commit &&
+        report.trusted_base_commit === inputs.trusted_base_commit &&
+        report.theta_exact === inputs.theta_exact &&
+        same(report.source_bundle, inputs.source_bundle) &&
+        same(report.dependency_fork, inputs.dependency_fork) &&
+        report.source_content_sha256 === inputs.source_bundle.sha256 &&
+        report.submission_manifest_sha256 === inputs.submission_manifest_sha256,
+      "Akash Levy source bundle, dependency fork or reviewed revision differs",
     );
   }
   demand(
@@ -254,6 +277,28 @@ export function validateMaintainerReplay(root, pin, contribution) {
       `required receipt binding missing: ${name}`,
     );
   const published = (name) => read(collection.artifact_publication[name].path);
+  if (akashlevy) {
+    const inputs = JSON.parse(
+      readFileSync(join(root, driverDirectory, "pins.json")),
+    );
+    demand(
+      sha(report.artifacts["submission-manifest.json"]),
+      "submission manifest missing",
+    );
+    demand(
+      same(
+        JSON.parse(published("submission-manifest.json")),
+        inputs.submission_files,
+      ) &&
+        same(
+          JSON.parse(published("source-manifest.json")),
+          Object.fromEntries(
+            inputs.source_manifest.map((row) => [row.path, row.sha256]),
+          ),
+        ),
+      "checked source manifest differs from pinned submission and dependencies",
+    );
+  }
   demand(
     digest(published("challenge-src/Challenge.lean")) === pin.challenge_sha256,
     "trusted challenge differs",

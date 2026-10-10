@@ -205,6 +205,67 @@ test("Argonaut receipt binds its own runner, release and three target names", (t
   assert.throws(f.validate, /Argonaut source release/);
 });
 
+test("weighted-numerator receipt binds every checked source and the exact dependency fork", (t) => {
+  const f = fixture(t, true);
+  const inputs = {
+    theta_exact: "10499/12000",
+    pr_head_commit: "d".repeat(40),
+    trusted_base_commit: "e".repeat(40),
+    source_bundle: { sha256: H, bytes: 100 },
+    dependency_fork: {
+      repository: "https://github.com/akashlevy/math",
+      commit: "f".repeat(40),
+    },
+    submission_manifest_sha256: H,
+    submission_files: { "formalization/WeightedQRH/Main.lean": H },
+    source_manifest: [{ path: "WeightedQRH/Main.lean", sha256: H }],
+  };
+  const text = JSON.stringify(inputs) + "\n";
+  f.write("verifier/akashlevy/replay.py", "# synthetic trusted driver\n");
+  f.write("verifier/akashlevy/pins.json", text);
+  f.contribution.repository = "akashlevy/QuasiRiemannTracker";
+  Object.assign(f.report, {
+    source_repository: `https://github.com/${f.contribution.repository}`,
+    theta_exact: inputs.theta_exact,
+    source_bundle: structuredClone(inputs.source_bundle),
+    dependency_fork: structuredClone(inputs.dependency_fork),
+    submission_manifest_sha256: inputs.submission_manifest_sha256,
+    pins_sha256: sha(text),
+    candidate_modules_rebuilt: 2898,
+    targets: [
+      "QRHBoundsPR6.allDirichlet",
+      "QRHBoundsPR6.zeta",
+      "QRHBoundsPR6.allHecke",
+    ],
+  });
+  delete f.report.release;
+  Object.assign(f.pin, {
+    replay_profile: "akashlevy-weighted-v1",
+    theta_exact: inputs.theta_exact,
+    pins_sha256: sha(text),
+  });
+  const config = JSON.parse(f.files["comparator.json"]);
+  config.theorem_names = f.report.targets;
+  f.putJSON("comparator.json", config);
+  f.putJSON("source-manifest.json", { "WeightedQRH/Main.lean": H });
+  f.putJSON("submission-manifest.json", inputs.submission_files);
+  f.seal();
+  assert.equal(f.validate().status, "PASS");
+  f.putJSON("source-manifest.json", {
+    "WeightedQRH/Main.lean": "0".repeat(64),
+  });
+  f.seal();
+  assert.throws(f.validate, /checked source manifest differs/);
+  f.putJSON("source-manifest.json", { "WeightedQRH/Main.lean": H });
+  f.report.dependency_fork.commit = "0".repeat(40);
+  f.seal();
+  assert.throws(f.validate, /dependency fork or reviewed revision differs/);
+  f.report.dependency_fork = inputs.dependency_fork;
+  f.report.reviewed_pr_head = "0".repeat(40);
+  f.seal();
+  assert.throws(f.validate, /reviewed revision differs/);
+});
+
 test("Argonaut cannot reuse a Liu profile or receipt from another PR revision", (t) => {
   const f = fixture(t, true);
   f.report.reviewed_pr_head = "f".repeat(40);

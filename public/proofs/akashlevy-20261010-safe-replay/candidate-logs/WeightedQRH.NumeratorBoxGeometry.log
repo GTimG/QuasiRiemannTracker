@@ -1,0 +1,12 @@
+WeightedQRH/NumeratorBoxGeometry.lean:27:5: warning: Variable name `hann` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hann
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+WeightedQRH/NumeratorBoxGeometry.lean:137:50: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

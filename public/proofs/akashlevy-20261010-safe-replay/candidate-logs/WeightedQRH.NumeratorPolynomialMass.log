@@ -1,0 +1,14 @@
+WeightedQRH/NumeratorPolynomialMass.lean:135:24: warning: This simp argument is unused:
+  hI3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq, hI4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+WeightedQRH/NumeratorPolynomialMass.lean:147:24: warning: This simp argument is unused:
+  hI3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq, hI4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

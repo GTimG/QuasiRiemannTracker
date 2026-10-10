@@ -1,0 +1,511 @@
+warning: rellich-kondrachov: repository '/work/qrh-proof/formalization/.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/work/qrh-proof/formalization/.lake/packages/PrimeNumberTheoremAnd' has local changes
+Building ComparatorChallenges.WeightedQRHZeta
+warning: rellich-kondrachov: repository '/work/qrh-proof/formalization/.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/work/qrh-proof/formalization/.lake/packages/PrimeNumberTheoremAnd' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.WeightedQRHZeta
+warning: ComparatorChallenges/WeightedQRHZeta.lean:5:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_10499_12000_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.WeightedQRHZeta
+Building WeightedQRH.Statements
+warning: rellich-kondrachov: repository '/work/qrh-proof/formalization/.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/work/qrh-proof/formalization/.lake/packages/PrimeNumberTheoremAnd' has local changes
+⚠ [4662/4729] Replayed WeightedQRH.NumeratorLocalCoefficients
+warning: WeightedQRH/NumeratorLocalCoefficients.lean:140:4: `if_false` has been deprecated: Use `ite_false` instead
+⚠ [4663/4729] Replayed WeightedQRH.NumeratorPolynomialMass
+warning: WeightedQRH/NumeratorPolynomialMass.lean:135:24: This simp argument is unused:
+  hI3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq, hI4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorPolynomialMass.lean:147:24: This simp argument is unused:
+  hI3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq, hI4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4765/5196] Replayed WeightedQRH.NumeratorPrimeExpansion
+warning: WeightedQRH/NumeratorPrimeExpansion.lean:23:24: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [QuadraticCoefficients.vector, QuadraticCoefficients.mass, quadraticMass, Fin.sum_univ_three, norm_pow,
+    Complex.norm_cpow_eq_rpow_re_of_pos hQ, Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorPrimeExpansion.lean:56:4: Unused tactic linter: `change _ = 1 + (unramifiedDefectCoefficients _ _ _ _ _ _).eval _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4769/5196] Replayed WeightedQRH.NumeratorRamifiedProduct
+warning: WeightedQRH/NumeratorRamifiedProduct.lean:39:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: WeightedQRH/NumeratorRamifiedProduct.lean:111:15: This simp argument is unused:
+  Complex.neg_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.ofReal_re, ← norm_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorRamifiedProduct.lean:111:31: This simp argument is unused:
+  Complex.ofReal_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.neg_re, ← norm_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4770/5196] Replayed WeightedQRH.NumeratorCorrectionExpansion
+warning: WeightedQRH/NumeratorCorrectionExpansion.lean:127:33: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4771/5196] Replayed WeightedQRH.NumeratorErrorMass
+warning: WeightedQRH/NumeratorErrorMass.lean:66:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorErrorMass.lean:79:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4922/5196] Replayed WeightedQRH.NumeratorActualError
+warning: WeightedQRH/NumeratorActualError.lean:26:22: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [CubicCoefficients.vector, CubicCoefficients.mass, cubicMass, Fin.sum_univ_four, norm_pow,
+    Complex.norm_cpow_eq_rpow_re_of_pos hQ, Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorActualError.lean:60:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorActualError.lean:74:52: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: WeightedQRH/NumeratorActualError.lean:75:26: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: WeightedQRH/NumeratorActualError.lean:75:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: WeightedQRH/NumeratorActualError.lean:74:52: This simp argument is unused:
+  if_neg hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rawErrorSlot, actualErrorCoefficients, supportedCorrection, dif_pos hs, if_neg hd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorActualError.lean:94:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: WeightedQRH/NumeratorActualError.lean:136:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorActualError.lean:147:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: WeightedQRH/NumeratorActualError.lean:148:6: `if_false` has been deprecated: Use `ite_false` instead
+warning: WeightedQRH/NumeratorActualError.lean:136:39: This simp argument is unused:
+  if_pos hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualErrorCoefficients, errorSize, repeatedDeficit, hd, true_and, primeScale] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorActualError.lean:147:39: This simp argument is unused:
+  if_neg hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualErrorCoefficients, errorSize, repeatedDeficit, hd, false_and, if_false, NNReal.coe_one,
+    Real.one_rpow, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: WeightedQRH/NumeratorActualError.lean:141:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/NumeratorActualError.lean:144:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [9845/10081] Replayed WeightedQRH.MellinReconstruction
+info: WeightedQRH/MellinReconstruction.lean:163:54: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9847/10081] Replayed WeightedQRH.NumeratorLabelPacket
+warning: WeightedQRH/NumeratorLabelPacket.lean:18:0: automatically included section variable(s) unused in theorem `WeightedQRH.Numerator.labelSupported`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: WeightedQRH/NumeratorLabelPacket.lean:51:0: automatically included section variable(s) unused in theorem `WeightedQRH.Numerator.labelPacketScale_one_le`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: WeightedQRH/NumeratorLabelPacket.lean:58:22: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorLabelPacket.lean:60:7: Variable name `hdis` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdis
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorLabelPacket.lean:61:7: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9918/10081] Replayed WeightedQRH.FullWContour
+warning: WeightedQRH/FullWContour.lean:183:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9927/10081] Replayed WeightedQRH.FullWFiniteError
+warning: WeightedQRH/FullWFiniteError.lean:118:86: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9933/10081] Replayed WeightedQRH.NumeratorPhysicalPacketMass
+warning: WeightedQRH/NumeratorPhysicalPacketMass.lean:18:22: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorPhysicalPacketMass.lean:20:7: Variable name `hdis` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdis
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorPhysicalPacketMass.lean:21:7: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9935/10081] Replayed WeightedQRH.NumeratorReflectionMass
+warning: WeightedQRH/NumeratorReflectionMass.lean:33:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9947/10081] Replayed WeightedQRH.NumeratorReflectionRetained
+warning: WeightedQRH/NumeratorReflectionRetained.lean:93:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorReflectionRetained.lean:95:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorReflectionRetained.lean:95:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorReflectionRetained.lean:98:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: WeightedQRH/NumeratorReflectionRetained.lean:101:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9949/10081] Replayed WeightedQRH.NumeratorHolder
+warning: WeightedQRH/NumeratorHolder.lean:56:28: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [9951/10081] Replayed WeightedQRH.NumeratorAmplitudeHolder
+info: WeightedQRH/NumeratorAmplitudeHolder.lean:42:78: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9952/10081] Replayed WeightedQRH.NumeratorDilationBoxes
+warning: WeightedQRH/NumeratorDilationBoxes.lean:54:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [9955/10081] Replayed WeightedQRH.NumeratorBoxReconstruction
+warning: WeightedQRH/NumeratorBoxReconstruction.lean:118:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [9956/10081] Replayed WeightedQRH.NumeratorPacketBinBound
+info: WeightedQRH/NumeratorPacketBinBound.lean:49:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9958/10081] Replayed WeightedQRH.NumeratorActualBin
+warning: WeightedQRH/NumeratorActualBin.lean:84:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: WeightedQRH/NumeratorActualBin.lean:30:22: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorActualBin.lean:32:7: Variable name `hdis` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdis
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorActualBin.lean:33:7: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorActualBin.lean:34:7: Variable name `Pbase` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _Pbase
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9959/10081] Replayed WeightedQRH.CertificateBernstein
+warning: WeightedQRH/CertificateBernstein.lean:34:37: Variable name `hx0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9960/10081] Replayed WeightedQRH.ExponentCertificate
+warning: WeightedQRH/ExponentCertificate.lean:27:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: WeightedQRH/ExponentCertificate.lean:27:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: WeightedQRH/ExponentCertificate.lean:69:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/ExponentCertificate.lean:75:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/ExponentCertificate.lean:209:5: Variable name `hδ0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [10025/10081] Replayed WeightedQRH.HighRows.CountIdentity
+warning: WeightedQRH/HighRows/CountIdentity.lean:30:53: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [11700/11841] Replayed WeightedQRH.HighRows.WeightedSlotSelection
+warning: WeightedQRH/HighRows/WeightedSlotSelection.lean:29:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: WeightedQRH/HighRows/WeightedSlotSelection.lean:29:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [11702/11841] Replayed WeightedQRH.NumeratorSourceParameters
+warning: WeightedQRH/NumeratorSourceParameters.lean:29:49: Variable name `delta` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _delta
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11703/11841] Replayed WeightedQRH.NumeratorReflectionData
+warning: WeightedQRH/NumeratorReflectionData.lean:50:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [11704/11841] Replayed WeightedQRH.NumeratorPhysicalMoment
+warning: WeightedQRH/NumeratorPhysicalMoment.lean:98:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: WeightedQRH/NumeratorPhysicalMoment.lean:58:44: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorPhysicalMoment.lean:59:5: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorPhysicalMoment.lean:60:5: Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11706/11841] Replayed WeightedQRH.NumeratorFourierProfiles
+warning: WeightedQRH/NumeratorFourierProfiles.lean:109:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [11710/11841] Replayed WeightedQRH.NumeratorRetainedGeometry
+warning: WeightedQRH/NumeratorRetainedGeometry.lean:28:53: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11711/11841] Replayed WeightedQRH.NumeratorCertifiedRetained
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:105:92: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:123:105: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:126:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:126:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:105:92: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: WeightedQRH/NumeratorCertifiedRetained.lean:123:105: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [11712/11841] Replayed WeightedQRH.NumeratorRetainedFixed
+warning: WeightedQRH/NumeratorRetainedFixed.lean:45:43: Variable name `hCcond` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCcond
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11713/11841] Replayed WeightedQRH.NumeratorDiscarded
+warning: WeightedQRH/NumeratorDiscarded.lean:85:69: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: WeightedQRH/NumeratorDiscarded.lean:121:68: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: WeightedQRH/NumeratorDiscarded.lean:102:5: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorDiscarded.lean:102:20: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorDiscarded.lean:102:35: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11716/11841] Replayed WeightedQRH.NumeratorBoxGeometry
+warning: WeightedQRH/NumeratorBoxGeometry.lean:27:5: Variable name `hann` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hann
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/NumeratorBoxGeometry.lean:137:50: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11717/11841] Replayed WeightedQRH.NumeratorSelectedCrude
+warning: WeightedQRH/NumeratorSelectedCrude.lean:13:16: Variable name `hmesh` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmesh
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11722/11841] Replayed WeightedQRH.NumeratorFiniteCollect
+warning: WeightedQRH/NumeratorFiniteCollect.lean:98:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [11751/11841] Replayed WeightedQRH.PrincipalSignal
+warning: WeightedQRH/PrincipalSignal.lean:117:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: WeightedQRH/PrincipalSignal.lean:256:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [11752/11841] Replayed WeightedQRH.PrincipalRemainderBounds
+warning: WeightedQRH/PrincipalRemainderBounds.lean:529:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/PrincipalRemainderBounds.lean:536:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/PrincipalRemainderBounds.lean:543:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [11758/11841] Replayed WeightedQRH.HighRows.NormalizedTransportSaving
+warning: WeightedQRH/HighRows/NormalizedTransportSaving.lean:36:5: Variable name `hgeometric` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgeometric
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11759/11841] Replayed WeightedQRH.HighRows.CentralExponent
+warning: WeightedQRH/HighRows/CentralExponent.lean:58:19: Variable name `hv0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11775/11841] Replayed WeightedQRH.HighRows.CubeFullWNormalized
+warning: WeightedQRH/HighRows/CubeFullWNormalized.lean:61:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [11807/11841] Replayed WeightedQRH.LowDetector.LowPhysicalInverseBound
+warning: WeightedQRH/LowDetector/LowPhysicalInverseBound.lean:93:74: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: WeightedQRH/LowDetector/LowPhysicalInverseBound.lean:93:86: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [11808/11841] Replayed WeightedQRH.LowDetector.LowUnselectedMass
+warning: WeightedQRH/LowDetector/LowUnselectedMass.lean:84:35: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [11823/11841] Replayed WeightedQRH.HighRows.WeightedSourceFinish
+warning: WeightedQRH/HighRows/WeightedSourceFinish.lean:252:2: Try this: intro hlabels hnext hcurrent k hk i hi j hj hne hd hdelta htop
+⚠ [11824/11841] Replayed WeightedQRH.HighRows.WeightedSourceLoss
+warning: WeightedQRH/HighRows/WeightedSourceLoss.lean:32:5: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: WeightedQRH/HighRows/WeightedSourceLoss.lean:90:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [11825/11841] Replayed WeightedQRH.NumeratorSourceExponent
+warning: WeightedQRH/NumeratorSourceExponent.lean:62:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [11836/11841] Replayed WeightedQRH.HighRows.ConditionalFinal
+warning: WeightedQRH/HighRows/ConditionalFinal.lean:88:4: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (11841 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_10499_12000_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from WeightedQRH.Statements
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+EXIT 0

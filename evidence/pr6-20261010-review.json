@@ -1,0 +1,17 @@
+{
+  "kind": "post-verification merge review; not a new kernel run",
+  "reviewed_pr_head": "28da98fe20ccf43adeeb2dcb8fc192bb9cfc6209",
+  "verified_original_pr_head": "2fd60c0926b66ea18d7436f5ed55250fd006ab5d",
+  "merge_parents": [
+    "2fd60c0926b66ea18d7436f5ed55250fd006ab5d",
+    "c4806753858945a008a92c564130809548e8c4bb"
+  ],
+  "proof_source_commit": "ec626ec9c0e7ab7b29f6c916314932caeb4df39a",
+  "submission_git_tree": "439909afc07ee7213d2585e892a8e23d4447b4ea",
+  "submission_files_checked": 302,
+  "submission_manifest_sha256": "32ea97f3fed1bd6fa606c25ab611d4640bb69c8c4d29d153ae3b6dce20d69a46",
+  "independent_receipt_sha256": "487e7118c8b7479d8711e03e039e4446abceadfa84f520525b515bd271a9ff82",
+  "comparison": "All 302 submitted package files at the new merge commit have identical bytes to the independently verified source. The dependency fork, theorem and rational are unchanged.",
+  "review_scope": "Compared the new merge with the prepared integration of the same main revision; retained independent receipt gates, tests and catalogue metadata.",
+  "verification_reused_for_unchanged_content": true
+}

@@ -1,0 +1,51 @@
+{
+  "challenge": "src/Challenge.lean",
+  "challenge_sha256": "4624fc67bbd5792408525558a48481a5cd3acd258c78caf1ec4d29528703c287",
+  "template": "tracker public/proofs/palomar-20261009/qrh/src/Challenge.lean",
+  "template_sha256": "eee59775c5f4f892199f7456f85f7664a14ef3010fc1b3df97ed2c0f8a1db4e6",
+  "template_change": "the literal '874957019421 / 1000000000000' replaced by '10499 / 12000' in all three statements, nothing else",
+  "challenge_imports": [
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "OAI.NumberTheory.DirichletL.Hecke.IdealBridge"
+  ],
+  "protected_definition_files": [
+    {
+      "source": "openai/math fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean",
+      "sha256": "9871d175749b34ec40cf66ccc14b4faa0a9ef08831cb3fa901c944e57c7b9ec6",
+      "git_blob": "3d87da47cd57f0a4f11859c654e3e3202a519100",
+      "git_blob_at_checkout_head": "3d87da47cd57f0a4f11859c654e3e3202a519100",
+      "checkout_head": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "matches_pinned_blob": true
+    },
+    {
+      "source": "openai/math fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean",
+      "sha256": "6c1fc33b7372108323bf3af3d4ab6f6e454ea9896b89e78964463a8e35df735f",
+      "git_blob": "bcb15758326db111dd0b007b79a58103a4fa659e",
+      "git_blob_at_checkout_head": "bcb15758326db111dd0b007b79a58103a4fa659e",
+      "checkout_head": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "matches_pinned_blob": true
+    },
+    {
+      "source": "mathlib d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "path": "Mathlib/NumberTheory/LSeries/DirichletContinuation.lean",
+      "sha256": "7ef38fb53f462e19dfd6746fc1826423e55bb5e2672c2b5667e2fd4889f401b6",
+      "git_blob": "89c72580697983d86706cff17ccbea2cee6475a3",
+      "git_blob_at_checkout_head": "89c72580697983d86706cff17ccbea2cee6475a3",
+      "checkout_head": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "matches_pinned_blob": true
+    },
+    {
+      "source": "mathlib d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "path": "Mathlib/NumberTheory/LSeries/RiemannZeta.lean",
+      "sha256": "8d24b729a30f1fef0820f0f7c9cdbb5910df30dfac2c597eb666794bead08b1c",
+      "git_blob": "b382f3d6c15762c9db38ddea5e1b572455631f27",
+      "git_blob_at_checkout_head": "b382f3d6c15762c9db38ddea5e1b572455631f27",
+      "checkout_head": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "matches_pinned_blob": true
+    }
+  ],
+  "challenge_build": "pristine openai/math fd4aeeb2e checkout (sparse lean/OAI/NumberTheory/DirichletL), lake build OAI.NumberTheory.DirichletL.Hecke.IdealBridge: 4402 jobs, 306 OAI modules compiled from source",
+  "challenge_LEAN_PATH_has_no_WeightedQRH_or_fork": true
+}

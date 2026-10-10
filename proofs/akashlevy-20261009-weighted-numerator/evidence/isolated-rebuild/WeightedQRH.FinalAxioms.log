@@ -1,0 +1,27 @@
+WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput
+WeightedQRH.fullW_analytic_input : FullWAnalyticInput
+WeightedQRH.beta_le_theta : HeckeZeroSupremum.beta ≤ 10499 / 12000
+WeightedQRH.hecke_nonzero : ∀ (χ : HeckeFamily.Character) (s : ℂ),
+  10499 / 12000 < s.re → s ≠ 1 ∨ χ.residue ≠ 1 → HeckeFamily.LFunction χ s ≠ 0
+@WeightedQRH.dirichlet_nonzero : ∀ {q : ℕ} [inst : NeZero q] (χ : DirichletCharacter ℂ q) (s : ℂ),
+  10499 / 12000 < s.re → ¬(χ = 1 ∧ s = 1) → DirichletCharacter.LFunction χ s ≠ 0
+WeightedQRH.zeta_nonzero : ∀ (s : ℂ), 10499 / 12000 < s.re → s ≠ 1 → AnalyticAt ℂ riemannZeta s ∧ riemannZeta s ≠ 0
+@OAI.riemannZeta_ne_zero_of_10499_12000_lt_re : ∀ {s : ℂ}, 10499 / 12000 < s.re → riemannZeta s ≠ 0
+@OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re : ∀ {q : ℕ} [inst : NeZero q]
+  (χ : DirichletCharacter ℂ q) {s : ℂ}, 10499 / 12000 < s.re → ¬(χ = 1 ∧ s = 1) → DirichletCharacter.LFunction χ s ≠ 0
+HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re : ∀ (χ : HeckeFamily.Character) {s : ℂ},
+  10499 / 12000 < s.re → ¬(χ.residue = 1 ∧ s = 1) → HeckeFamily.LFunction χ s ≠ 0
+'WeightedQRH.Numerator.source_integrated_amplitude_classes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.Numerator.actual_raw_fullW_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.fullW_analytic_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.beta_le_theta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.hecke_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.dirichlet_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeightedQRH.zeta_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.riemannZeta_ne_zero_of_10499_12000_lt_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

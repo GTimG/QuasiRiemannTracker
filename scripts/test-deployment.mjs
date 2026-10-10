@@ -67,9 +67,9 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 5,
+    () => document.querySelectorAll("[data-dot]").length === 6,
   );
-  assert.equal(await page.locator("tbody tr").count(), 5);
+  assert.equal(await page.locator("tbody tr").count(), 6);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -84,6 +84,17 @@ try {
     "proofs/nielstron-20261009-kernels/result.json",
     "proofs/nielstron-20261009-kernels/control-results.json",
     "proofs/nielstron-20261009-kernels/collection.json",
+    "proofs/akashlevy-20261009-weighted-numerator/result.json",
+    "proofs/akashlevy-20261009-weighted-numerator/judge.log",
+    "proofs/akashlevy-20261009-weighted-numerator/control-results.json",
+    "proofs/akashlevy-20261009-weighted-numerator/Challenge.lean",
+    "proofs/akashlevy-20261009-weighted-numerator/manuscript.pdf",
+    "proofs/akashlevy-20261009-weighted-numerator/collection.json",
+    "proofs/akashlevy-20261010-safe-replay/result.json",
+    "proofs/akashlevy-20261010-safe-replay/collection.json",
+    "proofs/akashlevy-20261010-safe-replay/README.txt",
+    "proofs/akashlevy-20261010-safe-replay/logs/judge.log",
+    "proofs/akashlevy-20261010-safe-replay/contract-audit.json",
     "proofs/nielstron-algebraic-20261009/collection.json",
     "proofs/nielstron-algebraic-20261009/native-final-audit.json",
     "proofs/nielstron-algebraic-20261009/token-counts.json",
@@ -116,6 +127,7 @@ try {
     "qrh-20261009",
     "nielstron-algebraic-20261009",
     "argonaut-20261010-kernels",
+    "akashlevy-20261009-weighted-numerator",
   ]) {
     const proofBase = origin + base + `proofs/${id}/`;
     const checksum = await (
@@ -167,7 +179,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();
