@@ -54,6 +54,24 @@ const columns: { key: SortKey; label: string }[] = [
   { key: "date", label: "Publication" },
 ];
 const theorem = `∀ {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ},\n  (θ < s.re) → ¬ (χ = 1 ∧ s = 1) →\n  DirichletCharacter.LFunction χ s ≠ 0`;
+const proofSolutionUrl = (r: Contribution) => {
+  const statement = r.references.find(
+    (ref) => ref.url.endsWith(".lean") && /statement/i.test(ref.label),
+  );
+  if (statement) {
+    const solution = statement.url
+      .replace(/challenge-src\/Challenge\.lean$/, "solution-src/Solution.lean")
+      .replace(/src\/(?:[^/]+\/)?Challenge\.lean$/, "src/Solution.lean");
+    return `https://github.com/GTimG/QuasiRiemannTracker/blob/main/public/${solution}`;
+  }
+};
+const projectUrl = (r: Contribution) => {
+  if (r.repository) return `https://github.com/${r.repository}`;
+  const publication = r.references.find((ref) =>
+    /publication|paper|manuscript|writeup|homepage/i.test(ref.label),
+  );
+  if (publication) return publicUrl(publication.url);
+};
 const leanTheorem = `theorem quasi_riemann_bound
     {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
     (hs : (θ : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
@@ -339,6 +357,7 @@ export default function App() {
                           {records.map((r) => (
                             <tr
                               key={r.id}
+                              onClick={() => setSelected(r.id)}
                               className={
                                 selected === r.id ? "selected-row" : ""
                               }
@@ -352,14 +371,17 @@ export default function App() {
                                   >
                                     {contributionTitle(r)}
                                   </button>
-                                  <button
+                                  <a
                                     className={
                                       "tag verification-badge " +
                                       (verifiedHere(r) ? "teal" : "amber")
                                     }
-                                    title={statusLabel(r)}
-                                    aria-label={`Read verification protocol for ${contributionTitle(r)}`}
-                                    onClick={() => setTab("Protocol")}
+                                    title={`${statusLabel(r)} · View checked solution`}
+                                    aria-label={`Verified solution for ${contributionTitle(r)}`}
+                                    href={proofSolutionUrl(r)}
+                                    onClick={(event) => event.stopPropagation()}
+                                    target="_blank"
+                                    rel="noreferrer"
                                   >
                                     {verifiedHere(r) ? (
                                       <BadgeCheck
@@ -372,7 +394,25 @@ export default function App() {
                                     <span className="sr-only">
                                       {statusLabel(r)}
                                     </span>
-                                  </button>
+                                  </a>
+                                  {projectUrl(r) && (
+                                    <a
+                                      className="source-link"
+                                      href={projectUrl(r)}
+                                      onClick={(event) =>
+                                        event.stopPropagation()
+                                      }
+                                      aria-label={`Project homepage for ${contributionTitle(r)}`}
+                                      title="Project homepage"
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      <ExternalLink
+                                        size={16}
+                                        aria-hidden="true"
+                                      />
+                                    </a>
+                                  )}
                                 </div>
                               </td>
                               <td data-label="Author" className="author-cell">

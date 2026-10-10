@@ -567,6 +567,9 @@ th[aria-sort="ascending"],
 th[aria-sort="descending"] {
   color: var(--ink);
 }
+tbody tr {
+  cursor: pointer;
+}
 .contribution-name {
   display: flex;
   align-items: baseline;
@@ -585,6 +588,19 @@ th[aria-sort="descending"] {
 }
 .verification-badge::before {
   display: none;
+}
+.source-link {
+  display: inline-grid;
+  place-items: center;
+  align-self: start;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #475661;
+}
+.source-link:hover {
+  color: var(--teal);
+  background: #e5eff3;
 }
 .author-cell {
   color: #475661;
