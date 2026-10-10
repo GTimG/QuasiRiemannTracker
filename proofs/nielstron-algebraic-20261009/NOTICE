@@ -1,0 +1,14 @@
+Nielstron algebraic-endpoint quasi-Riemann formalization, 2026-10-09.
+Human contribution: Nielstron. AI-assisted research and formalization.
+
+Derived from Nielstron's compressed N24 proof, itself derived from Tim
+Gehrunger / ProofCouncil's gtimg/QuasiRiemannTracker development at
+290d9c5463344c3e2fab93b878f3281e77e3fd6f and OpenAI/math at
+fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb. Original source headers and notices
+are retained. New and modified Lean sources remain Apache-2.0.
+
+Changes replace the rational approximation by the exact cubic root, prove
+an exact endpoint certificate, propagate arbitrary positive gap budgets,
+and add independent algebraic and N36 targets. The original seven protected
+files and prior public snapshots are unchanged. No upstream author or checker
+project is represented as endorsing the contribution.

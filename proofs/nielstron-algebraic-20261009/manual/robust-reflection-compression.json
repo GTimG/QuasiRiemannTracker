@@ -1,0 +1,20 @@
+{
+  "file": "manual/QRH/RobustReflectionGeometry.lean",
+  "before_tokens": 1128,
+  "after_tokens": 1059,
+  "sha256": "268d626d55d8975f985fb5ba7a24476ca659a3929232e0199cfaabdff441b933",
+  "compilation_exit": 0,
+  "compilation_log": "manual/robust-reflection-build.log",
+  "lean_version": "4.34.1",
+  "tokenizer_commit": "06b3dda0b3b5c82a6a6ac9979d065ad59affb908",
+  "changes": [
+    {
+      "theorem": "QRH.RobustReflection.reflected_low",
+      "statement_unchanged": true,
+      "before_proof_tokens": 121,
+      "after_proof_tokens": 52,
+      "new_proof_body": "  have hzbudget : (6*κ-1)*z ≤ M/6+e :=\n    (mul_le_mul_of_nonneg_left hze (by linarith)).trans hbudget\n  simp only [max_def] at hhigh href\n  split_ifs at hhigh href <;> refine ⟨?_, ?_, ?_⟩ <;> nlinarith\n"
+    }
+  ],
+  "saved_tokens": 69
+}

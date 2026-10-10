@@ -1,0 +1,24 @@
+{
+  "changes": [
+    {
+      "path": "compressed/audit/algebraic-reproduction.json",
+      "original_sha256": "ae66370eb3942b12ed06c9bc98119dac0d46101b80627ab96af328d82226d7af",
+      "published_sha256": "b93afccd20b005cb1ab001772a7f5899d68cb1da76e747b50ad7058b428930a9",
+      "change": "Runtime workspace prefix neutralization only"
+    },
+    {
+      "path": "verification/Challenge-compile.log",
+      "original_sha256": "ee53256734ebd97ff98961c430c9f15da2a1a0d09133217be016a8e2af6918ea",
+      "published_sha256": "cb7792af662762c7cd5e2f1fee5e3a6082d00e78b8ddca75ac953df6916e23ee",
+      "change": "Runtime workspace prefix neutralization only"
+    },
+    {
+      "path": "compressed/audit/token-counts.json",
+      "original_sha256": "cd00c74052507b6425ed016e6b2f840c48bfca97ce4f53ce7d28f518d160b0c1",
+      "published_sha256": "046233884ce2d6bf0eda92ce35c0e4eb4520f674993e5da7ed3a904a63ee36bd",
+      "change": "Runtime workspace prefix neutralization only"
+    }
+  ],
+  "omitted": "Compiled objects, binaries, toolchains, caches, upstream checkouts and private operational records.",
+  "lean_sources_unchanged": true
+}

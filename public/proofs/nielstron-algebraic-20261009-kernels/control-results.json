@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "name": "PalomarPreflightSolution",
+      "exit_code": 0,
+      "log": "controls/matching.log"
+    },
+    {
+      "name": "PalomarPreflightWrong",
+      "exit_code": 1,
+      "log": "controls/mismatched.log"
+    },
+    {
+      "name": "PalomarPreflightIllTyped",
+      "exit_code": 1,
+      "log": "controls/ill-typed.log"
+    }
+  ]
+}

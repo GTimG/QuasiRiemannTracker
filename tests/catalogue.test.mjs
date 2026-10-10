@@ -12,7 +12,17 @@ import {
   validateExternalKernelEvidence,
 } from "../core/external-kernel-evidence.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
-test("all five results advance the plotted frontier while verification stays separate", () => {
+test("the existing contribution selects one current proof revision and preserves its earlier metadata", () => {
+  const d = validateCatalogue(data());
+  const current = d.records.filter((r) => r.id.startsWith("nielstron-"));
+  assert.equal(current.length, 1);
+  assert.equal(current[0].id, "nielstron-20261009-tightening");
+  assert.equal(current[0].proof_revision, "nielstron-algebraic-20261009");
+  assert.equal(d.historical_records.length, 1);
+  assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
+  assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+});
+test("all five current results advance the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
   assert.equal(d.records.length, 5);
   const verified = d.records.filter(verifiedHere);
