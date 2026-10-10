@@ -8,6 +8,14 @@
 4. Run `npm ci --ignore-scripts`, `npm run check`, and `npm run test:browser` (install Chromium with `npx playwright install chromium` if necessary).
 5. Open a pull request describing the result and its evidence. After site checks and maintainer review, merging updates the public website automatically through GitHub Pages.
 
+For an update to the same catalogue contribution, retain its displayed `id` and
+point `proof_revision` to the reviewed new proof snapshot. Preserve the previous
+metadata in `historical_records`; it remains authenticated but does not create
+another chart point. Both revisions' proof archives and checker evidence stay
+immutable. Add the explicit revision mapping and its evidence checks when
+introducing a revision. This catalogue workflow does not change the separate
+signed registry's immutable contribution IDs or supersession rules below.
+
 Liu's existing algebraic constant retains its exact expression and a certified rational enclosure for plotting. The validator checks the enclosure with integer arithmetic; a truncated decimal must not replace the theorem's constant. New algebraic forms need a reviewed exact representation and comparison method.
 
 No author can grant themselves a verified badge merely by passing a website build. Status and evidence changes require maintainer review. The automatic signed admission path below is not running. It must be updated to require all three kernels and tested before it can admit verified results.

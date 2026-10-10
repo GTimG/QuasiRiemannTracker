@@ -8,16 +8,26 @@ import {
 } from "../core/catalogue.mjs";
 import { frontierHistory, cmp } from "../core/rational.mjs";
 const data = () => JSON.parse(readFileSync("catalogue/results.json", "utf8"));
-test("all six results advance the plotted frontier while verification stays separate", () => {
+test("the existing contribution selects one current proof revision and preserves its earlier metadata", () => {
   const d = validateCatalogue(data());
-  assert.equal(d.records.length, 6);
+  const current = d.records.filter((r) => r.id.startsWith("nielstron-"));
+  assert.equal(current.length, 1);
+  assert.equal(current[0].id, "nielstron-20261009-tightening");
+  assert.equal(current[0].proof_revision, "nielstron-algebraic-20261009");
+  assert.equal(d.historical_records.length, 1);
+  assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
+  assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
+});
+test("all five current results advance the plotted frontier while verification stays separate", () => {
+  const d = validateCatalogue(data());
+  assert.equal(d.records.length, 5);
   const verified = d.records.filter(verifiedHere);
   assert.deepEqual(
     verified.map((r) => r.id),
-    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening", "nielstron-algebraic-20261009"],
+    ["openai-baseline", "proofcouncil-20261009", "nielstron-20261009-tightening"],
   );
   const frontier = frontierHistory(timelineRecords(d.records), []);
-  assert.equal(frontier.length, 6);
+  assert.equal(frontier.length, 5);
   for (let i = 0; i < frontier.length; i++) {
     assert.equal(cmp(frontier[i].theta, d.records[i].theta), 0);
     if (i) assert.equal(cmp(frontier[i].theta, frontier[i - 1].theta), -1);

@@ -1,3 +1,4 @@
+import { findProofRevision } from "../core/catalogue-revisions.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, writeFileSync, mkdtempSync, cpSync, rmSync } from "node:fs";
@@ -35,7 +36,7 @@ const validate = (directory, data = catalogue(), pins = binding()) =>
   validateAlgebraicKernelEvidence(root, data, directory, pins);
 
 test("algebraic native evidence cannot acquire independent status or a timestamp", () => {
-  const data = catalogue(), record = data.records.find((row) => row.id === NATIVE_ID);
+  const data = catalogue(), record = findProofRevision(data, NATIVE_ID);
   record.status = "verification-pending";
   record.first_verified_at = "";
   assert.equal(validate(absent, data), null);
@@ -51,7 +52,7 @@ test("genuine algebraic acceptance binds all seven targets and its actual source
   assert.equal(report.status, "PASS");
   assert.equal(report.declarations.length, 7);
   assert.ok(report.declarations.includes("QRHPalomar.existsUniqueRoot"));
-  const record = data.records.find((row) => row.id === NATIVE_ID);
+  const record = findProofRevision(data, NATIVE_ID);
   record.first_verified_at = "2026-10-09T00:00:00Z";
   assert.throws(() => validate(undefined, data), /date\/source/);
   record.first_verified_at = report.verified_at_utc;
@@ -93,4 +94,32 @@ test("the wrapper digest authenticates its complete file map", () => {
 
 test("algebraic checks cannot reuse the earlier N24 acceptance dossier", () => {
   assert.throws(() => validate(resolve("public/proofs/nielstron-20261009-kernels")), /Invalid independent evidence collection/);
+});
+
+test("a revision cannot bypass its validator through missing, unknown, or ambiguous metadata", () => {
+  for (const revision of [undefined, "nielstron-20261009-tightening", "unreviewed-proof"]) {
+    const data = catalogue();
+    const current = findProofRevision(data, NATIVE_ID);
+    if (revision === undefined) delete current.proof_revision;
+    else current.proof_revision = revision;
+    assert.throws(() => validate(undefined, data), /revision/i);
+  }
+  const duplicate = catalogue();
+  duplicate.records.push(structuredClone(findProofRevision(duplicate, NATIVE_ID)));
+  assert.throws(() => validate(undefined, duplicate), /Duplicate catalogue proof revision/);
+  const invalidDate = catalogue();
+  invalidDate.historical_records[0].timeline_at = "invalid";
+  assert.throws(() => validate(undefined, invalidDate), /Invalid catalogue revision timestamp/);
+  const historical = catalogue();
+  const latest = findProofRevision(historical, NATIVE_ID);
+  const previous = historical.historical_records[0];
+  historical.records[historical.records.indexOf(latest)] = previous;
+  historical.historical_records = [latest];
+  assert.throws(() => validate(undefined, historical), /Historical revision/);
+});
+
+test("the latest entry must match the algebraic boundary even when N24 history is authentic", () => {
+  const data = catalogue();
+  findProofRevision(data, NATIVE_ID).theta = data.historical_records[0].theta;
+  assert.throws(() => validate(undefined, data), /boundary differs/);
 });

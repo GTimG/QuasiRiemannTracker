@@ -67,9 +67,9 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 6,
+    () => document.querySelectorAll("[data-dot]").length === 5,
   );
-  assert.equal(await page.locator("tbody tr").count(), 6);
+  assert.equal(await page.locator("tbody tr").count(), 5);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -133,7 +133,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

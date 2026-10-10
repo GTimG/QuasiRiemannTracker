@@ -37,14 +37,14 @@ test("status panels follow an admitted registry (isolated mock response)", async
     ),
   ).toHaveCount(0);
 });
-test("six real results, verification statuses and source downloads", async ({
+test("five real results, verification statuses and source downloads", async ({
   page,
   request,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator("tbody tr")).toHaveCount(6);
-  await expect(page.locator("[data-dot]")).toHaveCount(6);
-  await expect(page.locator("tbody .tag.teal")).toHaveCount(4);
+  await expect(page.locator("tbody tr")).toHaveCount(5);
+  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("tbody .tag.teal")).toHaveCount(3);
   await expect(page.locator("tbody .tag.amber")).toHaveCount(2);
   await page
     .getByRole("button", {
@@ -78,11 +78,7 @@ test("six real results, verification statuses and source downloads", async ({
   expect(await proof.text()).toContain(
     "theorem DirichletCharacter.LFunction_ne_zero_of_theta_lt_re",
   );
-  await page
-    .getByRole("button", { name: "Nielstron · compressed rational refinement", exact: true })
-    .click();
-  await expect(page.locator(".proof-detail")).toContainText("Verified in our framework");
-  await expect(page.locator(".proof-detail")).toContainText("874957019420098946128604623/1000000000000000000000000000");
+  await expect(page.getByRole("button", { name: "Nielstron · compressed rational refinement", exact: true })).toHaveCount(0);
   const native = await request.get("/proofs/nielstron-20261009-tightening/native-lean-verification.json");
   expect(native.ok()).toBeTruthy();
   const nativeReport = await native.json();
@@ -110,6 +106,14 @@ test("six real results, verification statuses and source downloads", async ({
   expect(algebraicReport.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
   expect(algebraicReport.source_commit).toBe("2fc2b0b7f2b9510df4618936e1b2ccd58f7d9171");
   expect(algebraicReport.signed_admission).toBe(false);
+  const catalogue = await (await request.get("/catalogue.json")).json();
+  const current = catalogue.records.filter((r: { id: string }) => r.id.startsWith("nielstron-"));
+  expect(current).toHaveLength(1);
+  expect(current[0].id).toBe("nielstron-20261009-tightening");
+  expect(current[0].proof_revision).toBe("nielstron-algebraic-20261009");
+  expect(catalogue.historical_records).toHaveLength(1);
+  await expect(page.locator(".proof-detail")).toContainText("Joseph M. Shunia");
+  await expect(page.getByRole("link", { name: "Previous N24 independent kernel report (historical revision)" })).toBeVisible();
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
   await page.getByRole("button", { name: "Close proof details" }).click();
@@ -137,7 +141,7 @@ test("selection, exact sorting, filters and zoom", async ({ page }, info) => {
   await page.getByLabel("Sort contributions").selectOption("bound");
   await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
   await page.getByLabel("Contribution type").selectOption("verified");
-  await expect(page.locator("tbody tr")).toHaveCount(4);
+  await expect(page.locator("tbody tr")).toHaveCount(3);
   await page.getByLabel("Contribution type").selectOption("pending");
   await expect(page.locator("tbody tr")).toHaveCount(2);
   await page.getByLabel("Contribution type").selectOption("all");

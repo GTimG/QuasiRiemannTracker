@@ -2,6 +2,7 @@
 import { readFileSync, existsSync, readdirSync, lstatSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
+import { findProofRevision } from "./catalogue-revisions.mjs";
 
 export const NATIVE_ID = "nielstron-algebraic-20261009";
 export const KERNEL_DIRECTORY = "public/proofs/nielstron-algebraic-20261009-kernels";
@@ -83,7 +84,7 @@ export function validateAlgebraicKernelEvidence(
   evidenceDirectory,
   trustedBinding,
 ) {
-  const record = catalogue.records.find((r) => r.id === NATIVE_ID);
+  const record = findProofRevision(catalogue, NATIVE_ID);
   if (!record) return null;
   const binding = trustedBinding || JSON.parse(readFileSync(join(root, "core/algebraic-kernel-pins.json")));
   demand(binding.schema_version === 1 && binding.id === NATIVE_ID &&

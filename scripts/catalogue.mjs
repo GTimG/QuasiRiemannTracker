@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { validateCatalogue } from "../core/catalogue.mjs";
+import { catalogueProofRecords } from "../core/catalogue-revisions.mjs";
 import { validateNativeKernelEvidence } from "../core/native-kernel-evidence.mjs";
 import { validateAlgebraicKernelEvidence } from "../core/algebraic-kernel-evidence.mjs";
 
@@ -41,7 +42,7 @@ for (const ax of Object.values(audit.declarations))
     ax.some((a) => !["propext", "Classical.choice", "Quot.sound"].includes(a))
   )
     throw Error("Unexpected axiom");
-for (const r of data.records)
+for (const r of catalogueProofRecords(data))
   for (const ref of r.references)
     if (!ref.url.startsWith("https://") && !existsSync("public/" + ref.url))
       throw Error(`Missing public evidence: ${ref.url}`);
