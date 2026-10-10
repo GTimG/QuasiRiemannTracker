@@ -6,7 +6,7 @@ import {
   verifiedHere,
   timelineRecords,
 } from "../core/catalogue.mjs";
-import { frontierHistory, cmp } from "../core/rational.mjs";
+import { frontierHistory, recordHistory, cmp } from "../core/rational.mjs";
 import {
   EXTERNAL_PINS,
   validateExternalKernelEvidence,
@@ -22,9 +22,9 @@ test("the existing contribution selects one current proof revision and preserves
   assert.equal(d.historical_records[0].theta.numerator, "874957019420098946128604623");
   assert.equal(d.historical_records[0].source_commit, "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6");
 });
-test("all five current results advance the plotted frontier while verification stays separate", () => {
+test("non-record alternatives retain the plotted frontier while verification stays separate", () => {
   const d = validateCatalogue(data());
-  assert.equal(d.records.length, 5);
+  assert.equal(d.records.length, 6);
   const verified = d.records.filter(verifiedHere);
   validateExternalKernelEvidence(process.cwd(), d);
   assert.deepEqual(
@@ -42,11 +42,25 @@ test("all five current results advance the plotted frontier while verification s
       )
       .map((r) => r.id),
   );
-  const frontier = frontierHistory(timelineRecords(d.records), []);
-  assert.equal(frontier.length, 5);
-  for (let i = 0; i < frontier.length; i++) {
-    assert.equal(cmp(frontier[i].theta, d.records[i].theta), 0);
-    if (i) assert.equal(cmp(frontier[i].theta, frontier[i - 1].theta), -1);
+  const alternativeId = "single-prime-29-33-20261010";
+  const earlier = d.records.filter((r) => r.id !== alternativeId);
+  const previousFrontier = frontierHistory(timelineRecords(earlier), []);
+  const timeline = timelineRecords(d.records);
+  const frontier = frontierHistory(timeline, []);
+  assert.equal(frontier.length, 6);
+  assert.deepEqual(frontier.slice(0, -1), previousFrontier);
+  assert.equal(cmp(frontier.at(-1).theta, previousFrontier.at(-1).theta), 0);
+  const alternative = recordHistory(timeline).find(
+    (r) => r.id === alternativeId,
+  );
+  assert.equal(alternative.is_record, false);
+  assert.equal(verifiedHere(alternative), false);
+  assert.equal(cmp(alternative.theta, { numerator: "7", denominator: "8" }), 1);
+  for (let i = 1; i < previousFrontier.length; i++) {
+    assert.equal(
+      cmp(previousFrontier[i].theta, previousFrontier[i - 1].theta),
+      -1,
+    );
   }
   assert.ok(
     d.records

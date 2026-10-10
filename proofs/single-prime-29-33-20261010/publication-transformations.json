@@ -1,0 +1,313 @@
+{
+  "schema": 1,
+  "changes": [
+    {
+      "path": "evidence/analytic-verification-report.json",
+      "original_sha256": "db64d946cc6f18787d40f66cce22603ab23277b516f23ab578cf22118b874a1a",
+      "published_sha256": "392582a7996a1844031224e8810cc2a934f343d67a11ddc5c04dc22b5a43d0fe",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/analytic-gate-controls.json",
+      "original_sha256": "de62727ff297aa8b575d22e4565c3c4a9452bc66906e0ea927ce4b53ac36d729",
+      "published_sha256": "038610d619a074caf4677380b965df763245af40c6338da42873fac688e68ede",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/GateAdmission-audit.log",
+      "original_sha256": "4963a4e8972be2ff945418bc3ebf64bbbf3033ea7841070308de44932ba0923b",
+      "published_sha256": "4db90a065fe28577e21ff8921665c34a008c1d6cfcd65904ccdc480c01e6b4ca",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/GateAdmission-build.log",
+      "original_sha256": "c4cb9250d042043c62c5a9df4b5a55561e729e99cc56b6d4cd73210516a31731",
+      "published_sha256": "804c8330d554aea2b4a8a75030c0c1810ec498a099742f354a14725ad955fb15",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/GateAxiom-audit.log",
+      "original_sha256": "7916458de806a66824a358c6f1524456d018a7010db671938abdf8a2a22b2d42",
+      "published_sha256": "c385746181cc8947b5fdfbeaa12f64e9873978dd60ad506bf4618ac05ce2fcc8",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/GateMissing-audit.log",
+      "original_sha256": "e52c31f8cfcd8e1767932eaeb108577ca732edceae2d084cb4bcb6bec709b9e1",
+      "published_sha256": "395505e43aad53aefcc86ad608550785eb0512ec6d95830eb8dcc086fb04c798",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/GateOldTerminal-audit.log",
+      "original_sha256": "4f98071b645a1ed7518c0d5154f7841ac89dea2d97cabeb1a7aa5883f7330b78",
+      "published_sha256": "8596e4c31099dafc65805655cff52b62098b845f5fc3ee82f856168c77dd597a",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "evidence/negative-controls/zeta-d3-independence-control-20261010.log",
+      "original_sha256": "f864856043dd613e763e633f31922cdbbdcb96139fabe2881b47e6f19c83fbe4",
+      "published_sha256": "651dabe9c83403e1989a445a0540b6efabd96180528d5d82266ace739e73e79b",
+      "change": "Host-specific path prefixes replaced by symbolic labels; mathematical source and outcomes unchanged."
+    },
+    {
+      "path": "Verification.md",
+      "original_sha256": "05079eb0e214b3a02b1b631c76a6e557d0e5774f9b8a14bd926f22dd716fb21e",
+      "published_sha256": "4dcd72c2f800b1b6c67f662cf814b1e1a7dd83f47bfc650e6ce258bce2698289",
+      "change": "Host paths removed; reproduction and evidence links adapted to the portable current-only snapshot. Mathematical claims preserved. Added separately dated completed local three-kernel evidence and its precise scope. Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "evidence/multi-kernel/result.json",
+      "original_sha256": "5e7c410434467ed5aaddb6d9f33e157b99426f7dfbc8822aec00ea42424cc442",
+      "published_sha256": "5e7c410434467ed5aaddb6d9f33e157b99426f7dfbc8822aec00ea42424cc442",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Challenge.lean",
+      "original_sha256": "7549951ae5a8ca650b5b4109ac7b0452a4e8b8d6d6051d68cc282e0713a575a6",
+      "published_sha256": "7549951ae5a8ca650b5b4109ac7b0452a4e8b8d6d6051d68cc282e0713a575a6",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Solution.lean",
+      "original_sha256": "f6e2ba14221be2a1257325810767b75ae59e38a2afa609a0f978489b22bc0858",
+      "published_sha256": "f6e2ba14221be2a1257325810767b75ae59e38a2afa609a0f978489b22bc0858",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/comparator.used.json",
+      "original_sha256": "fe929472829b5403c5f245599f8b75921f0aceb82da4d4c0a3baf6c869611bab",
+      "published_sha256": "0bdc7d8427cad2b6e3b9b624a8ee738cead7498dc8901484a3d87ecfd8fa2229",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/judge.log",
+      "original_sha256": "5fcfd7bdb1f2d5a4e99c6f3c1f11b91da061b9170839e282824fad736d5e7a43",
+      "published_sha256": "5fcfd7bdb1f2d5a4e99c6f3c1f11b91da061b9170839e282824fad736d5e7a43",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/tool-pins.json",
+      "original_sha256": "f74b460375ffc6128ae4c572bcd1f591bade7821f8c0f5597394bc52a7e48ede",
+      "published_sha256": "f74b460375ffc6128ae4c572bcd1f591bade7821f8c0f5597394bc52a7e48ede",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/summary.json",
+      "original_sha256": "4dacf5c34ef37b4c89cb6592f4415594686e3a1f98f6d5c7e17a0a72ce7e3532",
+      "published_sha256": "4dacf5c34ef37b4c89cb6592f4415594686e3a1f98f6d5c7e17a0a72ce7e3532",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/export-pins.json",
+      "original_sha256": "0210ababf4bf207ff8cb18e56c73780d39e03077d594fb937feb7533228aa663",
+      "published_sha256": "0210ababf4bf207ff8cb18e56c73780d39e03077d594fb937feb7533228aa663",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/input-inventory.json",
+      "original_sha256": "57aceb34347e96beb55ab17ea377e092e83d066d2be7f948ddcb38649a12b533",
+      "published_sha256": "9e4d781833ff0be630e26a28ea62d8eabd3ec4469999d727c2cc9863ba9e0fa6",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/resources.jsonl",
+      "original_sha256": "ed1e342b17cef94769d53b3b5ed1dc446148a8a32810933619dea1c2709bb904",
+      "published_sha256": "ed1e342b17cef94769d53b3b5ed1dc446148a8a32810933619dea1c2709bb904",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/judge-supervisor.json",
+      "original_sha256": "4873b056202e5943950e854d375de1555a27746ef4198ce33b36303217c05d5b",
+      "published_sha256": "cfd98ddb37c1fc8a0c65cf65f75c72d70f9cf9afc3535ab484019debb3d9c44b",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/judge-execution.json",
+      "original_sha256": "1d31ebe6fb9112dd3b917dd169d6b09e647ad9e4ad13d529bb69102392563747",
+      "published_sha256": "5daf85e3bb1440c121a22a228809a6389793ba387fd5849e0bc0e446489a3221",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/run-source/runner.py",
+      "original_sha256": "d33f5e7cf7392090d10e2cf3a999d74f032573e2d6ff1f8f79982ca13d06ebf4",
+      "published_sha256": "7ad46dac7cce913e9a2bd61d252c5991401c8b0d465ed833ac4e7087e1a9238a",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/run-source/native_judge.py",
+      "original_sha256": "5105ec621d43e167ba3ac965110ce4ea21612ee71ec8ec3b3345f442136f355c",
+      "published_sha256": "5105ec621d43e167ba3ac965110ce4ea21612ee71ec8ec3b3345f442136f355c",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Challenge-compile.log",
+      "original_sha256": "01ccec99a96bfe0997d4cccdab4300644143e3bc279b1bae472f1c08234f741c",
+      "published_sha256": "af8ac8516dd0ca0cdeae296a6d4321407e53ad9c53e8055214fb48517883d94c",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Solution-compile.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Challenge-export.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/Solution-export.log",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped.log",
+      "original_sha256": "275143e63ea340fae18e2b0e4cef0fef0f7618622f94348fad1d52984cd4e1f5",
+      "published_sha256": "275143e63ea340fae18e2b0e4cef0fef0f7618622f94348fad1d52984cd4e1f5",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/comparator.json",
+      "original_sha256": "cbee6c1c587b5ddc7b328da6a8e1fd63964d16c8fe3a702b374bd6e5fb4e092f",
+      "published_sha256": "95818a7ee79a7db30f657c4aa352d28cdaad84c62724fb74dbae36eeba8264da",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped.outcome.json",
+      "original_sha256": "3f30a34a441ba4f3735ee4c941252eb7fb1f6f7a9f52b423efd278fcc5e950a2",
+      "published_sha256": "3f30a34a441ba4f3735ee4c941252eb7fb1f6f7a9f52b423efd278fcc5e950a2",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution.outcome.json",
+      "original_sha256": "5c770ff882923f1073fc883abc18fff48921fa98160dbbd23317ae93c1107b75",
+      "published_sha256": "5c770ff882923f1073fc883abc18fff48921fa98160dbbd23317ae93c1107b75",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong.log",
+      "original_sha256": "1e5a26b3e69715b5ac01f2e91cf82406bbe36367e8476e689102cbc9ad2785c7",
+      "published_sha256": "1e5a26b3e69715b5ac01f2e91cf82406bbe36367e8476e689102cbc9ad2785c7",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong.outcome.json",
+      "original_sha256": "9ec7681dfca28df0449d0e19020382164f4d9d0fcadcdb01b712a55e95aca312",
+      "published_sha256": "9ec7681dfca28df0449d0e19020382164f4d9d0fcadcdb01b712a55e95aca312",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution.log",
+      "original_sha256": "866743ec12e67e236f50d551279b84100f63b823f116ede4dac0f9756963f862",
+      "published_sha256": "866743ec12e67e236f50d551279b84100f63b823f116ede4dac0f9756963f862",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/execution.json",
+      "original_sha256": "6a81bd6dc274372310709e323681352ff92403de7951dba67160506daac6080a",
+      "published_sha256": "e3ef6d6f389a7d58a9944ed4522dd3cfc2595a7ebdad4a7cf98aee656ba6f9f9",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/live.log",
+      "original_sha256": "9332afe16de68f0b2c8f1c793ee4c3f6c61a96819095e44337b94e2a0e1346f0",
+      "published_sha256": "9332afe16de68f0b2c8f1c793ee4c3f6c61a96819095e44337b94e2a0e1346f0",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightWrong/supervisor.json",
+      "original_sha256": "acd02bdc988c07ef0b661e2a1c8c2b13abc5c035d11bd3e865573ee368294df3",
+      "published_sha256": "8a3fc132397922fb97c36c20408bb268e2beadb8301a4438283632272385a301",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/execution.json",
+      "original_sha256": "581ec1da22f3910c7a22162418d0491b6057e82192814fe51fa43dbafedc5cab",
+      "published_sha256": "9f638734cead55cb624aba33e6d4561a0bd7774dc9ca64be209c9ba30ce84a34",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/live.log",
+      "original_sha256": "1c11b6227740cf475f9ef682ef141e2c311d5d9b7bc885e49aecb61e83c1f7f2",
+      "published_sha256": "1c11b6227740cf475f9ef682ef141e2c311d5d9b7bc885e49aecb61e83c1f7f2",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightIllTyped/supervisor.json",
+      "original_sha256": "800546371eb190c81c47cf3ce4300fc6cf8b90bcec4c61c2577471b05afce861",
+      "published_sha256": "520e7dc8f32b3fa04089e596c8282bb4c0a30785b751da75885bb4cd91bf881f",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/src/PalomarPreflightWrong.lean",
+      "original_sha256": "06ad1f6b739394b7c8f59d9cda6710f53c4736c3a689ed9fcbafb8d00ecc6477",
+      "published_sha256": "06ad1f6b739394b7c8f59d9cda6710f53c4736c3a689ed9fcbafb8d00ecc6477",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/src/PalomarPreflightChallenge.lean",
+      "original_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "published_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/src/PalomarPreflightSolution.lean",
+      "original_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "published_sha256": "046179a35565715e2ea1f48f01a7d743ea99b354e985959f902e14367c90f7ce",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/execution.json",
+      "original_sha256": "860ea57ad02def01a0f84df05fd92dee32f4cd6ece18b4558649f489c6bc0116",
+      "published_sha256": "58ac134842cadb808c3697044c705d8f6bbb2c0f1a3c09bb83831d3df47f46a9",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/live.log",
+      "original_sha256": "8b405ac187f9ffad019925a9eeb471e366b2db14c0ff9f9ac5a3911889f31a2c",
+      "published_sha256": "8b405ac187f9ffad019925a9eeb471e366b2db14c0ff9f9ac5a3911889f31a2c",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "evidence/multi-kernel/controls/judge-PalomarPreflightSolution/supervisor.json",
+      "original_sha256": "315d6e6a43b771e10a1d9ad6e0d9c960e45f233c698b6d3f86464297b767089e",
+      "published_sha256": "a85f5e56c39622e323d1a9bb5e6b5f840513091aa3aadf28d3f9b33d59ee7e01",
+      "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "README.md",
+      "original_sha256": "296814fc46620fecd746ab4504a1bd10f54a0805c776d0083675743d1280a47f",
+      "published_sha256": "a677740f917bad5c528d7d976cb97a493725b20bff3890c5a453e7b61310c573",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "NOTICE.md",
+      "original_sha256": "4027833caceee8c8749b37564ed5a52c0e4abdf28bc088139b1401fc141269fa",
+      "published_sha256": "02982181d32f98955a7249926e59cd7c406e29e3d924983bc68061a95bdc0d8e",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/zeta_zero_free_4_33_self_contained.md",
+      "original_sha256": "323c50c3ce9df09ee66dd44d70b3732e2a25bf4628f1dcdf68f9bfa00c27fafb",
+      "published_sha256": "e35dbe7b205df1b3fb071f8baeef5723494618eb220e61b3521e6c7bc90da88b",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/zeta_zero_free_4_33_self_contained.tex",
+      "original_sha256": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690",
+      "published_sha256": "dd4aed8124f9f6c3327dd26e1e1225c1b81ba17082c429b6d4d27e1e72f59bdc",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/rendered-documents.json",
+      "original_sha256": "2571b13db0ad678ab606021e4a4f6325c261c41a84c23fb882d8f09654f598f4",
+      "published_sha256": "0a77366bdc8a1b90f952fb27d424ff600aaf612058f4356eed7d68c6ecd39c1e",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    }
+  ],
+  "lean_source_changes": [],
+  "original_report_sha256": "db64d946cc6f18787d40f66cce22603ab23277b516f23ab578cf22118b874a1a"
+}

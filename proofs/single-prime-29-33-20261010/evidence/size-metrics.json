@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "local_Lean_including_audit": {
+    "files": 34,
+    "bytes": 1324948,
+    "physical_lines": 24000
+  },
+  "local_mathematical_Lean": {
+    "files": 33,
+    "bytes": 1319138,
+    "physical_lines": 23868
+  },
+  "adapted_unconditional_descent": {
+    "files": 1,
+    "bytes": 708059,
+    "physical_lines": 13220
+  },
+  "local_other_Lean": {
+    "files": 33,
+    "bytes": 616889,
+    "physical_lines": 10780
+  },
+  "pinned_reused_OAI_source_closure": {
+    "files": 2842,
+    "bytes": 24548669,
+    "physical_lines": 477769
+  },
+  "theorems": 703,
+  "declarations": 1087,
+  "reachable_constants": 124307,
+  "counting_note": "Physical lines include blanks/comments; OAI closure is a recursive source-import closure, excluding Mathlib, third-party packages and the Lean toolchain. Adapted descent is reused-and-modified source, not wholly novel code. Counts are not proof-complexity or token metrics."
+}

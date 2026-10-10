@@ -1,0 +1,404 @@
+{
+  "sources": [
+    {
+      "path": "ZetaZeroFree/Exponent.lean",
+      "bytes": 7072,
+      "sha256": "ed9a358d0288dcd4174e5f701b6c1a9ec9652a646e836b4481d6c649ec9d3158"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Continuation.lean",
+      "bytes": 10343,
+      "sha256": "9cfde7e73f1afe0dd58f466e16da383ed4cee1562e31af85431e13b1952e0408"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Energy/CompletedSource.lean",
+      "bytes": 82220,
+      "sha256": "f7677b8bcb08c959c4b5811de98d2c68b57bc3b4cd145862a101e729a743f961"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Energy/GaussianSource.lean",
+      "bytes": 40999,
+      "sha256": "f7447a6d261121aaa28dfdcc543303d4ce56e8e976665370a56420c96bd062cb"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Energy/Geometry.lean",
+      "bytes": 4939,
+      "sha256": "e0545143fa7861a7270efc9fe33ceadf97403f08b2abf34047b70e674f0e4d59"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Energy/PhysicalSource.lean",
+      "bytes": 55792,
+      "sha256": "4652d45296c4ad135180f0d24388bad673ef2052c5ec0ea1919ce43212deed46"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Energy/WholeIndex.lean",
+      "bytes": 49470,
+      "sha256": "8fc9a440d8888a603591434bb838337059d5717334fee9d4975f51135f31f957"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Final.lean",
+      "bytes": 5729,
+      "sha256": "f6f992efe774f0818d525f15a22de0b0aef7f7afc19da7d0a13c6fe5837b39bc"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/LossBudget.lean",
+      "bytes": 3235,
+      "sha256": "8f16c7092cba5d78a5b344994e33cd109a9545340b112f93e4a1afe3a32d9d6d"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/AppendixD3.lean",
+      "bytes": 11729,
+      "sha256": "206c1a57339e8f8b309cf2874d772b1361d077e170075c3d206dcdb56b4ce59b"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/CompactProfiles.lean",
+      "bytes": 4062,
+      "sha256": "4004d41760f30eee2f8e70cc393a8feb9bf6ce47f1a0bdc33e7a81889979c024"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Exceptional.lean",
+      "bytes": 38070,
+      "sha256": "557d9c4955277bc14941169ff554633f17835641c8aa3f8fbc3304f83cdebd31"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/FixedFactor.lean",
+      "bytes": 6142,
+      "sha256": "e2bf39bfbb31bfa75a804b13be7256868a20184172f2e68cb6060eca41ce56e4"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Plain.lean",
+      "bytes": 15373,
+      "sha256": "ab218eb08b3768ee013dba05940570ec7ad10ba4e2d9c5f0a14c836e1cca49df"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Presentation.lean",
+      "bytes": 5207,
+      "sha256": "d6d88645676de546c8602b78dd6c52c3338c96147d66e9056daba086e8bbbd75"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Sharp.lean",
+      "bytes": 4180,
+      "sha256": "4f2924a1f1d6d160a83d681fce4e5d3a6be5e141d66cb0bc132b5e5717947f10"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Source.lean",
+      "bytes": 7059,
+      "sha256": "78e88d9a81894e9807a1610a53702312273f4871b71f13174169064260115a25"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Moments/Unconditional.lean",
+      "bytes": 708059,
+      "sha256": "7364fe4cb63e4954249a6900b04e94227f9279568be10949a54ecdfae7bf8307"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Parameters.lean",
+      "bytes": 6202,
+      "sha256": "16ffb3e49989cab69ce0d02b4b447f0b77c979b5e50bc5001a6e250155ea0f7a"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Principal/Residues.lean",
+      "bytes": 25866,
+      "sha256": "c6ad71a0b6f5562853314987ec083e0e41fc4988b4766a01e85a08e1ccbbf3ec"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Principal/Signal.lean",
+      "bytes": 3614,
+      "sha256": "f46071969495636e3930aa1de6e4fc69803037bec346dab3b0cc13ce50f79d86"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Probe/Assembly.lean",
+      "bytes": 49775,
+      "sha256": "3d528c3395be03289072b45cb81a30d92265d572b26073c5371b80a3a4686ed4"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Probe/Band.lean",
+      "bytes": 31425,
+      "sha256": "d3629fc290e1150d07c78017c0a188bac1a2b6d310805a25d9ed2a73817aaaef"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Probe/Central.lean",
+      "bytes": 15835,
+      "sha256": "f4d281aad2d86cb3cac289c2c79851af6cae42d8913e284a606acc21ebd4ef8e"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Probe/Collected.lean",
+      "bytes": 14025,
+      "sha256": "c10aab8b3bd2d7a54c0964c44f6fb28431bbc6d0db2fac60055b6cd00890b605"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Probe/Transport.lean",
+      "bytes": 28976,
+      "sha256": "00ba505a9c36881ef7f7a71e0145320c9b22cacde75b165fdfb81121aca2e55e"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Rows/Count.lean",
+      "bytes": 5319,
+      "sha256": "a06e683e42183bdc1baabf0a7497809562427ad9264d39ba3cf6fef9c03d1227"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Rows/SourceCount.lean",
+      "bytes": 41213,
+      "sha256": "0419a41cc2aa749a9d5bf820e96aec466da259cb338833c3171580b253e5add3"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Rows/UniformProfiles.lean",
+      "bytes": 3429,
+      "sha256": "bb807dbe9512f24c0453286bf8e73777a4a2d2cc6a25a4d6677712c386cb0ebd"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Rows/Witness.lean",
+      "bytes": 2897,
+      "sha256": "e4fc41e1f7f05369ddc4fda7e4ab1a034692184d269455fc20385a245a029e3b"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/SourceData.lean",
+      "bytes": 3104,
+      "sha256": "a7c5fe4756de974005b53f1fc00cb7efa44b2b0e7005e9f15d3f2881c19e3be7"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Starter/Inverse.lean",
+      "bytes": 11665,
+      "sha256": "7da687048122ebd8faece6ba71c0b73df867ff7e339ff6d212f9b43873092dde"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Starter/Nonvanishing.lean",
+      "bytes": 16113,
+      "sha256": "9d76e85e289fdbe4f931b3c0ac355d6ef21ce527a67ec1e81165744b882738da"
+    },
+    {
+      "path": "ZetaZeroFree/Analytic/Audit.lean",
+      "bytes": 5810,
+      "sha256": "d2e9b6090ef4d164483cc01f72245cf4d92139b853644bb0c28632e15c6b8c85"
+    },
+    {
+      "path": "verify_analytic.py",
+      "bytes": 10157,
+      "sha256": "3338ec2c1d36a92b7b91280e3855090e896a1e882d280763c3a259f3adfdbe76"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Exponent.olean",
+      "bytes": 911088,
+      "sha256": "9e6e558b35c4f4f56819939ef0f6a217c6427e166b0484ed6e248f3b058585b1"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Continuation.olean",
+      "bytes": 537680,
+      "sha256": "d6885ee086f3d6d786b701cfb21aa5bc375526b672b489c4cf313ee2e195d09b"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Energy/CompletedSource.olean",
+      "bytes": 4964032,
+      "sha256": "2560c6f505ba7b730d5d499523fb150bd1115a69f704f2d7f91432a4d403250e"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Energy/GaussianSource.olean",
+      "bytes": 1982160,
+      "sha256": "ceb3b854e535e40d35d8f0f0ede6c8f45b95c1a61733cb9cda2ee128f32c2b22"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Energy/Geometry.olean",
+      "bytes": 889712,
+      "sha256": "dd5e1055996b024d9d0735f7002ce087a23664f4d2c63dafae85332a94232032"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Energy/PhysicalSource.olean",
+      "bytes": 2686408,
+      "sha256": "90e7a60f5979ea852cfe36f6c564d73de6be3516ffda32c8534167a6c145865d"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Energy/WholeIndex.olean",
+      "bytes": 3449432,
+      "sha256": "8ef67aa2ed7f40819b1b3108259fadb967aef2d8d5023c9a31b17ff92a4483fb"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Final.olean",
+      "bytes": 355240,
+      "sha256": "e418dcd6f021aed3aba8d75891ff8bb7a6f87fa895b710b4f1bfe7e13c2b62f8"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/LossBudget.olean",
+      "bytes": 532128,
+      "sha256": "32ae6acab6c3050a3ff80f69d9bb702ec76a70ad1cc84d84606b88884b9a0881"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/AppendixD3.olean",
+      "bytes": 634928,
+      "sha256": "cb6edb66d8f6433b70c0deeca72e620777b4c6a117df50ac1c81a545ad1ea8ae"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/CompactProfiles.olean",
+      "bytes": 133384,
+      "sha256": "5dbcff476e97a29dd5b7ccc3c75e9f6130114fe588a6b09ce3ce422fa0d5ce25"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Exceptional.olean",
+      "bytes": 1673128,
+      "sha256": "0b203bac93dece71cd70a705e680676dd4888a509f12bcdabf121257f2e9cc84"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/FixedFactor.olean",
+      "bytes": 274704,
+      "sha256": "417df7d44cf44a6f01f431cea9c2f6d1841cb171976d83cee1359f596b0d641c"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Plain.olean",
+      "bytes": 928176,
+      "sha256": "875faa4ae8931aa5495163e824a01d42526f3bef02803f82d44191cf2ca68ed8"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Presentation.olean",
+      "bytes": 217128,
+      "sha256": "d8c750192d9552adfe7f0b2d44c3b8c5801c1485e003340acd08938b045b5413"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Sharp.olean",
+      "bytes": 196264,
+      "sha256": "d1b88822d51a51f8efdb9b5acc222bafb93f977b02a93c44b547658ffd67b9d2"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Source.olean",
+      "bytes": 306880,
+      "sha256": "68a6742fa4ce5e2cb6ad70fb1d153ce06de7067d80d2948c6dc083073ceb9bc3"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Moments/Unconditional.olean",
+      "bytes": 52344840,
+      "sha256": "7c62c82a67a76fb5383c76b4d1b7943bbd895b3b9de0bcbf57c9d18dfcd1f87e"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Parameters.olean",
+      "bytes": 1046344,
+      "sha256": "3b0f555398a51c7221acc4ab3efa1a601165f0f63f130bdf5a70bad67b3aedab"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Principal/Residues.olean",
+      "bytes": 1796272,
+      "sha256": "61deec108930c303f8e7c4c7767886b7ee83f381b741fd149efd251ad07671a9"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Principal/Signal.olean",
+      "bytes": 229360,
+      "sha256": "6ad0d71b84decd89345b99cfa2d9b9da8c9389d641e944e3a938d6ac882ae3a9"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Probe/Assembly.olean",
+      "bytes": 2983312,
+      "sha256": "e98befd319b3139b5f3162d6d19a42639cca6a857b33874eac0a0817280ecee6"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Probe/Band.olean",
+      "bytes": 3365120,
+      "sha256": "1b05acd2326641d69271aba01b382cb6f3e79a4d113d4d978e02a4362786e261"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Probe/Central.olean",
+      "bytes": 1415376,
+      "sha256": "b9cdc3cd1ae380c5689d845b64c2ba776c7e3e2e6f51dd988dcb6772c002bc34"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Probe/Collected.olean",
+      "bytes": 1099128,
+      "sha256": "611f679b53fb5e11aafa26f97222079244fd0ad7dd7a6ae6702ae47f4a77878d"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Probe/Transport.olean",
+      "bytes": 1632024,
+      "sha256": "3d495f8e8083f540bbba78697b6402ec21a70abbf85f789cef608101bdbb055e"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Rows/Count.olean",
+      "bytes": 631352,
+      "sha256": "90a77ebe3d2b60b981cbce6295c597ad7d0280f0f3dec5f3e819427bc24d4dff"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Rows/SourceCount.olean",
+      "bytes": 1775456,
+      "sha256": "66bb05902c9ec33f43f6e80b0aeccc4b7cc98afdfac60456d42f97a088c56b00"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Rows/UniformProfiles.olean",
+      "bytes": 105856,
+      "sha256": "cf32329744f87a5a00893488ddf265c37eaffbea58d04bbcafef9bb3486407fe"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Rows/Witness.olean",
+      "bytes": 242520,
+      "sha256": "c28f6a337d14361a6f5dc96b75c6fc1834fbfda784dbbed5b095a37ae73a8524"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/SourceData.olean",
+      "bytes": 263120,
+      "sha256": "32c81f4d90de5eb544b31cd9c98c1ee42620e9d0bf3bea14466f8fc03de73869"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Starter/Inverse.olean",
+      "bytes": 706760,
+      "sha256": "a2b3ac2e627e668067cc52851dba7900f1efb69ca0944d78a34952534f350439"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Starter/Nonvanishing.olean",
+      "bytes": 513408,
+      "sha256": "ba94d7b4adac6028573dc979a090d8db5c9c54857cc220bd2f650639cd096139"
+    },
+    {
+      "path": ".lake/build/lib/lean/ZetaZeroFree/Analytic/Audit.olean",
+      "bytes": 616136,
+      "sha256": "47069e30c978e459065d2dc6dcb32c60904a6dc42afa43ecdc1bcecf401dc397"
+    }
+  ],
+  "library_roots": [
+    "$LEAN_BUILD/build/lib/lean",
+    "$LEAN_BUILD/packages/LeanSearchClient/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/Qq/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/aesop/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/batteries/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/importGraph/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/mathlib/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/plausible/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/proofwidgets/.lake/build/lib/lean",
+    "$LEAN_BUILD/packages/rellich-kondrachov/.lake/build/lib/lean"
+  ],
+  "export_targets": [
+    "Quot",
+    "Quot.mk",
+    "Quot.lift",
+    "Quot.ind",
+    "SinglePrime2933.allDirichlet",
+    "SinglePrime2933.zeta",
+    "SinglePrime2933.allHecke",
+    "SinglePrime2933.appendixD3",
+    "Classical.choice",
+    "Quot.sound",
+    "propext",
+    "Nat.add",
+    "Nat.sub",
+    "Nat.mul",
+    "Nat.pow",
+    "Nat.gcd",
+    "Nat.div",
+    "Nat.mod",
+    "Nat.beq",
+    "Nat.ble",
+    "Nat.land",
+    "Nat.lor",
+    "Nat.xor",
+    "Nat.shiftLeft",
+    "Nat.shiftRight",
+    "String.ofList",
+    "Char.ofNat",
+    "List",
+    "eagerReduce",
+    "Nat",
+    "String",
+    "String.mk",
+    "Char",
+    "optParam",
+    "autoParam",
+    "semiOutParam",
+    "outParam"
+  ],
+  "scope": "Four selected theorem proof closures, including standalone Appendix D.3; not every unused local helper theorem."
+}

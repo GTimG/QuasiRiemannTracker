@@ -370,6 +370,58 @@
       "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
       "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
       "proof_revision": "nielstron-algebraic-20261009"
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "HaileyStorm/QuasiRiemannTracker",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "ZetaZeroFree.Analytic.Final",
+        "declaration": "ZetaZeroFree.Analytic.dirichletL_ne_zero_of_twenty_nine_thirty_thirds_lt_re"
+      },
+      "license": "Apache-2.0 for the OpenAI-derived Lean sources; manuscript licensing is separate, see NOTICE.md",
+      "builds_on": [
+        "openai-baseline"
+      ],
+      "id": "single-prime-29-33-20261010",
+      "title": "Single compensating prime · 29/33 (non-record)",
+      "theta": {
+        "numerator": "29",
+        "denominator": "33"
+      },
+      "authors": [
+        {
+          "name": "Hailey Collet"
+        }
+      ],
+      "method": "A non-record single-compensating-prime alternative proof, with an independently usable unconditional moving-radical mixed moment. Intermediate OpenAI foundations are reused; the previous terminal 7/8 result is excluded.",
+      "references": [
+        {
+          "label": "Rendered manuscript (PDF)",
+          "url": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf"
+        },
+        {
+          "label": "Source and reproduction",
+          "url": "https://github.com/GTimG/QuasiRiemannTracker/tree/main/proofs/single-prime-29-33-20261010"
+        },
+        {
+          "label": "Verification and exact scope",
+          "url": "proofs/single-prime-29-33-20261010/Verification.md"
+        },
+        {
+          "label": "Three-kernel report",
+          "url": "proofs/single-prime-29-33-20261010/multi-kernel-report.json"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-10T07:47:35.881822+00:00",
+      "date_label": "Contributor three-kernel verification",
+      "verification_note": "Contributor Lean audit and local Comparator, Lean, NanoDa and con-ron checks passed for the four main theorem closures. Exact source, statements, checker pins and logs are retained for maintainer review. No signed registry receipt. Non-record contribution; repository status pending review.",
+      "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing."
     }
   ],
   "historical_records": [
