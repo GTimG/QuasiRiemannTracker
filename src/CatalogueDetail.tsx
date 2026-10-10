@@ -16,7 +16,6 @@ export default function CatalogueDetail({
   return (
     <section className="panel proof-detail">
       <div className="panel-heading">
-        <span className="eyebrow">RESULT & EVIDENCE</span>
         <button
           className="icon"
           aria-label="Close proof details"

@@ -184,7 +184,10 @@ test("selection, exact sorting and zoom", async ({ page }, info) => {
   await page.keyboard.press("Home");
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
   await page.getByRole("button", { name: "Fit chart", exact: true }).click();
-  await page.getByLabel("Sort contributions").selectOption("bound");
+  await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
+  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
+  await expect(page.locator("tbody tr").first()).toContainText("seven eighths");
+  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
   await expect(page.locator("tbody tr").first()).toContainText("exact algebraic endpoint");
   await page.screenshot({
     path: `evidence/screenshots/${info.project.name}-interactions.png`,
@@ -205,7 +208,7 @@ test("dialog keyboard controls, protocol, responsive overflow and no errors", as
   await expect(page.getByRole("dialog")).not.toBeVisible();
   await page.getByRole("button", { name: "Protocol", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Required proof checks" }),
+    page.getByRole("heading", { name: "Requirements" }),
   ).toBeVisible();
   expect(
     await page.evaluate(

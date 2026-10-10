@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Minus, Plus, Maximize2, Move, Info } from "lucide-react";
+import { Minus, Plus, Maximize2, Move } from "lucide-react";
 import {
   BASELINE,
   sub,
@@ -534,22 +534,20 @@ export default function Chart({
           <i className="legend-line" />
           Best listed bound
         </span>
-        <span>
-          <i className="legend-dot pending-dot" />
-          Verification pending
-        </span>
+        {allRecords.some((r) => !verifiedHere(r)) && (
+          <span>
+            <i className="legend-dot pending-dot" />
+            Verification pending
+          </span>
+        )}
         <span className="pan-hint">
           <Move size={13} />
           Drag to pan · scroll to zoom
         </span>
       </div>
-      <p className="chart-note">
-        <Info size={14} />
-        <span>
-          {tiny && <>Local axis origin θ₀ = {fraction(low)}. </>}
-          Dates in UTC. The line includes results awaiting verification.
-        </span>
-      </p>
+      {tiny && (
+        <p className="chart-note">Local axis origin θ₀ = {fraction(low)}.</p>
+      )}
     </section>
   );
 }

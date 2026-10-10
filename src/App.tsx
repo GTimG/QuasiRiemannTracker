@@ -5,7 +5,8 @@ import {
   GitBranch,
   Github,
   GitPullRequest,
-  Info,
+  BadgeCheck,
+  Clock,
   X,
   FileCheck2,
 } from "lucide-react";
@@ -21,6 +22,7 @@ import {
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
 import CatalogueDetail from "./CatalogueDetail";
+import LeanCode from "./LeanCode";
 const upstream =
   "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/";
 const initial: Registry = {
@@ -37,14 +39,35 @@ const date = (s: string) =>
     timeZone: "UTC",
   });
 const timestamp = (s: string) =>
-  new Date(s).toISOString().replace("T", " ").replace(".000Z", " UTC");
+  new Date(s)
+    .toISOString()
+    .replace("T", " ")
+    .replace(".000Z", "Z")
+    .replace("Z", " UTC");
+type SortKey = "title" | "author" | "bound" | "date";
+const contributionTitle = (r: Contribution) =>
+  r.title.includes(" · ") ? r.title.split(" · ").slice(1).join(" · ") : r.title;
+const columns: { key: SortKey; label: string }[] = [
+  { key: "title", label: "Contribution" },
+  { key: "author", label: "Author" },
+  { key: "bound", label: "Exact bound θ" },
+  { key: "date", label: "Publication" },
+];
 const theorem = `∀ {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ},\n  (θ < s.re) → ¬ (χ = 1 ∧ s = 1) →\n  DirichletCharacter.LFunction χ s ≠ 0`;
+const leanTheorem = `theorem quasi_riemann_bound
+    {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
+    (hs : (θ : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
+    LFunction χ s ≠ 0 := by
+  sorry`;
 export default function App() {
   const [registry, setRegistry] = useState<Registry>(initial),
     [catalogue, setCatalogue] = useState<Contribution[]>([]),
     [repository, setRepository] = useState<string | null>(null),
     [tab, setTab] = useState("Timeline"),
-    [sort, setSort] = useState("latest"),
+    [sort, setSort] = useState<{
+      key: SortKey;
+      direction: "ascending" | "descending";
+    }>({ key: "bound", direction: "ascending" }),
     [selected, setSelected] = useState<string | null>(null),
     [error, setError] = useState(""),
     [modal, setModal] = useState<"submit" | "policy" | null>(null);
@@ -100,14 +123,22 @@ export default function App() {
     () =>
       all
         .filter((r) => !withdrawn.has(r.id))
-        .sort((a, b) =>
-          sort === "bound"
-            ? cmp(a.theta, b.theta) ||
-              contributionDate(a).localeCompare(contributionDate(b))
-            : sort === "oldest"
-              ? contributionDate(a).localeCompare(contributionDate(b))
-              : contributionDate(b).localeCompare(contributionDate(a)),
-        ),
+        .sort((a, b) => {
+          const comparison =
+            sort.key === "bound"
+              ? cmp(a.theta, b.theta)
+              : sort.key === "title"
+                ? contributionTitle(a).localeCompare(contributionTitle(b))
+                : sort.key === "author"
+                  ? a.authors
+                      .map((author) => author.name)
+                      .join(", ")
+                      .localeCompare(
+                        b.authors.map((author) => author.name).join(", "),
+                      )
+                  : contributionDate(a).localeCompare(contributionDate(b));
+          return comparison * (sort.direction === "ascending" ? 1 : -1);
+        }),
     [all, sort, events],
   );
   const active = all.filter((r) => !withdrawn.has(r.id)),
@@ -164,7 +195,8 @@ export default function App() {
       <main id="main">
         <header className="topbar">
           <a className="brand" href="#main" onClick={() => setTab("Timeline")}>
-            Quasi Riemann bounds
+            <img src={publicUrl("favicon.svg")} alt="" width="36" height="36" />
+            QRH Leaderboard
           </a>
           <div className="header-links">
             {repository && (
@@ -202,32 +234,8 @@ export default function App() {
                 >{String.raw`\(\operatorname{Re}(s)\in[1-\theta,\theta]\)`}</MathJax>
                 .
               </h1>
-              <hr className="statement-divider" />
-              <p>
-                For every{" "}
-                <MathJax inline>{String.raw`\(q\in\mathbb{N}_{>0}\)`}</MathJax>,{" "}
-                <MathJax
-                  inline
-                >{String.raw`\(\chi\in\widehat{(\mathbb{Z}/q\mathbb{Z})^\times}\)`}</MathJax>
-                , <MathJax inline>{String.raw`\(s\in\mathbb{C}\)`}</MathJax>{" "}
-                with{" "}
-                <MathJax inline>{String.raw`\((\chi,s)\ne(1,1)\)`}</MathJax>,
-              </p>
-              <div className="statement-equation-row">
-                <MathJax className="statement-equation">
-                  {String.raw`\(\operatorname{Re}(s)>\theta \;\Longrightarrow\; L(\chi,s)\ne 0\)`}
-                </MathJax>
-                <button
-                  className="icon"
-                  aria-label="Read exact theorem"
-                  onClick={() => setModal("policy")}
-                >
-                  <Info size={17} />
-                </button>
-              </div>
             </div>
             <div className="current-bound">
-              <span className="eyebrow">Best verified bound</span>
               {best ? (
                 <button
                   className="best-bound"
@@ -235,13 +243,12 @@ export default function App() {
                   onClick={() => setSelected(best.id)}
                 >
                   <MathJax dynamic>
-                    {`\\(\\theta = ${decimal(best.theta, 16).replace("…", "\\ldots")}\\)`}
+                    {`\\(\\theta \\le ${decimal(best.theta, 16).replace("…", "\\ldots")}\\)`}
                   </MathJax>
                 </button>
               ) : (
                 <p className="muted">No verified bound yet.</p>
               )}
-              <p>Smaller θ gives a stronger result.</p>
             </div>
           </section>
           <nav className="view-nav" aria-label="Research views">
@@ -286,28 +293,46 @@ export default function App() {
                           <span className="count">{records.length}</span>
                         </h2>
                       </div>
-                      <select
-                        aria-label="Sort contributions"
-                        value={sort}
-                        onChange={(e) => setSort(e.target.value)}
-                      >
-                        <option value="latest">Newest result</option>
-                        <option value="oldest">Oldest result</option>
-                        <option value="bound">Smallest θ (exact)</option>
-                      </select>
                     </div>
                     <div className="table-scroll">
-                      <table>
+                      <table role="table">
                         <caption className="sr-only">
                           Equivalent keyboard-accessible table of every plotted
                           contribution
                         </caption>
                         <thead>
                           <tr>
-                            <th>CONTRIBUTION / AUTHOR</th>
-                            <th>EXACT BOUND θ</th>
-                            <th>RESULT DATE</th>
-                            <th>VERIFICATION</th>
+                            {columns.map(({ key, label }) => (
+                              <th
+                                key={key}
+                                scope="col"
+                                aria-sort={
+                                  sort.key === key ? sort.direction : "none"
+                                }
+                              >
+                                <button
+                                  onClick={() =>
+                                    setSort({
+                                      key,
+                                      direction:
+                                        sort.key === key &&
+                                        sort.direction === "ascending"
+                                          ? "descending"
+                                          : "ascending",
+                                    })
+                                  }
+                                >
+                                  {label}
+                                  {sort.key === key && (
+                                    <span aria-hidden="true">
+                                      {sort.direction === "ascending"
+                                        ? "↑"
+                                        : "↓"}
+                                    </span>
+                                  )}
+                                </button>
+                              </th>
+                            ))}
                           </tr>
                         </thead>
                         <tbody>
@@ -318,38 +343,53 @@ export default function App() {
                                 selected === r.id ? "selected-row" : ""
                               }
                             >
-                              <td>
-                                <button
-                                  className="row-title"
-                                  onClick={() => setSelected(r.id)}
-                                >
-                                  {r.title}
-                                </button>
-                                <small>
-                                  {r.authors.map((a) => a.name).join(", ")}
-                                </small>
+                              <td data-label="Contribution">
+                                <div className="contribution-name">
+                                  <button
+                                    className="row-title"
+                                    aria-label={r.title}
+                                    onClick={() => setSelected(r.id)}
+                                  >
+                                    {contributionTitle(r)}
+                                  </button>
+                                  <span
+                                    className={
+                                      "tag verification-badge " +
+                                      (verifiedHere(r) ? "teal" : "amber")
+                                    }
+                                    title={statusLabel(r)}
+                                  >
+                                    {verifiedHere(r) ? (
+                                      <BadgeCheck
+                                        size={18}
+                                        aria-hidden="true"
+                                      />
+                                    ) : (
+                                      <Clock size={18} aria-hidden="true" />
+                                    )}
+                                    <span className="sr-only">
+                                      {statusLabel(r)}
+                                    </span>
+                                  </span>
+                                </div>
                               </td>
-                              <td className="fraction-cell">
+                              <td data-label="Author" className="author-cell">
+                                {r.authors.map((a) => a.name).join(", ")}
+                              </td>
+                              <td
+                                data-label="Exact bound θ"
+                                className="fraction-cell"
+                              >
                                 {boundLabel(r)}
                                 <small>{decimal(r.theta, 14)}</small>
                               </td>
-                              <td>
-                                {date(contributionDate(r))}
-                                <small>
-                                  {r.date_label || "First verified"} · UTC
-                                </small>
-                              </td>
-                              <td>
-                                <span
-                                  className={
-                                    "tag " +
-                                    (verifiedHere(r) ? "teal" : "amber")
-                                  }
+                              <td data-label="Publication">
+                                <time
+                                  dateTime={contributionDate(r)}
+                                  title={timestamp(contributionDate(r))}
                                 >
-                                  {withdrawn.has(r.id)
-                                    ? "Withdrawn"
-                                    : statusLabel(r)}
-                                </span>
+                                  {date(contributionDate(r))}
+                                </time>
                               </td>
                             </tr>
                           ))}
@@ -391,12 +431,6 @@ export default function App() {
               )}
             </>
           )}
-          <footer>
-            <span>QRH Bounds · Apache 2.0</span>
-            <button onClick={() => setModal("policy")}>
-              Verification details
-            </button>
-          </footer>
         </div>
       </main>
       <dialog
@@ -472,7 +506,6 @@ function ProofDetail({
   return (
     <section className="panel proof-detail">
       <div className="panel-heading">
-        <span className="eyebrow">PROOF DETAILS</span>
         <button
           className="icon"
           aria-label="Close proof details"
@@ -582,43 +615,37 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
     <section className="protocol-grid">
       <article className="panel">
         <h2>Statement</h2>
+        <p>The formal theorem to prove is:</p>
         <p>
-          For every positive modulus q, complex Dirichlet character χ and
-          complex s with Re(s) &gt; θ, L(χ, s) ≠ 0, excluding χ = 1 and s = 1. A
-          smaller θ gives a stronger result.
+          For every{" "}
+          <MathJax inline>{String.raw`\(q\in\mathbb{N}_{>0}\)`}</MathJax>,{" "}
+          <MathJax
+            inline
+          >{String.raw`\(\chi\in\widehat{(\mathbb{Z}/q\mathbb{Z})^\times}\)`}</MathJax>
+          , <MathJax inline>{String.raw`\(s\in\mathbb{C}\)`}</MathJax> with{" "}
+          <MathJax inline>{String.raw`\((\chi,s)\ne(1,1)\)`}</MathJax>,
         </p>
-        <pre>{theorem}</pre>
-        <a
-          href={upstream + "ComparatorChallenges/DirichletSevenEighths.lean"}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Upstream theorem specification <ExternalLink size={14} />
-        </a>
+        <div className="statement-equation-row">
+          <MathJax className="statement-equation">
+            {String.raw`\(\operatorname{Re}(s)>\theta \;\Longrightarrow\; L(\chi,s)\ne 0\)`}
+          </MathJax>
+        </div>
+        <p>
+          Formulated in{" "}
+          <a href="https://lean-lang.org/" target="_blank" rel="noreferrer">
+            Lean
+          </a>{" "}
+          as:
+        </p>
+        <LeanCode
+          code={leanTheorem}
+          source={upstream + "ComparatorChallenges/DirichletSevenEighths.lean"}
+        />
       </article>
+
       <article className="panel">
-        <h2>Verification labels</h2>
-        <p>
-          <strong>Verified in our framework:</strong> the result has passed all
-          required proof checks listed below.
-        </p>
-        <p>
-          <strong>Verification pending:</strong> the authors report a
-          formalization that we have not independently reproduced. These results
-          also contribute to the line.
-        </p>
-        <p>Each result links to its source and available checking logs.</p>
-      </article>
-      <article className="panel">
-        <h2>Dates</h2>
-        <p>
-          Dates are in UTC and refer to publication, announcement or the first
-          local Lean check, as indicated in the table. Verification dates are
-          recorded separately in the result details.
-        </p>
-      </article>
-      <article className="panel">
-        <h2>Required proof checks</h2>
+        <h2>Verification</h2>
+        <h3>Requirements</h3>
         <p>
           Every result marked verified must pass Comparator’s statement,
           definition and axiom checks, followed by proof replay in Lean, NanoDa
@@ -640,6 +667,26 @@ function Protocol({ commissioned }: { commissioned: boolean }) {
         <p>
           Only propext, Classical.choice and Quot.sound are allowed. These local
           checks are separate from Palomar registration and editorial review.
+        </p>
+        <h3>Labels</h3>
+        <p>
+          <strong>Verified in our framework:</strong> the result has passed all
+          requirements above.
+        </p>
+        <p>
+          <strong>Verification pending:</strong> the authors report a
+          formalization that we have not independently reproduced. These results
+          also contribute to the line.
+        </p>
+        <p>Each result links to its source and available checking logs.</p>
+      </article>
+      <article className="panel">
+        <h2>Dates</h2>
+        <p>
+          Dates are in UTC and refer to publication, announcement or the first
+          local Lean check. Hover over a publication date for its full
+          timestamp. Verification dates are recorded separately in the result
+          details.
         </p>
       </article>
     </section>
