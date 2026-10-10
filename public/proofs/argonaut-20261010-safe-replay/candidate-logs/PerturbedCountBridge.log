@@ -1,0 +1,7 @@
+PerturbedCountBridge.lean:157:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PerturbedCountBridge.lean:587:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+PerturbedCountBridge.lean:590:68: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+PerturbedCountBridge.lean:592:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+PerturbedCountBridge.lean:595:68: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

@@ -1,0 +1,233 @@
+OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap) : ℕ
+def OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff : OAI.SevenEighths.Parameters.HighDataPerturbed
+    OAI.SevenEighths.HighFrontierTargets.positiveGap →
+  ℕ :=
+fun D =>
+  max.{0} (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D)
+    OAI.SevenEighths.PerturbedCommonProbeAssembly.principalCutoff
+'OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.sigmaBoundary_value :
+  Eq.{1} OAI.SevenEighths.HighFrontierTargets.sigmaBoundary (3499999 / 4000000)
+theorem OAI.SevenEighths.PerturbedBoundaryMain.sigmaBoundary_value : Eq.{1}
+  OAI.SevenEighths.HighFrontierTargets.sigmaBoundary (3499999 / 4000000) :=
+of_eq_true
+  (Eq.trans.{1}
+    (Eq.trans.{1}
+      (congr.{1, 1}
+        (congrArg.{1, 1} Eq.{1}
+          (Eq.trans.{1}
+            (congr.{1, 1}
+              (congrArg.{1, 1} HSub.hSub.{0, 0, 0}
+                (Mathlib.Meta.NormNum.IsNNRat.to_eq.{0}
+                  (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                    (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                      (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                        (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 7)))
+                      (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                          (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 8))))
+                      (Eq.refl.{1} (Nat.mul 7 1)) (Eq.refl.{1} 8)))
+                  (Eq.refl.{1} 7) (Eq.refl.{1} 8)))
+              (Eq.trans.{1}
+                (congrFun'.{1, 1}
+                  (congrArg.{1, 1} HDiv.hDiv.{0, 0, 0}
+                    (Mathlib.Meta.NormNum.IsNNRat.to_eq.{0}
+                      (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                        (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                            (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ Nat.cast_one.{0}))
+                          (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                            (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                              (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 1000000))))
+                          (Eq.refl.{1} (Nat.mul 1 1)) (Eq.refl.{1} 1000000)))
+                      Nat.cast_one.{0} (Eq.refl.{1} 1000000)))
+                  4)
+                (Mathlib.Meta.NormNum.IsNNRat.to_eq.{0}
+                  (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                    (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                      (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                        (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                            (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ Nat.cast_one.{0}))
+                          (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                            (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                              (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 1000000))))
+                          (Eq.refl.{1} (Nat.mul 1 1)) (Eq.refl.{1} 1000000)))
+                      (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                          (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 4))))
+                      (Eq.refl.{1} (Nat.mul 1 1)) (Eq.refl.{1} 4000000)))
+                  Nat.cast_one.{0} (Eq.refl.{1} 4000000))))
+            (Mathlib.Meta.NormNum.IsNNRat.to_eq.{0}
+              (Mathlib.Meta.NormNum.IsRat.to_isNNRat.{0}
+                (Mathlib.Meta.NormNum.isRat_sub.{0} (Eq.refl.{1} HSub.hSub.{0, 0, 0})
+                  (Mathlib.Meta.NormNum.IsNNRat.to_isRat.{0}
+                    (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                      (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                          (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 7)))
+                        (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                            (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 8))))
+                        (Eq.refl.{1} (Nat.mul 7 1)) (Eq.refl.{1} 8))))
+                  (Mathlib.Meta.NormNum.IsNNRat.to_isRat.{0}
+                    (Mathlib.Meta.NormNum.isNNRat_div.{0}
+                      (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                          (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ Nat.cast_one.{0}))
+                        (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                            (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 4000000))))
+                        (Eq.refl.{1} (Nat.mul 1 1)) (Eq.refl.{1} 4000000))))
+                  (Eq.refl.{1} (Int.ofNat 27999992)) (Eq.refl.{1} 32000000)))
+              (Eq.refl.{1} 3499999) (Eq.refl.{1} 4000000))))
+        (Mathlib.Meta.NormNum.IsNNRat.to_eq.{0}
+          (Mathlib.Meta.NormNum.isNNRat_div.{0}
+            (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+              (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 3499999)))
+              (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+                (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0}
+                  (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 4000000))))
+              (Eq.refl.{1} (Nat.mul 3499999 1)) (Eq.refl.{1} 4000000)))
+          (Eq.refl.{1} 3499999) (Eq.refl.{1} 4000000)))
+      (eq_self.{1} (3499999 / 4000000)))
+    (eq_true True.intro))
+'OAI.SevenEighths.PerturbedBoundaryMain.sigmaBoundary_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.principal_request_le_sameDataCutoff
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap) :
+  LE.le.{0} (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D)
+    (OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff D)
+theorem OAI.SevenEighths.PerturbedBoundaryMain.principal_request_le_sameDataCutoff : ∀
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap),
+  LE.le.{0} (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D)
+    (OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff D) :=
+fun D =>
+  le_max_left.{0} (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D)
+    OAI.SevenEighths.PerturbedCommonProbeAssembly.principalCutoff
+'OAI.SevenEighths.PerturbedBoundaryMain.principal_request_le_sameDataCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.assembly_cutoff_le_sameDataCutoff
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap) :
+  LE.le.{0} OAI.SevenEighths.PerturbedCommonProbeAssembly.principalCutoff
+    (OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff D)
+theorem OAI.SevenEighths.PerturbedBoundaryMain.assembly_cutoff_le_sameDataCutoff : ∀
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap),
+  LE.le.{0} OAI.SevenEighths.PerturbedCommonProbeAssembly.principalCutoff
+    (OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff D) :=
+fun D =>
+  le_max_right.{0} (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D)
+    OAI.SevenEighths.PerturbedCommonProbeAssembly.principalCutoff
+'OAI.SevenEighths.PerturbedBoundaryMain.assembly_cutoff_le_sameDataCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current :
+  OAI.SevenEighths.HighFrontierTargets.CommonProbeConstructionGoalAt OAI.SevenEighths.HighFrontierTargets.sigmaBoundary
+theorem OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current : OAI.SevenEighths.HighFrontierTargets.CommonProbeConstructionGoalAt
+  OAI.SevenEighths.HighFrontierTargets.sigmaBoundary :=
+OAI.SevenEighths.PerturbedCommonProbeAssembly.commonProbeConstructionGoalAt_of_same_data_owner_supply fun hbeta =>
+  Exists.casesOn.{1}
+    (OAI.SevenEighths.LocalPrincipalCutoffRequestV2.exists_D_first_same_data_principal_outputs hbeta
+      OAI.SevenEighths.PerturbedBoundaryMain.sameDataCutoff
+      OAI.SevenEighths.PerturbedBoundaryMain.principal_request_le_sameDataCutoff)
+    fun D h =>
+    Exists.casesOn.{0} h fun hfine h =>
+      Exists.casesOn.{1} h fun F h =>
+        And.casesOn.{0} h fun hcover right =>
+          Exists.casesOn.{1} right fun wide h =>
+            And.casesOn.{0} h fun heuler _heulerSaved =>
+              have hcut := fun P hP =>
+                hcover P
+                  (LE.le.trans.{0} hP (OAI.SevenEighths.PerturbedBoundaryMain.assembly_cutoff_le_sameDataCutoff D));
+              have hbetaCentral :=
+                Eq.mpr.{0}
+                  (id.{0}
+                    (congrArg.{1, 1} (fun _a => LT.lt.{0} _a OAI.SevenEighths.HeckeZeroSupremum.beta)
+                      OAI.SevenEighths.LocalPrincipalSameDataGeometryV2.central_boundary_eq_sigmaBoundary))
+                  hbeta;
+              have htheta := (OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta_spec D hfine F wide hbeta).left;
+              have hcanonical :=
+                OAI.SevenEighths.PerturbedCanonicalLocalPrep.same_data_canonical_physical_at D hfine F hbetaCentral
+                  (OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta D hfine F wide hbeta) htheta;
+              Exists.intro.{1} D
+                (Exists.intro.{0} hfine (Exists.intro.{1} F (Exists.intro.{1} wide ⟨hcut, ⟨hcanonical, heuler⟩⟩)))
+'OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current :
+  OAI.SevenEighths.HeckeCommonProbe.UniformCommonProbeBoundary OAI.SevenEighths.HighFrontierTargets.sigmaBoundary
+theorem OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current : OAI.SevenEighths.HeckeCommonProbe.UniformCommonProbeBoundary
+  OAI.SevenEighths.HighFrontierTargets.sigmaBoundary :=
+OAI.SevenEighths.PerturbedCommonProbeAssembly.uniformCommonProbeBoundary_of_construction_goal
+  OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current
+'OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.hecke_current (chi : OAI.SevenEighths.HeckeFamily.Character) (s : ℂ)
+  (hs : LT.lt.{0} (3499999 / 4000000) s.re) (hpole : Ne.{1} s 1 ∨ Ne.{1} chi.residue 1) :
+  Ne.{1} (OAI.SevenEighths.HeckeFamily.LFunction chi s) 0
+theorem OAI.SevenEighths.PerturbedBoundaryMain.hecke_current : ∀ (chi : OAI.SevenEighths.HeckeFamily.Character) (s : ℂ),
+  LT.lt.{0} (3499999 / 4000000) s.re →
+    Ne.{1} s 1 ∨ Ne.{1} chi.residue 1 → Ne.{1} (OAI.SevenEighths.HeckeFamily.LFunction chi s) 0 :=
+fun chi s hs hpole =>
+  OAI.SevenEighths.HeckeCommonProbe.hecke_ne_zero_of_common_probe_boundary
+    OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current chi s
+    (Eq.mpr.{0}
+      (id.{0}
+        (congrFun'.{1, 1} (congrArg.{1, 1} LT.lt.{0} OAI.SevenEighths.PerturbedBoundaryMain.sigmaBoundary_value) s.re))
+      hs)
+    hpole
+'OAI.SevenEighths.PerturbedBoundaryMain.hecke_current' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re {q : ℕ} [NeZero.{0} q]
+  (chi : DirichletCharacter.{0} ℂ q) {s : ℂ} (hs : LT.lt.{0} (3499999 / 4000000) s.re)
+  (hpole : ¬(Eq.{1} chi 1 ∧ Eq.{1} s 1)) : Ne.{1} (DirichletCharacter.LFunction chi s) 0
+theorem OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re : ∀ {q : ℕ} [inst : NeZero.{0} q]
+  (chi : DirichletCharacter.{0} ℂ q) {s : ℂ},
+  LT.lt.{0} (3499999 / 4000000) s.re → ¬(Eq.{1} chi 1 ∧ Eq.{1} s 1) → Ne.{1} (DirichletCharacter.LFunction chi s) 0 :=
+fun {q} [NeZero.{0} q] chi {s} hs hpole =>
+  OAI.SevenEighths.HeckeDirichlet.dirichlet_boundary_of_hecke (3499999 / 4000000)
+    (Mathlib.Meta.NormNum.isNNRat_lt_true.{0}
+      (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ Nat.cast_zero.{0}))
+      (Mathlib.Meta.NormNum.isNNRat_div.{0}
+        (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 3499999)))
+          (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+            (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 4000000))))
+          (Eq.refl.{1} (Nat.mul 3499999 1)) (Eq.refl.{1} 4000000)))
+      (Eq.refl.{1} true))
+    OAI.SevenEighths.PerturbedBoundaryMain.hecke_current chi s hs hpole
+'OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re {s : ℂ} (hs : LT.lt.{0} (3499999 / 4000000) s.re) :
+  Ne.{1} (riemannZeta s) 0
+theorem OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re : ∀ {s : ℂ},
+  LT.lt.{0} (3499999 / 4000000) s.re → Ne.{1} (riemannZeta s) 0 :=
+fun {s} hs =>
+  OAI.SevenEighths.HeckeDirichlet.zeta_boundary_of_hecke (3499999 / 4000000)
+    (Mathlib.Meta.NormNum.isNNRat_lt_true.{0}
+      (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ Nat.cast_zero.{0}))
+      (Mathlib.Meta.NormNum.isNNRat_div.{0}
+        (Mathlib.Meta.NormNum.isNNRat_mul.{0} (Eq.refl.{1} HMul.hMul.{0, 0, 0})
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 3499999)))
+          (Mathlib.Meta.NormNum.isNNRat_inv_pos.{0}
+            (Mathlib.Meta.NormNum.IsNat.to_isNNRat.{0} (Mathlib.Meta.NormNum.isNat_ofNat.{0} ℝ (Eq.refl.{1} 4000000))))
+          (Eq.refl.{1} (Nat.mul 3499999 1)) (Eq.refl.{1} 4000000)))
+      (Eq.refl.{1} true))
+    OAI.SevenEighths.PerturbedBoundaryMain.hecke_current s hs
+'OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re
+  (chi : OAI.SevenEighths.HeckeFamily.Character) {s : ℂ} (hs : LT.lt.{0} (3499999 / 4000000) s.re)
+  (hpole : ¬(Eq.{1} chi.residue 1 ∧ Eq.{1} s 1)) : Ne.{1} (OAI.SevenEighths.HeckeFamily.LFunction chi s) 0
+theorem OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re : ∀
+  (chi : OAI.SevenEighths.HeckeFamily.Character) {s : ℂ},
+  LT.lt.{0} (3499999 / 4000000) s.re →
+    ¬(Eq.{1} chi.residue 1 ∧ Eq.{1} s 1) → Ne.{1} (OAI.SevenEighths.HeckeFamily.LFunction chi s) 0 :=
+fun chi {s} hs hpole =>
+  OAI.SevenEighths.PerturbedBoundaryMain.hecke_current chi s hs
+    (Or.casesOn (Decidable.not_and_iff_not_or_not'.mp hpole) (fun h => or_iff_not_imp_left.mpr fun a => h) fun h =>
+      or_iff_not_imp_left.mpr fun a a_1 => False.elim.{0} (h (Decidable.of_not_not a)))
+'OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

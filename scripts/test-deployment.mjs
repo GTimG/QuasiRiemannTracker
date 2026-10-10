@@ -102,6 +102,14 @@ try {
     "proofs/liu-20261010-kernels/result.json",
     "proofs/liu-20261010-kernels/collection.json",
     "proofs/liu-20261010-kernels/compiler-input-supplements.json",
+    "proofs/argonaut-20261010-safe-replay/README.txt",
+    "proofs/argonaut-20261010-safe-replay/result.json",
+    "proofs/argonaut-20261010-safe-replay/collection.json",
+    "proofs/argonaut-20261010-safe-replay/contract-audit.json",
+    "proofs/argonaut-20261010-safe-replay/controls/control-results.json",
+    "proofs/argonaut-20261010-safe-replay/challenge-src/Challenge.lean",
+    "proofs/argonaut-20261010-kernels/result.json",
+    "proofs/argonaut-20261010-kernels/collection.json",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
@@ -113,10 +121,16 @@ try {
     "qrh-20261009",
     "nielstron-algebraic-20261009",
     "single-prime-29-33-20261010",
+    "argonaut-20261010-kernels",
   ]) {
     const proofBase = origin + base + `proofs/${id}/`;
     const checksum = await (
-      await page.request.get(proofBase + "SHA256SUMS.txt")
+      await page.request.get(
+        proofBase +
+          (id === "argonaut-20261010-kernels"
+            ? "SOURCE-SHA256SUMS.txt"
+            : "SHA256SUMS.txt"),
+      )
     ).text();
     const [digest, archiveName] = checksum.trim().split("  ");
     assert.equal(archiveName, "source-public.tar.gz");

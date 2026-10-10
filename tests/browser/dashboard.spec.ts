@@ -14,6 +14,43 @@ const chartFixtures = () =>
       "utf8",
     ),
   );
+test("Argonaut details link the isolated maintainer receipt and preserve its exact bound", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Argonaut · perturbed boundary", exact: true })
+    .click();
+  await expect(page.locator(".proof-detail")).toContainText("3499999/4000000");
+  await expect(page.locator(".proof-detail")).toContainText(
+    "Verified in our framework",
+  );
+  const link = page.getByRole("link", {
+    name: "Independent maintainer replay receipt",
+    exact: true,
+  });
+  await expect(link).toHaveAttribute(
+    "href",
+    "/proofs/argonaut-20261010-safe-replay/result.json",
+  );
+  const response = await request.get(
+    (await link.getAttribute("href")) as string,
+  );
+  expect(response.ok()).toBe(true);
+  const receipt = await response.json();
+  expect(receipt.status).toBe("PASS");
+  expect(receipt.theta_exact).toBe("3499999/4000000");
+  expect(receipt.kernels).toEqual(["Lean default", "nanoda", "con-ron"]);
+  expect(receipt.challenge_exported_before_candidate_execution).toBe(true);
+  expect(receipt.receipt_outside_candidate).toBe(true);
+  await expect(
+    page.getByRole("link", {
+      name: "Sandboxed reproduction instructions",
+      exact: true,
+    }),
+  ).toBeVisible();
+});
 test("status panels follow an admitted registry (isolated mock response)", async ({
   page,
   request,

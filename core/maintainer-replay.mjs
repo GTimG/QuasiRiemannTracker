@@ -31,6 +31,14 @@ function filesAt(root, prefix = "") {
   return files.sort();
 }
 export function validateMaintainerReplay(root, pin, contribution) {
+  const profile = pin?.replay_profile ?? "liu-algebraic-v1";
+  demand(
+    ["liu-algebraic-v1", "argonaut-v0.1.8"].includes(profile),
+    "unknown replay profile",
+  );
+  const argonaut = profile === "argonaut-v0.1.8";
+  const driverDirectory = `verifier/${argonaut ? "argonaut" : "liu"}`;
+  const targetNamespace = argonaut ? "QRHBoundsPR4" : "QRHBoundsPR3";
   demand(
     pin && safe(pin.directory) && pin.directory.startsWith("public/proofs/"),
     "missing reviewed replay pin",
@@ -119,9 +127,9 @@ export function validateMaintainerReplay(root, pin, contribution) {
     "driver or dependency pins differ",
   );
   demand(
-    digest(readFileSync(join(root, "verifier/liu/replay.py"))) ===
+    digest(readFileSync(join(root, driverDirectory, "replay.py"))) ===
       pin.driver_sha256 &&
-      digest(readFileSync(join(root, "verifier/liu/pins.json"))) ===
+      digest(readFileSync(join(root, driverDirectory, "pins.json"))) ===
         pin.pins_sha256,
     "current replay differs from tested driver",
   );
@@ -142,9 +150,9 @@ export function validateMaintainerReplay(root, pin, contribution) {
   );
   demand(
     same(report.targets, [
-      "QRHBoundsPR3.allDirichlet",
-      "QRHBoundsPR3.zeta",
-      "QRHBoundsPR3.allHecke",
+      `${targetNamespace}.allDirichlet`,
+      `${targetNamespace}.zeta`,
+      `${targetNamespace}.allHecke`,
     ]),
     "target scope differs",
   );
@@ -156,11 +164,27 @@ export function validateMaintainerReplay(root, pin, contribution) {
     "isolation or challenge ordering missing",
   );
   demand(
-    report.candidate_modules_rebuilt === 238 &&
+    report.candidate_modules_rebuilt === (argonaut ? 152 : 238) &&
       report.approved_dependency_modules === 7026 &&
       report.extra_official_cache_modules === 4807,
     "dependency/build scope differs",
   );
+  if (argonaut) {
+    const inputs = JSON.parse(
+      readFileSync(join(root, driverDirectory, "pins.json")),
+    );
+    demand(
+      contribution.repository ===
+        "Argonaut-Math/argonaut-math-quasi-riemann-boundary" &&
+        report.theta_exact === contribution.theta &&
+        report.theta_exact === inputs.theta_exact &&
+        report.reviewed_pr_head === inputs.pr_head_commit &&
+        report.trusted_base_commit === inputs.trusted_base_commit &&
+        same(report.release, inputs.release) &&
+        report.release?.sha256 === report.source_content_sha256,
+      "Argonaut source release, revision or exact bound differs",
+    );
+  }
   demand(
     typeof report.verified_at === "string" &&
       /^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(report.verified_at) &&
@@ -222,6 +246,7 @@ export function validateMaintainerReplay(root, pin, contribution) {
     "source-manifest.json",
     "tool-pins.json",
     "dependency-pins.json",
+    "trusted-library-manifest.json",
     "comparator.json",
   ])
     demand(
@@ -312,5 +337,80 @@ export function validateMaintainerReplay(root, pin, contribution) {
       ),
     "fresh ill-typed control failed",
   );
-  return report;
+  let firstVerifiedAt = report.verified_at;
+  if (pin.first_acceptance) {
+    const firstPin = pin.first_acceptance;
+    for (const name of [firstPin.receipt, firstPin.driver, firstPin.log])
+      demand(
+        safe(name) && sha(collection.files[name]),
+        "unlisted first acceptance evidence",
+      );
+    demand(
+      collection.files[firstPin.receipt] === firstPin.receipt_sha256,
+      "first acceptance receipt differs",
+    );
+    const first = JSON.parse(read(firstPin.receipt));
+    demand(
+      first.status === "PASS" &&
+        first.judge_exit_code === 0 &&
+        first.driver_sha256 === collection.files[firstPin.driver] &&
+        first.artifacts?.["logs/judge.log"] === collection.files[firstPin.log],
+      "first acceptance driver or log differs",
+    );
+    for (const key of [
+      "source_commit",
+      "source_repository",
+      "source_content_sha256",
+      "reviewed_pr_head",
+      "trusted_base_commit",
+      "pins_sha256",
+      "theta_exact",
+      "targets",
+      "kernels",
+      "allowed_axioms",
+      "source_compiler",
+      "judge_toolchain",
+      "verifier_commit",
+      "sandbox_preflight",
+      "candidate_mount_preflight",
+      "receipt_outside_candidate",
+      "challenge_exported_before_candidate_execution",
+      "candidate_modules_rebuilt",
+      "approved_dependency_modules",
+      "extra_official_cache_modules",
+    ])
+      demand(
+        same(first[key], report[key]),
+        "first acceptance proves a different source or scope",
+      );
+    const firstLog = read(firstPin.log).toString("utf8");
+    for (const name of [
+      "challenge-src/Challenge.lean",
+      "solution-src/Solution.lean",
+      "dependency-pins.json",
+      "trusted-library-manifest.json",
+    ])
+      demand(
+        sha(first.artifacts?.[name]) &&
+          first.artifacts[name] === report.artifacts[name],
+        "first acceptance challenge or dependencies differ",
+      );
+    demand(
+      firstLog.includes("Your solution is okay!") &&
+        report.kernels.every((name) =>
+          firstLog.includes(`${name} kernel accepts the solution`),
+        ),
+      "first kernel acceptance missing",
+    );
+    demand(
+      typeof first.verified_at === "string" &&
+        /^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(first.verified_at) &&
+        first.verified_at === firstPin.verified_at &&
+        Number.isFinite(Date.parse(first.verified_at)) &&
+        Date.parse(first.verified_at) <= Date.parse(report.verified_at),
+      "invalid first acceptance time",
+    );
+    firstVerifiedAt = first.verified_at;
+  }
+  return { ...report, first_verified_at: firstVerifiedAt };
 }

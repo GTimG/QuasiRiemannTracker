@@ -1,0 +1,12 @@
+OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean:14:5: warning: Variable name `hE` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hE
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean:14:16: warning: Variable name `hE1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hE1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

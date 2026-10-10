@@ -1,0 +1,3068 @@
+{
+  "status": "PASS",
+  "entry": "PerturbedBoundaryMain",
+  "compiler": "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "lean_path": "WORKSPACE/approaches/argonaut/native/lib:WORKSPACE/compressed/build/local:WORKSPACE/compressed/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/Qq/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/aesop/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/batteries/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/importGraph/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/mathlib/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/plausible/.lake/build/lib/lean:WORKSPACE/compressed/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "workers": 8,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "compiled": {
+    "OAI.NumberTheory.DirichletL.ContinuationBoundaryGeneric": {
+      "returncode": 0,
+      "seconds": 2.305,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.lean",
+      "source_sha256": "228086cbfc19ba198df3e7fa4ce913f32f5e3f8c22d1c7b167dbd1eaa610a7be",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.ContinuationBoundaryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.olean": "d151085a86ed886571d67dce37b0e03eeddcc41cd4dbd733b729c579342d8ab7"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowGramScaleGeneric": {
+      "returncode": 0,
+      "seconds": 2.427,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.lean",
+      "source_sha256": "e8ee84178cee22746c633c121be563850d881f6126e0f597a64a8dd6a07a3a9c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowGramScaleGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.olean": "a48f877f872fef0070f49d6b4d3a72e21cd584c73742f69125adb1cd80e338e7"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput": {
+      "returncode": 0,
+      "seconds": 3.318,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyMomentInput.lean",
+      "source_sha256": "0ad3a3db4cdebad7634684d3d4252a86e5539702641c4e64b9c994d89534cc07",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyMomentInput.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyMomentInput.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyMomentInput.olean": "7f2e7081244cadeb86d40c47abfda4a511c829a961cf499125cbb87d17b2da85"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount": {
+      "returncode": 0,
+      "seconds": 4.136,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.lean",
+      "source_sha256": "7e60a888e42377952d9c0353a9cb001689b232655171dcdf755cd1cfa52ed59e",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceCount.olean": "d991f8a9b9366475e843bcdcf94040c5f6268dafca3fb50f48765558f65b40aa"
+      }
+    },
+    "MomentAllowancePerturbed": {
+      "returncode": 0,
+      "seconds": 4.776,
+      "source": "WORKSPACE/approaches/argonaut/project/MomentAllowancePerturbed.lean",
+      "source_sha256": "66a4e9273ec25d37b9fda35add977a23f4459c81ffa18f946423f9e85629e425",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/MomentAllowancePerturbed.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/MomentAllowancePerturbed.olean",
+        "WORKSPACE/approaches/argonaut/project/MomentAllowancePerturbed.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/MomentAllowancePerturbed.olean": "7bd958c86ea5c34dea9ac95202cf20248ace34fe7e917595391886c769322f25"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalGeometryGeneric": {
+      "returncode": 0,
+      "seconds": 2.643,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.lean",
+      "source_sha256": "e386744c4981060c4d66f29edf8b4db7d399ad26ed51fdd01ea1b84e62fd2b8d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowNominalGeometryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.olean": "8e9ac123ae53e3969e24791c2604c52a2681468ceaa56d2a83f2208dc55ec5df"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Energy.CertifiedExistence": {
+      "returncode": 0,
+      "seconds": 2.883,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean",
+      "source_sha256": "498bea492166111fc95d17b7f2c379d26bf6d03013299b8d410793ea0b438066",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Energy.CertifiedExistence.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.olean": "d27a41e38871a7eefb8523f03433cbdfe8cef5cbdd12e8824515a12b90be28e1"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowReflectedLengthGeneric": {
+      "returncode": 0,
+      "seconds": 3.806,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean",
+      "source_sha256": "87bad883cb0d5a49b62dc956ed65b054d49fcb11106fd5133776c4b65cad5deb",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowReflectedLengthGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.olean": "92a4b76c45f1898c0761463af692151ec6cdd0aa8b59b0e564b1df901236954b"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralGeometryGeneric": {
+      "returncode": 0,
+      "seconds": 2.298,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.lean",
+      "source_sha256": "ec6f134e6a7696c12d34fc09900f63a364f4123a5e496bca2f5693597144c591",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowCentralGeometryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.olean": "18de6f37bb91426b377433ef3009d8a9578d87e79e0c334838fc8b40c58c109a"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Hecke.SignalIdentityBoundaryGeneric": {
+      "returncode": 0,
+      "seconds": 2.683,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.lean",
+      "source_sha256": "201c00b11529468c49e6832e029cc351577d597d427456224566dfedb5865d1a",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Hecke.SignalIdentityBoundaryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.olean": "e29e343aa26bc6754f1afc9497cbb85a104ae25203da5272a00fa37f77ed4fc6"
+      }
+    },
+    "FullGlobalRegion": {
+      "returncode": 0,
+      "seconds": 7.966,
+      "source": "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalRegion.lean",
+      "source_sha256": "c8b36484cefd32b6cbca0368c5dfa9ca87659f32a479042e046af9ddd17c2c7c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/FullGlobalRegion.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalRegion.olean",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalRegion.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalRegion.olean": "c335a96d05fa906b29da42a5b35e717982f6f6a9974b2837277c4a15783d5534"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass": {
+      "returncode": 0,
+      "seconds": 4.054,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.lean",
+      "source_sha256": "b1f5e2acdaebf205a9e58dc590ad94ee18184d26cd51c3588abe2c04bf55278d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyClass.olean": "bccd6bb23a5987776ce119ac921494fb0db476d7a83f31abc8d60e4cd75d1436"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowRemoteMassGeneric": {
+      "returncode": 0,
+      "seconds": 2.849,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.lean",
+      "source_sha256": "148ed500a4c23a13b9a002b0b77f6cbf93bdac859416767651750a2fcfaa2d6c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowRemoteMassGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.olean": "77ee6488a0e5392da454615e051562cfbd4e477e83779b72079eb476c8f0d7b9"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowSourceScalesGeneric": {
+      "returncode": 0,
+      "seconds": 2.917,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.lean",
+      "source_sha256": "648f8ddae2f8fce94bfcf7ebfa996fe770e481d7c4c561274b0b4b2b3becb433",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowSourceScalesGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.olean": "934cc1bd2dd0d2545ebe3cbe078a10efdb4ca407fc0d46386cf4e30ffc709661"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowInverseNormalizeGeneric": {
+      "returncode": 0,
+      "seconds": 2.67,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.lean",
+      "source_sha256": "8dd5b0dcaa86ba332032f5aa6d0cbd667cfc252d0b5f46dc6b94027877dccc70",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowInverseNormalizeGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.olean": "beb0f540a91fe3852f20f230906335229e15624ec15b7a47909c52b7ebff385b"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Hecke.CommonProbeBoundaryGeneric": {
+      "returncode": 0,
+      "seconds": 2.614,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.lean",
+      "source_sha256": "de711689cee48e5a009e433715138e34dc526cdf27796ec4bd80743cb9c9bc0c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Hecke.CommonProbeBoundaryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.olean": "7112bcd39211ef008f9670eee015a214744c213362b4dd42d9b89350acfa45f9"
+      }
+    },
+    "EulerSigma": {
+      "returncode": 0,
+      "seconds": 10.603,
+      "source": "WORKSPACE/approaches/argonaut/project/EulerSigma.lean",
+      "source_sha256": "c9e18de5d17ab89b37319b993cf44a051695afac8e619f817a6efe4184a3e769",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/EulerSigma.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/EulerSigma.olean",
+        "WORKSPACE/approaches/argonaut/project/EulerSigma.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/EulerSigma.olean": "6bebbbd021634d51e02e4e3feba452a89e27fc082ffa1fa58711f01161a65e32"
+      }
+    },
+    "FullGlobalHolomorphic": {
+      "returncode": 0,
+      "seconds": 2.917,
+      "source": "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalHolomorphic.lean",
+      "source_sha256": "6d18e0a01f6eaf047da6c67920763d0e02bec0b3181bf4b3d7b113b86d047c17",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/FullGlobalHolomorphic.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalHolomorphic.olean",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalHolomorphic.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalHolomorphic.olean": "7d01f11e77f29c5bfc82cb827da5b87525ecca00ee3785a92806a4f373a09826"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowSlotScalesGeneric": {
+      "returncode": 0,
+      "seconds": 2.665,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.lean",
+      "source_sha256": "a14409bd966b9d08f0114c7200502ad9140fd06c3df86eff8df329780fb03b21",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowSlotScalesGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.olean": "b1404914f7b03274c7699f4a42ef8feb8f360c0c5d08e8477263d3a3a506fa20"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Hecke.DirichletBoundaryGeneric": {
+      "returncode": 0,
+      "seconds": 2.292,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.lean",
+      "source_sha256": "0c33575fa310d1c4b07cc61e42f8fefef98228810ad7cdd73e8982ba841396c1",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Hecke.DirichletBoundaryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.olean": "d04deec7f7c1ff39c749a78ac1868a52bce6d3c4fa83476021829296eba38509"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizerGeneric": {
+      "returncode": 0,
+      "seconds": 3.567,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.lean",
+      "source_sha256": "f12f7b207a0985ceac2d56e72f218582afb651c5ed04e7a0b22e187959b8358a",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizerGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.olean": "baf1378d8514a5d7193f5f385862cb699a0ef15da7d0d3a256aeb2bc881c6874"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic": {
+      "returncode": 0,
+      "seconds": 5.428,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.lean",
+      "source_sha256": "2783d75ef9637989f7230cd18dded5a56b31aebc628dc5df5de832fb9148c2cd",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyArithmetic.olean": "f8b1c99a24078f3dc2ddf3d3bf6d4763711f0b040eee6cb1dc9642503f787727"
+      }
+    },
+    "FullGlobalCorrection": {
+      "returncode": 0,
+      "seconds": 3.265,
+      "source": "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalCorrection.lean",
+      "source_sha256": "77a13d9cd1282af798d98d94dcd13d1e7b4e35b3cf47d53c46c6e473913f0db8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/FullGlobalCorrection.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalCorrection.olean",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/FullGlobalCorrection.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/FullGlobalCorrection.olean": "6d6928f98afa2cd89567e334d24ed1d848cdbecc639f3df910add47dbb5f37d0"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowUnselectedMassGeneric": {
+      "returncode": 0,
+      "seconds": 3.073,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.lean",
+      "source_sha256": "cb6d8cbf60bdcc8839249e9420d6c6731bb407d1cf9c8fb383d55ea0ebad7fc7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowUnselectedMassGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.olean": "0e31fde078f4a190bbab6037628822364cd4c6b80d7fb59097fe0fba789b31dc"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowCapsGeneric": {
+      "returncode": 0,
+      "seconds": 2.942,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.lean",
+      "source_sha256": "84943f2ec0c3c331797783911d1a9e27c0cc7e3254e24b406ce3f0dc8c393b66",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowCapsGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.olean": "fa341a411b050b2873747e79d28c0037d9a55ac418c300a1bc9d29b327193857"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport": {
+      "returncode": 0,
+      "seconds": 4.969,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.lean",
+      "source_sha256": "a30e4ae381ffe886790afcaf91cd23b26f158206ca0a2fef597a4b82647df418",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.NonfloorTransport.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorTransport.olean": "2c7f79607a313527b00fe64f7bef67e2f0d8c1b02f478e0c00d496de902234f6"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.HighRowsSelectedFirst87": {
+      "returncode": 0,
+      "seconds": 16.013,
+      "source": "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.lean",
+      "source_sha256": "98ed231c2943c46bf480e06dc5c69eca60f6730eeb5a3c740a745487c23f8732",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.HighRowsSelectedFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.olean": "7274256d24382cd8b9080bab0d5b59e292b755be06385ac5b2f2fb83e9b58b2c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.QuasiPerturbationParameters": {
+      "returncode": 0,
+      "seconds": 4.17,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.lean",
+      "source_sha256": "26544a31805024c622401d0764f550418529049a18fd764e38e2b236755ca8e7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.QuasiPerturbationParameters.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.olean": "2f9c83d0e8981b32f11e2f53b6208579555dd0418454f8cd8b6f59b836eb7412"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral": {
+      "returncode": 0,
+      "seconds": 3.707,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.lean",
+      "source_sha256": "3b5a3d257e20ff7d1ae033e094ad1b0e23e44fbeea4bf41cb838a5a54c917f16",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyIntegral.olean": "c8da72787ca8fc516fe6e1c0ee7c43837aba2e6c03db824f72a367b2c6afcb4a"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowExponentGeneric": {
+      "returncode": 0,
+      "seconds": 4.779,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.lean",
+      "source_sha256": "b6757236df49d9ee7d7f85f05c29d9c46eda91d5da992be7699f1901fc170069",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowExponentGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.olean": "6948764a6e92daf759dc590952739368d36f1b942b0fce02182af5cc61440f8d"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SelectedBounds87": {
+      "returncode": 0,
+      "seconds": 3.382,
+      "source": "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.lean",
+      "source_sha256": "861a7e0bdd462d2a9d5daff836bc4ebd499b80426fe216aba6096da7fd48373f",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SelectedBounds87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.olean",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.olean": "311e82501279802aaa9a1be8ed93314002f359c35403099342801c018c364428"
+      }
+    },
+    "PerturbedCentralSlots": {
+      "returncode": 0,
+      "seconds": 4.048,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralSlots.lean",
+      "source_sha256": "b8f489f2ef42e805e92a7d45ec7483c59bcdb20e060dee33704d8c4493a6c0d8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCentralSlots.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralSlots.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralSlots.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralSlots.olean": "c47b9e238e1bede85172185ae61cd9b621a8225b15cfd94b76c7564efd626e80"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized": {
+      "returncode": 0,
+      "seconds": 3.409,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.lean",
+      "source_sha256": "423741dfe68336116469cd7dacf116c00a21618947199e799dc1098965992274",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyNormalized.olean": "1f8bde551ac473258401ae218660461184e4bc923dc498be8e2e9551b1f2e9e6"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowBranchSumGeneric": {
+      "returncode": 0,
+      "seconds": 2.812,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.lean",
+      "source_sha256": "1a98ab4767a4230d7268852d353142e5838b92ee439b95f75bedb5206abe22dd",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowBranchSumGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.olean": "7221ac66ebaae43af8b4e94f5dcc92bed66fff3f120dcc9ab3956d7f95222746"
+      }
+    },
+    "PerturbedBudget": {
+      "returncode": 0,
+      "seconds": 7.002,
+      "source": "WORKSPACE/approaches/argonaut/project/PerturbedBudget.lean",
+      "source_sha256": "0508e9b46162c6336ac6f66198b8a5ed2c8fd2948ccd7313e7f6de7874c38cce",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedBudget.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBudget.olean",
+        "WORKSPACE/approaches/argonaut/project/PerturbedBudget.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBudget.olean": "617a9022d04505d30602585f02cec6c73dfc0cbc941ace4b7d02786528302408"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SlotSums87": {
+      "returncode": 0,
+      "seconds": 2.805,
+      "source": "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.lean",
+      "source_sha256": "047d070dce205e4bc1af22d78d04ea2a6e1cb2ad1147772b5ae5bed84f4303e8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SlotSums87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.olean",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.olean": "e3b4cbf56a187354792dcf3bae7add5b84e78e47f9ce592a88335adc2af06bcc"
+      }
+    },
+    "PrincipalProductSigma": {
+      "returncode": 0,
+      "seconds": 3.08,
+      "source": "WORKSPACE/approaches/argonaut/project/PrincipalProductSigma.lean",
+      "source_sha256": "cf4832a3c59b6d2e8d66b22adaabb9f0f0b87e3bfad2a7c98a0bf83df342c4d8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalProductSigma.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalProductSigma.olean",
+        "WORKSPACE/approaches/argonaut/project/PrincipalProductSigma.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalProductSigma.olean": "7851fe31211de9aae2280cce1d81b5eaf7dbdaf462df54e4d9913068713e088f"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TupleSums87": {
+      "returncode": 0,
+      "seconds": 2.962,
+      "source": "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.lean",
+      "source_sha256": "e95a848e789e82d905b89843f95cdaa868fbee7e4c9342897cd3635a2a28503d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TupleSums87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.olean",
+        "WORKSPACE/approaches/argonaut/project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.olean": "6b1139aa4eef2dc726e244a50c84320e5fe0509f2256490e4779b3223e7dc789"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowSectorGeneric": {
+      "returncode": 0,
+      "seconds": 4.029,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.lean",
+      "source_sha256": "1dc31c9f54429795f5d6eaa2fb31891f0adb261f61e5bf58a8d79bd1584c789f",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowSectorGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.olean": "066498fbcb6b1896beaa8bc9b2a9db3c3fa7bab9bc258fa0566824c9ee2de773"
+      }
+    },
+    "PerturbedBudgetWithSlots": {
+      "returncode": 0,
+      "seconds": 4.441,
+      "source": "WORKSPACE/approaches/argonaut/project/PerturbedBudgetWithSlots.lean",
+      "source_sha256": "eb61e89b13b916bef6b8cd1af91349248e87b2936800e2a428f98e444f0ad084",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedBudgetWithSlots.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBudgetWithSlots.olean",
+        "WORKSPACE/approaches/argonaut/project/PerturbedBudgetWithSlots.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBudgetWithSlots.olean": "dbbf3e0e609f4c9a6b5e146aca9f97a3a00bdd05c1e5fd8fcc353006e6d84e8f"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TupleBound87": {
+      "returncode": 0,
+      "seconds": 2.868,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.lean",
+      "source_sha256": "0ec0afaef170cc4900dbd23189d8ea71e6b55883d3ea5692d0ee9076f3b8d3a2",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TupleBound87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.olean": "184123dfa1fac70f7e93d0f6beda1ddfcd9678618975fbd652daa8efafcf32bc"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected": {
+      "returncode": 0,
+      "seconds": 18.12,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.lean",
+      "source_sha256": "86f9decfa0c324b02ae764bf23184363d61c7f258c02f1dc9f3d00233b7c74f0",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.NonfloorCollected.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/NonfloorCollected.olean": "fea564a4843303c64c210aa8ed4581a9f0d72340883689d474f57d1881be27ed"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetainedGeneric": {
+      "returncode": 0,
+      "seconds": 2.812,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.lean",
+      "source_sha256": "19f2c9b18c0d953cf945b9a7571fe44551cc2a407dbd4a908f774f785d21adf3",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowRetainedGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.olean": "7b193a96a9197b5afef719eee73baa7d83d5d2f271860a72cf4a39931e0a6a43"
+      }
+    },
+    "PrincipalSlotSigma": {
+      "returncode": 0,
+      "seconds": 9.176,
+      "source": "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/PrincipalSlotSigma.lean",
+      "source_sha256": "8821fce8b1829e40b4a86957f34a67f39bb78952ee60ec6d7cc5658509d469d3",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSlotSigma.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSlotSigma.olean",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/PrincipalSlotSigma.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSlotSigma.olean": "47d1d41904e916c692083f3f272f7b7ccea71311a2a4490ff63f141ba1f6fd42"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedSelectedTupleFirst87": {
+      "returncode": 0,
+      "seconds": 2.504,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.lean",
+      "source_sha256": "058eb62232dc8cf8f45d8c86d1eb8b790cce9ffb98bed2485775399b88518bae",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedSelectedTupleFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.olean": "ec16fab5ccbc897133406384643aa27994de97f20551d741639d488c98b5d4e5"
+      }
+    },
+    "PrincipalSignalFiniteSigma": {
+      "returncode": 0,
+      "seconds": 3.252,
+      "source": "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/PrincipalSignalFiniteSigma.lean",
+      "source_sha256": "23ddf0fbc2a6005df457bd8f32158425730295e2b025576ca607e00cea5072e5",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSignalFiniteSigma.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalFiniteSigma.olean",
+        "WORKSPACE/approaches/argonaut/project/web-euler-five-returned/PrincipalSignalFiniteSigma.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalFiniteSigma.olean": "57ba94f8bea6e0a24e7ba35da3c858efadb62df7f5b195aa4901b6edb91619ba"
+      }
+    },
+    "PerturbedCountBridge": {
+      "returncode": 0,
+      "seconds": 16.837,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCountBridge.lean",
+      "source_sha256": "0750fe6388d7ce152fa003665a4fc8ba8d1f7b10cf1edced9a73fc682746d4fd",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCountBridge.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCountBridge.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCountBridge.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCountBridge.olean": "cbfb1a39141da3290ae58a641292d79ba154ebe533e3eab7f6cc02692b8712ce"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments": {
+      "returncode": 0,
+      "seconds": 6.352,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.lean",
+      "source_sha256": "0cba344bc0bdfc01c8ac1c79634ec59de91d607b40f703f607530009c3b0a64b",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.HighFromMoments.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/HighFromMoments.olean": "aab6ac7fb39faf087d70d0bba9ab646db51d016f6427d30d7fb0e158c1f0ca44"
+      }
+    },
+    "ParametersHighDataPerturbed": {
+      "returncode": 0,
+      "seconds": 8.531,
+      "source": "WORKSPACE/approaches/argonaut/project/ParametersHighDataPerturbed.lean",
+      "source_sha256": "f630057551df2f5f4265f8de69ccbfef61727dd977719bdf5a77b8078934ddb4",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/ParametersHighDataPerturbed.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/ParametersHighDataPerturbed.olean",
+        "WORKSPACE/approaches/argonaut/project/ParametersHighDataPerturbed.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/ParametersHighDataPerturbed.olean": "42ba81b7b5b29265f2996ddc99f5bd6e4e372df45d7e5aa3d4f6462d032b0993"
+      }
+    },
+    "PrincipalBoundaryB0": {
+      "returncode": 0,
+      "seconds": 3.308,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalBoundaryB0.lean",
+      "source_sha256": "4cdf280af3a12fc78c748b5435face0f06cc397d799823dd20ff03b799ba03be",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalBoundaryB0.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalBoundaryB0.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalBoundaryB0.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalBoundaryB0.olean": "f876bd09812ede7a723252cb8cdf515061cc1b57a19f96a142cba9e489fd1442"
+      }
+    },
+    "PerturbedCentralExponent": {
+      "returncode": 0,
+      "seconds": 23.878,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralExponent.lean",
+      "source_sha256": "ef0335d9fdf27f63614cc5d760e6616ee890681c1a4805db5417fd48a8407db6",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCentralExponent.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralExponent.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralExponent.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralExponent.olean": "2442cc33b0de16802e53aa76e21e071449f044448f997fd7562b99990215c2b9"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudgetGeneric": {
+      "returncode": 0,
+      "seconds": 13.645,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.lean",
+      "source_sha256": "aec235de54eb8927c32cf6fae0115f31e9bf611eb3b38c34bed52464ab527d69",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudgetGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.olean": "00104160fe71845855dde408bd87bf355dac83133cf27b682b886bf2f092eefe"
+      }
+    },
+    "PrincipalSigmaAliasesV2": {
+      "returncode": 0,
+      "seconds": 4.098,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSigmaAliasesV2.lean",
+      "source_sha256": "4bc9c4b3efce62bf9f72f90c656022e9a047116fa150ecf6ca00173f681411a6",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSigmaAliasesV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSigmaAliasesV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSigmaAliasesV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSigmaAliasesV2.olean": "02a422336d5e7bca9124f83c059dde48d4a01e816b785ddee10ef4ce797af2a3"
+      }
+    },
+    "PrincipalPoolThresholdsV2": {
+      "returncode": 0,
+      "seconds": 4.594,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalPoolThresholdsV2.lean",
+      "source_sha256": "dcc84efa357b5854e13bc90486b7b8191ece3e7f77619845588fd36d7d048022",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalPoolThresholdsV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalPoolThresholdsV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalPoolThresholdsV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalPoolThresholdsV2.olean": "70440a8366ed7e3836389035e0dff3b1de1d28132ea0d26426191400b3dd8d62"
+      }
+    },
+    "PrincipalSameSCutoffsV2": {
+      "returncode": 0,
+      "seconds": 4.915,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSameSCutoffsV2.lean",
+      "source_sha256": "d4f1e1da625de41f44ce7c4c864e60a1459c25e5eae97107435a269c169353cc",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSameSCutoffsV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameSCutoffsV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSameSCutoffsV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameSCutoffsV2.olean": "062650e0d2a11bc66d50116e602558ae4e4b646d5ddf9a5eeae237c72472fbf0"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected": {
+      "returncode": 0,
+      "seconds": 15.702,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.lean",
+      "source_sha256": "1ecaf8b60edbe7fe40746ae74701ebdebc75bc8f3dce39d95f720d98feb169c7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCollected.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCollected.olean": "d0bfc6f4ddb3b5b45125d1f6f2490b68876124fb7ee689ce2e4dc4a72e99a9f3"
+      }
+    },
+    "PrincipalGeometryPerturbedV2": {
+      "returncode": 0,
+      "seconds": 5.966,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalGeometryPerturbedV2.lean",
+      "source_sha256": "4f928d0eb0984e53f256b53ccabd194170db8eae21d53e4a48b2aa3b1d9c73d4",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalGeometryPerturbedV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalGeometryPerturbedV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalGeometryPerturbedV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalGeometryPerturbedV2.olean": "539ff76661d7cf029aaab337e4bb961bed64a1448953346fb9fa71f7d4bbe6b7"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalBudgets": {
+      "returncode": 0,
+      "seconds": 7.036,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.lean",
+      "source_sha256": "28bb42e06e459c7e2a537939dadb969b33df16f85377039921682228131474a7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalBudgets.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.olean": "6c8cdd177b151c5be0d953df6d18650fb1b5495c01d34970e91d47359e46d09a"
+      }
+    },
+    "PerturbedCentralBudget": {
+      "returncode": 0,
+      "seconds": 4.865,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralBudget.lean",
+      "source_sha256": "858dd5e6cb3068c8d880d4cadf11728c554dc9c31d3acf992c56a8ded42e28af",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCentralBudget.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralBudget.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralBudget.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralBudget.olean": "27fa5ff27dd8a939f554363f49857dd9ba868597a5d0caef0dd0cdd58b3ff043"
+      }
+    },
+    "PrincipalSignalShiftV2": {
+      "returncode": 0,
+      "seconds": 5.461,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSignalShiftV2.lean",
+      "source_sha256": "a980a858342b800dd04ef20fc98afcdd00dc6ddf4b0762893ab711bbdd9f1a82",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSignalShiftV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalShiftV2.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSignalShiftV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalShiftV2.olean": "0e40694ea2ff76ce6b6f279f2e83b9d1c5a46b37440102e951d39222549e6da9"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh": {
+      "returncode": 0,
+      "seconds": 7.208,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.lean",
+      "source_sha256": "05514c32466fbe9d72c86b52ed5ca91ba38ed42617cc1579ce3d6b67f218e726",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyHigh.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyHigh.olean": "41fcd7fd2e07fb32d9e32aeebd3d07ed179d8eb6714ab653db5ba9fbe3175279"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalFiniteCosts": {
+      "returncode": 0,
+      "seconds": 5.317,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.lean",
+      "source_sha256": "c708b329f3a927a2e5816fc3a16e16430bf8f91de19347d424ee49c2eb206e14",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalFiniteCosts.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.olean": "f72ce64c73d4515ea9ef09601edaef248f6496e735a663ddb6ad4bb840f8d00a"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalTailNormalization": {
+      "returncode": 0,
+      "seconds": 4.682,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.lean",
+      "source_sha256": "74ddacbeea2089e85eb1f66ded44a687a027ea5a3ca4823c21aae8a03e7e8e5d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalTailNormalization.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.olean": "37c7d447168db6704bec93eda94c8473c25921090105aa78ffcbb2912415a76d"
+      }
+    },
+    "PrincipalFiniteSigmaV2": {
+      "returncode": 0,
+      "seconds": 13.899,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteSigmaV2.lean",
+      "source_sha256": "e8df6e185e8397bcf6d22ce87b13a766f5f852a8af5e5af85ca75c8f56ba89f9",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalFiniteSigmaV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalFiniteSigmaV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteSigmaV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalFiniteSigmaV2.olean": "bf7b4c554bd4ceb2d78deca82401ad013364b93150ef0cd31586824fc5ed788c"
+      }
+    },
+    "PrincipalSignalBoundsV2": {
+      "returncode": 0,
+      "seconds": 4.369,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSignalBoundsV2.lean",
+      "source_sha256": "bf8bfe224932f65fd7a28fcdaf13a8c7e7c6ccfaed4eead2e903b660704b8066",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSignalBoundsV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalBoundsV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSignalBoundsV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSignalBoundsV2.olean": "458ad0c56ddb8305be7e5a1fe1dca409dbfd3cc2f865b43d9eebcd2b46ca2fb6"
+      }
+    },
+    "HighFrontierTargets": {
+      "returncode": 0,
+      "seconds": 2.654,
+      "source": "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/HighFrontierTargets.lean",
+      "source_sha256": "d14d9f647e66e022ba2234ca8af8df5e074565350b9e18e7dd76af8e94cae13e",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/HighFrontierTargets.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/HighFrontierTargets.olean",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/HighFrontierTargets.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/HighFrontierTargets.olean": "9cac4fd70addeaf8efc4c80d17b2ee09ff793648c542420396b0b6b2dd4e2148"
+      }
+    },
+    "PrincipalRegionSlotBoundsV2": {
+      "returncode": 0,
+      "seconds": 11.78,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalRegionSlotBoundsV2.lean",
+      "source_sha256": "8fcb1cbd0a20cc42bea908535d5eab96c1c508f059a6d3b3cb55103181b18044",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalRegionSlotBoundsV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalRegionSlotBoundsV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalRegionSlotBoundsV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalRegionSlotBoundsV2.olean": "7b0b4a47b933368d9c5ad6ba4f0c2239642d9087796201fa68254a60f4e2abb2"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SameDataRowCubeSaving": {
+      "returncode": 0,
+      "seconds": 5.381,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.lean",
+      "source_sha256": "5fe04001589b5c63ab8ed6742a7a45329b0b2709fe3317ed0c563afcdde579eb",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SameDataRowCubeSaving.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.olean": "24a97b9121b636291165f9b99ebf7e7660db82a698785c7d1d43a9fb634e053e"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyFixedHigh": {
+      "returncode": 0,
+      "seconds": 6.306,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyFixedHigh.lean",
+      "source_sha256": "b3b043756695167550fc3fad7d088dce5c4a83234900df4c5cbb6c229586dd23",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyFixedHigh.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyFixedHigh.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyFixedHigh.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyFixedHigh.olean": "62bc8d82314371332b73792a7178d809be70db915ec78480df0c830854c48f1c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowFullGeneric": {
+      "returncode": 0,
+      "seconds": 15.882,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.lean",
+      "source_sha256": "a647333620c3360e8dfaf1b1b6781860334bebfad2a574d3f2f8747c0022ce8e",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowFullGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.olean": "3d3e122510ee1f6a16cecf47d7acf04014875b731ff4212bd3b615393e5f6c17"
+      }
+    },
+    "PrincipalFiniteXSigmaV2": {
+      "returncode": 0,
+      "seconds": 6.06,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteXSigmaV2.lean",
+      "source_sha256": "a46a7cb0f7507392f5a7c16a9ba090f72dce4e8cbebae0703fb3ab44c212a438",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalFiniteXSigmaV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalFiniteXSigmaV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteXSigmaV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalFiniteXSigmaV2.olean": "2f45ded89a8bf1bb1899441bf16ec27008b1e2a3b64b65fd7d93fcbe00840fdc"
+      }
+    },
+    "PrincipalResidueNormalizationPerturbedV2": {
+      "returncode": 0,
+      "seconds": 8.323,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalResidueNormalizationPerturbedV2.lean",
+      "source_sha256": "45c1d74ec991ac2a2b7757e5933b9c02d795309ba615f75cdaf236aaf2df5a64",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalResidueNormalizationPerturbedV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalResidueNormalizationPerturbedV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalResidueNormalizationPerturbedV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalResidueNormalizationPerturbedV2.olean": "490058c158b2cec5e8261d05e5f650b6d5c4e869f28e2d2cc0237b29ddbb4425"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssembly": {
+      "returncode": 0,
+      "seconds": 2.896,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssembly.lean",
+      "source_sha256": "1bd9d5c4550057f027cf83b9795b2b5ccaf60e986bc43e8cf0b45d101d7a8f32",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssembly.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssembly.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssembly.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssembly.olean": "1c1d391e8c0da2401c15ae3ff75a6e92d8699bed2e108a8c836da142c203e14b"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SameDataFiniteCubeSaving": {
+      "returncode": 0,
+      "seconds": 5.718,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.lean",
+      "source_sha256": "6433c879be1d7bcc6df39dc976277b1de9e3ed4d8e4da592caee91126a6d7eda",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SameDataFiniteCubeSaving.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.olean": "c400605d364340d00b6bfea74d0f9b1b597af9d7687c672f69071110f7910e5c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowFullBudgetGeneric": {
+      "returncode": 0,
+      "seconds": 5.181,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.lean",
+      "source_sha256": "0dd063fb33ab886f40312be4234eb1e665a33f8528e6eae851757e08dd1ba446",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowFullBudgetGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.olean": "46446a2c63278466f41e5430b7fe7c4eddbb1ebccc4af376987eceb6c5ea8ee4"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData": {
+      "returncode": 0,
+      "seconds": 3.116,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.lean",
+      "source_sha256": "0d072efafe870a968d5d9dcdcc98309bfdda366637e1d9e812b8bffc4d26d6be",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.olean": "ddb77227b19fc1b3050c4216ea9d4d20d3ed393d0f5fdb0827bb05eb1d3fdd44"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands": {
+      "returncode": 0,
+      "seconds": 3.665,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean",
+      "source_sha256": "bfa8fc2524634a7f7ccf893c944bbbda6f0bd3a3dc666c13821ce06cf13f960f",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.olean": "e113b7aceea58f6698deb3585b39608cdd33cc2fd649b9f4e8d117163dc940c5"
+      }
+    },
+    "PerturbedCentralAssembly": {
+      "returncode": 0,
+      "seconds": 28.369,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralAssembly.lean",
+      "source_sha256": "514ed3cdf4d45a8c96d9e5d14ef5ed997d673e1ec3ca524defc11309db78f6ba",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCentralAssembly.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralAssembly.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralAssembly.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralAssembly.olean": "ceeba20de22a5094d2f4c22b76559a26632d2bbe608625355979bf2b370adce4"
+      }
+    },
+    "PerturbedCentralBridge": {
+      "returncode": 0,
+      "seconds": 3.275,
+      "source": "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralBridge.lean",
+      "source_sha256": "c842ce0af1d3ca5793c010bea342cac08b53119673d4b17bfeba2074fc2baead",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedCentralBridge.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralBridge.olean",
+        "WORKSPACE/approaches/argonaut/project/web-central-07-adapted/PerturbedCentralBridge.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedCentralBridge.olean": "1641af7331f14334610f1f24f74cbeef682e27112d4f0e7e763393861d914396"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudgetGeneric": {
+      "returncode": 0,
+      "seconds": 14.068,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.lean",
+      "source_sha256": "76007fee1312ca0614376daa1eb26bf4f4e7dea492a8f04718c6401c65f4ab39",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudgetGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.olean": "8958538f5970992f306a966b94f8d93e357148aa60d6348f389b563b8ab82cc7"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberBudgetGeneric": {
+      "returncode": 0,
+      "seconds": 2.695,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.lean",
+      "source_sha256": "db4a20c526a03844f07dc4227fe4456c60c7d8b7cb448908134838b773a0a549",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowMemberBudgetGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.olean": "6ed15e51d91b6f29242d0590b2dd68841217d904b5571c650c87bc3bff502cda"
+      }
+    },
+    "PrincipalContoursSigmaV2": {
+      "returncode": 0,
+      "seconds": 22.486,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalContoursSigmaV2.lean",
+      "source_sha256": "2e5e05018e537be4771f2151b1669fa171800f7c7cf976081bada4e8fe671161",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalContoursSigmaV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalContoursSigmaV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalContoursSigmaV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalContoursSigmaV2.olean": "23781444d4c75e80895bb28fd3ff6f745aca303ca922db75b82705cf9116b43f"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometryGeneric": {
+      "returncode": 0,
+      "seconds": 3.204,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.lean",
+      "source_sha256": "fae156e3051cf05b6d450c7ccaeaa5dadf42a60cc73ae20b2f7bab5aada78522",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometryGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.olean": "2f9be3121e4fe8da55e5fbcf07af8a15b39fd50c8c8b7a5e1c5be599eaab666a"
+      }
+    },
+    "PerturbedMomentConstruction": {
+      "returncode": 0,
+      "seconds": 16.256,
+      "source": "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/PerturbedMomentConstruction.lean",
+      "source_sha256": "e1b8849cd35d143491025834583b8964c9e6b15b818d8bac03828306dbc7d4e6",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedMomentConstruction.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedMomentConstruction.olean",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/PerturbedMomentConstruction.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedMomentConstruction.olean": "a3258eae4fb3e2e26ae40873fc77d6ec9397cb254ea14e2a31c9ca2532eef6a2"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowFixedMemberGeneric": {
+      "returncode": 0,
+      "seconds": 4.52,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.lean",
+      "source_sha256": "90f7b7e20d9019e81a6828e8f66adc4a05adca53fc456e5c3256b57b99d17979",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowFixedMemberGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.olean": "841b36478589c589204794c9d6b78285e05f9323e02114d168f6d8a679be0ebf"
+      }
+    },
+    "HighDataMomentGeometry": {
+      "returncode": 0,
+      "seconds": 3.862,
+      "source": "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/HighDataMomentGeometry.lean",
+      "source_sha256": "f28610bc748960a7c67b0e446c542e5b74fc3e692deee729f96da9bea7501401",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/HighDataMomentGeometry.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/HighDataMomentGeometry.olean",
+        "WORKSPACE/approaches/argonaut/project/web-moments-06-adapted/HighDataMomentGeometry.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/HighDataMomentGeometry.olean": "f80d446a344f3c710c44e91f1edd42cc121d6c34fe4aba3e1545081937e32f0e"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedCountProjection": {
+      "returncode": 0,
+      "seconds": 4.116,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.lean",
+      "source_sha256": "073e1ad995c36af57c3d97072085cb4d4a99d44adc889b0e9b186beb63194e0d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedCountProjection.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.olean": "07db92adc2299a934369e9552761ee9f2aa333824587e545e909b896b990b73d"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowDyadsGeneric": {
+      "returncode": 0,
+      "seconds": 3.711,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.lean",
+      "source_sha256": "93c272b18303d35062d812d3c632486bb9bf13c1f286e16880c2815788e79cbf",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowDyadsGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.olean": "1f5ecafe8ab920f0e14f8ea9411f0b09e7028c3538b7c95974448ca709638d0b"
+      }
+    },
+    "PrincipalTransportSigmaV2": {
+      "returncode": 0,
+      "seconds": 10.964,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalTransportSigmaV2.lean",
+      "source_sha256": "ce6dbd53cc3c0e1494968102d6cbf197da4bb251f8edd4dc0d8322a4e877f750",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalTransportSigmaV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalTransportSigmaV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalTransportSigmaV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalTransportSigmaV2.olean": "d113bb19315a53a112282c371080e27d627ac05c0a9d86d180a5bf64e9221f73"
+      }
+    },
+    "PrincipalSharpWindowSupportV2": {
+      "returncode": 0,
+      "seconds": 36.287,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSharpWindowSupportV2.lean",
+      "source_sha256": "146e999f83ba8ad11181812ea82537a26f7075797035a67b6ae2048460adebbe",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSharpWindowSupportV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSharpWindowSupportV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalSharpWindowSupportV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSharpWindowSupportV2.olean": "530d917e4b035ff9067f6b228ba6daa368114e9825524a8d2e1154bc416b9ecb"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedMomentDeltaLift": {
+      "returncode": 0,
+      "seconds": 4.786,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.lean",
+      "source_sha256": "8d296e19b45a4782ed621ce6bfe79e22d3110d786de5de572fde2c3878937589",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedMomentDeltaLift.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.olean": "9381e5e22559fa428a61629da42362246caaaa08736057bb567b6beafb6602d8"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergyGeneric": {
+      "returncode": 0,
+      "seconds": 3.795,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.lean",
+      "source_sha256": "0fde30098d33eacc4d96f8137f9efbf7e3ea70a5ff0e3b992367567ef119066c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergyGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.olean": "8094ab197adb70ed2d1229bfa1bf118b03e367aa5cdebcf674702bee268e9343"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedJointSource": {
+      "returncode": 0,
+      "seconds": 4.05,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.lean",
+      "source_sha256": "dac82a942979118a2820161f8d066999c1fd99e6ef7452b44ad2c78ed0c13084",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedJointSource.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.olean": "d70b330ddf516c24538c6bd97dea4603d8409316dd3705c64b23da2987f4cf91"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergyGeneric": {
+      "returncode": 0,
+      "seconds": 2.853,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.lean",
+      "source_sha256": "649dff2fd0515ed3f0899a38537cf71adc43d45cd50fc38c8b061dc067d635ab",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergyGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.olean": "cbb811b163ab4ea4d9ac5b98f5b0114f03351e888eabda762ab45c383b85fdf4"
+      }
+    },
+    "PerturbedDfirstSource": {
+      "returncode": 0,
+      "seconds": 3.925,
+      "source": "WORKSPACE/approaches/argonaut/project/PerturbedDfirstSource.lean",
+      "source_sha256": "1ad42496a0ac898390523934da0c37dd9d6eed0152009bf5e910b005077a6a67",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedDfirstSource.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedDfirstSource.olean",
+        "WORKSPACE/approaches/argonaut/project/PerturbedDfirstSource.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedDfirstSource.olean": "c93b2a2bac7f90b76202b0adfb9cce08e7814b88a3d66979de4d76a82e8ccc7e"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergyGeneric": {
+      "returncode": 0,
+      "seconds": 4.574,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.lean",
+      "source_sha256": "99ded2b464aea31ca88258185f514c9d73aeb4044c7458ab6ff3ce83510d6298",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergyGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.olean": "f8cb3d6e3966f8caafb476b2d61593bfcc67fec4bf38fc16b28e0a22b701a6ab"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedSameDataCentral": {
+      "returncode": 0,
+      "seconds": 5.735,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.lean",
+      "source_sha256": "80622300176bdbf5d5354b439c9723beaf7405d0de7aa0548f9e23ac66353fac",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedSameDataCentral.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.olean": "dbd497dd61a27e31551c46174a4a4c1c04e0702e1cf536d306be7d4dbb1de938"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiberGeneric": {
+      "returncode": 0,
+      "seconds": 3.112,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.lean",
+      "source_sha256": "a27d2d4d453df8a8f3a13c1d11042a8d7ae6f0e3e76435638b89138cc24f0883",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiberGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.olean": "2d41324f26bd7b796bbce2575e890f950cf2eeba545aa923ce26106f3fe89df2"
+      }
+    },
+    "PrincipalGenericRemaindersSigmaV2": {
+      "returncode": 0,
+      "seconds": 13.697,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalGenericRemaindersSigmaV2.lean",
+      "source_sha256": "39a10e4c8cf9f13125f9684b6a0853396bbc3f16b47f510bf793814b79b09d17",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalGenericRemaindersSigmaV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalGenericRemaindersSigmaV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalGenericRemaindersSigmaV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalGenericRemaindersSigmaV2.olean": "be03173fb2dc1264c1861cf0b1512619000da1399689121d5bea6c054eaadd91"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedCentralMomentJoin": {
+      "returncode": 0,
+      "seconds": 5.274,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.lean",
+      "source_sha256": "daf0325bf6a88d9dcb693b259626c9f8840344ed9734f3c2dbdcf3705d0dda7b",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedCentralMomentJoin.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.olean": "21f821ee6fc6eede3e151d439ffdcca445480f6ddaa15736f9a3ce5f6f4046a0"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedRowsGeneric": {
+      "returncode": 0,
+      "seconds": 2.793,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.lean",
+      "source_sha256": "c2dd94aef168e6cf2100590639a136090ce75e86aca44c8f63c483e7db7a29c6",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowCompletedRowsGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.olean": "5003b51df844e567c801d8b177a322ba7cf65c35d32f69ae894eaf09b9f6ee61"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedFloorFrontier": {
+      "returncode": 0,
+      "seconds": 6.263,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.lean",
+      "source_sha256": "0d4f8935587d16d22200c6406711d94039c48f8cbdbaa4b8f8f8036a932d8152",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedFloorFrontier.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.olean": "2a47edd2d37be14210af2c5edfdeaf55a13defe0b67035bfb2bbad1686d9947e"
+      }
+    },
+    "PrincipalRemainderPowersPerturbedV2": {
+      "returncode": 0,
+      "seconds": 3.961,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalRemainderPowersPerturbedV2.lean",
+      "source_sha256": "67bb11c5bbfb7c57828abe4ee4a20ba62cb0f387f5c095323a1986daf0667e8d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalRemainderPowersPerturbedV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalRemainderPowersPerturbedV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalRemainderPowersPerturbedV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalRemainderPowersPerturbedV2.olean": "6e744270a354862498a4a77b2c605e4a8ebec2ee557cd9b578591a36eb4dfd2d"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergyGeneric": {
+      "returncode": 0,
+      "seconds": 2.334,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.lean",
+      "source_sha256": "28d3f1611dc28d04dd7140f7f395c1a9d321fc0b5eb51015c7e831c3ab35307a",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergyGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.olean": "d92952134cb7555c031bd0b8bc119641a6381005bf2cfb92da7a4d40f65e8702"
+      }
+    },
+    "PrincipalPhysicalPerturbedV2": {
+      "returncode": 0,
+      "seconds": 5.723,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalPhysicalPerturbedV2.lean",
+      "source_sha256": "a13f8f523141406da762dc748ab36553017c475ff86d278343aaab0b817f4f3b",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalPhysicalPerturbedV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalPhysicalPerturbedV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalPhysicalPerturbedV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalPhysicalPerturbedV2.olean": "3fe59881a50d2fc925af730e254e6cf2703ce59184d9ca18bab005ad85906f9e"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowSelectedBoundGeneric": {
+      "returncode": 0,
+      "seconds": 7.947,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.lean",
+      "source_sha256": "e0d8d6494ceb4275bbfde46a517e186957864f6371cf2a55e46bfff243839f7c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowSelectedBoundGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.olean": "8b4c076bd9ea32cff7ac6947905164c7646a210deb2e824f8f4ab4e87dea7e2c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalEnergyGeneric": {
+      "returncode": 0,
+      "seconds": 2.438,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean",
+      "source_sha256": "a530b9c0147765f058b3d351578185617279cd5feb4cbea37a8b2f0a19200100",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowNominalEnergyGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.olean": "a4531bcb25286d840d34fdf6f07843e959c33b7fd97460d57aa026f8e4e3441f"
+      }
+    },
+    "PrincipalNormalizedPerturbedV2": {
+      "returncode": 0,
+      "seconds": 6.583,
+      "source": "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalNormalizedPerturbedV2.lean",
+      "source_sha256": "e3c9e54e583407f8e59d9d06194b5d757bfb9a0fb4e4eb7e81b51c4a5571adf3",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalNormalizedPerturbedV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalNormalizedPerturbedV2.olean",
+        "WORKSPACE/approaches/argonaut/project/principal-full-complex-v2-an001-repair-v1/PrincipalNormalizedPerturbedV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalNormalizedPerturbedV2.olean": "dd3c137c1f69fd45c46850127673cd86c91c327d577336839f4cd1212b6fd580"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBoundGeneric": {
+      "returncode": 0,
+      "seconds": 3.111,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.lean",
+      "source_sha256": "a439c3bc4d9bb2bae8baf567de96b5968f8fe1f4e643405bae94b06794cd40ba",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBoundGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.olean": "05726a0a458a486d6de107206ef216f05a0c6eec076fb31cd0aae21c900f8896"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedFloorRows": {
+      "returncode": 0,
+      "seconds": 17.288,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean",
+      "source_sha256": "82371ac852648da72505f8fde60ca50955ca8d2c65096f853ee163dedee21a1c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedFloorRows.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.olean": "22fdee6c551f950d54fadeb60f7eacc41adc1f3fad0e1e233ad5fe2e2aafea88"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralTupleGeneric": {
+      "returncode": 0,
+      "seconds": 3.788,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.lean",
+      "source_sha256": "05c91ba45bf51dfb6112f3aeb17687a8d1921c1f08a0d6f5615229c4f0a25b9a",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowCentralTupleGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.olean": "cf2beb7ece8a38fb98adb0d0c8329cdd6c9a85e5479389babc98d40ec8525d40"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianDyadGeneric": {
+      "returncode": 0,
+      "seconds": 2.732,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.lean",
+      "source_sha256": "921426976eb5ad07866fc99d1ab49ff85bd4b11f0697bdd5394f63a681620617",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowGaussianDyadGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.olean": "99337842bac814422804b602ed1c09bb914b0390016b54c4aefdae6c7a177285"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedHighAssembly": {
+      "returncode": 0,
+      "seconds": 6.801,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.lean",
+      "source_sha256": "ba00c96d3c7f5e6839364f3f5f8435ccbc1f9e30e59df43f6b8351c8e17e964d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedHighAssembly.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.olean": "b14ddafb326d2b32f386d88d8e0b6376af301dabec92fee34a3cb97bb1b9c775"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedCanonicalFrontier": {
+      "returncode": 0,
+      "seconds": 8.441,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean",
+      "source_sha256": "9ecb8b761ad219568935962254828ab1be716904bc2948a21d375e8cd3fa5b49",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedCanonicalFrontier.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.olean": "9470979c430ae8aeae1f8e91d466c53c7ba530167338dd569da46e1aaa32cf2c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianRemoteGeneric": {
+      "returncode": 0,
+      "seconds": 3.877,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean",
+      "source_sha256": "290ab8bb78ae1cdd1dfd276560654ecc4a525038341b033c52ad5c0770f63f42",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowGaussianRemoteGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.olean": "2db185bb98f68dcd159dd9760d74c7e5e18436454c57ff364f6e1d9e3dee70ca"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianCentralGeneric": {
+      "returncode": 0,
+      "seconds": 4.055,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.lean",
+      "source_sha256": "9f18b62f8487f479257b45de11cbf0e714f795614332312706383883649866fa",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowGaussianCentralGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.olean": "85a25b0ef0b3194372b851cbe66676ffae3dea903bbb4bdc2f2d045b2c27ee03"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeDyad": {
+      "returncode": 0,
+      "seconds": 4.612,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.lean",
+      "source_sha256": "bd5dc7f62106fe108fa8c490575005e409f30a89707f8288401a90910fda6db5",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeDyad.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.olean": "8ea6fc2335697b716dad8c09d511b14ae419ee4e5f947b5a1acfe31ae85f9f8c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedRemainingInterfaces": {
+      "returncode": 0,
+      "seconds": 5.615,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.lean",
+      "source_sha256": "36d62b43b65bad8a790607c6560496883a6c68ce28412cbc17c3284d600bc251",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedRemainingInterfaces.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.olean": "c160aa2387b4b70c79fb2fcd7ebff7de43ff3063dce18d8746b9af2d93f7b451"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianSumGeneric": {
+      "returncode": 0,
+      "seconds": 2.835,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.lean",
+      "source_sha256": "47c2f2fc495c40b425de8aec95f1ac3c2a8395e48abf93a832f13e71423ed15f",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowGaussianSumGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.olean": "e126b65468f4dc9394282d24eda3ca16b3d51d1f6eb07801ad4f5f544eb9b666"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedCanonicalFirst87": {
+      "returncode": 0,
+      "seconds": 8.245,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.lean",
+      "source_sha256": "8430ee5495cc7267d888e7754b7e9924a8769387fe20d2a55c5694588c8e1886",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedCanonicalFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.olean": "5f2d85fdef05994c051cd7737dc24ef81fb6a398e652284d4ac709f963d3abf2"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalEGeometricTail": {
+      "returncode": 0,
+      "seconds": 4.292,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.lean",
+      "source_sha256": "684714e183aff4799d9322aad848f4d70fa497ea5f2b2343d19c9f58dcbc92f1",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalEGeometricTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.olean": "4892d3b38b1c70dfc4b95608bfd937d8ba1ec72f96e11289a74fa31692abaf44"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowCommonBoundGeneric": {
+      "returncode": 0,
+      "seconds": 2.879,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.lean",
+      "source_sha256": "7674b50c41d3679278c2748d5800fa75a458802d09e2596ed2a46067f57a5943",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowCommonBoundGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.olean": "8f320d47f4a0d3e4cad6debb370ecbd85e4fb950935bd62eebf79ecdc9d2ac6c"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedPrincipalPerCharacterInterfaces": {
+      "returncode": 0,
+      "seconds": 5.183,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.lean",
+      "source_sha256": "9b72b929f9bff98cd95499f8f30b5cce339c7ca8b7e4167b11ff5215271d16dc",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedPrincipalPerCharacterInterfaces.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.olean": "976e8ad371a18a3c3fb40d659486f57e847240535f73f6c079c33d5c5666baa0"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowWindowBoundGeneric": {
+      "returncode": 0,
+      "seconds": 2.884,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.lean",
+      "source_sha256": "2f3d323eb5f9d0890a486c6f38f84c9448ca9456615d5509516e7f289feb646c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowWindowBoundGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.olean": "1d27936b4fedbe8039c1b136d4c6fe2d9f10891915dd5895c47bb39e75ba1936"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.First87FixedIntegral": {
+      "returncode": 0,
+      "seconds": 4.901,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.lean",
+      "source_sha256": "aaeca40d3b1aa530ede4ee9bf56023a38af7175f92b906dfc677f86b3abc9b8d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.First87FixedIntegral.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.olean": "220db568609083257cb92a4998cded0bcc72b97d58738bda3cc744e8da2af7b1"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeTail": {
+      "returncode": 0,
+      "seconds": 4.395,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.lean",
+      "source_sha256": "e62dffbe1239580dc1950c08efb8efc9f276d8d1ade22a2b6e39205981ac88ce",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.olean": "0826f2d44dfbfd7b70f5929d2b71f779edef51454045dd4350f82c96a79b0d9f"
+      }
+    },
+    "PrincipalSameDataGeometryV2": {
+      "returncode": 0,
+      "seconds": 4.026,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSameDataGeometryV2.lean",
+      "source_sha256": "7e143f3a2b2aba760d3d480fbbffb6de2ed19d532f04b197b5670b8c44a8c033",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSameDataGeometryV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameDataGeometryV2.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSameDataGeometryV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameDataGeometryV2.olean": "1de5beb51da54c5eecbc187e8144646a5046f0cd7e859795ed8a510ae4610ce0"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowNormalizedGeneric": {
+      "returncode": 0,
+      "seconds": 2.755,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.lean",
+      "source_sha256": "4c983af8dae55db47eb728d50b2c3d7f323897e383e816d08711a60c18533d92",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowNormalizedGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.olean": "63978268a9b9c3a760c427ba982b1db8393d0900708a4863430463d41af59fc2"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeSaving": {
+      "returncode": 0,
+      "seconds": 4.05,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.lean",
+      "source_sha256": "f5e7fa5dcefba106c580e4020419b61883512c49d967d6acd610760a20dcafc4",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalELargeSaving.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.olean": "7f87b63f8f653bde7942e3ff7771e832dff00854fb3074ec60b25ae94e804c15"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceGeneric": {
+      "returncode": 0,
+      "seconds": 2.45,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.lean",
+      "source_sha256": "bbfd1b08a44f6b2df70e3c75867aca18693a89cdfdb046f871107f082ef0da8d",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.olean": "68ae29bab4b8ff1f4251edfc97b48945d4df7d7c5e43a8d80041d913194dfb0a"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.First87SourceTransport": {
+      "returncode": 0,
+      "seconds": 4.955,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.lean",
+      "source_sha256": "7b5a6581a159a250e3ed465588f7d248ca947117d01d2bd9cc31dc30e72263e4",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.First87SourceTransport.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.olean": "cc2774f7d17c684a5c4b9cb80b8b9b658c94eb0f8d88d529c52ff6a7ebd883be"
+      }
+    },
+    "PrincipalSameDataConsumerV2": {
+      "returncode": 0,
+      "seconds": 4.405,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSameDataConsumerV2.lean",
+      "source_sha256": "07e521e278e70201850070e6cc1668dd8a081b8c9b754b0eb9556a32f999c081",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalSameDataConsumerV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameDataConsumerV2.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalSameDataConsumerV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalSameDataConsumerV2.olean": "48f237d2d144459f5b6391efd3da9ff6908ca7f226b0b6bf88ac3669bd3dcf34"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowHighSameProbeGeneric": {
+      "returncode": 0,
+      "seconds": 2.408,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.lean",
+      "source_sha256": "4dc118c9d0790e5155a4dd9b2dc9ba1220e1e89f64e2312f0396713ff41970ef",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowHighSameProbeGeneric.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.olean": "29771c45b7e10193bf0a853edbc467369b404544881f224e54499365aff51adb"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalEPhysicalLargeTail": {
+      "returncode": 0,
+      "seconds": 4.531,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.lean",
+      "source_sha256": "eaddc281c5d4fdc8a850c17a22d815080cb750f1546993e76b28d6fda6adb46f",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalEPhysicalLargeTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.olean": "931dba434c6ced713726561bfc828f53e032d09fecd0dbd220a12fece3ca1617"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowQuasiPerturbationInstantiation": {
+      "returncode": 0,
+      "seconds": 4.079,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.lean",
+      "source_sha256": "cc2c6a3d0544b3792b99d66ac206fd0e58041d2caf246ac916081010bf8e4618",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowQuasiPerturbationInstantiation.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.olean": "8a955a0cf8c0465714b29d21bb61ad9727661ada1e0e0f0db029b7320e9ef34f"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.First87PhysicalDyad": {
+      "returncode": 0,
+      "seconds": 4.611,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.lean",
+      "source_sha256": "efc817bac12052dad85031e43f249266c11d4f9eeebbc68157c89e3e345c1db1",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.First87PhysicalDyad.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.olean": "2ee57f86c5cf836d05f716c515f9a716c35c4ee7ddff45b7f37f9305f0777701"
+      }
+    },
+    "PrincipalCutoffRequestV2": {
+      "returncode": 0,
+      "seconds": 4.076,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalCutoffRequestV2.lean",
+      "source_sha256": "ebe49e3d4e5fffc81bb31f265b0175bc0d51577cf178ed5955217280b18ba9e4",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PrincipalCutoffRequestV2.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalCutoffRequestV2.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PrincipalCutoffRequestV2.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PrincipalCutoffRequestV2.olean": "3bec4a29ec00796cd166a812cd91e827c8b904694c76db43d07be7aa46456c44"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowHighSameProbeGeometry": {
+      "returncode": 0,
+      "seconds": 3.938,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.lean",
+      "source_sha256": "78fa3f01ced8b75a25e763394adbc8c7010a5e53946a6ef9aea1c37ce6f35847",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowHighSameProbeGeometry.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.olean": "2fc3f18f525a936344c2b53bd48ce87c0a096e1fc579cfe7cf22fbe6e919524e"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalLargeTail": {
+      "returncode": 0,
+      "seconds": 3.967,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.lean",
+      "source_sha256": "2a0b0f8e2d3ca00c5fb42641b2aacd803962c59df39af4d323a2b12a7a2bf197",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalLargeTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.olean": "7a415bb2ab92333e0e61830f5d413bbdd39648653753ce22d0114ab3906efce5"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalESmallTailFirst87": {
+      "returncode": 0,
+      "seconds": 4.993,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.lean",
+      "source_sha256": "5cf85c64fc3d8ef102320592ebb68028741f2a1e70c2e2423d7bae2f09a495a8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalESmallTailFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.olean": "6316422bd9dc10723efe9b1adf47b0af88648c315479502e9128142e888c4bd7"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.LowPerturbedSourceConsumer": {
+      "returncode": 0,
+      "seconds": 3.913,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.lean",
+      "source_sha256": "139466be7c1a43c5acc78640c97cc988a013f37ff284309fc6653b02f9b6e0cd",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.LowPerturbedSourceConsumer.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.olean": "765db172bf77f891692e14d8f94d73fe5e20913838fb13e1054dbe09a49a9c46"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalEPhysicalSmallTailFirst87": {
+      "returncode": 0,
+      "seconds": 4.453,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.lean",
+      "source_sha256": "76898571463301fa304280accf02288ab63e50913c27a3fe4c8496a5a03733ff",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalEPhysicalSmallTailFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.olean": "06b05b2d7f6627314b7b4936c0e86322ba37b48b7c7458fce9d0f70423d4d499"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.PerturbedCommonProbeAssembly": {
+      "returncode": 0,
+      "seconds": 4.65,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.lean",
+      "source_sha256": "a05918b32b5190ff6f4ef9b6ae642b57021395c494ebd53558f50d4d075e05c7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.PerturbedCommonProbeAssembly.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.olean": "cd473b16c7eb06edfd7dcdf47ce570da8bcccd4108cd6f7aa4e0edd151d7dc38"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalSmallTailFirst87": {
+      "returncode": 0,
+      "seconds": 3.884,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.lean",
+      "source_sha256": "e10363027bae4feebc6b556b8f21d69f540cec3d730668d30c490430f98579b8",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalSmallTailFirst87.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.olean": "f8e9bd0f40dbe629a4ad646b9893056ec4a1338ddda04a8b82d34803ee92d859"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalSmallTail": {
+      "returncode": 0,
+      "seconds": 4.462,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.lean",
+      "source_sha256": "974833dfd954639fe3ea0bceb69ad18d83c83be935cf6956fcc45064e0b6801c",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalSmallTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.olean": "5101393a784f73b6a2b1e0225461d41529897329c183c1f0d51b1c5302a3b78f"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalReduction": {
+      "returncode": 0,
+      "seconds": 5.234,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.lean",
+      "source_sha256": "575f93e19f5522d3b0cd6d9bf1a13fc6ee0f204cf52110f92f0012c4e2be94f7",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.TotalECanonicalReduction.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.olean": "00d4e81a9f9fe1108cf89b7d62df2cf97cda57a251ee7682fa52961a768db5d6"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalLargeTail": {
+      "returncode": 0,
+      "seconds": 4.035,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.lean",
+      "source_sha256": "482868ecdd7c6a8e9818463c2e0144694e437bd3f2aaf4a8337f2d166640aeef",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalLargeTail.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.olean": "3dd6c62bd936c4550039fbdbe8b0ce1790854aa91c2f2678fa4f89c463c101ed"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalCubeReduction": {
+      "returncode": 0,
+      "seconds": 4.457,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.lean",
+      "source_sha256": "b7c77feaf9691b06305edda3237b4fcd717d705dca468781392fa2b2b28394d6",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalCubeReduction.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.olean": "61bf6288d67e4503278272d3e04d999f0a5e141d4e9b3c84c73766193ce30935"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalCubeChoice": {
+      "returncode": 0,
+      "seconds": 4.539,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.lean",
+      "source_sha256": "1c89d90419ef64ba1ecf6af995bc79e2fa5552d497d75c686efefaf6b4c26ee2",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalCubeChoice.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.olean": "7f7f1ffcdbf99df5d8fd0746597fea001d8802baa80b43fcf4060260f24c4e8d"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalRayCube": {
+      "returncode": 0,
+      "seconds": 4.206,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.lean",
+      "source_sha256": "ca0b834781dc98af7593d692f3f9166a09c0761e4a1f62142b5668bb40324524",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.PrimeRows.SameDataCanonicalRayCube.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.olean": "c70ec61271abc37e9e67adaf9df13f1a9abf275ad7881869b624d0c3b5bd2b09"
+      }
+    },
+    "OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalPhysical": {
+      "returncode": 0,
+      "seconds": 4.728,
+      "source": "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.lean",
+      "source_sha256": "fb03edc7a5f473ac7c2aa0ff24850a10de2dd7a5ed8481c84ff2daea9387f17a",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/OAI.NumberTheory.DirichletL.Detector.SameDataCanonicalPhysical.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.olean",
+        "WORKSPACE/approaches/argonaut/project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.olean": "ff56543a11f9c2e63cf214d60d7a5aff286baff76977bdbc89e0dce1256b674b"
+      }
+    },
+    "PerturbedBoundaryMain": {
+      "returncode": 0,
+      "seconds": 3.789,
+      "source": "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PerturbedBoundaryMain.lean",
+      "source_sha256": "ffdd133750ac3bf57b5de12e474e5451791d625e2fc6e7269755e91760a642b5",
+      "log": "WORKSPACE/approaches/argonaut/native/logs/PerturbedBoundaryMain.log",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1",
+        "-o",
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBoundaryMain.olean",
+        "WORKSPACE/approaches/argonaut/project/task17-src001-reviewed-v1/PerturbedBoundaryMain.lean"
+      ],
+      "artifacts": {
+        "WORKSPACE/approaches/argonaut/native/lib/PerturbedBoundaryMain.olean": "c90a7f3a178a0df9adad9287248efdf3124e0f2023d95b9c6cac2072c13844d8"
+      }
+    }
+  },
+  "reused_manifest": "reused-foundation.json",
+  "reused_manifest_sha256": "9308ef1cf3e8ad11acabb6e31877439c6ffb5676ab1f6bbe48c3229caad1bdc2",
+  "reused_count": 13669,
+  "failed": [],
+  "pending": [],
+  "native_build_scope": "All candidate additions and missing foundation modules compiled unchanged. Canonical caches matched original sources, allowing only CRLF/LF normalization.",
+  "full_lake_attempt": "../evidence/full-lake-attempt.json",
+  "stronger_local_result_used": false
+}

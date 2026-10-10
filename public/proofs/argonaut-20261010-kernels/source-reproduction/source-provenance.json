@@ -1,0 +1,1006 @@
+{
+  "repository": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary",
+  "repository_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+  "release_tag": "v0.1.8",
+  "archive_url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary/releases/download/v0.1.8/Lean_Proof_Source.zip",
+  "archive_sha256": "37602f9379f833c1b9ad3a6c7c628f961670f4219a9ac0f4190f8eb9b7655a93",
+  "archive_bytes": 37595224,
+  "overlay_sha256": "f3d1a88bd9df85262b233b64ebab73f060789d775347df133dd207c8ef0d6330",
+  "included_original_project_files": [
+    {
+      "path": "source/EulerSigma.lean",
+      "upstream_overlay_path": "project/EulerSigma.lean",
+      "sha256": "c9e18de5d17ab89b37319b993cf44a051695afac8e619f817a6efe4184a3e769",
+      "bytes": 6057
+    },
+    {
+      "path": "source/LICENSE",
+      "upstream_overlay_path": "project/LICENSE",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "bytes": 11558
+    },
+    {
+      "path": "source/MomentAllowancePerturbed.lean",
+      "upstream_overlay_path": "project/MomentAllowancePerturbed.lean",
+      "sha256": "66a4e9273ec25d37b9fda35add977a23f4459c81ffa18f946423f9e85629e425",
+      "bytes": 2327
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/ContinuationBoundaryGeneric.lean",
+      "sha256": "228086cbfc19ba198df3e7fa4ce913f32f5e3f8c22d1c7b167dbd1eaa610a7be",
+      "bytes": 6280
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/FinalAssemblySourceGeneric.lean",
+      "sha256": "bbfd1b08a44f6b2df70e3c75867aca18693a89cdfdb046f871107f082ef0da8d",
+      "bytes": 3533
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometryGeneric.lean",
+      "sha256": "ec6f134e6a7696c12d34fc09900f63a364f4123a5e496bca2f5693597144c591",
+      "bytes": 1058
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowCentralTupleGeneric.lean",
+      "sha256": "05c91ba45bf51dfb6112f3aeb17687a8d1921c1f08a0d6f5615229c4f0a25b9a",
+      "bytes": 8286
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowCommonBoundGeneric.lean",
+      "sha256": "7674b50c41d3679278c2748d5800fa75a458802d09e2596ed2a46067f57a5943",
+      "bytes": 6164
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentralGeneric.lean",
+      "sha256": "9f18b62f8487f479257b45de11cbf0e714f795614332312706383883649866fa",
+      "bytes": 4824
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyadGeneric.lean",
+      "sha256": "921426976eb5ad07866fc99d1ab49ff85bd4b11f0697bdd5394f63a681620617",
+      "bytes": 2684
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemoteGeneric.lean",
+      "sha256": "290ab8bb78ae1cdd1dfd276560654ecc4a525038341b033c52ad5c0770f63f42",
+      "bytes": 7182
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowGaussianSumGeneric.lean",
+      "sha256": "47c2f2fc495c40b425de8aec95f1ac3c2a8395e48abf93a832f13e71423ed15f",
+      "bytes": 3426
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowGramScaleGeneric.lean",
+      "sha256": "e8ee84178cee22746c633c121be563850d881f6126e0f597a64a8dd6a07a3a9c",
+      "bytes": 649
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeneric.lean",
+      "sha256": "4dc118c9d0790e5155a4dd9b2dc9ba1220e1e89f64e2312f0396713ff41970ef",
+      "bytes": 1816
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowHighSameProbeGeometry.lean",
+      "sha256": "78fa3f01ced8b75a25e763394adbc8c7010a5e53946a6ef9aea1c37ce6f35847",
+      "bytes": 3784
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalizeGeneric.lean",
+      "sha256": "8dd5b0dcaa86ba332032f5aa6d0cbd667cfc252d0b5f46dc6b94027877dccc70",
+      "bytes": 1848
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergyGeneric.lean",
+      "sha256": "a530b9c0147765f058b3d351578185617279cd5feb4cbea37a8b2f0a19200100",
+      "bytes": 2904
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometryGeneric.lean",
+      "sha256": "e386744c4981060c4d66f29edf8b4db7d399ad26ed51fdd01ea1b84e62fd2b8d",
+      "bytes": 2297
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowNormalizedGeneric.lean",
+      "sha256": "4c983af8dae55db47eb728d50b2c3d7f323897e383e816d08711a60c18533d92",
+      "bytes": 4320
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowPerturbedSourceConsumer.lean",
+      "sha256": "139466be7c1a43c5acc78640c97cc988a013f37ff284309fc6653b02f9b6e0cd",
+      "bytes": 3901
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBoundGeneric.lean",
+      "sha256": "a439c3bc4d9bb2bae8baf567de96b5968f8fe1f4e643405bae94b06794cd40ba",
+      "bytes": 6562
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowQuasiPerturbationInstantiation.lean",
+      "sha256": "cc2c6a3d0544b3792b99d66ac206fd0e58041d2caf246ac916081010bf8e4618",
+      "bytes": 4711
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowReflectedLengthGeneric.lean",
+      "sha256": "87bad883cb0d5a49b62dc956ed65b054d49fcb11106fd5133776c4b65cad5deb",
+      "bytes": 5161
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowRemoteMassGeneric.lean",
+      "sha256": "148ed500a4c23a13b9a002b0b77f6cbf93bdac859416767651750a2fcfaa2d6c",
+      "bytes": 4527
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowSelectedBoundGeneric.lean",
+      "sha256": "e0d8d6494ceb4275bbfde46a517e186957864f6371cf2a55e46bfff243839f7c",
+      "bytes": 6893
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowSlotScalesGeneric.lean",
+      "sha256": "a14409bd966b9d08f0114c7200502ad9140fd06c3df86eff8df329780fb03b21",
+      "bytes": 2690
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowSourceScalesGeneric.lean",
+      "sha256": "648f8ddae2f8fce94bfcf7ebfa996fe770e481d7c4c561274b0b4b2b3becb433",
+      "bytes": 5784
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMassGeneric.lean",
+      "sha256": "cb6d8cbf60bdcc8839249e9420d6c6731bb407d1cf9c8fb383d55ea0ebad7fc7",
+      "bytes": 6659
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/LowWindowBoundGeneric.lean",
+      "sha256": "2f3d323eb5f9d0890a486c6f38f84c9448ca9456615d5509516e7f289feb646c",
+      "bytes": 3495
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFirst87.lean",
+      "sha256": "8430ee5495cc7267d888e7754b7e9924a8769387fe20d2a55c5694588c8e1886",
+      "bytes": 14209
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedCanonicalFrontier.lean",
+      "sha256": "9ecb8b761ad219568935962254828ab1be716904bc2948a21d375e8cd3fa5b49",
+      "bytes": 24532
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedCentralMomentJoin.lean",
+      "sha256": "daf0325bf6a88d9dcb693b259626c9f8840344ed9734f3c2dbdcf3705d0dda7b",
+      "bytes": 8467
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedCommonProbeAssembly.lean",
+      "sha256": "a05918b32b5190ff6f4ef9b6ae642b57021395c494ebd53558f50d4d075e05c7",
+      "bytes": 12940
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedCountProjection.lean",
+      "sha256": "073e1ad995c36af57c3d97072085cb4d4a99d44adc889b0e9b186beb63194e0d",
+      "bytes": 5814
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorFrontier.lean",
+      "sha256": "0d4f8935587d16d22200c6406711d94039c48f8cbdbaa4b8f8f8036a932d8152",
+      "bytes": 6726
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean",
+      "sha256": "82371ac852648da72505f8fde60ca50955ca8d2c65096f853ee163dedee21a1c",
+      "bytes": 41139
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedHighAssembly.lean",
+      "sha256": "ba00c96d3c7f5e6839364f3f5f8435ccbc1f9e30e59df43f6b8351c8e17e964d",
+      "bytes": 17482
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedJointSource.lean",
+      "sha256": "dac82a942979118a2820161f8d066999c1fd99e6ef7452b44ad2c78ed0c13084",
+      "bytes": 7790
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedMomentDeltaLift.lean",
+      "sha256": "8d296e19b45a4782ed621ce6bfe79e22d3110d786de5de572fde2c3878937589",
+      "bytes": 11600
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedPrincipalPerCharacterInterfaces.lean",
+      "sha256": "9b72b929f9bff98cd95499f8f30b5cce339c7ca8b7e4167b11ff5215271d16dc",
+      "bytes": 15368
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedRemainingInterfaces.lean",
+      "sha256": "36d62b43b65bad8a790607c6560496883a6c68ce28412cbc17c3284d600bc251",
+      "bytes": 12725
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedSameDataCentral.lean",
+      "sha256": "80622300176bdbf5d5354b439c9723beaf7405d0de7aa0548f9e23ac66353fac",
+      "bytes": 13569
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/PerturbedSelectedTupleFirst87.lean",
+      "sha256": "058eb62232dc8cf8f45d8c86d1eb8b790cce9ffb98bed2485775399b88518bae",
+      "bytes": 2148
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalBudgets.lean",
+      "sha256": "28bb42e06e459c7e2a537939dadb969b33df16f85377039921682228131474a7",
+      "bytes": 6179
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalFiniteCosts.lean",
+      "sha256": "c708b329f3a927a2e5816fc3a16e16430bf8f91de19347d424ee49c2eb206e14",
+      "bytes": 4913
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalLargeTail.lean",
+      "sha256": "482868ecdd7c6a8e9818463c2e0144694e437bd3f2aaf4a8337f2d166640aeef",
+      "bytes": 2828
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalPhysical.lean",
+      "sha256": "fb03edc7a5f473ac7c2aa0ff24850a10de2dd7a5ed8481c84ff2daea9387f17a",
+      "bytes": 7107
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalSmallTail.lean",
+      "sha256": "974833dfd954639fe3ea0bceb69ad18d83c83be935cf6956fcc45064e0b6801c",
+      "bytes": 6818
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Detector/SameDataCanonicalTailNormalization.lean",
+      "sha256": "74ddacbeea2089e85eb1f66ded44a687a027ea5a3ca4823c21aae8a03e7e8e5d",
+      "bytes": 1324
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Hecke/CommonProbeBoundaryGeneric.lean",
+      "sha256": "de711689cee48e5a009e433715138e34dc526cdf27796ec4bd80743cb9c9bc0c",
+      "bytes": 3474
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Hecke/DirichletBoundaryGeneric.lean",
+      "sha256": "0c33575fa310d1c4b07cc61e42f8fefef98228810ad7cdd73e8982ba841396c1",
+      "bytes": 2364
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Hecke/SignalIdentityBoundaryGeneric.lean",
+      "sha256": "201c00b11529468c49e6832e029cc351577d597d427456224566dfedb5865d1a",
+      "bytes": 4728
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizerGeneric.lean",
+      "sha256": "f12f7b207a0985ceac2d56e72f218582afb651c5ed04e7a0b22e187959b8358a",
+      "bytes": 3321
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/First87FixedIntegral.lean",
+      "sha256": "aaeca40d3b1aa530ede4ee9bf56023a38af7175f92b906dfc677f86b3abc9b8d",
+      "bytes": 5253
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/First87PhysicalDyad.lean",
+      "sha256": "efc817bac12052dad85031e43f249266c11d4f9eeebbc68157c89e3e345c1db1",
+      "bytes": 6355
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/First87SourceTransport.lean",
+      "sha256": "7b5a6581a159a250e3ed465588f7d248ca947117d01d2bd9cc31dc30e72263e4",
+      "bytes": 5163
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeChoice.lean",
+      "sha256": "1c89d90419ef64ba1ecf6af995bc79e2fa5552d497d75c686efefaf6b4c26ee2",
+      "bytes": 4162
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalCubeReduction.lean",
+      "sha256": "b7c77feaf9691b06305edda3237b4fcd717d705dca468781392fa2b2b28394d6",
+      "bytes": 4844
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataCanonicalRayCube.lean",
+      "sha256": "ca0b834781dc98af7593d692f3f9166a09c0761e4a1f62142b5668bb40324524",
+      "bytes": 4972
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataFiniteCubeSaving.lean",
+      "sha256": "6433c879be1d7bcc6df39dc976277b1de9e3ed4d8e4da592caee91126a6d7eda",
+      "bytes": 5485
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/SameDataRowCubeSaving.lean",
+      "sha256": "5fe04001589b5c63ab8ed6742a7a45329b0b2709fe3317ed0c563afcdde579eb",
+      "bytes": 4000
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalLargeTail.lean",
+      "sha256": "2a0b0f8e2d3ca00c5fb42641b2aacd803962c59df39af4d323a2b12a7a2bf197",
+      "bytes": 2269
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalReduction.lean",
+      "sha256": "575f93e19f5522d3b0cd6d9bf1a13fc6ee0f204cf52110f92f0012c4e2be94f7",
+      "bytes": 4590
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalECanonicalSmallTailFirst87.lean",
+      "sha256": "e10363027bae4feebc6b556b8f21d69f540cec3d730668d30c490430f98579b8",
+      "bytes": 3050
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEGeometricTail.lean",
+      "sha256": "684714e183aff4799d9322aad848f4d70fa497ea5f2b2343d19c9f58dcbc92f1",
+      "bytes": 2080
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeDyad.lean",
+      "sha256": "bd5dc7f62106fe108fa8c490575005e409f30a89707f8288401a90910fda6db5",
+      "bytes": 2870
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeSaving.lean",
+      "sha256": "f5e7fa5dcefba106c580e4020419b61883512c49d967d6acd610760a20dcafc4",
+      "bytes": 2841
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalELargeTail.lean",
+      "sha256": "e62dffbe1239580dc1950c08efb8efc9f276d8d1ade22a2b6e39205981ac88ce",
+      "bytes": 3921
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalLargeTail.lean",
+      "sha256": "eaddc281c5d4fdc8a850c17a22d815080cb750f1546993e76b28d6fda6adb46f",
+      "bytes": 3719
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalEPhysicalSmallTailFirst87.lean",
+      "sha256": "76898571463301fa304280accf02288ab63e50913c27a3fe4c8496a5a03733ff",
+      "bytes": 3714
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TotalESmallTailFirst87.lean",
+      "sha256": "5cf85c64fc3d8ef102320592ebb68028741f2a1e70c2e2423d7bae2f09a495a8",
+      "bytes": 4718
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/PrimeRows/TupleBound87.lean",
+      "sha256": "0ec0afaef170cc4900dbd23189d8ea71e6b55883d3ea5692d0ee9076f3b8d3a2",
+      "bytes": 3510
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/QuasiPerturbationParameters.lean",
+      "sha256": "26544a31805024c622401d0764f550418529049a18fd764e38e2b236755ca8e7",
+      "bytes": 1123
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowBranchSumGeneric.lean",
+      "sha256": "1a98ab4767a4230d7268852d353142e5838b92ee439b95f75bedb5206abe22dd",
+      "bytes": 5061
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowCapsGeneric.lean",
+      "sha256": "84943f2ec0c3c331797783911d1a9e27c0cc7e3254e24b406ce3f0dc8c393b66",
+      "bytes": 2649
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergyGeneric.lean",
+      "sha256": "0fde30098d33eacc4d96f8137f9efbf7e3ea70a5ff0e3b992367567ef119066c",
+      "bytes": 10884
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiberGeneric.lean",
+      "sha256": "a27d2d4d453df8a8f3a13c1d11042a8d7ae6f0e3e76435638b89138cc24f0883",
+      "bytes": 10056
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRowsGeneric.lean",
+      "sha256": "c2dd94aef168e6cf2100590639a136090ce75e86aca44c8f63c483e7db7a29c6",
+      "bytes": 5480
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowDyadsGeneric.lean",
+      "sha256": "93c272b18303d35062d812d3c632486bb9bf13c1f286e16880c2815788e79cbf",
+      "bytes": 9207
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowExponentGeneric.lean",
+      "sha256": "b6757236df49d9ee7d7f85f05c29d9c46eda91d5da992be7699f1901fc170069",
+      "bytes": 6258
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowFixedMemberGeneric.lean",
+      "sha256": "90f7b7e20d9019e81a6828e8f66adc4a05adca53fc456e5c3256b57b99d17979",
+      "bytes": 9120
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergyGeneric.lean",
+      "sha256": "99ded2b464aea31ca88258185f514c9d73aeb4044c7458ab6ff3ce83510d6298",
+      "bytes": 9536
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowFullBudgetGeneric.lean",
+      "sha256": "0dd063fb33ab886f40312be4234eb1e665a33f8528e6eae851757e08dd1ba446",
+      "bytes": 7516
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowFullGeneric.lean",
+      "sha256": "a647333620c3360e8dfaf1b1b6781860334bebfad2a574d3f2f8747c0022ce8e",
+      "bytes": 8734
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudgetGeneric.lean",
+      "sha256": "76007fee1312ca0614376daa1eb26bf4f4e7dea492a8f04718c6401c65f4ab39",
+      "bytes": 7082
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergyGeneric.lean",
+      "sha256": "649dff2fd0515ed3f0899a38537cf71adc43d45cd50fc38c8b061dc067d635ab",
+      "bytes": 7818
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudgetGeneric.lean",
+      "sha256": "db4a20c526a03844f07dc4227fe4456c60c7d8b7cb448908134838b773a0a549",
+      "bytes": 6368
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometryGeneric.lean",
+      "sha256": "fae156e3051cf05b6d450c7ccaeaa5dadf42a60cc73ae20b2f7bab5aada78522",
+      "bytes": 7380
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergyGeneric.lean",
+      "sha256": "28d3f1611dc28d04dd7140f7f395c1a9d321fc0b5eb51015c7e831c3ab35307a",
+      "bytes": 4600
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudgetGeneric.lean",
+      "sha256": "aec235de54eb8927c32cf6fae0115f31e9bf611eb3b38c34bed52464ab527d69",
+      "bytes": 5870
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowRetainedGeneric.lean",
+      "sha256": "19f2c9b18c0d953cf945b9a7571fe44551cc2a407dbd4a908f774f785d21adf3",
+      "bytes": 6002
+    },
+    {
+      "path": "source/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.lean",
+      "upstream_overlay_path": "project/OAI/NumberTheory/DirichletL/Reflection/LowSectorGeneric.lean",
+      "sha256": "1dc31c9f54429795f5d6eaa2fb31891f0adb261f61e5bf58a8d79bd1584c789f",
+      "bytes": 7636
+    },
+    {
+      "path": "source/ParametersHighDataPerturbed.lean",
+      "upstream_overlay_path": "project/ParametersHighDataPerturbed.lean",
+      "sha256": "f630057551df2f5f4265f8de69ccbfef61727dd977719bdf5a77b8078934ddb4",
+      "bytes": 20480
+    },
+    {
+      "path": "source/PerturbedBudget.lean",
+      "upstream_overlay_path": "project/PerturbedBudget.lean",
+      "sha256": "0508e9b46162c6336ac6f66198b8a5ed2c8fd2948ccd7313e7f6de7874c38cce",
+      "bytes": 3155
+    },
+    {
+      "path": "source/PerturbedBudgetWithSlots.lean",
+      "upstream_overlay_path": "project/PerturbedBudgetWithSlots.lean",
+      "sha256": "eb61e89b13b916bef6b8cd1af91349248e87b2936800e2a428f98e444f0ad084",
+      "bytes": 2405
+    },
+    {
+      "path": "source/PerturbedDfirstSource.lean",
+      "upstream_overlay_path": "project/PerturbedDfirstSource.lean",
+      "sha256": "1ad42496a0ac898390523934da0c37dd9d6eed0152009bf5e910b005077a6a67",
+      "bytes": 3510
+    },
+    {
+      "path": "source/PrincipalProductSigma.lean",
+      "upstream_overlay_path": "project/PrincipalProductSigma.lean",
+      "sha256": "cf4832a3c59b6d2e8d66b22adaabb9f0f0b87e3bfad2a7c98a0bf83df342c4d8",
+      "bytes": 6336
+    },
+    {
+      "path": "source/audits/HUBBLE-PrincipalV2-TerminalAudit.lean",
+      "upstream_overlay_path": "project/audits/HUBBLE-PrincipalV2-TerminalAudit.lean",
+      "sha256": "537f7335eae91ffb34b8e66d8b646b6dd9a4e80ae7ac235b7b513277c0c03fc6",
+      "bytes": 1925
+    },
+    {
+      "path": "source/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean",
+      "upstream_overlay_path": "project/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean",
+      "sha256": "2a2a4b3064c3500456398e0cb32ab8b5e78add1d685e403fd5c820d8d034ab57",
+      "bytes": 2915
+    },
+    {
+      "path": "source/lake-manifest.json",
+      "upstream_overlay_path": "project/lake-manifest.json",
+      "sha256": "b61e36d7fb579f9eb682afc4623e871934189e1248c4c92e69f9e9e2e6fc0227",
+      "bytes": 15048
+    },
+    {
+      "path": "source/lakefile.task18-reviewed-overlay-v1.lean",
+      "upstream_overlay_path": "project/lakefile.task18-reviewed-overlay-v1.lean",
+      "sha256": "73ff8dc783317b26604dcbfa609a347a5069132c3e7b7bc626c0b349c0d54ea1",
+      "bytes": 20181
+    },
+    {
+      "path": "source/lean-toolchain",
+      "upstream_overlay_path": "project/lean-toolchain",
+      "sha256": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+      "bytes": 26
+    },
+    {
+      "path": "source/patches/AINTLIB-lean4341.patch",
+      "upstream_overlay_path": "project/patches/AINTLIB-lean4341.patch",
+      "sha256": "076bee4cee068ad938e611d266bb32f7f1798189336087e88c08c8b3ac58dff1",
+      "bytes": 1332380
+    },
+    {
+      "path": "source/patches/AbsorptionCutoff-lean4341.patch",
+      "upstream_overlay_path": "project/patches/AbsorptionCutoff-lean4341.patch",
+      "sha256": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba",
+      "bytes": 5131
+    },
+    {
+      "path": "source/patches/ClassFieldTheory-lean4341.patch",
+      "upstream_overlay_path": "project/patches/ClassFieldTheory-lean4341.patch",
+      "sha256": "0275686e2febd9c14523a94cbfae105e6cf30997ed0b2a1ea28c84d0d0c12ba5",
+      "bytes": 1319196
+    },
+    {
+      "path": "source/patches/PrimeNumberTheoremAnd-lean4341.patch",
+      "upstream_overlay_path": "project/patches/PrimeNumberTheoremAnd-lean4341.patch",
+      "sha256": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+      "bytes": 1993197
+    },
+    {
+      "path": "source/patches/SphereEversion-lean4341.patch",
+      "upstream_overlay_path": "project/patches/SphereEversion-lean4341.patch",
+      "sha256": "5c7c8dba85e4636ed2fec14a5765e937f2b1c428eadb12168645b9d2c0046098",
+      "bytes": 539
+    },
+    {
+      "path": "source/patches/StrongPNT-lean4341.patch",
+      "upstream_overlay_path": "project/patches/StrongPNT-lean4341.patch",
+      "sha256": "2cac5cbef22987314f9293bebcf243d0a3341caaf0227925d1f8d4c31be924d7",
+      "bytes": 1248207
+    },
+    {
+      "path": "source/patches/Zeta3Irrational-lean4341.patch",
+      "upstream_overlay_path": "project/patches/Zeta3Irrational-lean4341.patch",
+      "sha256": "169eb72e9d12740688467a0e6abf63923a60ec5f7ce8f49ca4b3684a22418901",
+      "bytes": 169130
+    },
+    {
+      "path": "source/patches/belyi-lean4341.patch",
+      "upstream_overlay_path": "project/patches/belyi-lean4341.patch",
+      "sha256": "f54c2e211464c0f8194ce63a80a6562489f23f688b1c233efe3c2debfc1b9f66",
+      "bytes": 18708
+    },
+    {
+      "path": "source/patches/carleson-lean4341.patch",
+      "upstream_overlay_path": "project/patches/carleson-lean4341.patch",
+      "sha256": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c",
+      "bytes": 233447
+    },
+    {
+      "path": "source/patches/elliptic-curves-lean4341.patch",
+      "upstream_overlay_path": "project/patches/elliptic-curves-lean4341.patch",
+      "sha256": "69e6575dae5797d43242694dc737b400b3e1e8fcb854094fead2a204a1f58632",
+      "bytes": 37979
+    },
+    {
+      "path": "source/patches/fixed-point-theorems-lean4341.patch",
+      "upstream_overlay_path": "project/patches/fixed-point-theorems-lean4341.patch",
+      "sha256": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5",
+      "bytes": 23143
+    },
+    {
+      "path": "source/patches/formal-schemes-lean4341.patch",
+      "upstream_overlay_path": "project/patches/formal-schemes-lean4341.patch",
+      "sha256": "5376716aa94fe0c6907570d650dd6604f170687c218cea7028d09b9f95877cea",
+      "bytes": 7995
+    },
+    {
+      "path": "source/patches/genl-lean4341.patch",
+      "upstream_overlay_path": "project/patches/genl-lean4341.patch",
+      "sha256": "3a9edd7dd539e98f81145a3b6cc980c9d62a821b7d41e2591f9aa5c557a7b6fa",
+      "bytes": 6516
+    },
+    {
+      "path": "source/patches/gromov-lean4341.patch",
+      "upstream_overlay_path": "project/patches/gromov-lean4341.patch",
+      "sha256": "26a1924bef774183a2e0865f144b782dc1f78eb0246993a31a5d63193b7781bb",
+      "bytes": 679242
+    },
+    {
+      "path": "source/patches/heights-lean4341.patch",
+      "upstream_overlay_path": "project/patches/heights-lean4341.patch",
+      "sha256": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3",
+      "bytes": 22638
+    },
+    {
+      "path": "source/patches/iut-lean4341.patch",
+      "upstream_overlay_path": "project/patches/iut-lean4341.patch",
+      "sha256": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4",
+      "bytes": 55593
+    },
+    {
+      "path": "source/patches/oka-lean4341.patch",
+      "upstream_overlay_path": "project/patches/oka-lean4341.patch",
+      "sha256": "02995b860e7d566a10adc3488439d38abc06dcb317ae4576d504c71c921816e7",
+      "bytes": 117028
+    },
+    {
+      "path": "source/patches/orbicurve-cores-lean4341.patch",
+      "upstream_overlay_path": "project/patches/orbicurve-cores-lean4341.patch",
+      "sha256": "4376110b9b7c823057cda21479a45de688c5138c81e5d4f1c050b632f168b93d",
+      "bytes": 37139
+    },
+    {
+      "path": "source/patches/pi1-lean4341.patch",
+      "upstream_overlay_path": "project/patches/pi1-lean4341.patch",
+      "sha256": "816e0d8123d5622c5b3415675638053ae31126a829e4f21d96f7af28db292f5f",
+      "bytes": 21899
+    },
+    {
+      "path": "source/patches/rellich-kondrachov-lean4341.patch",
+      "upstream_overlay_path": "project/patches/rellich-kondrachov-lean4341.patch",
+      "sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+      "bytes": 147331
+    },
+    {
+      "path": "source/patches/schoenflies-lean-lean4341.patch",
+      "upstream_overlay_path": "project/patches/schoenflies-lean-lean4341.patch",
+      "sha256": "4cbc255a2be785e6b617ecd61cdaf67e6d236d65a87f284380f2713670c8e350",
+      "bytes": 126127
+    },
+    {
+      "path": "source/patches/tate-curves-theta-lean4341.patch",
+      "upstream_overlay_path": "project/patches/tate-curves-theta-lean4341.patch",
+      "sha256": "885a19a0dc2d004aaece1987e2b7d2ff4745aef8881cbc53971a852cc5644c3f",
+      "bytes": 4905
+    },
+    {
+      "path": "source/patches/tempered-fundamental-groups-lean4341.patch",
+      "upstream_overlay_path": "project/patches/tempered-fundamental-groups-lean4341.patch",
+      "sha256": "f2e51b5f38459f11515c21801c92c39de85a8feb5f2b490ebbe07a93511a8860",
+      "bytes": 11824
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalContoursSigmaV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalContoursSigmaV2.lean",
+      "sha256": "2e5e05018e537be4771f2151b1669fa171800f7c7cf976081bada4e8fe671161",
+      "bytes": 75240
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteSigmaV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteSigmaV2.lean",
+      "sha256": "e8df6e185e8397bcf6d22ce87b13a766f5f852a8af5e5af85ca75c8f56ba89f9",
+      "bytes": 34597
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteXSigmaV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalFiniteXSigmaV2.lean",
+      "sha256": "a46a7cb0f7507392f5a7c16a9ba090f72dce4e8cbebae0703fb3ab44c212a438",
+      "bytes": 10474
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalGenericRemaindersSigmaV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalGenericRemaindersSigmaV2.lean",
+      "sha256": "39a10e4c8cf9f13125f9684b6a0853396bbc3f16b47f510bf793814b79b09d17",
+      "bytes": 25971
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalGeometryPerturbedV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalGeometryPerturbedV2.lean",
+      "sha256": "4f928d0eb0984e53f256b53ccabd194170db8eae21d53e4a48b2aa3b1d9c73d4",
+      "bytes": 4301
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalNormalizedPerturbedV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalNormalizedPerturbedV2.lean",
+      "sha256": "e3c9e54e583407f8e59d9d06194b5d757bfb9a0fb4e4eb7e81b51c4a5571adf3",
+      "bytes": 9394
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalPhysicalPerturbedV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalPhysicalPerturbedV2.lean",
+      "sha256": "a13f8f523141406da762dc748ab36553017c475ff86d278343aaab0b817f4f3b",
+      "bytes": 6110
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalPoolThresholdsV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalPoolThresholdsV2.lean",
+      "sha256": "dcc84efa357b5854e13bc90486b7b8191ece3e7f77619845588fd36d7d048022",
+      "bytes": 2763
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalRegionSlotBoundsV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalRegionSlotBoundsV2.lean",
+      "sha256": "8fcb1cbd0a20cc42bea908535d5eab96c1c508f059a6d3b3cb55103181b18044",
+      "bytes": 12307
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalRemainderPowersPerturbedV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalRemainderPowersPerturbedV2.lean",
+      "sha256": "67bb11c5bbfb7c57828abe4ee4a20ba62cb0f387f5c095323a1986daf0667e8d",
+      "bytes": 5564
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalResidueNormalizationPerturbedV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalResidueNormalizationPerturbedV2.lean",
+      "sha256": "45c1d74ec991ac2a2b7757e5933b9c02d795309ba615f75cdaf236aaf2df5a64",
+      "bytes": 19186
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalSameSCutoffsV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalSameSCutoffsV2.lean",
+      "sha256": "d4f1e1da625de41f44ce7c4c864e60a1459c25e5eae97107435a269c169353cc",
+      "bytes": 3099
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalSharpWindowSupportV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalSharpWindowSupportV2.lean",
+      "sha256": "146e999f83ba8ad11181812ea82537a26f7075797035a67b6ae2048460adebbe",
+      "bytes": 8622
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalSigmaAliasesV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalSigmaAliasesV2.lean",
+      "sha256": "4bc9c4b3efce62bf9f72f90c656022e9a047116fa150ecf6ca00173f681411a6",
+      "bytes": 1600
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalSignalBoundsV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalSignalBoundsV2.lean",
+      "sha256": "bf8bfe224932f65fd7a28fcdaf13a8c7e7c6ccfaed4eead2e903b660704b8066",
+      "bytes": 1858
+    },
+    {
+      "path": "source/principal-full-complex-v2-an001-repair-v1/PrincipalTransportSigmaV2.lean",
+      "upstream_overlay_path": "project/principal-full-complex-v2-an001-repair-v1/PrincipalTransportSigmaV2.lean",
+      "sha256": "ce6dbd53cc3c0e1494968102d6cbf197da4bb251f8edd4dc0d8322a4e877f750",
+      "bytes": 44388
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PerturbedBoundaryMain.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PerturbedBoundaryMain.lean",
+      "sha256": "ffdd133750ac3bf57b5de12e474e5451791d625e2fc6e7269755e91760a642b5",
+      "bytes": 5058
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PrincipalBoundaryB0.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PrincipalBoundaryB0.lean",
+      "sha256": "4cdf280af3a12fc78c748b5435face0f06cc397d799823dd20ff03b799ba03be",
+      "bytes": 2246
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PrincipalCutoffRequestV2.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PrincipalCutoffRequestV2.lean",
+      "sha256": "ebe49e3d4e5fffc81bb31f265b0175bc0d51577cf178ed5955217280b18ba9e4",
+      "bytes": 5691
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PrincipalSameDataConsumerV2.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PrincipalSameDataConsumerV2.lean",
+      "sha256": "07e521e278e70201850070e6cc1668dd8a081b8c9b754b0eb9556a32f999c081",
+      "bytes": 5094
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PrincipalSameDataGeometryV2.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PrincipalSameDataGeometryV2.lean",
+      "sha256": "7e143f3a2b2aba760d3d480fbbffb6de2ed19d532f04b197b5670b8c44a8c033",
+      "bytes": 3185
+    },
+    {
+      "path": "source/task17-src001-reviewed-v1/PrincipalSignalShiftV2.lean",
+      "upstream_overlay_path": "project/task17-src001-reviewed-v1/PrincipalSignalShiftV2.lean",
+      "sha256": "a980a858342b800dd04ef20fc98afcdd00dc6ddf4b0762893ab711bbdd9f1a82",
+      "bytes": 6131
+    },
+    {
+      "path": "source/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.lean",
+      "upstream_overlay_path": "project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/Detector/HighRowsSelectedFirst87.lean",
+      "sha256": "98ed231c2943c46bf480e06dc5c69eca60f6730eeb5a3c740a745487c23f8732",
+      "bytes": 21665
+    },
+    {
+      "path": "source/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.lean",
+      "upstream_overlay_path": "project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SelectedBounds87.lean",
+      "sha256": "861a7e0bdd462d2a9d5daff836bc4ebd499b80426fe216aba6096da7fd48373f",
+      "bytes": 4938
+    },
+    {
+      "path": "source/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.lean",
+      "upstream_overlay_path": "project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/SlotSums87.lean",
+      "sha256": "047d070dce205e4bc1af22d78d04ea2a6e1cb2ad1147772b5ae5bed84f4303e8",
+      "bytes": 3247
+    },
+    {
+      "path": "source/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.lean",
+      "upstream_overlay_path": "project/task18-reviewed-overlay-v1/OAI/NumberTheory/DirichletL/PrimeRows/TupleSums87.lean",
+      "sha256": "e95a848e789e82d905b89843f95cdaa868fbee7e4c9342897cd3635a2a28503d",
+      "bytes": 3756
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCentralAssembly.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCentralAssembly.lean",
+      "sha256": "514ed3cdf4d45a8c96d9e5d14ef5ed997d673e1ec3ca524defc11309db78f6ba",
+      "bytes": 54985
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCentralBridge.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCentralBridge.lean",
+      "sha256": "c842ce0af1d3ca5793c010bea342cac08b53119673d4b17bfeba2074fc2baead",
+      "bytes": 151
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCentralBudget.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCentralBudget.lean",
+      "sha256": "858dd5e6cb3068c8d880d4cadf11728c554dc9c31d3acf992c56a8ded42e28af",
+      "bytes": 2878
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCentralExponent.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCentralExponent.lean",
+      "sha256": "ef0335d9fdf27f63614cc5d760e6616ee890681c1a4805db5417fd48a8407db6",
+      "bytes": 23920
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCentralSlots.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCentralSlots.lean",
+      "sha256": "b8f489f2ef42e805e92a7d45ec7483c59bcdb20e060dee33704d8c4493a6c0d8",
+      "bytes": 11986
+    },
+    {
+      "path": "source/web-central-07-adapted/PerturbedCountBridge.lean",
+      "upstream_overlay_path": "project/web-central-07-adapted/PerturbedCountBridge.lean",
+      "sha256": "0750fe6388d7ce152fa003665a4fc8ba8d1f7b10cf1edced9a73fc682746d4fd",
+      "bytes": 34048
+    },
+    {
+      "path": "source/web-euler-five-returned/FullGlobalCorrection.lean",
+      "upstream_overlay_path": "project/web-euler-five-returned/FullGlobalCorrection.lean",
+      "sha256": "77a13d9cd1282af798d98d94dcd13d1e7b4e35b3cf47d53c46c6e473913f0db8",
+      "bytes": 9420
+    },
+    {
+      "path": "source/web-euler-five-returned/FullGlobalHolomorphic.lean",
+      "upstream_overlay_path": "project/web-euler-five-returned/FullGlobalHolomorphic.lean",
+      "sha256": "6d18e0a01f6eaf047da6c67920763d0e02bec0b3181bf4b3d7b113b86d047c17",
+      "bytes": 2714
+    },
+    {
+      "path": "source/web-euler-five-returned/FullGlobalRegion.lean",
+      "upstream_overlay_path": "project/web-euler-five-returned/FullGlobalRegion.lean",
+      "sha256": "c8b36484cefd32b6cbca0368c5dfa9ca87659f32a479042e046af9ddd17c2c7c",
+      "bytes": 4384
+    },
+    {
+      "path": "source/web-euler-five-returned/PrincipalSignalFiniteSigma.lean",
+      "upstream_overlay_path": "project/web-euler-five-returned/PrincipalSignalFiniteSigma.lean",
+      "sha256": "23ddf0fbc2a6005df457bd8f32158425730295e2b025576ca607e00cea5072e5",
+      "bytes": 6691
+    },
+    {
+      "path": "source/web-euler-five-returned/PrincipalSlotSigma.lean",
+      "upstream_overlay_path": "project/web-euler-five-returned/PrincipalSlotSigma.lean",
+      "sha256": "8821fce8b1829e40b4a86957f34a67f39bb78952ee60ec6d7cc5658509d469d3",
+      "bytes": 16288
+    },
+    {
+      "path": "source/web-moments-06-adapted/HighDataMomentGeometry.lean",
+      "upstream_overlay_path": "project/web-moments-06-adapted/HighDataMomentGeometry.lean",
+      "sha256": "f28610bc748960a7c67b0e446c542e5b74fc3e692deee729f96da9bea7501401",
+      "bytes": 2190
+    },
+    {
+      "path": "source/web-moments-06-adapted/HighFrontierTargets.lean",
+      "upstream_overlay_path": "project/web-moments-06-adapted/HighFrontierTargets.lean",
+      "sha256": "d14d9f647e66e022ba2234ca8af8df5e074565350b9e18e7dd76af8e94cae13e",
+      "bytes": 6439
+    },
+    {
+      "path": "source/web-moments-06-adapted/PerturbedMomentConstruction.lean",
+      "upstream_overlay_path": "project/web-moments-06-adapted/PerturbedMomentConstruction.lean",
+      "sha256": "e1b8849cd35d143491025834583b8964c9e6b15b818d8bac03828306dbc7d4e6",
+      "bytes": 68949
+    }
+  ],
+  "canonical_foundation": {
+    "repository": "https://github.com/openai/math.git",
+    "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "scope": "Reference pin from upstream PINS.json; use that file for authoritative origin spelling. Existing OAI files match the local canonical foundation after CRLF/LF normalization."
+  }
+}

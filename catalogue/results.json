@@ -66,10 +66,10 @@
       "pr": null,
       "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
       "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
-      "first_verified_at": "",
+      "first_verified_at": "2026-10-10T10:09:10.743884+00:00",
       "entrypoint": {
-        "module": "",
-        "declaration": ""
+        "module": "PerturbedBoundaryMain",
+        "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re"
       },
       "license": "Apache-2.0",
       "builds_on": [
@@ -86,17 +86,49 @@
           "name": "Argonaut Math"
         }
       ],
-      "method": "Refinement of the OpenAI framework to 3499999/4000000. Authors report Lean and native Comparator verification; our independent verification is pending.",
+      "method": "Refinement of the OpenAI framework to 3499999/4000000. The pinned original proof has been independently reproduced and checked with Comparator and three kernels.",
       "references": [
+        {
+          "label": "Independent maintainer replay receipt",
+          "url": "proofs/argonaut-20261010-safe-replay/result.json"
+        },
+        {
+          "label": "Maintainer replay: all three kernel acceptances",
+          "url": "proofs/argonaut-20261010-safe-replay/logs/judge.log"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/argonaut-20261010-safe-replay/challenge-src/Challenge.lean"
+        },
+        {
+          "label": "Sandboxed reproduction instructions",
+          "url": "proofs/argonaut-20261010-safe-replay/README.txt"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/argonaut-20261010-safe-replay/controls/control-results.json"
+        },
+        {
+          "label": "Reviewed original source package",
+          "url": "proofs/argonaut-20261010-kernels/source-public.tar.gz"
+        },
+        {
+          "label": "Earlier submitted checker report (historical)",
+          "url": "proofs/argonaut-20261010-kernels/result.json"
+        },
+        {
+          "label": "Historical native instructions (unsafe for untrusted submissions)",
+          "url": "proofs/argonaut-20261010-kernels/README.txt"
+        },
         {
           "label": "Argonaut source and release",
           "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
         }
       ],
-      "status": "verification-pending",
+      "status": "framework-verified",
       "timeline_at": "2026-10-08T00:00:00Z",
       "date_label": "Public announcement",
-      "verification_note": "Authors report Lean and native Comparator verification. We have inspected sources but have not independently reproduced the complete proof check. This is a verification status, not a claim that the proof is defective."
+      "verification_note": "Argonaut Math's unchanged pinned v0.1.8 proof was independently rebuilt by the maintainer in a genuine offline Linux sandbox. The canonical challenge was exported before candidate execution; Comparator checked the exact all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and definitions, and Lean, NanoDa and con-ron accepted all three targets at exactly 3499999/4000000 with only propext, Classical.choice and Quot.sound. The receipt was written outside candidate-writable paths. Original proof sources, authorship and license notices remain in the historical package. The first verified time records this confined maintainer run; the earlier submitted report remains historical evidence. This is local mechanical verification, not signed registry admission or Palomar registration."
     },
     {
       "submitted_at": "",

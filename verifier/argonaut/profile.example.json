@@ -1,0 +1,5 @@
+{
+  "baseline": "/srv/qrh/approved-baseline",
+  "checkers": "/srv/qrh/checkers",
+  "evidence": "/srv/qrh/tracker/public/proofs/liu-20261010-kernels"
+}
