@@ -285,7 +285,7 @@
         },
         {
           "label": "Source and algebraic endpoint explanation",
-          "url": "proofs/nielstron-algebraic-20261009/README.txt"
+          "url": "proofs/nielstron-algebraic-20261009-README.md"
         },
         {
           "label": "Exact LeanLeanBench token counts",

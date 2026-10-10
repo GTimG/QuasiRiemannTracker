@@ -6,8 +6,8 @@ import { findProofRevision } from "./catalogue-revisions.mjs";
 
 export const NATIVE_ID = "nielstron-algebraic-20261009";
 export const KERNEL_DIRECTORY = "public/proofs/nielstron-algebraic-20261009-kernels";
-// Frozen before the independent run; installed additively with this validator.
-// Binding is supplied explicitly during staging, or read from the reviewed core file.
+// Source pins were frozen before checking; the complete evidence manifest is
+// pinned after maintainer review. Staging overrides require the same review.
 const THETA = "874957019420098946128603850561452983/1000000000000000000000000000000000000";
 const NAMES = [
   "QRHPalomar.allDirichlet",
@@ -92,7 +92,7 @@ export function validateAlgebraicKernelEvidence(
     binding.wrappers?.["Challenge.lean"] === "ddc6604d21a5d259dcb9af83398890413cc022f8da0281a86a66178d8cafd338" &&
     /^[a-f0-9]{40}$/.test(binding.source_commit) &&
     [binding.source_manifest_sha256, binding.source_archive_sha256, binding.wrapper_manifest_sha256,
-      binding.driver_sha256].every(x => /^[a-f0-9]{64}$/.test(x)) &&
+      binding.driver_sha256, binding.evidence_collection_sha256].every(x => /^[a-f0-9]{64}$/.test(x)) &&
     [binding.source_files,binding.build_modules,binding.qrh_modules].every(x => Number.isSafeInteger(x) && x > 0) &&
     binding.source_files === binding.qrh_modules + 4 &&
     Object.keys(binding.frozen_metadata_sha256 || {}).length === 5,
@@ -117,12 +117,18 @@ export function validateAlgebraicKernelEvidence(
     return readFileSync(join(directory, path));
   };
   const json = (path) => JSON.parse(bytes(path));
-  const collection = json("collection.json");
+  const collectionBytes = bytes("collection.json");
+  const collection = JSON.parse(collectionBytes);
   demand(
     collection.schema_version === 1 &&
       collection.kind === "local-mechanical-kernel-evidence" &&
       collection.source_commit === SOURCE_COMMIT,
     "Invalid independent evidence collection",
+  );
+  // The submitted manifest cannot authenticate itself by listing new hashes.
+  demand(
+    digest(collectionBytes) === binding.evidence_collection_sha256,
+    "Independent checker evidence differs from the reviewed evidence collection",
   );
   demand(
     same(

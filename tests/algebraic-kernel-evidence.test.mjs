@@ -35,6 +35,13 @@ function change(directory, path, mutate) {
 const validate = (directory, data = catalogue(), pins = binding()) =>
   validateAlgebraicKernelEvidence(root, data, directory, pins);
 
+// Deliberately repin malformed fixtures only when testing the semantic checks
+// after the trust anchor. Tampering tests retain the real maintainer pin.
+const reviewedFixtureBinding = (directory) => ({
+  ...binding(),
+  evidence_collection_sha256: hash(readFileSync(join(directory, "collection.json"))),
+});
+
 test("algebraic native evidence cannot acquire independent status or a timestamp", () => {
   const data = catalogue(), record = findProofRevision(data, NATIVE_ID);
   record.status = "verification-pending";
@@ -60,22 +67,22 @@ test("genuine algebraic acceptance binds all seven targets and its actual source
   assert.throws(() => validate(undefined, data), /date\/source/);
 });
 
-test("a rehashed collection cannot conceal a failed kernel exit", (t) => {
+test("even a reviewed collection must include successful kernel acceptance", (t) => {
   const directory = evidence(t);
   change(directory, "result.json", (report) => { report.judge_exit_code = 1; });
-  assert.throws(() => validate(directory), /acceptance is missing/);
+  assert.throws(() => validate(directory, catalogue(), reviewedFixtureBinding(directory)), /acceptance is missing/);
 });
 
-test("a rehashed collection cannot remove root nonvacuity from the scope", (t) => {
+test("even a reviewed collection must include root nonvacuity in its scope", (t) => {
   const directory = evidence(t);
   change(directory, "result.json", (report) => { report.declarations.pop(); });
-  assert.throws(() => validate(directory), /target\/kernel\/axiom scope/);
+  assert.throws(() => validate(directory, catalogue(), reviewedFixtureBinding(directory)), /target\/kernel\/axiom scope/);
 });
 
 test("omitted exports retain their independently recorded sizes and digests", (t) => {
   const directory = evidence(t);
   change(directory, "result.json", (report) => { report.export_sizes["exports/solution.export"]++; });
-  assert.throws(() => validate(directory), /Both independently exported/);
+  assert.throws(() => validate(directory, catalogue(), reviewedFixtureBinding(directory)), /Both independently exported/);
 });
 
 test("sanitized receipts cannot replace original checker artifact digests", (t) => {
@@ -83,7 +90,7 @@ test("sanitized receipts cannot replace original checker artifact digests", (t) 
   change(directory, "publication-transformations.json", (receipt) => {
     receipt.files.find((item) => item.published_path === "judge.log").original_sha256 = "0".repeat(64);
   });
-  assert.throws(() => validate(directory), /Original checker artifact is not linked/);
+  assert.throws(() => validate(directory, catalogue(), reviewedFixtureBinding(directory)), /Original checker artifact is not linked/);
 });
 
 test("the wrapper digest authenticates its complete file map", () => {
@@ -122,4 +129,54 @@ test("the latest entry must match the algebraic boundary even when N24 history i
   const data = catalogue();
   findProofRevision(data, NATIVE_ID).theta = data.historical_records[0].theta;
   assert.throws(() => validate(undefined, data), /boundary differs/);
+});
+
+test("a consistently rewritten receipt cannot change the reviewed verification time", (t) => {
+  const directory = evidence(t);
+  const data = catalogue(), pins = binding();
+  validate(directory, data, pins);
+  const fabricated = "2026-10-10T00:00:00Z";
+  for (const name of ["result.json", "original-report.json"]) {
+    change(directory, name, (report) => {
+      report.verified_at_utc = fabricated;
+      report.finished_utc = fabricated;
+    });
+  }
+  const originalHash = hash(readFileSync(join(directory, "original-report.json")));
+  change(directory, "publication-transformations.json", (transformations) => {
+    const relation = transformations.files.find((item) => item.published_path === "original-report.json");
+    relation.original_sha256 = originalHash;
+    relation.published_sha256 = originalHash;
+  });
+  change(directory, "result.json", (report) => {
+    report.artifacts["original-report.json"] = originalHash;
+  });
+  const record = findProofRevision(data, NATIVE_ID);
+  record.first_verified_at = fabricated;
+  record.timeline_at = fabricated;
+  // Reports, transformations, catalogue and every submitted checksum agree.
+  // Only the maintainer's independently reviewed pin stays unchanged.
+  const collection = read(join(directory, "collection.json"));
+  for (const [path, digest] of Object.entries(collection.files)) {
+    assert.equal(hash(readFileSync(join(directory, path))), digest);
+  }
+  assert.throws(() => validate(directory, data, pins), /reviewed evidence collection/);
+});
+
+test("acceptance requires a valid independently reviewed collection pin", () => {
+  for (const pin of [undefined, null, "invalid", "0".repeat(64)]) {
+    const pins = binding();
+    pins.evidence_collection_sha256 = pin;
+    assert.throws(() => validate(undefined, catalogue(), pins),
+      /Invalid frozen algebraic source\/checker binding|reviewed evidence collection/);
+  }
+});
+
+test("the pinned collection still authenticates its file contents and complete inventory", (t) => {
+  const changed = evidence(t);
+  writeFileSync(join(changed, "judge.log"), readFileSync(join(changed, "judge.log"), "utf8") + "\nEdited log\n");
+  assert.throws(() => validate(changed), /checksum mismatch/);
+  const added = evidence(t);
+  write(join(added, "unreviewed-report.json"), { status: "PASS" });
+  assert.throws(() => validate(added), /inventory differs/);
 });

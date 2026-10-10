@@ -20,6 +20,17 @@ Liu's existing algebraic constant retains its exact expression and a certified r
 
 No author can grant themselves a verified badge merely by passing a website build. Status and evidence changes require maintainer review. The automatic signed admission path below is not running. It must be updated to require all three kernels and tested before it can admit verified results.
 
+The algebraic endpoint dossier's complete `collection.json` is pinned by
+`evidence_collection_sha256` in `core/algebraic-kernel-pins.json`. Its digest
+authenticates the exact manifest bytes; the manifest then binds every evidence
+file, including the original report, publication transformations and logs. A
+contributor cannot replace the reports and recalculate their checksums without
+invalidating this pin. Maintainers set or update it only after independent proof
+verification and evidence review, with the code-owner review required for `core/`.
+Do not regenerate the pin automatically to fix a failing build. Preserve existing
+dossiers and introduce later runs as separate evidence. This integrity check
+does not rerun Lean or create a signed registry admission.
+
 ## Signed Comparator + NanoDa admission (separate, not yet commissioned)
 
 The track admits only the fixed all-Dirichlet theorem. It quantifies over every natural modulus with `NeZero q`, every complex Dirichlet character and every complex `s` with `θ < s.re`, retaining `¬ (χ = 1 ∧ s = 1)` and `_root_.DirichletCharacter.LFunction`. Zeta-only, conditional and restricted-character results do not qualify. A manuscript, a successful Lean build or an AI critic's approval is not admission evidence.
