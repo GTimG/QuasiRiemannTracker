@@ -1,0 +1,5 @@
+$KERNEL_WORK/runs/run-003/src/Challenge.lean:8:8: warning: declaration uses `sorry`
+$KERNEL_WORK/runs/run-003/src/Challenge.lean:13:8: warning: declaration uses `sorry`
+$KERNEL_WORK/runs/run-003/src/Challenge.lean:17:8: warning: declaration uses `sorry`
+$KERNEL_WORK/runs/run-003/src/Challenge.lean:33:8: warning: declaration uses `sorry`
+

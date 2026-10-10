@@ -1,0 +1,15 @@
+{
+  "source": "Contributor-supplied TeX and rendered PDF; included unchanged at explicit request.",
+  "tex": {
+    "path": "zeta_zero_free_4_33_self_contained.tex",
+    "bytes": 122210,
+    "sha256": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690"
+  },
+  "pdf": {
+    "public_path": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf",
+    "pages": 36,
+    "bytes": 573655,
+    "sha256": "bc0ba4416d2eddbe4b0680d011488394298538727a006446e3eb8905f0f88272"
+  },
+  "lean_sources_changed": false
+}

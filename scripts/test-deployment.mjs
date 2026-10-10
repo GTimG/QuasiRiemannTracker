@@ -67,9 +67,9 @@ try {
   });
   await page.goto(origin + base);
   await page.waitForFunction(
-    () => document.querySelectorAll("[data-dot]").length === 5,
+    () => document.querySelectorAll("[data-dot]").length === 6,
   );
-  assert.equal(await page.locator("tbody tr").count(), 5);
+  assert.equal(await page.locator("tbody tr").count(), 6);
   for (const name of [
     "registry.json",
     "catalogue.json",
@@ -84,10 +84,15 @@ try {
     "proofs/nielstron-20261009-kernels/result.json",
     "proofs/nielstron-20261009-kernels/control-results.json",
     "proofs/nielstron-20261009-kernels/collection.json",
+    "proofs/single-prime-29-33-20261010/multi-kernel-report.json",
+    "proofs/single-prime-29-33-20261010/SHA256SUMS.txt",
+    "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf",
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
     if (name.endsWith(".json")) await response.json();
+    if (name.endsWith(".pdf"))
+      assert.equal((await response.body()).subarray(0, 5).toString(), "%PDF-");
   }
   const proofBase = origin + base + "proofs/qrh-20261009/";
   const checksum = await (await page.request.get(proofBase + "SHA256SUMS.txt")).text();
@@ -124,7 +129,7 @@ try {
   );
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, five dots, JSON, favicon and proof evidence paths; no browser errors.`,
+    `PASS: production build at ${base}, six dots, JSON, favicon and proof evidence paths; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();

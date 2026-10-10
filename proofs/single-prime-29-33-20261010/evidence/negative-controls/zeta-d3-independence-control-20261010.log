@@ -1,0 +1,2 @@
+D3_INDEPENDENCE_AUDIT {"forbidden_dependencies":["ZetaZeroFree.Analytic.beta_le_twenty_nine_thirty_thirds","ZetaZeroFree.Analytic.common_deleted_probe_estimates","_private.ZetaZeroFree.Analytic.Final.0.ZetaZeroFree.Analytic.isBigO_of_eventual_power_bound"],"missing_declarations":[],"reachable_constants":123459,"roots":["D3NegativeControl.circular"]}
+<TEMP>/zeta-d3-independence-control-20261010.lean:10:0: error: standalone D3 independence audit failed

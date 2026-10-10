@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "records": [
     {
       "submitted_at": "",
@@ -311,6 +311,56 @@
       "date_label": "Author-side Lean check",
       "verification_note": "The exact submitted proof passed the pinned local Palomar mechanical suite: Comparator compared all three statements and their definitions, then Lean's fresh kernel, NanoDa and con-ron accepted the exports. Matching, mismatched-statement and ill-typed-proof preflight controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical result, proposed for maintainer review; it is not Palomar registration, editorial acceptance or a signed tracker receipt. Earlier native reports and their pending status remain immutable historical evidence.",
       "attribution_note": "Nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained."
+    },
+    {
+      "submitted_at": "",
+      "published_at": "",
+      "merged_at": "",
+      "pr": null,
+      "repository": "HaileyStorm/QuasiRiemannTracker",
+      "source_commit": "",
+      "first_verified_at": "",
+      "entrypoint": {
+        "module": "ZetaZeroFree.Analytic.Final",
+        "declaration": "ZetaZeroFree.Analytic.dirichletL_ne_zero_of_twenty_nine_thirty_thirds_lt_re"
+      },
+      "license": "Apache-2.0 for the OpenAI-derived Lean sources; manuscript licensing is separate, see NOTICE.md",
+      "builds_on": ["openai-baseline"],
+      "id": "single-prime-29-33-20261010",
+      "title": "Single compensating prime · 29/33 (non-record)",
+      "theta": {
+        "numerator": "29",
+        "denominator": "33"
+      },
+      "authors": [
+        {
+          "name": "HaileyStorm (formalization, with OpenAI Codex)"
+        }
+      ],
+      "method": "A non-record single-compensating-prime alternative proof, with an independently usable unconditional moving-radical mixed moment. Intermediate OpenAI foundations are reused; the previous terminal 7/8 result is excluded.",
+      "references": [
+        {
+          "label": "Rendered manuscript (PDF)",
+          "url": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf"
+        },
+        {
+          "label": "Source and reproduction",
+          "url": "https://github.com/GTimG/QuasiRiemannTracker/tree/main/proofs/single-prime-29-33-20261010"
+        },
+        {
+          "label": "Verification and exact scope",
+          "url": "proofs/single-prime-29-33-20261010/Verification.md"
+        },
+        {
+          "label": "Three-kernel report",
+          "url": "proofs/single-prime-29-33-20261010/multi-kernel-report.json"
+        }
+      ],
+      "status": "verification-pending",
+      "timeline_at": "2026-10-10T07:47:35.881822+00:00",
+      "date_label": "Contributor three-kernel verification",
+      "verification_note": "Contributor Lean audit and local Comparator, Lean, NanoDa and con-ron checks passed for the four main theorem closures. Exact source, statements, checker pins and logs are retained for maintainer review. No signed registry receipt. Non-record contribution; repository status pending review.",
+      "attribution_note": "Formalization submitted by HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. The supplied manuscript has no author field; its mathematical authorship is not assigned to the submitter or the model."
     }
   ]
 }

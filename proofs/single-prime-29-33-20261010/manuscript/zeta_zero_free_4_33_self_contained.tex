@@ -1,0 +1,1697 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=23mm,top=22mm,bottom=23mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{etoolbox,needspace}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{30,62,95}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue,citecolor=linkblue]{hyperref}
+\hypersetup{pdftitle={A zero-free half-plane from a single compensating prime},pdfsubject={Integrated proof of the 4/33 zero-free half-plane},pdfauthor={}}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\emergencystretch}{1.8em}
+\setcounter{secnumdepth}{2}
+\allowdisplaybreaks[1]
+\raggedbottom
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{5\baselineskip}}{}{}
+\title{\vspace{-1.3em}A zero-free half-plane from a single compensating prime}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.0em}
+\begin{abstract}
+We prove that the Riemann zeta function, every Dirichlet \(L\)-function, and every finite-order Hecke \(L\)-function over \(\mathbf Q(\sqrt{-3})\) have no zero in \(\Re s>29/33\), with principal poles at one allowed. A cubic-theta probe exposes a reciprocal \(L\)-function after Poisson summation. One compensating prime strengthens its principal signal, while two polynomial witnesses detected at the same zero control the remaining rows. The decisive exponent comparison is an exact nonnegative square. We prove the required polynomial moments, reflection estimates, and finite arithmetic identities from classical theta formulas and large sieves.
+
+\end{abstract}
+
+\section{The result and the argument}\label{sec:1}
+
+\textbf{Theorem 1.} Every finite-order Hecke \(L\)-function over \(K=\mathbf Q(\sqrt{-3})\), and every Dirichlet \(L\)-function, is nonzero in \(\Re s>29/33\), apart from its allowed principal pole at one. In particular, \[
+\boxed{\zeta(s)\ne0\qquad(\Re s>29/33,\ s\ne1),\qquad c=\frac4{33}.}
+\] The boundary line is not included. All \(L\)-functions are uncompleted; their prescribed finite Euler deletions remain part of the presentation.
+
+Let \(\beta_*\) be the supremum of \(\{1/2\}\) and the real parts of nontrivial zeros of primitive finite-order Hecke functions over \(K\). It need not be attained. We estimate one probe in two ways. Its physical expression is small by a signed Gram bound and cubic-theta energy. Its Poisson expression contains a nonvanishing multiple of \(1/L_K(s,\eta)\). The other terms are indexed by sextic twists. Two large Dirichlet polynomials belonging to the same zero give a sufficiently small count of the difficult twists. A prime-divisibility term, paired with a rescaled subtraction, increases the principal signal without requiring a prime-marked polynomial moment.
+
+Section 2 constructs the probe and signal; §§3--4 bound the other rows and the physical probe; §5 compares the exponents and completes the Mellin argument. Appendices A--D supply the finite arithmetic, reflection energies, and two moment proofs. The external inputs are the unconditional cubic-theta automorphy and cusp expansions {[}DR{]}, the quadratic and cubic large sieves {[}QLS; HB{]}, and standard Hecke, Fourier--Mellin, and complex-analytic theory. The earlier zero-free manuscripts are used only for provenance.\footnote{The probe and moment/reflection framework originate in {[}L; S{]}; the shared-witness and signed-Gram refinements in {[}C{]}. The exposition follows the dependency boundary of {[}K{]}: published foundational theorems are cited directly, while every specialized intermediate estimate used here is proved in this document.}
+
+\subsection{Arithmetic conventions}\label{sec:1.1}
+
+Put \(\mathcal O=\mathbf Z[\omega]\), \(\omega=e^{2\pi i/3}\), \(\lambda=1+2\omega\), and \(q_a=Na\). This norm-Euclidean ring has six units. Every ideal prime to three has a unique primary generator, congruent to one modulo \(3\mathcal O\). Ideal sums use that generator once; element sums retain the units. Ideal and lattice counts up to norm \(X\ge1\) are \(O(X)\).
+
+For each fixed target character, choose a finite set \(S\) containing its conductor primes, the primes above six, and a small-prime cutoff. It is fixed before any scale or row varies. Ideal columns avoid \(S\) unless stated otherwise; a prime outside \(S\) is good. A superscript \(S\) deletes its Euler factors, a star restricts ideals to squarefree ones, and \(\sum^{(6)}\) restricts element rows to prime valuations \(0,\ldots,5\).
+
+At a good prime \(\mathfrak p\), \(\chi_{\mathfrak p}(v)\) is the sextic residue symbol, identified with the sixth root of unity congruent to \(v^{(q_{\mathfrak p}-1)/6}\) at units. Extend multiplicatively in the denominator. \textbf{Every integer power of a character is zero at nonunits}, including zeroth and negative powers. Only an absent modulus-one factor is identically one. Write \[
+\psi_u(n)=\chi_n(u),\qquad \alpha(a)=a/|a|,\qquad
+ e(z)=\exp\!\left(2\pi i\operatorname{Tr}(z/\lambda)\right),\qquad
+ d\mu(z)=\frac2{\sqrt3}\,dx\,dy.
+\tag{1.1}\label{eq:1.1}
+\] On \(\mathbf C\), the trace means \(z+\bar z\). The pairing \(e(zy)\) is self-dual on \(\mathcal O\); our Fourier kernel is \(e(-zy)\). For a zero-extended residue character \(\chi\), put \[
+ g_\chi(c,h)=\sum_{d\bmod c}\chi(d)e(hd/c),\qquad
+ \gamma_j(c)=q_c^{-1/2}g_{\chi_c^j}(c,1)\quad(c\text{ squarefree}).
+\tag{1.2}\label{eq:1.2}
+\] The inverse-character sum \(\gamma_{-1}\) is not an implicit conjugation. Define, for odd \(a+b\omega\), \[
+ \Gamma_{\rm q}(a+b\omega)=\tfrac12(1+i^{-b}+i^a+i^{b-a}),\quad
+ G(c)=\overline{\chi_c(4)}\Gamma_{\rm q}(c),\quad
+ R(v,w)=\frac{\Gamma_{\rm q}(vw)}{\Gamma_{\rm q}(v)\Gamma_{\rm q}(w)}.
+\tag{1.3}\label{eq:1.3}
+\] Appendix A.1 proves that \(G\) is a finite-ray unit phase, \(R\) a symmetric sign-valued bicharacter, and \(\chi_b(a)=R(a,b)\chi_a(b)\) at coprime primary indices. We expand finite-ray functions into genuine characters before using multiplicativity.
+
+The ideal character \(\psi_u\) is the Kummer character of \(K(u^{1/6})/K\), with arithmetic Frobenius convention. Its displayed zeros at primes of \(u\) are retained even when redundant. At a good prime of valuation \(j\), tame inertia has exponent \(\pm j\) modulo six and conductor exponent one unless \(6\mid j\). At primes in \(S\), Hensel's lemma makes sufficiently deep principal units sixth powers. Thus the conductor of a fixed finite-ray twist of \(\psi_u^{\pm1}\) has norm \(O_S(q_u)\); every nonunit sixth-power-free row prime to \(S\) is nonprincipal.
+
+\subsection{Smooth weights and uniformity}\label{sec:1.2}
+
+An annular weight is smooth with compact support in \((0,\infty)\); its Mellin transform is \(\widehat W(s)=\int_0^\infty W(y)y^s\,dy/y\). Implied constants may depend on fixed characters, supports and positive losses, but not on moving arithmetic labels. Real exponents range over fixed bounded sets. Every estimate has finite smooth-seminorm control; multiplying a test by \(y^{b+it}\), with bounded \(b\), costs a fixed power of \(1+|t|\).
+
+We use common smooth profiles, not row-dependent arithmetic coefficients. A compactly supported joint profile in logarithmic norm coordinates has a Fourier expansion with finite weighted \(L^1\) norm, by integration by parts. Minkowski and Cauchy then reduce its row norm to norms with separated unit-modulus norm powers. In particular, if \(C_j(W)=\sum_nc_{j,n}W(x_{j,n})\) satisfies \(\sum_j|C_j(W)|^2\le M\|W\|_{C^m(I')}^2\) for every common test supported in \(I'\), then, for kernels supported in a fixed \(I^2\Subset(I')^2\), \[
+\left|\sum_jb_j\sum_{n_1,n_2}c_{j,n_1}\overline{c_{j,n_2}}
+ K_j(x_{j,n_1},x_{j,n_2})\right|
+ \ll M\sup_j\|K_j\|_{C^{2m+4}},\qquad |b_j|\le1.
+\tag{1.4}\label{eq:1.4}
+\] Indeed Fourier expansion gives decay \((1+|t_1|)^{-m-2}(1+|t_2|)^{-m-2}\); the two common-test bounds leave integrable powers \(-2\). Sobolev on unit intervals in log scale, real power and height likewise permits rowwise choices of these smooth parameters, after summing the common-profile bounds. All internal smooth orders are chosen before the final external height cutoff.
+
+\section{The probe and its reciprocal signal}\label{sec:2}
+
+We use just the scales needed for \(4/33\): \[
+\begin{gathered}
+ X=Z^x,\quad Y=Z^y,\quad P=Z^\ell,\qquad
+ (x,y,\ell)=\left(\frac{13}{33},\frac{15}{33},\frac5{33}\right),\\
+ h=1+\ell-x=\frac{25}{33},\qquad k=\frac56-\frac x3-\frac\ell6=\frac{67}{99}.
+\end{gathered}
+\tag{2.1}\label{eq:2.1}
+\] The temporary independent variables \(X,Y,Z\) below make the two exact representations transparent.
+
+\subsection{One prime-divisibility term and one subtraction}\label{sec:2.1}
+
+Fix a primitive target \(\eta\). Let \(b_*\) generate the product of the primes in \(S\). Choose a primitive residue character \(\xi\) modulo \(b_*\), quadratic at odd residue characteristic and cubic at the prime of norm four. Thus \(\xi^6=1\) on units. Put \[
+ \tau=q_{b_*}^{-1/2}g_\xi(b_*,1),\qquad
+ \Xi(A)=\xi(A)\chi_A(b_*),\qquad |\tau|=1.
+\] Choose nonnegative nonzero annular weights \(W_0,W_1,w\), and set \[
+\begin{gathered}
+ V_G(r)=\frac{e^{-(\log r)^2/4}}{2\sqrt\pi},\qquad \widehat V_G(t)=e^{t^2},\\
+ \mathcal C_V(N;m,\nu)=\sum_{c\ {\rm sf},n}
+ \frac{\overline{\alpha(cn^3)}\gamma_2(c)\nu(cn^3)\chi_{cn^3}(m)}
+ {\sqrt{q_c}\,q_n}\,V(q_cq_n^3/N).
+\end{gathered}
+\tag{2.2}\label{eq:2.2}
+\] The ideals \(c,n\) may share primes. With \(A=cn^3\), define \[
+ T_{m,a,\eta}(t)=\sum_{c\ {\rm sf},n}
+ \gamma_2(c)\overline{\alpha(A)G(A)}\eta(A)\Xi(A)^{-1}R(A,a)
+ \chi_A(m)q_c^{-1/2-t}q_n^{-1-3t},
+\tag{2.3}\label{eq:2.3}
+\] \[
+\begin{aligned}
+ I_\eta(X,Y,Z)=\frac1Y\sum_a
+ &\frac{W_1(q_a/Y)\chi_a(b_*)}{\tau\xi(a)\sqrt{q_{b_*}q_aX}}
+ \sum_m\xi(m)q_a^{-1/2}g_{\chi_a}(a,-m)
+ W_0\!\left(\frac{q_m}{q_{b_*}q_aX}\right)\\
+ &\times\frac1{2\pi i}\int_{(4)}Z^te^{t^2}T_{m,a,\eta}(t)\,dt.
+\end{aligned}
+\tag{2.4}\label{eq:2.4}
+\] The annular weights leave finitely many \(a,m\), with \(m\ne0\); the remaining sum and integral converge absolutely. Let \(I_{\eta;\mathfrak p}\) insert \(\mathbf1_{\mathfrak p\mid cn^3}\) on the \textbf{whole} theta index. At the scales \eqref{eq:2.1}, the compensated probe is \[
+ I_\eta^{\rm comp}(Z)=\sum_{\mathfrak p\notin S}w(q_{\mathfrak p}/P)
+ \left\{\overline{\eta(\mathfrak p)}I_{\eta;\mathfrak p}(X,Y,Zq_{\mathfrak p})
+ -q_{\mathfrak p}^{-3/2}I_\eta(X/q_{\mathfrak p},Y/q_{\mathfrak p},Z)\right\}.
+\tag{2.5}\label{eq:2.5}
+\] The prime weight is independent of the moving row. The conjugate \(\overline\eta\) produces the cancellation in §2.3.
+
+\subsection{The two exact representations}\label{sec:2.2}
+
+Expand \(\overline G\) on its finite ray group and partition \(a\) into the classes \(\sigma\) needed for \(R(A,a)\). The completed factor \(B_{m,\sigma}(Z)\) is then a fixed finite combination of sums \eqref{eq:2.2}. Put \(Q_0=q_{b_*}XY\), and choose a fixed cutoff \(\Omega\) equal to one on \(\operatorname{supp}W_0\operatorname{supp}W_1\). Mellin inversion gives a finite sum of \[
+ \frac{Q_0^{-1/2}}{2\pi}\int_{\mathbf R}\widehat W_0(iv)
+ \sum_{m\ne0}\Omega(q_m/Q_0)\xi(m)(q_m/Q_0)^{-iv}
+ A_{m,\sigma,v}(Y)B_{m,\sigma}(Z)\,dv,
+\tag{2.6}\label{eq:2.6}
+\] where \[
+ A_{m,\sigma,v}(Y)=Y^{-3/2}\sum_{a\in\sigma}
+ \frac{\chi_a(b_*)}{\tau\xi(a)}W_1(q_a/Y)(q_a/Y)^{-1+iv}g_{\chi_a}(a,-m).
+\tag{2.7}\label{eq:2.7}
+\] The normalization follows from \(q_m/(q_{b_*}q_aX)=(q_m/Q_0)/(q_a/Y)\).
+
+For the second representation let \(\widetilde W_0(|y|^2)\) be the planar Fourier transform of \(W_0(|z|^2)\), and put \(\mathscr M(z)=\int_0^\infty\widetilde W_0(r)r^{z-1}\,dr\). It is holomorphic for \(\Re z>0\), with rapid vertical decay on compact substrips. Appendix A proves \[
+\begin{aligned}
+ I_\eta(X,Y,Z)=\frac1{(2\pi i)^3}\int_{(3)}\int_{(3)}\int_{(2)}
+ &X^{1/2-z}Z^{s+z-1}Y^{w-1}e^{(s+z-1)^2}
+ \mathscr M(z)\widehat W_1(w)\\
+ &\times\sum_u^{(6)}q_u^{-z}\overline{\xi(u)}
+ \frac{\zeta_K^S(6z)L_K^S(w,\psi_u)}{L_K^S(s,\eta\overline{\psi_u})}
+ H_{\eta,u}(s,w,z)\,dz\,dw\,ds.
+\end{aligned}
+\tag{2.8}\label{eq:2.8}
+\] Here \(u\ne0\) is prime to \(S\), including all units. The local factors \(H_{\mathfrak p}\), and the full and prime-divisible series \(P_{\mathfrak p},P_{\mathfrak p}^*\), are given once, with their derivation, in \hyperref[sec:A.3]{§A.3}.
+
+\subsection{The local compensation and its bounds}\label{sec:2.3}
+
+At a selected prime of norm \(Q\), use \(V=Q^{-6z}\), \(W=\psi_u(\mathfrak p)Q^{-w}\), and \(D=\eta(\mathfrak p)\overline{\psi_u(\mathfrak p)}Q^{-s}\), as in the local table \eqref{eq:A.8}--\eqref{eq:A.9}. Set \(c_{\mathfrak p}=\overline{\eta(\mathfrak p)}Q^s\), \(h_{\mathfrak p}=Q^{-w}\), and \[
+ G_{\mathfrak p}=
+ \frac{(c_{\mathfrak p}-h_{\mathfrak p})(1-V)(1-W)P_{\mathfrak p}^*
+       -h_{\mathfrak p}(1-VW)}{1-D}.
+\tag{2.9}\label{eq:2.9}
+\] Direct substitution gives \[
+ \overline{\eta(\mathfrak p)}Q^{s+z-1}P_{\mathfrak p}^*-Q^{z-w-1}P_{\mathfrak p}
+ =\frac{1-D}{(1-V)(1-W)}Q^{z-1}G_{\mathfrak p}.
+\tag{2.10}\label{eq:2.10}
+\] Thus \eqref{eq:2.5} has representation \eqref{eq:2.8} with \(H_{\eta,u}\) replaced by \[
+ \mathcal H_{\eta,u,Z}=
+ \sum_{\mathfrak p\notin S}w(Q/P)Q^{z-1}G_{\mathfrak p}
+ \prod_{\mathfrak q\ne\mathfrak p,\ \mathfrak q\notin S}H_{\mathfrak q}.
+\tag{2.11}\label{eq:2.11}
+\] This formula does not divide by an Euler correction. If \(\mathfrak p\nmid u\), put \(v=\chi_{\mathfrak p}(u)\) and \(E_{\mathfrak p}=P_{\mathfrak p}^*+D\). Since \(c_{\mathfrak p}D=v^{-1}\), \[
+\begin{aligned}
+ G_{\mathfrak p}+v^{-1}H_{\mathfrak p}
+ =\frac{(1-V)(1-W)}{1-D}\bigg[&(v^{-1}-h_{\mathfrak p})
+ \left(\frac V{1-V}-D\right)\\
+ &+(c_{\mathfrak p}+v^{-1}-h_{\mathfrak p})E_{\mathfrak p}\bigg].
+\end{aligned}
+\tag{2.12}\label{eq:2.12}
+\] The leading selected-prime character is therefore \(-\overline{\psi_u(\mathfrak p)}\).
+
+The local table has two useful domains: \[
+\begin{array}{ll}
+ \mathcal B:&\Re s\ge51/100,\quad\Re z\ge17/50,\quad\Re w\ge-1/100,
+                  \quad\Re(s+w)\ge1+\epsilon_1;\\
+ \mathcal B_1:&\Re s\ge87/100,\quad\Re w\ge3/4,\quad\Re z\ge1/8.
+\end{array}
+\tag{2.13}\label{eq:2.13}
+\] On compact real boxes in \(\mathcal B\), \(H_{\eta,u}\) is holomorphic and \(\ll q_u^\varepsilon\), uniformly in heights. The leading unramified defects have sizes \(Q^{-s-w}\) and \(Q^{4-6s-6z}\), at most \(Q^{-1-\epsilon_1}\) and \(Q^{-11/10}\); every other term has a summable fixed margin. At primes of \(u\), the defects have negative exponents and their finite product costs \(q_u^\varepsilon\). On \(\mathcal B_1\), the principal-row defects are \(O(Q^{-137/100})\); \eqref{eq:2.12} gives a selected-prime error \(O(Q^{-1/2})\). These estimates follow after canceling the apparent \(1-W\) denominator in the table, so no pole at that factor is introduced.
+
+For later use put \(z_0=17/50\). On the central lines \[
+ \Re s=a+16e,\qquad \Re w=1-a-6e,\qquad \Re z=z_0,
+ \qquad 51/100\le a\le11/12,
+\tag{2.14}\label{eq:2.14}
+\] choose the cutoff in \(S\) so that \(|H_{\mathfrak p}-1|<1/2\). Only on these lines write \[
+ \mathcal H_{\eta,u,Z}=H_{\eta,u}(\mathcal Q+\mathcal D),\qquad
+ \mathcal Q=-\sum_{\mathfrak p}w(Q/P)Q^{z-1}\overline{\psi_u(\mathfrak p)},
+\quad
+ \mathcal D=\sum_{\mathfrak p}w(Q/P)Q^{z-1}\frac{G_{\mathfrak p}}{H_{\mathfrak p}}-\mathcal Q.
+\tag{2.15}\label{eq:2.15}
+\] The reciprocal contours used to bound these factors will be supplied in §3.
+
+\textbf{Lemma 2.1 (ramified error).} If the reflected primitive numerator has a subpower conductor-height bound in the row's buffered zero-free region, then, for \(q_u\asymp U\), \[
+ |L_K^S(w,\psi_u)\mathcal D|
+ \ll U^{a-1/2+O(e)+\varepsilon}(1+T)^A P^{z_0-1/2+O(e)+\varepsilon}.
+\tag{2.16}\label{eq:2.16}
+\] \textbf{Proof.} Off \(u\), \eqref{eq:2.12} gives an error \(O(Q^{-51/100})\), which is stronger after prime summation. At row valuation \(j>0\), the non-tail terms, after removing \(Q^{z_0}\), have boundary exponents \[
+\begin{array}{c|ccccc}
+ j&1&2&3&4&5\\ \hline
+ &a-2&1/2-2a&-a,\ 1-3a&1/2-2a&2-5a.
+\end{array}
+\] All are less than \(-1/2\). The geometric tails preserve this bound, except for the term of size \(Q^{z_0-\Re w}\) at \(j\ge2\). Here the primitive numerator conductor is \(\ll_S UQ^{-(j-1)}\), because its good conductor exponent is one. With \(A_*=1/2-\Re w=a-1/2+6e\), reflection bounds this summand together with the numerator by \[
+ U^{A_*+\varepsilon}(1+T)^A
+ Q^{z_0-\Re w-(j-1)A_*}
+ \le U^{A_*+\varepsilon}(1+T)^A Q^{z_0-1/2}.
+\] The equality \(-\Re w-A_*=-1/2\) supplies the saving. Sum the divisor-many primes dividing \(u\); their original zeros require no Euler restoration. \hfill\(\square\)
+
+The quotient-free formula also gives \[
+ \mathcal H_{\eta,u,Z}\ll U^\varepsilon
+ \begin{cases}
+ Z^{\ell z_0},&(\Re s,\Re w,\Re z)=(\beta_*+e,1/2,z_0),\\
+ Z^{\ell v},&(\Re s,\Re w,\Re z)=(2,2,v),\quad v>2,
+ \end{cases}
+\tag{2.17}\label{eq:2.17}
+\] when \(\beta_*>29/33\). On the first line the selected factors are \(O(1)\) off \(u\) and \(O(Q^{1/2})\) on its divisor-many primes; on the second they are \(O(1)\). The unselected product has the same convergent majorant. On all intervening fixed boxes the full correction has size \(U^\varepsilon Z^B\), for a fixed \(B\) chosen before tail orders.
+
+\subsection{The principal signal}\label{sec:2.4}
+
+Only \(u=1\) has a principal numerator. The inertia calculation excludes nonunits. For a unit \(u\), choose by CRT a primary \(n\), prime to \(S\), congruent to \(-2-3\omega\) modulo \(36\) and to one at the other excluded primes. Then \(q_n\equiv7\pmod{36}\), and multiplicativity gives \(\chi_n(u)=u^{(q_n-1)/6}=u\). This excludes the five other units.
+
+Write \(\rho_S=\operatorname{Res}_{s=1}\zeta_K^S(s)>0\) and \[
+ c_S=\frac{\rho_S^2}{6}\widehat W_1(1)\mathscr M(1/6)>0.
+\tag{2.18}\label{eq:2.18}
+\] For \(0<\sigma<1\), Fourier duality against a Gaussian, followed by its positive integral representation, gives \[
+ \mathscr M(\sigma)=\left(\frac{2\pi}{\sqrt3}\right)^{1-2\sigma}
+ \frac{\Gamma(\sigma)}{\Gamma(1-\sigma)}
+ \int_0^\infty W_0(r)r^{-\sigma}\,dr>0.
+\] Absolute convergence follows from the annular support and the Schwartz transform. The factor \(1/6\) in \(c_S\) comes from the pole of \(\zeta_K^S(6z)\).
+
+At \(w=1,z=1/6\), set \(t=Q^{-1}\), \(D=\eta(\mathfrak p)Q^{-s}\), and \(R=\overline{\alpha(\mathfrak p)}^6\eta(\mathfrak p)^6Q^{3-6s}\). The local table simplifies to \[
+ H_{\eta,\mathfrak p}(s)=\frac{1-t^2}{1-R}
+ \left(1+\frac{t(D-R)}{1-D}\right),\qquad
+ H_{\eta,\mathfrak p}(s)-1\ll Q^{-2}+Q^{-1-\Re s}+Q^{3-6\Re s}.
+\tag{2.19}\label{eq:2.19}
+\] Increasing the fixed cutoff makes the sum of this majorant sufficiently small that \[
+ H_\eta(s):=H_{\eta,1}(s,1,1/6),\qquad
+ |H_\eta(s)-1|\le\tfrac12\quad(\Re s\ge87/100).
+\tag{2.20}\label{eq:2.20}
+\] At this residue \eqref{eq:2.12} gives \(G_{\mathfrak p}/H_{\mathfrak p}=-1+O(Q^{-87/100})\). Put \[
+ A(Z)=-P^{-1/6}\sum_{\mathfrak p\notin S}w(Q/P)Q^{-5/6}.
+\tag{2.21}\label{eq:2.21}
+\] The fixed-field prime ideal theorem gives \(|A(Z)|\asymp(\log Z)^{-1}\) for sufficiently large \(Z\), and, for every fixed \(0<\mu_P<(87/100)\ell\), \[
+ \mathcal H_{\eta,1,Z}(s,1,1/6)
+ =H_\eta(s)Z^{\ell/6}A(Z)(1+O(Z^{-\mu_P})),\qquad \Re s\ge87/100.
+\tag{2.22}\label{eq:2.22}
+\] Define, for large \(Z\), \(J_\eta(Z)=I_\eta^{\rm comp}(Z)/(c_SA(Z))\), and for every \(Z>0\), \[
+ f_\eta(Z)=\frac1{2\pi i}\int_{(2)}Z^{s-k}e^{(s-5/6)^2}
+ \frac{H_\eta(s)}{L_K^S(s,\eta)}\,ds.
+\tag{2.23}\label{eq:2.23}
+\] The double residue of \eqref{eq:2.8} is \(f_\eta\), up to the power-small error in \eqref{eq:2.22}. The factor \(Z^{\ell/6}\), not the logarithmic prime density, is the gain from compensation.
+
+\section{Counting rows through two witnesses at one zero}\label{sec:3}
+
+\subsection{The two moments and a starting half-plane}\label{sec:3.1}
+
+For a fixed finite-ray character \(\nu\), let \(\varphi_u=\nu\psi_u^{\pm1}\), with its original zeros, and define \[
+ M_u(D;W)=D^{-1/2}\sum_n\mu(n)\varphi_u(n)W(q_n/D),\qquad
+ S_u(N;W)=N^{-1/2}\sum_n\varphi_u(n)W(q_n/N).
+\tag{3.1}\label{eq:3.1}
+\] We need the following two coefficient-specific estimates: \[
+ \sum_{0<q_u\le H}|M_u(D;W)|^2\ll H(HD)^\varepsilon\|W\|_{C^J}^2,
+ \qquad H\ge D^{1+\vartheta},\quad \vartheta>0;
+\tag{3.2}\label{eq:3.2}
+\] \[
+ \sum_{\substack{q_u\asymp U\text{ sixth-power-free}\\\varphi_u^*\ne1}}
+ |S_u(U^m;W)|^4\ll U^{1+\varepsilon}\|W\|_{C^J}^4.
+\tag{3.3}\label{eq:3.3}
+\] Here \(m\ge0\) is bounded and \(\varphi_u^*\) denotes the primitive inducing character. Appendix C proves \eqref{eq:3.2}, including sixth-power rows; Appendix D proves \eqref{eq:3.3} through a mixed moment closed under its transforms. Both have the common-profile uniformity of §1.2, and neither assumes a zero-free boundary.
+
+Sixth-power amplification extends \eqref{eq:3.2} to longer inverse polynomials. The exact reconstruction identity is \[
+ M_u(D;W)=\sum_{d\mid\operatorname{rad}(a)}
+ \mu(d)\varphi_u(d)q_d^{-1/2}M_{ua^6}(D/q_d;W).
+\tag{3.4}\label{eq:3.4}
+\] It follows by separating the squarefree column's primes dividing \(a\); it remains valid at shared primes of \(u,a\), because both sides retain their zeros. Its coefficient mass is \(\ll q_a^\varepsilon\). Differentiation in log scale replaces \(W\) by \(-W/2-yW'\). Sobolev and \eqref{eq:3.2} therefore give \[
+ \sum_{0<q_v\ll H}\sup_{0<E\le D}|M_v(E;W)|^2\ll H(HD)^\varepsilon,
+ \qquad H\ge D^{1+\vartheta}.
+\tag{3.5}\label{eq:3.5}
+\] There are only \(O(\log(2+D))\) relevant log intervals; subunit scales contain boundedly many columns and eventually none.
+
+For sixth-power-free \(q_u\asymp U\), take \(H=\max(2U,D^{1+\vartheta})\) and average \eqref{eq:3.4} over primary \(q_a\le(H/U)^{1/6}\), prime to \(S\). There are \(\gg_S(H/U)^{1/6}\) such ideals. The map \((u,a)\mapsto ua^6\) is injective: valuations modulo six recover \(u\), and the primary generator recovers its unit. Equation \eqref{eq:3.5} gives \(\sum^{(6)}|M_u(D)|^2\ll U^{1/6}H^{5/6}(UD)^\varepsilon\). For bounded \(r\), take \(D=U^r\) and then \(\vartheta\) small to obtain \[
+ \sum_{q_u\asymp U}^{(6)}|M_u(U^r;W)|^2
+ \ll U^{e(r)+\varepsilon},\qquad e(r)=\max\{1,(1+5r)/6\}.
+\tag{3.6}\label{eq:3.6}
+\] The same argument at the single row \(u=1\) gives \[
+ \left|\sum_n\mu(n)\nu(n)W(q_n/D)\right|\ll D^{11/12+\varepsilon}.
+\tag{3.7}\label{eq:3.7}
+\] Its Mellin transform equals \(\widehat W(s)/L_K^S(s,\nu)\) for \(\Re s>1\), and converges holomorphically for \(\Re s>11/12\). A zero \(s_0\) there is impossible: take \(W(y)=y^{-s_0}\phi(y)\) with nonzero nonnegative smooth \(\phi\) on \((1,2)\), so \(\widehat W(s_0)>0\). Consequently \[
+ \tfrac12\le\beta_*\le\tfrac{11}{12}.
+\tag{3.8}\label{eq:3.8}
+\] Classical nonvanishing on \(\Re s=1\) and absolute Euler convergence cover the remaining right half-plane. No zero or character is assumed to attain \(\beta_*\).
+
+\subsection{Buffered bins and pointwise bounds}\label{sec:3.2}
+
+Let \(\Theta\) be a fixed finite conjugation-stable group containing the numerator, denominator and phase twists for the target. For each nonunit sixth-power-free row prime to \(S\), put \(\mathcal X(u)=\{\nu\psi_u^{\pm1}:\nu\in\Theta\}\). Its members are nonprincipal and have conductor norm \(O_S(q_u)\).
+
+Fix \(a_*=51/100\), a small \(e>0\), and \(I=\lceil1/e\rceil+2\). Let \(B_j(u)\) be the maximum of \(a_*\) and the real parts of zeros of \(\mathcal X(u)\) at height at most \(3^jT\). Some \(i<I\) has \(B_{i+1}-B_i\le e\). Rounding \(B_i\) down on \(a_*+e\mathbf Z_{\ge0}\) yields \[
+ a\le B_i<a+e,\qquad B_{i+1}<a+2e.
+\tag{3.9}\label{eq:3.9}
+\] The labels \((i,a)\) give finitely many bins. The floor \(a=a_*\) is counted trivially; otherwise there is an actual zero \(\rho=\sigma+i\gamma\), with \(a\le\sigma<a+e\) and \(|\gamma|\le3^iT\). Put \(\delta=2a-1\).
+
+We record why a buffered zero-free region gives subpower bounds. For a primitive nonprincipal character of conductor norm \(Q\), the functional equation \[
+ \Lambda(s,\varphi)=(3Q)^{s/2}(2\pi)^{-s}\Gamma(s)L_K(s,\varphi),\qquad
+ \Lambda(s,\varphi)=\epsilon_\varphi\Lambda(1-s,\bar\varphi),\quad|\epsilon_\varphi|=1,
+\] Euler convergence and Phragmén--Lindelöf give polynomial conductor-height growth. Continue the Euler logarithm in a zero-free disk centered at \(2+it\). Borel--Carathéodory bounds it by \(O_e(\log(2Q(3+|t|)^2))\) on a smaller disk; Euler convergence bounds it on radius \(49/100\). Three circles, with a further fixed buffer, improves the logarithm to a power \(\theta_e<1\). Exponentiating either sign gives \[
+ |L_K(s,\varphi)|+|L_K(s,\varphi)^{-1}|
+ \ll_{e,\varepsilon}\{2Q(3+|t|)^2\}^{\varepsilon}.
+\tag{3.10}\label{eq:3.10}
+\] For example, radii \(2-a-2e,2-a-4e,2-a-6e\) give these three steps. In the bins use the zero-free boundary \(a+2e\) and slightly larger final buffers. Cauchy gives the analogous bounds for derivatives of \(\log L_K\). For the principal character use \((s-1)\zeta_K(s)/(s+1)\). Applying the same argument to the right of \(\beta_*+\kappa\), \(\kappa>0\), gives all-height reciprocal bounds.
+
+Deleted factors of radical norm \(O_S(U)\) cost \(U^\varepsilon\) on fixed positive half-planes: each logarithm is \(O(q_{\mathfrak p}^{-\sigma})\), absorbed by \(\varepsilon\log q_{\mathfrak p}\) outside finitely many primes. On \(\Re s\ge-v\), direct deleted factors cost \(U^{v+\varepsilon}\).
+
+Mellin inversion and \eqref{eq:3.10}, using either the direct line or its functional-equation reflection, now give \[
+ |M_u(U^r)|^2\ll U^{\delta r+\varepsilon_0},\qquad
+ |S_u(U^m)|^2\ll U^{\delta\min(m,1-m)+\varepsilon_0}.
+\tag{3.11}\label{eq:3.11}
+\] The tests may carry bounded real powers and retained norm-twist heights; \(\varepsilon_0\) absorbs the small real and height losses. On the reflected line the conductor contributes \(U^{a-1/2+O(e)}\). The same logarithm argument applied to \(-L'/L\) gives \[
+ \left|P^{-1/2}\sum_{\mathfrak p}\overline{\psi_u(\mathfrak p)}
+ w(q_{\mathfrak p}/P)(q_{\mathfrak p}/P)^{it}\right|
+ \ll P^{\delta/2+O(e)+\varepsilon}U^\varepsilon(1+T)^A.
+\tag{3.12}\label{eq:3.12}
+\] Divide the test by \(\log q_{\mathfrak p}\) after using the logarithmic derivative. Prime powers contribute \(O(P^{1/2+\varepsilon})\) before central normalization. The larger height window in \eqref{eq:3.9} permits these bounds around the witnessing zero. Omitted reciprocal segments stay on a global zero-free line; §5 specifies the compatible height and tail choices.
+
+\subsection{The shared witnesses and their row count}\label{sec:3.3}
+
+\textbf{Lemma 3.1 (shared witnesses).} Fix \(t_0\in[1,3/2]\) for a nonfloor bin before selecting witnesses. Each row has a presentation, real power \(\sigma\in[a,a+e)\), common height, and dyadic lengths \(U^r,U^m\) such that \[
+\begin{gathered}
+ r\le t_0+o(1),\quad r+m\ge t_0-o(1),\quad 0\le m\le\tfrac12+O(\varepsilon_0),\\
+ |M_u(U^r)|^2\gg U^{\delta r-O(\varepsilon_0)},\qquad
+ |S_u(U^m)|^2\gg U^{\delta m-O(\varepsilon_0)}.
+\end{gathered}
+\tag{3.13}\label{eq:3.13}
+\] After the presentation and dyads are fixed, the base profiles are common to the rows.
+
+\textbf{Proof.} Let \(V_\le\) equal one on \([0,1]\) and vanish on \([2,\infty)\), and define \[
+ C_\varphi(s)=\sum_l\mu(l)\varphi(l)V_\le(q_l/U^{t_0})q_l^{-s}.
+\] At the witnessing zero \(\rho\), move \[
+ \frac1{2\pi i}\int_{(2)}U^{40z}\Gamma(z)
+ L_K^S(\rho+z,\varphi)C_\varphi(\rho+z)\,dz
+\tag{3.14}\label{eq:3.14}
+\] to \(\Re z=-1/4\). The residue at zero vanishes. Polynomial Hecke growth, ideal counting and gamma decay make the new integral \(o(1)\): \(U^{-10}\) dominates when the height exponent is small.
+
+On the original line, the unit coefficient is \(1+o(1)\), while \(\mu*1=\mathbf1_1\) cancels every coefficient with \(1<q_{lk}\le U^{t_0}\). The remainder therefore has magnitude \(1+o(1)\) and product norm \(\gg U^{t_0}\); cutting it off smoothly at \(U^{41}\) costs \(o(1)\). Dyadic partition and Fourier separation of its product weight select a pair and frequency with \[
+ |M_u(U^r)S_u(U^m)|^2\gg U^{\delta(r+m)-O(\varepsilon_0)}.
+\] The two factors carry the same character, real power and height. Comparing with \eqref{eq:3.11} forces \(m\le1/2+O(\varepsilon_0)\), since \(\delta\ge1/50\); dividing by each upper bound gives \eqref{eq:3.13}. The inverse test contains \(V_\le(U^r y/U^{t_0})\), whose derivatives are uniformly bounded on its transition annulus. The logarithmically many dyads and rapidly decaying frequency tails fit the chosen loss. \hfill\(\square\)
+
+For \(r\le1\), \eqref{eq:3.6}, \eqref{eq:3.3} and \eqref{eq:3.13} bound the same rows by exponents \(1-\delta r\) and \(1-2\delta m\). With \(r+m\ge t_0-o(1)\), their minimum is at most \(1-2\delta t_0/3\). For \(1\le r\le t_0\), the inverse moment instead gives at most \(1-\delta+(5/6-\delta)(t_0-1)\). As \(\delta\le5/6\) by \eqref{eq:3.8}, choosing \(t_0=5/(5-2\delta)\) equalizes these bounds. Hence \[
+ \#\mathcal B_a(U,T)\ll U^{R_0(\delta)+\varepsilon}(1+T)^A,\qquad
+ R_0(\delta)=1-\frac{10\delta}{3(5-2\delta)}.
+\tag{3.15}\label{eq:3.15}
+\] Moments are applied after fixing presentations and dyads; §1.2 supplies the smooth-parameter suprema. The floor uses exponent one.
+
+\section{The physical estimate}\label{sec:4}
+
+\subsection{Signed additive Gram bound}\label{sec:4.1}
+
+\textbf{Lemma 4.1.} For \eqref{eq:2.7}, with \(P_a=Y^2/Q_0\ge1\), \[
+ \sum_{q_m\ll Q_0}|A_{m,\sigma,v}(Y)|^2
+ \ll (1+|v|)^J\frac{Q_0}{Y}
+ \left(1+P_a^{1/6}+\frac{P_a^2}{Y}\right)Z^\varepsilon.
+\tag{4.1}\label{eq:4.1}
+\] The coefficients must have the displayed fixed finite-ray form.
+
+\textbf{Proof.} Use the finite correlation \(F(u,v;j)\) of \hyperref[sec:A.4]{§A.4}. It has \(F(u,v;0)=\mathbf1_{u=v}\phi(u)\), and, for \(u=Cn_1,v=Cn_2\), \((n_1,n_2)=1\), \[
+ F(Cn_1,Cn_2;Ck)=\chi_{n_1}(k)\overline{\chi_{n_2}(-k)}R(n_1,n_2)
+ L_C(n_1,n_2;k),\qquad |L_C|\le q_C.
+\tag{4.2}\label{eq:4.2}
+\] The local factors are periodic in the residual columns modulo \(\operatorname{rad}C\), including unequal valuations. Expanding the Gram square and applying row Poisson with a radial Schwartz majorant gives prefactor \(Q_0/Y^3\): the complete transform contributes \(q_uq_vF\), canceling the denominator in the Poisson factor. The kernel at \(j=Ck\) has argument comparable to \(q_Cq_k/P_a\); zero frequency contributes \(O(Q_0/Y)\).
+
+Before separating nonzero terms, extend \eqref{eq:4.2} to residual pairs and insert the full Möbius identity for \((n_1,n_2)=1\). Set the extension to zero if a prime of \(C\) divides both columns, and write \(n_i=dm_i\). Nonzero terms have \((d,Ck)=1\). This is an artificial extension canceled by the complete divisor sum, not a correlation formula off the coprime locus.
+
+After ray separation the joint coefficient has period norm \(\ll q_Cq_k\). Its complete mean vanishes unless the sixth-power-free part of \(k\) is supported on \(C\) and the fixed primes: otherwise one column has a nonprincipal local character at a prime independent of its other factors. On dyads \(q_C\asymp C_0,q_d\asymp D_0\) and shells \(q_Cq_k\asymp RP_a\), put \(N=Y/(C_0D_0)\). Four-dimensional lattice Poisson in the two columns bounds the zero-mean sum by \[
+ (1+|v|)^J R^{-B}C_0N^2\min\{1,(RP_a/N)^A\}.
+\tag{4.3}\label{eq:4.3}
+\] Below the period use counting; above it use integration by parts at nonzero dual frequencies. There are \(O(D_0RP_a)\) choices of \(C,d,k\). The dyadic inequality \[
+ \sum_{i,j\ge0}2^{-i-j}\min\{1,(2^{i+j}/\Lambda)^A\}
+ \ll\frac{1+\log(2+\Lambda)}{\Lambda},\qquad \Lambda=Y/(RP_a),\quad A>1,
+\] gives \((Q_0/Y)(P_a^2/Y)Z^\varepsilon\). Exceptional frequencies have \((k)=ea^6\), with divisor-many \(e\) supported on \(C\) and the fixed primes, and \(O((RP_a/C_0)^{1/6})\) roots \(a\). Absolute two-column volume gives summable dyadic weights \(C_0^{-1/6+\varepsilon}D_0^{-1+\varepsilon}\), hence the term \((Q_0/Y)P_a^{1/6}Z^\varepsilon\). \hfill\(\square\)
+
+\subsection{Theta energy and the compensated bound}\label{sec:4.2}
+
+Appendix B proves the two energy estimates used here. For common annular profiles, and hence for \(V_G\), \[
+ \sum_{0<q_m\le H}|\mathcal C_V(N;m,\nu)|^2
+ \ll(HN)^\varepsilon(H+H^2/N).
+\tag{4.4}\label{eq:4.4}
+\] For a bounded row-independent coefficient \(a(\mathfrak p)\), define \[
+ \mathcal T(m)=\sum_{q_{\mathfrak p}\asymp Z^{5/33}}a(\mathfrak p)
+ \sum_{c\ {\rm sf},n}\frac{\overline{\alpha(cn^3)}\gamma_2(c)\nu(cn^3)\chi_{cn^3}(m)}
+ {\sqrt{q_c}\,q_n}\mathbf1_{\mathfrak p\mid cn^3}
+ V\!\left(\frac{q_cq_n^3}{Zq_{\mathfrak p}}\right).
+\tag{4.5}\label{eq:4.5}
+\] The one-prime estimate, including a common joint norm profile, is \[
+ \sum_{0<q_m\ll Z^{28/33}}|\mathcal T(m)|^2\ll Z^{28/33+\varepsilon}.
+\tag{4.6}\label{eq:4.6}
+\] The prime stays inside this norm. Its reflection is derived in \hyperref[sec:B.4]{§B.4}; the cancellation of the residual row--prime phase is what permits the hybrid sieve.
+
+Apply Cauchy to \eqref{eq:2.6}. For the marked part of \eqref{eq:2.5}, \eqref{eq:4.6} and \eqref{eq:4.1} give \[
+ Q_0^{-1/2}\left[\frac{Q_0}{Y}(Y/X)^{1/6}\right]^{1/2}
+ Z^{14/33+\varepsilon}
+ =Z^{x/2+(y-x)/12+\varepsilon}=Z^{20/99+\varepsilon}.
+\] Here \(Q_0\asymp Z^{28/33}\), \(P_a\asymp Y/X\), and \(P_a^2/Y\ll1\). For each subtraction put \(X'=X/Q,Y'=Y/Q\), \(Q=q_{\mathfrak p}\asymp P\). Its row exponent is \(18/33<1\), so \eqref{eq:4.4} yields the unmarked bound \((X/Q)^{1/2}(Y/X)^{1/12}Z^\varepsilon\). The Gram condition persists because \(P_a^2/Y'\asymp Z^{-6/33}\). Multiplication by \(Q^{-3/2}\) and summation cost \(\sum_{Q\asymp P}Q^{-2}\ll P^{-1}\). Integrating the common Mellin profiles and summing the fixed ray components proves \[
+ I_\eta^{\rm comp}(Z)\ll Z^{20/99+\varepsilon},\qquad
+ J_\eta(Z)\ll Z^{b-k+\varepsilon},\qquad b=\frac{29}{33},\quad b-k=\frac{20}{99}.
+\tag{4.7}\label{eq:4.7}
+\]
+
+\section{Comparing the rows and continuing the reciprocal}\label{sec:5}
+
+Suppose \(\beta_*>b\), and put \(\mu=\beta_*-b>0\). We will show that the error \(J_\eta-f_\eta\) saves a positive power relative to \(Z^{\beta_*-k}\), with the same real saving for every primitive target. Set \(d_{\min}=1/200\) and choose a small \(\zeta_0>0\).
+
+\subsection{The intermediate rows and the square certificate}\label{sec:5.1}
+
+For \(U=Z^d\), \(d_{\min}\le d\le h+\zeta_0\), fix the bins of §3 before moving contours. In the compensated identity \eqref{eq:2.8}, first move \(z\) to \(z_0=17/50\), with \(s,w\) on absolute lines. Move \(s\) to \(\beta_*+20e\), then \(w\) to \(1-a-6e\). The paths lie in \(\mathcal B\): \(\Re(s+w)>1\), the numerator is nonprincipal, and the reciprocal remains global. Truncate heights while that reciprocal is still global. Move only the retained \(s\)-segment to \(a+16e\), within its buffered zero-free rectangle. The horizontal joins have the same buffer. Use \eqref{eq:2.15} only on the resulting central contour.
+
+The row count \eqref{eq:3.15}, buffered reciprocal bound \eqref{eq:3.10}, reflected numerator bound, prime estimate \eqref{eq:3.12}, and Lemma 2.1 give, for a nonfloor bin, \[
+ \sum_{u\in\mathcal B_a}
+ \left|q_u^{-z}\frac{L_K^S(w,\psi_u)}{L_K^S(s,\eta\overline{\psi_u})}
+ \mathcal H_{\eta,u,Z}\right|
+ \ll(1+T)^A U^{R_0(\delta)+\delta/2-z_0+\varepsilon}
+ Z^{\ell(z_0-1/2)+\ell\delta/2+\varepsilon}.
+\tag{5.1}\label{eq:5.1}
+\] The geometric Mellin factors make its exponent, relative to \(\beta_*-k\), \[
+ \mathcal E(d)=a-\beta_*+h(z_0-1/6)-ay-\ell/2+\ell\delta/2
+ +d\{R_0(\delta)+\delta/2-z_0\},
+\tag{5.2}\label{eq:5.2}
+\] before small losses. The slope is positive, since \(R_0(\delta)+\delta/2-z_0\ge1-\delta/2-17/50\ge73/300\). At \(d=h\), \eqref{eq:2.1} reduces the exponent to \(F_0(\delta)-\beta_*\), where \[
+ F_0(\delta)=\frac{16}{11}\frac{1+\delta}{2}
+       +\frac{25}{33}\left(R_0(\delta)-\frac23\right)-\frac5{33},\qquad
+ \boxed{\frac{29}{33}-F_0(\delta)=
+ \frac{(12\delta-5)^2}{99(5-2\delta)}\ge0}
+ \quad(0\le\delta\le5/6).
+\tag{5.3}\label{eq:5.3}
+\] Thus every shorter dyad saves at least \(\mu\); the extension to \(h+\zeta_0\) costs \(O(\zeta_0)\). The floor uses count exponent one at \(a=51/100\), and its boundary is below \(b\) by \(89/2475\). Choose \(\zeta_0\) and the real losses much smaller than \(\mu\). Equality in \eqref{eq:5.3} occurs only at \(\delta=5/12\), but still gives a strict saving under the contradiction hypothesis.
+
+\subsection{Principal, small and large rows}\label{sec:5.2}
+
+For \(u=1\), move first to \((\Re s,\Re w,\Re z)=(\beta_*+e,1+e,1/6+e)\). Move \(w\) to \(3/4\), crossing its numerator pole, and in that residue move \(z\) to \(1/8\), crossing the pole of \(\zeta_K^S(6z)\). The paths lie in \(\mathcal B_1\), and \(\mathscr M\) has no positive-strip pole. Equations \eqref{eq:2.18}, \eqref{eq:2.22} and \eqref{eq:2.23} identify the double residue. The two remaining contours save \(y/4\) and \(h/24\), while the prime approximation saves \(\mu_P\).
+
+For \(q_u\le Z^{d_{\min}}\), excluding \(u=1\), use \((\beta_*+e,1/2,z_0)\). The functional equation and convexity bound the numerator by \(U^{3/5+\varepsilon}(1+T)^A\). Equation \eqref{eq:2.17}, ideal counting, and \(q_u^{-z_0}\) give relative exponent \[
+ h(z_0-1/6)-y/2+\frac{63}{50}d_{\min}
+ =-\frac{88763}{990000}<-\frac1{20}.
+\tag{5.4}\label{eq:5.4}
+\] This includes the five nonprincipal unit rows. No numerator pole is crossed.
+
+For \(q_u>Z^{h+\zeta_0}\), take \((\Re s,\Re w,\Re z)=(2,2,v)\). Absolute Euler convergence and \eqref{eq:2.17} give a total \[
+ \ll Z^{x/2+1+y+(h+\zeta_0)(1+\varepsilon)-\zeta_0v+\varepsilon},
+\tag{5.5}\label{eq:5.5}
+\] which is arbitrarily power-small after fixing \(v>2\) sufficiently large.
+
+For all these moves the independent height coordinates are \(\Im(s+z),\Im z,\Im w\). The Gaussian and two Mellin transforms have arbitrary decay in these coordinates. On fixed real boxes the unseparated arithmetic factor has a fixed polynomial conductor-height bound, so omitted segments and horizontal joins contribute \(O_N(Z^BT^{-N})\). Reciprocal segments outside a buffered rectangle are never moved off the global line. On a horizontal face inside it, the buffered reciprocal estimate and a global polynomial numerator estimate suffice. The exponent \(B\) is fixed before the external tail order \(N\).
+
+Choose the real buffers and internal moment losses first, preserving a common positive fraction of \(\min(\mu,y/4,h/24,\mu_P,1/20)\). For each fixed target and its already chosen smooth orders, take \(T=3Z^\tau\), with \(\tau>0\) small enough to absorb every polynomial height cost and to make the witness tails valid uniformly for \(d\ge d_{\min}\). Choose \(N\) last. The height exponent and thresholds may depend on the target; the retained real margin need not. We obtain some common \(\Delta>0\) with \[
+ J_\eta(Z)-f_\eta(Z)\ll_\eta Z^{\beta_*-k-\Delta}.
+\tag{5.6}\label{eq:5.6}
+\]
+
+\subsection{Mellin continuation and the conclusion}\label{sec:5.3}
+
+Reduce \(\Delta<\mu/4\) and choose \(\varepsilon<\mu/4\) in \eqref{eq:4.7}. Then \(f_\eta(Z)=O_\eta(Z^{\beta_*-k-\Delta})\) at infinity. At zero, moving its defining line to any fixed \(A>2\) gives \(f_\eta(Z)=O_{\eta,A}(Z^{A-k})\). Thus \[
+ \mathfrak F_\eta(s)=\int_0^\infty f_\eta(Z)Z^{-s+k}\,\frac{dZ}{Z}
+\tag{5.7}\label{eq:5.7}
+\] is holomorphic on \(\Re s>\beta_*-\Delta\). The endpoint bounds remain integrable after powers of \(|\log Z|\), justifying differentiation. Fourier inversion in \(\log Z\), first on a fixed line to the right of one, identifies it with \[
+ \mathfrak F_\eta(s)=e^{(s-5/6)^2}\frac{H_\eta(s)}{L_K^S(s,\eta)}.
+\tag{5.8}\label{eq:5.8}
+\] The Fourier density is integrable by Gaussian decay, and its inverse by the endpoint bounds. Since \(\beta_*-\Delta>b>87/100\), \eqref{eq:2.20} shows that \(H_\eta\) never vanishes in this half-plane. A zero of \(L_K^S\) there would produce a pole in \eqref{eq:5.8}, contradicting the holomorphy of \eqref{eq:5.7}.
+
+The same \(\Delta\) works for every primitive target. The definition of \(\beta_*\) therefore supplies a target zero to its right and gives the contradiction, without requiring attainment of the supremum. Hence \(\beta_*\le29/33\). Finite deleted Euler factors have no zeros in \(\Re s>0\), so the conclusion includes imprimitive presentations.
+
+For a Dirichlet character \(\chi\), its norm pullback is a finite-order Hecke character. Comparing split and inert Euler factors, with the finitely many ramified factors deleted, gives \[
+ L_K(s,\chi\circ N_{K/\mathbf Q})=L(s,\chi)L(s,\chi\chi_{-3}).
+\] The factors are holomorphic away from one, so the Hecke conclusion excludes zeros of either there. Classical nonvanishing at one handles that point, including possible principal poles. Taking \(\chi\) principal gives the assertion for \(\zeta\). \hfill\(\square\)
+
+\appendix
+\section{Finite arithmetic and the exact Poisson expansion}\label{sec:A}
+
+\subsection{Gauss phases}\label{sec:A.1}
+
+For squarefree \(n\), and coprime squarefree \(a,b\), the conventions of §1.1 give
+
+\[
+\begin{gathered}
+\chi_b(a)=R(a,b)\chi_a(b),\qquad R(a,b)=R(b,a)\in\{\pm1\},\quad (a,b)=1,\\
+\gamma_2(n)^3=\mu(n)\alpha(n),\qquad
+\gamma_1(n)\gamma_2(n)=\mu(n)\alpha(n)G(n),\\
+\mu(n)\gamma_{-1}(n)=\chi_n(-1)G(n)^{-1}\overline{\alpha(n)}\gamma_2(n),\\
+a_\nu(ab)=a_\nu(a)a_\nu(b)\chi_b(a)^4,
+\qquad a_\nu(n)=\overline{\alpha(n)}\gamma_2(n)\nu(n),\quad (a,b)=1.
+\end{gathered}
+\tag{A.1}\label{eq:A.1}
+\]
+
+\textbf{Proof.} At a prime \(p\), write \(J(A,B)=\sum_xA(x)B(1-x)\), with zero extensions. The substitution \(u=2x-1\) gives \(\chi_p(4)J(\chi_p,\chi_p)=J(\chi_p,\chi_p^3)\). The Gauss--Jacobi identity and \(\gamma_2(p)\gamma_4(p)=1\) consequently give \[
+\gamma_1(p)\gamma_2(p)
+=\overline{\chi_p(4)}\gamma_3(p)\gamma_2(p)^3.
+\] To evaluate the last cube, \(J(\chi_p^2,\chi_p^2)\) has norm \(q_p\) and is divisible by \(p\): expand \(x^{(q_p-1)/3}(1-x)^{(q_p-1)/3}\) modulo \(p\), and sum its powers over the residue field. Its unit is fixed by reduction modulo three. Indeed \(\prod_{x\ne0,1}x(1-x)=1\); writing the cubic character values as \(\omega^{j_x}\) gives \(\sum j_x\equiv0\pmod3\), hence the Jacobi sum is \(-1\pmod3\). Since \(p\equiv1\pmod3\), the sum is \(-p\). Thus \(\gamma_2(p)^3=-\alpha(p)\).
+
+For odd \(c\), Gaussian-regularized Poisson summation gives \[
+|c|^{-1}\sum_{x\bmod c}e(x^2/c)
+=\tfrac12\sum_{y\bmod2\mathcal O}e(-cy^2/4)=\Gamma_{\rm q}(c).
+\] One can take the regulator \(e^{-\pi\eta|z|^2}\): its transformed factor has \(r_\eta=1+3q_c\eta^2/16\), and replacing \(r_\eta\) by one has error \(O_c(1)\). Division by the Gaussian mass \(\asymp\eta^{-1}\), followed by \(\eta\downarrow0\), proves the formula. The four square classes represented by \(1,-1,\lambda,-\lambda\) have values \(1,1,i,-i\). Their quotient is the symmetric bicharacter \[
+R((-1)^e\lambda^f,(-1)^g\lambda^h)=(-1)^{eh+fg+fh}.
+\] Grouping by \(y=x^2\) gives \(\Gamma_{\rm q}(p)=\gamma_3(p)\). Chinese remaindering and cubic reciprocity then give sextic reciprocity with this \(R\). Also \(\chi_c(4)=(-2/c)_3=(c/(-2))_3\), a fixed character modulo two. Therefore \(G(c)=\overline{\chi_c(4)}\Gamma_{\rm q}(c)\) is a fixed ray phase, and \[
+\begin{gathered}
+G(ab)=G(a)G(b)R(a,b),\qquad R(a,a)=\chi_a(-1),\\
+G(ba^{-1})=\chi_a(-1)\overline{G(a)}G(b)R(a,b).
+\end{gathered}
+\tag{A.2}\label{eq:A.2}
+\] Chinese remaindering extends the prime Gauss identities to squarefree indices. In particular \(\gamma_2(ab)=\gamma_2(a)\gamma_2(b)\chi_a(b)^2\chi_b(a)^2\), which gives the multiplicative identity for \(a_\nu\). Finally \(\gamma_1(n)\gamma_{-1}(n)=\chi_n(-1)\) gives the inverse-character conversion in \eqref{eq:A.1}. Every equality preserves its nonunit zeros. \hfill\(\square\)
+
+\subsection{The finite transform and phase cancellation}\label{sec:A.2}
+
+Expanding the Gauss sum in the physical row gives the finite coefficient \[
+\mathcal F(a,A,h)=
+\sum_{\substack{d\bmod a\\h\equiv b_*Ad\pmod a}}
+\chi_a(d)\,g_{\xi\chi_A}\!\left(b_*A,\frac{h-b_*Ad}{a}\right).
+\tag{A.3}\label{eq:A.3}
+\] Indeed, the finite Fourier transform of \(\xi(m)\chi_A(m)q_a^{-1/2}g_{\chi_a}(a,-m)\) modulo \(ab_*A\) is \(q_a^{1/2}\mathcal F(a,A,h)\): summing the lifts modulo \(b_*A\) imposes the displayed congruence. This uses the full modulus, including common primes of \(a,A\).
+
+Poisson at radial scale \(q_{b_*}q_aX\) has factor \(X/q_A\) and radial Fourier argument \(Xq_h/q_A\). Combining its factor \(q_a^{1/2}\) with the outer square root in \eqref{eq:2.4} leaves \(X^{1/2}/(\sqrt{q_{b_*}}q_A)\), apart from the displayed character and \(Y^{-1}\) factors. The primitive factor at \(b_*\) vanishes unless \((h,S)=1\), so \(h=0\) vanishes too. Write uniquely \(h=ur^6\), with \(u\) sixth-power-free and \(r\) primary.
+
+Mellin inversion of the two radial weights, followed by \(s=t+1-z\), gives the row Dirichlet series \[
+\mathcal F_{\eta,u}(s,w,z)=
+\sum_{c\ {\rm sf},n,a,r} K_\eta(c,n,a,r;u)
+q_c^{-1/2-s}q_n^{-1-3s}q_a^{-w}q_r^{-6z},
+\tag{A.4}\label{eq:A.4}
+\] where \[
+K_\eta=
+\frac{\mathcal F(a,A,ur^6)\chi_a(b_*)}
+{\sqrt{q_{b_*}}\tau\xi(a)\overline{\xi(u)}}
+\gamma_2(c)\overline{\alpha(A)G(A)}\eta(A)\Xi(A)^{-1}R(A,a).
+\tag{A.5}\label{eq:A.5}
+\] The remaining row factor is \(q_u^{-z}\overline{\xi(u)}\), and the global weight is \[
+X^{1/2-z}Z^{s+z-1}Y^{w-1}e^{(s+z-1)^2}\mathscr M(z)\widehat W_1(w).
+\] These interchanges are absolute on \((\Re s,\Re w,\Re z)=(3,3,2)\): use \(|\mathcal F(a,A,h)|\le q_aq_{b_*A}\), ideal counting, and rapid Mellin decay. It remains to factor \eqref{eq:A.4}.
+
+At a good prime \(p\), set \(Q=q_p\), \(e_0=v_p(c)\in\{0,1\}\), \(l=v_p(n)\), \(k=v_p(a)\), \(m=v_p(r)\), and \(t=e_0+3l\). Let \(j=v_p(u)\), \(j'=j+6m\), and \(\epsilon_p=\chi_p(-1)\). The local convolution is \[
+C_{\mathfrak p}(t,k,j')=
+\sum_{\substack{d\bmod\mathfrak p^k\\\mathfrak p^{j'}\equiv\mathfrak p^td\pmod{\mathfrak p^k}}}
+\chi_{\mathfrak p}(d)^k
+g_{\chi_{\mathfrak p}^t}\!\left(\mathfrak p^t,
+\frac{\mathfrak p^{j'}-\mathfrak p^td}{\mathfrak p^k}\right).
+\tag{A.6}\label{eq:A.6}
+\] At \(k=0\) the outer character is absent and equals one; at \(t=0\) the Gauss factor has modulus one and equals one. Direct residue lifting gives \[
+C_p(t,k,j')=
+\begin{cases}
+1,&t=k=0,\\
+\mathbf1_{j'=0},&t=0,\ k>0,\\
+g_{\chi_p^t}(p^t,p^{j'}),&t>0,\ k=0,\\
+\epsilon_p^{-1}g_{\chi_p}(p,1)g_{\chi_p^{t-1}}(p^t,p^{j'-1}),
+&t>0,\ k=1,\ j'\ge1,\\
+0,&\text{otherwise}.
+\end{cases}
+\tag{A.7}\label{eq:A.7}
+\] For the fourth case, expand the Gauss sum and sum \(d\bmod p\); its transform changes the exponent from \(t\) to \(t-1\). If \(k\ge2\), the last permitted lift of \(d\) leaves its character unchanged and has a nontrivial additive phase, so it cancels. These arguments also cover a principal local character with its nonunit zero.
+
+Restore the unit parts \(h_p=h/p^{j'}\), \(a_p^\circ=a/p^k\), \(A_p^\circ=A/p^t\). Chinese remaindering and \(d=h_p(b_*A_p^\circ)^{-1}d'\) give the unit factor \[
+\chi_p(h_p)^{k-t}\chi_p(a_p^\circ)^t
+\chi_p(A_p^\circ)^{t-k}\chi_p(b_*)^{t-k}.
+\] Here \(\rho=\chi_p(u/p^j)\). At \(b_*\), the Gauss factor is \(\sqrt{q_{b_*}}\tau\xi(A)\overline{\xi(h/a)}\), and \(\overline{\xi(h/a)}=\overline{\xi(u)}\xi(a)\) because \(\xi^6=1\). Thus all fixed \(\xi\)-factors in \eqref{eq:A.5} cancel. The factors at \(b_*\) in the preceding product cancel \(\chi_a(b_*)\chi_A(b_*)^{-1}\).
+
+For distinct good primes, reciprocity gives \[
+R(A,a)\prod_p\chi_p(a_p^\circ)^{t_p}\chi_p(A_p^\circ)^{-k_p}
+=\prod_pR(p,p)^{t_pk_p}.
+\] The remaining squarefree phase is removed by \(\gamma_2(c)=\mu(c)\alpha(c)G(c)/\gamma_1(c)\) and the Chinese remainder formula for \(\gamma_1(c)\). At a pair \(p<q\), the remaining exponent is \(t_pt_q-e_pe_q=3(e_pl_q+e_ql_p+3l_pl_q)\). Its sign product is \[
+\prod_{p<q}R(p,q)^{e_pl_q+e_ql_p+l_pl_q}
+=R(c,n)G(n^3)\prod_p\overline{G(p^3)}^{\,l_p}
+R(p,p)^{-e_pl_p-l_p(l_p-1)/2}.
+\] Expanding \eqref{eq:A.2} proves this identity. Now \(G(c)R(c,n)G(n^3)=G(cn^3)\) cancels the inserted conjugate phase, while \(G(p^3)=\gamma_3(p)\) and \(R(p,p)=\epsilon_p\). Thus the complete coefficient factors prime by prime, with no ray restriction on the prime.
+
+\subsection{Local Euler factors}\label{sec:A.3}
+
+At \(\mathfrak p\notin S\), put
+
+\[
+Q=q_{\mathfrak p},\quad j=v_{\mathfrak p}(u)\in\{0,\ldots,5\},\quad
+\rho=\chi_{\mathfrak p}(u/\mathfrak p^j),
+\]
+
+\[
+a_{\mathfrak p}=\overline{\alpha(\mathfrak p)}^3\eta(\mathfrak p)^3,
+\quad b_{\mathfrak p}=\overline{\alpha(\mathfrak p)}^2\eta(\mathfrak p)^2
+\overline{\chi_{\mathfrak p}(4)},\quad b_{\mathfrak p}^3=a_{\mathfrak p}^2,
+\]
+
+\[
+V=Q^{-6z},\quad R=a_{\mathfrak p}^2Q^{4-6s-6z},\quad
+W^\circ=\rho Q^{-w},\quad
+W=\chi_{\mathfrak p}(u)Q^{-w},\quad
+D=\eta(\mathfrak p)\overline{\chi_{\mathfrak p}(u)}Q^{-s}.
+\tag{A.8}\label{eq:A.8}
+\]
+
+In particular \(W=D=0\) when \(j>0\), whereas \(W^\circ\) retains its unit phase. The marked and full local series are
+
+\[
+P_{\mathfrak p}^*=\frac1{1-R}
+\left\{\frac{R(1-Q^{-1})-\eta(\mathfrak p)(Q-1)Q^{-s-w}V^{\mathbf1_{j\le1}}}{1-V}+J_j\right\},
+\]
+
+\[
+P_{\mathfrak p}=\frac1{1-V}+\mathbf1_{j=0}\frac{W^\circ}{1-W^\circ}+P_{\mathfrak p}^*,
+\qquad
+H_{\mathfrak p}=P_{\mathfrak p}\frac{(1-V)(1-W)}{1-D},
+\quad H_{\eta,u}=\prod_{\mathfrak p\notin S}H_{\mathfrak p},
+\tag{A.9}\label{eq:A.9}
+\]
+
+with
+
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8800}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(j\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(J_j\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & \(-\eta(\mathfrak p)\rho^{-1}Q^{-s}+W^\circ R\) \\
+1 & \(\eta(\mathfrak p)Q^{-s-w}\) \\
+2 & \(a_{\mathfrak p}\rho^{-3}Q^{3/2-3s}\) \\
+3 & \(-\eta(\mathfrak p)b_{\mathfrak p}\rho^{-2}Q^{2-3s-w}+b_{\mathfrak p}^2\rho^{-4}Q^{2-4s}\) \\
+4 & \(-\eta(\mathfrak p)a_{\mathfrak p}\rho^{-3}Q^{5/2-4s-w}\) \\
+5 & \(-a_{\mathfrak p}^2Q^{3-6s}\) \\
+\end{longtable}
+
+Here \(V^{\mathbf1_{j\le1}}=V\) for \(j=0,1\), and equals one otherwise.
+
+Writing \(a_p,b_p,\rho,R,V,W^\circ\) as in \eqref{eq:A.8}, the local series is therefore \[
+\begin{aligned}
+P_p=\sum_{\substack{e_0=0,1\\l,k,m\ge0}}
+&(-1)^{e_0}\gamma_1(p)^{-e_0}\eta(p)^{e_0}
+\bigl(a_p\overline{\gamma_3(p)}\bigr)^l
+\rho^{k-t}\epsilon_p^{tk-e_0l-l(l-1)/2}\\
+&\times C_p(t,k,j+6m)
+Q^{-(s+1/2)e_0-(1+3s)l-wk-6zm},\qquad t=e_0+3l.
+\end{aligned}
+\tag{A.10}\label{eq:A.10}
+\]
+
+The marked series restricts the restored sum to \(t>0\). Its four families and the allowed frequencies are \[
+\begin{array}{c|cc}
+ t&k=0&k=1\\\hline
+ 6r+6&j'\ge t-1&j'=t\\
+ 6r+1&j'=t-1&j'\ge t\\
+ 6r+3&j'=t-1&j'=t\\
+ 6r+4&j'=t-1&j'=t
+\end{array}\qquad r\ge0.
+\tag{A.11}\label{eq:A.11}
+\] This follows by lifting a residue modulo \(p\): a nonprincipal Gauss sum is supported at valuation exactly \(t-1\), while a principal one has its negative boundary there and its value \(Q^t-Q^{t-1}\) at larger valuations. In \eqref{eq:A.7}, these conditions apply to exponents \(t\) for \(k=0\) and \(t-1\) for \(k=1\).
+
+Insert \(j'=j+6m\). Increasing \(r\) and the first allowed \(m\) together by one multiplies a term by \(R\); increasing \(m\) further gives \(V\). The two strict-inequality tails are therefore \[
+ \frac{R(1-Q^{-1})}{(1-R)(1-V)},\qquad
+ -\frac{\eta(p)(Q-1)Q^{-s-w}V^{\mathbf1_{j\le1}}}{(1-R)(1-V)}.
+\] The second tail begins at \(m=r+1\) for \(j\le1\), and at \(m=r\) otherwise. The equality cases give the six \(J_j\) in \eqref{eq:A.9}, using \eqref{eq:A.1}. For example \(j=2\) comes from \((t,k,m)=(3,0,0)\); \(j=3\) comes from \((3,1,0)\) and \((4,0,0)\). In the restored summand the cube phase is \(\overline{\gamma_3(p)}\), not \(\gamma_3(p)\); \(\gamma_3(p)^2=\chi_p(-1)\) keeps the parity factor explicit.
+
+For \(t=0\), the \(k=0\) terms give \((1-V)^{-1}\); the \(k>0\) terms require \(j=m=0\) and give \(W^\circ/(1-W^\circ)\). This proves \eqref{eq:A.9} in every valuation, including shared primes. Factoring out \((1-V)^{-1}\), \((1-W)^{-1}\), and \(1-D\) gives \[
+ \mathcal F_{\eta,u}(s,w,z)=
+ \frac{\zeta_K^S(6z)L_K^S(w,\psi_u)}{L_K^S(s,\eta\overline{\psi_u})}
+ H_{\eta,u}(s,w,z).
+\] Together with \hyperref[sec:A.2]{§A.2} this proves \eqref{eq:2.8}. \hfill\(\square\)
+
+\subsection{Finite Fourier correlations}\label{sec:A.4}
+
+For arbitrary primary moduli, distinguish the normalized Gauss sum from the ray phase:
+
+\[
+\mathfrak g(a,h)=q_a^{-1/2}\sum_{x\bmod a}\chi_a(x)e(hx/a),\qquad \mathfrak g(1,h)=1.
+\]
+
+For a good prime \(p\), \(P=q_p\), and \(j\ge1\), the direct lift \(x=x_0+py\) gives
+
+\[
+|\mathfrak g(p^j,h)|=P^{(j-1)/2}\mathbf1_{v_p(h)=j-1}\quad(6\nmid j),
+\]
+
+\[
+\mathfrak g(p^j,h)=P^{j/2}\mathbf1_{p^j\mid h}
+ -P^{j/2-1}\mathbf1_{p^{j-1}\mid h}\quad(6\mid j).
+\tag{A.12}\label{eq:A.12}
+\]
+
+Here \(v_p(0)=\infty\); a sixth-power character retains its coprimality mask.
+
+Define the full correlation
+
+\[
+F(u,v;j)=\sum_{\substack{x\bmod u,\ y\bmod v\\vx-uy\equiv j\pmod{uv}}}
+ \chi_u(x)\overline{\chi_v(y)}.
+\tag{A.13}\label{eq:A.13}
+\]
+
+Additive orthogonality, with the minus sign in the Fourier factor, gives the exact identity
+
+\[
+F(u,v;j)=\frac1{\sqrt{q_uq_v}}
+ \sum_{h\bmod uv}\mathfrak g(u,h)\overline{\mathfrak g(v,h)}e(-jh/(uv)).
+\tag{A.14}\label{eq:A.14}
+\]
+
+At \(j=0\), a nonzero summand has both residues units. The congruence then forces \(u\mid v\) and \(v\mid u\). Hence
+
+\[
+F(u,v;0)=\mathbf1_{u=v}\phi(u).
+\tag{A.15}\label{eq:A.15}
+\]
+
+For complete common-support extraction, let
+
+\[
+u=Da,\quad v=Eb,\quad (a,b)=1,\quad (ab,DE)=1,
+\]
+
+where every prime of \(D\) also divides \(E\), and conversely. Then
+
+\[
+F(Da,Eb;j)=F(D,E;j)R(a,E)R(b,D)R(a,b)
+ \chi_a(j)\overline{\chi_b(-j)}.
+\tag{A.16}\label{eq:A.16}
+\]
+
+To verify the phases, reduction at primes of \(a,b\) gives \(\chi_a(j)\overline{\chi_a(Eb)}\) and \(\overline{\chi_b(-j)}\chi_b(Da)\). At the common primes, put \(x'=bx\), \(y'=ay\). The remaining scalar is \(\overline{\chi_D(b)}\chi_E(a)\). The three unit quotients combine to the displayed three factors of \(R\). Every inversion here is at a unit. If \(j\) is a nonunit, the displayed zero symbols are retained; the congruence calculation gives the same zero.
+
+The exact common-prime correlations needed for estimates follow from \eqref{eq:A.13}. At a prime of common multiplicities \(i,j\), the correlation vanishes unless \(p^{\min(i,j)}\mid h\). Write the divided frequency as \(k\). For \(i=j\), its local value is
+
+\[
+P^{i-1}\begin{cases}
+P-1,&p\mid k,\\
+-1,&p\nmid k,\ 6\nmid i,\\
+P-2,&p\nmid k,\ 6\mid i.
+\end{cases}
+\tag{A.17}\label{eq:A.17}
+\]
+
+For \(i>j\), it vanishes unless \(6\mid j\) and \(p\nmid k\), in which case it is
+
+\[
+P^{j-1}(P-1)\chi_p(k)^{i-j}.
+\tag{A.18}\label{eq:A.18}
+\]
+
+The case \(j>i\) follows by conjugating and changing the sign of the frequency. These are finite-field sums: after division by the common power, one variable is fixed if the multiplicities differ; for equal multiplicities one obtains a multiplicative-character sum over \(\mathbb F_P^\times\setminus\{1\}\).
+
+\textbf{Artificial extension rule.} Formula \eqref{eq:A.16} is not an identity on newly noncoprime residual pairs. When separating such pairs, define its right side on all individually allowed \(a,b\), and first insert the complete finite Möbius identity
+
+\[
+\sum_{(a,b)=1}c(a,b)F(Da,Eb;j)
+=\sum_t\mu(t)\sum_{t\mid a,b}c(a,b)\widetilde F_{D,E}(a,b;j).
+\tag{A.19}\label{eq:A.19}
+\]
+
+The complete divisor sum kills the artificial pairs before factorwise estimates. Its extra primes are not part of the genuine common support and inherit none of its valuation restrictions.
+
+\section{Cubic reflection and the two energy estimates}\label{sec:B}
+
+\subsection{Cubic reflection}\label{sec:B.1}
+
+For arbitrary element rows, write \(k=u_0k_Sk_{\rm good}\). The unit, the valuations at \(S\) modulo six, and the good row's finite ray class leave only finitely many characters \(\nu(A)\chi_A(u_0k_S)R(A,k_{\rm good})\). The local good-prime exponents carry all remaining dependence. Thus the fixed modulus in the following reflection is selected before any good row prime varies; no moving prime enters it.
+
+Let \(\nu_0\) belong to a fixed finite collection of ray characters, with their prescribed zero extensions. At finitely many good primes choose \(j_{\mathfrak p}\in\{0,\ldots,5\}\), and put \(\Psi(A)=\nu_0(A)\prod_{\mathfrak p}\chi_{\mathfrak p}(A)^{j_{\mathfrak p}}\). Define \[
+\mathcal C_V(X;\Psi)=
+\sum_{n\ \mathrm{sf},b}
+\frac{\gamma_2(n)\overline{\alpha(nb^3)}\Psi(nb^3)}{\sqrt{q_n}\,q_b}
+V(q_nq_b^3/X).
+\tag{B.1}\label{eq:B.1}
+\] \textbf{Proposition B.1 (cubic reflection).} For annular \(V\), or the Gaussian used in the probe, this sum is a divisor-bounded finite sum of branches \[
+\zeta\sum_{\mu\ne0}\frac{d(\mu)\alpha(\mu)\vartheta(\lambda^4\mu)}{\sqrt{q_\mu}}
+\prod_{\mathfrak p\in A}B_{\mathfrak p,j_{\mathfrak p}}(\lambda^4\mu)
+V^\sharp\!\left(\frac{q_\mu X}{q_{c_F}^{2}q_r^{2}}\right),
+\quad r=\prod_{\mathfrak p\in A}\mathfrak p,
+\tag{B.2}\label{eq:B.2}
+\] where \(c_F\) has finitely many fixed possibilities and the local factors are \[
+B_{\mathfrak p,j}(x)=
+\begin{cases}
+\chi_{\mathfrak p}(x)^{-j-2},&j\notin\{0,4\},\\
+q_{\mathfrak p}^{-1/2}(-1+q_{\mathfrak p}1_{\mathfrak p\mid x}),&j=4,\\
+q_{\mathfrak p}^{-1/2}\chi_{\mathfrak p}(x)^{-2},&j=0\text{ active}.
+\end{cases}
+\tag{B.3}\label{eq:B.3}
+\] Every nonzero exponent is active. An exponent-zero prime also has an inactive branch with scalar \(1-q_{\mathfrak p}^{-1}\), in which it is absent from \(r\).
+
+The branch scalar, needed when the prime varies, is \[
+\zeta=-\frac{i}{81}\overline{\alpha(c)}^{\,2}\widehat\phi(h_0)
+\overline{\kappa_F}
+\prod_{\mathfrak p\in I}(1-q_{\mathfrak p}^{-1})
+\prod_{\mathfrak p\in A}\chi_{\mathfrak p}(\sigma_{\mathfrak p})^{-2}
+\omega_{\mathfrak p,j_{\mathfrak p}},\qquad c=c_Fr,
+\tag{B.4}\label{eq:B.4}
+\] where \(I\) is the inactive set, \(\widehat\phi\) is the normalized fixed-modulus Fourier coefficient used below, and \[
+\begin{gathered}
+\sigma_{\mathfrak p}=\lambda^2c/\mathfrak p,\qquad
+\epsilon_{\mathfrak p}=-\bigl((\lambda^3c/\mathfrak p)\sigma_{\mathfrak p}\bigr)^{-1}
+\pmod{\mathfrak p},\\
+\omega_{\mathfrak p,j}=
+\begin{cases}
+\chi_{\mathfrak p}(-1)^j\gamma_j(\mathfrak p)\gamma_{j+2}(\mathfrak p)
+\chi_{\mathfrak p}(\epsilon_{\mathfrak p})^{-j-2},&j\notin\{0,4\},\\
+\gamma_4(\mathfrak p),&j=4,\\
+-\gamma_2(\mathfrak p)\chi_{\mathfrak p}(\epsilon_{\mathfrak p})^{-2},&j=0.
+\end{cases}
+\end{gathered}
+\] The inverse is taken in the residue field; its argument is a unit. Each \(\omega_{\mathfrak p,j}\) has modulus one, so \(|\zeta|\le1/81\). The three fixed cusp sequences are supported on \[
+\mu=u\lambda^mnb^3,\qquad m\ge-4,
+\qquad |d(u\lambda^mnb^3)|\le27\,3^{m/6}\sqrt{q_b}.
+\tag{B.5}\label{eq:B.5}
+\] Here the dual ideals \(n,b\) are primary and prime to \(\lambda\), \(n\) is squarefree, and they may share primes and meet \(S\). They do not carry the primal \(S\)-exclusion. After the active radical is fixed modulo one fixed ray modulus, \(d\), \(\vartheta\), and \(c_F\) are independent of its moving primes. Only a bounded scalar and the displayed local characters vary with that radical.
+
+With \(\widehat V(t)=\int_0^\infty V(x)x^t\,dx/x\), the exact transform is \[
+V^\sharp(y)=\frac1{2\pi i}\int_{(0)}\widehat V(-t)
+\prod_{\pm}\frac{\Gamma(1+t\pm1/6)}{\Gamma(1-t\pm1/6)}
+\left(\frac{(2\pi)^4y}{27}\right)^{-t}\,dt.
+\tag{B.6}\label{eq:B.6}
+\] For \(V(y)=y^{1/2}W(y)\), with annular \(W\), every fixed \(A,j\) has a finite \(J\) such that \[
+|(y\partial_y)^jV^\sharp(y)|
+\ll_{A,j}\|W\|_{C^J}\min(y^{1/4},y^{-A}).
+\tag{B.7}\label{eq:B.7}
+\] The same bound holds for \(V_G\), with a fixed constant in place of the annular seminorm.
+
+\textbf{Proof.} We derive the reflection from the classical cubic-theta automorphy and cusp expansions {[}DR, §5 and Appendix A{]}. Write \(\check e(z)=e(\lambda z)\) and \(L(t)=\left(\begin{smallmatrix}1&0\\t&1\end{smallmatrix}\right)\). Here \(\Gamma_1(3)=\{g\in\operatorname{SL}_2(\mathcal O):g\equiv I\pmod3\}\). Its theta multiplier is \(\kappa(\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right))=(c/a)_3\) for \(c\ne0\), and one otherwise; it extends to \(\operatorname{SL}_2(\mathbf Z)\Gamma_1(3)\) by taking value one on \(\operatorname{SL}_2(\mathbf Z)\). The conjugate theta expansion has coefficient \(3^{5/2}|b|\chi_n(\lambda)^{-2}\gamma_2(n)\) at \(\lambda^{-3}nb^3\), and constant term \(3^{5/2}v^{2/3}/2\). At \(I,L(\lambda),L(-\lambda)\), the conjugate expansions are \[
+\sigma_Hv^{2/3}+\sum_{\mu\ne0}d_H(\mu)vK_{1/3}(4\pi|\mu|v)\check e(\mu z).
+\tag{B.8}\label{eq:B.8}
+\] These three published cusp expansions give \eqref{eq:B.5}. We derive their twisted reflection here; no prime-sum asymptotic is used.
+
+Choose a fixed modulus \(L\) containing the primary condition, supplementary conditions and fixed conductors. Call the periodic function \(\chi_x(\lambda)^2\nu_0(x)\), with its prescribed primary and nonunit zeros, \(\phi(x)\), and set \(\widehat\phi(h_0)=q_L^{-1}\sum_{x\bmod L}\phi(x)e(-h_0x/L)\). Expand it additively modulo \(L\). At a moving prime, the Fourier coefficient is \[
+q^{-1}\sum_{x\bmod\mathfrak p}\chi_{\mathfrak p}(x)^j e(-hx/\mathfrak p)
+=\begin{cases}
+q^{-1/2}\tau^-_{\mathfrak p,j}\chi_{\mathfrak p}(h)^{-j},&j\ne0, h\ne0,\\
+0,&j\ne0, h=0,\\
+-q^{-1},&j=0, h\ne0,\\
+1-q^{-1},&j=0, h=0,
+\end{cases}
+\tag{B.9}\label{eq:B.9}
+\] with \(|\tau^-_{\mathfrak p,j}|=1\). An active branch therefore translates by \(z_h=\lambda^2(h_0/L+\sum_{\mathfrak p\mid r}h_{\mathfrak p}/\mathfrak p)\), with all \(h_{\mathfrak p}\ne0\).
+
+Reduce \(\lambda^2h_0/L=a_F/c_F\). Normalize by a unit so that \(a_F\equiv1\pmod3\) when \(\lambda\mid c_F\), and \(c_F\equiv1\pmod3\) otherwise. Then \[
+c=c_Fr,\qquad a=a_Fr+\lambda^2c_F\sum_{\mathfrak p\mid r}(r/\mathfrak p)h_{\mathfrak p},
+\qquad z_h=a/c.
+\] Fix \(r\) modulo \(M^2\), where \(M=\lambda^{12}L^4\), and choose the lifts \(h_{\mathfrak p}\) to be zero modulo \(M^2\). Complete \((a,c)\) to \(g=\left(\begin{smallmatrix}a&b_0\\c&\delta\end{smallmatrix}\right)\), choosing \(\delta\equiv a^{-1}\) to the required depth at primes of \(c_F\), \(\delta\equiv0\) at primes of \(M\) not dividing \(c_F\), and \(\delta\equiv a^{-1}\pmod{\mathfrak p}\) for \(\mathfrak p\mid r\). Choose \[
+H=\begin{cases}
+I,&3\mid c,\\
+L(u_0),\quad u_0\in\{\lambda,-\lambda\},\ u_0\equiv c\pmod3,
+&v_\lambda(c)=1,\\
+EL(-u_0),\quad u_0\equiv a\pmod3,&(c,\lambda)=1,
+\end{cases}
+\qquad E=\begin{pmatrix}0&-1\\1&0\end{pmatrix}.
+\] In the last case \(u_0\) is chosen from a fixed set of representatives of \(\mathcal O/3\mathcal O\), not just \(\{\pm\lambda\}\). The congruences above give \(gH^{-1}\equiv I\pmod3\). The trivial multipliers on \(\operatorname{SL}_2(\mathbf Z)\) and translations by \(\mathbf Z+3\mathcal O\) reduce the last case to the same three cusp expansions.
+
+Reciprocity in the multiplier gives \(\kappa(gH^{-1})=\kappa_F\prod_{\mathfrak p\mid r}\chi_{\mathfrak p}(a)^2\), with \(\kappa_F\) fixed in this sector. The fixed-prime expressions in the three cases are \((c_F/a)_3\), \((-u_0/(a-u_0b_0))_3((c_F/u_0)/a)_3\), and \((a/c_F)_3\), respectively. They contain no residual column.
+
+The coordinate formula \[
+g^{-1}(a/c+z,v)=
+\left(-\frac\delta c-\frac{\bar z}{c^2(|z|^2+v^2)},
+\frac v{q_c(|z|^2+v^2)}\right)
+\tag{B.10}\label{eq:B.10}
+\] shows that differentiation by \(\partial_{\bar z}\) at zero kills the constant term and contributes exactly \(-(cv)^{-2}\partial_{z'}\). Put \(x=\lambda^4\mu\) and \(f=\lambda^3c_F\). Additive CRT expresses the translated phase as \[
+\check e(-\delta\mu/c)=\vartheta(x)
+\prod_{\mathfrak p\mid r}e(\epsilon_{\mathfrak p}h_{\mathfrak p}^{-1}x/\mathfrak p),
+\quad \vartheta(x)=e(-\delta_Fr^{-1}x/f),
+\quad\epsilon_{\mathfrak p}\equiv-(\lambda^5c_F^2(r/\mathfrak p)^2)^{-1}\pmod{\mathfrak p}.
+\] Conjugating the theta multiplier contributes \(\chi_{\mathfrak p}(h_{\mathfrak p})^{-2}\). After \(y=h_{\mathfrak p}^{-1}\), the exponent is \(j+2\); the resulting Gauss or Ramanujan sum is exactly \eqref{eq:B.3}, including its zeros. The normalized Gauss sums in this calculation give exactly the factors \(\omega_{\mathfrak p,j}\) and the scalar \eqref{eq:B.4}. This records their dependence on the entire active conductor; it is not an arbitrary row-dependent coefficient.
+
+To check the archimedean normalization, define \[
+\mathcal D_\Psi(s)=\sum_{n\ {\rm sf},b}\gamma_2(n)\overline{\alpha(nb^3)}\Psi(nb^3)q_n^{-s}q_b^{1/2-3s}.
+\] Let \(\Theta_\Psi\) be the conjugate theta series with its \(\mu\)-coefficient multiplied by \(\phi(\lambda^3\mu)\prod_{\mathfrak p}\chi_{\mathfrak p}(\lambda^3\mu)^{j_{\mathfrak p}}\). Differentiation supplies \(2\pi i\overline\mu\), and \[
+\int_0^\infty v^{2s}K_{1/3}(4\pi|\mu|v)\,dv
+=\frac{2^{2s-1}\Gamma(s+1/3)\Gamma(s+2/3)}{(4\pi|\mu|)^{2s+1}}.
+\] Consequently, initially for \(\Re s>1\), \[
+\int_0^\infty\partial_{\bar z}\Theta_\Psi(0,v)v^{2s-1}\,dv
+=\frac{3^{5/2}}4\left(\frac{27}{(2\pi)^2}\right)^s
+\Gamma(s+1/3)\Gamma(s+2/3)\mathcal D_\Psi(s).
+\] Apply \eqref{eq:B.10} to this integral. Changing height to \(1/(q_cv)\) contributes \(-c^{-2}q_c^{1-2t}\); its factor \(c^{-2}q_c\) has modulus one. Dividing by the direct Mellin factor and replacing \(t\) by \(-t\) yields \eqref{eq:B.6} and the scalar \(1/81\). The differentiated cusp expansions decay at both height endpoints. Their Mellin integrals are entire; the direct and reflected absolute-convergence half-planes, Stirling and Phragmén--Lindelöf give polynomial bounds on intervening vertical strips. Rapid test decay therefore justifies the contour shifts; moving to \(\Re t=-1/4\) crosses no gamma pole and gives the small-\(y\) bound, while any positive line gives rapid decay at infinity. This proves the reflection, its scalar, and \eqref{eq:B.2}--\eqref{eq:B.7} with finite seminorm control. \hfill\(\square\)
+
+\subsection{Unmarked energy, including a frozen label}\label{sec:B.2}
+
+We use the quadratic large sieve {[}QLS, Theorem 1.1 and Corollary 1.2{]} in the form \[
+\sum_{q_R\le K}^{*}\left|\sum_{q_n\le N}^{*}c_n\chi_R(n)^3\right|^2
+\ll_\varepsilon(KN)^\varepsilon(K+N)\sum_n|c_n|^2.
+\tag{B.11}\label{eq:B.11}
+\] The coefficients are independent of \(R\). The quadratic symbol on primary generators has primitive conductor \(R\lambda^{e(R)}\), where \(e(R)=(q_R-1)/2\pmod2\): adjusting a generator to its primary representative contributes the character modulo \(\lambda\) to this power. A fixed primary square class modulo four fixes \(e(R)\). Coprime indices in that class have primitive product conductor equal to their product, and reciprocity contributes the fixed bicharacter \(R(\cdot,\cdot)\). These are the Hecke-family hypotheses of the sieve. Finite ray partition and transpose duality give the displayed orientation. A fixed row restriction decreases the positive sum; a column restriction is imposed by zero coefficients.
+
+For a squarefree ideal \(f\), set \[
+\Psi_k(a)=\nu(a)\chi_a(k)\chi_a(f)^4,
+\] and, with \(V(y)=y^{1/2}W(y)\), define \[
+T(X;k,f)=\sum_{n\ \mathrm{sf},b}
+\frac{\overline{\alpha(n)}\gamma_2(n)\Psi_k(n)
+\overline{\alpha(b)}^{3}\Psi_k(b)^3}{\sqrt{q_n}\,q_b}
+V(q_nq_b^3/X).
+\tag{B.12}\label{eq:B.12}
+\]
+
+\Needspace{9\baselineskip}
+\textbf{Proposition B.2 (completed energy).} For every \(\varepsilon>0\), \[
+\sum_{0<q_k\le H}|T(X;k,f)|^2
+\ll(HXq_f)^\varepsilon\|W\|_{C^J}^2
+\left(H+\frac{H^2q_f}{X}\right),\qquad H,X\ge1.
+\tag{B.13}\label{eq:B.13}
+\] The constants and smooth order are uniform in \(f\).
+
+\textbf{Proof.} First replace \(f\) by an arbitrary ideal \(g\) and restrict the row to \(u_0s\), with \(s\) squarefree. Write \(s=tk_0\), where \(t\) contains its primes in \(gS\), and put \(H_0=H/q_t\). The residual squarefree row \(k_0\) is prime to \(gS\). Its local exponent is one, so \eqref{eq:B.3} becomes the quadratic character \(\chi_{\mathfrak p}(x)^3\). A frozen prime has exponent \(j_{\mathfrak p}\equiv1_{\mathfrak p\mid t}+4v_{\mathfrak p}(g)\pmod6\), with the fixed-prime part absorbed in the finite sector. This formula includes every collision.
+
+After fixing unit, \(\lambda\)-valuation and a finite ray class, a reflected branch is \[
+S_m[A,Y](k_0)=3^{-m/3}\sum_{n\ \mathrm{sf},b}
+\frac{A(n,b)\chi_{k_0}(nb)^3}{\sqrt{q_n}\,q_b}
+V^\sharp\!\left(\frac{3^mq_nq_b^3H_0^2}{Yq_{k_0}^2}\right),
+\tag{B.14}\label{eq:B.14}
+\] times a bounded row scalar. The coefficients \(A\) are independent of \(k_0\). Initially \(|A|\le a=1\), \(Y\asymp H_0^2/X\). To account for \(j=4\), define \(A_n(n,b)=1_{\mathfrak p\nmid n}A(\mathfrak pn,b)\) and \(A_b(n,b)=1_{\mathfrak p\nmid n}A(n,\mathfrak pb)\). The disjoint splitting \(1_{\mathfrak p\mid nb^3}=1_{\mathfrak p\mid n}+1_{\mathfrak p\nmid n,\mathfrak p\mid b}\) gives, with \(q=q_{\mathfrak p}\), \[
+S_m[AB_{\mathfrak p,4},q^2Y]
+=-q^{-1/2}S_m[A,q^2Y]
++\chi_{k_0}(\mathfrak p)^3S_m[A_n,qY]
++q^{-1/2}\chi_{k_0}(\mathfrak p)^3S_m[A_b,Y/q].
+\tag{B.15}\label{eq:B.15}
+\] The squarefree restriction and all shared-prime cases are preserved. Thus \((a^2,Y)\) changes to \((a^2,q^2Y)\) for \(j\notin\{0,4\}\), to \((a^2/q,q^2Y)\) for active \(j=0\), and to the three pairs \((a^2/q,q^2Y),(a^2,qY),(a^2/q,Y/q)\) for \(j=4\). An inactive prime does not increase either quantity. In every branch, \[
+a^2\le1,\qquad a^2Y\ll H_0^2q_t^2q_g/X.
+\tag{B.16}\label{eq:B.16}
+\] Indeed a prime in \(t\) costs at most \(q^2\); a prime occurring to exponent one in \(g\), outside \(t\), has \(j=4\) and costs only \(q\); exponent at least two costs at most \(q^2\le q^{v_{\mathfrak p}(g)}\).
+
+In the following dual sums the star means squarefree, without an \(S\)-exclusion. Split the finitely many squarefree \(S\)-parts of \(n\) before applying \eqref{eq:B.11}; their symbols are bounded row factors. Keep the actual row cutoff in the joint logarithmic profile of §1.2. On dyads \(q_n\asymp U,q_b\asymp B\), separation gives the fixed-column sums \[
+G_{b,\tau}(k_0)=\sum_{q_n\asymp U}^{*}
+\frac{A(n,b)}{\sqrt{q_n}}(q_n/U)^{i\tau}\chi_{k_0}(n)^3.
+\] Their Fourier densities have the common bound \(\ll(1+3^mUB^3/Y)^{-A}(1+|\tau|)^{-2}\). Cauchy and \eqref{eq:B.11} give \[
+\sum_{q_{k_0}\le H_0}^{*}|G_{b,\tau}(k_0)|^2
+\ll a^2(H_0U)^\varepsilon(H_0+U).
+\] Weighted Cauchy--Schwarz in \(b\), using \(\sum_{q_b\asymp B}q_b^{-1}\ll1\), now yields \[
+\|S_{m;U,B}\|_2
+\ll a\mathcal D^\varepsilon3^{-m/3}(\sqrt{H_0}+\sqrt U)
+(1+3^mUB^3/Y)^{-2},
+\] where \(\mathcal D\ge2+H+X+q_g\). The dyadic bounds \(\sum_{U,B}(1+UB^3/Z)^{-2}\ll\log^2(2+Z)\) and \(\sum_{U,B}\sqrt U(1+UB^3/Z)^{-2}\ll\sqrt Z\) give \(\|\text{branch}\|_2^2\ll a^2\mathcal D^\varepsilon(H_0+Y)\), after summing \(m\ge-4\). Equation \eqref{eq:B.16} and divisor-bounded branch counts prove \[
+\sum_{q_s\le H}^{*}|T(X;u_0s,g)|^2
+\ll(HXq_g)^\varepsilon\|W\|_{C^J}^2
+\left(H+H^2q_g/X\right).
+\] Finally write every row uniquely as \(k=u_0sv^2\), with \(s\) squarefree; \((s,v)=1\) is not required. Complete multiplicativity, with zeros, and \(8\equiv2\pmod6\) imply \(T(X;u_0sv^2,f)=T(X;u_0s,fv^2)\). Apply the last bound at \(H/q_v^2\) and \(g=fv^2\). Its main expression is \(q_v^{-2}(H+H^2q_f/X)\). Since \(\sum_vq_v^{-2}<\infty\), summing \(v\) and the six units proves \eqref{eq:B.13}. \hfill\(\square\)
+
+Taking \(f=1\) proves \eqref{eq:4.4}. A log-norm annular partition extends the estimate to \(V_G\): its seminorms are summable against every fixed exponential, so the row-space triangle inequality converges.
+
+\subsection{A quadratic--cubic norm for one prime}\label{sec:B.3}
+
+Let \(k,n\) be squarefree, \(q_k\ll K\), \(q_n\asymp N\), and let \(q_b\asymp B\), with no squarefreeness condition on \(b\). Rows avoid \(S\); dual indices may contain its primes other than \(\lambda\). Let \(\beta(n,b)\) be independent of \(k\). Write \[
+b=gt^2,\quad c=(n,g),\quad n=cm,\quad g=ch,
+\qquad q_c\asymp C,\quad q_g\asymp G,\quad q_t\asymp T,
+\quad B\asymp GT^2.
+\] Here \(g\) is squarefree and \(c,m,h\) are pairwise coprime and squarefree; \(g,t\) may share primes. For one such dyadic block, denote its quadratic row norm by \(\mathcal Q_{C,G,T}(\beta)\). Then \[
+\mathcal Q_{C,G,T}(\beta)
+\ll (KNB)^\varepsilon T
+\sum_{q_t\asymp T}\sum_{\substack{r\ {\rm sf},\ (r,S)=1\\q_r\ll\min(K,C)}}
+\left(\frac K{q_r}+\frac{NG}{C^2}\right)\frac C{q_r}
+\sum_{c',m,h}|\beta(rc'm,rc'ht^2)|^2.
+\tag{B.17}\label{eq:B.17}
+\] The final sum retains the original support, with \(c=rc'\). Fixed row and coefficient restrictions are allowed.
+
+\textbf{Proof.} The zero-preserving identity is \[
+\chi_k(nb)^3=\chi_k(mh)^3\mathbf1_{(k,ct)=1}.
+\] Cauchy in the \(O(T)\) choices of \(t\) contributes the outside \(T\). For fixed \(t\), retain \((k,t)=1\) as a row restriction and expand the other mask completely as \(\sum_{r\mid(k,c)}\mu(r)\). Rowwise divisor Cauchy costs \((KNB)^\varepsilon\). Write \(k=rk'\), \(c=rc'\). Squarefreeness gives the separate restrictions \((k',r)=(c',r)=1\); no \((k',c')\)-mask is reinserted in an individual divisor term.
+
+The factor \(\chi_r(mh)^3\) is now a column coefficient. Separate the finitely many squarefree \(S\)-parts of \(m,h\). Their symbols are bounded row factors; the remaining product is squarefree and good, of norm \(O(NG/C^2)\). Apply \eqref{eq:B.11} at row length \(K/q_r\). Grouping the good parts by their product costs a divisor factor, and Cauchy over the \(O(C/q_r)\) possible \(c'\) gives \eqref{eq:B.17}. The original \(S\)-parts are then restored inside the positive coefficient sum. Empty quotient ranges contribute zero; on nonempty bounded ranges, replacing a scale by its maximum with one changes only a fixed constant. \hfill\(\square\)
+
+For \(|\beta|\le1\), ideal counting in \eqref{eq:B.17}, followed by the dyadic sums, gives \[
+\sum_k\left|\sum_{n,b}\beta(n,b)\chi_k(nb)^3\right|^2
+\ll(KNB)^\varepsilon(K+NB)NB.
+\tag{B.18}\label{eq:B.18}
+\] Indeed, on \(q_r\asymp r_0\) the coefficient count times \(C/q_r\) is \(O(NG/r_0^2)\); the \(O(r_0)\) choices of \(r\) and the two \(T\)-factors yield \(NB/r_0\).
+
+Heath--Brown's cubic large sieve {[}HB, Theorem 2{]}, for squarefree primary Eisenstein ideals and arbitrary fixed coefficients, is \[
+ \sum_{q_a\le U}^{*}\left|\sum_{q_b\le V}^{*}c_b\chi_a(b)^2\right|^2
+ \ll(UV)^\varepsilon\{U+V+(UV)^{2/3}\}\sum_b|c_b|^2.
+\tag{B.19}\label{eq:B.19}
+\] No squarefree-rational-norm restriction is imposed. Reciprocity and conjugation permit either cubic orientation.
+
+\textbf{Lemma B.3 (one-prime hybrid norm).} Let \(p\) run over good primes with \(q_p\asymp L\). Suppose \(|a(p)|\le1\) is independent of \(k,n,b\), and \(|\beta(n,b)|\le1\) is independent of \(k,p\). With the other variables as above, \[
+\begin{aligned}
+ &\sum_k\left|\sum_p\frac{a(p)}{\sqrt{q_p}}\mathbf1_{p\nmid k}
+ \sum_{n,b}\beta(n,b)\chi_k(nb)^3\chi_p(n)^{-2}\mathbf1_{p\nmid b}\right|^2\\
+ &\hspace{15mm}\ll(KNBL)^\varepsilon(K+NB)B\{N+L+(NL)^{2/3}\}.
+\end{aligned}
+\tag{B.20}\label{eq:B.20}
+\] Separate fixed restrictions on the row, prime and dual supports, including ray sectors, are allowed.
+
+\textbf{Proof.} First omit the row--prime mask. Apply \eqref{eq:B.17} with the prime sum inside the column coefficient. Its variables give \(b=gt^2\), \(n=cm\), \(g=ch\), \(c=rc'\), and \[
+ \chi_p(rc'm)^{-2}\mathbf1_{p\nmid rc'ht^2}
+ =\chi_p(r)^{-2}\chi_p(c'm)^{-2}\mathbf1_{p\nmid ht}.
+\] The character already supplies the zeros at \(r,c',m\). For fixed \(r,h,t\), absorb \(\chi_p(r)^{-2}\mathbf1_{p\nmid ht}\) into \(a(p)\). Its squared central coefficient mass is \(\sum_{q_p\asymp L}q_p^{-1}\ll1\). Discard \(|\beta|^2\le1\) in this positive sum, group \(c',m\) by the squarefree product \(j=c'm=n/r\), and apply \eqref{eq:B.19}. The result is \[
+ (KNBL)^\varepsilon\left\{\frac N{q_r}+L+
+                 \left(\frac{NL}{q_r}\right)^{2/3}\right\}.
+\] Grouping costs a divisor factor. The \(h\)-count is \(O(G/C)\); together with the two \(T\)-factors and \(C/q_r\) in \eqref{eq:B.17}, it gives \(B/q_r\). The dyadic \(r\)-count cancels that denominator. Since \(NG/C^2\ll NB\), summing proves \eqref{eq:B.20} without the row--prime mask.
+
+For the removed collisions, write \(k=pk'\). Rowwise divisor Cauchy and \eqref{eq:B.18}, with \(p\) fixed and its characters absorbed into \(\beta\), give \[
+ \ll(KNBL)^\varepsilon\sum_{q_p\asymp L}\frac1{q_p}
+       \left(\frac K{q_p}+NB\right)NB
+ \ll(KNBL)^\varepsilon(K/L+NB)NB.
+\] This is bounded by the right side of \eqref{eq:B.20}, whose last brace is at least \(N\). Triangle between the unmasked and collision sums finishes the proof. For an absent prime, the required bound is simply \eqref{eq:B.18}, corresponding to \(L=1\). \hfill\(\square\)
+
+\subsection{Whole-index compensation and the required energy}\label{sec:B.4}
+
+For a selected good prime \(p\), insert \(\mathbf1_{p\mid nb^3}\) in \eqref{eq:B.1}. If \(p\) belongs to the base local set, this sum vanishes because the mark conflicts with its original zero. Otherwise use \[
+\mathbf1_{p\mid nb^3}=1-\chi_p(nb^3)^0
+\] and apply Proposition B.1 to both terms. In the inactive branch the two coefficients combine as \(1-(1-q_p^{-1})=q_p^{-1}\); the prime is absent from the active conductor. In the active branch the dual column is \[
+q_p^{-1/2}\chi_p(\lambda^4\mu)^{-2},
+\tag{B.21}\label{eq:B.21}
+\] and the scalar in \eqref{eq:B.4} uses \(-\omega_{p,0}\) instead of \(\omega_{p,0}\). Compatibility is exact: the same fixed Fourier term and the same active radical determine the same cusp data in the two transforms. Thus subtraction is performed before any estimate, including when the primal squarefree and cube indices share \(p\).
+
+The scalar matters when \(p\) varies. For distinct active primes \(r,p\), \eqref{eq:B.4} gives the pair factor \[
+\chi_r(p)^{2j_r+2}\chi_p(r)^{2j_p+2}
+=(p/r)_3^{j_r+j_p+2}.
+\] A residual row prime has \(j_r=1\), and an active marked prime has \(j_p=0\); their pair factor is therefore one. Freeze all other active primes, including every \(j=4\) prime. Fix separate classes of the residual row product \(R\) and the marked prime \(P=p\) modulo the full modulus \(M^2\) of \hyperref[sec:B.1]{§B.1}. This fixes the cusp coefficient and additive character without a pair-dependent restriction. The remaining scalar separates into a bounded row factor and a bounded prime factor.
+
+On writing the extracted dual index as a fixed factor times \(nb^3\), its two moving characters are exactly \[
+\chi_R(nb^3)^3=\chi_R(nb)^3,\qquad
+\chi_P(nb^3)^{-2}=\chi_P(n)^{-2}\mathbf1_{(P,b)=1}.
+\] Primal row--prime collisions remain the mask \(\mathbf1_{(P,R)=1}\). All other collisions with frozen factors are separate row, prime, or dual restrictions. Consequently the coefficients satisfy the two independence hypotheses of Lemma B.3. A joint smooth weight in the completed norm and prime norm is handled by Fourier separation in their logarithms; the transformed profiles retain finite weighted seminorms.
+
+\textbf{Proposition B.4.} The sum \eqref{eq:4.5} satisfies \eqref{eq:4.6}.
+
+\textbf{Proof.} We keep the local exponents only inside this proof. Put \(M=28/33\), \(z=5/33\), \(N_*=1+z=38/33\). Freeze the row's maximal powerful part, its valuation-one part supported on \(S\), and its unit. Their norm dyads and the remaining squarefree-row dyad have exponents \(O,H\), with \(H\le M-O+O(1/\log Z)\). The sector reduction in \hyperref[sec:B.1]{§B.1} fixes the excluded-prime phases.
+
+At active frozen good primes let \(A_0\) be the radical exponent; \(S_0\) records the small Ramanujan terms and active zero-mask terms; \(N_0,B_0\) record the forced squarefree and cube factors. Formula \eqref{eq:B.15} uses the disjoint splitting \(\mathbf1_{p\mid nb^3}=\mathbf1_{p\mid n}+\mathbf1_{p\nmid n,p\mid b}\). The squarefree assignment leaves shared cube occurrences in \(b\); the cube assignment extracts one occurrence and leaves a factor \(q_p^{-1/2}\). Since these primes lie in the powerful row, \[
+ 2A_0\le O,\qquad 0\le N_0\le A_0,\qquad S_0,B_0\ge0.
+\] An inactive marked prime has coefficient mass \(\sum_{q_p\asymp Z^z}q_p^{-1}\ll Z^\varepsilon\); remove it by row-space triangle and set \(z_a=0\). An active prime has \(z_a=z\) and stays inside the norm.
+
+Write the residual dual squarefree, cube and ramified norm exponents as \(v,b,e_\lambda\). The central coefficient and effective dual length are \[
+ Z^{-v/2-b-e_\lambda/3-(S_0+B_0+z_a)/2},\qquad
+ T_d=2H+2A_0+2z_a-N_*-N_0-3B_0.
+\tag{B.22}\label{eq:B.22}
+\] The actual joint kernel has argument a fixed factor times \(Z^{v+3b+e_\lambda-T_d}y_ny_b^3y_R^{-2}y_P^{-2}\), where each \(y\) is its norm divided by its dyadic center, and \(y_P\) is absent in the inactive branch. Thus \eqref{eq:B.7} extracts the scalar \(Z^{-(T_d-v-3b-e_\lambda)_+/4}\) from the \textbf{linear} row vector before Fourier separation. The normalized profile has bounded seminorms. Only then enlarge the separated positive row norm to \(q_R\ll Z^H\).
+
+Apply Lemma B.3 at \((K,N,B,L)=(Z^H,Z^v,Z^b,Z^{z_a})\), or \eqref{eq:B.18} in the inactive branch. The prime's inverse square root is already inside that norm. With \(u_h=\min\{v,z_a,(v+z_a)/3\}\), multiplying by the remaining squared coefficient gives, after counting the powerful rows, \[
+\begin{aligned}
+ E={}&O/2+\max(H,v+b)-S_0-B_0+z_a-u_h-b-2e_\lambda/3\\
+    &-\tfrac12(T_d-v-3b-e_\lambda)_+.
+\end{aligned}
+\tag{B.23}\label{eq:B.23}
+\] There are \(O(Z^{O/2})\) powerful ideals: write each as \(x^2y^3\), with \(y\) squarefree, and sum \(Z^{O/2}q_y^{-3/2}\). The fixed-supported part and local allocations have divisor-many choices. Their Cauchy cost adds \(O/2+\varepsilon\) once, not again after \eqref{eq:B.23}.
+
+Retain \(v+3b+e_\lambda\le T_d\), initially suppressing arbitrarily small buffers. Since \[
+ T_d-H\le M+2z-N_*=0,
+\] we have \(\max(H,v+b)=H\). If \(u_h=z_a\), \eqref{eq:B.23} is at most \(M\). Otherwise \(u_h\ge v/2\). With \(y_d=v+3b+e_\lambda\), \[
+ u_h+b+2e_\lambda/3+\tfrac12(T_d-y_d)_+
+ \ge y_d/4+\tfrac12(T_d-y_d)_+\ge T_d/4.
+\] Substitute in \eqref{eq:B.23}, using \(\Delta_H=M-O-H\ge0\), to get \[
+ 4(E-M)\le N_*+2z_a-2M-2\Delta_H-(2A_0-N_0+B_0+4S_0)
+ \le N_*+2z-2M=-\frac8{33}.
+\tag{B.24}\label{eq:B.24}
+\] Thus every retained block has exponent at most \(M\).
+
+For the tails, fix a small retention buffer and discard whole dyads outside it before separation. Their genuine kernel argument exceeds a fixed positive power of \(Z\). Lattice shells give, for \(|K(y)|\le C_Ay^{-A}\), \(A>1\), \[
+ \sum_{\substack{0\ne\mu\in\lambda^{-4}\mathcal O\\a q_\mu>U}}
+ |K(aq_\mu)|\ll_A C_A(1+a^{-1})U^{1-A},\qquad U\ge1.
+\tag{B.25}\label{eq:B.25}
+\] Indeed a dyadic shell has \(O(1+2^jU/a)\) points. All raw coefficient, row, prime and branch counts have a fixed polynomial cost; choose \(A\) afterwards to make their tail arbitrarily small. Negative ramified exponents satisfy \(e_\lambda\ge-4\log_Z3\); fixed support shifts also cost \(O(1/\log Z)\). The buffer, dyadic counts and finite profile orders therefore fit any requested loss. This proves \eqref{eq:4.6}. \hfill\(\square\)
+
+\section{The inverse second moment}\label{sec:C}
+
+The Möbius coefficients are essential: the two Poisson transforms below return to them through the cubic Gauss identities.
+
+\textbf{Theorem C.1 (inverse second moment).} Fix \(C,\kappa,\varepsilon>0\). For \(Z\ge2\), \(1\le D,H\le Z^C\), and \(H\ge DZ^\kappa\), \[
+\sum_{0<q_u\le H}\left|D^{-1/2}
+\sum_n\mu(n)\nu(n)\chi_n(u)^{\pm1}W(q_n/D)\right|^2
+\ll HZ^\varepsilon\|W\|_{C^J}^2.
+\tag{C.1}\label{eq:C.1}
+\] The character \(\nu\) is fixed, including the finite Euler deletions defining its presentation. The derivative order may depend on \(C,\kappa,\varepsilon\), support and fixed arithmetic data. Norm twists of the test have a fixed polynomial cost in height.
+
+We prove it through the positive energy \[
+E(H,X,F;\xi,W)=\frac1{XF}
+\sum_{F\le q_f<2F}^{*}\sum_{0<q_k\le H}
+\left|\sum_n^{*}a_\xi(n)\chi_n(k)\chi_n(f)^4W(q_n/X)\right|^2.
+\tag{C.2}\label{eq:C.2}
+\] The label \(f\) is averaged. Write \(E^{(r)}\) when the inner sum also contains \(1_{(n,r)=1}\). The completed sum \(T(X;k,f)\) and its energy are defined in \hyperref[sec:B.2]{§B.2}.
+
+\subsection{Poisson, smooth separation, and punctures}\label{sec:C.1}
+
+For a primitive character \(\psi\) modulo \(m\), masked Poisson summation is \[
+\sum_{k\in\mathcal O}\psi(k)1_{(k,r)=1}\Phi(q_k/H)
+=\frac{H\gamma(\psi)}{\sqrt{q_m}}
+\sum_{d\mid\operatorname{rad}r}\frac{\mu(d)\psi(d)}{q_d}
+\sum_h\overline{\psi(h)}\widehat\Phi\!\left(\frac{Hq_h}{q_dq_m}\right).
+\tag{C.3}\label{eq:C.3}
+\] Here \(\Phi\) is radial Schwartz and \(\gamma(\psi)=q_m^{-1/2}\sum_{x\bmod m}\psi(x)e(x/m)\). Insert \(\sum_{d\mid(r,k)}\mu(d)\), write \(k=d\ell\), and use additive Poisson in classes modulo \(m\). Its finite transform is \(\sqrt{q_m}\gamma(\psi)\overline{\psi(h)}\), including nonunit frequencies. The primitive principal character has modulus one and value one at \(h=0\), giving zero frequency \(H\widehat\Phi(0)\prod_{\mathfrak p\mid r}(1-q_{\mathfrak p}^{-1})\). Shared primes of \(m,r\) are handled by \(\psi(d)=0\).
+
+Smooth quadratic kernels are separated by \eqref{eq:1.4}.
+
+Möbius inversion and \eqref{eq:A.1} remove a puncture without changing \(XF\): \[
+E^{(r)}(H,X,F;\xi,W)
+\le\tau(\operatorname{rad}r)
+\sum_{d\mid\operatorname{rad}r}E(H,X/q_d,Fq_d;\xi,W).
+\tag{C.4}\label{eq:C.4}
+\] Indeed write \(n=dm\). The label becomes \(df\), and \(\chi_m(d)^4\) retains \((m,d)=1\). Terms with \((d,f)>1\) vanish. Apply Cauchy--Schwarz in \(d\) and enlarge only the positive injective image \(f\mapsto df\). The normalization \(XF\) is unchanged.
+
+\subsection{Canonical estimate and cube completion}\label{sec:C.2}
+
+We claim that, for every fixed \(C_0\ge1,\kappa>0\), \[
+E(H,X,F;\xi,W)\ll Z^\varepsilon\Sigma\|W\|_{C^J}^2,
+\quad \Sigma=XF\le Z^{C_0},\quad
+H,X,F\ge1,\quad H\le\Sigma Z^{-\kappa}.
+\tag{C.5}\label{eq:C.5}
+\] The derivative order is independent of the location of the fixed support interval.
+
+For \(\Psi_{k,f}(n)=\xi(n)\chi_n(k)\chi_n(f)^4\), cube inversion gives the exact identity \[
+X^{-1/2}\sum_n^{*}a_\xi(n)\chi_n(k)\chi_n(f)^4W(q_n/X)
+=\sum_h\frac{\mu(h)\overline{\alpha(h)}^{3}\Psi_{k,f}(h)^3}{q_h}
+T(X/q_h^3;k,f).
+\tag{C.6}\label{eq:C.6}
+\] After opening \(T\), the coefficient of each total cube \(b\) contains \(\sum_{h\mid b}\mu(h)\), so only \(b=1\) survives. Complete multiplicativity with zeros is essential here.
+
+Put \(H_c^3=\min(X,X^2/H^2)\), \(L_b=X/q_b^3\). Weighted Cauchy--Schwarz and \eqref{eq:B.13} bound the terms \(q_h\le H_c\), after averaging \(f\), by \[
+Z^\varepsilon\|W\|_{C^J}^2\left(H+\frac{H^2F H_c^3}{X}\right)
+\ll Z^\varepsilon\Sigma\|W\|_{C^J}^2\quad(H\le\Sigma).
+\] Reopen \(T\) in the remaining terms. The coefficient of a total cube is \(\overline{\alpha(b)}^{3}\xi(b)^3 1_{(b,f)=1}\sum_{h\mid b,q_h>H_c}\mu(h)\), of modulus at most \(\tau(b)\); \(\chi_b(k)^3\) is a bounded row multiplier. Since \(\sum_{q_b\le R}\tau(b)/q_b\ll\log^2(2R)\), a second weighted Cauchy--Schwarz yields \[
+E(H,X,F;\xi,W)
+\ll Z^\varepsilon\left\{\Sigma\|W\|_{C^J}^2+
+\sup_{q_b>H_c,\ L_b>1}E(H,L_b,F;\xi,W)\right\}.
+\tag{C.7}\label{eq:C.7}
+\] For \(L_b\le1\), a nonempty annular support contains only boundedly many columns and costs \(O(H)\). In particular, the supremum is empty if \(H^2\le X\).
+
+\subsection{Two Poisson transformations and the local projector}\label{sec:C.3}
+
+For an independent target \(\Sigma\), assume \(1\le H,L,F,\Sigma\le Z^{C_0}\), \(\max(H,LF)\le\Sigma\). We will prove the transfer \[
+E(H,L,F;\xi,W)
+\ll Z^\varepsilon\Sigma\|W\|_{C^{4m+12}}^2
+\left(1+\sup\frac{E(H',X',F';\xi',U)}{\Sigma'}\right),
+\tag{C.8}\label{eq:C.8}
+\] where \(\Sigma'=X'F'\), \(H',X',F'\ge1\), \(\|U\|_{C^m}\le1\) on a fixed enlargement of the support, and \[
+H'\le\frac{HL}{\Sigma F},\qquad
+\frac{H'}{\Sigma'}\le\frac H\Sigma,\qquad \Sigma'\le L.
+\tag{C.9}\label{eq:C.9}
+\]
+
+Choose a nonnegative radial Schwartz majorant \(\Phi\ge1\) on \([0,1]\), with \(\widehat\Phi\) supported in \([0,C_\Phi]\), by squaring a suitably rescaled real Schwartz function of compact Fourier support. If \(\operatorname{supp}W\subset[u,v]\), fix \(c_I\ge\max(1,4C_\Phi v^2)\) and an enlarged support \([u/2,2v]\).
+
+First apply \eqref{eq:C.3} to the squared column sum. Write \(n_i=Cu_i\), \(C=(n_1,n_2)\). The primitive row character has conductor \(u_1u_2\) and residual mask \(C\); let \(d\mid C\) be its mask divisor. The zero frequency costs \(O(H\|W\|_\infty^2)\). Use \(a_\xi(n)\gamma_1(n)=\mu(n)G(n)\xi(n)\), expand its fixed ray factor, and remove \((u_1,u_2)=1\) by \(u_i=tx_i\) and complete Möbius inversion. The resulting inverse polynomial for a fixed ray character is \[
+P_{C,d,t}(y;U)=\sum_n^{*}\mu(n)\xi_1(n)1_{(n,t)=1}
+\overline{\chi_n(y)}\chi_n(C)^4\chi_n(d)U(q_n/\ell),
+\qquad \ell=\frac L{q_Cq_t}.
+\tag{C.10}\label{eq:C.10}
+\] Here \(C,t\) are coprime squarefree, \(d\mid C\), and \(q_Cq_t\le2vL\). Combine the original frequency and label as \(y=hf^2\); the old zeros include \((f,Ct)=(h,t)=1\). This map has divisor-bounded fibres. Enlarge its nonzero image to \(q_y\le Y_{C,d}\), where \[
+w_{C,d}=\frac{Hq_C}{q_dL^2F},\qquad
+Y_{C,d}=\frac{c_I\Sigma LFq_d}{Hq_C^2}.
+\] Because \(\Sigma\ge LF\), the first Cauchy--Schwarz and smooth separation permit the positive form \[
+Q_{\xi_1}(U)=
+\sum_{\substack{C,t\ \mathrm{sf}\\(C,t)=1\\q_Cq_t\le2vL}}
+\sum_{d\mid C}w_{C,d}\sum_y\Phi(q_y/Y_{C,d})|P_{C,d,t}(y;U)|^2.
+\tag{C.11}\label{eq:C.11}
+\] After this positive enlargement, if \(Q_{\xi_1}(U)\le M\|U\|_{C^j}^2\) for every common \(U\), then \(E(H,L,F;\xi,W)\ll Z^\varepsilon(\Sigma+M)\|W\|_{C^{2j+4}}^2\). The separated kernels are products of annular weights, inverse square roots and \(\widehat\Phi(A/(x_1x_2))\) in a bounded supported range, so their required derivatives are uniform.
+
+Apply \eqref{eq:C.3} again, now to the \(y\)-sum. Write the two columns as \(gz_i\), take \(e\mid g\) for the mask divisor, and remove \((z_1,z_2)=1\) by \(z_i=wn_i\). The nonzero terms satisfy \[
+(g,Ct)=(w,gCth)=1,\qquad e\mid g,\qquad h\ne0,
+\] and have sign \(\mu(e)\mu(w)\). The inverse-character conversion in \eqref{eq:A.1} restores cubic coefficients. The paired ray phase is \(\xi_1(z_1z_2^{-1})G(z_2z_1^{-1})\). Expanding the fixed function \(\xi_1(z)G(z^{-1})=\sum_{\xi'}c_{\xi'}\xi'(z)\) therefore supplies coefficients \(a_{\xi'}(n)\) independent of every reconstruction choice.
+
+Reconstruct the puncture, label and row by \[
+r=tg/e,\qquad f'=Cew,\qquad k'=deh,
+\qquad a^\sharp(n)=a_{\xi'}(n)1_{(n,r)=1}\chi_n(k')\chi_n(f')^4.
+\tag{C.12}\label{eq:C.12}
+\] The ideals \(r,f'\) are coprime and squarefree. The local character calculation includes the conjugation \[
+\chi_n(dh)\overline{\chi_n(e)}\chi_n(C)^4
+=\chi_n(deh)\chi_n(Ce)^4;
+\tag{C.13}\label{eq:C.13}
+\] Both sides have exponent five at \(e\) on units and vanish otherwise. The \(w\)-factor is the multiplicative correction in \eqref{eq:A.1}.
+
+Let \(U_0(x)=x^{-1/2}U(x)\). Direct substitution gives the column scale, full scalar, and kernel: \[
+X'_0=\frac\ell{q_gq_w}=\frac L{q_rq_{f'}},
+\qquad w_{C,d}\frac{Y_{C,d}q_g}{q_e\ell}=\frac{c_I\Sigma q_r}{L^2},
+\] \[
+K_{r,f',k'}(x_1,x_2)=U_0(x_1)\overline{U_0(x_2)}
+\widehat\Phi\!\left(\frac{c_I\Sigma Fq_{k'}q_r^2}{HLx_1x_2}\right).
+\tag{C.14}\label{eq:C.14}
+\] The kernel and scalar depend only on the reconstructed triple. Their support imposes \(q_rq_{f'}\le2vL\), \(0<q_{k'}\le HL/(\Sigma Fq_r^2)\).
+
+At fixed \((r,f',k')\), all preimages are \[
+t\mid r,\quad f'=Cew,\quad e\mid k',\quad(w,k')=1,
+\quad d\mid(C,k'),\quad g=e(r/t),\quad h=k'/(de),
+\] with the factorization \(f'=Cew\) disjoint. At a prime \(\mathfrak p\mid f'\), put \(I_{\mathfrak p}=1_{\mathfrak p\mid k'}\). Allocating it to \(C,e,w\) gives, respectively, \[
+\underbrace{(1+I_{\mathfrak p})}_{\mathfrak p\mid C}
++\underbrace{(-I_{\mathfrak p})}_{\mathfrak p\mid e}
++\underbrace{(-(1-I_{\mathfrak p}))}_{\mathfrak p\mid w}
+=I_{\mathfrak p}.
+\tag{C.15}\label{eq:C.15}
+\] The two \(C\)-terms correspond to \(\mathfrak p\nmid d\) and \(\mathfrak p\mid d\). Thus the signed fibre sum forces \(f'\mid k'\); choices \(t\mid r\) contribute \(\tau(r)\). The shared kernel, scalar and character make this an exact cancellation before absolute values.
+
+Writing \(Z_Q\) for the second zero frequency, we have \[
+Q_{\xi_1}(U)-Z_Q=
+\frac{c_I\Sigma}{L^2}\sum_{\xi'}c_{\xi'}
+\sum_{\substack{r,f'\ \mathrm{sf}\\(r,f')=1}}q_r\tau(r)
+\sum_{\substack{k'\ne0\\f'\mid k'}}\sum_{n_1,n_2}^{*}
+a^\sharp(n_1)\overline{a^\sharp(n_2)}
+K_{r,f',k'}(q_{n_1}/X'_0,q_{n_2}/X'_0).
+\tag{C.16}\label{eq:C.16}
+\] The principal calculation in \eqref{eq:C.3} gives \(|Z_Q|\ll Z^\varepsilon\Sigma\|U\|_\infty^2\): its absolute divisor sum is bounded by \(\Sigma\sum_C\tau(C)q_C^{-2}\sum_{q_t\ll L}q_t^{-1}\).
+
+On dyads \(q_r\asymp R,q_{f'}\asymp F'\), set \[
+X'=\frac L{RF'},\qquad \Sigma'=\frac LR,
+\qquad H'=\frac{HL}{\Sigma FR^2}.
+\tag{C.17}\label{eq:C.17}
+\] Retain only nonempty supports. The projector implies \(F'\le q_{k'}\le HL/(\Sigma Fq_r^2)\), hence \(H'\ge1\). For every \(j\mid r\), \[
+\frac{X'}{q_j}\ge\frac{\Sigma Fq_r^2}{HRq_j}
+\ge\frac{\Sigma F}{H}\ge1.
+\tag{C.18}\label{eq:C.18}
+\] Thus puncture removal gives admissible scales and preserves \(\Sigma'\). Also \(1\le X'/X'_0<4\), so rescaled kernels lie in a fixed enlargement and have uniform \(C^{2m+4}\) norm controlled by \(\|U\|_{C^{2m+4}}^2\).
+
+Let \(S_m\) be the supremum in \eqref{eq:C.8}. For each retained \(r\), puncture removal and positive enlargement of the \((f',k')\) ranges bound the common-test column sum by \(Z^\varepsilon(\Sigma')^2S_m\|V\|_{C^m}^2\). Apply \eqref{eq:1.4}, then count \(O(R)\) ideals \(r\). The complete scalar is \[
+\frac{\Sigma R}{L^2}\,R(\Sigma')^2=\Sigma.
+\] Divisor factors and dyadic counts cost \(Z^\varepsilon\). This proves \eqref{eq:C.8}; \eqref{eq:C.17} gives \(H'/\Sigma'=H/(\Sigma FR)\le H/\Sigma\), \(H'\le HL/(\Sigma F)\), and \(\Sigma'\le L\).
+
+\subsection{Closing the finite-depth induction}\label{sec:C.4}
+
+Prove \eqref{eq:C.5} by induction under the additional restriction \(H\le Z^{j\kappa}\). At \(j=0\), counting gives \(E\ll HX\|W\|_\infty^2\le\Sigma\|W\|_\infty^2\). At the next level, apply \eqref{eq:C.7}. In a nonempty supremum \(H^2>X\), \(H_c^3=X^2/H^2\), and \(q_b>H_c\). Use \eqref{eq:C.8} at \(L=L_b\), retaining \(\Sigma=XF\). Every child has \[
+H'\le\frac{HL_b}{\Sigma F}=\frac H{q_b^3F^2}
+<H\left(\frac H\Sigma\right)^2
+\le Z^{-2\kappa}H\le Z^{j\kappa},
+\quad H'/\Sigma'\le Z^{-\kappa},\quad \Sigma'\le\Sigma.
+\] The child is covered by induction. Allocate losses to completion, transfer and the child; propagate the derivative order backwards by \(m\mapsto4m+12\), also retaining the completed-energy order. Depth at most \(\lceil C_0/\kappa\rceil\) gives finite orders and fixed support enlargements, chosen before external heights. This proves \eqref{eq:C.5}.
+
+\subsection{Return to the inverse polynomial}\label{sec:C.5}
+
+Majorize the \(u\)-ball in \eqref{eq:C.1} by \(\Phi(q_u/H)\), expand the square, and apply \eqref{eq:C.3}. Write its squarefree columns as \(gz_i\), let \(e\mid g\) be the mask divisor and \(h\ne0\) the frequency. The zero frequency costs \(O(H\|W\|_\infty^2)\). The inverse-character conversion in \eqref{eq:A.1}, followed by a fixed ray expansion, gives cubic coefficients. Remove \((z_1,z_2)=1\) by \(z_i=vn_i\). With zeros retained, the change of variables is bijective: \[
+b=g/e,\qquad f=ev,\qquad k=eh;
+\qquad e=(f,k),\quad v=f/e,\quad g=be,\quad h=k/e.
+\tag{C.19}\label{eq:C.19}
+\] Here \(b,f\) are coprime and squarefree. The relations \(gv=bf\), \(he^5v^4=kf^4\), \(\mu(e)\mu(v)=\mu(f)\), and \(q_g/q_e=q_b\) give one ray component of the nonzero contribution as \[
+\begin{aligned}
+\frac H{D^2}\sum_{\substack{b,f\ \mathrm{sf}\\(b,f)=1}}\mu(f)q_b
+\sum_{k\ne0}\sum_{n_1,n_2}^{*}
+&a_\xi(n_1)\overline{a_\xi(n_2)}
+\chi_{n_1}(kf^4)\overline{\chi_{n_2}(kf^4)}1_{(n_1n_2,b)=1}\\
+&\times W_0(q_{bfn_1}/D)\overline{W_0(q_{bfn_2}/D)}
+\widehat\Phi\!\left(\frac{Hq_k}{q_f^2q_{n_1}q_{n_2}}\right),
+\end{aligned}
+\tag{C.20}\label{eq:C.20}
+\] where \(W_0(x)=x^{-1/2}W(x)\). Its support has \(q_bq_f\ll D\), \(q_k\ll D^2/(Hq_b^2)\). On dyads \(q_b\asymp B,q_f\asymp F\), put \[
+X=\frac D{BF},\qquad \mathcal H=\frac{C D^2}{HB^2},\qquad \Sigma=XF=\frac DB,
+\] where the fixed \(C\) covers supports. Since \(H\ge DZ^\kappa\), \(\mathcal H/\Sigma=CD/(HB)\ll Z^{-\kappa}\). Apply \eqref{eq:C.5} with gap \(\kappa/2\), then \eqref{eq:1.4} and \eqref{eq:C.4}. The coupled kernels have uniform derivatives. The dyad is bounded by \[
+Z^\varepsilon\frac{HB}{D^2}\,B(XF)^2\|W\|_{C^J}^2
+=HZ^\varepsilon\|W\|_{C^J}^2.
+\] A transformed column scale below one has either empty support or boundedly many columns and is handled by counting; a row scale below one is empty. Sum dyads and the fixed ray characters, and add the principal contribution. This proves \eqref{eq:C.1}. Complex conjugation, replacing \(\nu\) by \(\bar\nu\), handles the other orientation. For \(W(y)y^{it}\), its finite seminorm grows polynomially in \(1+|t|\), as asserted.
+
+To obtain \eqref{eq:3.2}, take \(Z=\max(2,D,H)\). For \(D\ge2\) and \(H\ge D^{1+\vartheta}\), the power-gap hypothesis holds with \(\kappa=\vartheta/(1+\vartheta)\). Renaming the arbitrarily small loss gives \(H(HD)^\varepsilon\). Bounded column scales follow by counting. Thus \eqref{eq:3.2} includes all element rows and both orientations, with the stated common-profile control. \hfill\(\square\)
+
+\section{The plain fourth moment}\label{sec:D}
+
+\subsection{Equal-product rectangle cancellation}\label{sec:D.1}
+
+Two Poisson transforms will return a smaller-width moment, except on rows induced by fixed characters. A subtraction of equal-product rectangles cancels their principal volume.
+
+Let \(\Theta\) be a fixed finite group of ray characters supported on \(S\), closed under the reciprocity factors, conjugation, and \(n\mapsto\chi_n(-1)\). Let \(\vartheta\in\Theta\), let \(R_*\) be squarefree of norm at most \(Z^B\), and let \(W_1,W_2\) be smooth functions on fixed annuli. Put
+
+\[
+L_i(X,t)=\sum_n\vartheta(n)\mathbf1_{(n,R_*)=1}q_n^{it}W_i(q_n/X).
+\]
+
+Poisson summation gives, uniformly for \(X>0\),
+
+\[
+L_i(X,t)=c_{\vartheta,R_*}X^{1+it}I_i(t)
+ +O\bigl(Z^\epsilon(1+|t|)^J\bigr),\qquad |L_i(X,t)|\ll X,
+\tag{D.1}\label{eq:D.1}
+\]
+
+Here \(I_i(t)\) is a fixed lattice-measure multiple of \(\int W_i(y)y^{it}\,dy\), and \(c_{\vartheta,R_*}\) is independent of \(X,t\).
+
+Indeed, without the mask these are fixed weighted lattice cosets. Poisson applied to \(X^{it}f_t(z/\sqrt X)\) gives the main term at zero frequency. Integration by parts bounds the remaining transform by \((1+|t|)^J(1+|\xi|)^{-J}\); \(J>4\) suffices for \(X\ge1\), and counting handles \(X<1\). Insert the mask by
+
+\[
+L_i(X,t)=\sum_{d\mid R_*}\mu(d)\vartheta(d)q_d^{it}L_i^0(X/q_d,t).
+\]
+
+The main coefficient is
+
+\[
+c_{\vartheta,R_*}=c_\vartheta\sum_{d\mid R_*}\frac{\mu(d)\vartheta(d)}{q_d}.
+\]
+
+The norm powers cancel in the main coefficient; divisor-many errors cost \(Z^\epsilon\). The volume bound follows directly by counting.
+
+Consequently, if
+
+\[
+U_1U_2=V_1V_2=T,\qquad U_i,V_i\ge Z^r\quad(i=1,2),\quad r\ge0,
+\]
+
+then
+
+\[
+T^{-1/2}\left|L_1(U_1,t)L_2(U_2,t)-L_1(V_1,t)L_2(V_2,t)\right|
+\ll Z^\epsilon(1+|t|)^{2J}T^{1/2}Z^{-r}.
+\tag{D.2}\label{eq:D.2}
+\]
+
+The two main terms equal \(c_{\vartheta,R_*}^2T^{1+it}I_1(t)I_2(t)\). Each error has a scale at most \(TZ^{-r}\); the error product is also bounded since \(T\ge Z^{2r}\). Without a positive lower scale use absolute volume \(O(T^{1/2})\).
+
+The saving requires the same character, mask, and norm power in the two factors and both rectangles.
+
+\subsection{The family closed under both transforms}\label{sec:D.2}
+
+Moving twists and a common exclusion ideal are needed for closure under the transforms; no selected primes or zero-free hypothesis are used.
+
+Fix bounded nonnegative real ranges for \(m,q,n_1,n_2,B\). A fixed twist within a row sum has the form
+
+\[
+\tau(n)=\nu(n)\prod_{p\mid A}\chi_n(p)^{e_p},\qquad \nu\in\Theta,\quad q_{\operatorname{rad}A}\le Z^q,
+\]
+
+with every displayed zero retained, even if an exponent is zero modulo six. Reciprocity puts other local residue products in this form. Count all displayed moving support in \(q\). A squarefree puncture \(R\), \(q_R\le Z^B\), is a common exclusion fixed across the row sum and all plain factors. Define
+
+\[
+\psi_k(n)=\tau(n)\chi_n(k)\mathbf1_{(n,R)=1},\qquad
+S_k(N;W)=N^{-1/2}\sum_n\psi_k(n)W(q_n/N).
+\]
+
+\textbf{Theorem D.1 (mixed plain moment).} For every fixed \(\epsilon>0\),
+
+\[
+\sum_{\substack{0<q_k\le Z^m\\\psi_k^*\ne1}}
+ |S_k(Z^{n_1};W_1)S_k(Z^{n_2};W_2)|^2
+\ll Z^{m+q+\epsilon}.
+\tag{D.3}\label{eq:D.3}
+\]
+
+There is no lower conductor bound or restriction on \(n_1+n_2\). The bound has factor \(\|W_1\|_{C^J}^2\|W_2\|_{C^J}^2\), with orders uniform in moving supports, punctures and bounded lengths. Real powers and norm-twist heights have the convention of §1.2; a fixed list of Euler or profile derivatives is handled by increasing \(J\). In particular, taking no moving twist and two copies of one polynomial yields
+
+\[
+\sum_{\substack{0<q_k\le H\\(\nu\chi_\bullet(k))^*\ne1}}
+ |S_k(N;W)|^4\ll H^{1+\epsilon}
+\tag{D.4}\label{eq:D.4}
+\]
+
+for bounded polynomial ranges of \(N\) relative to \(H\).
+
+We descend in the \textbf{effective width} \(M=m+q\). Fixed-conductor twists alone would not be closed under the first transform.
+
+\subsection{Reflection and the centered comparison}\label{sec:D.3}
+
+Call the presentation natural if its zeros are exactly the fixed zeros, its displayed moving zeros, and the row zeros. Extra punctures are removed by the exact identity
+
+\[
+S_{k,R}(N;W)=\sum_{d\mid R}\mu(d)\psi_k^0(d)q_d^{-1/2}S_k^0(N/q_d;W).
+\tag{D.5}\label{eq:D.5}
+\]
+
+The coefficient mass is \(Z^\epsilon\). At each width prove the natural case for all lengths first, then remove extra punctures by \eqref{eq:D.5}. The recursive children have smaller width.
+
+Let \(\psi_k^*\) have conductor norm \(Q_k\), and put \(C_k=3Q_k/(2\pi)^2\). If \(R_{0,k}\) is the redundant natural radical, then
+
+\[
+C_kq_{R_{0,k}}\ll Z^M.
+\tag{D.6}\label{eq:D.6}
+\]
+
+At each good prime its norm is counted once, either in the primitive conductor or in the redundant radical; their union is contained in the row radical and the displayed moving support. Fixed-prime factors cost only a fixed constant.
+
+The primitive functional equation gives exactly
+
+\[
+S_{\psi_k^*}(N;W)=\epsilon_k S_{\overline{\psi_k^*}}(C_k/N;W^\sharp),\qquad
+\mathcal MW^\sharp(s)=\mathcal MW(1-s)\frac{\Gamma(s)}{\Gamma(1-s)}.
+\tag{D.7}\label{eq:D.7}
+\]
+
+Central normalization leaves no extra power of \(C_k,N\). Within an absolute product, conjugate the whole reflected factor, including its profile, to restore the original character orientation. Delete the redundant Euler factors before reflection and restore them geometrically afterward. The resulting scales are \(C_kq_d/(Nq_h)\), \(d\mid R_{0,k}\), \(\operatorname{rad}h\mid R_{0,k}\), with coefficients \(\epsilon_k\mu(d)\psi_k^*(d)\overline{\psi_k^*(h)}/\sqrt{q_dq_h}\). Their absolute mass is \(Z^\epsilon\). The largest dual scale is \(\ll Z^M/N\).
+
+The gamma quotient makes \(W^\sharp\) bounded with Euler derivatives at zero and rapidly decreasing at infinity. Its annular partition is centrally summable, with polynomial norm-twist cost. With fixed padding \(\xi>0\), retained dual lengths are at most \(M-\log_ZN+\xi\); tails have arbitrary decay. Sobolev on log-scale intervals handles rowwise reflected scales using only common-profile bounds (§1.2).
+
+Reflect any original factor longer than \(M/2\). It remains to prove a padded core with
+
+\[
+n_i\le M/2+\xi,\qquad A:=n_1+n_2\le M+2\xi.
+\tag{D.8}\label{eq:D.8}
+\]
+
+At a fixed width first prove the uncentered assertion for \(A\le5M/6\). For the remaining range put \(L=M/4\). If either plain length is below \(L\), reflect the other; its new total is at most \(3M/2-A+\xi<2M/3+\xi\), within the already proved uncentered range. If both are at least \(L\), compare
+
+\[
+S_k(X_1;W_1)S_k(X_2;W_2)
+\quad\hbox{with}\quad
+S_k(Y_1;W_1)S_k(Y_2;W_2),
+\]
+
+where \(Y_1=Z^L\), \(Y_2=X_1X_2/Y_1\). Reflecting the second comparison factor again gives total at most \(3M/2-A+\xi\). Thus the comparison is known at this same width. Estimate the difference, retaining it as one coefficient. Its squared norm may now be enlarged to all element rows, including those with principal inducing character. The subtraction, not an assumption on those added rows, will control them.
+
+For fixed extracted ideals \(b_1,b_2\), the coefficient to preserve is
+
+\[
+\mathcal D_b(l_1,l_2)=
+W_1(q_{b_1}q_{l_1}/X_1)W_2(q_{b_2}q_{l_2}/X_2)
+-W_1(q_{b_1}q_{l_1}/Y_1)W_2(q_{b_2}q_{l_2}/Y_2).
+\tag{D.9}\label{eq:D.9}
+\]
+
+All four formal scales are at least \(Z^L\), and extraction preserves product equality. Keep empty rectangles in the formal difference; do not clip before cancellation.
+
+\subsection{First Poisson transform}\label{sec:D.4}
+
+Let \(H=Z^m\), \(X=Z^A\). Majorize the row ball by a fixed nonnegative radial Schwartz function \(\Phi_1\). The central squared normalization is \(X^{-1}\). At the first zero frequency, every prime in the two full index products has net sextic exponent zero. In particular no prime occurs exactly once. Their combined ideal is powerful, of norm \(O(X^2)\). There are \(O(X^{1+\epsilon})\) such ideals; allocations to four plain variables are divisor-bounded. The zero-frequency contribution is therefore \(O(HZ^\epsilon)\), within \(Z^M\).
+
+For a nonzero frequency, extract the complete common prime support of the full index products, writing them as \(Ca,Db\), with \((a,b)=1\) and \((ab,CD)=1\). The two extracted ideals have the same radical. Put
+
+\[
+c=\log_Zq_C,\ d=\log_Zq_D,\ p=\log_Zq_{\operatorname{rad}C}.
+\]
+
+Let \(r\) be the product of common primes whose net exponent is nonzero modulo six, with \(R=\log_Zq_r\); the common character there is primitive, say \(\xi_r\). Expand the complementary common row mask by \(e\mid\operatorname{rad}C/r\), and write \(E=\log_Zq_e\). Thus \(R+E\le p\).
+
+For the allocated convolution coefficients \(A_C(a),A_D(b)\), residue-class Poisson gives, up to a frozen scalar of modulus at most one,
+
+\[
+\frac{H}{Xq_e\sqrt{q_r}}
+\sum_{h\ne0}\mathfrak g_{\xi_r}(r,h)
+\sum_{(a,b)=1}\frac{A_C(a)\overline{A_D(b)}}{\sqrt{q_aq_b}}
+\tau_C(a)\overline{\tau_D(b)}R(a,b)
+\mathfrak g(a,h)\overline{\mathfrak g(b,-h)}
+\widehat\Phi_1\!\left(\frac{Hq_h}{q_eq_rq_aq_b}\right).
+\tag{D.10}\label{eq:D.10}
+\]
+
+Here \(\mathfrak g_{\xi_r}\) is the normalized primitive Gauss sum, of modulus at most one, and one consistent orientation is
+
+\[
+\tau_C(a)=\tau(a)\chi_a(er)\xi_r(a),\qquad
+\tau_D(b)=\tau(b)\chi_b(er)\overline{\xi_r(b)}.
+\]
+
+For its normalization, substituting \(k=ek'\) and Poisson modulo \(rab\) gives \(H/(q_eq_rq_aq_b)\); the three unnormalized Gauss sums restore \(\sqrt{q_rq_aq_b}\); the original central squared normalization is \(X^{-1}\). Reciprocity converts the cross-prime phase to \(R(a,b)\). The new full displayed moving support is at most
+
+\[
+\widetilde q=q+R+E.
+\tag{D.11}\label{eq:D.11}
+\]
+
+Old moving primes puncture both full products. Discard allocations meeting them before estimating; new common support is disjoint, even if character exponents cancel.
+
+The natural first dual scale has logarithmic length
+
+\[
+K_0=2A-c-d+R+E-m.
+\tag{D.12}\label{eq:D.12}
+\]
+
+Retain full smooth frequency dyads \(q_h\asymp Z^K\), \(K\le K_0+\xi\). Separate their kernel only in the row and two \textbf{whole-product} norms, using one common Fourier measure; separate \(R(a,b)\) on its ray group. Before Cauchy insert the full divisor sum \(\sum_{s\mid a,b}\mu(s)\) as in \eqref{eq:A.19}, and put \(s_0=\log_Zq_s\).
+
+The two resulting positive Gauss norms have the form
+
+\[
+\mathcal N_C=
+\sum_h\omega_K(q_h/Z^K)
+\left|Z^{-(A-c)/2}\sum_{s\mid a}A_C(a)\tau'_C(a)q_a^{it}\mathfrak g(a,h)\right|^2,
+\tag{D.13}\label{eq:D.13}
+\]
+
+and the analogous expression for \(D\). All profiles and arithmetic masks are common within each norm; only a bounded scalar depends on the row. The coefficient is still \eqref{eq:D.9} with one common character and one norm power on its whole product.
+
+A sufficient estimate is
+
+\[
+\mathcal N_C\ll Z^{A-c+\widetilde q+B_c-s_0+\epsilon},\qquad
+B_c=\frac{(3c-5d-R)_+}{6}.
+\tag{D.14}\label{eq:D.14}
+\]
+
+The complete exponent balance is
+
+\[
+\underbrace{m-A-R/2-E}_{\text{Poisson prefactor}}
++\underbrace{p+s_0}_{\text{common-support and divisor counts}}
++\frac12\{A-c+\widetilde q+B_c-s_0+A-d+\widetilde q+B_d-s_0\}
+\]
+
+\[
+=M+\frac12\{B_c+B_d-(c+d-2p-R)\}\le M.
+\tag{D.15}\label{eq:D.15}
+\]
+
+The last inequality is local. At common multiplicities \(i\ge j\ge1\), put \(r_p=\mathbf1_{6\nmid i-j}\). The positive-part contribution is at most \((3i-5j-r_p)_+/6\), whereas the right side is \(i+j-2-r_p\). The latter is nonnegative, and when the former is positive six times the difference is \(3i+11j-12-5r_p\ge0\). Positive part is subadditive, so summing proves the inequality. For a fixed radical, the numbers of allowed powers and allocations are \(Z^\epsilon\) by Rankin's bound and divisor estimates; thus the label counts used in \eqref{eq:D.15} have no omitted power.
+
+\subsection{Second transform and width decrease}\label{sec:D.5}
+
+Set \(a_0=A-c\), \(D_0=d+(K_0-K)\), and
+
+\[
+J=D_0-c,\qquad g=J_++\sigma,
+\tag{D.16}\label{eq:D.16}
+\]
+
+where \(\sigma>0\) is a small fixed width step. Enlarge the positive Gauss-row norm to a smooth ball of length \(K+g\). Add its zero row at this point. By \eqref{eq:A.12}, only sixth-power columns contribute at that row. There are \(O(Z^{a_0/6+\epsilon})\) of them, each with Gauss magnitude at most \(Z^{a_0/2}\); central normalization gives squared size \(Z^{a_0/3+\epsilon}\). If \(s\mid a\) is possible on such columns then \(s_0\le a_0/6+O(1/\log Z)\), so this is covered by \eqref{eq:D.14}.
+
+For the remaining norm, \eqref{eq:A.14} and lattice Poisson give the exact expansion
+
+\[
+Z^{K+g-a_0}\sum_{u,v}
+\frac{B(u)\overline{B(v)}\tau_1(u)\overline{\tau_1(v)}q_u^{it}q_v^{-it}}{\sqrt{q_uq_v}}
+\sum_jF(u,v;j)\widehat\Phi_2\!\left(\frac{Z^{K+g}q_j}{q_uq_v}\right),
+\tag{D.17}\label{eq:D.17}
+\]
+
+where \(B\) retains the whole allocated rectangle difference and \(s\mid u,v\). At \(j=0\), \eqref{eq:A.15} leaves only \(u=v\). The diagonal exponent is \(K+g-s_0\). Relative to \eqref{eq:D.14}, its excess is
+
+\[
+(A-M)-D_0-B_c+g\le (A-M)+\sigma+O(\xi).
+\tag{D.18}\label{eq:D.18}
+\]
+
+Indeed \(-D_0+(D_0-c)_+\le O(\xi)\), since \(D_0\ge-\xi\). This is why the padded condition \(A\le M+2\xi\) suffices.
+
+For \(j\ne0\), keep smooth dyads up to logarithmic length \(2a_0-K-g+\xi\), with full kernels, and then extract complete common support \(u=D_2a,v=E_2b\). Put
+
+\[
+c_2=\log_Zq_{D_2},\ d_2=\log_Zq_{E_2},\ b_2=(c_2+d_2)/2,
+\]
+
+\[
+p_2=\log_Zq_{\operatorname{rad}D_2},\quad g_2=\log_Zq_{(D_2,E_2)}.
+\]
+
+At equal non-six-divisible multiplicities, partition according to whether the divided frequency is a unit. Let \(t_2\) be the total radical length of the unit primes and \(V\) that of the nonunit primes. Equations \eqref{eq:A.17}--\eqref{eq:A.18} allow
+
+\[
+j=(D_2,E_2)V_{\rm id}h',\qquad
+|F(D_2,E_2;j)|\le Z^{g_2-t_2},
+\]
+
+on that partition, where \(V_{\rm id}\) is the product of the indicated nonunit primes. The scalar is defined to be zero off the partition before a row domain is enlarged. The new row and displayed moving lengths are
+
+\[
+m'=2a_0-K-g-g_2-V,\quad q'=\widetilde q+t_2+V,
+\]
+
+\[
+M'=m'+q'=M+J-g-g_2+t_2\le M-\sigma.
+\tag{D.19}\label{eq:D.19}
+\]
+
+Here \(g_2\ge t_2\). Sixth-divisible fixed factors become the common puncture, with their ray phase retained; no freely chosen pair-dependent mask is introduced.
+
+The condition \(s\mid u,v\) forces \(s\) into the second common radical. Its count is thus \(Z^{p_2-s_0+\epsilon}\). The second ledger is
+
+\[
+\underbrace{K+g-a_0}_{\text{Poisson and roots}}
++\underbrace{p_2-s_0}_{\text{common supports}}
++\underbrace{g_2-t_2}_{\text{correlation}}
+-\underbrace{b_2}_{\text{remaining central conversion}},
+\tag{D.20}\label{eq:D.20}
+\]
+
+so the inner residual products are allowed exponent
+
+\[
+M'+\Delta_{\rm child},\qquad \Delta_{\rm child}=b_2-p_2+B_c\ge0.
+\tag{D.21}\label{eq:D.21}
+\]
+
+The full kernel and inverse roots in \eqref{eq:D.17} are separated only in the row norm and the two whole-product norms. Formula \eqref{eq:A.19} then removes the residual coprimality. For each prime of its divisor \(t\), use
+
+\[
+\mathbf1_{p\mid l_1l_2}=\mathbf1_{p\mid l_1}+\mathbf1_{p\mid l_2}
+-\mathbf1_{p\mid l_1}\mathbf1_{p\mid l_2}.
+\tag{D.22}\label{eq:D.22}
+\]
+
+Write \(l_i=pl_i'\) in each selected factor, without adding \((l_i',p)=1\). The common character supplies a scalar, and the same scale in both rectangles is divided by \(P\). The mask and norm power remain common. For a divisor dyad \(q_t\asymp Z^{t_-}\), the total extracted logarithmic norm on either side, say \(r_1,r_2\), satisfies \(r_j\ge t_-+O(1/\log Z)\). Central extraction costs \(Z^{-r_j/2}\); its count \(Z^{t_-}\) is therefore canceled by the two extraction factors. Allocations cost only a divisor power.
+
+Both child characters are the original whole-product twist times \(\chi_n((D_2,E_2)V_{\rm id}h')\), differing only by a member of \(\Theta\). They are either both induced by that fixed group or neither. In the latter case Cauchy gives nonnegative child norms. Only now split centered children into rectangles, discard empty annuli, and rescale retained bounded subunit annuli. The completed theorem at width \(M'+O(\xi)\) gives \(Z^{M'+\epsilon}\), within \eqref{eq:D.21}. Masks remain common and polynomially bounded. It remains to treat the fixed-character children.
+
+\subsection{Exceptional children}\label{sec:D.6}
+
+At every prime outside the fixed support, membership of the child inducing character in \(\Theta\) prescribes the valuation of \(h'\) modulo six. Hence its ideal is \(h_0v^6\) for one fixed sixth-power-free \(h_0\). Let \(v_1\) be the radical length of the nonunit primes of common multiplicity exactly one, and put \(f=2v_1\). At such a prime the fixed row factor has valuation two, so exceptionality requires \(v_p(h')\equiv4\pmod6\). The old moving support cannot meet this genuine common support, because its old zero would have killed the allocation. Thus \(q_{h_0}\ge Z^{4v_1}\), and the deliberately weaker sufficient count is
+
+\[
+\#\{h'\text{ exceptional}\}\ll Z^{(m'-f)/6+\epsilon}.
+\tag{D.23}\label{eq:D.23}
+\]
+
+This includes all members of \(\Theta\) and rows added by positive enlargement; if the forced \(h_0\) does not fit, the range is empty.
+
+After summing \eqref{eq:D.22}, absolute volume of the paired normalized residual convolutions is \(\ll Z^{a_0-b_2+\epsilon}\). The exact excess of this volume and \eqref{eq:D.23} over \eqref{eq:D.21} is
+
+\[
+\frac{m'-f}{6}+a_0-b_2-(M'+\Delta_{\rm child})
+=A-\frac56M-F_1-F_2,
+\tag{D.24}\label{eq:D.24}
+\]
+
+where
+
+\[
+F_1=\frac c6+\frac{5D_0}{6}+\frac{\widetilde q}{6}+B_c-\frac{5g}{6},
+\]
+
+\[
+F_2=2b_2-\frac56g_2-p_2+t_2+\frac V6+\frac f6.
+\tag{D.25}\label{eq:D.25}
+\]
+
+There are the two local lower bounds
+
+\[
+F_1\ge\frac23c-\frac56\sigma-O(\xi),\qquad F_2\ge\frac23b_2.
+\tag{D.26}\label{eq:D.26}
+\]
+
+For \(F_1\), if \(D_0\ge c\), substitute \(g=D_0-c+\sigma\) to obtain \(c+\widetilde q/6+B_c-5\sigma/6\). Otherwise use \(\widetilde q+6B_c\ge(3c-5D_0)_+-O(\xi)\), since \(\widetilde q\ge R\). Then \(c+5D_0+(3c-5D_0)_+\ge4c\).
+
+For \(F_2\), the local contributions, in units of \(\log_ZP\), are:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2727}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3636}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3636}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Common multiplicities and divided frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(F_2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(b_2\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(i=i,\ 6\nmid i\), unit & \(7i/6\) & \(i\) \\
+\(i=i,\ 6\nmid i\), nonunit & \((7i-5)/6+\frac13\mathbf1_{i=1}\) & \(i\) \\
+\(i=i,\ 6\mid i\) & \(7i/6-1\) & \(i\) \\
+\(i>j,\ 6\mid j\), unit & \(i+j/6-1\) & \((i+j)/2\) \\
+\end{longtable}
+
+Every entry in the middle column is at least two thirds of the last; the nonunit multiplicity-one case gives equality. These are exactly the local cases from \eqref{eq:A.17}--\eqref{eq:A.18}.
+
+If \(A\le5M/6\), \eqref{eq:D.24}--\eqref{eq:D.26} already finish the exceptional contribution, up to the small terminal loss \(5\sigma/6+O(\xi)\). This proves the uncentered stage before its use in the comparison.
+
+For the centered stage, the common-character calculation gives, on an exceptional row, a coefficient of the form
+
+\[
+\vartheta(l_1)\vartheta(l_2)\mathbf1_{(l_1l_2,R_*)=1}q_{l_1l_2}^{it}\mathcal D_b(l_1,l_2).
+\tag{D.27}\label{eq:D.27}
+\]
+
+The mask includes all redundant natural zeros and is common to the two factors and both rectangles. Before the last divisor extraction, at least one of the paired sides has all four formal plain scales at least
+
+\[
+Z^{L-c-\min(c_2,d_2)}.
+\]
+
+Put \(r=(L-c-\min(c_2,d_2))_+\). If this side's final extracted total is \(r_1<r\), use \eqref{eq:D.2} to save \(Z^{-(r-r_1)}\). If \(r_1\ge r\), use volume. Together with the divisor count, the exact inequality
+
+\[
+t_--r_1-r_2-(r-r_1)_+\le-r
+\tag{D.28}\label{eq:D.28}
+\]
+
+shows that the paired normalized products, after all these divisor allocations, are bounded by \(Z^{a_0-b_2-r+\epsilon}\). Taking triangle before the full divisor sum would lose this saving.
+
+With \(v=c+\min(c_2,d_2)\) and \(b_2\ge\min(c_2,d_2)\), the remaining deficit is at most
+
+\[
+A-\frac56M-\frac23v-(L-v)_++\frac56\sigma+O(\xi)
+\le A-M+\frac56\sigma+O(\xi).
+\tag{D.29}\label{eq:D.29}
+\]
+
+The maximum of the left-hand piece in \(v\ge0\) is at \(v=L=M/4\). The padded core has \(A\le M+2\xi\), so only a small terminal loss remains. This completes the centered stage.
+
+\subsection{Closing the finite descent}\label{sec:D.7}
+
+Choose a small width floor \(\rho>0\), a step \(\sigma>0\), and then padding \(\xi>0\). At \(M\le\rho\), reflection reduces to \eqref{eq:D.8}, and absolute counting gives an excess at most \(\rho+2\xi\). Above the floor, the descent \eqref{eq:D.19} decreases width by \(\sigma\) before the fixed small frequency enclosure. Taking \(\xi\ll\sigma\) makes the actual decrease at least \(\sigma/2\). On bounded initial widths there are at most \(D=2+\lceil2M_{\max}/\sigma\rceil\) stages along any branch.
+
+Within each width band, prove the uncentered range first, then the centered core, then use reflection for arbitrary lengths, and finally use \eqref{eq:D.5} for extra punctures. The comparison uses the earlier uncentered range at the same width with a positive margin; all nonexceptional children call a strictly smaller completed band. There is no same-band cycle.
+
+Choose \(\rho,\sigma\) so that the largest terminal loss, among the width-floor, diagonal, and exceptional estimates, is below \(\epsilon/4\). Choose \(\xi\) and every local divisor/Schwartz power loss below a sufficiently small multiple of \(\epsilon/D\). Triangle inequalities take a maximum of child exponents after the stated counting mass, and Cauchy averages the two child exponents. A branch therefore incurs only one terminal loss, plus the small edge losses; terminal losses are not added at every ancestor.
+
+For uniformity, measure extracted powers before dyadic rounding. At each stage keep joint log-norm boxes, selecting whole frequency dyads from the supremum of the nominal scale over the outer box, with padding \(Z^{\xi/2}\). Selection is independent of live columns. On discarded dyads the genuine Poisson argument is at least \(Z^{\xi/4}\). The bounds \(|\mathfrak g(a,h)|\le\sqrt{q_a}\), \(|F(u,v;j)|\le q_uq_v\), and polynomial raw counts make their total arbitrarily small by Schwartz decay, before Fourier separation.
+
+\Needspace{12\baselineskip}
+On retained boxes, the kernel \(\widehat\Phi(R\exp L(x))\) has uniformly bounded Euler derivatives for every \(R>0\). Its common Fourier measure has finite weighted \(L^1\) norm; heights are integrated against it. Remove central powers before separating inverse roots. Fixed support enlargements over finite depth cause only \(O(1/\log Z)\) shifts. Rescale subunit annuli only inside nonnegative child norms; never clip formal centered scales. The character and common-mask closure follows from \eqref{eq:D.10}, \eqref{eq:A.16}, and \eqref{eq:D.22}, with polynomial mask norms over finite depth. Choose seminorm and height orders backwards through the descent, then thresholds and external tail orders. This proves \eqref{eq:D.3}. \hfill\(\square\)
+
+Taking no moving twist, a fixed finite-order character, and two copies of the same profile proves \eqref{eq:3.3}. Restricting the nonnegative row sum to sixth-power-free rows only decreases it. The inverse orientation follows by conjugating the entire polynomial.
+
+\Needspace{25\baselineskip}
+\section*{References}
+\phantomsection\addcontentsline{toc}{section}{References}
+
+\hypertarget{bib:DR}{}\textbf{{[}DR{]}} A. Dunn and M. Radziwiłł. \emph{Bias in cubic Gauss sums: Patterson's conjecture.} Annals of Mathematics \textbf{200} (2024), 967--1057; arXiv:2109.07463v3, §5 and Appendix A. The unconditional theta automorphy and cusp expansions only.
+
+\hypertarget{bib:QLS}{}\textbf{{[}QLS{]}} L. Goldmakher and B. Louvel. \emph{A quadratic large sieve inequality over number fields.} Mathematical Proceedings of the Cambridge Philosophical Society \textbf{154} (2013), 193--212; arXiv:1112.1642v2, Theorem 1.1 and Corollary 1.2.
+
+\hypertarget{bib:HB}{}\textbf{{[}HB{]}} D. R. Heath-Brown. \emph{Kummer's conjecture for cubic Gauss sums.} Israel Journal of Mathematics \textbf{120} (2000), 97--124, Theorem 2. doi:10.1007/s11856-000-1273-y.
+
+\hypertarget{bib:L}{}\textbf{{[}L{]}} OpenAI. \emph{The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane \(\Re s>7/8\).} 30 September 2026. Provenance only.
+
+\hypertarget{bib:S}{}\textbf{{[}S{]}} OpenAI. \emph{The Quasi-Riemann Hypothesis.} 5 October 2026. Provenance only.
+
+\hypertarget{bib:C}{}\textbf{{[}C{]}} \emph{A zero-free half-plane from shared detector witnesses and signed Gram estimates.} Research manuscript, 8 October 2026. Provenance only.
+
+\hypertarget{bib:K}{}\textbf{{[}K{]}} S. Kintali. \emph{A Short Proof of the Quasi-Riemann Hypothesis.} Supplied manuscript, 7 October 2026. Expository benchmark only; no theorem or intermediate estimate is invoked.
+
+\end{document}

@@ -1,0 +1,431 @@
+{
+  "schema": "zeta-unconditional-moment-provenance/1",
+  "source_variant": "readable ordinary Lean source",
+  "source": {
+    "path": "ZetaZeroFree/Analytic/Moments/Unconditional.lean",
+    "sha256": "7364fe4cb63e4954249a6900b04e94227f9279568be10949a54ecdfae7bf8307",
+    "bytes": 708059
+  },
+  "source_contexts": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.PrimeGlobal",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentPrimeGlobal.zeroMaximum_le_one",
+        "UnconditionalOAI.SevenEighths.CenteredMomentPrimeGlobal.ray_prime_global_squared"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.PrimeHeight",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentPrimeHeight.ray_prime_all_height_large",
+        "UnconditionalOAI.SevenEighths.CenteredMomentPrimeHeight.ray_prime_all_height_squared"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceNaturalPrime",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentNaturalFixedRaySource.natural_relative_slot_bound",
+        "UnconditionalOAI.SevenEighths.CenteredMomentNaturalFixedRaySource.natural_character_slot_bound"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceRayPrime",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentNaturalFixedRaySource.natural_ray_slots_uniform"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloorSlots",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.natural_slot_product"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloorNatural",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.natural_pair_slots"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloorShared",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.masked_natural_pair_slots"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloorSource",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.original_masked_positive_floor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloor",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.natural_masked_positive_floor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RayMaskedFloorState",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRayMaskedFloor.exists_positive_floor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.Bands",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyBands.exists_positive_bottom"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.RelativeCapacityRemoval",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentRelativeCapacityRemoval.relative_slots_uniform",
+        "UnconditionalOAI.SevenEighths.CenteredMomentRelativeCapacityRemoval.actual_relative_capacity_removal"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CapacityRemoval",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCapacityRemoval.actual_state_capacity_removal",
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCapacityRemoval.actual_relative_state_capacity_removal"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PaidRemoval",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyPaidRemoval.actual_paid_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.AllocatedPaid",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyAllocatedPaid.actual_allocated_paid_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.AllocatedClipped",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyAllocatedClipped.actual_clipped_paid_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.AllocatedHomogeneous",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyAllocatedHomogeneous.actual_clipped_homogeneous_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Moments.FirstMixedRoot",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentFirstMixedRoot.active_span_swap"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalChildBound",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalChildBound.actual_canonical_child_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalLiveBound",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalLiveBound.actual_live_canonical_child_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalPaidSource",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalPaidSource.actual_canonical_paid_source"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalCommonPaid",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalCommonPaid.actual_common_paid_source"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalReferencePaid",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalReferencePaid.actual_reference_paid_source"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalUniformReference",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalUniformReference.original_subsets_reference_paid"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainPaid",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainPaid.actual_main_child_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainUniform",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainUniform.actual_main_uniform_child"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainGaussian",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainGaussian.actual_main_gaussian_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainSeparated",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainSeparated.actual_main_separated_gaussian"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainSeparatedPower",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainSeparatedPower.actual_main_separated_power"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainHomogeneous",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainHomogeneous.actual_main_homogeneous"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalMainSubsets",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalMainSubsets.actual_original_subsets_main_power"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalNestedReference",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalNestedReference.nested_original_subsets_reference_paid"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorPaid",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorPaid.actual_error_child_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorUniform",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorUniform.actual_error_uniform_child"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorGaussian",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorGaussian.actual_error_gaussian_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorAdmitted",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorAdmitted.actual_error_smaller_gaussian"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorPower",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorPower.actual_error_power_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorHomogeneous",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorHomogeneous.actual_error_homogeneous"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalErrorSubsets",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalErrorSubsets.actual_original_subsets_error_power"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalAmplifiedUniform",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalAmplifiedUniform.actual_original_subsets_amplified_power"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalAnnularPower",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalAnnularPower.actual_original_subsets_annular_power"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalLowColumn",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalLowColumn.actual_admitted_subsets_low_column"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalHighColumn",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalHighColumn.actual_admitted_subsets_high_column"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalHighSource",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalHighSource.actual_original_left_high_column"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalRightSourceColumn",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalRightSourceColumn.actual_original_right_low_column",
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalRightSourceColumn.actual_original_right_high_column"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalHighPhysical",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalHighPhysical.actual_high_physical"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalLowSource",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalLowSource.actual_original_left_low_column"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CanonicalLowPhysical",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCanonicalLowPhysical.actual_low_physical"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowPhysical",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyNaturalLowPhysical.actual_natural_low_physical"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowStage",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyNaturalLowStage.actual_low_from_bands"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.WidthFloor",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyWidthFloor.control_mono",
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyWidthFloor.actual_joint_floor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CappedWidthInduction",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCappedWidthInduction.certified_floor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CappedLowStage",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCappedLowStage.actual_capped_low"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighPhysical",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyPositiveHighPhysical.actual_positive_high_physical"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalHighStage",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyNaturalHighStage.actual_high_stage"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysical",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyZeroGrowthPhysical.actual_growth_physical"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.NaturalZeroStage",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyNaturalZeroStage.actual_zero_stage"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCappedAnalyticSuccessor.actual_successor"
+      ]
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Energy.CertifiedExistence",
+      "declarations": [
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCertifiedExistence.certified_bands",
+        "UnconditionalOAI.SevenEighths.CenteredMomentEnergyCertifiedExistence.terminal_certificate"
+      ]
+    }
+  ],
+  "mathematical_changes": [
+    "Unconditional prime contour at a=1 and kappa=1",
+    "Finite effective-width descent with original family types",
+    "Fixed nonprincipal inducing rows restored",
+    "Independent heights, sharp finite row cutoff and compact C^J profiles",
+    "Uniform moving-radical presentations with all prescribed zeros retained"
+  ],
+  "presentation_conventions": [
+    "Base character includes fixed bad-prime exclusions",
+    "Distinct moving support primes indexed once",
+    "Positive sextic representatives 1..6; residue zero uses 6 to retain nonunit zeros"
+  ],
+  "full_readable_integration_verification": {
+    "passed": true,
+    "report": "evidence/analytic-verification-report.json",
+    "sha256": "db64d946cc6f18787d40f66cce22603ab23277b516f23ab578cf22118b874a1a",
+    "completed_at": "2026-10-10T06:19:41.054096+00:00",
+    "declarations": 1087,
+    "theorems": 703,
+    "modules": 33,
+    "reachable_constants": 124307,
+    "d3_independence": {
+      "forbidden_dependencies": [],
+      "missing_declarations": [],
+      "reachable_constants": 100736,
+      "roots": [
+        "ZetaZeroFree.Analytic.Moments.Unconditional.all_nonprincipal_at",
+        "ZetaZeroFree.Analytic.Moments.D3.mixed_plain_moment_radical"
+      ]
+    },
+    "fresh_kernel_replay_returncode": 0
+  },
+  "manuscript_inputs": [
+    {
+      "path": "<HOME>/Downloads/paper.pdf",
+      "sha256": "8fe93046f8cf5ef1ba5969c89addc02d76311adc4ee907509ff9cd96f7ec99e7",
+      "bytes": 1588969
+    },
+    {
+      "path": "<HOME>/Downloads/QRH.pdf",
+      "sha256": "f7ddc46632e37466e85951ea67acbd3c2abc19c8259fac51be569b1f6bbbe8e5",
+      "bytes": 471091
+    },
+    {
+      "path": "<HOME>/Downloads/zeta_zero_free_4_33_self_contained.md",
+      "sha256": "323c50c3ce9df09ee66dd44d70b3732e2a25bf4628f1dcdf68f9bfa00c27fafb",
+      "bytes": 114957
+    }
+  ],
+  "adapted_source_notice": {
+    "upstream": "https://github.com/openai/math",
+    "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+    "license_file": "LICENSE.OpenAI-Lean",
+    "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "modified_source": "ZetaZeroFree/Analytic/Moments/Unconditional.lean",
+    "changes": "Extracted the necessary source contexts, replaced the beta-dependent prime bound by the contour-at-one estimate, propagated the unconditional kappa>=1 premise through finite descent, reused compatible original declarations, and exposed the unconditional mixed-moment endpoints."
+  },
+  "omitted_historical_material": "Experimental serialized predecessor, old 7/8 corollary runs, native FrankenLean diagnostics and operational checkpoints are outside this current proof snapshot."
+}

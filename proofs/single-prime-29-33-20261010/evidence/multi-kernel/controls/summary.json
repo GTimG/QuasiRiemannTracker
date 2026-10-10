@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "matching proof accepted",
+    "mismatched statement rejected",
+    "ill-typed proof rejected"
+  ],
+  "source": "unmodified pinned Palomar comparator_preflight with native sandbox-enabled Comparator launcher"
+}

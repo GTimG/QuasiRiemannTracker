@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "Axiom",
+      "rejected": true,
+      "expected_reason": "analytic source declares axioms",
+      "passed": true
+    },
+    {
+      "case": "Admission",
+      "rejected": true,
+      "expected_reason": "forbidden axioms",
+      "passed": true
+    },
+    {
+      "case": "Missing",
+      "rejected": true,
+      "expected_reason": "required theorem is missing",
+      "passed": true
+    },
+    {
+      "case": "OldTerminal",
+      "rejected": true,
+      "expected_reason": "analytic dependency audit failed",
+      "passed": true
+    }
+  ],
+  "directory": "<TEMP>/zeta-analytic-gates-t2e2gltr",
+  "checks": [
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAdmission.lean",
+      "sha256": "e0fad1a2cca49cb51febae58eab2d07b3eb8c5a428c8ee215e0a8c3448db9566"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAdmissionAudit.lean",
+      "sha256": "b36e8c10dfa3bb8f6d3b0d11af1477b462ecc97fd1cb93743dcf57b4dbc900ee"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAxiom.lean",
+      "sha256": "b186ef391de2b412a4472c5840e7afe0f78141e7170c1c4cebe0c8cbcf311cfe"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAxiomAudit.lean",
+      "sha256": "322555f14c7a4a93b2df644988c7bf45187106ff77c73784f7366004243713dc"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateMissing.lean",
+      "sha256": "bf8291aa4507650ae76470d8d836afc44750dad87ed45127dc4dfbe88a377c27"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateMissingAudit.lean",
+      "sha256": "aad866a7e6feea64ae059df3267db38a800cf7211ee11d76429dc3ee02bbbef4"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateOldTerminal.lean",
+      "sha256": "5cc82bec1d7f1f432b9680cb8ec3a35fa489b3f59173df88e4411bc44d6bf641"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateOldTerminalAudit.lean",
+      "sha256": "879890afcf684ea83895b136e9dfc9a7d98010260c9eefd6a05c142fb10b30b1"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAdmission-audit.log",
+      "sha256": "4963a4e8972be2ff945418bc3ebf64bbbf3033ea7841070308de44932ba0923b"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAdmission-build.log",
+      "sha256": "c4cb9250d042043c62c5a9df4b5a55561e729e99cc56b6d4cd73210516a31731"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAxiom-audit.log",
+      "sha256": "7916458de806a66824a358c6f1524456d018a7010db671938abdf8a2a22b2d42"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateAxiom-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateMissing-audit.log",
+      "sha256": "e52c31f8cfcd8e1767932eaeb108577ca732edceae2d084cb4bcb6bec709b9e1"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateMissing-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateOldTerminal-audit.log",
+      "sha256": "4f98071b645a1ed7518c0d5154f7841ac89dea2d97cabeb1a7aa5883f7330b78"
+    },
+    {
+      "path": "<TEMP>/zeta-analytic-gates-t2e2gltr/GateOldTerminal-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "module_inventory_control": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "added mathematical module",
+        "rejected": true,
+        "reason": "Analytic module inventory changed during verification"
+      },
+      {
+        "case": "nested Audit filename",
+        "rejected": true,
+        "reason": "Analytic module inventory changed during verification"
+      },
+      {
+        "case": "removed mathematical module",
+        "rejected": true,
+        "reason": "Analytic module inventory changed during verification"
+      }
+    ],
+    "runner_sha256": "a56d4a344bc3687895b521a55ca7f2ee2cf2c35d6b2bbeaefa1413fc2f1455fa",
+    "completed_at": "2026-10-10T05:01:45.009505+00:00"
+  },
+  "d3_circularity_control": {
+    "passed": true,
+    "returncode": 1,
+    "source": "<TEMP>/zeta-d3-independence-control-20261010.lean",
+    "source_sha256": "fe3d46014875ace159507770ce82486b64375af9db3ad8624f085c1a80e501eb",
+    "log": "<TEMP>/zeta-d3-independence-control-20261010.log",
+    "audit": {
+      "forbidden_dependencies": [
+        "ZetaZeroFree.Analytic.beta_le_twenty_nine_thirty_thirds",
+        "ZetaZeroFree.Analytic.common_deleted_probe_estimates",
+        "_private.ZetaZeroFree.Analytic.Final.0.ZetaZeroFree.Analytic.isBigO_of_eventual_power_bound"
+      ],
+      "missing_declarations": [],
+      "reachable_constants": 123459,
+      "roots": [
+        "D3NegativeControl.circular"
+      ]
+    }
+  }
+}

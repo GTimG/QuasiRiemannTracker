@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "kind": "local official Comparator and three-kernel verification; no registry submission",
+  "declarations": [
+    "SinglePrime2933.allDirichlet",
+    "SinglePrime2933.zeta",
+    "SinglePrime2933.allHecke",
+    "SinglePrime2933.appendixD3"
+  ],
+  "theta": "29/33",
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "preflight_passed": true,
+  "statement_definitions_compared": true,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "source_compiler": "4.34.1",
+  "judge_toolchain": "4.35.0-rc2",
+  "exports": {
+    "Challenge": {
+      "bytes": 666577664,
+      "sha256": "bb87ba133ddea8c685d96008f53fc48af171045c97dc447928dbfb69eebe4c64"
+    },
+    "Solution": {
+      "bytes": 1664082892,
+      "sha256": "55ba93b62fe052cb4523d7fcb70c6993e0af6d61a53e04a4b722173b936bd356"
+    }
+  },
+  "scope": "Proof closures of the three nonvanishing endpoints and the standalone Appendix D.3 radical mixed moment.",
+  "elapsed_seconds": 749.551,
+  "completed_utc": "2026-10-10T07:47:35.881822+00:00",
+  "evidence_sha256": {
+    "src/Challenge.lean": "7549951ae5a8ca650b5b4109ac7b0452a4e8b8d6d6051d68cc282e0713a575a6",
+    "src/Solution.lean": "f6e2ba14221be2a1257325810767b75ae59e38a2afa609a0f978489b22bc0858",
+    "comparator.json": "fe929472829b5403c5f245599f8b75921f0aceb82da4d4c0a3baf6c869611bab",
+    "judge.log": "5fcfd7bdb1f2d5a4e99c6f3c1f11b91da061b9170839e282824fad736d5e7a43",
+    "tool-pins.json": "f74b460375ffc6128ae4c572bcd1f591bade7821f8c0f5597394bc52a7e48ede",
+    "preflight-result.json": "4dacf5c34ef37b4c89cb6592f4415594686e3a1f98f6d5c7e17a0a72ce7e3532",
+    "export-pins.json": "0210ababf4bf207ff8cb18e56c73780d39e03077d594fb937feb7533228aa663",
+    "input-inventory.json": "57aceb34347e96beb55ab17ea377e092e83d066d2be7f948ddcb38649a12b533",
+    "resources.jsonl": "ed1e342b17cef94769d53b3b5ed1dc446148a8a32810933619dea1c2709bb904",
+    "judge/supervisor.json": "4873b056202e5943950e854d375de1555a27746ef4198ce33b36303217c05d5b",
+    "judge/execution.json": "1d31ebe6fb9112dd3b917dd169d6b09e647ad9e4ad13d529bb69102392563747",
+    "runner.py": "d33f5e7cf7392090d10e2cf3a999d74f032573e2d6ff1f8f79982ca13d06ebf4",
+    "native_judge.py": "5105ec621d43e167ba3ac965110ce4ea21612ee71ec8ec3b3345f442136f355c"
+  },
+  "limits": [
+    "No Palomar registry or editorial acceptance claimed.",
+    "No independent check of unused helper theorems claimed.",
+    "Proof compiler predates current Palomar submission floor; exported proof compatibility tested directly.",
+    "Uses Comparator's built-in kernel sandboxes and cgroup limits, without Palomar's extra outer judge sandbox; host security policies unchanged.",
+    "Challenge uses pinned OpenAI and local presentation definitions beyond the registry import allowlist."
+  ]
+}

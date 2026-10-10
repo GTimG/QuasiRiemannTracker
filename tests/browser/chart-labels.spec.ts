@@ -46,7 +46,7 @@ test("nearby chart names stay readable through resizing, filtering and zoom", as
   isMobile,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-dot]")).toHaveCount(5);
+  await expect(page.locator("[data-dot]")).toHaveCount(6);
   if (!isMobile) {
     const newest = page.locator(
       '[data-id="nielstron-20261009-tightening"] .point-label',
