@@ -189,7 +189,10 @@ PrimeNumberTheoremAnd `c39a751132c88b6e8080b74c74023fd95b3d8be0`, and
 rellich-kondrachov `70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23`.
 The latter two retain the upstream Lean 4.34.1 compatibility patches.
 `evidence/current-provenance.json` preserves the supplied-document hashes and
-current source provenance. The original documents remain unchanged.
+current source provenance. The publication revision adds Hailey Collet's
+authorship, contact details and GPT-6 Pro assistance credit. Its source changes
+and rebuilt PDF hashes are recorded in `manuscript/rendered-documents.json`;
+the mathematical text, Lean sources and kernel evidence are unchanged.
 
 The publication snapshot replaces the original local source symlink with
 the exact required OAI source files. The local cache is excluded. Use the

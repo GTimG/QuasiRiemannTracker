@@ -1,5 +1,11 @@
 # A zero-free half-plane from a single compensating prime
 
+**Hailey Collet**
+
+[HaileyCollet@gmail.com](mailto:HaileyCollet@gmail.com)
+
+Developed with assistance from OpenAI's GPT-6 Pro.
+
 ## Abstract
 
 We prove that the Riemann zeta function, every Dirichlet \(L\)-function, and every finite-order Hecke \(L\)-function over \(\mathbf Q(\sqrt{-3})\) have no zero in \(\Re s>29/33\), with principal poles at one allowed. A cubic-theta probe exposes a reciprocal \(L\)-function after Poisson summation. One compensating prime strengthens its principal signal, while two polynomial witnesses detected at the same zero control the remaining rows. The decisive exponent comparison is an exact nonnegative square. We prove the required polynomial moments, reflection estimates, and finite arithmetic identities from classical theta formulas and large sieves.

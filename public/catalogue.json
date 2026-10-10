@@ -342,7 +342,7 @@
       },
       "authors": [
         {
-          "name": "HaileyStorm (formalization, with OpenAI Codex)"
+          "name": "Hailey Collet"
         }
       ],
       "method": "A non-record single-compensating-prime alternative proof, with an independently usable unconditional moving-radical mixed moment. Intermediate OpenAI foundations are reused; the previous terminal 7/8 result is excluded.",
@@ -368,7 +368,7 @@
       "timeline_at": "2026-10-10T07:47:35.881822+00:00",
       "date_label": "Contributor three-kernel verification",
       "verification_note": "Contributor Lean audit and local Comparator, Lean, NanoDa and con-ron checks passed for the four main theorem closures. Exact source, statements, checker pins and logs are retained for maintainer review. No signed registry receipt. Non-record contribution; repository status pending review.",
-      "attribution_note": "Formalization submitted by HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. The supplied manuscript has no author field; its mathematical authorship is not assigned to the submitter or the model."
+      "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing."
     }
   ]
 }

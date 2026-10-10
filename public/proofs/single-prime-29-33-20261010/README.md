@@ -3,9 +3,12 @@
 A single-compensating-prime alternative proof, with an independently usable
 unconditional moving-radical mixed moment. The bound is weaker than 7/8.
 
+Manuscript by **Hailey Collet** (HaileyCollet@gmail.com), developed with
+assistance from OpenAI's GPT-6 Pro.
+
 - [Rendered manuscript (PDF)](zeta_zero_free_4_33_self_contained.pdf)
 - [LaTeX source](zeta_zero_free_4_33_self_contained.tex)
-- [Original Markdown](zeta_zero_free_4_33_self_contained.md)
+- [Markdown source](zeta_zero_free_4_33_self_contained.md)
 - [Source bundle](source-public.tar.gz) and [checksum](SHA256SUMS.txt)
 - [Verification and mathematical coverage](Verification.md)
 - [Local three-kernel report](multi-kernel-report.json)

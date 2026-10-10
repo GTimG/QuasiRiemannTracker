@@ -1,7 +1,7 @@
 {
-  "NOTICE.md": "4027833caceee8c8749b37564ed5a52c0e4abdf28bc088139b1401fc141269fa",
-  "README.md": "296814fc46620fecd746ab4504a1bd10f54a0805c776d0083675743d1280a47f",
-  "Verification.md": "214c76690f601c0bd5e07e3e33c04c8ccb6ae50a61df86c3c46a5edc13acb328",
+  "NOTICE.md": "02982181d32f98955a7249926e59cd7c406e29e3d924983bc68061a95bdc0d8e",
+  "README.md": "a677740f917bad5c528d7d976cb97a493725b20bff3890c5a453e7b61310c573",
+  "Verification.md": "4dcd72c2f800b1b6c67f662cf814b1e1a7dd83f47bfc650e6ce258bce2698289",
   "evidence/analytic-gate-controls.json": "038610d619a074caf4677380b965df763245af40c6338da42873fac688e68ede",
   "evidence/analytic-verification-report.json": "392582a7996a1844031224e8810cc2a934f343d67a11ddc5c04dc22b5a43d0fe",
   "evidence/current-provenance.json": "ada3b6f0322ce2e5672c8e403586b70533a0a62efc52e258bebdd54abc1a3e55",
@@ -2951,9 +2951,9 @@
   "formalization/patches/rellich-kondrachov-lean4341.patch": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
   "formalization/verify_analytic.py": "3338ec2c1d36a92b7b91280e3855090e896a1e882d280763c3a259f3adfdbe76",
   "licenses/LICENSE.OpenAI-Lean": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-  "manuscript/rendered-documents.json": "2571b13db0ad678ab606021e4a4f6325c261c41a84c23fb882d8f09654f598f4",
-  "manuscript/zeta_zero_free_4_33_self_contained.md": "323c50c3ce9df09ee66dd44d70b3732e2a25bf4628f1dcdf68f9bfa00c27fafb",
-  "manuscript/zeta_zero_free_4_33_self_contained.tex": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690",
+  "manuscript/rendered-documents.json": "0a77366bdc8a1b90f952fb27d424ff600aaf612058f4356eed7d68c6ecd39c1e",
+  "manuscript/zeta_zero_free_4_33_self_contained.md": "e35dbe7b205df1b3fb071f8baeef5723494618eb220e61b3521e6c7bc90da88b",
+  "manuscript/zeta_zero_free_4_33_self_contained.tex": "dd4aed8124f9f6c3327dd26e1e1225c1b81ba17082c429b6d4d27e1e72f59bdc",
   "publication-files.json": "a910275c56bfb48496e7c4f897e9e233f66c9e6805ddea5521ac68a604224142",
-  "publication-transformations.json": "073b1937e65e2fa04cdc8ab4a45023324549d144284e8f6252447683531c77bc"
+  "publication-transformations.json": "710538657ea07373fe19b7c4910a07a8e55642418936da09c1a76e373c2a7ab3"
 }

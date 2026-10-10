@@ -47,8 +47,10 @@ wrappers, experimental proof loaders, caches and compiled `.olean` files.
 
 ## Manuscript formats
 
-[Rendered PDF](../../public/proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf) · [LaTeX source](manuscript/zeta_zero_free_4_33_self_contained.tex) · [Original Markdown](manuscript/zeta_zero_free_4_33_self_contained.md)
+[Rendered PDF](../../public/proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf) · [LaTeX source](manuscript/zeta_zero_free_4_33_self_contained.tex) · [Markdown source](manuscript/zeta_zero_free_4_33_self_contained.md)
 
-The contributor-supplied PDF and TeX are retained unchanged; hashes are
-in `manuscript/rendered-documents.json`. The PDF is published separately
-from the UTF-8 source archive.
+The manuscript is by **Hailey Collet**, developed with assistance from OpenAI's
+GPT-6 Pro. The publication revision adds author and contact details; the
+mathematical text is unchanged. Original and revised hashes are recorded in
+`manuscript/rendered-documents.json`. The PDF is published separately from the
+UTF-8 source archive.

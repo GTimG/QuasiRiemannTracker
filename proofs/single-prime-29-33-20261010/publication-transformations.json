@@ -52,8 +52,8 @@
     {
       "path": "Verification.md",
       "original_sha256": "05079eb0e214b3a02b1b631c76a6e557d0e5774f9b8a14bd926f22dd716fb21e",
-      "published_sha256": "214c76690f601c0bd5e07e3e33c04c8ccb6ae50a61df86c3c46a5edc13acb328",
-      "change": "Host paths removed; reproduction and evidence links adapted to the portable current-only snapshot. Mathematical claims preserved. Added separately dated completed local three-kernel evidence and its precise scope."
+      "published_sha256": "4dcd72c2f800b1b6c67f662cf814b1e1a7dd83f47bfc650e6ce258bce2698289",
+      "change": "Host paths removed; reproduction and evidence links adapted to the portable current-only snapshot. Mathematical claims preserved. Added separately dated completed local three-kernel evidence and its precise scope. Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
     },
     {
       "path": "evidence/multi-kernel/result.json",
@@ -276,6 +276,36 @@
       "original_sha256": "315d6e6a43b771e10a1d9ad6e0d9c960e45f233c698b6d3f86464297b767089e",
       "published_sha256": "a85f5e56c39622e323d1a9bb5e6b5f840513091aa3aadf28d3f9b33d59ee7e01",
       "change": "Host-specific path prefixes and cgroup identity replaced by symbolic labels; evidence and mathematical content preserved."
+    },
+    {
+      "path": "README.md",
+      "original_sha256": "296814fc46620fecd746ab4504a1bd10f54a0805c776d0083675743d1280a47f",
+      "published_sha256": "a677740f917bad5c528d7d976cb97a493725b20bff3890c5a453e7b61310c573",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "NOTICE.md",
+      "original_sha256": "4027833caceee8c8749b37564ed5a52c0e4abdf28bc088139b1401fc141269fa",
+      "published_sha256": "02982181d32f98955a7249926e59cd7c406e29e3d924983bc68061a95bdc0d8e",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/zeta_zero_free_4_33_self_contained.md",
+      "original_sha256": "323c50c3ce9df09ee66dd44d70b3732e2a25bf4628f1dcdf68f9bfa00c27fafb",
+      "published_sha256": "e35dbe7b205df1b3fb071f8baeef5723494618eb220e61b3521e6c7bc90da88b",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/zeta_zero_free_4_33_self_contained.tex",
+      "original_sha256": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690",
+      "published_sha256": "dd4aed8124f9f6c3327dd26e1e1225c1b81ba17082c429b6d4d27e1e72f59bdc",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
+    },
+    {
+      "path": "manuscript/rendered-documents.json",
+      "original_sha256": "2571b13db0ad678ab606021e4a4f6325c261c41a84c23fb882d8f09654f598f4",
+      "published_sha256": "0a77366bdc8a1b90f952fb27d424ff600aaf612058f4356eed7d68c6ecd39c1e",
+      "change": "Added author-confirmed Hailey Collet authorship, contact and GPT-6 Pro assistance credit; no mathematical changes."
     }
   ],
   "lean_source_changes": [],

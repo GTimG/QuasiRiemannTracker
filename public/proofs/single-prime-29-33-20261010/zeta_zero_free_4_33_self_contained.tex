@@ -2,6 +2,14 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{iftex}
+\ifXeTeX
+\usepackage{newunicodechar}
+\newunicodechar{§}{\S}
+\newunicodechar{ö}{\"o}
+\newunicodechar{é}{\'e}
+\newunicodechar{ł}{\l}
+\fi
 \usepackage[margin=23mm,top=22mm,bottom=23mm]{geometry}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
@@ -10,7 +18,7 @@
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{30,62,95}
 \usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue,citecolor=linkblue]{hyperref}
-\hypersetup{pdftitle={A zero-free half-plane from a single compensating prime},pdfsubject={Integrated proof of the 4/33 zero-free half-plane},pdfauthor={}}
+\hypersetup{pdftitle={A zero-free half-plane from a single compensating prime},pdfsubject={Integrated proof of the 4/33 zero-free half-plane},pdfauthor={Hailey Collet}}
 \urlstyle{same}
 \setlength{\parindent}{1.1em}
 \setlength{\parskip}{3pt plus 1pt minus 1pt}
@@ -23,7 +31,8 @@
 \pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
 \pretocmd{\subsection}{\Needspace{5\baselineskip}}{}{}
 \title{\vspace{-1.3em}A zero-free half-plane from a single compensating prime}
-\author{}
+\author{Hailey Collet\thanks{Developed with assistance from OpenAI's GPT-6 Pro.}\\
+\small\href{mailto:HaileyCollet@gmail.com}{HaileyCollet@gmail.com}}
 \date{}
 \begin{document}
 \maketitle

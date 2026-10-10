@@ -1,15 +1,50 @@
 {
-  "source": "Contributor-supplied TeX and rendered PDF; included unchanged at explicit request.",
+  "source": "Author-confirmed publication revision of the contributor-supplied manuscript.",
+  "author": {
+    "name": "Hailey Collet",
+    "email": "HaileyCollet@gmail.com"
+  },
+  "assistance": "Developed with assistance from OpenAI's GPT-6 Pro.",
+  "revision": "Author, contact, assistance credit and PDF author metadata added; XeTeX preamble mappings preserve section symbols and accented names. Mathematical text unchanged.",
+  "original_supplied_documents": {
+    "tex": {
+      "path": "zeta_zero_free_4_33_self_contained.tex",
+      "bytes": 122210,
+      "sha256": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690"
+    },
+    "pdf": {
+      "public_path": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf",
+      "pages": 36,
+      "bytes": 573655,
+      "sha256": "bc0ba4416d2eddbe4b0680d011488394298538727a006446e3eb8905f0f88272"
+    },
+    "markdown": {
+      "sha256": "323c50c3ce9df09ee66dd44d70b3732e2a25bf4628f1dcdf68f9bfa00c27fafb"
+    }
+  },
   "tex": {
     "path": "zeta_zero_free_4_33_self_contained.tex",
-    "bytes": 122210,
-    "sha256": "51b34920df0e477685709b2de64dae757bbb9509d731b71e59d5166104041690"
+    "bytes": 122522,
+    "sha256": "dd4aed8124f9f6c3327dd26e1e1225c1b81ba17082c429b6d4d27e1e72f59bdc"
   },
   "pdf": {
     "public_path": "proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf",
     "pages": 36,
-    "bytes": 573655,
-    "sha256": "bc0ba4416d2eddbe4b0680d011488394298538727a006446e3eb8905f0f88272"
+    "bytes": 311164,
+    "sha256": "8c48088bb0b3afd10c43870779c086bb02329d44c7ed25d331893abf7a45cfd4"
   },
-  "lean_sources_changed": false
+  "markdown": {
+    "path": "zeta_zero_free_4_33_self_contained.md",
+    "bytes": 115085,
+    "sha256": "e35dbe7b205df1b3fb071f8baeef5723494618eb220e61b3521e6c7bc90da88b"
+  },
+  "rendering": {
+    "compiler": "Tectonic 0.17.0",
+    "input": "tex.path",
+    "shell_escape": false,
+    "compatibility": "XeTeX mappings for section symbols and accented names preserve the supplied text."
+  },
+  "mathematical_text_changed": false,
+  "lean_sources_changed": false,
+  "kernel_evidence_changed": false
 }

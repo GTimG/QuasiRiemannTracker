@@ -15,13 +15,16 @@ contexts and changes are in evidence/current-provenance.json. The local
 source files are preserved exactly as verified; this notice accompanies them.
 The upstream terminal 7/8 theorem is not a proof dependency of the new result.
 
-The manuscript was supplied by the user, without an author or license field.
-Its authorship and publication rights are not inferred from possession or
-from use of a coding assistant. The two predecessor PDFs are included only
-in the separate reviewer-materials directory of the outer ZIP, not in this
-proof overlay. The contributor explicitly requested public inclusion of the
-Markdown, TeX and rendered PDF; no mathematical author is inferred. The retained
-upstream license does not assign a new license to those manuscripts.
+The manuscript is by Hailey Collet (HaileyCollet@gmail.com), developed with
+assistance from OpenAI's GPT-6 Pro. Hailey explicitly confirmed this authorship
+and requested publication of the Markdown, TeX and rendered PDF. The published
+revision adds the author, contact address and assistance credit; the mathematical
+text is unchanged. The original supplied-document hashes are retained in
+evidence/current-provenance.json and manuscript/rendered-documents.json.
+
+The two predecessor PDFs are included only in the separate reviewer-materials
+directory of the outer ZIP, not in this proof overlay. The retained upstream
+license does not assign a new license to these manuscripts.
 
 Other packages are fetched at the supplied lockfile pins. Their own licenses
 remain in their source repositories; their sources and binaries are not
