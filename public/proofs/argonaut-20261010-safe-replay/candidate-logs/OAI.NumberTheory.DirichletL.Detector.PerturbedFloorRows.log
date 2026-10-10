@@ -1,0 +1,21 @@
+OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean:150:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean:150:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean:150:68: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean:529:24: warning: Variable name `hzetahi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hzetahi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI/NumberTheory/DirichletL/Detector/PerturbedFloorRows.lean:530:46: warning: Variable name `hsaving` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsaving
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

@@ -1,0 +1,32 @@
+OAI.SevenEighths.Parameters.HighDataPerturbedBudget (Δ B : ℝ) : Type
+OAI.SevenEighths.Parameters.HighDataPerturbed (Δ : ℝ) : Type
+OAI.SevenEighths.Parameters.exists_distinct_slot_lengths_total_perturbed (Ltotal L : ℝ) (hLtotal : 0 < Ltotal)
+  (hL : 0 < L) :
+  ∃ N, 0 < N ∧ ∃ ell, Function.Injective ell ∧ (∀ (j : Fin N), 0 < ell j ∧ ell j < L) ∧ ∑ j, ell j = Ltotal
+OAI.SevenEighths.Parameters.exists_physical_slot_lengths_total_perturbed (Ltotal dmin dmax mesh R : ℝ)
+  (hLtotal : 0 < Ltotal) (hdmin : 0 < dmin) (hd : dmin ≤ dmax) (hm : 0 < mesh) (hR : 0 < R) :
+  ∃ N,
+    0 < N ∧
+      ∃ ell rmin,
+        0 < rmin ∧
+          Function.Injective ell ∧
+            ∑ j, ell j = Ltotal ∧
+              (∀ (j : Fin N), 0 < ell j ∧ dmax * rmin ≤ ell j ∧ ell j ≤ dmin * mesh ∧ ell j ≤ dmin * R) ∧
+                ∀ (d : ℝ), dmin ≤ d → d ≤ dmax → ∀ (j : Fin N), rmin ≤ ell j / d ∧ ell j / d ≤ mesh ∧ ell j / d ≤ R
+OAI.SevenEighths.Parameters.exists_high_data_perturbed_budget (Δ B : ℝ) (hΔ : 0 < Δ) (hB : 0 < B) :
+  Nonempty (OAI.SevenEighths.Parameters.HighDataPerturbedBudget Δ B)
+OAI.SevenEighths.Parameters.exists_high_data_perturbed (Δ : ℝ) (hΔ : 0 < Δ) :
+  Nonempty (OAI.SevenEighths.Parameters.HighDataPerturbed Δ)
+OAI.SevenEighths.Parameters.exists_high_data_perturbed_fine (Δ : ℝ) (hΔ : 0 < Δ) (mesh : ℝ → ℝ)
+  (hmesh : ∀ (t : ℝ), 0 < t → 0 < mesh t) : ∃ D, ∀ (j : Fin D.N), D.ell j ≤ mesh D.t / 200
+'OAI.SevenEighths.Parameters.exists_distinct_slot_lengths_total_perturbed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.Parameters.exists_physical_slot_lengths_total_perturbed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.Parameters.exists_high_data_perturbed_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.Parameters.exists_high_data_perturbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.Parameters.exists_high_data_perturbed_fine' depends on axioms: [propext, Classical.choice, Quot.sound]

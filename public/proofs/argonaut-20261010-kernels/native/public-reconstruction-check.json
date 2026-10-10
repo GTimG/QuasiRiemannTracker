@@ -1,0 +1,299 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-10T01:50:47.162942+00:00",
+  "compact_archive_sha256": "01d24d12c4645ff334aa4bf3656cb3154cc5080a380127a564503b8a84e13abf",
+  "compact_file_count": 178,
+  "downloaded_original_archive_sha256": "37602f9379f833c1b9ad3a6c7c628f961670f4219a9ac0f4190f8eb9b7655a93",
+  "original_overlay_files_rehashed": 12055,
+  "fresh_compiled_source_files_byte_equal": 152,
+  "dependency_revisions": [
+    {
+      "name": "mathlib",
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "origin": "https://github.com/leanprover-community/mathlib4.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "checkdecls",
+      "revision": "3d425859e73fcfbef85b9638c2a91708ef4a22d4",
+      "origin": "https://github.com/PatrickMassot/checkdecls.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "doc-gen4",
+      "revision": "953c8992d174b4e56955e01e101d46668c68f2bb",
+      "origin": "https://github.com/leanprover/doc-gen4.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "PrimeCert",
+      "revision": "0803c2f6bd289c09704c7d352bb8fcf770cbb9b2",
+      "origin": "https://github.com/b-mehta/PrimeCert.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "LeanArchitect",
+      "revision": "468e8f58fb4ad6e6ad672a08da6d0d0531e95a97",
+      "origin": "https://github.com/hanwenzhu/LeanArchitect.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "leancert",
+      "revision": "7f91b6eb3567437f6cfac03ed279706603ee22f4",
+      "origin": "https://github.com/alerad/leancert.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "PrimeNumberTheoremAnd",
+      "revision": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "origin": "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "belyi",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "origin": "https://github.com/lana-agents/belyi.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "formal-schemes",
+      "revision": "51aa935079537bf4dc580751a6e70727fb23ca93",
+      "origin": "https://github.com/lana-agents/formal-schemes.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "elliptic-curves",
+      "revision": "bebec3fc9f2602e81c83e5236789572a541c85fb",
+      "origin": "https://github.com/lana-agents/elliptic-curves.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "tempered-fundamental-groups",
+      "revision": "2006651f52b70ea2fe3388238c7d9db14d21748f",
+      "origin": "https://github.com/lana-agents/tempered-fundamental-groups.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "oka",
+      "revision": "75dcdc3faadd10b986afb9283e89902bcdddecd4",
+      "origin": "https://github.com/lana-agents/oka.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "orbicurve-cores",
+      "revision": "61616dcd77fbe45c083a8ebfa7cc80728f86e841",
+      "origin": "https://github.com/lana-agents/orbicurve-cores.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "pi1",
+      "revision": "ca7def953193f861a462aa0831eec8f0a31ff69f",
+      "origin": "https://github.com/lana-agents/pi1.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "heights",
+      "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "origin": "https://github.com/lana-agents/heights.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "genl",
+      "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "origin": "https://github.com/lana-agents/genl.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "tate-curves-theta",
+      "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+      "origin": "https://github.com/lana-agents/tate-curves-theta.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "iut",
+      "revision": "d9465c111ec4073709f67e9fccec7e3eb374a816",
+      "origin": "https://github.com/lana-agents/iut.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "gromov",
+      "revision": "8db79f13cf211b570e3116301d91379fbc01cf3e",
+      "origin": "https://github.com/Aaron1011/gromov.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "TauCeti",
+      "revision": "3bed7e37f3c504a99e8c07e9f309540812a7aa90",
+      "origin": "https://github.com/TauCetiProject/TauCeti.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "SphereEversion",
+      "revision": "9c53f91e2a281199163ecea04dc4976cb79e2076",
+      "origin": "https://github.com/leanprover-community/sphere-eversion.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "schoenflies-lean",
+      "revision": "05a43d29cde026618777db3d4e4316204ccca237",
+      "origin": "https://github.com/alonamaloh/schoenflies-lean",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "ClassFieldTheory",
+      "revision": "2eb22d6485af45f29c5219de6c49f196a61c4f49",
+      "origin": "https://github.com/n-yamaguchi-0729/ClassFieldTheory.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "AINTLIB",
+      "revision": "160e446617a2168c34c95bbe7a76c4105b392434",
+      "origin": "https://github.com/CBirkbeck/AINTLIB.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "AbsorptionCutoff",
+      "revision": "41c45c6d72e979419e46224bb7b4be5cee31f2b5",
+      "origin": "https://github.com/BennyAvelin/AbsorptionCutoff.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "StrongPNT",
+      "revision": "2f5835c322314f55f1026ec2f139d704b7c45c69",
+      "origin": "https://github.com/math-inc/strongpnt.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "carleson",
+      "revision": "306ae5b29300771aece1aa39f0a939183cc59486",
+      "origin": "https://github.com/fpvandoorn/carleson.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "rellich-kondrachov",
+      "revision": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "origin": "https://github.com/abenenson/rellich-kondrachov.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "Zeta3Irrational",
+      "revision": "e8785315a01c8fbcddaa0fc03b3c8b29a61bc1f1",
+      "origin": "https://github.com/ahhwuhu/zeta_3_irrational.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "fixed-point-theorems",
+      "revision": "770940ddf9878cf61952ed53d910b92bca841838",
+      "origin": "https://github.com/harfe/fixed-point-theorems-lean4.git",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "plausible",
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "origin": "https://github.com/leanprover-community/plausible",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "origin": "https://github.com/leanprover-community/LeanSearchClient",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "importGraph",
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "origin": "https://github.com/leanprover-community/import-graph",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "origin": "https://github.com/leanprover-community/ProofWidgets4",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "aesop",
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "origin": "https://github.com/leanprover-community/aesop",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "Qq",
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "origin": "https://github.com/leanprover-community/quote4",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "batteries",
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "origin": "https://github.com/leanprover-community/batteries",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "leansqlite",
+      "revision": "f9cdb9eacb5c8b8ecc02ee9fd9e568d7d28c1416",
+      "origin": "https://github.com/leanprover/leansqlite",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "Cli",
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "origin": "https://github.com/leanprover/lean4-cli",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "UnicodeBasic",
+      "revision": "0e569d08b6443ce0908d356884c765397253e2f0",
+      "origin": "https://github.com/fgdorais/lean4-unicode-basic",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "BibtexQuery",
+      "revision": "4d8616fd4870d0a3453d845770833eac7951fe1c",
+      "origin": "https://github.com/dupuisf/BibtexQuery",
+      "git_object_reuse_only": true
+    },
+    {
+      "name": "MD4Lean",
+      "revision": "31907cc18f48a95384f99cee5582c00fb39e0f67",
+      "origin": "https://github.com/acmepjz/md4lean",
+      "git_object_reuse_only": true
+    }
+  ],
+  "fresh_source_audits": [
+    {
+      "source": "project/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean",
+      "source_sha256": "2a2a4b3064c3500456398e0cb32ab8b5e78add1d685e403fd5c820d8d034ab57",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/reproduction-check/project",
+        "WORKSPACE/approaches/argonaut/reproduction-check/project/audits/PerturbedBoundaryMainCurrentFullAuditV2.lean"
+      ],
+      "log": "PerturbedBoundaryMainCurrentFullAuditV2.lean.log",
+      "log_sha256": "e4571b25ad99f00687217fc36c17884dfa9e9ae737c15fc91c9764e784613bec",
+      "returncode": 0,
+      "output_byte_equal_to_original_native_audit": true
+    },
+    {
+      "source": "project/audits/HUBBLE-PrincipalV2-TerminalAudit.lean",
+      "source_sha256": "537f7335eae91ffb34b8e66d8b646b6dd9a4e80ae7ac235b7b513277c0c03fc6",
+      "command": [
+        "WORKSPACE/compressed/toolchains/lean-4.34.1-linux/bin/lean",
+        "-j1",
+        "-DautoImplicit=false",
+        "-R",
+        "WORKSPACE/approaches/argonaut/reproduction-check/project",
+        "WORKSPACE/approaches/argonaut/reproduction-check/project/audits/HUBBLE-PrincipalV2-TerminalAudit.lean"
+      ],
+      "log": "HUBBLE-PrincipalV2-TerminalAudit.lean.log",
+      "log_sha256": "d9f10836538f82b0c488a6f86601317ef4a1be3f82eea0c7265188f3609fc985",
+      "returncode": 0,
+      "output_byte_equal_to_original_native_audit": true
+    }
+  ],
+  "native_artifact_policy": "Existing authenticated artifacts imported read-only; original proof and protected final result unchanged.",
+  "stronger_local_result_used": false
+}

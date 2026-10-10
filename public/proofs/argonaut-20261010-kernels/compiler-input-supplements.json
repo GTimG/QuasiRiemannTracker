@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-10T02:10:31.603879+00:00",
+  "candidate": "Argonaut Math v0.1.8",
+  "native_main_olean_count": 13821,
+  "native_optional_sidecar_count": 21488,
+  "native_total_artifact_count": 35309,
+  "native_source_file_count": 25657,
+  "native_inventory_sha256": "67e7ffe84f22b512482e892782f920af94b32a775a8854feb701774654f78fac",
+  "module_resolution_pre_sha256": "349829b1ed603cb44474915b8dc3a850488c41225ab678775ebc9435f8519179",
+  "canonical_main_olean_count": 4386,
+  "canonical_present_sidecar_count": 8130,
+  "scope": "Supplementary compiler-input provenance audit, distinct from the independent mathematical kernel verdict. All Argonaut native artifacts were already inventoried; no implicit-Init correction is needed for this candidate. Shared provenance records cover official-cache/release origins also used by the canonical definition closure. The Liu-specific initial inventory correction retained in the shared record is not an Argonaut count or correction.",
+  "shared_provenance_records": {
+    "dependency-sidecar-audit.json": {
+      "original_sha256": "f7fe2c15a63ea09fed4c1448bae8ac886ea81a3986f5dbfd54f1e331d098148b",
+      "reconstruct_from": "metadata/dependency-sidecar-audit.json"
+    },
+    "toolchain-sidecar-audit.json": {
+      "original_sha256": "c0ac14f5b367365dba850a16fd01c02f6ad5803d37601fe2b4ba780cd3178967",
+      "reconstruct_from": "metadata/toolchain-sidecar-audit.json"
+    },
+    "canonical-sidecar-coverage.json": {
+      "original_sha256": "86c0daccd05684ce993bd14aa6d8aa423a17fb62c61e5dafb8dd8621ab03822e",
+      "reconstruct_from": "metadata/canonical-sidecar-coverage.json"
+    },
+    "implicit-init-supplement.json": {
+      "original_sha256": "299bebd88271137e2ddc52cd9f5ececa913c29b6c742d24e4aa0e06bc8fc1b78",
+      "reconstruct_from": "metadata/implicit-init-supplement.json"
+    },
+    "mathlib-cache-key-source-audit.json": {
+      "original_sha256": "32c8238831adeedd9de0e3b3d5512601bf0b65ece973f49765667d9dc646d768",
+      "reconstruct_from": "metadata/mathlib-cache-key-source-audit.json"
+    },
+    "official-mathlib-cache-downloads.json": {
+      "original_sha256": "4fe1f6f71e35e4a99d3a75ca47e87689b559759883dfb2a3a7071e60a46aff77",
+      "reconstruct_from": "metadata/official-mathlib-cache-downloads.json"
+    },
+    "mathlib-cache-keys.tsv": {
+      "original_sha256": "a13b4c9a320c0e2eafadb243ad73cdc99ca58d96fb9c76f0f09a765f926b0efc",
+      "reconstruct_from": "metadata/mathlib-cache-keys.tsv"
+    }
+  },
+  "checks": [
+    "Native main objects and every optional private/server sidecar resolve to exact native inventory hashes",
+    "All 8908 dependency cache modules match freshly fetched official master-cache archives",
+    "All 1836 sidecar-bearing toolchain modules and 3672 sidecars match the pinned Lean release archive",
+    "Every optional sidecar beside the 4386-module canonical definition closure has separate official provenance"
+  ],
+  "publication": "Large records are losslessly reconstructed by reassemble_metadata.py from metadata/metadata-manifest.json; original and portable WORKSPACE hashes are both retained.",
+  "module_resolution_post_sha256": "9ee91a9da6c64693428e2a030660ea703aed2f772a7a9532abcf2125bcf52e7f",
+  "post_run_integrity": "All recorded canonical/candidate resolutions, main hashes, optional sidecars and previous run bindings equal the pre-run audit after the successful independent checker run."
+}

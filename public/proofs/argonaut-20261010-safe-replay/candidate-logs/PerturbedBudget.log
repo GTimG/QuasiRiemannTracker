@@ -1,0 +1,55 @@
+PerturbedBudget.lean:9:31: warning: Variable name `hH0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hH0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+OAI.SevenEighths.CentralPerturbation.exists_perturbed_central_budget (Δ B H : ℝ) (hΔ : 0 < Δ) (hB : 0 < B) (hH0 : 0 ≤ H)
+  (hH1 : H ≤ 1) :
+  ∃ t,
+    0 < t ∧
+      t < Δ / 4 ∧
+        t ≤ 1 / 100000000 ∧
+          ∀ (N : ℕ),
+            ∃ allowance,
+              0 < allowance ∧
+                ∀ (ε e eps : ℝ),
+                  0 ≤ ε →
+                    ε ≤ allowance →
+                      0 ≤ e →
+                        e ≤ allowance →
+                          0 ≤ eps →
+                            eps ≤ allowance →
+                              159 * ε + t + t + 7 * t ≤ 1 / 32 ∧
+                                H * (159 * ε + t + t + 7 * t) + 2 * t + 3 / 2 * (2 * t) +
+                                        (26 * e + (↑N + 8) * eps + t + t / 6) +
+                                      (t + t + t) +
+                                    t <
+                                  B / 2
+'OAI.SevenEighths.CentralPerturbation.exists_perturbed_central_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.CentralPerturbation.exists_v6_central_budget (Δ : ℝ) (hΔ : 0 < Δ) :
+  ∃ t,
+    0 < t ∧
+      t < Δ / 4 ∧
+        t ≤ 1 / 100000000 ∧
+          ∀ (N : ℕ),
+            ∃ allowance,
+              0 < allowance ∧
+                ∀ (ε e eps : ℝ),
+                  0 ≤ ε →
+                    ε ≤ allowance →
+                      0 ≤ e →
+                        e ≤ allowance →
+                          0 ≤ eps →
+                            eps ≤ allowance →
+                              159 * ε + t + t + 7 * t ≤ 1 / 32 ∧
+                                (13 / 16 + 3 / 2000000) * (159 * ε + t + t + 7 * t) + 2 * t + 3 / 2 * (2 * t) +
+                                        (26 * e + (↑N + 8) * eps + t + t / 6) +
+                                      (t + t + t) +
+                                    t <
+                                  5861 / 4700160000 / 2
+'OAI.SevenEighths.CentralPerturbation.exists_v6_central_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

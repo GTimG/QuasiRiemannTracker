@@ -1,0 +1,118 @@
+OAI.SevenEighths.PerturbedMomentConstruction.exists_D_first_cutoff_source_counts_chosen_height : OAI.SevenEighths.HighFrontierTargets.sigmaBoundary <
+    OAI.SevenEighths.HeckeZeroSupremum.beta →
+  ∀ (cutoff : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap → ℕ),
+    ∃ D,
+      ∃ (hfine : ∀ (j : Fin D.N), D.ell j ≤ OAI.SevenEighths.PerturbedMomentConstruction.detectorMesh D.t / 200),
+        have G := OAI.SevenEighths.PerturbedMomentConstruction.momentGeometryOfPerturbed D hfine;
+        ∃ F,
+          (∀ (P : OAI.SevenEighths.ProbePhysical.PrimeIdeal), Ideal.absNorm ↑P ≤ cutoff D → ↑P ∈ F.S) ∧
+            ∃ wide theta,
+              0 < theta ∧
+                theta < 1 / 200 / 2 ∧
+                  4 * theta < 1 / 200 * G.cost ∧
+                    theta < G.t ∧
+                      2 * theta ≤ G.t ∧
+                        theta * (2 + 4 * G.eps) < G.t ∧
+                          ∀ (eta : OAI.SevenEighths.HeckeFamily.Character),
+                            ∃ C,
+                              0 < C ∧
+                                ∀ᶠ (Z : ℝ) in Filter.atTop,
+                                  OAI.SevenEighths.HighFrontierTargets.SourceMomentBoundAt F.modulus ⊤ ⋯ F.S ⋯ ⋯ G.ell
+                                    (fun x => F.w) (1 / 200) (7 / 8) 2 G.ε G.t G.t G.t
+                                    OAI.SevenEighths.HighFrontierTargets.positiveGap G.t wide.toCountParameters eta Z
+                                    theta (C * Z ^ G.t) (Z ^ (2 * theta))
+'OAI.SevenEighths.PerturbedMomentConstruction.exists_D_first_cutoff_source_counts_chosen_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_raw_of_D_first_cutoff : ∀
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap)
+  (N : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap → ℕ),
+  OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D ≤ N D →
+    ∀ (hfine : ∀ (j : Fin D.N), D.ell j ≤ OAI.SevenEighths.PerturbedMomentConstruction.detectorMesh D.t / 200)
+      (F :
+        OAI.SevenEighths.PerturbedMomentConstruction.PerturbedSourceData
+          (OAI.SevenEighths.PerturbedMomentConstruction.momentGeometryOfPerturbed D hfine)),
+      (∀ (P : OAI.SevenEighths.ProbePhysical.PrimeIdeal), Ideal.absNorm ↑P ≤ N D → ↑P ∈ F.S) →
+        OAI.SevenEighths.analyticBoundaryB0 ≤ OAI.SevenEighths.HeckeZeroSupremum.beta →
+          OAI.SevenEighths.PerturbedPrincipalPerCharacterInterfaces.EulerPrincipalRawPerCharacterAt D hfine F
+'OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_raw_of_D_first_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_comparison_of_D_first_cutoff : ∀
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap)
+  (N : OAI.SevenEighths.Parameters.HighDataPerturbed OAI.SevenEighths.HighFrontierTargets.positiveGap → ℕ),
+  OAI.SevenEighths.LocalPrincipalCutoffRequestV2.principalCutoffRequest D ≤ N D →
+    ∀ (hfine : ∀ (j : Fin D.N), D.ell j ≤ OAI.SevenEighths.PerturbedMomentConstruction.detectorMesh D.t / 200)
+      (F :
+        OAI.SevenEighths.PerturbedMomentConstruction.PerturbedSourceData
+          (OAI.SevenEighths.PerturbedMomentConstruction.momentGeometryOfPerturbed D hfine)),
+      (∀ (P : OAI.SevenEighths.ProbePhysical.PrimeIdeal), Ideal.absNorm ↑P ≤ N D → ↑P ∈ F.S) →
+        OAI.SevenEighths.analyticBoundaryB0 ≤ OAI.SevenEighths.HeckeZeroSupremum.beta →
+          OAI.SevenEighths.PerturbedPrincipalPerCharacterInterfaces.EulerPrincipalComparisonPerCharacterAt D hfine F
+'OAI.SevenEighths.LocalPrincipalCutoffRequestV2.euler_comparison_of_D_first_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@OAI.SevenEighths.PerturbedCanonicalLocalPrep.same_data_canonical_physical_at : ∀ {Delta : ℝ}
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed Delta)
+  (hfine : ∀ (j : Fin D.N), D.ell j ≤ OAI.SevenEighths.PerturbedMomentConstruction.detectorMesh D.t / 200)
+  (F :
+    OAI.SevenEighths.PerturbedMomentConstruction.PerturbedSourceData
+      (OAI.SevenEighths.PerturbedMomentConstruction.momentGeometryOfPerturbed D hfine)),
+  OAI.SevenEighths.PerturbedCentral.boundary < OAI.SevenEighths.HeckeZeroSupremum.beta →
+    ∀ (theta : ℝ), 0 < theta → OAI.SevenEighths.PerturbedCanonicalFrontier.SameDataCanonicalPhysicalAt D hfine F theta
+'OAI.SevenEighths.PerturbedCanonicalLocalPrep.same_data_canonical_physical_at' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta_spec : ∀ {Delta : ℝ}
+  (D : OAI.SevenEighths.Parameters.HighDataPerturbed Delta)
+  (hfine : ∀ (j : Fin D.N), D.ell j ≤ OAI.SevenEighths.PerturbedMomentConstruction.detectorMesh D.t / 200)
+  (F :
+    OAI.SevenEighths.PerturbedMomentConstruction.PerturbedSourceData
+      (OAI.SevenEighths.PerturbedMomentConstruction.momentGeometryOfPerturbed D hfine))
+  (wide : OAI.SevenEighths.PerturbedCountBridge.WideCountParameters F.modulus ⊤ D.t)
+  (hbeta : OAI.SevenEighths.HighFrontierTargets.sigmaBoundary < OAI.SevenEighths.HeckeZeroSupremum.beta),
+  have theta := OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta D hfine F wide hbeta;
+  0 < theta ∧
+    theta < 1 / 200 / 2 ∧
+      4 * theta < 1 / 200 * D.cost ∧
+        theta < D.t ∧
+          2 * theta ≤ D.t ∧
+            theta * (2 + 4 * D.eps) < D.t ∧
+              ∀ (eta : OAI.SevenEighths.HeckeFamily.Character),
+                ∃ C0,
+                  0 < C0 ∧
+                    ∀ᶠ (Z : ℝ) in Filter.atTop,
+                      OAI.SevenEighths.HighFrontierTargets.SourceMomentBoundAt F.modulus ⊤ ⋯ F.S ⋯ ⋯ D.ell
+                        (fun x => F.w) (1 / 200) (7 / 8) 2 D.ε D.t D.t D.t
+                        OAI.SevenEighths.HighFrontierTargets.positiveGap D.t wide.toCountParameters eta Z theta
+                        (C0 * Z ^ D.t) (Z ^ (2 * theta))
+'OAI.SevenEighths.PerturbedCommonProbeAssembly.chosenTheta_spec' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current : OAI.SevenEighths.HighFrontierTargets.CommonProbeConstructionGoalAt
+  OAI.SevenEighths.HighFrontierTargets.sigmaBoundary
+'OAI.SevenEighths.PerturbedBoundaryMain.commonProbeConstruction_current' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current : OAI.SevenEighths.HeckeCommonProbe.UniformCommonProbeBoundary
+  OAI.SevenEighths.HighFrontierTargets.sigmaBoundary
+'OAI.SevenEighths.PerturbedBoundaryMain.uniformCommonProbeBoundary_current' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OAI.SevenEighths.PerturbedBoundaryMain.hecke_current : ∀ (chi : OAI.SevenEighths.HeckeFamily.Character) (s : ℂ),
+  3499999 / 4000000 < s.re → s ≠ 1 ∨ chi.residue ≠ 1 → OAI.SevenEighths.HeckeFamily.LFunction chi s ≠ 0
+'OAI.SevenEighths.PerturbedBoundaryMain.hecke_current' depends on axioms: [propext, Classical.choice, Quot.sound]
+@OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re : ∀ {q : ℕ} [inst : NeZero q]
+  (chi : DirichletCharacter ℂ q) {s : ℂ},
+  3499999 / 4000000 < s.re → ¬(chi = 1 ∧ s = 1) → DirichletCharacter.LFunction chi s ≠ 0
+'OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re : ∀ {s : ℂ}, 3499999 / 4000000 < s.re → riemannZeta s ≠ 0
+'OAI.riemannZeta_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re : ∀
+  (chi : OAI.SevenEighths.HeckeFamily.Character) {s : ℂ},
+  3499999 / 4000000 < s.re → ¬(chi.residue = 1 ∧ s = 1) → OAI.SevenEighths.HeckeFamily.LFunction chi s ≠ 0
+'OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_perturbed_boundary_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

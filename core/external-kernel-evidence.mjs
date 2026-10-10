@@ -76,6 +76,11 @@ export function validateExternalKernelEvidence(
     const matches = catalogue.records.filter((record) => record.id === id);
     demand(matches.length === 1, `missing or duplicate catalogue entry ${id}`);
     const record = matches[0];
+    if (id === "argonaut-20261008" && record.status === "framework-verified")
+      demand(
+        pin?.maintainer_replay?.replay_profile === "argonaut-v0.1.8",
+        "Argonaut needs an isolated maintainer replay before verification",
+      );
     if (!pin) {
       demand(
         record.status === "verification-pending" && !record.first_verified_at,
@@ -453,7 +458,9 @@ export function validateExternalKernelEvidence(
     demand(
       (record.status === "framework-verified" &&
         record.first_verified_at ===
-          (replay?.verified_at ?? report.verified_at_utc)) ||
+          (replay?.first_verified_at ??
+            replay?.verified_at ??
+            report.verified_at_utc)) ||
         (record.status === "verification-pending" && !record.first_verified_at),
       "catalogue status/date does not match actual checker acceptance",
     );

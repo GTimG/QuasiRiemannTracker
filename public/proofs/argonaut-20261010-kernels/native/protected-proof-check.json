@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "protected_source": "compressed/formalization/QRH.lean",
+  "protected_sha256": "22b6206d658d5f82aaa807eecd2a5219e1c44192ba0b8b47fcb0e8bb84fc7d9a",
+  "baseline_graph_sha256_matches": true,
+  "tracked_source_matches_HEAD": true,
+  "candidate_imports_no_QRH": true,
+  "stronger_local_result_used": false
+}

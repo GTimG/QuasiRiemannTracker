@@ -9,3 +9,9 @@ public/proofs/liu-20261010-safe-replay/** -text
 verifier/liu/** -text
 # Whitespace inside compiler output is evidence, not source formatting.
 public/proofs/liu-20261010-safe-replay/**/*.log -whitespace
+
+# Preserve the original Argonaut dossier and independently collected replay.
+public/proofs/argonaut-20261010-kernels/** -text
+public/proofs/argonaut-20261010-safe-replay/** -text
+verifier/argonaut/** -text
+public/proofs/argonaut-20261010-safe-replay/**/*.log -whitespace
