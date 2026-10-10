@@ -298,17 +298,13 @@
         {
           "label": "Previous N24 independent kernel report (historical revision)",
           "url": "proofs/nielstron-20261009-kernels/result.json"
-        },
-        {
-          "label": "Earlier mathematical endpoint: GPT-6 Astra and Joseph M. Shunia (7 October 2026)",
-          "url": "https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf"
         }
       ],
       "status": "framework-verified",
       "timeline_at": "2026-10-09T19:51:12.662856+00:00",
       "date_label": "Independent kernel verification",
       "verification_note": "The pinned local Palomar mechanical suite compared seven literal targets and their definitions: three N36 rational bounds, three exact algebraic bounds, and unique root existence. Lean’s fresh kernel, NanoDa and con-ron accepted the proofs. Positive, statement-mismatch and ill-typed-proof controls passed. Only propext, Classical.choice and Quot.sound were permitted. This is a local mechanical check, not Palomar registration, editorial approval or a signed admission.",
-      "attribution_note": "Nielstron contributed this compressed Lean formalization and its mechanical verification, with AI assistance; inherited ProofCouncil and OpenAI notices are retained. The same mathematical endpoint was stated earlier by GPT-6 Astra and Joseph M. Shunia in A Parameter Refinement of the Seven-Eighths Zero-Free Half-Plane (dated 7 October 2026; public commit 8 October 2026, 01:40 UTC). That earlier manuscript is cited separately and is not claimed to have passed this package’s kernel checks.",
+      "attribution_note": "Human contributor: Nielstron. AI-assisted research and formalization; inherited ProofCouncil and OpenAI notices retained.",
       "proof_revision": "nielstron-algebraic-20261009"
     }
   ],

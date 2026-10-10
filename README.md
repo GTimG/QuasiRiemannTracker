@@ -12,14 +12,6 @@ Open a pull request, let site checks pass, and merge it. The workflow automatica
 
 Nielstron's existing catalogue entry is updated to the exact algebraic endpoint;
 the earlier N24 source and verification remain available as historical revisions.
-The same mathematical endpoint was stated earlier in
-[*A Parameter Refinement of the Seven-Eighths Zero-Free Half-Plane*](https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf)
-by GPT-6 Astra and Joseph M. Shunia (dated 7 October 2026; public commit
-8 October, 01:40 UTC). Its polynomial in the bound is algebraically equivalent
-to the one used here. Nielstron's separate contribution is the compressed Lean
-formalization and mechanical verification. The cited manuscript is not covered
-by this package's kernel checks; immutable proof snapshots retain their original
-contents and attribution notices.
 
 ## Run locally
 

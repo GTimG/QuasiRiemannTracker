@@ -112,7 +112,6 @@ test("five real results, verification statuses and source downloads", async ({
   expect(current[0].id).toBe("nielstron-20261009-tightening");
   expect(current[0].proof_revision).toBe("nielstron-algebraic-20261009");
   expect(catalogue.historical_records).toHaveLength(1);
-  await expect(page.locator(".proof-detail")).toContainText("Joseph M. Shunia");
   await expect(page.getByRole("link", { name: "Previous N24 independent kernel report (historical revision)" })).toBeVisible();
   const reg = await (await request.get("/registry.json")).json();
   expect(reg.records).toEqual([]);
