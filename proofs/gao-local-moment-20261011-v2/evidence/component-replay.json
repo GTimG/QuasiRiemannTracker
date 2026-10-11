@@ -1,0 +1,179 @@
+{
+  "schema": "local-moment-component-replay-v1",
+  "scope": "Fresh local component compilation against supplied cached dependencies",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "compiler_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "dependency_libraries": [
+    "LeanSearchClient",
+    "Qq",
+    "aesop",
+    "batteries",
+    "importGraph",
+    "mathlib",
+    "plausible",
+    "proofwidgets",
+    "pinned-OAI-library",
+    "auxiliary-built-library"
+  ],
+  "dependencies_rebuilt": false,
+  "full_physical_moment_verified": false,
+  "canonical_all_family_targets_verified": false,
+  "comparator_verified": false,
+  "three_kernels_verified": false,
+  "modules": [
+    {
+      "module": "LocalMoment.FiniteDeletionBins",
+      "source_sha256": "e6d42d5b92afdfb9b7e27948701c630e747cd96889fbe1b7e0745421963272af",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "eecc9ee43747c6f4e8698e6467d52724fac220f8ab1d296011106361618a1a61"
+    },
+    {
+      "module": "LocalMoment.UnmarkedDensity",
+      "source_sha256": "de4fff9416258deadcc0c6cd023ecd5fb8dd1c90f698c587aa2899201258098d",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "5df2735f1eede955ff6cdedf16ec7318d5e77a924aae972efc5c4fb20f8977ea"
+    },
+    {
+      "module": "LocalMoment.BufferedSlot",
+      "source_sha256": "51b4542f41559a4b5c05dae3f5aa387cd42f8e2759545add636134e72a612ed0",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "6541375f88d9349fafb4d112be51f2a98d952d0c7887473e09d62436a4279428"
+    },
+    {
+      "module": "LocalMoment.RestrictedIncumbent",
+      "source_sha256": "188b456c8477ae12cf7ae466be7687fd0c6e32c9dd8a00e95ade2227c3e33ff2",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "e875661d072e53436444208833e7a8e49ca406065aa0da6c2221b2cd8a04f52b"
+    },
+    {
+      "module": "LocalMoment.SixthRowMask",
+      "source_sha256": "f5ab31c8dd5929addcee424b7c19bd2e14e1a1455b88b3c45d48409f2fd53fd9",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "d7d605e2e1ae5cb6d47d2e8ed5e6fc8a2704317b3f3060092dce70953e5f11ae"
+    },
+    {
+      "module": "LocalMoment.RawSixthDensity",
+      "source_sha256": "27488b3e82912202f47099c7bfd2481132a454f3575e99f14f61ae49ef971e22",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "5355fecce1b4c4e379c2f7fb8d5c5b4acab3278daff9ba4d540ef0407e8a93f8"
+    },
+    {
+      "module": "LocalMoment.UniformDensity",
+      "source_sha256": "5c5d6f1a0826b8015cbfeaaed96b9240a80afee5441e18e314cdf49b0a9ee7b7",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "d14bc920e274befdfa0e59da7af5c9d16f17038fdb697aff33e333ab314429f1"
+    },
+    {
+      "module": "LocalMoment.UnmarkedBatch",
+      "source_sha256": "1bfbe1461df05e5ee16b4b71db9e9dde57f50499be7f372451c62f57e19bdff1",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "db85f73d254578a5d42ecd8cadd1afd6251612eb722d84bf5f5f4a7ba4a6030f"
+    },
+    {
+      "module": "LocalMoment.ActualUnmarkedInputs",
+      "source_sha256": "043aa665989b02e5e51641470375b6e0ddd56e77f729c5300d1685e2cfbf7971",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "18f152e517ed3a2b9787125369801eb4e46044f6be429a948ae9d7717d2fce0b"
+    },
+    {
+      "module": "LocalMoment.SourceAudit",
+      "source_sha256": "f37f737af73dfb236479f92a2abceb6672e64519e4676774e99bf87d5f13fe46",
+      "exit_code": 0,
+      "log_sha256": "9fbcf65025fd17881d4f7e87a4704acc13a6d97624d90f6a16fcd744f7c1efee",
+      "object_sha256": "2127a3f042ab3e9bd42ed5ed1cf5ea2601188c3e7ae8148a017526026fa0c51b"
+    }
+  ],
+  "axioms": {
+    "OAI.SevenEighths.LocalMoment.zeroMaximum_eq_of_mask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.count_from_unmarked_raw_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.natural_relative_slot_buffered_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.restricted_paid_incumbent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.sixthFrequency_zeroMaximum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.raw_density_from_free": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.uniform_free_density_varying_of_eventually": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.raw_density_uniform_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.raw_density_from_eventual_free": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.batch_count_from_unmarked_raw_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.unmarkedDensity_gt_one_sixth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.supportedRowRetraction_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.fixed_family_inverse_raw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.batch_moments_of_plain_unmarked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.unmarked_batch_from_actual_maxima": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.SevenEighths.LocalMoment.fixed_label_dyadic_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "component_checks_passed": true,
+  "publication_transformation": "Machine-specific dependency paths replaced by library labels; component evidence and hashes unchanged."
+}

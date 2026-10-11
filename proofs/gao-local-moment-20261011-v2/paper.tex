@@ -1,0 +1,868 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,allcolors=blue!45!black]{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{pdftitle={A local moment refinement near the quartic zero-free boundary},pdfauthor={Zhongpai Gao},pdfsubject={Research draft: a proposed local moment and an exact conditional endpoint}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Local moment refinement}
+\fancyhead[R]{\small Research draft \textbullet\ 11 October 2026}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{3pt}
+\allowdisplaybreaks[1]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[proposition]{Hypothesis}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\Z}{\mathbf Z}
+\newcommand{\C}{\mathbf C}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\pos}[1]{(#1)_{+}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\title{A local moment refinement near the\protect\\quartic zero-free boundary\\[6pt]
+\large A proposed analytic estimate and an exact conditional endpoint}
+\author{Zhongpai Gao\thanks{Prepared with AI assistance in research, computation, formalization, and exposition. The upstream mathematical contributions are credited in Section~\ref{sec:credits}. This draft has not received independent mathematical certification.}}
+\date{11 October 2026 \quad---\quad Draft 2}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We investigate a local modification of the moment estimate used in Collet's
+quartic zero-free argument. The proposed estimate reduces the coefficient
+of the total prime-slot length from $9/2$ to $2249/500=4.498$ in a small,
+explicit range of the two ordinary summation lengths. The idea is to
+treat two types of transformed rows differently: rows with smaller
+buffered zero parameters use the existing moment after inexpensive slot
+removal, whereas rows with larger parameters are counted jointly with
+their common arithmetic labels. We explain the resulting exponent
+calculations and give an exact, computer-assisted scalar certificate for
+the candidate boundary $4374433/5000000=0.8748866$.
+This number is strictly below the exact quartic comparison boundary.
+The analytic local moment, its full application to the physical numerator,
+and the all-family nonvanishing conclusion remain unproved in this draft.
+Nine compiled Lean components establish intermediate statements under
+their stated hypotheses; they do not establish that conclusion.
+\end{abstract}
+
+\section{Introduction and the status of the result}
+
+A fixed zero-free half-plane is a statement that an $L$-function has no
+zeros to the right of a specified vertical line. For the families under
+discussion, lowering that line is an improvement. The eventual aim of
+this project is a strict half-plane $\Re s>\theta$ for ordinary Dirichlet
+$L$-functions, including the Riemann zeta function, and for finite-order
+Hecke $L$-functions of trivial infinite type over $\Q(\sqrt{-3})$.
+Principal poles are excluded. A bound near $0.875$ is a fixed-strip
+improvement; it does not approach a proof of the Riemann hypothesis by
+itself.
+
+Our starting point is the pinned Cycle25 manuscript of Collet
+\cite{collet}, which builds on OpenAI's $7/8$ framework \cite{openai}
+and Levy's weighted numerator \cite{levy}. Its exact comparison boundary is
+\begin{equation}\label{eq:quartic}
+ b_0=\frac{11}{12}-\frac{\ell_0}{4}
+     =0.8748866470399641\ldots,
+ \qquad
+ P(\ell_0)=0,
+\end{equation}
+where
+\[
+ P(X)=927X^4-3135X^3+2433X^2+275X-100,
+ \qquad \ell_0\in[1/6,1/5].
+\]
+Throughout this paper, ``comparison boundary'' refers to this particular
+pinned source, rather than to a claim about the current leaderboard.
+
+The proposed modification is deliberately local. In the source proof,
+two ordinary character sums and a product of short prime sums share a
+moment budget. Write their logarithmic lengths as $n_1,n_2,z$ and the
+row budget as $M$. The existing estimate is available with
+$n_1+n_2+(9/2)z\le M$. We seek to replace $9/2$ by $4.498$ only when
+the lengths lie near the configuration used by the endpoint argument.
+Because $z>0$, a smaller coefficient permits a slightly larger prime
+product at the same row budget. The weighted numerator can then gain a
+small amount.
+
+The proposed endpoint is
+\begin{equation}\label{eq:theta}
+ \theta=\frac{4374433}{5000000}=0.8748866.
+\end{equation}
+Its distance below \eqref{eq:quartic} is about $4.704\times10^{-8}$.
+The size of this gain makes exact arithmetic essential. More
+importantly, a favorable scalar inequality is useful only if it belongs
+to a valid estimate for the original arithmetic sums.
+
+There are three distinct levels of assertion in this draft. The
+elementary inequalities and the exact endpoint certificate are established
+within their stated algebraic scope. The intermediate Lean results have
+been compiled against cached dependencies. The complete analytic estimate
+and its nonvanishing application are proposed, with outstanding
+obligations listed in Section~\ref{sec:gaps}. In particular, we do not
+state \eqref{eq:theta} as a proved zero-free boundary.
+
+For a first reading, Sections~\ref{sec:idea} and~\ref{sec:endpoint} explain
+the mechanism and its numerical consequence. Sections~\ref{sec:high}
+and~\ref{sec:interfaces} retain the arithmetic details that a source
+review must check.
+
+\section{The proposed local moment}\label{sec:moment}
+
+\subsection{Objects and normalization}
+We use the natural moment family of \cite[Appendix B3.4]{collet} over
+$\OO=\Z[\omega]$, where $\omega=e^{2\pi i/3}$. Write $N$ for the
+ideal norm, or the norm of an element. Set $U=Z^M$, with $Z>1$ and
+$M>0$. At the parent stage the character acting on a summation variable
+$n$ has the form
+\[
+ \psi_k(n)=\tau(n)\chi_n(k),
+\]
+where $\tau$ is a fixed finite ray character and $\chi_n(k)$ is the
+source's sextic residue character, with its prescribed zero extension.
+The ray modulus is fixed independently of $U$. No additional parent
+character of positive moving width is allowed in our proposed estimate.
+Such factors can occur in transformed children and must still be paid.
+
+Let $S_{k,1}(Z^{n_1})$ and $S_{k,2}(Z^{n_2})$ denote the source's
+centrally normalized ordinary character sums. The two smooth profiles,
+real norm powers, and height parameters may be independent. A prime
+slot has the form
+\begin{equation}\label{eq:slot}
+ Q_{k,i}=Z^{-z_i/2}
+ \sum_{\mathfrak p\in\mathcal P_i^{\rm can}}
+ \psi_k(\mathfrak p)\nu_i(\mathfrak p)
+ W\!\left(\frac{N\mathfrak p}{Z^{z_i}}\right)
+ \left(\frac{N\mathfrak p}{Z^{z_i}}\right)^{-\sigma_i+iv_i}.
+\end{equation}
+Here $\mathcal P_i^{\rm can}$ is the genuine canonical good-prime pool,
+$\nu_i$ is an allowed relative ray character, and the slots share the
+one smooth annular profile $W$. Put $z=\sum_i z_i$ and
+$Q_{k,I}=\prod_{i\in I}Q_{k,i}$. Formula~\eqref{eq:slot} does not
+permit arbitrary prime subsets or independently chosen slot profiles.
+
+An additional common puncture is allowed: all factors may be restricted
+to arguments coprime to a fixed nonzero mask of norm at most $U^B$.
+It stays fixed during the current row sum but may depend on labels
+already frozen in a preceding transformation. The underlying natural
+zeros must also stay in place. A canceled character phase at a nonunit
+does not turn the original value zero into one.
+
+The word \emph{eligible} below means the literal source predicate
+excluding all \code{FixedInducingRow} presentations. It cannot be
+replaced by the simpler condition that one selected primitive character
+is nonprincipal. The exceptional presentations have separate terms in
+the full argument.
+
+\begin{hypothesis}[Local physical moment, not yet proved]\label{hyp:local}
+Use the preceding family, with all its natural masks and canonical slot
+conditions. Suppose
+\begin{equation}\label{eq:window}
+ \frac{41M}{100}\le n_i\le\frac{11M}{25},\qquad
+ \frac{3M}{100}\le z\le\frac M{25},\qquad
+ n_1+n_2+Cz\le M,\qquad C=\frac{2249}{500}.
+\end{equation}
+For every $\eps>0$, the proposed estimate is
+\begin{equation}\label{eq:moment}
+ \sum_{k\ {\rm eligible}}
+ \left|S_{k,1}(Z^{n_1})S_{k,2}(Z^{n_2})Q_{k,I}\right|^2
+ \ll Z^{M+\eps}\mathcal H_J.
+\end{equation}
+The source's radial row weight is understood. The factor $\mathcal H_J$
+denotes its finite smooth-seminorm and polynomial height allowance,
+retaining independent heights. The assertion also includes the four
+annular derivative-profile pairs and bounded scale-box recovery used by
+the physical numerator. All quantifiers, including selection of a common
+fine mesh before the later arithmetic data, are as in the source family.
+\end{hypothesis}
+
+The notation imports a substantial existing analytic framework. This
+draft explains a modification of that framework; it is not a replacement
+construction of the ordinary $L$-functions or of the source moment family.
+The exact connection between \eqref{eq:moment} and the formal physical
+state is one of the missing proofs.
+
+\section{Why a local improvement might close}\label{sec:idea}
+
+There are two potential difficulties with improving a moment estimate.
+First, a transformed child need not remain in the same local length
+window as its parent. Second, counting a character family after freezing
+its arithmetic labels may be too expensive. The proposed argument treats
+these difficulties separately.
+
+Apply the two transformations in the existing moment proof and classify
+the resulting nonexceptional rows by a buffered zero parameter $\delta$.
+Roughly, the associated real zero location is $(1+\delta)/2$; the
+buffer and finite character family are those of the source. When
+$\delta\le7/10$, pointwise prime estimates make it cheap to remove
+enough slots to recover the existing global moment condition. For
+$\delta\ge7/10$, those pointwise estimates are more expensive, but the
+rows are sparse. The proposed saving comes from counting each such row
+\emph{together with} its common-support labels.
+
+The split is made after the transformations. No Poisson formula is
+applied to a zero-bin indicator. Also, the smaller-parameter branch calls
+the existing moment rather than calling Hypothesis~\ref{hyp:local} on a
+shortened child. Thus there is no claimed local induction whose length
+window must somehow survive indefinitely.
+
+\subsection{The size of the budget defect}
+Define
+\begin{equation}\label{eq:budget}
+ A=n_1+n_2+z,\qquad
+ g=\pos{n_1+n_2+\tfrac92z-M},\qquad
+ a=\frac M{2000},\qquad \sigma=3a.
+\end{equation}
+The auxiliary amplifier has prime norms on the scale $Z^a$, disjoint
+from the live slot windows after the mesh is chosen sufficiently fine.
+Its length $a$ is fixed relative to $M$; it is not an arbitrarily small
+final error.
+
+\begin{lemma}[Elementary parent bounds]\label{lem:parent}
+Under \eqref{eq:window},
+\[
+ 0\le g\le\frac M{12500},\qquad
+ \frac{85M}{100}\le A\le\frac{44753M}{50000}<\frac{9M}{10}.
+\]
+\end{lemma}
+\begin{proof}
+The difference of the two capacity coefficients is
+$9/2-C=1/500$. Hence $g\le z/500\le M/12500$.
+The lower bound for $A$ follows by adding the lower length bounds.
+For the upper bound, use
+\[
+ A\le M-(C-1)z
+ \le M-\frac{1749}{500}\frac{3M}{100}
+ =\frac{44753M}{50000}.
+\]
+\end{proof}
+
+\subsection{Rows with smaller zero parameters}
+The intended child calculation gives a global-base defect at most
+$g+6a+\eta$, where $\eta$ collects mesh, support, and buffering losses.
+Deleting slots of total width $d_z$ lowers that defect by $(9/2)d_z$.
+On a row whose buffered parameter is at most $k_0=7/10$, the proposed
+pointwise deletion cost in squared norm is at most $k_0d_z$, plus the
+reserved errors. The existing moment is then applied to the remaining
+canonical state. If no slots remain, the existing zero-slot moment is
+used instead.
+
+The relevant scalar margin is elementary. Since the source child saving
+is at least $a$, and $g\le M/12500<M/10000$,
+\begin{equation}\label{eq:lowreserve}
+ a-\frac{k_0}{9/2}(6a+g)
+ \ge\frac M{2000}-\frac7{45}
+       \left(\frac{3M}{1000}+\frac M{10000}\right)
+ =\frac{4M}{225000}>0.
+\end{equation}
+One greedy prefix removes the necessary slots; its overshoot is one
+mesh increment. The errors must be chosen smaller than the fixed margin
+in \eqref{eq:lowreserve}. The compiled components support pointwise
+removal and a restricted incumbent estimate, but applying them to all
+actual transformed states is still required.
+
+\section{Counting rows together with their labels}\label{sec:high}
+
+\subsection{From sixth-power-free rows to all rows}
+The unmarked density exponent supplied by the existing source is
+\begin{equation}\label{eq:rho}
+ \rho(\delta)=1-\frac{10\delta}{3(5-2\delta)},
+ \qquad \frac7{10}\le\delta\le\frac34.
+\end{equation}
+The adjective ``unmarked'' means that this count requires no positive
+prime-slot supply. It does not mean that arbitrary moving ray characters
+can be inserted. A single fixed finite character list is selected before
+the live labels.
+
+Every nonzero row has a sixth-power decomposition $j=kb^6$, with the
+source's primary-generator and unit conventions. The extra factors of
+$b$ leave Euler holes in the displayed character. In the positive
+half-plane they preserve the zeros of its primitive inducing character.
+This permits the following general counting step.
+
+\begin{lemma}[Summing the sixth-power part]\label{lem:sixth}
+Assume a uniform count $\ll Y^{\rho+\eps}$ for the relevant
+sixth-power-free cores of norm at most $Y$, for every $Y\ge1$.
+If $\rho\ge2/7$, the corresponding count of all rows of norm at most
+$H\ge1$ is $\ll H^{\rho+\eps}$. The constant may be chosen uniformly
+for $\rho$ in a fixed interval with lower endpoint $2/7$, provided the
+core estimate is itself uniform.
+\end{lemma}
+\begin{proof}
+Up to the fixed unit-sector convention, the count is at most
+\[
+ H^{\rho+\eps}\sum_{Nb\le H^{1/6}}(Nb)^{-6(\rho+\eps)}.
+\]
+The ideal series converges since $6\rho\ge12/7>1$, and a single
+convergent series with exponent $12/7$ dominates the sum uniformly.
+If the input estimate was initially only eventual, bounded windows must
+first be paid with a uniform constant. This is a genuine requirement,
+not an automatic consequence of an eventual estimate with varying data.
+\end{proof}
+
+Here $\rho(7/10)=19/54$ and $\rho(3/4)=2/7$, and $\rho$ is decreasing.
+Fixed-inducing presentations stay excluded from this count; their
+exceptional contribution must be treated separately.
+
+\subsection{A simple branch that explains the saving}
+Consider the second-transform branch in which the same squarefree label
+$P$ occurs once on each side, with $\log_Z NP=q$. Its actual character
+row is
+\[
+ j=P^2h',\qquad \log_Z Nj\le M-6a+o(1).
+\]
+At a fixed $j$, the labels $P$ satisfy $P^2\mid j$. There are only
+divisor-many such labels, at an arbitrarily small power cost. Thus a
+density bound on $j$ controls the joint population $(P,h')$ without
+an additional factor $Z^q$.
+
+This ordering matters. If one first freezes $P$, bounds the remaining
+rows for each twist, and finally pays for all choices of $P$, one loses
+the information that $P$ is already contained in $j$.
+
+For this branch the source normalization leads to the proposed exponent
+\begin{equation}\label{eq:simplehigh}
+ A-M+5a+(M-6a)\rho(\delta)+\delta(A-q).
+\end{equation}
+Relative to the allowance $A$, it has excess
+$M(\rho-1)+\delta A+a(5-6\rho)-\delta q$.
+Equation~\eqref{eq:simplehigh} illustrates the analytic accounting in the
+source note; the full transformed identity and all masks remain part of
+the analytic obligation. The illustration alone does not prove
+Hypothesis~\ref{hyp:local}.
+
+\subsection{The effective integer row in the general branch}
+The first common-support extraction introduces widths $c,d,p$, where
+$p$ is now the first common radical width. Let $R$ be its active
+conductor width and $E$ the mask-divisor width. These are local
+bookkeeping variables; the $p$ of Section~\ref{sec:endpoint} will instead
+denote a detector parameter. Set $T=(c-d)_+$.
+
+The signs of the two separated twists are opposite. We fix the convention
+of the formal source: $t_{\mathfrak p}$ is the left multiplicity minus
+the right multiplicity, modulo six. The first coefficient contains the
+active character on the left and its conjugate on the right. After
+reciprocity, the candidate row residues are therefore
+\[
+ e_C(\mathfrak p)=(1+t_{\mathfrak p})\bmod6,\qquad
+ e_D(\mathfrak p)=(1-t_{\mathfrak p})\bmod6.
+\]
+Draft 1 used the opposite sign convention without aligning it explicitly
+with the formal source. The scalar bounds below are unchanged, since
+they treat either residue in the same way; the source character identity
+must nonetheless respect this choice.
+Define
+\[
+ F_C=\prod_{\mathfrak p\mid r}\mathfrak p^{e_C(\mathfrak p)},\quad
+ L_C=\log_Z NF_C,\quad
+ R_{\rm zero}=\sum_{\substack{\mathfrak p\mid r\\e_C(\mathfrak p)=0}}
+                       \log_Z N\mathfrak p.
+\]
+An exponent zero here records cancellation of a phase; its old puncture
+is still retained.
+
+The proposed reindexing after the second common-support extraction is
+\begin{equation}\label{eq:integerrow}
+ w=F_CeG_cV_{\rm id}h',\qquad
+ \log_Z Nw\le M-R-T+L_C-6a+o(1).
+\end{equation}
+The factors $e,G_c,V_{\rm id}$ are the source's mask and second
+extraction factors. The analytic row ball must actually be enlarged to
+the smooth envelope
+\begin{equation}\label{eq:envelope}
+ K_0+(d-c)_++6a,\qquad K_0=2A-c-d+R+E-M,
+\end{equation}
+before the second transformation. One cannot obtain the smaller dual
+range in \eqref{eq:integerrow} merely by declaring a larger bound for an
+unchanged first row ball.
+
+At fixed $w$, the intended reconstruction makes the active first primes,
+the mask primes, the second common primes, and the first residual
+projector label divisor-many. First common primes absent from $w$ must
+still be counted; their width is
+\begin{equation}\label{eq:missing}
+ p-R-E+R_{\rm zero}.
+\end{equation}
+In particular, a canceled prime cannot simultaneously be omitted from
+$w$ and treated as one of its divisors. A general arithmetic justification
+of this counting step is now given in the companion reconstruction note
+\cite{gaov2}. At a fixed row $w$, write $L$ for the radical of first
+common primes absent from $w$. All the remaining labels are supported
+on $\operatorname{rad}(w)L$. For a fixed bound on their logarithmic norms,
+Rankin's inequality gives, for every $\eps>0$,
+\[
+ \#\{I:NI\le Z^T,\ \operatorname{rad}I\mid Q\}
+ \ll_{B,T,\eps}Z^\eps\qquad(NQ\le Z^B).
+\]
+Indeed the count is at most
+$Z^{aT}\prod_{\mathfrak p\mid Q}(1-(N\mathfrak p)^{-a})^{-1}$;
+take $aT\le\eps/2$ and bound the product by a constant times
+$(NQ)^{\eps/(2B)}$. The finite exceptional set of small primes contributes
+only a constant. Counting the missing radical costs its norm exponent
+\eqref{eq:missing}. This proves a general reconstruction bound under
+the stated factorization and allocation assumptions, not just for a
+finite sample of valuations. Proving those assumptions for every actual
+source allocation remains open.
+
+The first labels and the full coprimality projector remain inside the
+positive norm until this joint count is applied. Their M\"obius signs
+are retained through the exact allocation. A common Fourier measure is
+chosen on the ambient parameter box before labels and bins; only its
+evaluation points depend on the later arithmetic data. This order is
+needed to keep independent heights and smooth-profile bounds uniform.
+
+\subsection{What the proposed accounting gives}
+Let $b_2,g_2,t_2$ denote the second common widths, with
+$0\le g_2\le b_2$ and $t_2\ge0$, and put
+$B_c=(3c-5d-R)_+/6$. Relative to the joint allowance
+$p+A-c+R+E+B_c$, the proposed excess is
+\begin{align}\label{eq:ledger}
+ \mathcal E={}&M(\rho-1)+\delta A+a(5-6\rho)\notag\\
+ &+(1-\rho)T-\delta c-(1+\rho)R-E-B_c
+      +\rho L_C+R_{\rm zero}\notag\\
+ &+g_2-t_2-(1+\delta)b_2+\eta.
+\end{align}
+The rational audit checks this algebraic identity from the encoded
+source exponents. It does not prove that the analytic expression being
+estimated is equal to those encoded exponents.
+
+The favorable signs can be checked directly. Using
+$c=\min(c,d)+T$, $\min(c,d)\ge p$, $R\le p$, and
+$L_C\le5(R-R_{\rm zero})$, the second line of \eqref{eq:ledger} is at
+most
+\[
+ (4\rho-1-\delta)p-E-B_c
+ \le-\frac{79}{270}p-E-B_c.
+\]
+Indeed $\rho+\delta-1>0$, $5\rho-1>0$, and $4\rho-1>0$ throughout
+the interval. Also $4\rho-1-\delta$ is decreasing and equals
+$-79/270$ at $\delta=7/10$. The third line without $\eta$ is at most
+$-\delta b_2-t_2\le0$.
+
+Finally \eqref{eq:window} implies the weaker bound
+$A/M\le1-(16/5)(3/100)=113/125$. Since
+\[
+ \rho'(\delta)=-\frac{50}{3(5-2\delta)^2},
+\]
+the function $\rho(\delta)+(113/125)\delta$ decreases on
+$[7/10,3/4]$. Therefore
+\begin{equation}\label{eq:highreserve}
+ 1-\rho(\delta)-\delta A/M\ge\frac{259}{16875},\qquad
+ 5-6\rho(\delta)\le\frac{23}{7}.
+\end{equation}
+For $a=M/2000$ and $\eta\le M/1000$, equations
+\eqref{eq:ledger}--\eqref{eq:highreserve} give
+\[
+ \mathcal E\le
+ -\frac{259M}{16875}+\frac{23M}{14000}+\frac M{1000}
+ <-\frac M{100}.
+\]
+This is a substantial scalar reserve. Its usefulness depends on proving
+the analytic reconstruction and normalization preceding it.
+
+\section{Other branches and uniformity}\label{sec:interfaces}
+
+\subsection{Comparison terms and additional masks}
+The centered source uses equal-product comparison rectangles with one
+plain length $M/4$. For an additional common mask, the proposed argument
+expands that mask only while bounding the comparison terms. After
+reflecting the second natural daughter if its length exceeds $M/2$, the
+two plain lengths sum to at most $3M/4+\xi$. Their existing-moment
+budget is consequently at most
+\[
+ \frac{3M}{4}+\frac92\frac M{25}+\xi
+ =\frac{93M}{100}+\xi<M
+\]
+for sufficiently small padding $\xi$. This pays comparison daughters
+without asserting that they belong to the local window
+\eqref{eq:window}. The mask remains on both rectangles of the original
+centered expression.
+
+\subsection{The amplifier errors}
+For the three extracted valuation alternatives $1,6,7$, the relevant
+width pairs are $(\lambda,\lambda)$, $(6\lambda,0)$, and
+$(7\lambda,\lambda)$, with $\lambda\ge\sigma/4$. The old moment
+pays these branches. The source's defect estimate is
+\[
+ F_{\rm act}\le g+\sigma+w-w_o+\eta,
+\]
+its base cost is at most $F_{\rm act}/6$, and its saving is at least
+$w$. Substituting $g\le M/10000$ gives the following lower margins
+before padding:
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Valuation & $(w,w_o)$ & Saving minus base cost\\
+\midrule
+$1$ & $(\lambda,\lambda)$ & $13M/120000$\\
+$6$ & $(6\lambda,0)$ & $193M/120000$\\
+$7$ & $(7\lambda,\lambda)$ & $119M/60000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The normalized prime average must be retained. Introducing a second
+count of the auxiliary primes would change these margins.
+
+\subsection{Exceptional terms cannot be hidden in an error}
+Lemma~\ref{lem:parent} gives $A-M<-M/10$. The source's second
+zero-frequency term has excess at most $A-M+5\sigma/3+\eta$, and
+the centered fixed-inducing calculation retains a maximum $A-M$ before
+its terminal loss $3\sigma$. Both fit within this negative margin.
+Replacing $A-M$ by $(A-M)_+$ would discard the saving that pays the
+fixed amplifier.
+
+For the enlarged row ball \eqref{eq:envelope}, the first exceptional
+reserve must also be checked again. The proposed expressions are
+\[
+ F_1=\begin{cases}
+ (c+5d+R+E)/6+B_c-5a,&c\ge d,\\
+ c+(R+E)/6+B_c-5a,&c\le d.
+ \end{cases}
+\]
+They imply $F_1\ge2c/3-5a$, while the second reserve remains
+$F_2\ge2b_2/3$. The needed scalar inequalities hold; the exact
+centered cancellation, forced congruences, and raw extraction factors
+must still be carried through the physical proof.
+
+Uniformity is part of the assertion. One first fixes the requested
+final loss, then chooses the aggregate small losses below both that
+loss and the margin in \eqref{eq:lowreserve}. Profile orders, height
+orders, and the eventual threshold are chosen through the finite chain
+of transformations. A loss per slot, or a character family chosen only
+after the live labels, would not supply the required estimate.
+
+\section{The exact conditional endpoint}\label{sec:endpoint}
+
+This section describes an independently reproducible scalar conclusion.
+It uses the existing detector function; only the physical moment
+coefficient is changed. Here $p\in[0,1/2]$ is a detector parameter,
+unrelated to the common radical width in Section~\ref{sec:high}.
+
+\subsection{The rational geometry and the exponent function}
+Set
+\begin{align}\label{eq:geometry}
+ \ell&=\frac{626701}{3750000}, &
+ h&=\frac{3969737987}{5000000000},\notag\\
+ x&=1+\ell-h=\frac{5597590039}{15000000000}, &
+ y&=h-2\ell=\frac{6895605961}{15000000000},\notag\\
+ \kappa_*&=2\theta-1=\frac{1874433}{2500000}, &
+ C&=\frac{2249}{500}.
+\end{align}
+Then $\theta=11/12-\ell/4$ and $x+y=1-\ell$.
+For $\kappa\ge\kappa_*$ define
+\begin{align}\label{eq:detector}
+ D_\kappa(p)&=3-p-\frac{2p}{3\kappa}, &
+ B_\kappa(p)&=2(1-p)\left(1-\frac{p}{3\kappa}\right),\notag\\
+ c_\kappa(p)&=B_\kappa(p)/D_\kappa(p), &
+ V&=\frac56-\delta,\notag\\
+ R_\kappa(\delta,p)&=1-\delta+
+       \frac{\delta c_\kappa(p)V}{2(V+\delta c_\kappa(p))}.
+\end{align}
+We use a lower-case $c_\kappa$ to distinguish the detector coefficient
+from the physical coefficient $C$. The candidate upper-row exponent is
+\begin{equation}\label{eq:F}
+ F_{C,\kappa}(\delta,p)=\frac{1+\ell}{2}+\frac\delta2
+ +h\left(\frac{3R_\kappa(\delta,p)}4-\frac5{12}\right)
+ +\delta p\left(\ell-\frac{h-4\ell}{2C}\right).
+\end{equation}
+
+\begin{proposition}[Exact scalar certificate]\label{prop:certificate}
+With \eqref{eq:geometry},
+\[
+ F_{C,\kappa_*}(\delta,p)\le\theta-10^{-7}
+ \quad\text{for every }(\delta,p)\in[0,3/4]\times[0,1/2].
+\]
+Moreover $\theta<b_0$ for the exact boundary \eqref{eq:quartic}.
+\end{proposition}
+\begin{proof}[Computer-assisted proof of the first assertion]
+All constants in this calculation are rational. Put
+$J=VD_{\kappa_*}+\delta B_{\kappa_*}$. Then
+\[
+ R_{\kappa_*}=\frac{(1-\delta)J+delta B_{\kappa_*}V/2}{J}.
+\]
+The stored certificate first gives $J\ge1/10$ on the whole rectangle.
+After multiplying $\theta-10^{-7}-F_{C,\kappa_*}$ by $J$, it suffices
+to verify a polynomial inequality. The audit partitions the rectangle
+into 18 rational subrectangles and writes the polynomial in the
+Bernstein basis on each one. Every coefficient is nonnegative; the
+recorded closed subrectangles cover the entire original domain.
+Appendix~\ref{app:reproduce} identifies the executable audit and its
+exact certificate. This is an exact finite verification, not a sampling
+of the exponent on a numerical grid.
+\end{proof}
+\begin{proof}[Proof of the comparison with the quartic]
+We have $P(1/6)<0$, and exact substitution gives
+\[
+ P(\ell)=\frac{3484615068030068970503}
+                    {21972656250000000000000000}>0.
+\]
+For $X\in[1/6,1/5]$,
+\[
+ P'(X)=3708X^3-9405X^2+4866X+275
+ \ge-\frac{9405}{25}+\frac{4866}{6}+275
+ =\frac{3549}{5}>0.
+\]
+Thus $\ell>\ell_0$, and $\theta=11/12-\ell/4<b_0$.
+\end{proof}
+
+\subsection{Why the local length restriction matters}
+The row exponent in the numerator varies; it is not always $h$.
+Let $d$ denote that exponent and $t$ a normalized free Euler shift.
+The local estimate is intended only for
+\begin{equation}\label{eq:applicationwindow}
+ h-10^{-3}\le d\le h+10^{-10},\qquad 0\le t\le10^{-3}.
+\end{equation}
+The audit checks that both reflected plain lengths, normalized by the
+row budget, lie strictly between $0.41$ and $0.44$, and that the selected
+prime width lies strictly between $0.03$ and $0.04$. It also checks
+that the old $9/2$ defect is less than $1/12500$ and that the original
+physical slots supply the selected product.
+
+For clarity, a general scalar row exponent used by the audit is
+\begin{align}\label{eq:G}
+ G_{c,\kappa}(d;\delta,p)={}&\frac12
+ +h\left(\frac{17}{50}-\frac16\right)-\frac y2-\frac\ell2
+ +d\left(\frac14-\frac{17}{50}\right)+\frac\delta2\notag\\
+ &+\frac{3d}{4}R_\kappa(\delta,p)
+ +\delta p\left(\ell-\frac{2y-d}{2c}\right).
+\end{align}
+It is affine in $d$ on the range in question, since $d\ge1/2>y$.
+At $d=h$ and $c=C$ it reduces to \eqref{eq:F}. The exact checks are
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Row endpoint & Coefficient $c$ & Saving below $\theta$ & Rectangles\\
+\midrule
+$h$ & $C$ & $10^{-7}$ & 18\\
+$h-10^{-3}$ & $6\kappa_*$ & $10^{-5}$ & 6\\
+$1/2$ & $6\kappa_*$ & $10^{-3}$ & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+The lower interval therefore uses the old estimate. At the junction,
+$C<6\kappa_*$ and $2y-d>0$, so the local exponent is no larger
+than the old one. Affinity bounds the intermediate local rows. Above
+$h$, a scalar slope bound of $2$ leaves saving
+$10^{-7}-2\cdot10^{-10}>9\cdot10^{-8}$.
+
+For larger free shifts the source's existing negative coefficient
+contribution must be kept. Write $q=\delta p$, so $0\le q\le\delta/2$.
+The audit verifies, for the normalized available width in this window,
+\[
+ -\frac{\delta t}{2}-\frac{qz_{\rm old}(t)}2
+ \le-\frac{qz_{\rm new}(0)}2,\qquad t\ge10^{-3}.
+\]
+Here $z_{\rm old}(t)=\max(0,b-2t)/c$ with
+$6\kappa_*\le c\le9/2$, and $z_{\rm new}(0)=b/C$; $b$ is the
+residual budget after the unshifted reflected plain factors. The
+normalized reserve at the first shift exceeds $3/10000$ and increases
+thereafter, including after the old available width becomes zero.
+These are scalar interface checks. They do not by themselves show that
+every physical Euler term has been represented by this interface.
+
+\subsection{The intended noncircular conclusion}
+Suppose Hypothesis~\ref{hyp:local} is proved and can be inserted into
+the original weighted numerator with all coefficients, masks, conductor
+losses, principal terms, and family reductions preserved. One must then
+run the existing zero-supremum argument for that assembled numerator.
+Let $\beta_*$ be the supremum used in the source, with its sentinel
+$1/2$. The $7/8$ initialization gives $\beta_*\le7/8$. If
+$\beta_*>\theta$, put $\kappa=2\beta_*-1$; then
+$\kappa_*<\kappa\le3/4$.
+
+For the new upper-row expression, only the detector depends on $\kappa$.
+The source bounds $\partial_\kappa c_\kappa<1/18$ and
+$\partial_cR\le5/12$ give
+\[
+ \partial_\kappa F_{C,\kappa}
+ \le\frac{3h}{4}\frac5{12}\frac1{18}
+ =\frac{3969737987}{288000000000}<\frac1{50}.
+\]
+Consequently Proposition~\ref{prop:certificate} implies
+\begin{equation}\label{eq:feedback}
+ F_{C,2\beta_*-1}(\delta,p)-\beta_*
+ \le-10^{-7}-\frac{24}{25}(\beta_*-\theta)<0.
+\end{equation}
+The old rows retain their existing feedback estimates. Once all analytic
+pieces and the small losses are supplied, such strict savings are the
+input to the source's contradiction to the definition of $\beta_*$.
+The hypothesis on the slot zero bound is an equality at the chosen
+$\kappa$; the desired improved zero-free conclusion is not used as an
+input. Equation~\eqref{eq:feedback} explains the intended mechanism,
+not a completed proof that $\beta_*\le\theta$.
+
+\section{What has been verified, and what remains}\label{sec:gaps}
+
+The submitted package contains exact source calculations, exact endpoint
+certificates, and nine Lean components. The source audit checks 11
+continuous rational sign statements, symbolic exponent identities,
+317,376 finite joint integer-fiber cases, and 72 sextic CRT cases,
+including negative controls. Finite cases are useful checks on a
+proposed reconstruction; they do not prove it for all arithmetic data.
+
+The component roles are summarized below. Words such as ``implies'' are
+important: several results still have input estimates or witness
+conditions as explicit hypotheses.
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Component & Proved role within the component\\
+\midrule
+\code{FiniteDeletionBins} & Finite Euler deletion preserves the relevant positive-half-plane zeros and buffered maxima.\\
+\code{UnmarkedDensity} & Unmarked inverse and plain moment inputs imply the fiber density exponent with explicit losses.\\
+\code{BufferedSlot} & The natural relative slot satisfies a buffered pointwise bound with punctures and independent frequencies.\\
+\code{RestrictedIncumbent} & Slot removal on selected low rows feeds the existing remaining-state moment, with separate costs.\\
+\code{SixthRowMask} & The sixth-power row decomposition preserves the original Euler holes and zero-bin data.\\
+\code{RawSixthDensity} & An all-window core density estimate implies the raw-row count by ideal convolution.\\
+\code{UniformDensity} & Uniform eventual estimates extend to bounded windows, and the convolution constant can be uniform in the exponent.\\
+\code{UnmarkedBatch} & Actual witness labels and two dyadic lengths partition the unmarked rows; supported witnesses suffice.\\
+\code{ActualUnmarkedInputs} & Supplies the incumbent inverse profiles for a fixed finite family, constructs witnesses from actual buffered maxima, and pays the fixed-label and dyadic costs.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The second replay compiled all nine components with Lean 4.34.1 against
+cached dependencies. The axiom audit covered sixteen named declarations.
+Its reported axioms were \code{propext}, \code{Classical.choice}, and
+\code{Quot.sound}. Imported dependencies were not rebuilt, and canonical
+target comparison and independent three-kernel checks remain pending.
+
+The outstanding mathematical work is concrete:
+\begin{enumerate}
+\item Supply the remaining plain unmarked moment through the actual
+zero-slot source and eligibility adapter. The inverse profile estimates,
+the fixed-label and dyadic costs, and a constructor from actual buffered
+maxima are now supplied. The application must still prove that the real
+row family meets the constructor's nonprincipal, modulus, coefficient,
+and zero-bin conditions, uniformly in conductor and height.
+\item Prove the signed-twist identification \eqref{eq:integerrow} and
+the joint reconstruction leading to \eqref{eq:missing}, for both sides
+and every projector allocation, retaining all natural zeros.
+\item Complete the comparison-only mask reflection and exceptional
+terminal estimates at the actual enlarged row radius. Keep the negative
+margins that pay the fixed amplifier.
+\item Assemble \eqref{eq:moment} with the common Fourier measure,
+independent heights, all required profiles, and the original physical
+state. Then carry the full numerator through powerful-conductor
+deficits, free Euler shifts, principal signals, and the family reductions.
+\item Prove the exact ordinary Dirichlet, zeta, and Eisenstein-Hecke
+targets and obtain independent canonical comparison and kernel
+verification. Component compilation does not supply these targets.
+\end{enumerate}
+There is a specific interface obstruction at the first item. The
+upstream \path{source_batch_plain_unmarked} theorem takes the original
+marked batch, its large-row restriction, and its initial-state admission.
+An empty selected product does not remove those hypotheses. A proof for
+the present unmarked family must generalize that source adapter and pay
+small-core rows uniformly. The present submission therefore remains a
+research candidate with missing mathematical assembly, not merely a
+missing verification receipt.
+
+\section{Attribution and source relationship}\label{sec:credits}
+
+OpenAI's development supplies the initial $7/8$ theorem and the analytic
+and arithmetic framework. Levy's work supplies the weighted-numerator
+input adapted by the Cycle25 source. Collet's work supplies the variable
+moment, detector, quartic optimization, and source architecture used
+throughout this draft. Our proposed contribution is the local
+$4.498$ refinement, its joint-label analysis, and the conditional exact
+endpoint calculation. These descriptions do not imply endorsement by
+any upstream author or maintainer.
+
+This manuscript is an exposition of the three candidate notes in the
+research package \cite{gao} and the subsequent input and reconstruction
+work \cite{gaov2}, with definitions and limitations made
+explicit. It does not change their verification status. Research,
+code, formalization, and writing received AI assistance; the internal
+reviews recorded with the package are model-assisted development
+reviews, not independent human referee reports. The package retains its
+Apache-2.0 license and upstream notices.
+
+\appendix
+\section{Reproduction and the certificate format}\label{app:reproduce}
+
+The package linked in \cite{gao} contains three notes under the directory
+\path{research/framework/programs/fixed_strip/candidates/}:
+\begin{itemize}
+\item \code{LOCAL\_PHYSICAL\_MOMENT\_EXTENSION.md};
+\item \code{JOINT\_HIGH\_ZERO\_SQUARED\_LABEL\_PAYMENT.md};
+\item \code{LOCAL\_MOMENT\_TRACKER\_REFINEMENT.md}.
+\end{itemize}
+The first explains the proposed local moment, the second isolates a
+useful squared-label branch, and the third records the endpoint
+geometry. In particular, the coefficient $21/5$ used illustratively in
+the second note is not the coefficient claimed in
+Hypothesis~\ref{hyp:local}, and is not an established stronger moment.
+
+From the submitted package root, with Python and the recorded SymPy
+version available, run
+\begin{verbatim}
+python3 reproduce.py --fetch-pinned-paper
+python3 research/tools/local_physical_moment_audit.py --check
+python3 research/tools/local_moment_endpoint_audit.py --check
+\end{verbatim}
+The fetched manuscript is a pinned input, checked by its stored digest;
+it is not a paper authored by this project. The outputs in
+\code{research/numerics/results/} record the exact assertions and their
+scope. Both reports explicitly deny verification of the new full
+analytic theorem. The component replay has separate compiler and
+dependency prerequisites documented in its own README.
+
+For completeness, the Bernstein certificate used in
+Proposition~\ref{prop:certificate} is based on the identity
+\[
+ f(u,v)=\sum_{i=0}^{m}\sum_{j=0}^{n}
+ b_{ij}\binom mi u^i(1-u)^{m-i}\binom nj v^j(1-v)^{n-j},
+ \qquad 0\le u,v\le1.
+\]
+The basis functions are nonnegative and their sum is one. Thus
+$b_{ij}\ge0$ for all $i,j$ proves $f\ge0$ on the whole square.
+An exact affine substitution maps each recorded rational rectangle to
+that square. Rational reconstruction of the coefficients and exact
+coverage checks make the conclusion inspectable without trusting
+floating-point optimization.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{collet}
+Hailey Collet, \emph{The quartic QRH boundary}, 10 October 2026.
+Cycle25 manuscript and source, revision
+\code{58344dfdbe756cf2f743da1908ffe0582418cf5b}.
+\href{https://github.com/HaileyStorm/QuasiRiemannTracker/blob/58344dfdbe756cf2f743da1908ffe0582418cf5b/public/proofs/cycle25-quartic-20261010/paper.tex}{Pinned manuscript}.
+Equation references B0 and B3 in the companion notes refer to this revision.
+
+\bibitem{openai}
+OpenAI, \emph{OpenAI/math}, formal mathematical development,
+revision \code{fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb}.
+\href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb}{Pinned source repository}.
+
+\bibitem{levy}
+Akash Levy, \emph{Weighted-numerator proof}, source package,
+revision \code{2fd60c0926b66ea18d7436f5ed55250fd006ab5d}.
+\href{https://github.com/akashlevy/QuasiRiemannTracker/tree/2fd60c0926b66ea18d7436f5ed55250fd006ab5d/proofs/akashlevy-20261009-weighted-numerator}{Pinned proof package}.
+
+\bibitem{gao}
+Zhongpai Gao, with AI assistance,
+\emph{Local physical moment research candidate: 0.8748866},
+11 October 2026. Source-review snapshot,
+revision \code{7f9166e2d626586cc3c89853497c0e0e22e856ee}.
+\href{https://github.com/Gaozhongpai/QuasiRiemannTracker/tree/7f9166e2d626586cc3c89853497c0e0e22e856ee/proofs/gao-local-moment-20261011}{Research notes, certificates, and Lean components};
+\href{https://github.com/GTimG/QuasiRiemannTracker/pull/15}{draft pull request 15}.
+
+\bibitem{gaov2}
+Zhongpai Gao, with AI assistance,
+\emph{Joint-label reconstruction and actual unmarked inputs},
+11 October 2026, second research revision.
+\href{https://github.com/Gaozhongpai/QuasiRiemannTracker/tree/gao-local-moment-source-review-20261011/proofs/gao-local-moment-20261011-v2}{Companion note and nine compiled components}.
+The general counting lemma retains the physical factorization as an
+explicit application obligation.
+\end{thebibliography}
+\end{document}

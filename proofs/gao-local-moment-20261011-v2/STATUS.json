@@ -1,0 +1,19 @@
+{
+  "schema": "local-moment-research-revision-v2",
+  "author": "Zhongpai Gao",
+  "assistance": "AI-assisted research, formalization and exposition",
+  "predecessor": "gao-local-moment-20261011",
+  "predecessor_commit": "7f9166e2d626586cc3c89853497c0e0e22e856ee",
+  "paper_draft": 2,
+  "compiled_source_components": 9,
+  "component_axiom_checks": 16,
+  "component_checks_passed": true,
+  "dependencies_rebuilt": false,
+  "general_reconstruction_lemma": "written proof under explicit effective-row and allocation assumptions; not Lean-verified",
+  "full_analytic_moment_proved": false,
+  "all_family_endpoint_proved": false,
+  "comparator_verified": false,
+  "three_kernels_verified": false,
+  "tracker_record_claimed": false,
+  "blocking_interface": "Unmarked plain zero-slot source/eligibility adapter and actual signed physical row reconstruction remain unproved."
+}
