@@ -1,0 +1,18 @@
+LocalMoment/LowSourceAdapters.lean:80:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+LocalMoment/LowSourceAdapters.lean:80:42: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'OAI.SevenEighths.LocalMomentSourceAudit.canonical_all_twists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.zeroMaximum_eq_of_mask' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.greedy_low_selection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.width_plus_low_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,68 @@
+import LocalMoment.HeightUniformDensity
+import LocalMoment.PlainUnmarkedAdapter
+import LocalMoment.SignedRows
+import LocalMoment.LowSourceAdapters
+import LocalMoment.RestrictedCanonicalSource
+import LocalMoment.ScaleShortening
+import LocalMoment.FiniteDeletionBins
+import LocalMoment.UnmarkedDensity
+import LocalMoment.BufferedSlot
+import LocalMoment.RestrictedIncumbent
+import LocalMoment.SixthRowMask
+import LocalMoment.RawSixthDensity
+import LocalMoment.UniformDensity
+import LocalMoment.UnmarkedBatch
+import LocalMoment.ActualUnmarkedInputs
+
+/-! These are verified components of the proposed local-moment source.
+The full physical moment and tracker endpoint are deliberately absent. -/
+
+#print axioms OAI.SevenEighths.LocalMoment.zeroMaximum_eq_of_mask
+#print axioms OAI.SevenEighths.LocalMoment.count_from_unmarked_raw_moments
+#print axioms OAI.SevenEighths.LocalMoment.natural_relative_slot_buffered_bound
+#print axioms OAI.SevenEighths.LocalMoment.restricted_paid_incumbent
+#print axioms OAI.SevenEighths.LocalMoment.sixthFrequency_zeroMaximum
+#print axioms OAI.SevenEighths.LocalMoment.raw_density_from_free
+#print axioms OAI.SevenEighths.LocalMoment.uniform_free_density_varying_of_eventually
+#print axioms OAI.SevenEighths.LocalMoment.raw_density_uniform_exponent
+#print axioms OAI.SevenEighths.LocalMoment.raw_density_from_eventual_free
+#print axioms OAI.SevenEighths.LocalMoment.batch_count_from_unmarked_raw_moments
+#print axioms OAI.SevenEighths.LocalMoment.unmarkedDensity_gt_one_sixth
+#print axioms OAI.SevenEighths.LocalMoment.supportedRowRetraction_mem
+#print axioms OAI.SevenEighths.LocalMoment.fixed_family_inverse_raw
+#print axioms OAI.SevenEighths.LocalMoment.batch_moments_of_plain_unmarked
+#print axioms OAI.SevenEighths.LocalMoment.unmarked_batch_from_actual_maxima
+#print axioms OAI.SevenEighths.LocalMoment.fixed_label_dyadic_cost
+
+#print axioms OAI.SevenEighths.LocalMoment.uniform_free_density_weighted_of_eventually
+#print axioms OAI.SevenEighths.LocalMoment.raw_density_weighted_from_eventual_free
+#print axioms OAI.SevenEighths.LocalMoment.natural_row_moment_dictionary
+#print axioms OAI.SevenEighths.LocalMoment.fixed_unmarked_plain
+#print axioms OAI.SevenEighths.LocalMoment.detector_plain_absolute
+#print axioms OAI.SevenEighths.LocalMoment.finite_rows_plain_absolute
+#print axioms OAI.SevenEighths.LocalMoment.fixed_retained_unmarked_plain
+#print axioms OAI.SevenEighths.LocalMoment.fixed_exceptional_free_finite
+#print axioms OAI.SevenEighths.LocalMoment.fixed_zero_input
+#print axioms OAI.SevenEighths.LocalMoment.UnmarkedFiber.toLegacy
+#print axioms OAI.SevenEighths.LocalMoment.unmarked_retained_plain
+#print axioms OAI.SevenEighths.LocalMomentSignedRows.left_local
+#print axioms OAI.SevenEighths.LocalMomentSignedRows.left_canceled
+#print axioms OAI.SevenEighths.LocalMomentSignedRows.right_local
+#print axioms OAI.SevenEighths.LocalMomentSignedRows.right_canceled
+#print axioms OAI.SevenEighths.LocalMomentSignedRows.effective_row
+#print axioms OAI.SevenEighths.LocalMomentSourceAudit.canonical_all_twists
+#print axioms OAI.SevenEighths.LocalMomentSourceAudit.zeroMaximum_eq_of_mask
+#print axioms OAI.SevenEighths.LocalMomentSourceAudit.greedy_low_selection
+#print axioms OAI.SevenEighths.LocalMomentSourceAudit.width_plus_low_defect
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.actual_common_child_restricted
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_covers
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_is_existing_radius
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width_fixed_modulus
+#print axioms OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_defect_increment
+#print axioms LocalMomentV3Review.audited_upper_edges
+#print axioms LocalMomentV3Review.incumbent_of_short_plain
+#print axioms LocalMomentV3Review.shortened_scale_dichotomy
+#print axioms LocalMomentV3Review.incumbent_of_short_slots
+#print axioms LocalMomentV3Review.shortened_scale_and_slot_dichotomy
+#print axioms LocalMomentV3Review.positive_supply_retains_target_gain

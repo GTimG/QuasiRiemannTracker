@@ -1,0 +1,6 @@
+'LocalMomentV3Review.audited_upper_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.incumbent_of_short_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.shortened_scale_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.incumbent_of_short_slots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.shortened_scale_and_slot_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.positive_supply_retains_target_gain' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,6 @@
+'OAI.SevenEighths.LocalMoment.uniform_free_density_weighted_of_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.raw_density_weighted_from_eventual_free' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

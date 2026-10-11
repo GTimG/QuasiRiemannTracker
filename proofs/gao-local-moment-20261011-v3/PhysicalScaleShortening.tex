@@ -1,0 +1,258 @@
+% Development supplement, 11 October 2026.
+% The arithmetic dichotomy is unconditional.  The application still assumes
+% the proposed local physical moment and the pinned incumbent moment.
+\section{Shortened physical scales do not require a new local hypothesis}
+\label{sec:physical-scale-shortening}
+
+The local moment window imposes a lower bound on each plain length.
+Consequently the sentence ``the varying conductor only shortens the
+reflected scale'' does not, by itself, justify applying that moment.
+The following dichotomy closes this particular gap. It uses the
+\emph{existing} $9/2$ moment on the shorter scales.
+
+Set
+\[
+ h=\frac{3969737987}{5000000000},\qquad
+ \ell=\frac{626701}{3750000},\qquad y=h-2\ell,
+ \qquad C=\frac{2249}{500}.
+\]
+For a row exponent $d\in[h-10^{-3},h+10^{-10}]$ and a free-shift
+exponent $t\in[0,10^{-3}]$, normalized relative to $U=Z^d$, the
+upper reflected plain length is
+\[
+ n(d,t)=1-\frac yd+t.
+\]
+Since $y>0$, this is increasing in both $d$ and $t$. The exact
+endpoint values used in the scalar audit are
+\[
+ n_- =\frac{4998608000}{11894213961},\qquad
+ n_+ =\frac{402041377237}{952737117000},
+\]
+and the nominal selected prime widths lie between
+\[
+ z_- =\frac{1-2n_+}{C}
+      =\frac{74327181263}{2142705776133},\qquad
+ z_+ =\frac{1-2n_-}{C}
+      =\frac{948498980500}{26750087198289}.
+\]
+Direct rational comparison gives
+\[
+ \frac{41}{100}<n_-\le n_+<\frac{211}{500}<\frac{11}{25},
+ \qquad
+ \frac3{100}<z_-\le z_+<\frac{71}{2000}<\frac1{25}.
+\]
+All comparisons are strict, so sufficiently small fixed annular,
+box, fixed-conductor, and selection-mesh losses fit inside them.
+The numerical margins before these losses are approximately
+$0.0000143651$ for the upper plain bound $211/500$ and
+$0.0000422098$ for the upper slot bound $71/2000$.
+In particular those losses must be chosen below these margins;
+merely fitting inside the larger local window is insufficient for
+the quantitative short-scale reserve below.
+
+\begin{lemma}[A downward scale dichotomy]
+Let $n,x_1,x_2,z\ge0$ satisfy
+\[
+ x_i\le n\le\frac{211}{500},\qquad
+ \frac3{100}\le z\le\frac{71}{2000},\qquad
+ 2n+Cz\le1.
+\]
+Then either both actual plain lengths $x_i$ belong to
+$[41/100,11/25]$ and
+\[
+ x_1+x_2+Cz\le1,
+\]
+or
+\[
+ x_1+x_2+\frac92z\le1-\frac{33}{4000}.
+\]
+\end{lemma}
+\begin{proof}
+If both $x_i\ge41/100$, their upper bounds follow from
+$211/500<11/25$, and their new capacity follows by comparison
+with $2n+Cz$.
+If, for example, $x_1\le41/100$, then
+\[
+ x_1+x_2+\frac92z
+ \le\frac{41}{100}+\frac{211}{500}
+       +\frac92\frac{71}{2000}
+ =1-\frac{33}{4000}.
+\]
+The other case is symmetric. Equality at the boundary is harmless.
+\end{proof}
+
+Here is the precise analytic application. Assume the proposed local
+moment has been established for its stated profile and canonical-slot
+family, and retain the pinned source's existing $9/2$ moment.
+Fix a selected slot family of total width $z$ obeying the lemma,
+with the same natural row zeros and eligibility in both estimates.
+For any actual pair of reflected scales bounded above by $U^n$, clip
+nonempty subunit scales to length zero using the source's bounded
+annular dilation rule. Apply the local moment on the rectangle
+$x_1,x_2\ge41/100$; on either complementary rectangle apply the
+incumbent moment. Both bounds have the same target $U^{1+\epsilon}$.
+
+The original scale-supremum recovery applies separately on these
+three rectangles. In logarithmic scale coordinates it bounds the
+supremum by integrals of the function and its first derivatives in
+each coordinate. These are exactly the four profile pairs appearing
+in the two-variable recovery. Their supports remain fixed annuli;
+the number of scale boxes is polynomial in $\log U$, and is absorbed
+in an arbitrarily small part of $\epsilon$. Thus row-dependent
+conductor deficits, downward Euler-restoration scales, and the low
+annuli of the reflected Schwartz profile do not force a local-moment
+claim below $41/100$. The upper annular tail is first removed with
+the original rapid-decay estimate.
+
+The algebra relating this to the actual numerator is the pinned
+source's B0.42--B0.44: write a monomial shift as $h_0h_r$, with
+$h_r$ charged to the repeated-prime conductor deficit. Its reflected
+scale is bounded by a fixed constant times $(U/Y)h_0$; natural Euler
+restoration only shortens that scale. For a fixed $h_0$ dyad this
+is the upper bound $n(d,t)$ above. The same combined conductor must
+be used in this bound and in the coefficient damping. No factor of
+the conductor deficit may be charged twice. The argument introduces
+no further coefficient mass and therefore preserves the source's
+weighted free-shift mass $\sum |c_u(h_0,h_r)|h_0^{\delta/2}$.
+
+\paragraph{Short actual prime supply.}
+There is a second possible shortening: the actual selected prime width
+$z$ can be smaller than the nominal selection capacity
+$z_A=(1-2n)/C$. Error slots carry zero gain, and even a main slot
+may carry zero gain. No lower bound on the positive-gain supply is
+required. If $z\le3/100$, the old moment applies directly, since
+\[
+ x_1+x_2+\frac92z
+ \le 2\frac{211}{500}+\frac92\frac3{100}
+ =1-\frac{21}{1000}.
+\]
+Thus every actual selected width $0\le z\le z_A\le71/2000$ is
+covered: use this old-moment branch for $z\le3/100$, and the
+preceding downward-scale dichotomy otherwise. The common worst
+reserve in either old-moment branch is $33/4000$.
+
+The selection gain is still the gain at the \emph{target capacity}
+$z_A$, not merely at the smaller actual width $z$. To see this
+from the literal source, write $w_i$ for every original slot width,
+$L=\sum_iw_i$ for their total, and $g_i\in[0,\delta/2]$ for the
+main-masked amplitude-bin gains. The error gains are zero but their
+widths are retained in $L$. Set
+\[
+ q=\frac{\sum_iw_i g_i}{L}.
+\]
+The source theorem \path{zero_error_whole_slots} assumes only
+$0\le z_A\le L$, $w_i\le\mathrm{mesh}$, and the above gain bounds.
+It returns a subset $I$ of the positive-gain main slots satisfying
+\[
+ z=\sum_{i\in I}w_i\le z_A,\qquad
+ \sum_{i\in I}w_i g_i\ge qz_A-\frac\delta2\mathrm{mesh},
+ \qquad
+ \left|\prod_{i\in I}Q_i\right|^2
+ \ge U^{2qz_A-\delta\mathrm{mesh}}.
+\]
+There is no premise that the positive-gain main supply is at least
+$z_A$. If it is exhausted first, the selected weighted gain is
+$qL\ge qz_A$, which is stronger than the stated rounded bound.
+Zero-gain main factors must not be reinserted into this lower-bounded
+product; such factors could be arbitrarily small or zero.
+
+The source's \path{source_class_main_selection} constructs the
+amplitude classes on all original slots and uses exactly this masked
+mean. Consequently the same $I$, $q$, and lower bound work uniformly
+on its class of rows. Its full-main \emph{upper} bound is unchanged.
+To substitute the local capacity for its old capacity one invokes
+\path{zero_error_whole_slots} at $z_A$ directly, after checking
+the total-original-supply inequality $z_A\le L=\ell/d$. This is the
+scalar audit's capacity gate; it does not assert a fictitious
+positive-main supply lower bound.
+
+Combining this selection with either applicable physical moment
+gives the same denominator gain $U^{2qz_A}$, up to the fixed mesh
+loss, whether the actual width is in the local window or below it.
+The old-moment branch therefore preserves the desired weighted
+numerator saving. This argument supplies neither the new local
+moment nor its literal initial-state adapter; it closes the
+downward-scale and short-selected-supply parts conditional on those
+inputs and the pinned incumbent moment.
+
+The six elementary statements in \path{ScaleShortening.lean}
+check the rational upper edges, both strict incumbent reserves,
+the two dichotomies, and the exhausted-supply affine gain. Their
+scope is arithmetic; the actual selection and spike identity are
+the source theorems identified above.
+
+\paragraph{All larger free shifts, including zero capacity.}
+For completeness the restriction $t\le10^{-3}$ does not discard the
+remaining coefficient dyads. Put $b=2y/d-1>0$, $t_0=10^{-3}$,
+and
+\[
+ z_{\mathrm{new}}(0)=\frac bC,\qquad
+ z_{\mathrm{old}}(t)=\max\left\{0,\frac{b-2t}{9/2}\right\}.
+\]
+The actual incumbent capacity uses $6\kappa\le9/2$, so this is a
+lower admissible capacity. The weighted coefficient mass in B0.44
+pays $U^{-\delta t/2}$. Thus it suffices to prove
+\[
+ \frac{\delta t}{2}+\frac{qz_{\mathrm{old}}(t)}2
+ \ge\frac{qz_{\mathrm{new}}(0)}2.
+ \tag{SS}
+\]
+Write
+\[
+ S_b(t)=\frac t2-\frac14\bigl(b/C-z_{\mathrm{old}}(t)\bigr).
+\]
+This function is continuous at $t=b/2$. Its derivative is $7/18$
+where the old capacity is positive and $1/2$ where it is zero.
+For the audited near-endpoint rows,
+$b\le b_{\max}=1-2n_-$ and $b>2t_0$.
+The exact rational audit gives
+\[
+ S_b(t_0)\ge
+ \frac{t_0}{2}-\frac14
+   \left(\frac{b_{\max}}C-
+         \frac{b_{\max}-2t_0}{9/2}\right)
+ >\frac3{10000}.
+\]
+It follows that $S_b(t)>0$ for every $t\ge t_0$, with no exception
+at the clipping point. Since $0\le q\le\delta/2$ and
+$z_{\mathrm{new}}(0)-z_{\mathrm{old}}(t)\ge0$, the left side of
+(SS) minus its right side is at least $\delta S_b(t)\ge0$.
+This proves the full large-shift payment, including the empty selected
+family at zero capacity. That family uses the incumbent unrestricted
+zero-slot moment B3.40, not a moment with a hidden requirement
+$x_1+x_2\le1$. In the source definition \path{ZeroAt}, the
+positive scales are required only to satisfy $X_i\le Z^L$; its
+conclusion is $Z^{s.\mathrm{width}+\epsilon}$. The actual physical
+specialization \path{finite_pair_zeroAt} in
+\path{Cycle25/Energy/Physical/CertifiedZero.lean} gives
+$U^{1+\delta+\epsilon}$ for $X_i\le U^2$.
+Its \path{certified_reflected_zero_fourier_moment}
+retains both independent Fourier heights.
+Finally \path{certified_original_numerator_fourth} in
+\path{Cycle25/Energy/Physical/OriginalFourth.lean} accepts
+the exact disjunction
+\[
+ 2(m+\xi)+6\kappa\sum_{i\in I}w_i\le1
+ \quad\text{or}\quad I=\varnothing,
+ \qquad m+\xi\le2,
+\]
+and gives the same $U^{1+o(1)}$ fourth-moment bound in either case.
+There is consequently no extra positive-part length cost when the
+capacity vanishes. The larger $\max(1,2m)$ bound in the unmarked
+density adapter allows its finitely many exceptional rows; it is
+not the eligible physical zero-slot estimate being used here.
+
+For $0\le t\le t_0$ the local capacity is
+$z_{\mathrm{new}}(t)=(b-2t)/C>0$.
+Here the same conclusion follows directly from
+\[
+ \frac{\delta t}{2}+
+ \frac q2\bigl(z_{\mathrm{new}}(t)-z_{\mathrm{new}}(0)\bigr)
+ =t\left(\frac\delta2-\frac qC\right)\ge0.
+\]
+The original support cutoff restricts $t\le m+o(1)$, as in B0.44;
+all scales therefore stay in bounded geometric ranges. The new
+argument requires no new uniform estimate for unbounded plain
+lengths. Row exponents below the near-endpoint interval use the
+separate incumbent row-endpoint certificates, as specified in the
+global endpoint assembly.

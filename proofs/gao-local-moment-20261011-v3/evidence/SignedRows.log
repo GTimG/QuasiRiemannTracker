@@ -1,0 +1,5 @@
+'OAI.SevenEighths.LocalMomentSignedRows.left_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.left_canceled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.right_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.right_canceled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.effective_row' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,17 @@
+{
+  "pdf_pages": 45,
+  "tectonic_exit_code": 0,
+  "tex_diagnostics": [],
+  "unresolved_reference_markers": false,
+  "endpoint_extra_exact_checks": 20,
+  "visual_pages_reviewed": [
+    1,
+    17,
+    18,
+    39,
+    40
+  ],
+  "components_reported_by_root": 15,
+  "axiom_checks_reported_by_root": 48,
+  "canonical_draft2_unchanged_during_staging": true
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "research-paper-collection-v1",
+  "status": "research-draft",
+  "paper_draft": 3,
+  "pages": 45,
+  "author": "Zhongpai Gao",
+  "assistance": "AI-assisted",
+  "source_snapshot": "proofs/gao-local-moment-20261011-v3",
+  "files": {
+    "paper.pdf": "ff12ab9b0744dc73b70c4338c9f0d0cb907f4ce10fe0697d69d379c0343a17de"
+  },
+  "independent_verification_complete": false,
+  "tracker_record_claimed": false
+}

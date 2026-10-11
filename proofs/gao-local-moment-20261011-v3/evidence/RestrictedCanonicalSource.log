@@ -1,0 +1,18 @@
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.actual_common_child_restricted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_covers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_is_existing_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width_fixed_modulus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_defect_increment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

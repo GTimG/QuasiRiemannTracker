@@ -1,0 +1,245 @@
+% Research derivation. This file is an input fragment, not a standalone paper.
+% The plain-moment theorem below has a compiled Lean counterpart.
+% The final assembly of the zero-density statement is a written proof.
+\section{The unmarked plain moment and density for a fixed character dictionary}
+\label{sec:actual-unmarked-density}
+
+This section closes the zero-slot plain-moment input for a fixed finite
+character dictionary. It does not identify the varying rows in the proposed
+physical moment with such a dictionary; that separate identification must
+preserve every Euler hole and the stated constants.
+
+Let $\mathcal O=\mathbb Z[\omega]$ be the Eisenstein integers and put
+$m_0=2(1-\omega)$. A free row means a nonzero element $u$ whose principal ideal
+has every prime valuation less than six. Fix a nonempty finite set $\Lambda$ (the empty case is immediate) and
+characters $\eta_\lambda$, $\lambda\in\Lambda$. For each $u$ choose the
+\emph{natural} row character $\chi_{u,\lambda}$, so that
+\[
+ c_{\chi_{u,\lambda}}(I)
+ =c_{\eta_\lambda}(I)\,\mathfrak s_{m_0^6u}(I),
+ \qquad
+ \mathrm N\mathfrak q_{u,\lambda}
+ \le K_\lambda\,\mathrm N(u),
+ \quad K_\lambda=\mathrm N\mathfrak q_{\eta_\lambda}
+                   \mathrm N(m_0)\mathrm N(72).
+\]
+Here $\mathfrak s$ is the literal extended sextic ideal character, including
+its zero values at ramified primes. The conductor estimate refers to the
+natural representative obtained from the conductor-bounded row constructor.
+The abstract \path{RowData.character} is chosen by a different existence
+theorem and does not carry this bound. Its coefficients agree with the
+natural representative, which is all the moment estimates require.
+Whole-character conjugation preserves the modulus and reflects the zero
+height. It can be handled through this symmetry; it must not be confused
+with conjugating only the fixed factor $\eta_\lambda$.
+
+\subsection{The zero-slot plain input}
+
+For $n\le2$, $\sigma\in[0,1]$, $t\in\mathbb R$, write
+\[
+ P_n(\chi;D,\sigma,t)
+ =D^{-1/2}\sum_{I\ne0}c_\chi(I)
+   (\log(\mathrm NI/D))^n W(\mathrm NI/D)
+   (\mathrm NI/D)^{-\sigma+it},
+\]
+where $W$ is the fixed positive annular detector profile, supported in
+$[1/4,9/4]$. Its logarithmic derivatives occurring here are those of the
+existing detector construction.
+
+\paragraph{Plain-moment proposition.}
+Assume the contradiction branch $\beta\ge51/100$. For each $\epsilon>0$
+there are $C>0$, $J\in\mathbb N$, and $U_0$, depending on the fixed
+dictionary and $\epsilon$, such that for every $U\ge U_0$, every height
+$H\ge0$, every unmarked detector fiber whose right length satisfies $m\le3/4$,
+and whose finite row set $\mathcal R$ satisfies $\mathrm N(u)\le U$ and
+the displayed coefficient dictionary, one has
+\[
+ \sum_{u\in\mathcal R}
+ |P_j(\chi_{u,\lambda};U^m,\sigma,t)
+  P_k(\chi_{u,\lambda};U^m,\sigma,t)|^2
+ \le C(1+H)^J U^{\max(1,2m)+\epsilon},
+ \tag{P}
+\]
+for $j+k\le2$, $\sigma\in[0,1]$ and $|t|\le H$.
+The threshold precedes the height quantifier. No lower bound on
+$\mathrm N(u)$ and no prime-slot supply is assumed. In the formal theorem
+$\mathcal R$ is the row set of an unmarked detector fiber; the proof of its
+plain estimate only uses its row bound, coefficient dictionary, and $m$.
+
+\paragraph{Proof.}
+Fix a label and choose, for example,
+$Q=\mathfrak q_\eta(72)$. Then $Q\ne0$, $Q\ne\mathcal O$,
+$Q\subseteq(72)$, and $Q\subseteq\mathfrak q_\eta$. These are the exact
+fixed-modulus gates of the incumbent analytic induction. For
+$d=\min(\epsilon/4,1/4)>0$, its terminal certificate with
+$\kappa=\max(3/4,2\beta-1)$ supplies the zero-slot bound at error $d$.
+The zero slot profile is a legitimate input to that certificate; no
+improvement of the physical moment is used. The fixed character modulus
+satisfies $\mathrm N\mathfrak q_\eta\le U^d$ for all sufficiently large $U$.
+The natural initial state has width
+\[
+ 1+d+\max(0,2m-1)=\max(1,2m)+d\le2.
+\]
+Consequently the incumbent zero-slot estimate, followed by the uniform
+Schwartz-profile bounds, proves (P) on rows satisfying
+\path{initialKeep}, with exponent $\max(1,2m)+2d$.
+The profile control contributes $C(1+H)^J$ and does not change the scale
+threshold. The legacy proof interface is reached by adding one auxiliary
+slot of width $7/37$ with identically zero profile and always selecting the
+empty product. Every legacy structure field, including its numerical
+supply field, is then proved; no prime sum or supply property is imposed
+on the original family.
+
+The omitted free rows form a fixed finite set $E_\eta$. Indeed, the
+fixed-inducing-row theorem puts all their prime factors in the finite
+support of $Q$, and free-row valuations are at most five. There are only
+finitely many resulting ideals and six possible units per principal ideal.
+This is a fixed finite set, not the whole interval of small rows.
+
+The exceptional contribution has the required size without cancellation.
+The detector Schwartz profiles have a uniform absolute bound $A$ for all
+$n\le2$, $\sigma\in[0,1]$, and all frequencies. Since
+$\#\{I:0<\mathrm NI\le x\}\le128x$, coefficient norms are at most one,
+and the profile vanishes above $9/4$, the normalized finite sum gives
+\[
+ |P_n(\chi;D,\sigma,t)|\le288A\sqrt D
+\]
+for every character, including principal characters. Therefore
+\[
+ \sum_{u\in\mathcal R\cap E_\eta}|P_jP_k|^2
+ \le |E_\eta|(288A)^4D^2
+ \le |E_\eta|(288A)^4U^{\max(1,2m)+\epsilon}.
+\]
+This proves (P) on all rows. Taking maxima of finitely many thresholds and
+degrees, and a sum of the finitely many constants, proves the simultaneous
+statement for $\Lambda$. The compiled theorem
+\path{fixed_unmarked_plain} proves this argument for one label; finite
+label closure is an ordinary finite maximum argument.
+
+\subsection{From actual witnesses to a height-uniform density bound}
+
+Let $N(Y,a,T)$ count free rows $u$, $\mathrm N(u)\le Y$, for which at least
+one dictionary character has a zero with real part at least $a$ and
+imaginary part of absolute value at most $T$. In this paragraph
+$17/20\le a\le7/8$. Use the incumbent bound $\beta\le7/8$. If $\beta<a$, the
+nonexceptional contribution is zero; the fixed exceptional set is handled
+by its constant cardinality. The lower hypothesis $\beta\ge51/100$
+in (P) is automatic whenever the nonexceptional contribution is nonempty
+and hence is not an extra theorem assumption on the desired zero-free result.
+
+\paragraph{Density proposition.}
+For every $\varepsilon>0$ there are $C,J,Y_0$, fixed before $a$ and $T$,
+such that for all $Y\ge Y_0$ and $T\ge0$,
+\[
+ N(Y,a,T)\le C(1+T)^JY^{\rho(2a-1)+\varepsilon},
+ \qquad
+ \rho(\delta)=1-\frac{10\delta}{3(5-2\delta)}.
+ \tag{D}
+\]
+The constant depends on the fixed dictionary. The same assertion for a
+scale-dependent dictionary does not follow from this proposition.
+
+\paragraph{Proof.}
+Set $K=\max(1,\max_\lambda K_\lambda)$ and $U=KY$. Then both the row norm
+and every natural character modulus are at most $U$. This is a fixed
+multiplicative padding; no power of $Y$ is lost. Remove the finite union
+$E=\bigcup_\lambda E_{\eta_\lambda}$. On the remaining rows every natural
+character is nonprincipal, by the incumbent nonprincipal gate. The finite
+union contributes $O(1)$ to (D), so there is no need to construct detector
+witnesses for its members.
+
+Choose small detector and moment errors before the scale parameter. The
+actual inverse moment for each fixed \path{momentData} family and (P)
+now give both moment inputs with one bound $C(1+H)^{J_0}$. Both the constant
+and degree are independent of the detector zero bin, the dyadic indices,
+and $U$. The actual detector lengths satisfy
+$m\le1/2+75\epsilon_{\rm det}\le23/40$, so (P) applies.
+Choose $\tau_{\rm det}>0$ \emph{after} $J_0$, sufficiently small for the supported
+witness construction and for
+$\tau_{\rm det}(J_0+1)$ to fit within the allotted final error.
+
+First suppose $T\le U^{\tau_{\rm det}}$. For each row, apply the existing finite
+buffered-bin lemma to its finite character family with height step
+$U^{\tau_{\rm det}}>2$ and mesh $e>0$. It gives an integer $1\le i\le I$,
+$I=\lceil49/(100e)\rceil$, and a real grid value $b=51/100+ek$ such that
+\[
+ b\le M(3iU^{\tau_{\rm det}})<b+e,
+ \qquad M(3(i+1)U^{\tau_{\rm det}})<b+2e.
+\]
+Here $M$ is the actual maximum of zero real parts in the specified box,
+with the usual $51/100$ fallback. Because the original row has a zero
+with real part at least $a$ at height at most $T$, monotonicity gives
+$b>a-e$. The incumbent upper bound gives $b\le7/8$. There are only
+$O_e(1)$ possibilities for $(i,k)$, so partition the rows by these values.
+For each part set $\delta_b=2b-1$ and fix its balanced cutoff
+$t_*=5/(5-2\delta_b)$ before constructing witnesses.
+
+The actual supported-witness theorem, with base scale $Z=U$ and $d=1$,
+produces witnesses in each nonempty part. Its hypotheses are now literal:
+nonprincipality, modulus at most $U$, the two buffered maxima, and the
+natural-row coefficient identity. It uses frequency allowance
+$U^{\tau_{\rm det}/2}$, and the witness frequency is bounded by
+\[
+ H_i=2\pi U^{\tau_{\rm det}/2}+3iU^{\tau_{\rm det}}\ll_e U^{\tau_{\rm det}}.
+\]
+Choose the auxiliary small parameters in the stated detector budget
+$12e(22+2)+8\kappa_{\rm aux}+2\eta_{\rm aux}
+ \le\epsilon_{\rm det}/2$ and
+$4\tau_{\rm det}<\eta_{\rm aux}$. They can all be chosen positively, with
+$e<1/1000$, and then $\tau_{\rm det}$ decreased further as necessary. No height
+variable occurs in the resulting eventual threshold.
+
+Partition once more by the witness label and its two dyadic indices, all
+constructed using this fixed $t_*$. The no-slot inverse and plain estimates yield the
+already compiled balanced count
+\[
+ |\mathcal R_{\rm fiber}|
+ \ll (1+H_i)^{J_0+1}
+ U^{\rho(\delta_b)+156\epsilon_{\rm det}+\epsilon_m}.
+\]
+The fixed label count and the two dyadic counts cost an arbitrary positive
+power of $U$. Since $b>a-e$ and $\rho$ is decreasing, differentiation on
+the relevant compact interval gives
+$\rho(2b-1)\le\rho(2a-1)+3e$.
+Choose $\epsilon_{\rm det},\epsilon_m,e$ and the dyadic padding so their
+sum with $\tau_{\rm det}(J_0+1)$ is less than $\varepsilon$. Summing the finite
+partitions proves $N(Y,a,T)\ll U^{\rho(2a-1)+\varepsilon}$ in this case.
+The replacement $U=KY$ only changes the fixed constant.
+
+If $T>U^{\tau_{\rm det}}$, the elementary lattice count is enough:
+$N(Y,a,T)\ll U$. Since $\rho(2a-1)>0$ and $U\ge1$, for any integer
+$J\ge1/\tau_{\rm det}$,
+\[
+ U\le T^J\le(1+T)^JU^{\rho(2a-1)+\varepsilon}.
+\]
+This proves (D) for arbitrary $T$, with a common threshold fixed before
+that height. Bounded $Y$ are covered by enlarging the constant using the
+finite row ball, uniformly in $T$ and $a$.
+
+When this result is used at an external physical height $T=Z^{\tau_{\rm out}}$,
+choose $\tau_{\rm out}$ only after the final degree $J$ in (D) has been
+fixed, so that $J\tau_{\rm out}$ fits the physical error allowance. The
+external exponent $\tau_{\rm out}$ is distinct from the internal detector
+exponent $\tau_{\rm det}$ chosen in this proof. Reusing a single exponent
+for both purposes would make the parameter selection circular.
+
+The exponent satisfies $\rho(\delta)\ge2/7>1/6$ for
+$\delta\le3/4$. Thus the weighted sixth-power raw-row lifting proved in
+\path{HeightUniformDensity.lean} applies to (D). This completes the
+analytic unmarked density input for a fixed dictionary. Applying it to the
+joint physical row still requires the exact signed coefficient identity,
+a fixed-dictionary reduction for every varying label, and the stated
+conductor and mask accounting.
+
+\subsection{Formal verification scope}
+
+The new module \path{PlainUnmarkedAdapter.lean} contains nine audited
+objects: the natural-row coefficient dictionary, the legacy embedding, the retained estimate, the actual zero-slot
+input, the retained eventual field, finiteness of exceptional free rows,
+the absolute detector-polynomial bound, the finite-row absolute bound, and
+the complete eventual plain field. All nine printed axiom sets contain
+only \path{propext}, \path{Classical.choice}, and \path{Quot.sound}.
+Compilation reuses development dependency objects; this is not a clean
+source replay or an independent checker certificate. The assembly of (D)
+above is a written mathematical proof, not an additional Lean theorem in
+this module.

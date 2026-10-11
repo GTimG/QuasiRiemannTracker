@@ -1,0 +1,84 @@
+'OAI.SevenEighths.LocalMoment.zeroMaximum_eq_of_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.count_from_unmarked_raw_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.natural_relative_slot_buffered_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.restricted_paid_incumbent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.sixthFrequency_zeroMaximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.raw_density_from_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.uniform_free_density_varying_of_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.raw_density_uniform_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.raw_density_from_eventual_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.batch_count_from_unmarked_raw_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.unmarkedDensity_gt_one_sixth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.supportedRowRetraction_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_family_inverse_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.batch_moments_of_plain_unmarked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.unmarked_batch_from_actual_maxima' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_label_dyadic_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.uniform_free_density_weighted_of_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.raw_density_weighted_from_eventual_free' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.natural_row_moment_dictionary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_unmarked_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.detector_plain_absolute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.finite_rows_plain_absolute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_retained_unmarked_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_exceptional_free_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.fixed_zero_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.UnmarkedFiber.toLegacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.unmarked_retained_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.left_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.left_canceled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.right_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.right_canceled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSignedRows.effective_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.canonical_all_twists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.zeroMaximum_eq_of_mask' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.greedy_low_selection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentSourceAudit.width_plus_low_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.actual_common_child_restricted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_covers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_is_existing_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_width_fixed_modulus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMomentRestrictedCanonical.enlarged_main_defect_increment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LocalMomentV3Review.audited_upper_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.incumbent_of_short_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.shortened_scale_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.incumbent_of_short_slots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.shortened_scale_and_slot_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMomentV3Review.positive_supply_retains_target_gain' depends on axioms: [propext, Classical.choice, Quot.sound]

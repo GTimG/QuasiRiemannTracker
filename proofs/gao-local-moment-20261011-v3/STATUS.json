@@ -1,0 +1,32 @@
+{
+  "schema": "local-moment-research-revision-v3",
+  "author": "Zhongpai Gao",
+  "assistance": "AI-assisted research, formalization and exposition",
+  "predecessor": "gao-local-moment-20261011-v2",
+  "predecessor_commit": "59c1098ca93e0c739f0074523f2e540bf27e7903",
+  "paper_draft": 3,
+  "analytic_argument_status": "Proposed complete written source-level proof, pending independent review",
+  "compiled_source_components": 15,
+  "component_axiom_checks": 48,
+  "component_checks_passed": true,
+  "dependencies_rebuilt": false,
+  "written_local_moment_proof": "PhysicalLocalAssembly.tex",
+  "written_endpoint_proof": "EndpointAssembly.tex",
+  "full_physical_moment_kernel_verified": false,
+  "canonical_all_family_targets_verified": false,
+  "independent_mathematical_review_complete": false,
+  "comparator_verified": false,
+  "three_kernels_verified": false,
+  "tracker_record_claimed": false,
+  "proposed_endpoint": {
+    "numerator": 4374433,
+    "denominator": 5000000
+  },
+  "verification_remaining": [
+    "Independent review of the complete written argument against pinned source results",
+    "Complete formal local-moment and all-family endpoint assembly",
+    "Clean dependency replay and protected canonical-target comparison",
+    "Maintainer-controlled independent kernel acceptance"
+  ],
+  "component_scope_note": "The 48 audited declarations are supporting results, not the complete local-moment or all-family endpoint theorem."
+}

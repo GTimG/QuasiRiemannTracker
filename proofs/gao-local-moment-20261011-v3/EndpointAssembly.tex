@@ -1,0 +1,366 @@
+% Proposed complete written endpoint assembly, 11 October 2026.
+% This source proof is under review. It is not a new Lean endpoint theorem,
+% a clean replay, or an independent-checker certificate.
+\section{The endpoint and the target-uniform continuation argument}
+\label{sec:endpoint-assembly}
+
+We now insert the local physical moment into the pinned numerator
+construction. The input results are the established incumbent moments,
+the exact physical Euler expansion and coefficient mass in B0.32--B0.44
+and B4 of the pinned Cycle25 manuscript, its detector count B0.40, and
+its contour and continuation construction B0.7 and T2--T3. The new input
+is the local-moment proposition proved in
+\path{PhysicalLocalAssembly.tex}, with the fixed-dictionary and
+height-uniform density arguments preceding it. The downward-scale
+argument is \path{PhysicalScaleShortening.tex}. We retain the exact
+rational certificate in \path{local_moment_endpoint_audit.py}.
+No unproved varying-parent moment is introduced in this application.
+
+Set
+\[
+ \theta=\frac{4374433}{5000000},\quad
+ \ell=\frac{626701}{3750000},\quad
+ h=\frac{3969737987}{5000000000},\quad
+ x=1+\ell-h,\quad y=h-2\ell,
+ \qquad C=\frac{2249}{500}.
+\]
+In particular $\theta=11/12-\ell/4$, $x+y=1-\ell$,
+$0<\ell<x<y<2x$, and $y<1/2<h<2y$.
+
+\begin{theorem}[Proposed endpoint, relative to the pinned analytic framework]
+Every finite-order Hecke character of the Eisenstein field with trivial
+infinite type has no zero in $\Re s>\theta$, with the principal pole at
+$s=1$ excluded. Presented characters may be imprimitive and have
+arbitrary conductor. Every ordinary Dirichlet $L$-function has the same
+zero-free half-plane, again excluding the principal pole. In particular
+$\zeta(s)\ne0$ there for $s\ne1$.
+\end{theorem}
+
+\begin{proof}[Proposed source proof, under review]
+Let $\beta_*$ be the source's Hecke zero supremum, including its sentinel
+$1/2$. The incumbent theorem gives $\beta_*\le7/8$. Suppose
+$\mu=\beta_*-\theta>0$ and set
+\[
+ \kappa=2\beta_*-1,\qquad
+ \kappa_*=2\theta-1=\frac{1874433}{2500000}.
+\]
+Then $\kappa_*<\kappa\le3/4$. The incumbent marked detector and ordinary
+moment apply at this $\kappa$: their hypothesis $2\beta_*-1\le\kappa$
+holds by equality. The new local moment uses only the incumbent
+$9/2$ and unrestricted zero-slot estimates at descendant states.
+
+\paragraph{1. The actual physical family and selected slots.}
+Fix a primitive target $\eta$ only after the common real margins and slot
+mesh have been chosen. Its finite exclusion set $S$, original local
+Euler factors, and all natural row zeros are those of the source probe.
+In the physical numerator moment the fixed base is
+\texttt{fixedSourcePrincipal $S$}; the variable part is the sextic row
+character. This is exactly the coefficient identity in
+\path{PhysicalMomentInput.source_physical_slot_conj} and
+\path{reflected_pair_norm_eq}. The relative prime coefficient
+contains the inverse fixed base and the common conjugate annular
+profile, with real power $33/50$ and individual height $-\Im z_i$.
+Conjugation applies to the entire reflected product. Thus the local
+proposition applies to this fixed family with the same literal
+eligibility and masks. The fixed exceptional free rows have bounded
+norm and are absent from every growing retained dyad; the source
+\path{weighted_source_exceptional_norm} proves this fact.
+
+In an amplitude class let $w_i=\ell_i/d$, let
+$L=\sum_iw_i=\ell/d$, and let $0\le g_i\le\delta/2$ be its amplitude
+exponents. Error slots have $g_i=0$. Put
+$q=L^{-1}\sum_iw_ig_i=\delta p$, where $0\le p\le1/2$.
+For any target capacity $0\le z_A\le L$, the exact theorem
+\path{SlotSelection.zero_error_whole_slots} selects positive-gain
+main slots $I$ such that
+\[
+ z_I=\sum_{i\in I}w_i\le z_A,
+ \qquad
+ \left|\prod_{i\in I}Q_i\right|^2
+ \ge U^{2qz_A-\delta\,\mathrm{mesh}-o(1)}.       \tag{EA.1}
+\]
+The gain is measured at the target capacity $z_A$, even if $z_I$ is
+strictly smaller. It is not legitimate to assume $z_I$ nearly fills
+$z_A$ or to insert error slots into the selected product. The selection
+is made once for the amplitude class, not independently for its rows.
+
+Put $d_0=1/200$ and $\zeta_0=10^{-10}$. All original slots can be fixed
+so short that their relative widths meet every required mesh for
+$d\ge d_0$. Detector supply is available because the exact geometry
+satisfies $\ell/(h+\zeta_0)>4/21$.
+For $d<1/2$, the same selection theorem applies directly, without the
+$d\ge1/2$ assumption of its convenience wrapper:
+$L\ge2\ell>1/3$ and the old physical capacity is at most
+$1/(6\kappa)\le5/21$. Thus no lower-row supply condition is missing.
+
+\paragraph{2. The reflected scale and every free Euler shift.}
+The exact coefficient expansion writes a shift as $h_0h_r$, with
+$h_r$ charged to the repeated-prime conductor deficit. B0.42--B0.44 give
+the actual reflected scale bound
+\[
+ X_u\ll_S (U/Y)h_0,
+ \qquad \sum_{h_0,h_r}|c_u(h_0,h_r)|h_0^{\delta/2}
+       \ll U^\varepsilon.                            \tag{EA.2}
+\]
+The same combined conductor occurs in both statements. Its deficit is
+not charged a second time. Natural Euler restoration only shortens
+scales; its coefficients have the source's bounded absolute mass.
+The original support retains $h_0\ll Y$, so all scale exponents lie in
+a fixed bounded range.
+
+Consider first $h-10^{-3}\le d\le h+\zeta_0$ and
+$t=\log_Uh_0\in[0,10^{-3}]$. The upper reflected length is
+$n(d,t)=1-y/d+t$. Choose the target capacity just below
+\[
+ z_A(t)=\frac{1-2n(d,t)}{C},
+\]
+reserving the small capacity decrement for annular and scale-box errors.
+The exact geometric checks, with strict room for those errors, give
+\[
+ \frac{41}{100}<n(d,t)\le\frac{211}{500},\qquad
+ \frac3{100}<z_A(t)\le\frac{71}{2000},\qquad z_A(t)<L.
+\]
+Let $x_1,x_2\le n(d,t)$ be the actual nonnegative plain lengths, and
+let $z_I$ be the actual selected width from (EA.1). There are three cases.
+If $z_I<3/100$, the incumbent capacity holds with strict reserve:
+\[
+ x_1+x_2+\frac92z_I
+ \le2\frac{211}{500}+\frac92\frac3{100}
+ =\frac{979}{1000}<1.                                \tag{EA.3}
+\]
+If $z_I\ge3/100$ and some $x_j<41/100$, the downward-scale lemma gives
+the incumbent reserve $33/4000$. In the remaining case the local
+proposition applies because
+$x_1+x_2+Cz_I\le2n(d,t)+Cz_A(t)\le1$.
+The empty selected product uses the unrestricted zero-slot estimate.
+The same two-variable scale-supremum recovery and its four derivative
+profiles apply on these separate regions. Therefore the fourth moment
+needed for numerator H\"older has the same $U^{1+\varepsilon}$ bound
+in all cases, while its gain remains $qz_A(t)/2$ by (EA.1).
+
+For these small shifts,
+\[
+ -\frac{\delta t}{2}-\frac{qz_A(t)}2
+ \le-\frac{qz_A(0)}2,
+\]
+since $q\le\delta/2$ and $C>1$. For larger shifts use the incumbent
+capacity instead. Write $b=2y/d-1$ and use the smaller comparison
+capacity $z_o(t)=\max(0,(b-2t)/(9/2))$. The exact scalar audit shows
+\[
+ S(10^{-3})>\frac3{10000},\qquad
+ S(t)=\frac t2-\frac{b/C-z_o(t)}4.
+\]
+While $z_o(t)>0$, its derivative is $7/18$; after the capacity clips
+to zero the derivative is $1/2$. Hence $S(t)\ge0$ for every
+$t\ge10^{-3}$. With $q\le\delta/2$ this proves
+\[
+ -\frac{\delta t}{2}-\frac{qz_o(t)}2
+ \le-\frac{qz_A(0)}2.                                \tag{EA.4}
+\]
+The actual old capacity at coefficient $6\kappa\le9/2$ is no smaller.
+Thus (EA.2) pays every free-shift dyad, including those with zero old
+capacity. No Euler term has been omitted from the numerator inversion.
+At zero capacity the two reflected plain lengths can have sum greater
+than one; this is exactly where the \emph{unrestricted} physical MP0 is
+needed. Its actual source adapter
+\path{Physical/CertifiedZero.finite_pair_zeroAt} has no affine
+plain-length condition and bounds the moment by $U^{1+\varepsilon}$
+for each plain scale up to $U^2$. The theorem
+\path{Physical/OriginalFourth.certified_original_numerator_fourth}
+accordingly accepts either its affine capacity inequality or an empty
+selected family. The original support bound in (EA.2) gives reflected
+length at most $1+o(1)<2$, so this is a literal application of that
+theorem. The weaker all-free-row plain estimate used in the new density
+argument is not being substituted for this physical MP0.
+Below $d=h-10^{-3}$ the original B0.41 argument is unchanged.
+
+\paragraph{3. The common retained-row saving.}
+The detector remains
+\[
+ R_\kappa(\delta,p)=1-\delta+
+ \frac{\delta c_\kappa(p)(5/6-\delta)}
+      {2(5/6-\delta+\delta c_\kappa(p))},\qquad
+ c_\kappa(p)=\frac{2(1-p)(1-p/(3\kappa))}
+                   {3-p-2p/(3\kappa)}.
+\]
+All $\delta\in[0,3/4]$ and $p\in[0,1/2]$ are included. The physical
+H\"older argument and the weighted mass (EA.2), on the original full
+$w$-inversion line, give the exponent $G_{C,\kappa}$ of the paper on
+the local row interval. On old rows its general form is
+\[
+ G_o(d)=\frac{1+\delta}{2}+h\frac{13}{75}
+ -\frac y2-\frac\ell2+\ell q
+ +d\left(\frac14+\frac{3R_\kappa}4-\frac{17}{50}\right)
+ -\frac{q}{12\kappa}\min(d,2y-d).                    \tag{EA.5}
+\]
+This is the exact B0.46/B0.55 ledger, retaining the reciprocal only
+after the full physical numerator inversion.
+
+At $\kappa=\kappa_*$ the rational Bernstein certificate proves savings
+$10^{-7}$ at $(d,c)=(h,C)$, $10^{-5}$ at
+$(h-10^{-3},6\kappa_*)$, and $10^{-3}$ at
+$(1/2,6\kappa_*)$, uniformly on the full $(\delta,p)$ rectangle.
+At the junction the new exponent is no larger than the old one because
+$C<6\kappa_*$ and $2y-d>0$. Affinity in $d$ covers the intervening
+local interval. The extension above $h$ costs at most $2\zeta_0$, so
+the retained saving there is at least $499/5000000000>9\cdot10^{-8}$.
+
+The old function (EA.5) is convex in $d$. To cover $d_0\le d\le1/2$,
+combine the certificate at $1/2$ with the elementary bound at $d_0$,
+using $a\le7/8$, $R_\kappa\le1$ and $q\le3/8$:
+\[
+ G_o(d_0)\le\frac78-\frac{49h}{150}+\frac{7\ell}{8}
+                  +\frac{33d_0}{50}
+ =\frac{573880513637}{750000000000}<\theta-\frac1{10}.
+\]
+On $[1/2,h-10^{-3}]$, affinity and its two certified endpoints suffice.
+The floor classes use the source bound
+\[
+ \frac{51}{100}+\frac h3+\frac{51\ell}{100}
+ =\frac{12898208027}{15000000000}<\theta-\frac1{100},
+\]
+with room for the tiny row extension. They do not require a positive
+detector zero above the sentinel.
+
+The variation in $\kappa$ must be checked separately for the two
+physical capacities. On the local branch only $R_\kappa$ varies, and
+the source derivatives $\partial_\kappa c_\kappa\le1/18$ and
+$\partial_cR\le5/12$ give $\partial_\kappa G_{C,\kappa}<1/50$.
+Because $\kappa-\kappa_*=2\mu$, its increase is less than
+$\mu/25$. Thus its saving below $\beta_*$ is at least its certificate
+saving plus $24\mu/25$.
+For the old branch the reciprocal capacity also varies. Since
+$\min(d,2y-d)\le1/2$ and $d\le1$, one has
+\[
+ \partial_\kappa G_o
+ \le\frac5{288}+\frac{(3/8)(1/2)}{12(7/10)^2}
+ =\frac{695}{14112}<\frac18.
+\]
+Its feedback saving is therefore at least its certificate saving plus
+$3\mu/4$. In particular all retained classes have a common strictly
+positive power reserve before a target character is fixed.
+
+\paragraph{4. Principal, very small, very large, and off-height terms.}
+The new geometry leaves the source contour boxes inside their stated
+domains; in particular $\theta>87/100$ and the physical scalar boundary
+is still exactly $11/12-\ell/4$. The principal double residue B0.35--B0.36
+is the same function $f_\eta$. Its three remainders have relative
+reserves $y/4$, $h/24$, and a fixed positive prime-product exponent
+$\mu_P$. Their derivation uses the local Euler identity and the
+principal correction, not the new moment.
+
+For nonprincipal rows below $Z^{d_0}$ the original global-line bound
+B0.56 gives, before small losses,
+\[
+ h\frac{13}{75}-\frac y2+\frac{63d_0}{50}
+ =-\frac{21483987121}{250000000000}<-\frac1{20}.
+\]
+The finite nonprincipal unit rows are included. For rows above
+$Z^{h+\zeta_0}$ the raw absolute estimate B0.57 applies: after choosing
+$\zeta_0>0$, choose its fixed positive $z$-line parameter $v$ large
+enough that the term has any prescribed negative power. This is not
+an application of a central-row density estimate.
+
+The compensated principal probe satisfies the actual B0.27 geometry:
+with $M=x+y=1-\ell$ one has
+\[
+ y-2x+\ell=-\frac{597590039}{5000000000}<0,\qquad
+ 1+3\ell-2M=-\frac{123299}{750000}<0.
+\]
+Thus its exponent is $(5x+y)/12=\theta-k$, where
+$k=5/6-x/3-\ell/6$. Division by $c_SA(Z)$ costs only a power of
+$\log Z$, giving $J_\eta(Z)\ll_\eta Z^{\theta-k+\varepsilon}$.
+The three independent contour frequencies and their
+joining segments are those of B0.7. Raw polynomial bounds are taken
+before any separation in a tail; they give $Z^{B'}T^{-N}$ with $B'$
+fixed before the tail order $N$. No contour crosses an unaccounted
+nonprincipal numerator pole or a reciprocal zero.
+
+\paragraph{5. Order of choices and continuation.}
+Choose from $\mu$, the geometric and certified margins a common moment
+loss, capacity decrement, amplitude mesh, and a finite slot system
+meeting both the old and new moment meshes on $d\ge d_0$. Its smallest
+slot fixes $\mu_P>0$. Choose common real buffers smaller than these
+reserves. These choices, including the power saving below, precede
+the target $\eta$.
+
+For each target now fix its finite set $S$, dictionary, and the finitely
+many internal moment, profile and Sobolev orders. They may depend on the
+target. Next choose a target-dependent positive analysis-height exponent
+$\tau$ small enough that all factors $(1+Z^\tau)^J$ use less than the
+same reserved real margin. The internal detector exponent in the density
+proof was already fixed; it is not this later $\tau$. Choose the external
+tail order after $\tau$, and finally the target-dependent asymptotic
+threshold. The resulting constants and thresholds may depend on the
+target, but one obtains a single $\Delta>0$, independent of it, with
+\[
+ J_\eta(Z)-f_\eta(Z)
+       \ll_\eta Z^{\beta_*-k-\Delta}.                \tag{EA.6}
+\]
+Here $\Delta$ is smaller than fixed fractions of $\mu$, the retained
+saving, $y/4,h/24,\mu_P$, and the small-row saving. Make it also smaller
+than $\mu/4$. The principal probe bound then gives
+$f_\eta(Z)\ll_\eta Z^{\beta_*-k-\Delta}$.
+
+At $Z\downarrow0$ the defining Mellin line can be moved arbitrarily far
+right, as in B0.60. Therefore
+\[
+ \int_0^\infty f_\eta(Z)Z^{-s+k}\,\frac{dZ}{Z}
+\]
+is holomorphic for $\Re s>\beta_*-\Delta$. On $\Re s>1$ its exact
+value is
+\[
+ e^{(s-5/6)^2}\frac{H_\eta(s)}{L^S(s,\eta)}.
+\]
+The source cutoff ensures $|H_\eta(s)-1|\le1/2$ for
+$\Re s>\theta>87/100$, and the Gaussian never vanishes. Since
+$\beta_*-\Delta>\theta$, holomorphic continuation excludes every zero
+of $L^S(s,\eta)$ to the right of $\beta_*-\Delta$, away from the
+principal pole. Restoring fixed Euler factors does not add zeros in
+this positive half-plane.
+
+This is precisely the quantifier pattern of the proved, variable-boundary
+\path{Cycle25.PrimitiveProbeContract} and
+\path{UniformCommonProbe} in
+\path{Cycle25/Assembly/Continuation.lean}. In that file
+\path{beta_le_of_common_probe} first chooses a primitive zero
+sufficiently near the supremum and then invokes the target's individual
+probe. Its Big-O constants and threshold occur after the target
+quantifier. Thus no uniform numerical bound on growing target moduli is
+needed. A target-dependent power saving would be insufficient; (EA.6)
+has explicitly avoided that error. The common positive improvement
+contradicts the definition of $\beta_*$. Hence $\beta_*\le\theta$.
+
+\paragraph{6. Primitive reduction and Dirichlet transfer.}
+For an imprimitive Hecke character induced by $\eta^*$, the exact
+identity T2.1 expresses its $L$-function as $L(s,\eta^*)$ times finitely
+many factors $1-\eta^*(\mathfrak p)(N\mathfrak p)^{-s}$.
+They are nonzero for $\Re s>0$. This proves the Hecke assertion for
+every presented finite-order character of trivial infinite type,
+with the same pole exception.
+
+For an ordinary Dirichlet character $\chi$, use its norm lift to the
+Eisenstein field. The pinned theorem
+\path{HeckeDirichlet.LFunction_eq_dirichlet_product} gives
+\[
+ L_K(s,\eta_\chi)=L(s,\chi)L(s,\chi\chi_{-3})
+\]
+away from $s=0,1$, with the original imprimitive and ramified Euler
+factors included. For $\theta<\Re s<1$, both factors have finite
+values and their product is nonzero by the Hecke result, so
+$L(s,\chi)\ne0$. On $\Re s\ge1$ the classical ordinary Dirichlet
+nonvanishing theorem applies with its principal-pole exception. The
+trivial character of modulus one gives the stated zeta assertion.
+These are exactly the transfers in
+\path{Cycle25.dirichlet_of_hecke} and
+\path{zeta_of_hecke}; they require neither primitivity nor reality
+of $\chi$.
+\end{proof}
+
+\paragraph{Verification status.}
+This is a complete proposed written source-level assembly, under review,
+relative to the pinned incumbent analytic framework and the new local
+proof. The strict rational comparisons and Bernstein certificate are
+exact. Selected supporting Lean modules compile, but this file does not
+create a new all-family Lean theorem, a clean dependency replay, a
+canonical-target comparison, or an independent kernel certificate.
