@@ -1,0 +1,28 @@
+{
+  "schema": "local-moment-candidate-upload-v1",
+  "author": "Zhongpai Gao",
+  "assistance": "AI-assisted research and source preparation",
+  "candidate_theta": "4374433/5000000",
+  "physical_capacity": "2249/500",
+  "scope": "Manual local source proof and exact conditional endpoint certificates; not a verified all-family theorem",
+  "source_review": "Internal model review of actual source formulas; no external endorsement",
+  "local_moment_kernel_verified": false,
+  "all_dirichlet_verified": false,
+  "zeta_verified": false,
+  "eisenstein_hecke_verified": false,
+  "comparator_acceptance": false,
+  "three_kernel_acceptance": false,
+  "tracker_submission_eligible": false,
+  "catalogue_changed": false,
+  "upstream_pins": {
+    "tracker": "3177804dd05e3f59bce9ec54652175b978477d4f",
+    "cycle25": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+    "openai_math": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+  },
+  "compiled_source_components": 8,
+  "component_axiom_checks": 12,
+  "component_compiler": "Lean 4.34.1",
+  "component_checks_passed": true,
+  "component_dependency_rebuild": false,
+  "component_evidence": "research/framework/programs/fixed_strip/verification/local_moment_source_2026-10-11/evidence/component-replay.json"
+}

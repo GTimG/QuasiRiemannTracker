@@ -1,0 +1,901 @@
+{
+  "actual_sextic_first_CRT": {
+    "C_exponent": "(1-t)%6",
+    "D_exponent": "(1+t)%6",
+    "actual_finite_sextic_CRT_cases": 72,
+    "actual_reciprocity_ray_phase_values": [
+      0,
+      3
+    ],
+    "fixed_ray_group_before_labels_required": true,
+    "same_sign_negative_control_detected_cases": 48,
+    "uniform_reciprocity_or_ray_expansion_proved_by_finite_controls": false,
+    "zero_extension_cases": 12
+  },
+  "all_family_kernel_verified": false,
+  "all_row_sixth_free_lift": {
+    "bounded_or_subunit_nonempty_windows": "replace negative nominal width only within support tolerance; never use a density count below one",
+    "cancelled_hole_cases": 1014,
+    "continuous_convergence_margin": "6*R0-1>=5/7",
+    "density_series": "H^(R0+epsilon)*sum_b (Nb)^(-6*(R0+epsilon))",
+    "factorization_cases": 2197,
+    "finite_fixed_good_core_cases_excluded_from_density_population": 27,
+    "finite_nonempty_good_core_cases": 2170,
+    "fixed_inducing_cores_require_original_terminal_payment": true,
+    "ideal_counting_or_zero_density_estimate_proved_by_finite_code": false,
+    "map": "j=k*b^6; 0<=v_p(k)<6; original holes retained"
+  },
+  "analytic_local_moment_proved_by_code": false,
+  "arbitrary_old_moving_width_supported": false,
+  "complete_projector_controls": {
+    "all_Mobius_signs_retained": true,
+    "complete_first_projector_cases": 256,
+    "complete_priority_allocation_cases": 16,
+    "incomplete_projector_negative_control_rejected": true,
+    "one_variable_new_puncture_inserted": false,
+    "quotient_plain_variables_may_retain_selected_prime": true,
+    "scope": "Finite indicator identities; no artificial noncoprime coefficient is identified with the genuine correlation"
+  },
+  "complete_source_balance_certificates": {
+    "aggregate_balance": {
+      "difference": "0",
+      "left": "B_C/2 + B_D/2 + M + R/2 - c/2 - d/2 + p",
+      "name": "B3.56 joint Cauchy balance with all first labels present",
+      "right": "B_C/2 + B_D/2 + M + R/2 - c/2 - d/2 + p"
+    },
+    "aggregate_rule": "positive parts of sums <= sums of positive parts; only larger side has positive local B numerator",
+    "fixed_inducing_row_predicate_replacement_by_group_membership": false,
+    "nonnegative_parameters": [
+      "j0",
+      "k"
+    ],
+    "primewise_first_balance": [
+      {
+        "active_radical": 0,
+        "nonnegative_parameters": [
+          "j0=j-1",
+          "k=i-j-active"
+        ],
+        "nonpositive_B_gap": {
+          "difference": "0",
+          "left": "2*j0 + k",
+          "name": "B3.56 local B numerator<=0",
+          "right": "2*j0 + k"
+        },
+        "positive_B_six_gap": {
+          "difference": "0",
+          "left": "14*j0 + 3*k + 2",
+          "name": "B3.56 local B numerator>0",
+          "right": "14*j0 + 3*k + 2"
+        },
+        "valid_for_arbitrary_integer_multiplicities": true
+      },
+      {
+        "active_radical": 1,
+        "nonnegative_parameters": [
+          "j0=j-1",
+          "k=i-j-active"
+        ],
+        "nonpositive_B_gap": {
+          "difference": "0",
+          "left": "2*j0 + k",
+          "name": "B3.56 local B numerator<=0",
+          "right": "2*j0 + k"
+        },
+        "positive_B_six_gap": {
+          "difference": "0",
+          "left": "14*j0 + 3*k",
+          "name": "B3.56 local B numerator>0",
+          "right": "14*j0 + 3*k"
+        },
+        "valid_for_arbitrary_integer_multiplicities": true
+      }
+    ],
+    "second_exceptional_F2_gaps": [
+      {
+        "difference": "0",
+        "left": "j0/2 + 1/2",
+        "name": "B3.76 equal non6 unit gap",
+        "right": "j0/2 + 1/2"
+      },
+      {
+        "difference": "0",
+        "left": "0",
+        "name": "B3.76 equal non6 nonunit i=1 gap",
+        "right": "0"
+      },
+      {
+        "difference": "0",
+        "left": "j0/2 + 1/6",
+        "name": "B3.76 equal non6 nonunit i>=2 gap",
+        "right": "j0/2 + 1/6"
+      },
+      {
+        "difference": "0",
+        "left": "j0/2 + 2",
+        "name": "B3.76 equal 6-multiple i>=6 gap",
+        "right": "j0/2 + 2"
+      },
+      {
+        "difference": "0",
+        "left": "j0/2 + 2*k/3 + 8/3",
+        "name": "B3.76 unequal smaller 6-multiple gap",
+        "right": "j0/2 + 2*k/3 + 8/3"
+      }
+    ]
+  },
+  "continuous_sign_certificates": [
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "378/5",
+          "147/2"
+        ],
+        "lower_bound": "147/2",
+        "power_coefficients": [
+          "378/5",
+          "-21/10"
+        ]
+      },
+      "expression": "25*(4*delta - 3)/(21*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "density_minimum",
+      "numerator": {
+        "bernstein_coefficients": [
+          "5",
+          "0"
+        ],
+        "lower_bound": "0",
+        "power_coefficients": [
+          "5",
+          "-5"
+        ]
+      },
+      "strict": false
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "972/5",
+          "189"
+        ],
+        "lower_bound": "189",
+        "power_coefficients": [
+          "972/5",
+          "-27/5"
+        ]
+      },
+      "expression": "-25*(10*delta - 7)/(54*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "density_maximum",
+      "numerator": {
+        "bernstein_coefficients": [
+          "0",
+          "25/2"
+        ],
+        "lower_bound": "0",
+        "power_coefficients": [
+          "0",
+          "25/2"
+        ]
+      },
+      "strict": false
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "18/5",
+          "7/2"
+        ],
+        "lower_bound": "7/2",
+        "power_coefficients": [
+          "18/5",
+          "-1/10"
+        ]
+      },
+      "expression": "5*(6*delta - 5)/(2*delta - 5)",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "sixth_power_lift_absolute_convergence",
+      "numerator": {
+        "bernstein_coefficients": [
+          "4",
+          "5/2"
+        ],
+        "lower_bound": "5/2",
+        "power_coefficients": [
+          "4",
+          "-3/2"
+        ]
+      },
+      "strict": true
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "54/5",
+          "21/2"
+        ],
+        "lower_bound": "21/2",
+        "power_coefficients": [
+          "54/5",
+          "-3/10"
+        ]
+      },
+      "expression": "delta*(6*delta - 5)/(3*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "positive_T_coefficient_after_sign_reversal",
+      "numerator": {
+        "bernstein_coefficients": [
+          "14/25",
+          "19/40",
+          "3/8"
+        ],
+        "lower_bound": "3/8",
+        "power_coefficients": [
+          "14/25",
+          "-17/100",
+          "-3/200"
+        ]
+      },
+      "strict": true
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "54/5",
+          "21/2"
+        ],
+        "lower_bound": "21/2",
+        "power_coefficients": [
+          "54/5",
+          "-3/10"
+        ]
+      },
+      "expression": "2*(37*delta - 30)/(3*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "canceled_active_prime_coefficient",
+      "numerator": {
+        "bernstein_coefficients": [
+          "41/5",
+          "9/2"
+        ],
+        "lower_bound": "9/2",
+        "power_coefficients": [
+          "41/5",
+          "-37/10"
+        ]
+      },
+      "strict": true
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "54/5",
+          "21/2"
+        ],
+        "lower_bound": "21/2",
+        "power_coefficients": [
+          "54/5",
+          "-3/10"
+        ]
+      },
+      "expression": "(58*delta - 45)/(3*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "active_radical_deficit_coefficient",
+      "numerator": {
+        "bernstein_coefficients": [
+          "22/5",
+          "3/2"
+        ],
+        "lower_bound": "3/2",
+        "power_coefficients": [
+          "22/5",
+          "-29/10"
+        ]
+      },
+      "strict": true
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "972",
+          "945"
+        ],
+        "lower_bound": "945",
+        "power_coefficients": [
+          "972",
+          "-27"
+        ]
+      },
+      "expression": "(10*delta - 7)*(54*delta - 635)/(270*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "first_common_label_reserve",
+      "numerator": {
+        "bernstein_coefficients": [
+          "0",
+          "1493/10",
+          "1189/4"
+        ],
+        "lower_bound": "0",
+        "power_coefficients": [
+          "0",
+          "1493/5",
+          "-27/20"
+        ]
+      },
+      "strict": false
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "4860",
+          "4725",
+          "18375/4"
+        ],
+        "lower_bound": "18375/4",
+        "power_coefficients": [
+          "4860",
+          "-270",
+          "15/4"
+        ]
+      },
+      "expression": "-(1356*delta**2 - 6780*delta + 2225)/(375*(2*delta - 5)**2)",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "weaker_gate_density_plus_pointwise_decreases",
+      "numerator": {
+        "bernstein_coefficients": [
+          "46414/25",
+          "9893/5",
+          "8389/4"
+        ],
+        "lower_bound": "46414/25",
+        "power_coefficients": [
+          "46414/25",
+          "6102/25",
+          "-339/100"
+        ]
+      },
+      "strict": true
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "60750",
+          "118125/2"
+        ],
+        "lower_bound": "118125/2",
+        "power_coefficients": [
+          "60750",
+          "-3375/2"
+        ]
+      },
+      "expression": "-(10*delta - 7)*(3051*delta + 185)/(16875*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "weaker_gate_high_deficit",
+      "numerator": {
+        "bernstein_coefficients": [
+          "0",
+          "23207/40",
+          "9893/8"
+        ],
+        "lower_bound": "0",
+        "power_coefficients": [
+          "0",
+          "23207/20",
+          "3051/40"
+        ]
+      },
+      "strict": false
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "126/5",
+          "49/2"
+        ],
+        "lower_bound": "49/2",
+        "power_coefficients": [
+          "126/5",
+          "-7/10"
+        ]
+      },
+      "expression": "50*(4*delta - 3)/(7*(2*delta - 5))",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "amplifier_loss_upper",
+      "numerator": {
+        "bernstein_coefficients": [
+          "10",
+          "0"
+        ],
+        "lower_bound": "0",
+        "power_coefficients": [
+          "10",
+          "-10"
+        ]
+      },
+      "strict": false
+    },
+    {
+      "denominator": {
+        "bernstein_coefficients": [
+          "500"
+        ],
+        "lower_bound": "500",
+        "power_coefficients": [
+          "500"
+        ]
+      },
+      "expression": "149/500",
+      "interval": [
+        "7/10",
+        "3/4"
+      ],
+      "method": "exact affine-substitution Bernstein identity",
+      "name": "illustrative_JH_gate_is_weaker",
+      "numerator": {
+        "bernstein_coefficients": [
+          "149"
+        ],
+        "lower_bound": "149",
+        "power_coefficients": [
+          "149"
+        ]
+      },
+      "strict": true
+    }
+  ],
+  "eligible_for_tracker_submission": false,
+  "full_recovery_verified": false,
+  "input_sha256": {
+    "build/tracker_weighted_numerator_2026-10-10/latest-cycle25/paper.tex": "75f6c1f71cbeca47f3c16e248d2c01694362d1a906ae844a22e7c6620b8f28a1",
+    "framework/programs/fixed_strip/candidates/JOINT_HIGH_ZERO_SQUARED_LABEL_PAYMENT.md": "0c483d1f620db208d0e42bb50a58477ca81a6e47d40c78ea5f3b48d3541cbd75",
+    "framework/programs/fixed_strip/candidates/LOCAL_PHYSICAL_MOMENT_EXTENSION.md": "21d944ec3d89ac7fe818e53062d744d06855260e54b9f2813827fa2b83496f0d",
+    "tools/cubic_theta_squareclass_covariance_audit.py": "b846334b7977a3b7e96da640937c2473b111066637dab1974af521f73d07338d"
+  },
+  "joint_integer_fibres": {
+    "active_zero_phase_cases_by_side": {
+      "C": 21888,
+      "D": 21888
+    },
+    "all_first_mask_divisor_subsets_tested": true,
+    "bounded_powers_and_allocations_are_not_independently_counted": true,
+    "cancelled_sixth_hole_checks": 54984,
+    "cases": 317376,
+    "exact_map": "w=F_side*e*G_c*V_id*h_prime in Z[omega], both C and D",
+    "first_projector_s_all_divisors_tested": true,
+    "integer_fibres_with_missing_radical_fixed": 672,
+    "largest_finite_fibre": 1632,
+    "original_holes": "all first/second extracted primes and any row holes; canceled exponents retain zero extension",
+    "reconstructed_support": [
+      "active first e_side!=0 primes",
+      "mask e",
+      "rad(D_2 E_2)",
+      "first s"
+    ],
+    "separate_missing_radical_width": "p-R-E+R_zero",
+    "uniform_subpower_fibre_bound_proved_by_code": false
+  },
+  "literal_physical_adapter_verified": false,
+  "negative_controls": {
+    "cancelledholes": {
+      "active_e_C_zero_hole_removal_rejected": true,
+      "correct_value": "0 (nonunit)",
+      "valuation_six_hole_removal_rejected": true,
+      "wrong_value": "1 (phase 0)"
+    },
+    "independentlabelcount": {
+      "excess_with_spurious_independent_Zq": "132817/13500000",
+      "generic_extra_first_count": "p+s0; disagrees with LP.14 and would recount s",
+      "incorrect_payment_rejected": true,
+      "joint_excess": "-1217183/13500000",
+      "q": "1/10"
+    }
+  },
+  "new_moment_kernel_verified": false,
+  "normalized_scalar_reserves": {
+    "A_lower": "17/20",
+    "A_upper": "44753/50000",
+    "a": "1/2000",
+    "added_zero_Gauss_row": "original B3.57 direct sixth-power count, never amplified",
+    "amplifier_errors": [
+      {
+        "lambda_lower": "3/8000",
+        "normalized_prime_average_retained": true,
+        "reserve_expression": "lambda - 1/3750",
+        "reserve_lower": "13/120000",
+        "slope": "1",
+        "squared_scalar": "Np^-1",
+        "valuation": 1,
+        "w": "1*lambda",
+        "w_o": "1*lambda"
+      },
+      {
+        "lambda_lower": "3/8000",
+        "normalized_prime_average_retained": true,
+        "reserve_expression": "5*lambda - 1/3750",
+        "reserve_lower": "193/120000",
+        "slope": "5",
+        "squared_scalar": "(1-Np^-1)^2",
+        "valuation": 6,
+        "w": "6*lambda",
+        "w_o": "0*lambda"
+      },
+      {
+        "lambda_lower": "3/8000",
+        "normalized_prime_average_retained": true,
+        "reserve_expression": "6*lambda - 1/3750",
+        "reserve_lower": "119/60000",
+        "slope": "6",
+        "squared_scalar": "Np^-1",
+        "valuation": 7,
+        "w": "7*lambda",
+        "w_o": "1*lambda"
+      }
+    ],
+    "analytic_delivery_of_error_budget_certified": false,
+    "base_capacity": "9/2",
+    "capacity": "2249/500",
+    "centering_L": "1/4",
+    "comparison_capacity_upper": "43/50",
+    "comparison_only_mask_expansion": true,
+    "comparison_reserve": "7/50",
+    "comparison_with_mask_capacity_upper": "93/100",
+    "comparison_with_mask_reserve": "7/100",
+    "feasible_error_budget": {
+      "allocated_other_loss": "1/10000000",
+      "comparison_remaining": "1399999/10000000",
+      "delta_1": "1/100000000",
+      "delta_2": "1/100000000",
+      "error_loss": "17/125000000",
+      "fixed_terminal_loss": "77/600000000",
+      "low_loss": "4061/30000000000",
+      "low_remaining": "1587817/90000000000",
+      "masked_comparison_remaining": "699999/10000000",
+      "mesh": "1/1000000000",
+      "second_zero_remaining": "10243989/100000000",
+      "terminal_remaining": "60263923/600000000",
+      "theta_N": "1/100000000"
+    },
+    "first_zero_branch": "original powerful-product count; no amplification of zero",
+    "g_coarse_upper": "1/10000",
+    "g_sharp_upper": "1/12500",
+    "high_reserve_after_total_loss_1_over_1000": "24013/1890000",
+    "local_gate_applied_to_short_mask_daughters": false,
+    "low_reserve_coarse": "1/56250",
+    "low_reserve_sharp": "47/2250000",
+    "mask_daughters_first_upper": "1/4",
+    "mask_daughters_reflect_threshold": "1/2",
+    "mask_daughters_second_reflected_upper": "1/2+xi",
+    "normalization": "M=1; homogeneous for every M>0",
+    "original_plain_lower_minus_L": "4/25",
+    "second_zero_reserve_after_5sigma_over_3": "2561/25000",
+    "sigma": "3/2000",
+    "terminal_maximum": "A-M at v=M/4",
+    "terminal_piecewise_identities": [
+      {
+        "difference": "0",
+        "left": "A - 13*M/12 + v/3",
+        "name": "B3.80 v<=M/4",
+        "right": "A - 13*M/12 + v/3"
+      },
+      {
+        "difference": "0",
+        "left": "A - 5*M/6 - 2*v/3",
+        "name": "B3.80 v>=M/4",
+        "right": "A - 5*M/6 - 2*v/3"
+      }
+    ],
+    "terminal_reserve_after_3sigma": "2511/25000"
+  },
+  "parent_old_moving_width": "0",
+  "projector_and_child_ledgers": {
+    "Cauchy_cost": "(cost_C+cost_D)/2; independent profiles/heights retained",
+    "actual_child_adapter_and_allocation_monotonicity_imported_obligations": true,
+    "allowance_nonnegative_terms": [
+      "b_2-p_2",
+      "B_C",
+      "w",
+      "ell"
+    ],
+    "child_allowance": {
+      "difference": "0",
+      "left": "B + b + ell - p + w",
+      "name": "B3.64 allowance reserve",
+      "right": "B + b + ell - p + w"
+    },
+    "conditional_child_affine_slack_certificates": [
+      {
+        "difference": "0",
+        "left": "6*a - allocation_slack + delta_1 + g - inc_slack - parent_slack + 2*theta",
+        "name": "LP.6 low main child affine defect slack identity",
+        "right": "6*a - allocation_slack + delta_1 + g - inc_slack - parent_slack + 2*theta"
+      },
+      {
+        "difference": "0",
+        "left": "-allocation_slack + delta_1 + g - inc_slack - parent_slack + sigma + 2*theta + w - wo",
+        "name": "LP.17 amplifier error child affine defect slack identity",
+        "right": "-allocation_slack + delta_1 + g - inc_slack - parent_slack + sigma + 2*theta + w - wo"
+      }
+    ],
+    "conditional_child_slack_meanings": [
+      "parent_slack=g-parent_affine_defect>=0",
+      "inc_slack=inc_upper-actual_increment>=0",
+      "allocation_slack=2theta_N-net_post_allocation_increment>=0"
+    ],
+    "error_bounds": [
+      "J>=0: increment<=sigma-c-w",
+      "J<0: increment<=sigma+w-w_o+delta_1"
+    ],
+    "error_child_defect_bound": "g+sigma+w-w_o+delta_1+2*theta_N",
+    "error_fine_branches": [
+      {
+        "difference": "0",
+        "left": "-c - c2 + g2 + sigma - t2 - w",
+        "name": "B3.70 error J>=0 fine increment",
+        "right": "-c - c2 + g2 + sigma - t2 - w"
+      },
+      {
+        "difference": "0",
+        "left": "-D0 - c2 + g2 + sigma - t2 + w - wo",
+        "name": "B3.70 error J<0 fine increment",
+        "right": "-D0 - c2 + g2 + sigma - t2 + w - wo"
+      },
+      {
+        "difference": "0",
+        "left": "D0 + c2 + delta_1 - g2 + t2",
+        "name": "B3.70 J<0 upper bound gap",
+        "right": "D0 + c2 + delta_1 - g2 + t2"
+      }
+    ],
+    "error_nonnegative_slacks": [
+      "c2-g2>=0",
+      "t2>=0",
+      "D0+delta_1=d+(K0+delta_1-K)>=0"
+    ],
+    "first_s_recount_after_joint_reconstruction": false,
+    "high_aggregated_allowance_has_minus_s0": false,
+    "improved_child_induction_called": false,
+    "low_child_capacity_used": "9/2",
+    "low_child_defect_bound": "g+6*a+delta_1+2*theta_N",
+    "low_per_s_allowance_has_minus_s0": true,
+    "low_per_s_count_cancels_minus_s0": true,
+    "positive_part_bound_rule": "if child_affine<=nonnegative_upper, (child_affine)_+<=nonnegative_upper",
+    "projector": {
+      "difference": "0",
+      "left": "e1/2 + e2/2 + pi1/2 + pi2/2 - r1/2 - r2/2 + t",
+      "name": "B3.69 exact clipping/projector cancellation",
+      "right": "e1/2 + e2/2 + pi1/2 + pi2/2 - r1/2 - r2/2 + t"
+    },
+    "projector_bound": "<=2*theta_N continuously from the nonnegative-slack certificate",
+    "projector_slack_certificate": {
+      "difference": "0",
+      "left": "-b1/2 - b2/2 + 2*theta - u1/2 - u2/2 - v1/2 - v2/2",
+      "name": "B3.69 nonnegative-slack upper bound",
+      "right": "-b1/2 - b2/2 + 2*theta - u1/2 - u2/2 - v1/2 - v2/2"
+    },
+    "projector_slack_definitions": [
+      "u_j=r_j+omega_j-t>=0",
+      "v_j=theta_N-(e_j+omega_j)>=0",
+      "b_j=theta_N-pi_j>=0"
+    ]
+  },
+  "record_proved": false,
+  "runs_Lean": false,
+  "schema": "local-physical-moment-source-ledger-v1",
+  "scope": "Exact rational continuous scalar/source identities, whole-interval polynomial signs, finite Z[omega] row maps and literal sextic phases. Analytic density, prime/pointwise estimates, divisor bounds, Fourier transport, profile/height uniformity and error delivery are imported obligations, not certified by finite code.",
+  "script": "tools/local_physical_moment_audit.py",
+  "script_sha256": "75521b3922b8ec2c5eaea544f28eb9c288dbe2f2c54fac9d328fe9b21e3fd4ef",
+  "source_labels_retained_before_counts": true,
+  "status": "PASS_exact_continuous_ledgers_and_finite_source_controls",
+  "symbolic_joint_ledgers": [
+    {
+      "LP10_interpretation": "K0+(d-c)_++6a is the nominal enlarged envelope; actual K+J_++6a is <= envelope+delta_1",
+      "LP10_nonnegative_slacks": [
+        "T",
+        "0",
+        "K0+delta_1-K>=0"
+      ],
+      "aggregated_allowance": "A + B_C + E + R - c + p",
+      "branch": "c_ge_d",
+      "cone_certificate": {
+        "difference": "0",
+        "left": "-B_C - E - 5*R_zero*rho + R_zero - T*delta - T*rho + T - delta*p - delta*q - h*rho + 4*p*rho - p - 4*rho*rp + rp",
+        "name": "LP.14 line two cone decomposition",
+        "right": "-B_C - E - R_zero*(5*rho - 1) - T*(delta + rho - 1) - delta*q - h*rho + p*(-delta + 4*rho - 1) - rp*(4*rho - 1)"
+      },
+      "cone_nonnegative_variables": [
+        "p",
+        "q=min(c,d)-p",
+        "rp=p-R",
+        "R_zero",
+        "h=5(R-R_zero)-L_C",
+        "E",
+        "B_C",
+        "T"
+      ],
+      "enlarged_main_increment_bound": "<=6a from min(c,d)>=0, c2>=g2, t2>=0; padding is reserved in delta_1",
+      "first_projector_count_outside": false,
+      "first_row_ball_choice": "Before B3.60 actually enlarge the positive smooth first-row norm to this envelope, with reserved support padding. LP.11/13 use this chosen ball, not the smaller original dyad ball.",
+      "identities": [
+        {
+          "difference": "0",
+          "left": "2*A + E - M + R - 2*T + 6*a - 2*d",
+          "name": "LP.10 actual enlarged row J>=0",
+          "right": "2*A + E - M + R - 2*T + 6*a - 2*d"
+        },
+        {
+          "difference": "0",
+          "left": "T",
+          "name": "LP.10 envelope gap J>=0",
+          "right": "T"
+        },
+        {
+          "difference": "0",
+          "left": "2*A + E - K - M + R - T - 2*d + delta_1",
+          "name": "LP.10 padded envelope gap J<0",
+          "right": "2*A + E - K - M + R - T - 2*d + delta_1"
+        },
+        {
+          "difference": "0",
+          "left": "6*a - c_2 - d + g_2 - t_2",
+          "name": "enlarged-envelope low main increment",
+          "right": "6*a - c_2 - d + g_2 - t_2"
+        },
+        {
+          "difference": "0",
+          "left": "M - T - 6*a - g_2 + t_2",
+          "name": "enlarged-envelope nominal child width",
+          "right": "M - T - 6*a - g_2 + t_2"
+        },
+        {
+          "difference": "0",
+          "left": "L_C + M - R - T - 6*a",
+          "name": "LP.11 integral row width",
+          "right": "L_C + M - R - T - 6*a"
+        },
+        {
+          "difference": "0",
+          "left": "A + E - M + R + 5*a - b_2 - d + g_2 - t_2",
+          "name": "LP.13 second outside without label count",
+          "right": "A + E - M + R + 5*a - b_2 - d + g_2 - t_2"
+        },
+        {
+          "difference": "0",
+          "left": "A*delta - B_C - E + L_C*rho + M*rho - M - R*rho - R + R_zero - T*delta - T*rho + T - 6*a*rho + 5*a - b_2*delta - b_2 - d*delta + g_2 - t_2",
+          "name": "LP.14 joint high excess",
+          "right": "A*delta - B_C - E + L_C*rho + M*(rho - 1) - R*(rho + 1) + R_zero + T*(1 - rho) + a*(5 - 6*rho) - b_2*(delta + 1) - delta*(T + d) + g_2 - t_2"
+        }
+      ],
+      "parent_old_moving_width": "0",
+      "rho": "R_0(delta)"
+    },
+    {
+      "LP10_interpretation": "K0+(d-c)_++6a is the nominal enlarged envelope; actual K+J_++6a is <= envelope+delta_1",
+      "LP10_nonnegative_slacks": [
+        "0",
+        "S",
+        "K0+delta_1-K>=0"
+      ],
+      "aggregated_allowance": "A + B_C + E + R - c + p",
+      "branch": "c_le_d",
+      "cone_certificate": {
+        "difference": "0",
+        "left": "-B_C - E - 5*R_zero*rho + R_zero - delta*p - delta*q - h*rho + 4*p*rho - p - 4*rho*rp + rp",
+        "name": "LP.14 line two cone decomposition",
+        "right": "-B_C - E - R_zero*(5*rho - 1) - delta*q - h*rho + p*(-delta + 4*rho - 1) - rp*(4*rho - 1)"
+      },
+      "cone_nonnegative_variables": [
+        "p",
+        "q=min(c,d)-p",
+        "rp=p-R",
+        "R_zero",
+        "h=5(R-R_zero)-L_C",
+        "E",
+        "B_C",
+        "0"
+      ],
+      "enlarged_main_increment_bound": "<=6a from min(c,d)>=0, c2>=g2, t2>=0; padding is reserved in delta_1",
+      "first_projector_count_outside": false,
+      "first_row_ball_choice": "Before B3.60 actually enlarge the positive smooth first-row norm to this envelope, with reserved support padding. LP.11/13 use this chosen ball, not the smaller original dyad ball.",
+      "identities": [
+        {
+          "difference": "0",
+          "left": "2*A + E - M + R + 6*a - 2*c",
+          "name": "LP.10 actual enlarged row J>=0",
+          "right": "2*A + E - M + R + 6*a - 2*c"
+        },
+        {
+          "difference": "0",
+          "left": "0",
+          "name": "LP.10 envelope gap J>=0",
+          "right": "0"
+        },
+        {
+          "difference": "0",
+          "left": "2*A + E - K - M + R - 2*c + delta_1",
+          "name": "LP.10 padded envelope gap J<0",
+          "right": "2*A + E - K - M + R - 2*c + delta_1"
+        },
+        {
+          "difference": "0",
+          "left": "6*a - c - c_2 + g_2 - t_2",
+          "name": "enlarged-envelope low main increment",
+          "right": "6*a - c - c_2 + g_2 - t_2"
+        },
+        {
+          "difference": "0",
+          "left": "M - 6*a - g_2 + t_2",
+          "name": "enlarged-envelope nominal child width",
+          "right": "M - 6*a - g_2 + t_2"
+        },
+        {
+          "difference": "0",
+          "left": "L_C + M - R - 6*a",
+          "name": "LP.11 integral row width",
+          "right": "L_C + M - R - 6*a"
+        },
+        {
+          "difference": "0",
+          "left": "A + E - M + R + 5*a - b_2 - c + g_2 - t_2",
+          "name": "LP.13 second outside without label count",
+          "right": "A + E - M + R + 5*a - b_2 - c + g_2 - t_2"
+        },
+        {
+          "difference": "0",
+          "left": "A*delta - B_C - E + L_C*rho + M*rho - M - R*rho - R + R_zero - 6*a*rho + 5*a - b_2*delta - b_2 - c*delta + g_2 - t_2",
+          "name": "LP.14 joint high excess",
+          "right": "A*delta - B_C - E + L_C*rho + M*(rho - 1) - R*(rho + 1) + R_zero + a*(5 - 6*rho) - b_2*(delta + 1) - c*delta + g_2 - t_2"
+        }
+      ],
+      "parent_old_moving_width": "0",
+      "rho": "R_0(delta)"
+    },
+    {
+      "D_canceled_radical": "sum_{e_D=0} log_Z Np, distinct from the C canceled radical",
+      "branch": "D_side_exchange",
+      "independent_heights_identified": false,
+      "rule": "c<->d, B_C<->B_D, L_C<->L_D, R_zero,C<->R_zero,D; e_D=(1+t)%6"
+    }
+  ],
+  "sympy_version": "1.14.0"
+}
