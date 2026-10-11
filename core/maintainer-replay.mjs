@@ -53,7 +53,10 @@ export function validateMaintainerReplay(root, pin, contribution) {
         ? "QRHBoundsPR4"
         : "QRHBoundsPR3";
   demand(
-    pin && safe(pin.directory) && pin.directory.startsWith("public/proofs/"),
+    pin &&
+      safe(pin.directory) &&
+      (pin.directory.startsWith("public/proofs/") ||
+        pin.directory.startsWith("evidence/pr-checks/")),
     "missing reviewed replay pin",
   );
   let directory = root;

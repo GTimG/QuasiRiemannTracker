@@ -1,0 +1,44 @@
+name: PR admission (trusted metadata and evidence)
+on:
+  pull_request_target:
+    types:
+      [
+        opened,
+        reopened,
+        synchronize,
+        edited,
+        ready_for_review,
+        converted_to_draft,
+      ]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to recheck after trusted evidence has been merged
+        type: number
+        required: true
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+concurrency:
+  group: pr-admission-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: true
+jobs:
+  admission:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      # Execute orchestration from the trusted default-branch workflow commit.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.workflow_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - name: Label changed files and check trusted evidence for the PR head
+        run: node verifier/check-pr.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QRH_PR: ${{ github.event.pull_request.number || inputs.pr }}
+          QRH_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}

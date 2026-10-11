@@ -2,29 +2,8 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { safePath, submission } from "./manifest.mjs";
 import { sha256 } from "./common.mjs";
-export async function api(route, token = process.env.GITHUB_TOKEN) {
-  const response = await fetch("https://api.github.com/" + route, {
-    headers: {
-      Accept: "application/vnd.github+json",
-      "X-GitHub-Api-Version": "2022-11-28",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  if (!response.ok) throw Error(`GitHub API ${response.status} for ${route}`);
-  return response.json();
-}
-export async function pages(route) {
-  let result = [];
-  for (let page = 1; page <= 100; page++) {
-    const rows = await api(
-      `${route}${route.includes("?") ? "&" : "?"}per_page=100&page=${page}`,
-    );
-    if (!Array.isArray(rows)) throw Error("Unexpected GitHub response");
-    result.push(...rows);
-    if (rows.length < 100) return result;
-  }
-  throw Error("GitHub pagination limit exceeded");
-}
+import { api, pages } from "./github-api.mjs";
+export { api, pages } from "./github-api.mjs";
 export function allowedChanges(files) {
   if (!files.length || files.length > 260) throw Error("Invalid PR size");
   let id = null;
