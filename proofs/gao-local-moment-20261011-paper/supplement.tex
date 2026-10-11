@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,allcolors=blue!45!black]{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{pdftitle={Local moment refinement: analytic supplement},pdfauthor={Zhongpai Gao},pdfsubject={Full analytic arguments and exact certificate; proposed proof under review}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Local moment refinement}
+\fancyhead[R]{\small Analytic supplement}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{3pt}
+\allowdisplaybreaks[1]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{theorem}[proposition]{Theorem}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[proposition]{Hypothesis}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\Z}{\mathbf Z}
+\newcommand{\C}{\mathbf C}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\pos}[1]{(#1)_{+}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\title{Local moment refinement\\[5pt]\large Analytic supplement}
+\author{Zhongpai Gao\thanks{Prepared with AI assistance in research, computation, formalization, and exposition.}}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This supplement contains the full source-level arguments for the local
+moment coefficient $2249/500$ and proposed zero-free boundary
+$4374433/5000000$. It accompanies the
+\href{paper.pdf}{main paper} and can be read independently. Appendix A
+records the family, notation, exact certificate, and reproduction
+instructions. Appendices B--I retain the complete signed reconstruction,
+fixed dictionary, density, transport, local-moment, and endpoint arguments.
+The proof is under review and depends on the pinned incumbent framework.
+Exact arithmetic and selected compiled lemmas support it; independent
+verification of the complete endpoint has not been completed.
+\end{abstract}
+\paragraph{Attribution.}
+OpenAI supplies the initial $7/8$ theorem and analytic/arithmetic framework
+\cite{openai}; Akash Levy supplies the weighted-numerator input
+\cite{levy}; Hailey Collet supplies the variable moment, detector, and
+quartic source architecture \cite{collet}. Gao's proposed contribution is
+the local $4.498$ refinement, joint-label analysis, and endpoint assembly
+\cite{gao,gaov2}. Internal reviews are model-assisted development reviews.
+No upstream endorsement or independently verified record is claimed.
+The Apache-2.0 license and source notices accompany this document.
+\clearpage
+\tableofcontents
+\clearpage
+\appendix
+\input{ReproductionAndCertificate.tex}
+
+\clearpage
+\input{SignedReconstruction.tex}
+\clearpage
+\input{FixedDictionaryBridge.tex}
+\clearpage
+\input{PlainUnmarkedDensity.tex}
+\clearpage
+\input{FourierMaskTransport.tex}
+\clearpage
+\input{RestrictedCanonicalSource.tex}
+\clearpage
+\input{PhysicalLocalAssembly.tex}
+\clearpage
+\input{PhysicalScaleShortening.tex}
+\clearpage
+\input{EndpointAssembly.tex}
+\clearpage
+\input{Bibliography.tex}
+\end{document}

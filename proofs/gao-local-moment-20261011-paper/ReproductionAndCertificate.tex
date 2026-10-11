@@ -1,0 +1,272 @@
+\section{Reproduction and the certificate format}\label{app:reproduce}
+
+The package linked in \cite{gao} contains three notes under the directory
+\path{research/framework/programs/fixed_strip/candidates/}:
+\begin{itemize}
+\item \code{LOCAL\_PHYSICAL\_MOMENT\_EXTENSION.md};
+\item \code{JOINT\_HIGH\_ZERO\_SQUARED\_LABEL\_PAYMENT.md};
+\item \code{LOCAL\_MOMENT\_TRACKER\_REFINEMENT.md}.
+\end{itemize}
+The first explains the proposed local moment, the second isolates a
+useful squared-label branch, and the third records the endpoint
+geometry. In particular, the coefficient $21/5$ used illustratively in
+the second note is not the coefficient claimed in
+Proposition~\ref{hyp:local}, and is not an established stronger moment.
+
+From the first snapshot root
+\path{proofs/gao-local-moment-20261011}, with Python and the recorded
+SymPy version available, run the following commands. These paths belong
+to that original snapshot, not to this supplement directory.
+\begin{verbatim}
+python3 reproduce.py --fetch-pinned-paper
+python3 research/tools/local_physical_moment_audit.py --check
+python3 research/tools/local_moment_endpoint_audit.py --check
+\end{verbatim}
+The fetched manuscript is a pinned input, checked by its stored digest;
+it is not a paper authored by this project. The outputs in
+\code{research/numerics/results/} record the exact assertions and their
+scope. Both reports explicitly deny verification of the new full
+analytic theorem. This supplement also supplies the following additional exact check:
+\begin{verbatim}
+python3 endpoint_extra_arithmetic.py --check
+\end{verbatim}
+It verifies 20 rational comparisons used by the written endpoint assembly.
+The component replay is documented in the immutable source snapshot
+\href{https://github.com/Gaozhongpai/QuasiRiemannTracker/tree/gao-local-moment-source-review-20261011/proofs/gao-local-moment-20261011-v3}{\texttt{gao-local-moment-20261011-v3}}, including its
+\path{replay_components.py}; it has separate compiler and pinned dependency
+prerequisites.
+
+The development replay compiled 15 supporting Lean components and an audit
+module. Its 48 printed theorem-axiom reports contain only
+\code{propext}, \code{Classical.choice}, and \code{Quot.sound}.
+These builds used cached pinned dependencies. They do not certify the full
+endpoint theorem: a complete formal endpoint, clean dependency replay,
+protected canonical-target comparison, and independent three-kernel
+verification remain pending. The written analytic arguments and the exact
+rational certificates have the distinct scopes stated here.
+
+For completeness, the Bernstein certificate used in
+Proposition~\ref{prop:certificate} is based on the identity
+\[
+ f(u,v)=\sum_{i=0}^{m}\sum_{j=0}^{n}
+ b_{ij}\binom mi u^i(1-u)^{m-i}\binom nj v^j(1-v)^{n-j},
+ \qquad 0\le u,v\le1.
+\]
+The basis functions are nonnegative and their sum is one. Thus
+$b_{ij}\ge0$ for all $i,j$ proves $f\ge0$ on the whole square.
+An exact affine substitution maps each recorded rational rectangle to
+that square. Rational reconstruction of the coefficients and exact
+coverage checks make the conclusion inspectable without trusting
+floating-point optimization.
+
+
+\subsection{The local family and moment statement}
+We use the natural moment family of \cite[Appendix B3.4]{collet} over
+$\OO=\Z[\omega]$, where $\omega=e^{2\pi i/3}$. Write $N$ for the
+ideal norm, or the norm of an element. Set $U=Z^M$, with $Z>1$ and
+$M>0$. At the parent stage the character acting on a summation variable
+$n$ has the form
+\[
+ \psi_k(n)=\tau(n)\chi_n(k),
+\]
+where $\tau$ is a fixed finite ray character and $\chi_n(k)$ is the
+source's sextic residue character, with its prescribed zero extension.
+The ray modulus is fixed independently of $U$. No additional parent
+character of positive moving width is allowed in our proposed estimate.
+Such factors can occur in transformed children and must still be paid.
+
+Let $S_{k,1}(Z^{n_1})$ and $S_{k,2}(Z^{n_2})$ denote the source's
+centrally normalized ordinary character sums. The two smooth profiles,
+real norm powers, and height parameters may be independent. A prime
+slot has the form
+\begin{equation}\label{eq:slot}
+ Q_{k,i}=Z^{-z_i/2}
+ \sum_{\mathfrak p\in\mathcal P_i^{\rm can}}
+ \psi_k(\mathfrak p)\nu_i(\mathfrak p)
+ W\!\left(\frac{N\mathfrak p}{Z^{z_i}}\right)
+ \left(\frac{N\mathfrak p}{Z^{z_i}}\right)^{-\sigma_i+iv_i}.
+\end{equation}
+Here $\mathcal P_i^{\rm can}$ is the genuine canonical good-prime pool,
+$\nu_i$ is an allowed relative ray character, and the slots share the
+one smooth annular profile $W$. Put $z=\sum_i z_i$ and
+$Q_{k,I}=\prod_{i\in I}Q_{k,i}$. Formula~\eqref{eq:slot} does not
+permit arbitrary prime subsets or independently chosen slot profiles.
+
+An additional common puncture is allowed: all factors may be restricted
+to arguments coprime to a fixed nonzero mask of norm at most $U^B$.
+It stays fixed during the current row sum but may depend on labels
+already frozen in a preceding transformation. The underlying natural
+zeros must also stay in place. A canceled character phase at a nonunit
+does not turn the original value zero into one.
+
+The word \emph{eligible} means the literal source predicate excluding
+\code{FixedInducingRow} presentations. Let $M_{\rm ray}$ be the fixed
+ray modulus and $\eta_0$ the fixed anchor in the relative slot characters.
+The initial source uses
+\[
+ Q_* = M_{\rm ray}\cap(72)\cap\mathfrak q_{\eta_0}.
+\]
+This ideal is held fixed in transformed states, even when their
+whole-product character moves. Its containments cover every allowed
+relative ray twist; they are part of the initial family, not a later
+change in the exceptional set. Eligibility is not replaced by
+nonprincipality of one preferred primitive representative. Its exceptional
+part is treated by the centered cancellation. The exact transport is
+spelled out in Section~\ref{sec:fixed-dictionary-bridge}.
+
+\begin{proposition}[Local physical moment: proposed proof under review]\label{hyp:local}
+Use the preceding family, with all its natural masks and canonical slot
+conditions, and assume $51/100\le\beta_*\le7/8$. Suppose
+\begin{equation}\label{eq:window}
+ \frac{41M}{100}\le n_i\le\frac{11M}{25},\qquad
+ \frac{3M}{100}\le z\le\frac M{25},\qquad
+ n_1+n_2+Cz\le M,\qquad C=\frac{2249}{500}.
+\end{equation}
+For every $\eps>0$, the proposed estimate is
+\begin{equation}\label{eq:moment}
+ \sum_{k\ {\rm eligible}}
+ \left|S_{k,1}(Z^{n_1})S_{k,2}(Z^{n_2})Q_{k,I}\right|^2
+ \ll Z^{M+\eps}\mathcal H_J.
+\end{equation}
+The source's radial row weight is understood. The factor $\mathcal H_J$
+denotes its finite smooth-seminorm and polynomial height allowance,
+retaining independent heights. The assertion also includes the four
+annular derivative-profile pairs and bounded scale-box recovery used by
+the physical numerator. The mesh is chosen from the requested loss and
+fixed bounded geometric ranges, before the eventual finite slot count and
+live labels. For the fixed arithmetic dictionary and slot system, the
+finite profile and height orders, constants, and eventual threshold may
+depend on that fixed family and are selected before the live scales,
+masks, row selections, and heights.
+\end{proposition}
+\begin{proof}[Proof reference]
+The exact source-level proof is given in
+Section~\ref{sec:physical-local-assembly}, after the signed reconstruction,
+fixed-dictionary, plain-density, Fourier, and restricted-child lemmas.
+\end{proof}
+
+The notation imports a substantial existing analytic framework. This
+supplement explains a modification of that framework; it is not a replacement
+construction of the ordinary $L$-functions or of the source moment family.
+Sections~\ref{sec:restricted-canonical} and~\ref{sec:physical-local-assembly}
+provide the proposed connection to the actual canonical state and the
+complete local source assembly. They are written analytic arguments with
+compiled intermediate steps, rather than a new formal endpoint theorem.
+
+
+
+The proposed boundary and pinned comparison boundary are
+\begin{equation}\label{eq:theta}
+ \theta=\frac{4374433}{5000000}=0.8748866,
+\end{equation}
+\begin{equation}\label{eq:quartic}
+ b_0=\frac{11}{12}-\frac{\ell_0}{4},\qquad
+ P(\ell_0)=0,\quad \ell_0\in[1/6,1/5],
+\end{equation}
+where $P(X)=927X^4-3135X^3+2433X^2+275X-100$.
+The comparison refers to the pinned source in the bibliography.
+\subsection{The rational geometry and exact certificate}
+Set
+\begin{align}\label{eq:geometry}
+ \ell&=\frac{626701}{3750000}, &
+ h&=\frac{3969737987}{5000000000},\notag\\
+ x&=1+\ell-h=\frac{5597590039}{15000000000}, &
+ y&=h-2\ell=\frac{6895605961}{15000000000},\notag\\
+ \kappa_*&=2\theta-1=\frac{1874433}{2500000}, &
+ C&=\frac{2249}{500}.
+\end{align}
+Then $\theta=11/12-\ell/4$ and $x+y=1-\ell$.
+For $\kappa\ge\kappa_*$ define
+\begin{align}\label{eq:detector}
+ D_\kappa(p)&=3-p-\frac{2p}{3\kappa}, &
+ B_\kappa(p)&=2(1-p)\left(1-\frac{p}{3\kappa}\right),\notag\\
+ c_\kappa(p)&=B_\kappa(p)/D_\kappa(p), &
+ V&=\frac56-\delta,\notag\\
+ R_\kappa(\delta,p)&=1-\delta+
+       \frac{\delta c_\kappa(p)V}{2(V+\delta c_\kappa(p))}.
+\end{align}
+We use a lower-case $c_\kappa$ to distinguish the detector coefficient
+from the physical coefficient $C$. The candidate upper-row exponent is
+\begin{equation}\label{eq:F}
+ F_{C,\kappa}(\delta,p)=\frac{1+\ell}{2}+\frac\delta2
+ +h\left(\frac{3R_\kappa(\delta,p)}4-\frac5{12}\right)
+ +\delta p\left(\ell-\frac{h-4\ell}{2C}\right).
+\end{equation}
+
+\begin{proposition}[Exact scalar certificate]\label{prop:certificate}
+With \eqref{eq:geometry},
+\[
+ F_{C,\kappa_*}(\delta,p)\le\theta-10^{-7}
+ \quad\text{for every }(\delta,p)\in[0,3/4]\times[0,1/2].
+\]
+Moreover $\theta<b_0$ for the exact boundary \eqref{eq:quartic}.
+\end{proposition}
+\begin{proof}[Computer-assisted proof of the first assertion]
+All constants in this calculation are rational. Put
+$J=VD_{\kappa_*}+\delta B_{\kappa_*}$. Then
+\[
+ R_{\kappa_*}=\frac{(1-\delta)J+\delta B_{\kappa_*}V/2}{J}.
+\]
+The stored certificate first gives $J\ge1/10$ on the whole rectangle.
+After multiplying $\theta-10^{-7}-F_{C,\kappa_*}$ by $J$, it suffices
+to verify a polynomial inequality. The audit partitions the rectangle
+into 18 rational subrectangles and writes the polynomial in the
+Bernstein basis on each one. Every coefficient is nonnegative; the
+recorded closed subrectangles cover the entire original domain.
+Appendix~\ref{app:reproduce} identifies the executable audit and its
+exact certificate. This is an exact finite verification, not a sampling
+of the exponent on a numerical grid.
+\end{proof}
+\begin{proof}[Proof of the comparison with the quartic]
+We have $P(1/6)<0$, and exact substitution gives
+\[
+ P(\ell)=\frac{3484615068030068970503}
+                    {21972656250000000000000000}>0.
+\]
+For $X\in[1/6,1/5]$,
+\[
+ P'(X)=3708X^3-9405X^2+4866X+275
+ \ge-\frac{9405}{25}+\frac{4866}{6}+275
+ =\frac{3549}{5}>0.
+\]
+Thus $\ell>\ell_0$, and $\theta=11/12-\ell/4<b_0$.
+\end{proof}
+
+
+
+\subsection{Notation carried into the source arguments}
+The following four equations fix the notation referenced in Appendices
+\ref{sec:signed-reconstruction} and \ref{sec:restricted-canonical}.
+Their derivations are retained in those appendices and in the local assembly.
+For $d=M_{\rm act}-M_{\rm nom}\le\eta_2$, $\eta_2\ge0$,
+$F_{\rm nom}\ge0$, and $0\le r\le1$, the width-payment inequality is
+\begin{equation}\label{eq:widthpayment}
+ d+r\pos{F_{\rm nom}-d}\le\eta_2+rF_{\rm nom}.
+\end{equation}
+It follows by separating $F_{\rm nom}-d\ge0$ from its complement.
+In the low branch put $a=M/2000$, $k_0=7/10$, and
+$0\le g\le M/10000$. Then
+\begin{equation}\label{eq:lowreserve}
+ a-\frac{k_0}{9/2}(6a+g)
+ \ge\frac M{2000}-\frac7{45}
+       \left(\frac{3M}{1000}+\frac M{10000}\right)
+ =\frac{4M}{225000}>0.
+\end{equation}
+For the signed first-side row, let $F_C$ be its residue product,
+$L_C=\log_Z NF_C$, and $T=(c-d)_+$. With the genuine second common
+factor $G_c$, nonunit factor $V_{\rm id}$, and retained frequency $h'$,
+\begin{equation}\label{eq:integerrow}
+ w=F_CeG_cV_{\rm id}h',\qquad
+ \log_Z Nw\le M-R-T+L_C-6a+o(1).
+\end{equation}
+Before taking the second transform the actual smooth row ball is enlarged
+with exponent
+\begin{equation}\label{eq:envelope}
+ H=K_0+(d-c)_++6a+\varpi,\qquad K_0=2A-c-d+R+E-M.
+\end{equation}
+Here $\varpi>0$ pays retained-frequency padding and the fixed
+support-doubling factor. If the first retained dyad satisfies
+$K\le K_0+\delta_1$, take $\varpi\ge\delta_1$ with an additional
+positive support reserve. The amplified rows have norm at most
+$Z^{K+6a}$ and lie in this actual ball. Its larger radius shortens the
+dual range; its low-branch cost is included in the reserved error budget.

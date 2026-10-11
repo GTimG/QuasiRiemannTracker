@@ -1,0 +1,19 @@
+{
+  "schema": "local-moment-manuscript-status-v1",
+  "status": "research-submission",
+  "proposed_endpoint": {
+    "numerator": 4374433,
+    "denominator": 5000000
+  },
+  "analytic_argument_status": "Proposed written analytic proof relative to the pinned source framework",
+  "editorial_reorganization_only": true,
+  "supporting_evidence_snapshot": "proofs/gao-local-moment-20261011-v3",
+  "compiled_source_components": 15,
+  "component_axiom_checks": 48,
+  "dependencies_rebuilt": false,
+  "complete_endpoint_formalization": false,
+  "comparator_verified": false,
+  "three_kernels_verified": false,
+  "tracker_record_claimed": false,
+  "component_scope_note": "The compiled supporting declarations do not certify the complete endpoint theorem."
+}

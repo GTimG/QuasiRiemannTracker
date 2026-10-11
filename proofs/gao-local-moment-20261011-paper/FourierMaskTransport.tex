@@ -1,0 +1,173 @@
+% Development supplement, 11 October 2026.
+% These are analytic transport lemmas, not a proof of the new local moment.
+\section{Uniform deletion and common Fourier transport}
+\label{sec:uniform-transport}
+
+The following estimates resolve two bookkeeping questions in the proposed
+argument. They neither identify a transformed character nor supply a
+missing mean-value estimate. The field throughout is the fixed Eisenstein
+field. Constants may depend on the fixed field, the indicated compact
+supports, and the requested error exponent.
+
+\begin{proposition}[Uniform finite Euler deletion]
+Fix $B\geq 0$, $\sigma_0>0$, an integer $j\geq0$, and $\epsilon>0$.
+Let $Z\geq2$, let $\mathfrak q$ be a squarefree integral ideal with
+$N\mathfrak q\leq Z^B$, and choose complex numbers
+$|a_{\mathfrak p}|\leq1$. Put
+\[
+ E_{\mathfrak q}(s)=\prod_{\mathfrak p\mid\mathfrak q}
+       (1-a_{\mathfrak p}(N\mathfrak p)^{-s}).
+\]
+Then $E_{\mathfrak q}$ is nonzero on $\Re s>0$, and, uniformly in
+$\mathfrak q$, the coefficients, and $\Im s$,
+\[
+ |E_{\mathfrak q}^{(j)}(s)|+
+ |(E_{\mathfrak q}^{-1})^{(j)}(s)|
+ \ll_{B,\sigma_0,j,\epsilon} Z^\epsilon
+ \qquad(\Re s\geq\sigma_0).
+\]
+\end{proposition}
+\begin{proof}
+Every factor is nonzero because
+$|a_{\mathfrak p}(N\mathfrak p)^{-s}|<1$ in the positive half-plane.
+For $\Re s\geq\sigma_0/2$, both the product and its reciprocal are
+bounded by
+\[
+ \prod_{\mathfrak p\mid\mathfrak q}
+       (1-(N\mathfrak p)^{-\sigma_0/2})^{-1}.
+\]
+Given $b>0$, the factor at every sufficiently large prime norm is at
+most $(N\mathfrak p)^b$: its logarithm is
+$O((N\mathfrak p)^{-\sigma_0/2})=o(\log N\mathfrak p)$.
+The finitely many smaller primes contribute a constant, independently
+of the chosen ideal and coefficients. The product is consequently
+$O((N\mathfrak q)^b)$. If $B>0$, choose $bB\leq\epsilon$; if $B=0$
+the product is empty. Cauchy's derivative estimate on disks of radius
+$\sigma_0/2$ proves the claim for every fixed $j$.
+\end{proof}
+
+Thus, once the exact identity
+$L_{\rm masked}(s)=L_{\rm primitive}(s)E_{\mathfrak q}(s)$ is
+established, extra polynomial-size holes preserve its positive-real
+zeros and cost an arbitrarily small power in a contour argument staying
+in a fixed positive half-plane. For a nonprincipal character the
+identity also applies at $s=1$. A principal pole must still be treated
+separately. This argument places no small-conductor hypothesis on the
+\emph{masked presentation}. It applies the analytic estimate to the
+primitive presentation and restores the finite factors afterward.
+For the raw row family one still has to prove the primitive-conductor
+bound and the exact coefficient identity; these are not consequences
+of a product estimate.
+
+For a prime polynomial with relative support $[c,C]\subset(0,\infty)$,
+bounded coefficient modulus, and central normalization $P^{-1/2}$,
+deleting primes dividing $\mathfrak q$ changes it by
+\[
+ O(P^{-1/2}\log(2N\mathfrak q))\qquad(P\geq1).
+\]
+Indeed there are at most $\log(N\mathfrak q)/\log2$ such primes.
+Fixed powers of $\log N\mathfrak p$ add only powers of $\log Z$ on
+polynomial-size scales. Real powers on the normalized support have
+bounded modulus, and imaginary powers have modulus one. This error is
+$O_\epsilon(Z^\epsilon)$ and is compatible with a squared pointwise
+bound $P^\delta Z^\epsilon$ whenever $\delta\geq0$, after dividing
+the error allowance between the original estimate and this correction.
+No deletion of an arithmetic mask by positivity is involved.
+
+\begin{proposition}[Fourier transport with labels inside the norm]
+Fix a compact box $K\subset(0,\infty)^d$ and $J\geq0$. Suppose that
+a family of smooth profiles $H_A$ is supported on one larger compact
+box and has uniformly bounded Euler derivatives through order $2r$,
+where $2r>J+d$. Then it has representations
+\[
+ H_A(y)=\int_{\mathbb R^d}\prod_{k=1}^d y_k^{it_k}\,d\mu_A(t),
+ \qquad
+ \int_{\mathbb R^d}(1+|t|)^J\,d|\mu_A|(t)\leq C_J,
+\]
+uniformly in $A$. The measure is chosen before any arithmetic label
+or row is evaluated.
+
+Let $\Lambda$ be a finite set of retained arithmetic labels, and let
+$F_t=(F_t(\lambda,h))$ be a measurable family in
+$\mathcal H=\bigoplus_{\lambda\in\Lambda}\ell^2(R_\lambda)$.
+If
+\[
+ \|F_t\|_{\mathcal H}\leq B(1+|t|)^J,
+\]
+then
+\[
+ \left\|\int F_t\,d\mu_A(t)\right\|_{\mathcal H}
+       \leq C_J B.
+\]
+In particular there is no factor $|\Lambda|$ in this transport.
+The same conclusion holds for weighted direct sums with fixed
+nonnegative arithmetic weights.
+\end{proposition}
+\begin{proof}
+Pass to logarithmic coordinates $x_k=\log y_k$ and apply Fourier
+inversion. Integrating by parts with $(1-\Delta)^r$ bounds the
+Fourier density by $C(1+|t|)^{-2r}$. Compact support bounds the
+necessary $L^1$ derivative norms uniformly. The asserted weighted
+integrability follows because $2r>J+d$.
+
+The second assertion is the triangle inequality for the Bochner
+integral in the Hilbert space $\mathcal H$:
+\[
+ \left\|\int F_t\,d\mu_A(t)\right\|_{\mathcal H}
+ \leq\int\|F_t\|_{\mathcal H}\,d|\mu_A|(t)
+ \leq B\int(1+|t|)^J\,d|\mu_A|(t).
+\]
+The assumption supplies integrability. Alternatively, all row sums
+may first be truncated, with the same estimate, followed by a limit.
+\end{proof}
+
+The required uniform derivative assertion holds for a kernel
+$K(A\prod_k y_k^{e_k})$ if its Euler derivatives are bounded on
+$(0,\infty)$ and the exponents $e_k$ are fixed. Explicitly,
+\[
+ D^\beta K\left(A\prod_k y_k^{e_k}\right)
+   =\left(\prod_k e_k^{\beta_k}\right)
+     (x\partial_x)^{|\beta|}K(x)
+       \bigg|_{x=A\prod_k y_k^{e_k}}.
+\]
+Cutoffs on the fixed box and normalized norm powers introduce only
+fixed seminorms and polynomials in their independent heights.
+Relations among arithmetic norms restrict evaluation points inside
+the box; they do not redefine $\mu_A$ for each label. Discontinuous
+coprimality, valuation, or zero-bin indicators remain in the arithmetic
+vector $F_t$ and are never differentiated.
+
+The substantive premise is a bound on the \emph{joint} vector $F_t$.
+Separate per-label bounds cannot be substituted for it without their
+label count. Conversely, once an exact reconstruction bounds the joint
+sum over $(\lambda,h)$, the Fourier step does not charge that label
+count again. The preceding statement justifies this last passage but
+does not prove the reconstruction or the required pointwise bounds.
+
+There is also a useful version when an outer arithmetic label changes
+the parameter $A$. The integration-by-parts proof gives a single
+pointwise majorant for the Fourier densities,
+$|f_A(t)|\leq C(1+|t|)^{-2r}$. Choose the positive measure
+$d\mu(t)=C(1+|t|)^{-2r}\,dt$ before the labels. Write
+$f_{A(\lambda)}(t)\,dt=a_\lambda(t)\,d\mu(t)$, where
+$|a_\lambda(t)|\leq1$. For each $t$, multiplication by
+$a_\lambda(t)$ is a diagonal contraction on the joint Hilbert space.
+The same bound therefore follows with this one common dominating
+measure; equality of the label-dependent Fourier densities is not
+needed. This is used only for labels fixed outside the sum being
+Poisson-transformed. It does not permit a discontinuous row-dependent
+factor to be inserted into that sum before Poisson summation.
+
+\paragraph{Quantifier order for height losses.}
+If a density input is eventually bounded by
+$C(1+T)^J H^\rho$, its threshold must be independent of $T$ before
+one substitutes $T=Z^\tau$. An assertion proved only for each fixed
+$T$ with an unspecified threshold $H_0(T)$ is insufficient. With a
+uniform threshold, bounded $H$ are filled using the lattice count and
+$(1+T)^J\geq1$, without a new height dependence. Fix the zero buffer,
+the finitely many profiles, and their analytic height exponents first;
+then choose $\tau$ so that the total $\tau J$ lies below the reserved
+power saving. Frequencies outside the retained range require the
+common Fourier tail estimate. The pointwise and density results must
+be checked to have precisely this uniform order; it is not supplied
+by the Fourier identity alone.

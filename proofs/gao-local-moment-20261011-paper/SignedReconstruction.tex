@@ -1,0 +1,148 @@
+\section{Signed rows, zero extensions, and label reconstruction}
+\label{sec:signed-reconstruction}
+
+The purpose of the reconstruction is to identify one integer row to which
+the unmarked density theorem applies. It must identify the character on
+all arguments, including its zeros, and must also explain which arithmetic
+labels can be recovered from that row. Merely identifying a primitive
+character on coprime arguments would lose the natural masks.
+
+\subsection{The two signs at a common prime}
+For supported primary elements define
+$c_n(v)=\mathfrak s_v((n))$, the source's zero-extended sextic ideal row.
+Let $q(\pi,n)$ be the fixed reciprocity phase, so
+\[
+ c_\pi(n)=q(\pi,n)c_n(\pi).
+\]
+The phase belongs to the fixed ray dictionary. If $\pi\mid n$, both
+sides vanish; the identity is not restricted to the unit case.
+For a common prime with active net exponent $1\le t\le5$, it follows that
+\begin{align*}
+ c_n(\pi)c_\pi(n)^t
+   &=q(\pi,n)^t c_n(\pi)^{1+t},\\
+ c_n(\pi)\overline{c_\pi(n)^t}
+   &=q(\pi,n)^{6-t}c_n(\pi)^{7-t}.
+\end{align*}
+On units this is ordinary multiplication of sixth roots of unity;
+off units each displayed product is zero. Thus the left coefficient has
+residue $1+t$ and the right coefficient residue $1-t$, modulo six.
+These are the signs in the actual formal coefficients
+\path{leftCoefficient} and \path{rightCoefficient}.
+A manuscript convention assigning the conjugate coefficient to the
+C-side must exchange the side names consistently.
+
+If $t=5$ on the left, or $t=1$ on the right, the resulting exponent is six.
+The source's exact identity is
+\[
+ c_n(\pi)^6=\mathbf1_{(n,\pi)=1}.
+\]
+Consequently reducing the exponent to zero moves this factor into the
+puncture; it does not replace it by one. Multiplying the primewise
+identities proves the corresponding complete first-row character
+identity with every canceled prime still punctured.
+
+For one side let $F=\prod_{\pi\mid r}\pi^{e(\pi)}$, choosing the
+source's primary prime generators, and let $L=\log_Z NF$. The ideal
+used by the formal source has generator
+$\operatorname{idealGenerator}(\mathfrak r)$, which can differ from the
+product of chosen generators by a unit. Retain that unit in the effective
+row, or absorb its character into the fixed six-unit dictionary. No
+unproved equality of these two generator choices is needed.
+
+\subsection{The complete second frequency}
+For the second common-support ideals $D_2,E_2$, let $G$ be their common
+gcd generator. The actual correlation vanishes unless $G\mid j$.
+After writing $j=Gu$, the nonunit part of the equal-multiplicity
+partition forces $V\mid u$, where $V$ is its radical generator.
+Thus the genuine nonzero frequency is
+\[
+ j=GVh',\qquad h'\ne0.
+\]
+The source's partitioned correlation, divided by its stated normalizer,
+has modulus at most one, including its extension by zero off the
+partition. Multiplicativity now combines the first row with this frequency:
+\[
+ w=u_0\,eFGVh',
+\]
+where $u_0$ is the retained unit. Every surviving whole-product character
+is a fixed ray factor times $c_n(w)$, with the common puncture and all
+canceled-prime holes. Relative slot characters remain their original
+fixed factors. Whole-character conjugation or the reflected row $-w$
+is handled by whole-character height reflection and the fixed unit
+list. The dictionary is a finite union of parent translates of the
+allowed $Q_*$-character group. The buffered maximum is formed within
+the actual parent translate; another translate is not added to that
+maximum. Conjugating only its fixed factor would change this family
+and is not an allowed replacement.
+
+The exact source ingredients are
+\path{SecondCanonicalFrequency.idealCorrelation_zero_outside_common},
+\path{SecondCanonicalNonunit.nonunitFrequencyGenerator_dvd}, and
+\path{SecondCanonicalFrequency.actual_ideal_partition_scalar}.
+The new signed-row lemmas check the primewise identities and their
+multiplicative combination against these source conventions.
+
+With the actual common main ball of logarithmic radius
+$K_0+(d-c)_++6a+\varpi$, the second frequency envelope gives
+\[
+ \log_Z Nw\le M-R-(c-d)_++L-6a-\varpi+\eta.
+\]
+Discarding the favorable $-\varpi$ gives \eqref{eq:integerrow}.
+A nonempty integral row window always has $Nw\ge1$; negative nominal
+logarithmic ranges are either empty or are filled by the reserved
+bounded-window allowance. Density is not applied as a count smaller
+than one on a nonempty window.
+
+\subsection{Which labels are divisors of the row?}
+The first residual projector label $s$ divides both second columns.
+After the complete second common-support extraction it therefore divides
+$G$, and hence divides $w$. The entire second common radical also divides
+$G$. The source proves these assertions as
+\path{SecondSourceMask.source_pair_divisor_common} and
+\path{divisor_dvd_common}.
+
+The second residual projector label $t$ is different. Its individual
+terms belong to the artificial separated extension of the genuine
+correlation, and $t$ need not divide $G$ or $w$. Freeze it while estimating
+the row norm. Its signed priority allocation selects plain divisors and
+freezes prime slots. If a selected plain is $n=dv$, then
+\[
+ \psi_w(dv)=\psi_w(d)\psi_w(v).
+\]
+The factor $\psi_w(d)$ is retained outside, even if it is zero. The
+quotient $v$ may still be divisible by a prime of $d$; no new coprimality
+condition is introduced. This explains why the primitive row and its
+buffered bin survive allocation. Its divisor-dyad count is paid together
+with the two exact normalization scalars in B3.67--B3.69.
+
+Among the first common primes, those active with nonzero row residue
+occur in $F$, and the selected mask-divisor primes occur in $e$.
+The remaining first radical has logarithmic width at most
+\[
+ p-R-E+R_{\rm zero}.
+\]
+This accounts separately for inactive net-zero primes and for active
+primes whose row phase cancels. They cannot be called divisors of $w$.
+Once their radical is fixed, all remaining first labels are supported
+on it together with $\operatorname{rad}(w)$.
+
+For completeness, a uniform support-counting bound follows from Rankin's
+inequality. If $NQ\le Z^B$ and $NI\le Z^T$, then for any $s>0$,
+\[
+ \#\{I:\operatorname{rad}I\mid Q,\ NI\le Z^T\}
+ \le Z^{sT}\prod_{\mathfrak p\mid Q}(1-(N\mathfrak p)^{-s})^{-1}.
+\]
+Choose $sT$ small. Each sufficiently large prime factor in the product
+is at most $(N\mathfrak p)^b$ for any prescribed $b>0$; the finitely
+many remaining primes contribute a constant. Choosing $bB$ small proves
+a bound $O(Z^\epsilon)$ uniformly in the support ideal. The field has
+only $O(X)$ ideals of norm at most $X$, so counting the missing radical
+costs its displayed norm exponent. Fixed finitely many slot assignments,
+bounded-range powers and priority allocations have the same arbitrarily
+small power allowance after the slot system is fixed.
+
+This proves the general label reconstruction used in the high norm.
+It retains the first labels until the joint row count, and it does not
+charge the second projector count twice. Nonprincipality and primitive
+conductor bounds are supplied by the following fixed-dictionary section;
+they are not consequences of the size bound on $w$ alone.

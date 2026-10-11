@@ -1,0 +1,140 @@
+\section{Restricted canonical norms and the exact-width correction}
+\label{sec:restricted-canonical}
+
+This section explains why the low-row argument applies to the actual
+allocated character sums. The key point is that the low indicator is a
+restriction of a positive row norm. It never becomes a smooth profile,
+a coefficient to be differentiated, or an input to Poisson summation.
+
+\subsection{The actual coefficient and radial factorization}
+Freeze a separated Fourier frequency and every arithmetic label outside
+the current row sum, including the second projector label. After its
+complete signed allocation, one positive rectangle norm is
+\[
+ \sum_z\mathbf1_{\mathrm{keep}(z)}\mathbf1_{\mathrm{low}(w(z))}
+       \rho(z)\left|P_1(z)P_2(z)\prod_{i\in J}Q_i(z)\right|^2,
+ \qquad \rho(z)\ge0.
+\]
+The fixed dictionary includes every relative sector in the current
+parent translate. It gives a common bin for the slots in this expression.
+The character is the exact one from Section~\ref{sec:signed-reconstruction}.
+
+Let $r$ be the source's canonical radial state. Its keep predicate is
+$z\ne0$ together with the literal exclusion for the moving character
+$\tau$ and the fixed ideal $Q_*$. Define $r_{\rm low}$ by replacing only
+that predicate with
+$\mathrm{keep}(z)\wedge\mathrm{low}(w(z))$.
+Its smooth radial profile, scale, whole-product character and punctures
+remain the same. Its nonzero-row and nonexceptional conditions follow
+immediately from those of $r$, so it is an admissible restricted natural
+state of the same width.
+
+The source identities apply to precisely this object:
+\begin{enumerate}
+\item \path{AllocatedNaturalRadial.common_allocated_normalized}
+expresses the allocated row as the product of two natural plain sums and
+the remaining natural prime slots. The two scale phases have modulus one;
+common holes remain as the excluded-prime character.
+\item \path{allocated_radial_bound} and its shared mask estimate
+allow an arbitrary row keep predicate. Thus mask expansion can use
+$r_{\rm low}$ and preserves the low restriction in every daughter.
+Its plain scales are divided by their assigned ideals, and forced prime
+slots are frozen.
+\item \path{AllocatedChildren.commonChild_energy} identifies the
+source's actual natural product with its allocated energy for any such
+radial state. The new \path{actual_common_child_restricted} lemma
+checks this identity on the canonical low rows.
+\item \path{AllocatedRayDictionary.common_clipped_energy} reindexes
+surviving slots to their original indices. It retains their relative
+characters and replaces the frequency by the common shift plus the
+original individual height. Its keep argument is arbitrary and therefore
+still contains the low predicate.
+\end{enumerate}
+These are coefficient equalities before the moment estimate; arbitrary
+absolute-value coefficients have not replaced the canonical slots.
+
+For any nonnegative row weight, Cauchy applies with the same restriction
+on both factors. Alternatively, one can first form a positive norm and
+then split it into low and high parts. Neither operation asks for a
+regularity property of the indicator. The smooth Fourier measure remains
+outside the restricted arithmetic sums, as in
+Section~\ref{sec:uniform-transport}.
+
+\subsection{Payment before removing the restriction}
+Choose one greedy subset $R\subseteq J$ from the actual clipped lengths.
+On the low rows the buffered estimate gives, for each removed slot,
+\[
+ |Q_i(z)|^2\le B_i Z^{k_0z_i},\qquad k_0=7/10.
+\]
+The factors $B_i$ contain the allocated small losses and height allowance.
+Multiplying these pointwise inequalities gives
+\begin{align*}
+ &\sum_z\mathbf1_{\mathrm{keep}(z)}\mathbf1_{\mathrm{low}(w(z))}
+   \rho(z)|P_1(z)P_2(z)\prod_{i\in J}Q_i(z)|^2\\
+ &\quad\le\Bigl(\prod_{i\in R}B_i\Bigr)Z^{k_0\sum_{i\in R}z_i}
+   \sum_z\mathbf1_{\mathrm{keep}(z)}\mathbf1_{\mathrm{low}(w(z))}
+   \rho(z)|P_1(z)P_2(z)\prod_{i\in J\setminus R}Q_i(z)|^2.
+\end{align*}
+Drop the low indicator only in the last nonnegative sum. It is now the
+full canonical remaining-state norm of the old moment, with the same
+moving character and fixed ideal. This is the exact factorization proved
+by \path{restricted_energy_remove} and used by
+\path{restricted_paid_incumbent}.
+
+The two rates serve different roles. Removing one unit of slot width
+reduces the old capacity defect by $9/2$, but its low-bin squared cost is
+$7/10$. Greedy removal therefore costs at most
+$(7/45)F_{\rm act}+(7/10)\eta_{\rm mesh}$.
+If the slots run out first, the existing \path{ZeroAt} estimate applies
+without a plain-capacity condition. There is no extra payment for a
+residual plain defect. Bounded prime-slot lengths are handled directly;
+the buffered theorem's large-length hypothesis is not applied at length
+one. For a fixed finite slot list, per-slot losses are chosen from a
+single prescribed aggregate budget.
+
+\subsection{Actual width versus nominal width}
+The canonical state uses the exact width
+\[
+ M_{\rm act}=\log_Z(\text{dyadic row scale})+
+             \log_Z N\mathfrak q_\tau.
+\]
+It can be smaller than the nominal ledger width $M_{\rm nom}$. Put
+$d=M_{\rm act}-M_{\rm nom}\le\eta_2$. The source's deleted-child capacity
+estimate gives $F_{\rm act}\le\pos{F_{\rm nom}-d}$, so it is the combined
+quantity $d+rF_{\rm act}$ which must be bounded. The elementary
+inequality~\eqref{eq:widthpayment}, checked in
+\path{width_plus_low_defect}, bounds it by
+$\eta_2+rF_{\rm nom}$. Use $r=7/45$ on low main children and $r=1/6$
+on the extracted errors.
+
+For the padded actual main radius \eqref{eq:envelope}, direct
+substitution gives
+\[
+ M_{\rm nom}=M-(c-d)_+-6a-\varpi-g_2+t_2
+\]
+and
+\[
+ (A-c-c_2-M_{\rm nom})-(A-M)
+ =6a+\varpi-\min(c,d)-(c_2-g_2)-t_2\le6a+\varpi.
+\]
+These identities also hold with a fixed parent modulus width $q$, writing
+$M=m+q$ and putting $m$ in the first nominal frequency formula.
+They are checked in \path{RestrictedCanonicalSource.lean}.
+The nominal low defect is consequently at most
+$g+6a+\varpi+2\theta_N$ plus the fixed presentation padding. The source's
+inner allowance is still $M_{\rm nom}+\Delta$, with
+$\Delta=b_2-p_2+B_c+a\ge a$. The scale cancels in that subtraction.
+Thus the strict reserve \eqref{eq:lowreserve} survives the exact-width
+correction, with the padding chosen from it.
+
+Finally, the proposed radius is already the formal common radius
+\[
+ \texttt{mainCommonRadius}
+ =Z^{K_0+(d-c)_++2\sigma+\delta+\mathrm{reserve}}.
+\]
+Take $\sigma=3a$ and $\varpi=\delta+\mathrm{reserve}$, with
+$2\le Z^{\mathrm{reserve}}$. The source's \path{main_energy_common}
+proves smooth domination including the fixed support factor. The second
+transform accepts every positive radial scale. The extracted errors keep
+their original error radii and all three moving-character alternatives;
+no low-bin heredity is used in those branches.

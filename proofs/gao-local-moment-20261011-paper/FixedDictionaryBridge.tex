@@ -1,0 +1,203 @@
+% Written audit and bridge, 11 October 2026. Input fragment.
+\section{The fixed dictionary behind the actual signed rows}
+\label{sec:fixed-dictionary-bridge}
+
+This section concerns the local family whose parent character and ray
+modulus are fixed before the scale. It does not assert a uniform density
+estimate for arbitrary parent characters with growing conductor. That
+stronger assertion is unnecessary here: the moving factors in both
+transformations are retained in the complete integer row.
+
+Write $m_0=2(1-\omega)$. Let $Q$ be the \emph{literal} fixed ideal used
+by the source's fixed-inducing-row predicate. Its hypotheses include
+$Q\subseteq(72)$ and the stated containments in the original fixed ray
+moduli. The relative slot characters have presentations of modulus
+dividing $Q$. These containments use the ideal convention that
+$Q\subseteq\mathfrak m$ means $\mathfrak m\mid Q$.
+For the actual initial family $F$, this ideal is
+\[
+ Q=\operatorname{internalQ}
+       (F.\mathrm{modulus}\cap(72))\,\eta_0
+   =F.\mathrm{modulus}\cap(72)\cap\mathfrak q_{\eta_0},
+\]
+as defined by \path{NaturalFixedRaySourceFixedIdeal.sourceFixedIdeal}
+and \path{sourceExceptional}. Thus the needed containments belong to
+the literal source family; they are not a later enlargement of its
+exceptional set. In a transformed child this ideal remains fixed even
+though the separate whole-product character can move.
+
+\paragraph{A finite collection chosen before arithmetic labels.}
+Take the primary ray characters modulo $12$, the six unit-row characters
+modulo $36$, and the allowed relative slot characters, together with their
+inverses. On ideals prime to $Q$ their products belong to the finite group
+of ray characters modulo $Q$. Multiply these products by each of the
+original fixed parent characters; the resulting finite collection is a
+union of fixed translates of that group. The parent itself need not have
+modulus dividing $Q$. Different zero extensions at primes dividing $Q$
+introduce only finitely many additional presentations. Thus there is a finite list
+$\{\eta_\lambda:\lambda\in\Lambda\}$ containing every product that will
+occur, chosen before the common supports, frequencies, or rows. Products
+over an arbitrarily large number of active primes do not enlarge this
+list: the reciprocity phases are characters of a single fixed residue
+group. They do not introduce one new independent character for each prime.
+Keep distinct translates of the $Q$-character group separate when defining
+zero bins. The finite union is used to make constants simultaneous; it
+does not imply that eligibility for one translate makes all other
+translates nonprincipal. Partitioning the fixed outer labels by their
+parent translate costs a fixed finite factor in the eventual joint count.
+
+The source realizes the primary phases by
+\path{FixedRay.primaryRayCharacter}, whose modulus is $(12)$, and unit
+phases by \path{HeckeUnitRows.character}, whose modulus is $(36)$.
+For the relative factors, the exact source formula is
+\[
+ \nu_\theta=\chi_\theta\eta_0^{-1},\qquad
+ Q\subseteq M,\ Q\subseteq\mathfrak q_{\eta_0}
+ \ \Longrightarrow\ Q\subseteq\mathfrak q_{\nu_\theta}.
+\]
+This is \path{NaturalFixedRaySourceCharacters.relativeCharacter_fixedQ}.
+The allocation theorem \path{AllocatedRayDictionary.originalImage_fixedQ}
+preserves it for every surviving slot. The full source identities
+\path{both_common_rectangles} retain the original relative characters,
+profiles and independent heights; allocation changes which original slots
+remain, not their character dictionary.
+
+\paragraph{Exact coefficient identity.}
+Use the signs and primary-generator conventions of the signed-row
+reconstruction. For either first-side orientation the complete second
+integer row is
+\[
+ w=u\,eF_{\pm}GVh\ne0,
+\]
+where the fixed unit $u$ may instead be absorbed into the finite list.
+Every actual residual character coefficient, including a surviving
+relative slot twist, is of the form
+\[
+ c_{\eta_\lambda}(I)\,\mathfrak s_{m_0^6w}(I)
+       \mathbf1_{(I,\mathfrak R)=1}.                 \tag{FD}
+\]
+Here $\mathfrak R$ is the retained natural and common puncture. This is an
+identity on all ideals, including the zero values. On supported ideals
+it follows by evaluating the signed identities at the primary generator;
+on unsupported ideals both sides vanish because of $m_0$. A canceled
+exponent at an active prime produces a factor
+$\mathbf1_{(I,\mathfrak p)=1}$ and therefore belongs to $\mathfrak R$.
+The second extraction contributes $GVh$ multiplicatively to the same
+integer row. The complete second coprimality projector is expanded with
+its original signs. Extracting one of its assigned divisors $d$ uses
+$\psi(dn)=\psi(d)\psi(n)$; it does not impose an additional condition
+$(d,n)=1$. A zero outside coefficient annihilates that term. These facts
+are exactly the distinctions made in the signed-row reconstruction.
+
+The two first-side orientations can be treated separately, at a fixed
+factor of two. Within the square of one first-side column the reflected
+second rectangle has the row $-w$, which is covered by the same finite
+unit-character list. There is no claim that $F_+$ and $F_-$ are equal.
+If a whole rectangle is conjugated, retain that conjugation of the whole
+character: its zero maximum is unchanged after reflection of the height
+coordinate. Do not replace $\overline{\eta\,\mathfrak s_w}$ by
+$\overline\eta\,\mathfrak s_w$. Such a replacement could change the
+parent translate and its exceptional rows.
+
+Choose the natural character $\chi_{\lambda,w}$ for the unmasked part of
+(FD). The natural constructor gives
+\[
+ N\mathfrak q_{\chi_{\lambda,w}}
+ \le N\mathfrak q_{\eta_\lambda}\,N(m_0)N(72)\,Nw
+ \le K Nw,                                             \tag{FC}
+\]
+with one fixed $K$. Its ideal coefficients equal those of
+\texttt{momentData $\eta_\lambda$}; the new theorem
+\path{natural_row_moment_dictionary} verifies this equality.
+One must use this natural representative for (FC), since the abstract
+choice inside \path{RowData.character} has no stated conductor bound.
+The primitive inducing character has still smaller conductor.
+
+\paragraph{Literal exclusion survives the change of presentation.}
+For a nonzero mask and row, the source proves
+\[
+ \operatorname{FI}_Q(\eta;m_0r,1,w)
+ \ \Longleftrightarrow\
+ \operatorname{FI}_Q(\eta;m_0,1,w),                       \tag{FE1}
+\]
+by \path{FixedRowMask.fixedInducingRow_mul_mask_iff}.
+If $Q\subseteq\mathfrak q_\nu$, it also proves
+\[
+ \operatorname{FI}_Q(\eta\nu;m_0,1,w)
+ \ \Longleftrightarrow\
+ \operatorname{FI}_Q(\eta;m_0,1,w),                       \tag{FE2}
+\]
+by \path{FixedRayInducingTransport.fixedInducingRow_product_iff}.
+The reverse implication is not obtained by canceling a possibly zero
+character value. Multiplication by $\nu^{-1}$ recovers the original
+character with the additional modulus mask of $\nu$; (FE1) then removes
+that mask from the \emph{inducing predicate}. This is why the equivalence
+remains valid on the literal zero-extended family.
+
+Apply (FE1), (FE2), and (FD) to the actual source exclusion. They identify
+it with the same predicate on $\chi_{\lambda,w}$. In particular every
+allowed relative twist in this same parent translate is nonprincipal on
+an eligible row. No conclusion is made here about another parent
+translate. The source
+states this consequence directly as
+\path{NaturalFixedRaySourceCharacters.sector_nonprincipal}.
+For the second common extraction,
+\path{SecondExceptionalFamily.Family.inducing_iff} and
+\path{paired_inducing_iff} implement precisely the reduced-row and
+reflected-row versions of this transport. The ideal $Q$ is not enlarged.
+It would be incorrect simply to replace the source exclusion by
+nonprincipality of one preferred primitive representative.
+
+\paragraph{Zero bins and the density input.}
+For one fixed parent translate, take the maximum of the zero real parts
+over its allowed $Q$-character twists, and use the buffered height boxes
+of the source. Whole-character inverses have the same maximum and need
+not be modeled by an additional translate. Each actual character in
+that maximum is a masked presentation
+of one of (FD). Finite Euler factors are nonzero in $\Re s>0$, so its
+zeros in these boxes equal those of its primitive inducing character.
+Removing sixth powers, $w=ub^6$, introduces further Euler holes and
+does not change these positive-real zeros. The fixed-dictionary density
+proposition therefore applies to the selected free core $u$, followed
+by the height-uniform sixth-power lift.
+
+If a bin is selected by the maximum over all allowed labels in this translate,
+some label attains that maximum. The union over this \emph{fixed} finite
+list costs only a constant. The upper side of the buffered bin bounds
+every surviving prime-slot character, while the lower side supplies the
+zero used for density. This step neither sums over the moving arithmetic
+labels nor freezes them before counting. Those labels are recovered from
+$w$ and the missing radical by the signed-row reconstruction.
+
+Consequently, for $7/10\le\delta\le3/4$, the actual eligible integer rows
+in the selected high bin satisfy
+\[
+ \#\{w:Nw\le H\}\ll_{\varepsilon}
+       (1+T)^J H^{\rho(\delta)+\varepsilon},\qquad
+ \rho(\delta)=1-\frac{10\delta}{3(5-2\delta)},
+\]
+up to the stated arbitrarily small bin-buffer loss. The constants and
+threshold precede $T$, every live common-support label, and $H$.
+Polynomial-size masks do not enter the dictionary size or the primitive
+conductor in (FC); their smooth estimates are paid separately by uniform
+Euler deletion. The pointwise upper bounds use the common buffered bin,
+whereas the count only needs the label attaining its lower edge.
+
+\paragraph{Fourier kernels whose parameter varies with labels.}
+The common Fourier argument also permits a scale parameter $A_\ell$
+depending on a retained label $\ell$. Uniform Euler derivative bounds
+give Fourier densities satisfying
+$|f_A(t)|\le C(1+|t|)^{-2r}$, uniformly in $A$. Choose once and for all
+$d\mu(t)=C(1+|t|)^{-2r}\,dt$ and write
+$f_{A_\ell}(t)\,dt=a_\ell(t)d\mu(t)$, where $|a_\ell(t)|\le1$.
+The integral of the joint vector then contains the diagonal contraction
+$\operatorname{diag}(a_\ell(t))$. Its operator norm is at most one,
+so Minkowski's inequality gives exactly the same joint bound, with no
+extra label count. This avoids the unjustified assertion that the
+individual Fourier measures for distinct $A_\ell$ are equal.
+
+This establishes the fixed-dictionary, conductor, mask, and literal
+eligibility bridge from the actual signed-row identities. The remaining
+assembly of the physical moment must still verify its normalization,
+comparison and exceptional terms, and its use of the reserved exponent
+margins. Those conclusions do not follow from this bridge alone.

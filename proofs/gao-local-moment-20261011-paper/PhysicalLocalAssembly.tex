@@ -1,0 +1,492 @@
+% Source-level analytic assembly, 11 October 2026.
+% The proof below uses the pinned incumbent theorems and the new companion
+% source derivations. It is not an independent verification of those imports.
+\section{Assembly of the local physical moment}
+\label{sec:physical-local-assembly}
+
+The purpose of this section is to compose the source identities, rather than
+to regard the favorable exponent ledger as an analytic estimate by itself.
+All references B3.\(\cdot\) are to the pinned Cycle25 manuscript. We use its
+existing $9/2$ moment and its unrestricted zero-slot moment, including
+their literal natural coefficients and eligibility conditions. Neither is
+replaced by the proposed stronger moment at any descendant state.
+The unmarked density is the fixed-dictionary theorem proved in
+\path{PlainUnmarkedDensity.tex}; its signed-row identity is supplied by
+\path{SIGNED_ROW_RECONSTRUCTION.md}, and the actual fixed dictionary,
+natural conductor, and literal eligibility transport are supplied by
+\path{FixedDictionaryBridge.tex}. Uniform finite Euler deletion
+and Fourier integration are supplied by \path{FourierMaskTransport.tex}.
+
+\begin{proposition}[Fixed-family local physical moment]
+Assume the incumbent bound $\beta_*\le7/8$, and work in its nontrivial
+contradiction branch $\beta_*\ge51/100$. Fix an admissible natural
+parent family of B3.4. Its whole-product character is a fixed finite
+ray character times $\chi_n(k)$, with no parent moving support of
+positive width. Fix its ray modulus, anchor character, and nonzero
+fixed ideal. In particular retain the actual
+$Q_* = \operatorname{internalQ}(Q,\eta_0)$ and the literal exclusion
+$\neg\operatorname{FixedInducingRow}$ associated to that ideal;
+$Q_*$ is proper, nonzero, and contained in $(72)$ as in the source.
+Use the source's canonical prime pools, one common annular slot profile,
+and individual allowed relative ray characters. A common additional
+puncture of norm at most $U^B$ is allowed. It is independent of the
+summed row, but may depend on frozen outer labels; the common Fourier
+majorant below is taken before those labels are summed.
+
+Write $U=Z^M$, $A=n_1+n_2+z$, and $C=2249/500$. Suppose
+\[
+ \frac{41M}{100}\le n_i\le\frac{11M}{25},\qquad
+ \frac{3M}{100}\le z\le\frac M{25},\qquad
+ n_1+n_2+Cz\le M.
+ \tag{LA.1}
+\]
+For every requested $\epsilon>0$, sufficiently fine canonical slots
+satisfy
+\[
+ \sum_{k\ \mathrm{eligible}}
+   |S_{k,1}(Z^{n_1})S_{k,2}(Z^{n_2})Q_{k,I}|^2
+ \ll Z^{M+\epsilon}\mathcal H_J.
+ \tag{LA.2}
+\]
+The source radial majorant is understood. The factor $\mathcal H_J$
+contains finite smooth seminorms and polynomial costs of the independent
+plain and slot heights. The same assertion holds for the four derivative
+profile pairs used by two-variable scale-supremum recovery.
+
+The mesh can be selected from the requested loss and fixed bounded
+geometric ranges, before the eventual finite slot count and live labels.
+For the fixed arithmetic family and slot system, the finite profile and
+height orders, constants, and eventual threshold are selected before
+the live scales, masks, row selections, and heights. This is the
+fixed-family quantifier order proved here. No assertion that the compiled
+new density adapter already chooses its height order before every fixed
+character modulus is needed or made.
+\end{proposition}
+
+\begin{proof}[Proposed source proof, under review]
+One can normalize the argument to base $U$ and $M=1$; we retain $M$ in
+the displayed ledgers to make their relation with the source transparent.
+Put
+\[
+ a=\frac{M}{2000},\quad \sigma=3a,\quad k_0=\frac7{10},\qquad
+ g=\bigl(n_1+n_2+\tfrac92z-M\bigr)_+.
+\]
+The elementary consequences of (LA.1) are
+\[
+ g\le\frac M{12500}<\frac M{10000},\qquad
+ \frac{85M}{100}\le A\le\frac{44753M}{50000}<\frac{9M}{10}.
+ \tag{LA.3}
+\]
+All small positive losses denoted below by $\eta$ are allocated from a
+single prescribed budget. That budget is smaller than a fixed fraction
+of both $\epsilon$ and $4M/225000$. The mesh is smaller than $a/10$
+and a sufficiently small fraction of this budget. In particular one
+greedy overshoot fits this budget. After the finite slot list has been
+fixed, its aggregate support tolerance tends to zero as $Z\to\infty$;
+it is not charged once per slot.
+
+\paragraph{1. Comparison with the same masks and rectangles.}
+Let $L=M/4$. Both original plain lengths exceed $L$. Form the two
+equal-product rectangles with comparison lengths
+$L,n_1+n_2-L$, exactly as in B3.50. The whole-product character,
+the two profiles, the original slot coefficients, and every common
+puncture are identical in the two rectangles. This equality is
+retained through every later extraction.
+
+To bound the comparison separately, expand only its additional common
+mask by B3.41. The absolute mass of the two divisor normalizers and
+the frozen prime-slot coefficients is $Z^{o(1)}$. This follows uniformly
+for polynomial-size masks from
+\[
+ \prod_{p\mid R}(1-(Np)^{-1/2})^{-1}\ll_\eta Z^\eta.
+\]
+Every resulting first natural plain scale has length at most $M/4$;
+clipping a nonempty subunit scale to zero does not increase that bound.
+Reflect the second natural factor only if its length exceeds $M/2$.
+The combined conductor bound B3.42, its exact deletion/restoration
+identity B3.44, and the source scale-supremum argument put every retained
+reflected length below $M/2+\xi$. The unreflected second factors are
+already below $M/2$. The same eligible rows remain nonprincipal for
+this reflection. Mask invariance preserves their literal exclusion;
+deleting slots only restricts the permitted positive family, or leaves
+the nonprincipal zero-slot family if all slots disappear.
+
+Thus every comparison daughter has incumbent budget at most
+\[
+ M/4+M/2+\xi+(9/2)(M/25)=93M/100+\xi<M.
+\]
+Use the existing $9/2$ moment, and sum the absolute coefficient masses
+and common-profile scale boxes. All independent heights remain in
+the profile controls. This proves the comparison estimate uniformly.
+The original centered difference still has its original whole-product
+mask; no indicator is inserted into a Poisson summation formula.
+
+\paragraph{2. First transform and the joint first-label Cauchy step.}
+Enlarge the positive norm of the whole centered difference to the source
+smooth row ball, as in B3.5. Its first zero frequency is bounded by
+$Z^{M+\eta}$ using the powerful-product count in B3.6. Apply the exact
+first transform to the remaining frequencies, including the complete
+first coprimality projector and its signs. Work in a fixed dyadic sector
+of the common widths $c,d,p,R,E,s_0$. Here $p$ is the first common
+radical width and $s_0$ is the first projector width. Retain the common
+labels, including that projector, inside the Hilbert-space direct sum
+when applying Cauchy.
+
+Let $\lambda$ denote those labels and $\mathcal N_{C,\lambda}$,
+$\mathcal N_{D,\lambda}$ the exact positive Gauss norms B3.54.
+Set $B_c=(3c-5d-R)_+/6$ and define $B_d$ by exchange of sides.
+The outside power from the first transform is
+$Z^{M-A-R/2-E}$. It suffices to prove
+\[
+ \sum_\lambda\mathcal N_{C,\lambda}
+ \ll Z^{p+A-c+R+E+B_c+\eta},
+ \qquad
+ \sum_\lambda\mathcal N_{D,\lambda}
+ \ll Z^{p+A-d+R+E+B_d+\eta}.
+ \tag{LA.4}
+\]
+Indeed joint Cauchy then gives total exponent
+\[
+ M+p-\frac{c+d}{2}+\frac R2+\frac{B_c+B_d}{2}+\eta\le M+\eta
+\]
+by the primewise balance B3.56. No independent count of $\lambda$
+is made after (LA.4). For the branches treated per label below, the
+old allowance contains $-s_0$; the elementary first-label count
+$Z^{p+s_0+\eta}$ supplies exactly (LA.4). For the high branch the
+joint count will give (LA.4) directly.
+
+The common Fourier measures are taken before the live labels, using the
+ambient-box construction of B3.3 and the transport supplement. If a
+continuous profile parameter varies with an outer label, use the common
+integrable Fourier-density majorant provided there; do not select a
+different uncontrolled Fourier measure inside each summand.
+
+\paragraph{3. Amplification and the actual main radius.}
+Use the auxiliary good primes of norm in $(Z^a/2,Z^a]$, disjoint from
+the live slots. Deleting primes in the row, common supports, masks,
+or first projector removes $O(\log Z)$ choices. The averaging and
+Gauss identities B3.58 give one main amplified norm with density
+$Z^{-a+\eta}$ and the three extracted error alternatives of B3.59.
+The normalized prime average in those errors remains normalized.
+
+For the main norm use the genuine smooth ball with exponent
+\[
+ K_{\rm main}=K_0+(d-c)_++6a+\omega,\qquad
+ K_0=2A-c-d+R+E-M.
+ \tag{LA.5}
+\]
+Here $\omega>0$ includes the first retained-frequency padding and
+the fixed support-doubling reserve. Since the retained first dyad
+obeys $K\le K_0+\delta_1$ and $\omega\ge\delta_1$, this ball
+covers the amplified range of exponent $K+6a$, including its fixed
+support factors for sufficiently large $Z$. More precisely this is
+the existing \path{mainCommonRadius}, with $\sigma=3a$ and
+$\omega=\delta+\mathrm{reserve}$; \path{main_energy_common}
+proves the majorization. Thus (LA.5) changes the actual smooth ball,
+not merely its declared upper bound. The Poisson identity B3.60 is
+valid at this ball radius. The extracted errors retain their old
+unamplified radii.
+
+In the main second transform put $j=G_cVh'$, with the genuine
+common-support partition of B3.62--B3.63. Its nominal child width is
+\[
+ M'=M-(c-d)_+-6a-\omega-g_2+t_2\le M-6a-\omega,
+ \tag{LA.6}
+\]
+since $g_2\ge t_2$. For the C-side pre-allocation total
+$A'=A-c-c_2$,
+\[
+ (A'-M')-(A-M)
+ =6a+\omega-\min(c,d)-(c_2-g_2)-t_2\le6a+\omega.
+ \tag{LA.7}
+\]
+These are direct substitutions for the actual radius; they do not
+require an unchanged old unpadded radius. The nominal inner allowance
+after the exact extraction normalizations is still
+$M'+\Delta$, where
+\[
+ \Delta=b_2-p_2+B_c+a\ge a.
+ \tag{LA.8}
+\]
+
+\paragraph{4. Literal children, pointwise gates, and low bins.}
+Keep the full second projector. Its exact allocation B3.65--B3.69
+leaves canonical slots with their original relative characters and
+the same whole-product character on each side. It does not insert
+new punctures on the unrestricted plain quotients. The first projector
+divides both genuine second common parts; the second projector has
+no such divisibility assertion.
+
+The moving child character $\tau$ is distinct from the fixed slot
+anchor $\eta_0$. Its fixed exclusion ideal remains $Q_*$, not an
+ideal recomputed by inserting $\tau$ into the anchor. The source
+relative-character dictionary and \path{canonical_all_twists}
+show that each ray presentation actually used in the prime bounds
+is nonprincipal on canonical kept rows. The plain presentation is
+nonprincipal by the corresponding original row gate. Mask transport
+preserves both the exclusion and every positive-real zero maximum.
+Choose the finite dictionary of these presentations and the fixed
+reciprocity/unit sectors before live labels. Each zero bin is formed
+within one fixed parent translate $\tau_0\operatorname{Char}(Q_*)$;
+different parent translates are partitioned first, at a fixed finite
+cost. Conjugation of a whole rectangle is conjugation of its whole
+character, whose zero maxima agree after height reflection. In
+particular $\overline{\eta\psi_w}$ must not be replaced by
+$\overline\eta\psi_w$. These identifications and the precise coset
+scope are proved in \path{FixedDictionaryBridge.tex}.
+Principal rows are handled in paragraph 7, not by a high-bin
+pointwise estimate. No arbitrary additional twist is inserted into
+this nonprincipal dictionary without its own gate.
+
+Attach the common buffered bins to the actual effective row described
+in paragraph 5. A low bin has upper zero parameter at most
+$k_0+O(e)$. The original pointwise prime estimate, applied first to
+the natural nonprincipal presentation and then transported across
+the polynomial-size Euler holes, bounds removal of slots of total
+width $d_z$ by squared cost
+$Z^{(k_0+O(e))d_z+\eta}$. This applies to the actual canonical prime
+sums, including the original nonunit zeros.
+
+The indicator of this low bin is imposed only after both transforms,
+on a positive child energy. The identities
+\path{AllocatedChildren.commonChild_energy},
+\path{allocated_radial_bound}, and
+\path{AllocatedRayDictionary.common_clipped_energy}
+allow this arbitrary additional \path{keep} predicate.
+Pointwise remove one greedy prefix until the existing $9/2$ capacity
+holds, or until no slots remain. Then enlarge the remaining positive
+energy to the full canonical eligible family and use the incumbent
+moment. In the exhausted case use its unrestricted zero-slot
+estimate, which does not require the ordinary sum of the plain
+lengths to be below the width. No Poisson formula is applied to the
+low-bin indicator and no improved descendant moment is invoked.
+
+There is a small but necessary width correction. Let $d_*$ be the
+actual canonical width minus $M'$. Its upper bound is the declared
+support padding $\delta_2$, but it can be negative if displayed
+moving support cancels. If $F$ is the nominal affine defect, then
+the actual defect is at most $(F-d_*)_+$. For every $0\le r\le1$,
+\[
+ d_*+r(F-d_*)_+\le\delta_2+rF_+.
+ \tag{LA.9}
+\]
+This follows by considering the signs of $F-d_*$ and $F$; it is
+\path{width_plus_low_defect}. Apply it with
+$r=(k_0+O(e))/(9/2)$. Equations (LA.7) and B3.67--B3.69 give the
+nominal defect bound $F\le g+6a+\eta$. Consequently the combined
+width and slot-removal cost, including one greedy mesh increment,
+is at most
+\[
+ M'+\frac7{45}(g+6a)+\eta.
+\]
+It fits (LA.8), since
+\[
+ a-\frac7{45}(g+6a)
+ \ge\frac M{2000}-\frac7{45}
+       \left(\frac M{10000}+\frac{3M}{1000}\right)
+ =\frac{4M}{225000}>0.
+ \tag{LA.10}
+\]
+Here $\omega$, $O(e)$, the support padding, and the one mesh
+overshoot all belong to the already chosen smaller $\eta$ budget.
+This proves the per-label low contribution within the old allowance;
+its first-label count gives (LA.4).
+
+\paragraph{5. The main high bins are counted jointly.}
+Use the signed local identities from the reconstruction supplement.
+For the relevant first side the actual row, including a possible
+fixed unit, is
+\[
+ w=eF_cG_cVh',\qquad
+ L_c=\log_Z NF_c,\qquad T_c=(c-d)_+.
+\]
+The active residues in $F_c$ are $(1+t_p)\bmod6$ on the formal
+left and $(1-t_p)\bmod6$ on the formal right. A zero residue retains
+its old puncture. Let $R_0$ be the canceled active radical width.
+The actual frequency support gives
+\[
+ \log_Z Nw\le W+O(\eta),\qquad
+ W=M-R-T_c+L_c-6a.
+ \tag{LA.11}
+\]
+The favorable extra $-\omega$ can be discarded here. Every genuine
+second common prime and the first projector divides $w$. The first
+common primes absent from $w$ have total width at most
+$p-R-E+R_0$. At fixed $w$ and their missing radical, all first and
+second common labels and the first projector are divisor-many, by
+the arbitrary-valuation reconstruction lemma. This is the actual
+signed source identity, not a guess based on a finite valuation table.
+
+For $\delta\in[7/10,3/4]$, put
+$\rho=1-10\delta/[3(5-2\delta)]$. The proved unmarked density
+has a common scale threshold before height, and the sixth-power
+lifting is convergent because $\rho\ge2/7>1/6$. It therefore
+counts these joint labels and rows by
+\[
+ Z^{\rho W+p-R-E+R_0+\eta}(1+T_h)^J.
+ \tag{LA.12}
+\]
+A nonempty row range with slightly negative nominal $W$ has
+$W\ge-O(\eta)$; apply density at the supported bound and charge
+this same tolerance. If the supported bound is negative, the range
+is empty. One does not use a population upper bound smaller than
+one for a nonempty bounded window.
+
+The second projector label is not included in (LA.12). Allocate it
+exactly as in B3.65. Its dyadic count is paid by the two extraction
+scalars B3.69. The actual pointwise plain and slot estimates give
+paired normalized size at most
+$Z^{\delta(A-c-b_2)+\eta}$ before these reductions; each additional
+post-allocation reduction has a nonpositive contribution. Explicitly,
+B3.68 gives paired pointwise exponent
+$\delta(\alpha_1+\alpha_2-r_{\mathrm{clip},1}
+-r_{\mathrm{clip},2})/2+O(\theta_N)$.
+B3.69 already pays the divisor dyad and both extraction scalars;
+the remaining $-\delta(r_{\mathrm{clip},1}+r_{\mathrm{clip},2})/2$
+is nonpositive. This justifies the displayed normalized exponent
+without treating the second projector as a divisor of $w$. The outside
+power, from B3.60 with (LA.5), is
+\[
+ A-\min(c,d)+R+E-M+5a+g_2-t_2-b_2+O(\eta).
+\]
+Relative to the joint target $p+A-c+R+E+B_c$, the resulting exponent is
+\begin{align*}
+ &M(\rho-1)+\delta A+a(5-6\rho)\\
+ &\quad +(1-\rho)T_c-\delta c-(1+\rho)R-E-B_c
+         +\rho L_c+R_0\\
+ &\quad +g_2-t_2-(1+\delta)b_2+O(\eta).
+ \tag{LA.13}
+\end{align*}
+The second line is at most
+$(4\rho-1-\delta)p-E-B_c\le-79p/270-E-B_c$:
+use $c=\min(c,d)+T_c$, $\min(c,d)\ge p\ge R$,
+$L_c\le5(R-R_0)$, $\rho+\delta>1$, and $5\rho>1$.
+The third line without errors is at most $-\delta b_2-t_2$.
+Finally (LA.3) implies the weaker bound $A/M\le113/125$, and
+\[
+ 1-\rho-\delta A/M\ge259/16875,
+ \qquad 5-6\rho\le23/7.
+\]
+Thus, even allowing total high-branch errors $M/1000$, the first
+line and those errors are smaller than $-M/100$. Every bin straddling
+$7/10$ is assigned to the low branch, using its upper endpoint
+$7/10+O(e)$ in the pointwise removal cost. The high branch contains
+only bins with lower endpoint at least $7/10$, so its zero-real-part
+parameter is at least $17/20$, exactly within the stated density
+range. The low-branch $O(e)$ rounding cost fits the reserved budget.
+This proves the main high part of
+(LA.4), directly with joint labels. There is no later $Z^p$ or
+$Z^{s_0}$ multiplication.
+
+\paragraph{6. The extracted amplification errors.}
+Retain the old error radii and use the fine form of B3.70.
+The three alternatives have
+\[
+ (w,w_o)=(\lambda,\lambda),(6\lambda,0),(7\lambda,\lambda),
+ \qquad \lambda\ge\sigma/4
+\]
+for all sufficiently large $Z$. The nominal defect is at most
+$g+\sigma+w-w_o+\eta$, whereas the inner allowance has
+$\Delta\ge w$. Use global pointwise slot cost $3/4$ and incumbent
+capacity $9/2$, so the removal rate is $1/6$. The same width
+correction (LA.9) applies. The reserves are at least
+\[
+ 13M/120000,\quad193M/120000,\quad119M/60000,
+\]
+respectively, before small losses. These are obtained by substituting
+$g\le M/10000$, $\sigma=3M/2000$, and $\lambda\ge\sigma/4$.
+The moving factors at valuations one and seven and every extraction
+scalar are retained. The normalized prime average costs no second
+prime count. No low-bin heredity or new zero-density statement is
+used in these branches.
+
+\paragraph{7. Zero frequencies and fixed-inducing children.}
+The artificially added zero Gauss row is unamplified and has the
+direct B3.57 bound, including $-s_0$. The second zero frequency
+has, for (LA.5), excess
+\[
+ A-M-\min(c,d)-B_c+5a+O(\eta)\le A-M+5a+O(\eta)<0.
+\]
+For fixed-inducing nonzero second rows, retain the paired exceptional
+predicate, forced congruence residues, raw extraction scalars, and
+common masks. B3.73--B3.79 apply with the actual smooth radius.
+For the main norm substitution into B3.75 gives exactly, before
+the $\omega$ padding,
+\[
+ F_1=\begin{cases}
+ (c+5d+R+E)/6+B_c-4a,&c\ge d,\\
+ c+(R+E)/6+B_c-4a,&c\le d.
+ \end{cases}
+\]
+The padding changes this by $-5\omega/6$. Thus
+$F_1\ge2c/3-4a-O(\eta)$ and $F_2\ge2b_2/3$.
+The earlier $-5a$ expression is a valid weaker lower bound, not
+the exact equality: it drops the positive amplifier density term
+$\ell=a$ in B3.75.
+
+With $v=c+\min(c_2,d_2)$ and $L=M/4$, the exact maximum
+\[
+ \max_{v\ge0}\{A-5M/6-2v/3-(L-v)_+\}=A-M
+\]
+is attained at $v=L$. The main exceptional excess is consequently
+at most $A-M+4a+O(\eta)<0$. The unchanged error radii use the
+old bound $A-M+3\sigma+O(\eta)<0$. The mask-uniform lattice
+cancellation B3.77 cancels the two leading terms because the
+rectangles have the same product, character, mask, and whole-product
+norm power. Independent input heights are part of the two common
+profiles; they do not destroy that equality of leading terms.
+No exceptional contribution is hidden in an arbitrarily small
+error despite the fixed positive amplifier length.
+
+\paragraph{8. Heights, losses, and recovery.}
+The density theorem chooses its internal detector exponent first and
+returns a finite height degree. Choose a distinct external bin exponent
+$\tau_{\rm out}>0$ only afterward, so every occurrence of
+$(1+Z^{\tau_{\rm out}})^J$ fits the reserved power losses. For
+bounded input heights below a fixed small power of
+$Z^{\tau_{\rm out}}$, retain the separated frequencies in a still
+smaller part of that height buffer. All other common Fourier tails
+are paid with arbitrary integration-by-parts orders, using raw
+polynomial bounds before any arithmetic enlargement. Those orders
+increase only the finite seminorm and allowed input-height powers.
+
+Arbitrary larger input heights do not require a detector at an
+uncontrolled height: absolute counting gives a fixed polynomial
+bound in $Z$, and a sufficiently large fixed power of the largest
+input height absorbs it. This supplies the stated polynomial height
+allowance. The arithmetic scales have fixed bounded exponent ranges,
+so one such power suffices. The height threshold precedes the
+eventual choice of $Z$; it is not selected separately for each row.
+
+There are only the two transforms and the calls to already established
+moments. Choose smooth derivative and height orders backward through
+this finite graph, then the Fourier-tail orders, and finally the
+eventual threshold. Coefficient divisor bounds and the finitely many
+dyadic sectors receive small shares of the original $\eta$ budget.
+The first-label Cauchy step averages the two bounds (LA.4), and the
+inner Cauchy step averages its two child costs; neither duplicates a
+numerical loss. Minkowski adds coefficient masses already charged
+in the displayed estimates. The aggregate $\eta$ losses are at most
+the requested $\epsilon$.
+
+Combining the comparison, zero-frequency, low, high, extracted-error,
+and exceptional estimates proves (LA.2). Replacing either plain
+profile by its logarithmic scale derivative repeats the same argument
+with finite increased seminorm orders. The source's two-variable
+Sobolev recovery therefore gives the four derivative-profile pairs
+and the stated bounded scale supremum. This proves the proposition.
+\end{proof}
+
+\paragraph{Scope of this assembly.}
+This is an analytic source proof relative to the pinned incumbent
+theorems and the companion derivations explicitly named above. It is
+not a claim that a new complete Lean endpoint or any independent
+checker receipt exists. In particular the fixed-family quantifier
+order is stated explicitly: the proof supplies common exponent savings
+and a mesh chosen before live arithmetic labels, while constants and
+finite height orders may depend on the fixed arithmetic dictionary.
+To use this proposition in the endpoint argument, combine it with
+the exact endpoint certificate, the downward-scale dichotomy,
+the original weighted Euler coefficient mass, and the original
+target-uniform supremum contradiction. Those are separate from the
+local-moment estimate itself.

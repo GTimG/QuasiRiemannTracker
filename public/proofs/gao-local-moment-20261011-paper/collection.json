@@ -1,0 +1,21 @@
+{
+  "schema": "research-paper-collection-v1",
+  "status": "research-submission",
+  "author": "Zhongpai Gao",
+  "assistance": "AI-assisted",
+  "source_snapshot": "proofs/gao-local-moment-20261011-paper",
+  "documents": {
+    "paper.pdf": {
+      "pages": 8
+    },
+    "supplement.pdf": {
+      "pages": 39
+    }
+  },
+  "files": {
+    "paper.pdf": "8993060f6d0ee5f2b0b11caaf3c61c1d28474806b0c6d06ad961d881200114e8",
+    "supplement.pdf": "4a952bf9f51b825d5b2595f3129c7233bff46d5b19055dc59aee95947b5a3960"
+  },
+  "complete_endpoint_formalization": false,
+  "tracker_record_claimed": false
+}
