@@ -1,0 +1,7 @@
+'OAI.SevenEighths.LocalMoment.scale_le_height_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OAI.SevenEighths.LocalMoment.all_height_density_of_bounded_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.LocalMoment.eventually_all_height_density_of_bounded_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
