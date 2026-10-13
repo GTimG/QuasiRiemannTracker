@@ -1,0 +1,21 @@
+{
+  "status": "exact symbolic identities and rational sign checks passed; not kernel verification",
+  "upstream_commit": "d716ecaae80f7823a5b8314916364fdfa0d133fb",
+  "identity": "F(ell,h,delta(ell),1/2)-b(ell) = h * factor(ell) * quartic(ell)",
+  "factor": "(21*ell - 40)/((72*ell**2 - 96*ell - 120)*(234*ell**3 - 753*ell**2 + 525*ell + 100))",
+  "root_interval": [
+    "417800196267/2500000000000",
+    "8356003925341/50000000000000"
+  ],
+  "baseline_theta_approx": 0.8748866470399641,
+  "sign_checks": {
+    "quartic_derivative_lower": "3549/5",
+    "negative_linear_upper": "-179/5",
+    "negative_quadratic_upper": "-416/75",
+    "positive_cubic_lower": "7869/50",
+    "delta_numerator_factor_lower": "16/5",
+    "delta_denominator_factor_lower": "416/75"
+  },
+  "conclusion": "For ell0 < ell <= 1/5 and every h>0 the unchanged B0.47 envelope exceeds b(ell) at this admissible (delta,p).",
+  "limits": "Obstruction to certification by this scalar envelope, not a lower bound for actual sums, and not a no-go for coherent probes or stronger moments."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "LOCAL CONDITIONAL DIAGNOSTIC, NOT A ZERO-FREE BOUND",
+  "ell": 0.16712007850681,
+  "delta": 0.469344858698143,
+  "kappa": 0.7497732940799283,
+  "t": 1.163953576509011,
+  "inverse_witness_r": 0.7456999427242903,
+  "plain_witness_m": 0.4182536337847207,
+  "reflected_numerator_n": 0.42098516087607796,
+  "row_count_R": 0.5903323535263558,
+  "z_I": 0.12715002863785485,
+  "z_P": 0.03634270379270354,
+  "z_A": 0.035128324676187074,
+  "current_numerator_exponent": 0.6886274404994049,
+  "mixed_exponent_if_loss_zero": 0.5903323535263558,
+  "critical_mixed_loss": 0.19659017394609823,
+  "available_pointwise_mixed_loss": 0.19758722084539782,
+  "required_gain_over_pointwise": 0.0009970468992995807,
+  "inverse_naive_length_with_marks": 1.420985160876078,
+  "plain_naive_length_with_marks": 1.420985160876078,
+  "sixth_numerator_moment_naive_length": 1.2629554826282339
+}
