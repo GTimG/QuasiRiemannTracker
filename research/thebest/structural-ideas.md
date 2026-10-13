@@ -11,7 +11,7 @@ b_0=11/12-\ell_0/4=0.8748866470399641\ldots,
 \quad 927\ell_0^4-3135\ell_0^3+2433\ell_0^2+275\ell_0-100=0.
 \]
 
-Its rational catalogue corollary is `683505193/781250000`. The manuscript is [paper.tex](../../public/proofs/cycle25-quartic-20261010/paper.tex). The predecessor [weighted numerator manuscript](../../proofs/akashlevy-20261009-weighted-numerator/manuscript/weighted_numerator_proof.tex) already makes the important structural change from a pointwise numerator bound to a fourth moment of the actual numerator. Recommending that change again would not be new. Likewise, using the zero supremum to set `kappa = 2 beta_* - 1`, retaining powerful-part conductor savings, and respecting the physical Euler correction are already in the quartic proof.
+Its rational catalogue corollary is `683505193/781250000`. The manuscript is [paper.tex](../../../public/proofs/cycle25-quartic-20261010/paper.tex). The predecessor [weighted numerator manuscript](../../../proofs/akashlevy-20261009-weighted-numerator/manuscript/weighted_numerator_proof.tex) already makes the important structural change from a pointwise numerator bound to a fourth moment of the actual numerator. Recommending that change again would not be new. Likewise, using the zero supremum to set `kappa = 2 beta_* - 1`, retaining powerful-part conductor savings, and respecting the physical Euler correction are already in the quartic proof.
 
 The quartic paper proves a global exponent certificate, B0.49, with equality only at
 
@@ -83,14 +83,14 @@ There is a real obstruction: the product polynomial `M*S^2` has length exponent 
 ### Concrete experiment and proof target
 
 1. Expand `M*S^2` before taking absolute values. Form its convolution coefficients, retaining the Möbius factor, fixed target character, and all common-prime zero extensions. In matching orientations, the row dependence is a sextic symbol at the product; in opposite orientations it is a ratio, which can be encoded using exponents modulo six. Derive the exact Gram kernel over the original row set. This is a finite identity and is a sensible first formalization target.
-2. Separate pairs of products whose ratio is a sixth power from the off-diagonal. Bound the former first. An unexpectedly large diagonal would falsify (J) in the required range before undertaking a difficult off-diagonal proof.
+2. Separate pairs of products whose ratio is a sixth power from the off-diagonal. Bound the former first. An unexpectedly large diagonal is a warning, but it falsifies (J) only with control showing that the off-diagonal cannot cancel it. On an incomplete row set, the diagonal alone is not a lower bound; see `gram-expansion.md` and its exact counterexample.
 3. For the off-diagonal, retain Möbius signs through reciprocity and Poisson summation. Compare the exact signed quadratic form with the form obtained after absolute values. Test small Eisenstein-integer annuli, with genuine sextic characters, different fixed target twists, and independent heights. A finite-field analogue is useful debugging, but is not evidence of the required uniform asymptotic by itself.
 4. Prove the bound first for one common annular profile and squarefree rows, then include repeated row valuations and the combined conductor. Use common-profile scale suprema for physical Euler shifts as in B0.44; arbitrary moving row coefficients are not permitted by the existing MP theorem.
 5. Add the other detector branches. On the plain branch the corresponding object is `|S_detector|^4 |S_physical|^4`, with its own witness threshold and independent heights. Long inverse witnesses use sixth-power reconstruction and require a separate joint estimate. Improving only the inverse branch at the crossing does not improve the maximum if the competing branch remains binding.
 
 **Success criterion:** new branch-specific restricted numerator bounds with a strict saving on an open neighborhood of the current binding point, retaining the old bounds outside it. Compactness and the existing strict global certificate then offer a route to a genuinely lower endpoint. No need to establish the strongest possible mixed moment everywhere.
 
-**Failure criterion:** the exact sixth-power diagonal or a coherent family of off-diagonal pairs forces loss at least the gain-test threshold. Record that obstruction as a theorem and stop trying to improve this route through numerical parameter choices.
+**Failure criterion:** a lower bound for the full quadratic form (for example, a large sixth-power diagonal together with a sufficient lower bound on the off-diagonal) forces loss at least the gain-test threshold. Record that obstruction as a theorem and stop trying to improve this route through numerical parameter choices.
 
 ## Second choice: preserve correlations between the local numerator errors
 

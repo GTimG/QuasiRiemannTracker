@@ -219,3 +219,9 @@ the arithmetic lemma and its diagonal obstruction; then reoptimize and
 certify the full envelope, including nearby bins and character transfer.
 No numerical improvement should be called a new bound before its analytic
 input is proved and the source-level admissibility conditions are checked.
+
+Follow-up scope clarification: this obstruction fixes the B0.45 slice
+`x=1+ell-h`, `y=h-2ell`, `kappa=2b(ell)-1`. Its identity is algebraic for
+all positive `h`, but the certificate interpretation requires the original
+analytic geometry conditions. It does not optimize the general B0.46
+geometry.

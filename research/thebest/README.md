@@ -2,9 +2,9 @@
 
 First research pass by Thibaud Gloaguen's @thebest agent, with three research
 sub-agents. Upstream: `d716ecaae80f7823a5b8314916364fdfa0d133fb`.
-This directory is exploratory research, not a new-bound submission.
+This directory is a research contribution, not a new-bound submission.
 
-## Result: a geometry-only obstruction
+## Result: an obstruction on the B0.47 geometry slice
 
 The exact root and boundary in Collet's Cycle25 manuscript were reproduced
 arithmetically: `b₀ ≈ 0.8748866470399641`. We have not replayed Lean,
@@ -19,7 +19,8 @@ Let `P(l)=927l⁴−3135l³+2433l²+275l−100`, `b(l)=11/12−l/4`,
 p = 1/2.
 ```
 
-Substitute these into the unchanged B0.47 scalar envelope, replacing `ell₀`
+Fix the B0.45 slice `x=1+l-h`, `y=h-2l` and `κ=2b(l)-1`.
+Substitute into the unchanged B0.47 scalar envelope, replacing `ell₀`
 and `h₀` by `l` and any positive `h`. Exact symbolic algebra gives
 
 ```
@@ -34,7 +35,11 @@ The quartic is strictly increasing on that interval (derivative at least
 `3549/5`) and its unique root is `l₀`. Consequently every `l>l₀` in this
 interval fails the scalar certificate for every `h>0`.
 
-This rules out improving that certificate by optimizing `h`, choosing `h`
+The identity holds algebraically for every positive `h`; its certificate
+interpretation applies only when the analytic geometry conditions hold. It
+does not cover arbitrary nearby `(x,y)` geometry in B0.46.
+
+This rules out improving that certificate on this slice by optimizing `h`, choosing `h`
 adaptively at the binding cell, or averaging its exponents with nonnegative
 weights at a common `l`. Actual sums could be smaller than their upper bounds:
 this is **not** an impossibility theorem for analytic improvements. Coherent
@@ -62,13 +67,12 @@ routes and why easy applications of existing estimates do not suffice.
 
 ## Reproduction
 
-Use Python 3 and the package versions in `requirements.txt`:
+Use uv and the pinned package versions in `requirements.txt`:
 
 ```sh
-python3 -m venv /tmp/qrh-research-venv
-/tmp/qrh-research-venv/bin/pip install -r research/thebest/requirements.txt
-/tmp/qrh-research-venv/bin/python research/thebest/barrier.py
-/tmp/qrh-research-venv/bin/python research/thebest/joint-moment.py
+uv run --with-requirements research/thebest/requirements.txt python research/thebest/barrier.py
+uv run --with-requirements research/thebest/requirements.txt python research/thebest/joint-moment.py
+uv run python research/thebest/gram-check.py
 ```
 
 `barrier-results.json` records exact identity and rational sign checks.
@@ -77,7 +81,8 @@ and uniqueness were checked separately. These checks establish the elementary
 algebra in the note, not the analytic hypotheses or an independent kernel proof.
 
 All research files are separate from the catalogue, existing proof snapshots,
-and verification infrastructure. No result was submitted upstream.
+and verification infrastructure. This package is intended for the repository’s
+maintenance/research contribution path, without a result declaration.
 
 ## Attribution
 
@@ -87,3 +92,31 @@ which builds on OpenAI/math and Akash Levy's weighted numerator. The new
 contribution here is the explicit obstruction identity and the exploration of
 possible structural escapes. This local research is under the repository's
 Apache-2.0 license; upstream notices are retained.
+
+## Exact mixed-moment continuation
+
+[gram-expansion.md](gram-expansion.md) derives a finite sextic-character Gram
+identity, retaining natural zeros, signed orientations, and sixth-power
+collisions. It also proves that the full sixth-power diagonal is
+`O(W_B X^epsilon)` for a fixed number of normalized bounded annular factors.
+Thus it costs at most `U^(1+epsilon)` on bounded-weight rows of norm `O(U)`,
+even at the proposed mixed lengths. The off-diagonal estimate remains open.
+
+[gram-check.py](gram-check.py) checks the finite `|M|²|S|⁴` product identity
+in four exact cyclotomic cases, including both orientations and incomplete
+weighted rows. It checks zero-support collisions and a counterexample to
+treating the diagonal as a lower bound. This is an algebra regression check,
+not a verification of the analytic marked interfaces or asymptotic family.
+
+## Related pending work
+
+At preparation time, [Nielstron’s PR #26](https://github.com/GTimG/QuasiRiemannTracker/pull/26)
+proposes a local `22/5` moment and a stronger endpoint, with independent admission
+pending. [Gao’s PR #15](https://github.com/GTimG/QuasiRiemannTracker/pull/15)
+contains a local-moment manuscript and supporting formal components. Their
+method descriptions already discuss joint density and coherent amplification.
+We claim neither priority for joint moments nor an improvement over these
+pending endpoints. Our contribution is the explicit restricted-envelope
+obstruction and a finite, zero-aware formulation of a further mixed-moment
+research target. The numerical diagnostic is relative to the pinned Cycle25
+baseline, not a comparison with the newer proposed arguments.

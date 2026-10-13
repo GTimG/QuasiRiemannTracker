@@ -1,0 +1,121 @@
+{
+  "status": "EXACT FINITE IDENTITIES ONLY; NO ASYMPTOTIC OR ZERO-FREE CLAIM",
+  "arithmetic": "Q(zeta_6), zeta_6^2-zeta_6+1=0; rational coefficients",
+  "model": "zero-extended order-six finite-field characters chi_7(u), chi_13(u)",
+  "command": "uv run research/thebest/gram-check.py",
+  "character_multiplicativity_exhaustively_checked": true,
+  "cases": [
+    {
+      "orientation_M_S": [
+        1,
+        1
+      ],
+      "row_count": 91,
+      "grouped_coefficients": 21,
+      "mixed_moment": "25783220136381077/266943405093750",
+      "sextic_diagonal": {
+        "constant": "25783220136381077/266943405093750",
+        "zeta6": "0"
+      },
+      "off_diagonal": {
+        "constant": "0",
+        "zeta6": "0"
+      },
+      "direct_convolution_gram_equal": true,
+      "complete_period_orthogonality_checked": true,
+      "whole_polynomial_orientation_alignment_checked": true
+    },
+    {
+      "orientation_M_S": [
+        1,
+        1
+      ],
+      "row_count": 17,
+      "grouped_coefficients": 21,
+      "mixed_moment": "77098343863189919/3203320861125000",
+      "sextic_diagonal": {
+        "constant": "7683645962119879/291210987375000",
+        "zeta6": "0"
+      },
+      "off_diagonal": {
+        "constant": "-1979136458701/854218896300",
+        "zeta6": "0"
+      },
+      "direct_convolution_gram_equal": true,
+      "complete_period_orthogonality_checked": false,
+      "whole_polynomial_orientation_alignment_checked": true
+    },
+    {
+      "orientation_M_S": [
+        1,
+        -1
+      ],
+      "row_count": 91,
+      "grouped_coefficients": 26,
+      "mixed_moment": "24353042834751077/266943405093750",
+      "sextic_diagonal": {
+        "constant": "24353042834751077/266943405093750",
+        "zeta6": "0"
+      },
+      "off_diagonal": {
+        "constant": "0",
+        "zeta6": "0"
+      },
+      "direct_convolution_gram_equal": true,
+      "complete_period_orthogonality_checked": true,
+      "whole_polynomial_orientation_alignment_checked": true
+    },
+    {
+      "orientation_M_S": [
+        1,
+        -1
+      ],
+      "row_count": 17,
+      "grouped_coefficients": 26,
+      "mixed_moment": "79146813972786599/3203320861125000",
+      "sextic_diagonal": {
+        "constant": "7452569178643879/291210987375000",
+        "zeta6": "0"
+      },
+      "off_diagonal": {
+        "constant": "-31460522136623/35592454012500",
+        "zeta6": "0"
+      },
+      "direct_convolution_gram_equal": true,
+      "complete_period_orthogonality_checked": false,
+      "whole_polynomial_orientation_alignment_checked": true
+    }
+  ],
+  "sixth_power_collision": {
+    "indices": [
+      1,
+      117649
+    ],
+    "same_residual_vector": true,
+    "different_zero_support": true,
+    "witness_row": 7,
+    "values_at_witness": [
+      {
+        "constant": "1",
+        "zeta6": "0"
+      },
+      {
+        "constant": "0",
+        "zeta6": "0"
+      }
+    ],
+    "correct_complete_cross_kernel": "78",
+    "incorrect_kernel_if_support_dropped": "91",
+    "opposite_orientation_cancellation_support_checked": true
+  },
+  "diagonal_is_not_a_general_lower_bound": {
+    "polynomial": "1-chi_7(u)",
+    "rows": [
+      1
+    ],
+    "sextic_diagonal": "2",
+    "off_diagonal": "-2",
+    "moment": "0"
+  },
+  "limitations": "Finite-field reciprocity-style model only. No Eisenstein annuli, independent real heights, conductor-uniform estimate, or analytic moment bound is tested."
+}

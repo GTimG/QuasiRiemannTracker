@@ -32,9 +32,16 @@ At the binding point of B0.45–B0.48, the reproducible diagnostic gives:
 | reflected numerator exponent `n=1-y/h` | 0.420985160876 |
 | row count `R` | 0.590332353526 |
 | current numerator exponent | 0.688627440499 |
-| largest mixed loss giving a strict local improvement | 0.196590173946 |
+| critical mixed loss (strict improvement requires less) | 0.196590173946 |
 | mixed loss available from the pointwise numerator bound, `delta*n` | 0.197587220845 |
 | required saving over that pointwise loss | 0.000997046899 |
+
+The displayed MI capacity `z_I=(1-r)/2` is a limiting capacity: B0.4
+requires fixed positive margins. Implement it as `z_I-ν` for sufficiently
+small fixed `ν>0`, keeping the resulting `O(ν)` exponent loss explicitly
+until it is absorbed in the requested epsilon loss. The strict local gain
+must dominate this loss; equality at the displayed capacity is only the
+scalar limiting diagnostic.
 
 Set `lambda=delta*n-rho`, where `rho` is the hypothetical saving over the pointwise reduction. Thus the appealing target is not necessarily `lambda=0`: a mixed-moment power saving `rho` slightly larger than `0.00099705` would already cross the current local obstruction. The plot uses this saving as its horizontal axis. This small number is a diagnostic of the binding cell, not a globally sufficient theorem or a certified new boundary.
 
@@ -48,4 +55,4 @@ The long inverse branch is essential: at its endpoint `r=t=1.163953576509`, `e(t
 
 A second direction is a sixth numerator moment: if one could prove `sum |A|^6 |Q|² <= U^(1+epsilon)` with capacity `z_6`, Hölder gives `1/6+5R/6-q*z_6/3`. Even with `z_6=0`, its local exponent is `0.658610294605`, below the current value. However `3*n=1.262955482628>1`, so the usual product-length range does not reach this cell. MP does not imply this sixth moment. It is an alternative substantial analytic input, not a consequence of increasing a numerical moment parameter.
 
-Reproduce with `python research/thebest/joint-moment.py` in an environment containing matplotlib. The script writes the numerical JSON and a plot explicitly labeled conditional/local. Constants come from the manuscript's decimal geometry; this experiment is not an interval proof.
+Reproduce with `uv run --with-requirements research/thebest/requirements.txt python research/thebest/joint-moment.py`. The script writes the numerical JSON and a plot explicitly labeled conditional/local. Constants come from the manuscript's decimal geometry; this experiment is not an interval proof.
