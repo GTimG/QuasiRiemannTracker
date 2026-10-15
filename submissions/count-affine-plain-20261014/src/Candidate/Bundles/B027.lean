@@ -1,14 +1,14 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B025
 import Candidate.Bundles.B026
-import OAI.NumberTheory.DirichletL.Detector.LowCentralGeometry
-import OAI.NumberTheory.DirichletL.Detector.LowReflectedLength
-import OAI.NumberTheory.DirichletL.Reflection.LowBranchSum
-import OAI.NumberTheory.DirichletL.Reflection.LowCaps
-import OAI.NumberTheory.DirichletL.Reflection.LowExponent
-import OAI.NumberTheory.DirichletL.Reflection.LowRetained
-import OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget
-import OAI.NumberTheory.DirichletL.Reflection.LowSector
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowCentralGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowReflectedLength
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowBranchSum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowExponent
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowRetained
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowSector
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Detector.LowCentralGeometry; sha256 51500c98303abc498f6fce8c901d1ab0ef4e950f6700f550b9233167c01c4f60 -/
 section

@@ -3,7 +3,7 @@ import Candidate.Bundles.B096
 import Candidate.Bundles.B101
 import Candidate.Bundles.B103
 import Candidate.Bundles.B105
-import OAI.NumberTheory.DirichletL.Detector.LowPuncture
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowPuncture
 
 /- BEGIN ORIGINAL Cycle61.Moment.PrimaryMaskTransport; sha256 1ac16862f7bdd14845689d8de2ff498aea52201267337910fff7eee032ef363d -/
 section

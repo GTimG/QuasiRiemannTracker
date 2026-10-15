@@ -3,7 +3,7 @@
 import Candidate.Bundles.B000
 import Candidate.Bundles.B020
 import Candidate.Bundles.B023
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Count.BaselineMoments; sha256 bf2e0da76f92e8cebc6725d1d05b6efb0d63bf406a0c01eb122bc57e75f7a84c -/
 section

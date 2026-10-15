@@ -3,12 +3,12 @@ import Candidate.Bundles.B009
 import Candidate.Bundles.B015
 import Candidate.Bundles.B017
 import Candidate.Bundles.B018
-import OAI.NumberTheory.DirichletL.Energy.CappedBandTransport
-import OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
-import OAI.NumberTheory.DirichletL.Energy.CappedRequests
-import OAI.NumberTheory.DirichletL.Energy.CappedSuccessorPacking
-import OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
-import OAI.NumberTheory.DirichletL.Energy.WidthRanges
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CappedBandTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CappedRadialTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CappedRequests
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CappedSuccessorPacking
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.WidthRanges
 
 /- BEGIN ORIGINAL ZetaZeroFree.Analytic.Moments.Unconditional; sha256 7364fe4cb63e4954249a6900b04e94227f9279568be10949a54ecdfae7bf8307 -/
 section

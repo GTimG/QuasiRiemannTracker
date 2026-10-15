@@ -1,10 +1,10 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B084
 import Candidate.Bundles.B085
-import OAI.NumberTheory.DirichletL.Hecke.DetectorCoefficientTransfer
-import OAI.NumberTheory.DirichletL.Hecke.DyadicSource
-import OAI.NumberTheory.DirichletL.Moments.CommonPairedSource
-import OAI.NumberTheory.DirichletL.Moments.SlotNormalization
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorCoefficientTransfer
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DyadicSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonPairedSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SlotNormalization
 
 /- BEGIN ORIGINAL Cycle61.Moment.JointColumnExtraction; sha256 7f3b285ca6ae7ce2188c5074f15bc3380f0e2574812778fdcdf78e7006b1e034 -/
 section

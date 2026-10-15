@@ -2,7 +2,7 @@
 import Candidate.Bundles.B019
 import Candidate.Bundles.B020
 import Candidate.Bundles.B061
-import OAI.NumberTheory.DirichletL.Energy.ReferenceChildProfiles
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceChildProfiles
 
 /- BEGIN ORIGINAL Cycle25.Energy.Physical.FourierProfiles; sha256 117bd8dab512a95ebb655926238eabdecd99bddfc903cdaff6b7e911389047a8 -/
 section

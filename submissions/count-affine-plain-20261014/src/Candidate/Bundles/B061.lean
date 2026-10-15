@@ -2,16 +2,16 @@
 import Candidate.Bundles.B003
 import Candidate.Bundles.B020
 import Candidate.Bundles.B050
-import OAI.NumberTheory.DirichletL.Energy.ReferenceChild
-import OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
-import OAI.NumberTheory.DirichletL.Moments.OneReflectionEnergy
-import OAI.NumberTheory.DirichletL.Moments.PositiveSummability
-import OAI.NumberTheory.DirichletL.Moments.RetainedWeightedSource
-import OAI.NumberTheory.DirichletL.PrimeRows.Moments
-import OAI.NumberTheory.DirichletL.PrimeRows.RowCount
-import OAI.NumberTheory.DirichletL.PrimeRows.RowPartition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceChild
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OneReflectionEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PositiveSummability
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RetainedWeightedSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.Moments
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RowCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RowPartition
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.NumeratorReflectionData; sha256 719141f1c86207748efa35949eb854274052264308ef34b44f0aa06ac63bd4b0 -/
 section

@@ -1,10 +1,10 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B082
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
-import OAI.NumberTheory.DirichletL.Moments.FirstMixedExceptionalLow
-import OAI.NumberTheory.DirichletL.Moments.SecondRetainedWidth
-import OAI.NumberTheory.DirichletL.Moments.SecondSourceDiagonal
-import OAI.NumberTheory.DirichletL.Moments.SecondSourceRemainder
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstMixedExceptionalLow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondRetainedWidth
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondSourceDiagonal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondSourceRemainder
 
 /- BEGIN ORIGINAL Cycle61.Physical.ExceptionalReference; sha256 c93425aa96193da8a966382b373c1d9dee1cb1120089f32f5f00e504ba07a8c4 -/
 section

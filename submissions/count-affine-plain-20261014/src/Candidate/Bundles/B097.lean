@@ -1,10 +1,10 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B096
 import Mathlib.Analysis.Calculus.BumpFunction.Basic
-import OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
-import OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceDetectorCancellation
-import OAI.NumberTheory.DirichletL.Moments.OriginalReflectionErrorMass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceDetectorCancellation
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OriginalReflectionErrorMass
 
 /- BEGIN ORIGINAL LocalMoment.PlainUnmarkedAdapter; sha256 cff526e5993ba50bfdc3704e943b5932bf6a91e3b2f6d13aa42079289b615b6b -/
 section

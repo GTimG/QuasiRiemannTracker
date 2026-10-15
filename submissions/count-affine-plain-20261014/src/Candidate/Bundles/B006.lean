@@ -1,19 +1,19 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B005
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
-import OAI.NumberTheory.DirichletL.Energy.State
-import OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySlots
-import OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformHeight
-import OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformTests
-import OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainFiberSource
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainSlotProfile
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
-import OAI.NumberTheory.DirichletL.Moments.RelativeCapacityRemoval
-import OAI.NumberTheory.DirichletL.Moments.RetainedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.State
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySlots
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformHeight
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformTests
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainFiberSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainSlotProfile
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RelativeCapacityRemoval
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RetainedEnergy
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.MomentDetectorEnergyInitialState; sha256 bbd21e169c322784e435cf00e3d900d514618266c89cae982b5ad958e1220ba1 -/
 section

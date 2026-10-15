@@ -3,8 +3,8 @@ import Candidate.Bundles.B001
 import Candidate.Bundles.B057
 import Candidate.Bundles.B058
 import Candidate.Bundles.B066
-import OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst
-import OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
 
 /- BEGIN ORIGINAL Cycle61.Numerator.Source.ActualBin; sha256 5b7e3b3c0446ea859f6ccfc829c600f09e5d24218d23d100d8880b891f075a6e -/
 section

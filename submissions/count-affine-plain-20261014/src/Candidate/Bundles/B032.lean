@@ -2,9 +2,9 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B025
 import Candidate.Bundles.B031
-import OAI.NumberTheory.DirichletL.Hecke.SignalBounds
-import OAI.NumberTheory.DirichletL.PrincipalSignalComparison
-import OAI.NumberTheory.DirichletL.PrincipalSlotEstimate
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.SignalBounds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrincipalSignalComparison
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrincipalSlotEstimate
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.PrincipalSlots; sha256 e7baac9e79124f73f53c36fff5362261eb97a4dcc925cfd17ee5eaf877bf42cb -/
 section

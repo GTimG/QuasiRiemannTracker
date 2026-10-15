@@ -10,16 +10,16 @@ import Candidate.Bundles.B145
 import Candidate.Bundles.B146
 import Candidate.Bundles.B149
 import Candidate.Bundles.B156
-import OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
-import OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
-import OAI.NumberTheory.DirichletL.Moments.FirstExceptionalChildPaid
-import OAI.NumberTheory.DirichletL.Moments.FirstMixedRightTransport
-import OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourceAllocationControl
-import OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourcePresentation
-import OAI.NumberTheory.DirichletL.Moments.FirstSourceConductorCaps
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFixedQSource
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalSourceCaps
-import OAI.NumberTheory.DirichletL.Moments.SecondUniformSubsetSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstExceptionalChildPaid
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstMixedRightTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourceAllocationControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourcePresentation
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstSourceConductorCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFixedQSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondUniformSubsetSource
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryExceptionalBudget; sha256 22a33d77cb3b81e47ef4dc8a2df0cc08ab04253490b39dbecd01cc470958a6b9 -/
 section

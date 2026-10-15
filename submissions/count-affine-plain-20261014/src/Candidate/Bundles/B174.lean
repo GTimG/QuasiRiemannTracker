@@ -7,8 +7,8 @@ import Candidate.Bundles.B111
 import Candidate.Bundles.B113
 import Candidate.Bundles.B143
 import Candidate.Bundles.B173
-import OAI.NumberTheory.DirichletL.Moments.AbsoluteEnergy
-import OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AbsoluteEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondWeightedCommon; sha256 89a9922719b3f47be1e328d0e86105858a281175b3f2c4e741de26aa239470a8 -/
 section

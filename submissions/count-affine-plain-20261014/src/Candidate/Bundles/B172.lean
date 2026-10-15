@@ -4,7 +4,7 @@ import Candidate.Bundles.B133
 import Candidate.Bundles.B152
 import Candidate.Bundles.B161
 import Candidate.Bundles.B170
-import OAI.NumberTheory.DirichletL.Moments.SecondActualWidth
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondActualWidth
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryHighCoarseGates; sha256 1f3ba4b3f785f435b164c5def412baf46b60eba8754f48fa5ddd970e6767871e -/
 section

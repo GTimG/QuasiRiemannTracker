@@ -2,10 +2,10 @@
 import Candidate.Bundles.B009
 import Candidate.Bundles.B014
 import Candidate.Bundles.B017
-import OAI.NumberTheory.DirichletL.Energy.CanonicalHighPhysical
-import OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary
-import OAI.NumberTheory.DirichletL.Moments.NaturalMaskedFloor
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CanonicalHighPhysical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CertifiedExistence
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalMaskedFloor
 
 /- BEGIN ORIGINAL Cycle25.Energy.PositiveHighPhysical; sha256 8a849b031342e30a6d0a0ac1378ea890ee914aac5174b6e358c118ea1c6efa36 -/
 section

@@ -3,10 +3,10 @@ import Candidate.Bundles.B047
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import OAI.NumberTheory.DirichletL.Detector.Euler
-import OAI.NumberTheory.DirichletL.Detector.HighRowsCentralStrictSelected
-import OAI.NumberTheory.DirichletL.Detector.HighRowsClosed
-import OAI.NumberTheory.DirichletL.Detector.Local
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Euler
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.HighRowsCentralStrictSelected
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.HighRowsClosed
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Local
 
 /- BEGIN ORIGINAL Cycle25.Numerator.AmplitudeHolder; sha256 11a7b2343e9ee26019a9346cc02fd816c79e1ccf3556a046a03b4c5c7c8823f8 -/
 section

@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B009
 import Candidate.Bundles.B010
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowDirect
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowDirect
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
 
 /- BEGIN ORIGINAL Cycle25.Energy.ReferenceLowWindow; sha256 85ba6c12dbbbae8de07593c8f9e04afff7bf67f23d892fa3184383e2925758a6 -/
 section

@@ -1,9 +1,9 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B110
 import Candidate.Bundles.B114
-import OAI.NumberTheory.DirichletL.Moments.OriginalCommonHarmonic
-import OAI.NumberTheory.DirichletL.Moments.SecondBlockCount
-import OAI.NumberTheory.DirichletL.Moments.SecondEnergySplit
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OriginalCommonHarmonic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondBlockCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondEnergySplit
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondActualSources; sha256 21a82169309d7ae9468c55567077d9214ba753ffab3eade8fde5792628119523 -/
 section

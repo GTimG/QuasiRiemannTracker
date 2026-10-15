@@ -4,8 +4,8 @@ import Candidate.Bundles.B094
 import Candidate.Bundles.B115
 import Candidate.Bundles.B117
 import Candidate.Bundles.B121
-import OAI.NumberTheory.DirichletL.Energy.ChildState
-import OAI.NumberTheory.DirichletL.Moments.CommonExceptionalGates
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ChildState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonExceptionalGates
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryNaturalDictionary; sha256 2aa1bacf5df83f5a8da4cd81bf576c9b846dfa2b67ead081ba37e8073e31cd9c -/
 section

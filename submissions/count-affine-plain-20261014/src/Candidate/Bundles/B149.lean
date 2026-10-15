@@ -2,7 +2,7 @@
 import Candidate.Bundles.B135
 import Candidate.Bundles.B136
 import Candidate.Bundles.B148
-import OAI.NumberTheory.DirichletL.Moments.SecondEnergySplit
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondEnergySplit
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryExceptionalSplit; sha256 955a40ce88d9525633cec995d7e907417b99c4efe43dcd6a5663490c368573a5 -/
 section

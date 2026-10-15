@@ -2,16 +2,16 @@
 import Candidate.Bundles.B005
 import Candidate.Bundles.B007
 import Candidate.Bundles.B008
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
-import OAI.NumberTheory.DirichletL.Energy.FirstActualFrequencyBudget
-import OAI.NumberTheory.DirichletL.Energy.FirstLiveAdmission
-import OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
-import OAI.NumberTheory.DirichletL.Energy.ReferenceState
-import OAI.NumberTheory.DirichletL.Energy.StageMargins
-import OAI.NumberTheory.DirichletL.Energy.WidthRanges
-import OAI.NumberTheory.DirichletL.Moments.AllocatedNaturalRadial
-import OAI.NumberTheory.DirichletL.Moments.ReflectedTruncation
-import OAI.NumberTheory.DirichletL.Moments.ReflectionLength
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FirstActualFrequencyBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FirstLiveAdmission
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.StageMargins
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.WidthRanges
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AllocatedNaturalRadial
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ReflectedTruncation
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ReflectionLength
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.CertifiedMoments; sha256 9d124c3f3492ea2d981fdc689da256c910c548fd4e7614dfbf086347027c88b7 -/
 section

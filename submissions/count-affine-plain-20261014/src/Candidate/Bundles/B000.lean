@@ -4,7 +4,7 @@ import Mathlib.Basic.Real.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
 
 /- BEGIN ORIGINAL Cycle61.Arithmetic.Constants; sha256 8634ec692170f496a80bb682dc582b4d62e99acdf4fe0f4df055df7bfecadc04 -/
 section

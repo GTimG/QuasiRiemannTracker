@@ -2,8 +2,8 @@
 import Candidate.Bundles.B058
 import Candidate.Bundles.B067
 import Candidate.Bundles.B068
-import OAI.NumberTheory.DirichletL.PrimeRows.CubePhaseBins
-import OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubePhaseBins
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary
 
 /- BEGIN ORIGINAL Cycle25.Numerator.SourcePrimeBins; sha256 2bc986ae8b79a8af656d4f2df1380ba181bcf1913224eb284d9fe69573eaab6a -/
 section

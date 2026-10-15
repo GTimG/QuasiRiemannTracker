@@ -6,7 +6,7 @@ import Candidate.Bundles.B125
 import Candidate.Bundles.B126
 import Candidate.Bundles.B128
 import Candidate.Bundles.B140
-import OAI.NumberTheory.DirichletL.Moments.SecondRadicalBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondRadicalBudget
 
 /- BEGIN ORIGINAL Cycle61.Physical.FinalErrorCapacity.Paid; sha256 defc454d0c6c99e99c9c53b887dc832b938f83c5121ad6ebed5f4b4490b38ef7 -/
 section

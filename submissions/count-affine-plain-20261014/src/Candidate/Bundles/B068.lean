@@ -2,11 +2,11 @@
 import Candidate.Bundles.B003
 import Candidate.Bundles.B020
 import Candidate.Bundles.B059
-import OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
-import OAI.NumberTheory.DirichletL.Hecke.DetectorSlotSelection
-import OAI.NumberTheory.DirichletL.Hecke.ZeroSupremum
-import OAI.NumberTheory.DirichletL.ParametersDetectorScales
-import OAI.NumberTheory.DirichletL.ParametersSlotLengths
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorSlotSelection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.ZeroSupremum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersDetectorScales
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersSlotLengths
 
 /- BEGIN ORIGINAL Cycle25.Assembly.SlotLengths; sha256 2ede21ea3758219ef65c85f5566be816d590e9d44dd8cef9ab17d877a1794b7d -/
 section

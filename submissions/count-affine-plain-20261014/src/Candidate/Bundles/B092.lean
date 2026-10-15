@@ -1,13 +1,13 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B000
 import Candidate.Bundles.B079
-import OAI.NumberTheory.DirichletL.Energy.ChildState
-import OAI.NumberTheory.DirichletL.Hecke.DetectorZeros
-import OAI.NumberTheory.DirichletL.Hecke.FiniteDeletion
-import OAI.NumberTheory.DirichletL.Hecke.PrimeRay
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceNaturalPrime
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceSlots
-import OAI.NumberTheory.DirichletL.Moments.WholeSlotDeletion
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ChildState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorZeros
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.FiniteDeletion
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.PrimeRay
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceNaturalPrime
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceSlots
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.WholeSlotDeletion
 
 /- BEGIN ORIGINAL LocalMoment.LowSourceAdapters; sha256 fb32a39b12b378805effde9c72d3d9a4db84ded2c71259da8bf2cf99f0c6ee53 -/
 section

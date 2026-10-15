@@ -1,6 +1,6 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
-import OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches
-import OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountCrossing
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.Crossing; sha256 e62904966711721f3a59ecb04bfd36c708f5d0568eb9b1bdda3b2ef74b05bbf4 -/
 section

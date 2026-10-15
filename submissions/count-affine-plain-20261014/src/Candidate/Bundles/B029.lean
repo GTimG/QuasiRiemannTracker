@@ -2,14 +2,14 @@
 import Candidate.Bundles.B025
 import Candidate.Bundles.B027
 import Candidate.Bundles.B028
-import OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize
-import OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy
-import OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound
-import OAI.NumberTheory.DirichletL.Detector.LowSelectedBound
-import OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber
-import OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows
-import OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy
-import OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowSelectedBound
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Reflection.FrozenEnergy; sha256 cb7c589d0ebd70a18df7b0c05fc31eb02ec7cf48d2aea0440c1f617c1f387849 -/
 section

@@ -2,8 +2,8 @@
 import Candidate.Bundles.B009
 import Candidate.Bundles.B012
 import Candidate.Bundles.B013
-import OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
-import OAI.NumberTheory.DirichletL.Energy.StageReserveBounded
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.StageReserveBounded
 
 /- BEGIN ORIGINAL Cycle25.Energy.OriginalHighReflectionBounded; sha256 d51e13e3222cbd00cb2996fd986102f64109fb14ffcbbc61fbace54bf5ffa002 -/
 section

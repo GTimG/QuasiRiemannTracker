@@ -3,12 +3,12 @@ import Candidate.Bundles.B064
 import Candidate.Bundles.B078
 import Candidate.Bundles.B079
 import Lean
-import OAI.NumberTheory.DirichletL.Energy.FirstAnnularAdmission
-import OAI.NumberTheory.DirichletL.Moments.Cauchy
-import OAI.NumberTheory.DirichletL.Moments.FirstAnnularInputAmplification
-import OAI.NumberTheory.DirichletL.Moments.FirstCommonSourceBudget
-import OAI.NumberTheory.DirichletL.Moments.FirstReferenceSource
-import OAI.NumberTheory.DirichletL.Moments.FirstSourceConductorCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FirstAnnularAdmission
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.Cauchy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstAnnularInputAmplification
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstCommonSourceBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstReferenceSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstSourceConductorCaps
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialHeight; sha256 8902f0d89111cca2ea29c333a4c8ca6bee84129d7768985dc54d1d4a9f85b13c -/
 section

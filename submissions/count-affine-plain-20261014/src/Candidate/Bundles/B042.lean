@@ -4,9 +4,9 @@ import Candidate.Bundles.B031
 import Candidate.Bundles.B035
 import Candidate.Bundles.B037
 import Candidate.Bundles.B041
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
-import OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.NormalizedTransport; sha256 b08f3a99da0ad8bbd2e6d210bc80992487e907c82ae9ca3026be3285a9cf5dc1 -/
 section

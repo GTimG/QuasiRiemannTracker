@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B050
 import Candidate.Bundles.B051
-import OAI.NumberTheory.DirichletL.Detector.SelectedPrimeIndexed
-import OAI.NumberTheory.DirichletL.PrimeRows.WeightedTuple
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.SelectedPrimeIndexed
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.WeightedTuple
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.NumeratorErrorPrimeSum; sha256 1502c784706a8910e45abd7c199cc534de3693d21d61137b477f7b8a396126aa -/
 section

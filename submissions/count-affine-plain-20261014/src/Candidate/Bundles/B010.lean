@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B009
-import OAI.NumberTheory.DirichletL.Energy.Bands
-import OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionBudget
-import OAI.NumberTheory.DirichletL.Energy.ReferenceReflection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.Bands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceReflection
 
 /- BEGIN ORIGINAL Cycle25.Energy.ReferenceDivisors; sha256 92aa526bae2378a1391371dff4458b74fa78382f1b5dd33e5ddd833be134bd92 -/
 section

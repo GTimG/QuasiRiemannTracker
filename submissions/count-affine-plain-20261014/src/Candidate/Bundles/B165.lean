@@ -10,7 +10,7 @@ import Candidate.Bundles.B161
 import Candidate.Bundles.B162
 import Candidate.Bundles.B163
 import Candidate.Bundles.B164
-import OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryAffineErrorRatioPayment; sha256 ecfff6549a384162da7ba9943bf4ce93bfe9a0ab1cabfd56a3344870564d9df7 -/
 section

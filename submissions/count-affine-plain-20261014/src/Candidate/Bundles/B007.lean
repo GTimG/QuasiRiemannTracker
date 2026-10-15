@@ -1,19 +1,19 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B003
 import Candidate.Bundles.B006
-import OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField
-import OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
-import OAI.NumberTheory.DirichletL.Energy.Bands
-import OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry
-import OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainProfileControl
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary
-import OAI.NumberTheory.DirichletL.Moments.DetectorPlainUnmarkedState
-import OAI.NumberTheory.DirichletL.ParametersHighDataFine
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.Bands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorPlainUnmarkedState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersHighDataFine
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.MomentDetectorPlainMarkedState; sha256 b16175cfc16bdf30acc9abe2ff09db6709de71516f2dddb8c12a625202c42958 -/
 section

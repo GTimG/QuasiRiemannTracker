@@ -6,8 +6,8 @@ import Candidate.Bundles.B141
 import Candidate.Bundles.B142
 import Candidate.Bundles.B143
 import Candidate.Bundles.B144
-import OAI.NumberTheory.DirichletL.Moments.FirstMixedNormalization
-import OAI.NumberTheory.DirichletL.Moments.FirstMixedRightTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstMixedNormalization
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstMixedRightTransport
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryLowFamily; sha256 66e0e5f1e379bf710bf45aa0be183e1f564a130e5b601b8b3aa2f01ef0f9e1a7 -/
 section

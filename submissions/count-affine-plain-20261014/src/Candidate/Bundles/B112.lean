@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B111
-import OAI.NumberTheory.DirichletL.Moments.CommonSectorWindow
-import OAI.NumberTheory.DirichletL.Moments.SecondPhysicalBlock
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonSectorWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondPhysicalBlock
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondBlock; sha256 02e58031d3d44ffff51bae9e85cd18ef4968c16a5982823336d553ed48a60c42 -/
 section

@@ -2,13 +2,13 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B031
 import Candidate.Bundles.B036
-import OAI.NumberTheory.DirichletL.Detector.CentralExponent
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.CentralExponent
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.CubeFloorGlobalIntegral; sha256 9e574b6671ca707f20c963f71d6ea102560196335f1b401cc876ed4c903bb92e -/
 section

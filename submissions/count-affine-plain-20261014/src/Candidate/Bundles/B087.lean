@@ -4,11 +4,11 @@ import Candidate.Bundles.B063
 import Candidate.Bundles.B064
 import Candidate.Bundles.B085
 import Candidate.Bundles.B086
-import OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
-import OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
-import OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
-import OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
-import OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
 
 /- BEGIN ORIGINAL Cycle61.Physical.FirstBranches.Actual; sha256 850808a7d15c052ce77d61d0c8f85887265d675cecbb98d311f2f7fac4e4a2d9 -/
 section

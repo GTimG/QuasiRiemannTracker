@@ -1,11 +1,11 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B024
 import Candidate.Bundles.B035
-import OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail
-import OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad
-import OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving
-import OAI.NumberTheory.DirichletL.PrimeRows.LargeTail
-import OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.LargeTail
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.LargeDyad; sha256 ad7a5b307d3c035ef5d7cd0d4dd0daf8f9a127f1d9cb68e90daafd2eef0d9b58 -/
 section

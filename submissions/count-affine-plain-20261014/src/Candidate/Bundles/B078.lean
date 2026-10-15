@@ -6,7 +6,7 @@ import Candidate.Bundles.B076
 import Candidate.Bundles.B077
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
 
 /- BEGIN ORIGINAL Cycle61.Numerator.Finite.Bridge; sha256 695f9e06cebd0b83938717a8ad965ae09f4ccff61dd479e36e35b384947cfa3a -/
 section

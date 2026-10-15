@@ -1,9 +1,9 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B095
-import OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
-import OAI.NumberTheory.DirichletL.Hecke.DetectorClassBudget
-import OAI.NumberTheory.DirichletL.Hecke.DetectorCountFromMoments
-import OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountEndpoint
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorClassBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorCountFromMoments
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorRowCountEndpoint
 
 /- BEGIN ORIGINAL Cycle61.Moment.HighSourceRows; sha256 44d31c0dd178cc1f21a2eb6ace4dba1e1221be394b21425543d51e5d7ffb1ebc -/
 section

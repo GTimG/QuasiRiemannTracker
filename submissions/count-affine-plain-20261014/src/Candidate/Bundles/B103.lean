@@ -1,11 +1,11 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B101
 import Candidate.Bundles.B102
-import OAI.NumberTheory.DirichletL.Hecke.PrimeScale
-import OAI.NumberTheory.DirichletL.Moments.ChildRows
-import OAI.NumberTheory.DirichletL.Moments.FirstDiscardedEnergy
-import OAI.NumberTheory.DirichletL.Moments.NaturalRowSourceDictionary
-import OAI.NumberTheory.DirichletL.Moments.RankinRadical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.PrimeScale
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ChildRows
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstDiscardedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalRowSourceDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RankinRadical
 
 /- BEGIN ORIGINAL Cycle61.Moment.CanonicalFirstDictionary; sha256 db9bc362bdf3fdaf847fb295129780248526a12b29a1e7966123eb20343a29aa -/
 section

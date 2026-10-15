@@ -1,15 +1,15 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B025
 import Candidate.Bundles.B027
-import OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy
-import OAI.NumberTheory.DirichletL.Reflection.LowDyads
-import OAI.NumberTheory.DirichletL.Reflection.LowFixedMember
-import OAI.NumberTheory.DirichletL.Reflection.LowFull
-import OAI.NumberTheory.DirichletL.Reflection.LowFullBudget
-import OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget
-import OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy
-import OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget
-import OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowDyads
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowFixedMember
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowFull
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowFullBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Reflection.FullBudget; sha256 2e88c7099fc8ca77f36a603078a1a06c19ff5e529de84202d5940cf898d37dde -/
 section

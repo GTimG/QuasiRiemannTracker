@@ -3,8 +3,8 @@ import Candidate.Bundles.B088
 import Candidate.Bundles.B095
 import Candidate.Bundles.B122
 import Candidate.Bundles.B127
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
-import OAI.NumberTheory.DirichletL.Moments.SecondRetainedWidth
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondRetainedWidth
 
 /- BEGIN ORIGINAL Cycle61.Physical.FinalErrorRadius; sha256 08948913de64bffa4aa2b51d85f950a6a57c132e63379afe45b71618d8488dae -/
 section

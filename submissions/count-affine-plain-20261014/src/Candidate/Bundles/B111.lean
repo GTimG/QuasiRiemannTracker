@@ -1,10 +1,10 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B080
-import OAI.NumberTheory.DirichletL.Moments.CommonSectorWindow
-import OAI.NumberTheory.DirichletL.Moments.ExceptionalIndexedWindow
-import OAI.NumberTheory.DirichletL.Moments.PlainChildEnergy
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFamily
-import OAI.NumberTheory.DirichletL.Moments.SecondSectorChildren
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonSectorWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ExceptionalIndexedWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PlainChildEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondSectorChildren
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondCorrelatedFamily; sha256 73cefd9d510172cfa74624462364203d4a0c4221cff2341a919524c9239208c9 -/
 section

@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B080
-import OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSource
-import OAI.NumberTheory.DirichletL.Moments.FirstReferenceSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstReferenceSource
 
 /- BEGIN ORIGINAL Cycle61.Physical.JointSourceAssembly; sha256 e008036d06b298a747eb88cc7ce86a353689c5d6e514e6b103672c9b9bd954b4 -/
 section

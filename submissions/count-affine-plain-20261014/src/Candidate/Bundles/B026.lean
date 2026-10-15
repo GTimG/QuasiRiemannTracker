@@ -1,9 +1,9 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B025
-import OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry
-import OAI.NumberTheory.DirichletL.Detector.LowSlotScales
-import OAI.NumberTheory.DirichletL.Detector.LowSourceScales
-import OAI.NumberTheory.DirichletL.Detector.RayPoolGood
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowSlotScales
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowSourceScales
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayPoolGood
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Detector.LowSourceScales; sha256 4642312b3e6f86166394b067778d4fefb9aa71e3f44189d2dc6285c49bd7ff56 -/
 section

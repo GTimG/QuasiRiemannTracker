@@ -2,12 +2,12 @@
 import Candidate.Bundles.B009
 import Candidate.Bundles.B012
 import Candidate.Bundles.B014
-import OAI.NumberTheory.DirichletL.Energy.BandMonotonicity
-import OAI.NumberTheory.DirichletL.Energy.CanonicalLowPhysical
-import OAI.NumberTheory.DirichletL.Energy.CappedRequests
-import OAI.NumberTheory.DirichletL.Energy.PositiveLowBandSource
-import OAI.NumberTheory.DirichletL.Energy.PositiveLowSourceControlled
-import OAI.NumberTheory.DirichletL.Energy.StageMonotonicity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.BandMonotonicity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CanonicalLowPhysical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CappedRequests
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PositiveLowBandSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PositiveLowSourceControlled
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.StageMonotonicity
 
 /- BEGIN ORIGINAL Cycle25.Energy.NaturalLowPhysical; sha256 e6ce989d30adc6ff0e4f411a5490d77cf0d13011ba53bffbc69daf51f1410eaf -/
 section

@@ -2,9 +2,9 @@
 import Candidate.Bundles.B084
 import Candidate.Bundles.B085
 import Candidate.Bundles.B094
-import OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
-import OAI.NumberTheory.DirichletL.Moments.AllocatedRayDictionary
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildInput
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AllocatedRayDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildInput
 
 /- BEGIN ORIGINAL Cycle61.Moment.LowBranch.ChildDictionary; sha256 f9f17bd70cca06b0c1afa2fb76984ca7287cf176dadb15344233e2c16efd3b99 -/
 section

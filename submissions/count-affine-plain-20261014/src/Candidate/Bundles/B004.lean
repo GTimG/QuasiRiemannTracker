@@ -1,16 +1,16 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B003
-import OAI.NumberTheory.DirichletL.Detector.DetectorMomentFiberGates
-import OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry
-import OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedPhysicalRows
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeleted
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeletedEnergy
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePaddedEnergy
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePrimeGates
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceShift
-import OAI.NumberTheory.DirichletL.Inversion.InitialPhysicalSlots
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorMomentFiberGates
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedPhysicalRows
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeleted
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeletedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePaddedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePrimeGates
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceShift
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Inversion.InitialPhysicalSlots
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.MomentDetectorMomentPrimeGeometry; sha256 8a67369f763c980eb7a060c9134f296913f0e47647f08df4dd73e58a09e9f9b5 -/
 section

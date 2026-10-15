@@ -2,8 +2,8 @@
 import Candidate.Bundles.B054
 import Candidate.Bundles.B055
 import Candidate.Bundles.B056
-import OAI.NumberTheory.DirichletL.Detector.PhysicalAnalytic
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralTargetCost
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PhysicalAnalytic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralTargetCost
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.NumeratorLabelPrimeBound; sha256 9822a4b9282a8b937f084cd5a33d299edeadb3c9f8c215f88e9ece567be546ad -/
 section

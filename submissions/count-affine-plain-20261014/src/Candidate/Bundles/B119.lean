@@ -6,8 +6,8 @@ import Candidate.Bundles.B114
 import Candidate.Bundles.B116
 import Candidate.Bundles.B117
 import Candidate.Bundles.B118
-import OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
-import OAI.NumberTheory.DirichletL.Moments.FirstExceptionalPrefactorActual
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstExceptionalPrefactorActual
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondScalarNormalization; sha256 17f30f9dc97a211a3135b2b5021ba7c93cd6fe2e012a2b3a9e369e8116027194 -/
 section

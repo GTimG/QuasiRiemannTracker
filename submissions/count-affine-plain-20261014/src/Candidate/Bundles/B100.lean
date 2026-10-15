@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B097
 import Candidate.Bundles.B099
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional
 
 /- BEGIN ORIGINAL Cycle61.Density.ActualMaximaCount; sha256 5a08866dc7d633db6061d0f4fc289fd49f88a2b41b658ac3574096f55f4d18c4 -/
 section

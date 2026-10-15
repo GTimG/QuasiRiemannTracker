@@ -1,13 +1,13 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B024
 import Candidate.Bundles.B040
-import OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.CubeFiniteError; sha256 0be8d815741250582118109227f7fb83c35f17f13163089cf37c3774e0524de0 -/
 section

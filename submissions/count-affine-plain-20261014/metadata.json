@@ -28,5 +28,8 @@
       "label": "Related: marked high-zero counting (PR #48)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/48"
     }
+  ],
+  "dependencies": [
+    "openai-baseline"
   ]
 }

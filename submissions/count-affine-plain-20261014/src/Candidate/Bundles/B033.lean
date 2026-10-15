@@ -2,10 +2,10 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B031
 import Candidate.Bundles.B032
-import OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds
-import OAI.NumberTheory.DirichletL.Detector.FiniteProductX
-import OAI.NumberTheory.DirichletL.Detector.PrincipalContours
-import OAI.NumberTheory.DirichletL.Detector.PrincipalTransport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FiniteProductX
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalContours
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalTransport
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.PrincipalRemainderFiniteProduct; sha256 595a0ab19d0a00dc3c873068c8ea5fe4439941be74b9a913f643d4464c274a36 -/
 section

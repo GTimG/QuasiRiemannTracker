@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B135
 import Candidate.Bundles.B146
-import OAI.NumberTheory.DirichletL.Moments.CommonHarmonicMass
-import OAI.NumberTheory.DirichletL.Moments.DivisorBoundary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonHarmonicMass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DivisorBoundary
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.LowOneSidedHarmonic; sha256 ed4472afad112528762db859cb4e200e5d2431d3df852ebdba526e55d67d7d05 -/
 section

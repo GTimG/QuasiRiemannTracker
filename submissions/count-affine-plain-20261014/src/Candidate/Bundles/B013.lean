@@ -3,11 +3,11 @@ import Candidate.Bundles.B009
 import Candidate.Bundles.B010
 import Candidate.Bundles.B011
 import Candidate.Bundles.B012
-import OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionEnergy
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowDirect
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
-import OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
-import OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowDirect
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
 
 /- BEGIN ORIGINAL Cycle25.Energy.DeletedRobustGeometry; sha256 795b91c72d0dd45130769b8655248cdc7025ddabebfc7b440276cf79f82bf38f -/
 section

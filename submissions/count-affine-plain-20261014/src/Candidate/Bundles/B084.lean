@@ -1,10 +1,10 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B080
 import Candidate.Bundles.B083
-import OAI.NumberTheory.DirichletL.Energy.FirstAnnularAdmission
-import OAI.NumberTheory.DirichletL.Moments.ActiveDivisorShell
-import OAI.NumberTheory.DirichletL.Moments.DivisorRetained
-import OAI.NumberTheory.DirichletL.Moments.WholeDivisorShell
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FirstAnnularAdmission
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ActiveDivisorShell
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DivisorRetained
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.WholeDivisorShell
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.JointAmplification; sha256 be0fef82b55e52f05ed069fa375f28a01239aa61e2b4289a0785c888f515110a -/
 section

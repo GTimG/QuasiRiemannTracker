@@ -1,11 +1,11 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
-import OAI.NumberTheory.DirichletL.Detector.SixthDecomposition
-import OAI.NumberTheory.DirichletL.Hecke.DetectorFamilyInclusion
-import OAI.NumberTheory.DirichletL.Hecke.FiniteDeletion
-import OAI.NumberTheory.DirichletL.Hecke.InverseAmplificationFamily
-import OAI.NumberTheory.DirichletL.Hecke.MaskDescent
-import OAI.NumberTheory.DirichletL.PrimeRows.RowPartition
-import OAI.NumberTheory.DirichletL.QuadraticSieve.DyadicColumns
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.SixthDecomposition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorFamilyInclusion
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.FiniteDeletion
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.InverseAmplificationFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.MaskDescent
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RowPartition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.DyadicColumns
 
 /- BEGIN ORIGINAL LocalMoment.FiniteDeletionBins; sha256 e6d42d5b92afdfb9b7e27948701c630e747cd96889fbe1b7e0745421963272af -/
 section

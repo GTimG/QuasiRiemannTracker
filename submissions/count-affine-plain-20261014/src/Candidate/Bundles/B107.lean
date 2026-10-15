@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B093
 import Candidate.Bundles.B106
-import OAI.NumberTheory.DirichletL.Hecke.DetectorFamilyInclusion
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorFamilyInclusion
 
 /- BEGIN ORIGINAL Cycle61.Moment.HighRawExponent; sha256 a81aeefd32443067dac9d2c9b0b19eb2390eb8547840d799941a87f1457e7200 -/
 section

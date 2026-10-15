@@ -4,8 +4,8 @@ import Candidate.Bundles.B085
 import Candidate.Bundles.B094
 import Candidate.Bundles.B106
 import Candidate.Bundles.B123
-import OAI.NumberTheory.DirichletL.Mellin.UniformKernelBounds
-import OAI.NumberTheory.DirichletL.Moments.EligibleEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.UniformKernelBounds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.EligibleEnergy
 
 /- BEGIN ORIGINAL Cycle61.Physical.HighProfiles.Control; sha256 be5482bfc84566ed565d8d901a4d53a52169613f654d6527fa5076ac7e7109d9 -/
 section

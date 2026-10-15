@@ -9,7 +9,7 @@ import Candidate.Bundles.B140
 import Candidate.Bundles.B149
 import Candidate.Bundles.B165
 import Candidate.Bundles.B166
-import OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
 
 import Candidate.Bundles.B167Part1A
 import Candidate.Bundles.B167Part1B

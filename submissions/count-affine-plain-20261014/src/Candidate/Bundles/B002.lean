@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B001
-import OAI.NumberTheory.DirichletL.Hecke.DetectorFixedAmplitudeCount
-import OAI.NumberTheory.DirichletL.Hecke.DetectorRowCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorFixedAmplitudeCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorRowCount
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.Optimization; sha256 350f167638c34b2e377efc354636bd1fb62ff89020bc8e2d32977d3340e544e4 -/
 section

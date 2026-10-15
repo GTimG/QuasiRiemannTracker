@@ -2,11 +2,11 @@
 import Candidate.Bundles.B009
 import Candidate.Bundles.B010
 import Candidate.Bundles.B011
-import OAI.NumberTheory.DirichletL.Energy.OriginalSource
-import OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionEnergy
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
-import OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
-import OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.OriginalSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceDeletionEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceProfileBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceScalarReserve
 
 /- BEGIN ORIGINAL Cycle25.Energy.OriginalHighReflectionOriginal; sha256 159662b4a87ee81535d96f7f642eb684fe29af866f6b57ce92920162e1bb8eb9 -/
 section

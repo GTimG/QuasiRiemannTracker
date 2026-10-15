@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B092
-import OAI.NumberTheory.DirichletL.Energy.CapacityRemoval
-import OAI.NumberTheory.DirichletL.Moments.PrimeHeight
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.CapacityRemoval
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PrimeHeight
 
 /- BEGIN ORIGINAL Cycle61.Moment.LowBranch.Slot; sha256 2e8f2910b8e63157d0a6e61529a0768a8b1e5fe160915261bc68fef1b9552db7 -/
 section

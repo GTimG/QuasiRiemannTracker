@@ -9,7 +9,7 @@ import Candidate.Bundles.B067
 import Candidate.Bundles.B071
 import Candidate.Bundles.B074
 import Candidate.Bundles.B075
-import OAI.NumberTheory.DirichletL.PrimeRows.CubePhaseBins
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubePhaseBins
 
 /- BEGIN ORIGINAL Cycle61.Numerator.Source.Helpers; sha256 c5e1bb037955a95be394d2b5514ba83d59528c801bdcd302a6f10995a46867ed -/
 section

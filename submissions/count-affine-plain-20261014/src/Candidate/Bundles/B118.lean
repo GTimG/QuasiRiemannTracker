@@ -6,7 +6,7 @@ import Candidate.Bundles.B096
 import Candidate.Bundles.B103
 import Candidate.Bundles.B110
 import Candidate.Bundles.B117
-import OAI.NumberTheory.DirichletL.Moments.CommonHarmonicMass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonHarmonicMass
 
 /- BEGIN ORIGINAL Cycle61.Physical.HighFrequency; sha256 ea6e4bd96d9a5bf8457d9a472aa6cccbccdf56ad8c937d11badbb1e97aed0347 -/
 section

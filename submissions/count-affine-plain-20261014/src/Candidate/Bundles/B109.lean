@@ -2,7 +2,7 @@
 import Candidate.Bundles.B091
 import Candidate.Bundles.B106
 import Candidate.Bundles.B108
-import OAI.NumberTheory.DirichletL.Moments.AmplificationSlotGap
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationSlotGap
 
 /- BEGIN ORIGINAL Cycle61.Physical.HighResidualAllocation; sha256 93574321245b20bfe0d786a14235db967b7f3ea807a6378b04f9ac815d5667ed -/
 section

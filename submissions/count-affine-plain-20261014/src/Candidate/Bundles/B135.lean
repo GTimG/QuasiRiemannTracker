@@ -5,7 +5,7 @@ import Candidate.Bundles.B104
 import Candidate.Bundles.B110
 import Candidate.Bundles.B116
 import Candidate.Bundles.B134
-import OAI.NumberTheory.DirichletL.Moments.RankinLabels
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RankinLabels
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryHighPayment; sha256 644a0ec57d74132c4e91c6bce9c15119037df445f53697780b944714faedc0a8 -/
 section

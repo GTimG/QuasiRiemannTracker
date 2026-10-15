@@ -4,11 +4,11 @@ import Candidate.Bundles.B031
 import Candidate.Bundles.B032
 import Candidate.Bundles.B033
 import Candidate.Bundles.B034
-import OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized
-import OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction
-import OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral
-import OAI.NumberTheory.DirichletL.PrimeRows.TailScales
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.TailScales
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.PrincipalRemainderResidueActual; sha256 665614f88a1720bb2bf188600ecc676d6c74b0a08984f96dec75bb6c7f498b46 -/
 section

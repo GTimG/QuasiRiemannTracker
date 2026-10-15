@@ -2,10 +2,10 @@
 import Candidate.Bundles.B050
 import Candidate.Bundles.B052
 import Candidate.Bundles.B062
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
-import OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceCharacters
-import OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceCharacters
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ReflectionRetainedLength
 
 /- BEGIN ORIGINAL Cycle25.Energy.Physical.RetainedGeometry; sha256 f6342630d58980faf523ab39a2eff5b43a784fbe0e82cdc2c6f638178d71f66b -/
 section

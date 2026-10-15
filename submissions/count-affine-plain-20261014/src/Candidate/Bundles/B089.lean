@@ -2,9 +2,9 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B000
 import Candidate.Bundles.B088
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
-import OAI.NumberTheory.DirichletL.Moments.AmplificationErrorEnergy
-import OAI.NumberTheory.DirichletL.Moments.AmplifiedRetainedRadius
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationErrorEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplifiedRetainedRadius
 
 /- BEGIN ORIGINAL Cycle61.Physical.SecondZero.Caps; sha256 14218d0e960cee705621a0f3a6722cce849ca0cc87cf0c4010f586f0d053573d -/
 section

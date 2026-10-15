@@ -2,11 +2,11 @@
 import Candidate.Bundles.B003
 import Candidate.Bundles.B054
 import Candidate.Bundles.B057
-import OAI.NumberTheory.DirichletL.Detector.CentralClassPartition
-import OAI.NumberTheory.DirichletL.Detector.RayPhaseAmplitude
-import OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds
-import OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic
-import OAI.NumberTheory.DirichletL.PrimeRows.RowCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.CentralClassPartition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayPhaseAmplitude
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RowCount
 
 /- BEGIN ORIGINAL Cycle25.Numerator.FiniteCollect; sha256 edab780d862b0b807ad07b69889475887d2c3790e26570b30ba7e56465054485 -/
 section

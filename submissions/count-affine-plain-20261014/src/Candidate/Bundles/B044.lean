@@ -1,9 +1,9 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Mathlib
-import OAI.NumberTheory.DirichletL.PrimeRows.BufferedIntegral
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralCube
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
-import OAI.NumberTheory.DirichletL.PrimeRows.NonprincipalBoundary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.BufferedIntegral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralCube
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonprincipalBoundary
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.FullWContour; sha256 9080b01f0bb1128fc4778a011c92baeca21ee644c2dafa4ad645b41d5133541f -/
 section

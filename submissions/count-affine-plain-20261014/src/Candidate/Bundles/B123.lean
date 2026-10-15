@@ -3,7 +3,7 @@ import Candidate.Bundles.B107
 import Candidate.Bundles.B109
 import Candidate.Bundles.B121
 import Candidate.Bundles.B122
-import OAI.NumberTheory.DirichletL.Energy.AllocatedProfiles
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.AllocatedProfiles
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryWidth; sha256 fc92e49fede44d0d4d827cef3bb10d871595abcb9f55386da691748881ed494f -/
 section

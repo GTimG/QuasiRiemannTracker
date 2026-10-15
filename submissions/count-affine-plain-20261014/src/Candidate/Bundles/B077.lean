@@ -4,8 +4,8 @@ import Candidate.Bundles.B031
 import Candidate.Bundles.B041
 import Candidate.Bundles.B044
 import Candidate.Bundles.B045
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
 
 /- BEGIN ORIGINAL Cycle61.Numerator.FiniteError.FullW; sha256 6355415570007d25355ffafbc469a55ba0d6dfb440a692147265bf6931d4b379 -/
 section

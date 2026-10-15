@@ -1,11 +1,11 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B085
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowControl
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowError
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
-import OAI.NumberTheory.DirichletL.Energy.ReferenceReflection
-import OAI.NumberTheory.DirichletL.Moments.AddedZeroUniform
-import OAI.NumberTheory.DirichletL.Moments.SourceInputZeroUniform
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceReflection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AddedZeroUniform
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SourceInputZeroUniform
 
 /- BEGIN ORIGINAL Cycle61.Physical.FirstBranches.ChildUniform; sha256 07072a36fd1d28323105b9fe32f7bfa7f4ff8f1cc7708e249424435768248e55 -/
 section

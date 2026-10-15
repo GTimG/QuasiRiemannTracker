@@ -7,8 +7,8 @@ import Candidate.Bundles.B185
 import Candidate.Bundles.B187
 import Candidate.Bundles.B188
 import Candidate.Bundles.B190
-import OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySource
-import OAI.NumberTheory.DirichletL.Moments.NaturalRowSourceFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalRowSourceFamily
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometrySourceNaturalRow; sha256 d3a38a740c17a6671d393dcab9e19c2e4d35798d46ec8a15208992e4f7dad7ce -/
 section

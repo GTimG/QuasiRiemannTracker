@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B111
 import Candidate.Bundles.B152
-import OAI.NumberTheory.DirichletL.Moments.SecondInputCapacitySource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondInputCapacitySource
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondOuterPayment; sha256 6878e8fc06b332b5db2ce8c76cb7c8c6f5467d69120c39c71625c2ef9bac7aaf -/
 section

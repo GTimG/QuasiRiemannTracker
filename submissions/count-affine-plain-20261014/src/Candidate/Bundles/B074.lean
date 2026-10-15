@@ -3,11 +3,11 @@ import Candidate.Bundles.B001
 import Candidate.Bundles.B047
 import Candidate.Bundles.B071
 import Candidate.Bundles.B073
-import OAI.NumberTheory.DirichletL.Detector.DetectorBatch
-import OAI.NumberTheory.DirichletL.Detector.SourceAmplitudeClasses
-import OAI.NumberTheory.DirichletL.Detector.SourceBatch
-import OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorBatch
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.SourceAmplitudeClasses
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.SourceBatch
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness
 
 /- BEGIN ORIGINAL Cycle61.Numerator.Source.Combined; sha256 395c46afda2043a460dd75ad8520a2c38100989befb2d753b86135b401839b34 -/
 section

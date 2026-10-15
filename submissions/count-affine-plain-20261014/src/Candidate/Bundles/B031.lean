@@ -2,11 +2,11 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B025
 import Candidate.Bundles.B030
-import OAI.NumberTheory.DirichletL.Detector.GlobalCorrection
-import OAI.NumberTheory.DirichletL.Detector.LowNormalized
-import OAI.NumberTheory.DirichletL.Detector.LowWindowBound
-import OAI.NumberTheory.DirichletL.Detector.Physical
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.GlobalCorrection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowNormalized
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowWindowBound
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Physical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Normalizer; sha256 013bd729658526b464048e7784fb05fa8b505043ed67116fdbf4c45a57d6f54c -/
 section

@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B103
-import OAI.NumberTheory.DirichletL.Moments.RankinSubset
-import OAI.NumberTheory.DirichletL.Moments.SecondCanonicalNonunit
-import OAI.NumberTheory.DirichletL.Moments.SecondDiagonal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RankinSubset
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondCanonicalNonunit
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondDiagonal
 
 /- BEGIN ORIGINAL Cycle61.Moment.FirstSourceEncoding; sha256 4edf77919104a0e79bd42679a094781eca886340e6fb9c5ac2799f7a8af8990f -/
 section

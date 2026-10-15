@@ -1,18 +1,18 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B003
 import Candidate.Bundles.B004
-import OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields
-import OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField
-import OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy
-import OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedUniform
-import OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry
-import OAI.NumberTheory.DirichletL.Hecke.ExceptionalRows
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFiber
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceInternal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedUniform
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.ExceptionalRows
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFiber
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceInternal
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.MomentDetectorInverseMarkedField; sha256 7106a6049fea29ed91b8a5fd05be178b54bef2b309e53db88af863331f15a214 -/
 section

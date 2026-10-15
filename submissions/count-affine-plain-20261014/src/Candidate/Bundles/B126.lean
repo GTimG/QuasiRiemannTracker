@@ -1,6 +1,6 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B125
-import OAI.NumberTheory.DirichletL.Moments.CommonHeightEnvelope
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonHeightEnvelope
 
 /- BEGIN ORIGINAL Cycle61.Physical.FinalCapacity.Final; sha256 d770351ae2af3f86526b5dc61dc89bb1791755e5e07d7ce4657bb38375312bc5 -/
 section

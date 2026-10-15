@@ -3,7 +3,7 @@ import Candidate.Bundles.B079
 import Candidate.Bundles.B089
 import Candidate.Bundles.B091
 import Candidate.Bundles.B093
-import OAI.NumberTheory.DirichletL.Moments.AmplifiedRetainedRadius
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplifiedRetainedRadius
 
 /- BEGIN ORIGINAL Cycle61.Moment.HighSlotProduct; sha256 d5b60e4da7a59b753a1b489fddd7732e072d5a68ef3b728e6970b63703c7be8f -/
 section

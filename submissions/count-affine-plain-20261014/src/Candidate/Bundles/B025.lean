@@ -2,10 +2,10 @@
 import Candidate.Bundles.B000
 import Candidate.Bundles.B024
 import Mathlib.Tactic.Ring
-import OAI.NumberTheory.DirichletL.Detector.LowGramScale
-import OAI.NumberTheory.DirichletL.Hecke.Dirichlet
-import OAI.NumberTheory.DirichletL.Hecke.PrimitiveSupremum
-import OAI.NumberTheory.DirichletL.Hecke.SignalIdentity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGramScale
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Dirichlet
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.PrimitiveSupremum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.SignalIdentity
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Final.Height; sha256 53325e57d2bcaf07c29834acf600311e696e4c1cd30c35d433a7baa5434efdf0 -/
 section

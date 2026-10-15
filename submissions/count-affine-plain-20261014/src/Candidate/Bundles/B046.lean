@@ -2,10 +2,10 @@
 import Candidate.Bundles.B044
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
-import OAI.NumberTheory.DirichletL.Detector.MellinBoundary
-import OAI.NumberTheory.DirichletL.Hecke.DyadicContour
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral
-import OAI.NumberTheory.DirichletL.PrimeRows.TupleGrowth
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.MellinBoundary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DyadicContour
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.TupleGrowth
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.FullWAggregate; sha256 0b17703036a379b28233be37d8a4972c0e2c62ea8a4d830b0be26abb783ef0b1 -/
 section

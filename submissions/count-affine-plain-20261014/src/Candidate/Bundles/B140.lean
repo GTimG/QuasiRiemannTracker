@@ -4,9 +4,9 @@ import Candidate.Bundles.B000
 import Candidate.Bundles.B080
 import Candidate.Bundles.B109
 import Candidate.Bundles.B126
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
-import OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
-import OAI.NumberTheory.DirichletL.Moments.PrimeElements
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PrimeElements
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryAffinePrimeGates; sha256 37dcfc422de14af29194c2b42f612240e78fde03afbb8b6b03f38a024565b64c -/
 section

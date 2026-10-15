@@ -1,13 +1,13 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B024
 import Candidate.Bundles.B031
-import OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm
-import OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFixedPrimes
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFixedPrimes
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.CubeSlotExponent; sha256 52ac8aee806e99c324b9bc70560d9e197661f6b07f1718d05cb6b64bc57895e2 -/
 section

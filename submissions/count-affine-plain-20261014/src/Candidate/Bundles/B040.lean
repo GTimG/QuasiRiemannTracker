@@ -1,13 +1,13 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B024
 import Candidate.Bundles.B039
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralCube
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError
-import OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle
-import OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving
-import OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralCube
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.CanonicalReduction; sha256 86f71e7b15d8c8f86dc994bc3bbb17c2f4cfb7f01154936d3798f2ac9389eb6e -/
 section

@@ -2,13 +2,13 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B035
 import Candidate.Bundles.B038
-import OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails
-import OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad
-import OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail
-import OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition
-import OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail
-import OAI.NumberTheory.DirichletL.PrimeRows.SmallSum
-import OAI.NumberTheory.DirichletL.PrimeRows.SmallTail
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.SmallSum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.SmallTail
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.PhysicalLargeTail; sha256 f796ef2062ae32679f4b3ac2719582ba919217518c96dc3d05ddad9b85a52cce -/
 section

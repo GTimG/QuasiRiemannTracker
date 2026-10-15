@@ -2,10 +2,10 @@
 import Candidate.Bundles.B024
 import Candidate.Bundles.B032
 import Candidate.Bundles.B033
-import OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical
-import OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder
-import OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds
-import OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Transport.PrincipalRemainderBounds; sha256 8a05b6b032ecec354ab48f8e0c34c02bd5e769214db9d7846eb7498173042439 -/
 section

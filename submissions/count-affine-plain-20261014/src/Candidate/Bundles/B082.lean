@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B080
 import Candidate.Bundles.B081
-import OAI.NumberTheory.DirichletL.Moments.CommonRadiusSaving
-import OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourceNormalization
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonRadiusSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstPhysicalSourceNormalization
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.ActiveColumns; sha256 59abb90b4f178d5c2b602ec03aa5e8d0077d1eb64bfef5fd13a194a5416e9d41 -/
 section

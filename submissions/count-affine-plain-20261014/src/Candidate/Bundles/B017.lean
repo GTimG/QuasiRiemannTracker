@@ -4,13 +4,13 @@ import Candidate.Bundles.B012
 import Candidate.Bundles.B014
 import Candidate.Bundles.B015
 import Candidate.Bundles.B016
-import OAI.NumberTheory.DirichletL.Energy.BandMonotonicity
-import OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
-import OAI.NumberTheory.DirichletL.Energy.LowBandEmpty
-import OAI.NumberTheory.DirichletL.Energy.LowBandSubtype
-import OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
-import OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowBands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.BandMonotonicity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.LowBandEmpty
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.LowBandSubtype
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowBands
 
 /- BEGIN ORIGINAL Cycle25.Energy.PositiveHighSourceBounded; sha256 e68ada5fde60e2f8f902463c27f2dcf3e815582f9318260a6d6922311874a71e -/
 section

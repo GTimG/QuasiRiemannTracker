@@ -5,9 +5,9 @@ import Candidate.Bundles.B107
 import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Algebra.Order.Floor.Semiring
 import Mathlib.Tactic.Positivity
-import OAI.NumberTheory.DirichletL.Energy.InputParentCapacity
-import OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
-import OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.InputParentCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AllocatedChildCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationChildSourceCaps
 
 /- BEGIN ORIGINAL Cycle61.Moment.CellGeometry; sha256 7e8f4946e4034ee53b88a597a3961e660e38b734596a78005c5db3d259502366 -/
 section

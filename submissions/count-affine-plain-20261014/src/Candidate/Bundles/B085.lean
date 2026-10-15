@@ -1,7 +1,7 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B084
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowBands
-import OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowBands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
 
 /- BEGIN ORIGINAL Cycle61.Physical.ClippedProjectorShell; sha256 2b53ae3ac67208008b4c2d90099bc0d3426a970bd2a1e9e5ad405a941678170f -/
 section

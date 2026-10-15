@@ -2,11 +2,11 @@
 import Candidate.Bundles.B009
 import Candidate.Bundles.B012
 import Candidate.Bundles.B013
-import OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
-import OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
-import OAI.NumberTheory.DirichletL.Energy.NaturalSourceAdmission
-import OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
-import OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.FixedRadialReduction
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.NaturalInputMatches
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.NaturalSourceAdmission
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.OriginalProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PhysicalEntry
 
 /- BEGIN ORIGINAL Cycle25.Energy.ReferenceLivePower; sha256 6ef6e07c9a95ee7ca5cced0576032a67bacada2fac2ae13bf34e0a755eebd44d -/
 section

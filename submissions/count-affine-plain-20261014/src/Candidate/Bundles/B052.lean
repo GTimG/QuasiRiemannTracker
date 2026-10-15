@@ -1,12 +1,12 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B046
 import Candidate.Bundles.B051
-import OAI.NumberTheory.DirichletL.Moments.FrequencyScaleSupremum
-import OAI.NumberTheory.DirichletL.Moments.OneReflectionScaleEnergy
-import OAI.NumberTheory.DirichletL.Moments.ReflectedNormalization
-import OAI.NumberTheory.DirichletL.Moments.ReflectionWeightedEnergy
-import OAI.NumberTheory.DirichletL.Moments.UniformReflectionProfile
-import OAI.NumberTheory.DirichletL.Moments.UniformRetainedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FrequencyScaleSupremum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OneReflectionScaleEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ReflectedNormalization
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.ReflectionWeightedEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.UniformReflectionProfile
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.UniformRetainedEnergy
 
 /- BEGIN ORIGINAL Cycle25.Numerator.Imported.NumeratorPacketMellin; sha256 6e01f732f9e73496113f84a10556a91fbd052ea4d6a7f24868964f58af20b5a9 -/
 section

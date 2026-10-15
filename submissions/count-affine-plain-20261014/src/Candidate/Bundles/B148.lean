@@ -2,21 +2,21 @@
 import Candidate.Bundles.B141
 import Candidate.Bundles.B146
 import Candidate.Bundles.B147
-import OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
-import OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalFixedQSaved
-import OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalFixedQUniform
-import OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalPhysicalBudget
-import OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalPhysicalSaved
-import OAI.NumberTheory.DirichletL.Moments.OriginalCommonHarmonic
-import OAI.NumberTheory.DirichletL.Moments.SecondDivisorSupport
-import OAI.NumberTheory.DirichletL.Moments.SecondDyadicRowSupport
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalCommonSaving
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFamily
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalKernel
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalPhysicalSaving
-import OAI.NumberTheory.DirichletL.Moments.SecondExceptionalSourceFamily
-import OAI.NumberTheory.DirichletL.Moments.SecondPhysicalBlock
-import OAI.NumberTheory.DirichletL.Moments.SourceLowerSupport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalFixedQSaved
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalFixedQUniform
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalPhysicalBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FiniteProfileExceptionalPhysicalSaved
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OriginalCommonHarmonic
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondDivisorSupport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondDyadicRowSupport
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalCommonSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalKernel
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalPhysicalSaving
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondExceptionalSourceFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondPhysicalBlock
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SourceLowerSupport
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryErrorScalarPayment; sha256 39ec2d4e8310f1c920b2b870685d1b4015ffd265ea1ed8a1f7316a07a1d7562c -/
 section

@@ -1,14 +1,14 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B003
 import Candidate.Bundles.B007
-import OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
-import OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
-import OAI.NumberTheory.DirichletL.PrimeRows.NonfloorBudget
-import OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonfloorBudget
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedRestrictedField; sha256 e83517d588c09275aa5432b5116004210ac73b96ba6dd22b4b9583e7a9f07f5d -/
 section

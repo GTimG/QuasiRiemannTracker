@@ -2,8 +2,8 @@
 import Candidate.Bundles.B020
 import Candidate.Bundles.B063
 import Candidate.Bundles.B078
-import OAI.NumberTheory.DirichletL.Energy.PaidBands
-import OAI.NumberTheory.DirichletL.Moments.Counting
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.PaidBands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.Counting
 
 /- BEGIN ORIGINAL Cycle61.Moment.LowBranch.Incumbent; sha256 1547465fe6192651dd2c9441866b437e3b5783f98c31354c1ca31282761a708e -/
 section

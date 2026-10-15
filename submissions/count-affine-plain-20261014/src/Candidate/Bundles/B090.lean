@@ -6,8 +6,8 @@ import Candidate.Bundles.B084
 import Candidate.Bundles.B085
 import Candidate.Bundles.B087
 import Candidate.Bundles.B089
-import OAI.NumberTheory.DirichletL.Energy.InputParentCapacity
-import OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.InputParentCapacity
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstAmplificationChoice
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SourceCaps; sha256 01c7379b371ccbc3637745f33e6bf6ce3c626c97d0a397cf1411c5a25279bc31 -/
 section

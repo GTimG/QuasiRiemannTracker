@@ -1,8 +1,8 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B103
 import Candidate.Bundles.B104
-import OAI.NumberTheory.DirichletL.Moments.RankinRadical
-import OAI.NumberTheory.DirichletL.Moments.SecondCanonicalFrequency
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.RankinRadical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondCanonicalFrequency
 
 /- BEGIN ORIGINAL Cycle61.Physical.SecondCommonRadical; sha256 4ac661978ca580bfa7d0ac175be2b7b7443936ea37454fb00ec92fb6d4df5cf1 -/
 section

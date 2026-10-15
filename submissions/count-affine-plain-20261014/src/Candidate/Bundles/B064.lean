@@ -3,7 +3,7 @@ import Candidate.Bundles.B000
 import Candidate.Bundles.B060
 import Candidate.Bundles.B062
 import Candidate.Bundles.B063
-import OAI.NumberTheory.DirichletL.Energy.Bands
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.Bands
 
 /- BEGIN ORIGINAL Cycle61.Moment.InitialAffineContract; sha256 22ff66f4494084ac8f52b1d91d1b08f91af22f5b8d9d7135b944d1a61449208c -/
 section

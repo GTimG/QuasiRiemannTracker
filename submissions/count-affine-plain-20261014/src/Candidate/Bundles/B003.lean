@@ -1,14 +1,14 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
 import Candidate.Bundles.B001
 import Candidate.Bundles.B002
-import OAI.NumberTheory.DirichletL.Detector.DetectorMomentData
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource
-import OAI.NumberTheory.DirichletL.Dictionary.InverseRawReference
-import OAI.NumberTheory.DirichletL.Dictionary.InverseRawUniform
-import OAI.NumberTheory.DirichletL.ParametersFixedSource
-import OAI.NumberTheory.DirichletL.ParametersHighData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorMomentData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseRawReference
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Dictionary.InverseRawUniform
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersFixedSource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersHighData
 
 /- BEGIN ORIGINAL Cycle25.Assembly.Count.Parameters; sha256 56d3cc62a8de51e0089b351a98959a3ea4ed905db08cb426c9f7f12d751b1197 -/
 section

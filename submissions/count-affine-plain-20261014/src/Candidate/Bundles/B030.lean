@@ -3,14 +3,14 @@ import Candidate.Bundles.B025
 import Candidate.Bundles.B026
 import Candidate.Bundles.B027
 import Candidate.Bundles.B029
-import OAI.NumberTheory.DirichletL.Detector.LowCentralTuple
-import OAI.NumberTheory.DirichletL.Detector.LowCommonBound
-import OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral
-import OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad
-import OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote
-import OAI.NumberTheory.DirichletL.Detector.LowGaussianSum
-import OAI.NumberTheory.DirichletL.Detector.LowRemoteMass
-import OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowCentralTuple
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowCommonBound
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGaussianSum
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowRemoteMass
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Low.Detector.TupleBound; sha256 eebfe9166100c05c449010bba87ad79fc5a828e33f4074d0494b319c49cff054 -/
 section

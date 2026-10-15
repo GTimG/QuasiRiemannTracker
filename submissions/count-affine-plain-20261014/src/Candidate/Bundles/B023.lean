@@ -4,9 +4,9 @@ import Candidate.Bundles.B003
 import Candidate.Bundles.B008
 import Candidate.Bundles.B020
 import Candidate.Bundles.B022
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
-import OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource
-import OAI.NumberTheory.DirichletL.ParametersSlotLengths
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersSlotLengths
 
 /- BEGIN ORIGINAL Cycle61.Assembly.Count.Geometry; sha256 8747f4a92708b8cfc8f83b020f3fe634d3eee5aaf4897fd4300fe28335ea0a2c -/
 section

@@ -8,7 +8,7 @@ import Candidate.Bundles.B149
 import Candidate.Bundles.B152
 import Candidate.Bundles.B153
 import Candidate.Bundles.B154
-import OAI.NumberTheory.DirichletL.Moments.OriginalChildEnergy
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.OriginalChildEnergy
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.SecondLiveAllocation; sha256 1f64a88d3ae525692d1d627a15c3de2e220010a64db62c7febeb6786cc487699 -/
 section

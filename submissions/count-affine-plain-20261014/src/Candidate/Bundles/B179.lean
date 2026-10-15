@@ -10,7 +10,7 @@ import Candidate.Bundles.B167
 import Candidate.Bundles.B171
 import Candidate.Bundles.B176
 import Candidate.Bundles.B178
-import OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstChildProfileControl
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryMainLowNormalizedPayment; sha256 08628d88ecd6c38fa74340f3058f64f2a11ef32fb99dafbfbe228fc8cc29d8de -/
 section

@@ -1,13 +1,13 @@
 /- Packaging rehearsal. Original notices retained; separate replay required. -/
-import OAI.NumberTheory.DirichletL.Detector.PrimeConstants
-import OAI.NumberTheory.DirichletL.Moments.AmplificationShortening
-import OAI.NumberTheory.DirichletL.Moments.FirstCanonicalFamily
-import OAI.NumberTheory.DirichletL.Moments.FirstColumns
-import OAI.NumberTheory.DirichletL.Moments.Mask
-import OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceCharacters
-import OAI.NumberTheory.DirichletL.Moments.SecondCanonical
-import OAI.NumberTheory.DirichletL.Moments.SecondCanonicalNonunit
-import OAI.NumberTheory.DirichletL.Moments.SecondSourceMask
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.PrimeConstants
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationShortening
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstCanonicalFamily
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstColumns
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.Mask
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceCharacters
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondCanonical
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondCanonicalNonunit
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.SecondSourceMask
 
 /- BEGIN ORIGINAL LocalMoment.SignedRows; sha256 0c71c83f4ca774cdfe48684ef74d38c03674c003b8e935f5d8cf1c1e9aaf64ba -/
 section

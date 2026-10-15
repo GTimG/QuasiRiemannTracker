@@ -9,9 +9,9 @@ import Candidate.Bundles.B140
 import Candidate.Bundles.B142
 import Candidate.Bundles.B144
 import Candidate.Bundles.B145
-import OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
-import OAI.NumberTheory.DirichletL.Moments.FirstExceptionalPrefactorActual
-import OAI.NumberTheory.DirichletL.Moments.PrimeElements
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.AmplificationAllocationCost
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FirstExceptionalPrefactorActual
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PrimeElements
 
 /- BEGIN ORIGINAL Cycle61.Physical.InitialMass.GeometryErrorColumn; sha256 099259aab90d36bae25ec04e4ec3f17be3e9d6f9e1057dc2e27e393b60f22196 -/
 section

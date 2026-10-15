@@ -3,7 +3,7 @@ import Candidate.Bundles.B000
 import Candidate.Bundles.B050
 import Candidate.Bundles.B059
 import Mathlib.Tactic.FieldSimp
-import OAI.NumberTheory.DirichletL.PrimeRows.RowCount
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RowCount
 
 /- BEGIN ORIGINAL Cycle61.Physical.Capacity; sha256 c45c646a6c99f552d42fd070e752c105dac8809f1c7f3f084e171c76deeab5a1 -/
 section
