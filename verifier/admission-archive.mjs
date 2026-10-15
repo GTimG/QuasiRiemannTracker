@@ -6,6 +6,7 @@ import { parseDeclaration } from "./pr-admission.mjs";
 import { verificationResult } from "./actions/result.mjs";
 import {
   parseSubmissionMetadata,
+  readSubmissionSources,
   validateSubmissionMetadata,
 } from "./submission-metadata.mjs";
 
@@ -46,7 +47,7 @@ export function validateAdmissionRecord(value) {
   const p = value.pr;
   const a = value.admission;
   if (
-    value.schema_version !== 1 ||
+    ![1, 2].includes(value.schema_version) ||
     !repository(value.repository) ||
     value.source_path !== `submissions/${value.result_id}/src` ||
     !sha(value.source_tree) ||
@@ -80,8 +81,28 @@ export function validateAdmissionRecord(value) {
     declaration.theta_exact !== value.theta_exact
   )
     throw Error("Archived PR declaration differs from its verified result");
-  if (canonical(value.metadata) !== canonical(parseSubmissionMetadata(p.body)))
+  if (
+    value.schema_version === 1 &&
+    canonical(value.metadata) !== canonical(parseSubmissionMetadata(p.body))
+  )
     throw Error("Archived metadata differs from the verified PR body");
+  if (
+    value.schema_version === 2 &&
+    value.metadata_sha256 !== sha256(canonical(value.metadata))
+  )
+    throw Error("Archived metadata differs from the verified source metadata");
+  const dependencyTrees = value.dependency_trees ?? {};
+  if (
+    typeof dependencyTrees !== "object" ||
+    Array.isArray(dependencyTrees) ||
+    Object.entries(dependencyTrees).some(
+      ([id, tree]) => !/^[a-z][a-z0-9-]{2,63}$/.test(id) || !sha(tree),
+    ) ||
+    (value.metadata.dependencies ?? []).some(
+      (id) => !Object.hasOwn(dependencyTrees, id),
+    )
+  )
+    throw Error("Admission is missing immutable dependency trees");
   if (value.report_json !== null) {
     if (
       typeof value.report_json !== "string" ||
@@ -121,6 +142,8 @@ export function admissionRecord({
   expected,
   record,
   sourceTree,
+  dependencyTrees = {},
+  metadata,
   reportBytes = null,
   archivedAt = new Date().toISOString(),
 }) {
@@ -134,7 +157,7 @@ export function admissionRecord({
   )
     throw Error("Admission archive requires the current verified PR identity");
   return validateAdmissionRecord({
-    schema_version: 1,
+    schema_version: 2,
     ...Object.fromEntries(
       ["repository", "number", "head_sha", "result_id", "theta_exact"].map(
         (key) => [key, expected[key]],
@@ -142,7 +165,9 @@ export function admissionRecord({
     ),
     source_path: `submissions/${expected.result_id}/src`,
     source_tree: sourceTree,
-    metadata: parseSubmissionMetadata(pr.body),
+    dependency_trees: dependencyTrees,
+    metadata: structuredClone(validateSubmissionMetadata(metadata)),
+    metadata_sha256: sha256(canonical(metadata)),
     certificate: record,
     report_json: reportBytes === null ? null : reportBytes.toString("utf8"),
     pr: {
@@ -231,7 +256,20 @@ export async function archiveAdmission(
     throw Error("Admission archive requires repository credentials");
   const request = github(fetcher, token, input.expected.repository);
   const sourceTree = await submissionTree(request, input.expected);
-  const envelope = admissionRecord({ ...input, sourceTree });
+  const dependencyTrees = input.metadata.dependencies?.length
+    ? (
+        await readSubmissionSources(
+          async (route) =>
+            (
+              await request(
+                route.replace(`repos/${input.expected.repository}/`, ""),
+              )
+            ).data,
+          input.expected,
+        )
+      ).trees
+    : {};
+  const envelope = admissionRecord({ ...input, sourceTree, dependencyTrees });
   const path = admissionPath(envelope);
   const content = JSON.stringify(envelope, null, 2) + "\n";
   let blobSha;
@@ -277,6 +315,8 @@ export async function archiveAdmission(
             "source_path",
             "source_tree",
           ].some((key) => saved[key] !== envelope[key]) ||
+          canonical(saved.dependency_trees ?? {}) !==
+            canonical(envelope.dependency_trees ?? {}) ||
           canonical(saved.metadata) !== canonical(envelope.metadata) ||
           saved.admission.run_id !== envelope.admission.run_id ||
           saved.admission.run_attempt !== envelope.admission.run_attempt

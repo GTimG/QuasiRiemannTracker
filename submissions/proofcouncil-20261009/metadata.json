@@ -1,0 +1,67 @@
+{
+  "submitted_at": "",
+  "published_at": "",
+  "merged_at": "",
+  "pr": null,
+  "repository": "",
+  "source_commit": "",
+  "first_verified_at": "2026-10-09T11:37:19Z",
+  "entrypoint": {
+    "module": "QRH.Nonvanishing",
+    "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re"
+  },
+  "license": "Apache-2.0 (Lean development; retained upstream notices)",
+  "builds_on": [
+    "openai-baseline"
+  ],
+  "id": "proofcouncil-20261009",
+  "title": "ProofCouncil · certified uniform descent",
+  "theta": {
+    "numerator": "874957019421",
+    "denominator": "1000000000000"
+  },
+  "authors": [
+    {
+      "name": "Tim Gehrunger · ProofCouncil"
+    }
+  ],
+  "method": "Extends the actual masked moment and detector range, proves optimized low/high probe estimates, and applies Mellin continuation and all-character transfer. All three targets compile at the exact rational threshold.",
+  "references": [
+    {
+      "label": "Verification record",
+      "url": "certificates/proofcouncil-20261009.json"
+    },
+    {
+      "label": "Checked Lean solution",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/qrh/src/Solution.lean"
+    },
+    {
+      "label": "Lean proof source",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/qrh-20261009/Nonvanishing.lean"
+    },
+    {
+      "label": "Complete proof source, inputs and logs",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/qrh-20261009/source-public.tar.gz"
+    },
+    {
+      "label": "Accepted manuscript (TeX)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/qrh-20261009/accepted-answer.tex"
+    }
+  ],
+  "status": "framework-verified",
+  "timeline_at": "2026-10-09T11:37:19Z",
+  "date_label": "Lean verification",
+  "verification_note": "Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and their definitions. Lean, NanoDa and con-ron accepted the exported proofs.",
+  "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field.",
+  "certificate_url": "certificates/proofcouncil-20261009.json",
+  "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/qrh/src/Solution.lean",
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "verification": {
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/qrh/result.json",
+    "report_sha256": "7c25b8df68deec815b59ff8553bb3db5570cbd01af9142e5ed42719557643118",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "d716ecaae80f7823a5b8314916364fdfa0d133fb"
+  }
+}

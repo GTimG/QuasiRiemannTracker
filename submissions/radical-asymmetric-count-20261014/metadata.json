@@ -1,0 +1,34 @@
+{
+  "title": "Asymmetric marked counting with coupled radical allocation",
+  "authors": [
+    {
+      "name": "timbalud",
+      "url": "https://github.com/timbalud"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 0.8748559. Separate inverse and plain prime-slot selections increase the marked count gain; retaining the common-radical penalty strengthens the allocation estimate. Their combined source saving is 37/10000 before charged errors. Builds on the marked high-zero construction, Cycle61, and the listed predecessor proofs; inherited attribution is preserved.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139"
+  ],
+  "references": [
+    {
+      "label": "Marked high-zero predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/48"
+    },
+    {
+      "label": "Cycle61 construction",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Verified comparison bound 0.8748598",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

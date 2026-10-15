@@ -1,0 +1,59 @@
+import Candidate.Cycle62.Assembly.Final.SourceProbe
+import Candidate.Cycle62.Assembly.Final.Height
+import Candidate.Cycle62.Assembly.Final.Baseline
+import Candidate.Cycle62.Assembly.Transport.HighApproximation
+
+set_option autoImplicit false
+namespace Cycle62.FinalAssembly
+noncomputable section
+open scoped Classical BigOperators
+open Filter Asymptotics OAI.SevenEighths
+open HeckeFamily ProbePhysical Cycle62DetectorCount PrincipalSignalComparison Cycle62HighTransport
+
+/-- The finite numerator remains the honest analytic integration prerequisite. -/
+def FixedFiniteNumeratorInput (D : BaselineData) (F : BaselineSourceData D)
+    (P : TransportParameters D) (τ : ℝ) : Prop :=
+  ∀n : ℕ,0<n → ∀η : Character,
+    FiniteNonfloorNumeratorBound F.modulus ⊤ le_top F.S F.exclusions F.maximal
+      D.length 1 2 rowPadding D.e τ P.sigma (fun _=>F.w) F.W F.W n η
+
+theorem sourceProbe_high_of_finite_numerator (D : BaselineData) (F : BaselineSourceData D)
+    (P : TransportParameters D) (J τ : ℝ) (hheight : HeightAdmissible D P J τ)
+    (hβ : Arithmetic.theta≤HeckeZeroSupremum.beta)
+    (hfinite : FixedFiniteNumeratorInput D F P τ) :
+    ∀η : Character,
+      (fun Z=>sourceProbe D F η Z-HeckeSignal.signal
+        (η.excludePrimes F.S F.exclusions.prime) (sourceCorrection η F.S) Assembly.signalShift Z)
+        =O[atTop](fun Z : ℝ=>Z^(HeckeZeroSupremum.beta+Assembly.signalShift-P.sigma)) := by
+  rcases hheight with ⟨hτ,hτd,hτcost,hτt,hτeps,hτJ⟩
+  have hlarge : P.sigma+P.nu≤1+Assembly.signal Arithmetic.theta := by
+    have hn:=P.nu_eq
+    have hs:=P.sigma_small
+    have ht:=D.t_small
+    have hsig : (1/10:ℝ)<Assembly.signal Arithmetic.theta := by
+      norm_num [Assembly.signal,Assembly.signalShift,Arithmetic.theta,Arithmetic.x,Arithmetic.ell]
+    linarith
+  have hcap : Arithmetic.h+rowPadding≤(7/8:ℝ)-1/100 := by
+    norm_num [Arithmetic.h,rowPadding]
+  have hh := normalizedProbe_high_of_finite_nonfloor_numerator F.modulus ⊤ le_top
+    D.N D.e (1/100) 1 2 1 rowPadding 1 τ P.ellMin P.nu
+    D.e_pos D.e_small (by norm_num) (by norm_num)
+    (by norm_num [rowPadding]) (by norm_num [rowPadding])
+    hτ (by norm_num) (by norm_num) (by norm_num) P.ellMin_pos P.nu_pos
+    hβ baseline_beta F.S F.exclusions F.maximal F.first
+    D.length P.slots_min D.slots_injective D.slots_sum
+    (fun _=>F.w) (fun _=>F.smooth) (fun _=>F.compact) (fun _=>F.support)
+    (fun _=>F.bounded) (fun _=>F.nonzero)
+    F.W F.W 1 2 1 2 (by norm_num) (by norm_num)
+    F.complex_support F.complex_support F.real F.real F.nonnegative F.nonnegative
+    F.complex_nonzero F.complex_nonzero P.sigma P.sigma_pos
+    P.geometric_budget P.principal_budget P.window_budget hlarge
+    P.eps D.t (1/200) (7/8) P.rmin P.phaseEpsilon P.phaseKappa
+    D.cost P.mesh (1/100) D.t
+    P.eps_pos D.t_pos.le (by norm_num) (by norm_num) (by norm_num)
+    P.rmin_pos P.phaseEpsilon_pos P.phaseKappa_pos D.cost_pos.le P.mesh_pos (by norm_num)
+    P.phase_budget P.phase_gap (by linarith) hτeps hcap
+    P.slots_lower D.slots_small (by norm_num [rowPadding,Transport.rowExtension]) P.floor_budget hfinite
+  simpa only [sourceProbe] using hh
+end
+end Cycle62.FinalAssembly

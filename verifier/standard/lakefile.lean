@@ -9,9 +9,9 @@ require PrimeNumberTheoremAnd from git
   "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git" @ "c39a751132c88b6e8080b74c74023fd95b3d8be0"
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git" @ "d13f23b723b8a846827a245b89c10fc7d3f11612"
-lean_lib OAI where
-  roots := #[`OAI.NumberTheory.DirichletL.Nonvanishing]
 lean_lib Challenge
 lean_lib Candidate where
   globs := #[`Candidate.+]
 lean_lib Solution
+lean_lib Submissions where
+  globs := #[`Submissions.+]

@@ -1,4 +1,6 @@
 import { sha256 } from "./common.mjs";
+import { boundLabel } from "../core/catalogue.mjs";
+import { proofRevision } from "../core/catalogue-revisions.mjs";
 export const KERNELS = ["Lean default", "nanoda", "con-ron"];
 export function certificate(value) {
   if (
@@ -18,6 +20,25 @@ export function certificate(value) {
   )
     throw Error("Invalid verification record");
   return value;
+}
+// Historical verification provenance lives with the corresponding Lean source.
+export function historicalCertificate(metadata) {
+  return certificate({
+    schema_version: 1,
+    result_id: proofRevision(metadata),
+    theta_exact: boundLabel(metadata),
+    verified_at: metadata.first_verified_at,
+    source_repository:
+      metadata.repository || metadata.verification?.source_repository,
+    source_commit:
+      metadata.source_commit || metadata.verification?.source_commit,
+    kernels: KERNELS,
+    report_url: metadata.verification?.report_url,
+    report_sha256: metadata.verification?.report_sha256,
+    ...(metadata.bound_interval
+      ? { bound_interval: metadata.bound_interval }
+      : {}),
+  });
 }
 // Call after verificationResult has authenticated a successful worker report.
 export function workerCertificate(expected, report, reportUrl, reportBytes) {

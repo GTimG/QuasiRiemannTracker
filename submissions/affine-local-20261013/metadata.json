@@ -1,0 +1,24 @@
+{
+  "title": "Affine local-moment capacity",
+  "authors": [
+    {
+      "name": "Kari Roegnvaldsson",
+      "url": "https://github.com/karirogg"
+    }
+  ],
+  "description": "Retains the local fourth-moment proof's separate volume and capacity-defect allowances through its actual-source and physical transport wrappers. This replaces the narrower 22/5 capacity slice by an affine capacity and feeds a revised exact endpoint certificate into the all-Dirichlet continuation argument. Builds on nielstron's local 22/5 moment, Zhongpai Gao's local-moment work, Hailey Collet's Cycle25 framework, Akash Levy's weighted numerator, and OpenAI/math. Prepared with AI assistance.",
+  "license": "Apache-2.0 (inherited notices retained)",
+  "builds_on": [
+    "local44-20261013"
+  ],
+  "references": [
+    {
+      "label": "Local 22/5 predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/26"
+    }
+  ],
+  "dependencies": [
+    "local44-20261013",
+    "openai-baseline"
+  ]
+}

@@ -4,30 +4,44 @@ from pathlib import Path
 import shutil
 
 
-def compile_modules(order, dependencies, compile_one, *, jobs):
+def compile_modules(order, dependencies, compile_one, *, jobs, is_memory_error=lambda error: False):
     pending = set(order)
     if len(pending) != len(order) or set(dependencies) != pending:
         raise ValueError('Invalid module build graph')
     if any(not set(deps) <= pending for deps in dependencies.values()):
         raise ValueError('Missing build dependency')
-    done, running = set(), {}
+    done, running, retries = set(), {}, []
     with ThreadPoolExecutor(max_workers=jobs) as pool:
-        while pending or running:
-            available = jobs - sum(threads for _, threads in running.values())
-            ready = [name for name in order if name in pending and set(dependencies[name]) <= done]
-            slots = min(available, len(ready))
-            for index, name in enumerate(ready[:slots]):
-                threads = available // (slots - index)
-                running[pool.submit(compile_one, name, threads)] = (name, threads)
-                available -= threads
-                pending.remove(name)
+        while pending or running or retries:
+            if retries:
+                # Drain active compilers before giving a large module the whole
+                # existing memory budget. Its dependents remain blocked.
+                if not running:
+                    name = retries.pop(0)
+                    running[pool.submit(compile_one, name, jobs)] = (name, jobs)
+            else:
+                available = jobs - sum(threads for _, threads in running.values())
+                ready = [name for name in order if name in pending and set(dependencies[name]) <= done]
+                slots = min(available, len(ready))
+                for index, name in enumerate(ready[:slots]):
+                    threads = available // (slots - index)
+                    running[pool.submit(compile_one, name, threads)] = (name, threads)
+                    available -= threads
+                    pending.remove(name)
             if not running:
                 raise ValueError('Cyclic module build graph')
             completed, _ = wait(running, return_when=FIRST_COMPLETED)
             for future in completed:
-                name, _ = running.pop(future)
-                future.result()
-                done.add(name)
+                name, threads = running.pop(future)
+                try:
+                    future.result()
+                except Exception as error:
+                    if threads == jobs or not is_memory_error(error):
+                        raise
+                    print(f'Memory limit reached for {name}; retrying alone after active compilers finish', flush=True)
+                    retries.append(name)
+                else:
+                    done.add(name)
 
 
 def publish_module(output, destination):

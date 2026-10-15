@@ -9,7 +9,6 @@ on:
       - "verifier/standard/tool-pins.json"
       - "verifier/standard/lakefile.lean"
       - "verifier/standard/lake-manifest.json"
-      - "submissions/**"
       - ".github/actions/verifier-cache/**"
       - ".github/workflows/verifier-cache.yml"
   schedule:

@@ -1,0 +1,28 @@
+{
+  "title": "Reserve-balanced affine local moment",
+  "authors": [
+    {
+      "name": "Kari Roegnvaldsson",
+      "url": "https://github.com/karirogg"
+    }
+  ],
+  "description": "Reallocates intermediate LOW and extracted-error reserves to enlarge the affine local-moment defect allowance to 1/250 while retaining the amplifier, volume cap, and final analytic savings. Regenerates the endpoint and transport arithmetic for the canonical all-Dirichlet statement. Builds on Kari Roegnvaldsson's affine-capacity proof, nielstron's local 22/5 moment, Zhongpai Gao's local-moment work, Hailey Collet's Cycle25 framework, Akash Levy's weighted numerator, and OpenAI/math. Prepared with AI assistance.",
+  "license": "Apache-2.0 (inherited notices retained)",
+  "builds_on": [
+    "local44-20261013"
+  ],
+  "references": [
+    {
+      "label": "Verified affine-capacity predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/37"
+    },
+    {
+      "label": "Local 22/5 predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/26"
+    }
+  ],
+  "dependencies": [
+    "local44-20261013",
+    "openai-baseline"
+  ]
+}

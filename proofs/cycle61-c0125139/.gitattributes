@@ -1,4 +1,0 @@
-# Preserve the supplied historical receipt bytes, including line endings.
-arithmetic/endpoint-receipt.json -text
-arithmetic/historical-rational-receipt.json -text
-arithmetic/source-range-receipt.json -text

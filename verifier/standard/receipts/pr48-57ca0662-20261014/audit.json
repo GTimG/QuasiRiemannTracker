@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "head_sha": "57ca0662b4ddeb2a75c0e302d0350cc65cf67c12",
+  "theta_exact": "437429/500000",
+  "verified_at": "2026-10-14T22:27:39.365341+00:00",
+  "report_sha256": "5ea32e372c258299711c6a66fab0391de938150261b76cfe274306ba63e61b64",
+  "modules_freshly_compiled": 0,
+  "authenticated_modules_reused": 3808,
+  "candidate_cache_reused": true,
+  "source_build_provenance": {
+    "source_build_head": "f7ec5c9559b3dec590bda3834c18c49494b9ea81",
+    "source_build_report_sha256": "80a14580f37a3706c19ca1e74a0be6aa7ea890bbb3b33b8dd8e1dc2f76d94be4",
+    "updated_head": "57ca0662b4ddeb2a75c0e302d0350cc65cf67c12",
+    "archive_sha256": "3fe516e0954ca0b05a7bed1de8861504106a70a42591d111aa30580c54044d73",
+    "module_count": 3808,
+    "inputs_sha256": "1bb601ef54217c4da058e5a848f288e22e7a77e61be3aa248e1fbfb35659c203",
+    "all_module_fingerprints_equal": true,
+    "changed_prepared_files": [
+      "dependencies/openai-baseline/metadata.json"
+    ],
+    "authentication": "Operator-owned completed ETH run; receipt authenticated over SSH. No public server-signing-key attestation is claimed."
+  },
+  "trusted_verifier_revision": "afabe6f0909ef2bf74d12a3d25608a473d3ff5b2",
+  "driver_unmodified": true,
+  "source_dependency_trees": {
+    "marked-high-count-20261014": "d322a374663af2833da5445abd6d5e8741954c35",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sandbox_controls": "PASS",
+  "approved_library_files": 34945,
+  "approved_OAI_objects_reused": false,
+  "evidence_transport": "Authenticated SSH; returned files checked against outside-sandbox receipt",
+  "limitations": "Pinned non-OAI package objects reused after matching the prior authenticated inventory. All required Lean modules were rebuilt and accepted in the immediately preceding f7ec5c95 ETH run. Current source/module fingerprints match exactly; approved compilation objects were reused, with a freshly frozen challenge and fresh Comparator/three-kernel replay for the updated dependency metadata. Compiler/exporter bootstrap trust remains.",
+  "source_tree": "658510869c4e14300844900e33e381afc14327d0",
+  "source_tree_checked_against_git": true,
+  "source_build_verified_at": "2026-10-14T21:56:52.248722+00:00",
+  "source_build_modules_freshly_compiled": 3808,
+  "dependency_object_manifest_sha256": "701fcf9a60ff294d696f1924fafa2186e5395f1e7d5c526818fbb4b85d7ea338",
+  "prior_package_dependency_receipt_sha256": "83caa5da50d8ea98b1eb16c17d1a3ff01eff96c93334ae1cc3ed235f1c93250c",
+  "prior_package_dependency_receipt_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/e238cab21d1ab48cfa17cff8f06ea11f0aaf3f7e/verifier/standard/receipts/pr43-9e000869-20261014/result.json",
+  "website_checks": {
+    "unit_tests_passed": 315,
+    "browser_tests_passed": 26,
+    "browser_tests_intentionally_skipped": 2,
+    "build": "PASS",
+    "root_and_repository_subpaths": "PASS"
+  },
+  "publication_scope": "Original outside-sandbox receipts, immutable source contracts, exact UTF-8 logs and checker pins. Large exports, compiled archive and host-specific inventories retained privately with hashes."
+}

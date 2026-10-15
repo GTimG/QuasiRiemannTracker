@@ -1,0 +1,10 @@
+{
+  "run_url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/38626415925",
+  "head_sha": "f7ec5c9559b3dec590bda3834c18c49494b9ea81",
+  "check_id": 116066799926,
+  "app": "github-actions",
+  "conclusion": "failure",
+  "summary": "Admission failed: worker resource ceiling reached while running lean (exit 137, result oom-kill). Retry verification on a suitable worker, or register a matching independently verified local run.",
+  "completed_at": "2026-10-14T20:45:25Z",
+  "classification": "resource-exhausted; no mathematical rejection established"
+}

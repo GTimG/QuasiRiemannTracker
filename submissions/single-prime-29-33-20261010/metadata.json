@@ -1,0 +1,67 @@
+{
+  "submitted_at": "",
+  "published_at": "",
+  "merged_at": "",
+  "pr": 8,
+  "repository": "HaileyStorm/QuasiRiemannTracker",
+  "source_commit": "eecd4131f1cac4f31f71e84b301a4e4619aa18d9",
+  "first_verified_at": "2026-10-12T18:44:41.093487+00:00",
+  "entrypoint": {
+    "module": "Candidate.Main",
+    "declaration": "Candidate.bound"
+  },
+  "license": "Apache-2.0 for the OpenAI-derived Lean sources; manuscript licensing is separate, see NOTICE.md",
+  "builds_on": [
+    "openai-baseline"
+  ],
+  "id": "single-prime-29-33-20261010",
+  "title": "Single compensating prime · 29/33",
+  "theta": {
+    "numerator": "29",
+    "denominator": "33"
+  },
+  "authors": [
+    {
+      "name": "Hailey Collet"
+    }
+  ],
+  "method": "A single compensating-prime construction and finite descent give all-Dirichlet nonvanishing to the right of 29/33. The development includes an unconditional moving-radical mixed moment and uses pinned OpenAI foundations.",
+  "references": [
+    {
+      "label": "Verification record",
+      "url": "certificates/single-prime-29-33-20261010.json"
+    },
+    {
+      "label": "Checked Lean solution",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/verifier/standard/receipts/single-prime-first-20261012/solution-src/Solution.lean"
+    },
+    {
+      "label": "Rendered manuscript (PDF)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/single-prime-29-33-20261010/zeta_zero_free_4_33_self_contained.pdf"
+    },
+    {
+      "label": "Source and reproduction",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/tree/d716ecaae80f7823a5b8314916364fdfa0d133fb/proofs/single-prime-29-33-20261010"
+    },
+    {
+      "label": "Pinned standard submission",
+      "url": "https://github.com/HaileyStorm/QuasiRiemannTracker/tree/eecd4131f1cac4f31f71e84b301a4e4619aa18d9/submissions/single-prime-29-33-20261010"
+    }
+  ],
+  "status": "framework-verified",
+  "timeline_at": "2026-10-10T07:47:35.881822+00:00",
+  "date_label": "Contributor three-kernel verification",
+  "verification_note": "Comparator verified the canonical all-Dirichlet statement at 29/33. Lean, NanoDa and con-ron accepted the proof in the standard sandbox. The timeline records contributor verification; the verification date records the independent standard check.",
+  "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing.",
+  "certificate_url": "certificates/single-prime-29-33-20261010.json",
+  "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/verifier/standard/receipts/single-prime-first-20261012/solution-src/Solution.lean",
+  "dependencies": [
+    "argonaut-20261008",
+    "cycle25-quartic-20261010",
+    "openai-baseline"
+  ],
+  "verification": {
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/verifier/standard/receipts/single-prime-first-20261012/result.json",
+    "report_sha256": "d1b1cc3f51f7e86cb7e0de6cc1d6e6ab2b04c2999a1b708c4f31bb5bf98ee0da"
+  }
+}

@@ -139,6 +139,11 @@ export async function evaluatePR({
     }
     return `Maintenance requirements satisfied. Validated affected catalogue data and ${expected.length} proof(s).`;
   }
+  const prefix = `submissions/${declaration.result_id}/`;
+  if (paths(files).some((path) => !path.startsWith(prefix)))
+    throw Error(
+      `A QRH result PR changes only ${prefix}; edit existing submissions in a maintenance PR`,
+    );
   const evidence = await validateEvidence(root, {
     repository,
     number: pr.number,

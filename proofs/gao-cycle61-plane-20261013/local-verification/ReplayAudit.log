@@ -1,5 +1,0 @@
-'Candidate.bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61.FinalAssembly.beta_le_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.allHecke' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.allDirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.zetaTotal' depends on axioms: [propext, Classical.choice, Quot.sound]

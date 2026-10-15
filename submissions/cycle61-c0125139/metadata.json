@@ -1,0 +1,30 @@
+{
+  "title": "A zero-free half-plane with boundary 874861/1000000",
+  "authors": [
+    {
+      "name": "Hailey Collet",
+      "url": "https://github.com/HaileyStorm"
+    }
+  ],
+  "description": "An unconditional all-Dirichlet zero-free half-plane at theta=874861/1000000, with strict boundary and the principal pole excluded. The proof combines earlier moment and physical-source estimates with Zhongpai Gao’s local refinement, extends the density range and local numerical region, and supplies a common probe for zero exclusion. It builds on OpenAI’s seven-eighths framework, Akash Levy’s weighted-numerator work, and the earlier AI-assisted QRH research directed by Hailey Collet. Hailey is the sole human author; research direction and source integration are distinguished from the AI-produced derivations, substantial drafting and formalization. Exact source attribution is retained in the paper and accompanying provenance.",
+  "license": "Apache-2.0, with retained upstream licenses and notices",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "single-prime-29-33-20261010",
+    "cycle25-quartic-20261010"
+  ],
+  "references": [
+    {
+      "label": "Paper and downloads",
+      "url": "https://haileystorm.github.io/research/cycle61-qrh-boundary/"
+    },
+    {
+      "label": "Gao local-refinement source",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/15"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

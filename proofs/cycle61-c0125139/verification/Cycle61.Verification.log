@@ -1,4 +1,0 @@
-'Cycle61Verification.allDirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.zeta' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.allHecke' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Cycle61Verification.zetaTotal' depends on axioms: [propext, Classical.choice, Quot.sound]

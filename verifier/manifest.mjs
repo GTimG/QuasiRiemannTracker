@@ -79,17 +79,10 @@ export function submissionFiles(dir) {
   if (!files.some((f) => f.path === "src/Candidate/Main.lean"))
     throw Error("Missing src/Candidate/Main.lean");
   const metadataFile = files.find((f) => f.path === "metadata.json");
-  // Existing submissions acquire metadata in the following source migration.
-  if (!metadataFile)
-    files.push({
-      path: "metadata.json",
-      bytes: Buffer.from("{}"),
-      sha256: sha256("{}"),
-    });
-  if (metadataFile && metadataFile.bytes.length > 65536)
+  if (!metadataFile) throw Error("Missing metadata.json");
+  if (metadataFile.bytes.length > 65536)
     throw Error("Submission metadata is too large");
-  if (metadataFile)
-    submissionDependencies(JSON.parse(metadataFile.bytes.toString()));
+  submissionDependencies(JSON.parse(metadataFile.bytes.toString()));
   return {
     files,
     inventory: files.map(({ path, sha256 }) => ({ path, sha256 })),

@@ -126,34 +126,47 @@ if cache:
 stage('compile standard candidate')
 jobs = threads
 print(f"Compiling up to {min(jobs, len(contract['build_order']))} modules concurrently", flush=True)
+module_started = {}
 def compile_one(module, module_threads):
     if module in cached_modules:
         return
     started = time.monotonic()
+    retry = module in module_started
+    module_started.setdefault(module, started)
+    lean_threads = 1 if retry else module_threads
     assert re.fullmatch(r'(?:Candidate|Submissions)(?:\.[A-Za-z_][A-Za-z0-9_]*)+', module)
     relative = module.replace('.', '/')
     scratch = work/'compilers'/module
+    if scratch.exists():
+        shutil.rmtree(scratch)
     for part in ['out', 'home', 'tmp']:
         (scratch/part).mkdir(parents=True, exist_ok=True)
     output = scratch/'out'/('module.olean')
     environment = {**candidate_env, 'HOME':str(scratch/'home'), 'TMPDIR':str(scratch/'tmp')}
-    print(f'Compile {module} ({module_threads} threads)', flush=True)
+    memory_limit = max(1024**3, capacity['memory_bytes'] * 3 // 4 * module_threads // jobs)
+    print(f'Compile {module} ({lean_threads} threads, {memory_limit // 1024**2} MiB memory limit' + (', exclusive retry)' if retry else ')'), flush=True)
     # Palomar filters LEAN_NUM_THREADS from the environment; pass Lean's CLI option.
-    log('compile-'+module, v.sandboxed_run([str(old/'bin/lean'), f'-j{module_threads}', '-o', str(output), relative+'.lean'],
-        cwd=source/'src', environment=environment,
-        writable_directories=[scratch/'out', scratch/'home', scratch/'tmp'],
-        readable_paths=[work/'candidate-lib', *libs, *system], executable_paths=[old, Path('/usr')],
-        # Large Lean modules can spend over ten minutes serializing their output.
-        # The shared three-hour execution deadline bounds the entire replay.
-        tools=tools, timeout=1800,
-        resource_properties=(f"MemoryMax={max(1024**3, capacity['memory_bytes'] * 3 // 4 * module_threads // jobs)}",)))
+    try:
+        log('compile-'+module, v.sandboxed_run([str(old/'bin/lean'), f'-j{lean_threads}', '-o', str(output), relative+'.lean'],
+            cwd=source/'src', environment=environment,
+            writable_directories=[scratch/'out', scratch/'home', scratch/'tmp'],
+            readable_paths=[work/'candidate-lib', *libs, *system], executable_paths=[old, Path('/usr')],
+            # The retry shares the module deadline and the overall replay deadline.
+            tools=tools, timeout=max(0, 1800 - (time.monotonic() - module_started[module])),
+            resource_properties=(f"MemoryMax={memory_limit}",)))
+    except v.ResourceExhausted as error:
+        detail = f'{module}: {error}; memory limit {memory_limit} bytes'
+        (work/'logs'/('resource-'+module+'.log')).write_text(detail+'\n')
+        print(detail, flush=True)
+        raise
     publish_module(output, work/'candidate-lib'/(relative+'.olean'))
     shutil.rmtree(scratch)
     print(f'Compiled {module} in {time.monotonic()-started:.1f}s', flush=True)
 # Legacy contracts used a sequential order; their dependency list is a chain.
 order = contract['build_order']
 dependencies = contract.get('module_dependencies', {name:order[max(0, i-1):i] for i, name in enumerate(order)})
-compile_modules(order, dependencies, compile_one, jobs=jobs)
+compile_modules(order, dependencies, compile_one, jobs=jobs,
+    is_memory_error=lambda error: isinstance(error, v.ResourceExhausted) and 'result oom-kill)' in str(error))
 solution_env={**env,'LEAN_PATH':':'.join(map(str,[work/'solution-lib',work/'candidate-lib',*libs]))}
 stage('compile and export standard solution wrapper')
 log('solution-compile',v.sandboxed_run([str(old/'bin/lean'),f'-j{threads}','-o',str(work/'solution-lib/Solution.olean'),'Solution.lean'],cwd=work/'solution-src',environment=solution_env,writable_directories=[work/'solution-lib',work/'home',work/'tmp'],readable_paths=[work/'candidate-lib',*libs,*system],executable_paths=[old,Path('/usr')],tools=tools,timeout=600))

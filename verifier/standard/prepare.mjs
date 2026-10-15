@@ -108,9 +108,6 @@ writeFileSync(
   JSON.stringify(
     {
       schema_version: 2,
-      vendored_sources: [...graph.modules.keys()].some((name) =>
-        name.startsWith("Submissions."),
-      ),
       repository: v.repository,
       head_sha: v.head,
       source_commit: sourceCommit,
@@ -125,7 +122,7 @@ writeFileSync(
               leanImports(graph.modules.get(name).file.bytes.toString()),
             )
             .filter((name) =>
-              /^(OAI|PrimeNumberTheoremAnd|RellichKondrachov)(\.|$)/.test(name),
+              /^(PrimeNumberTheoremAnd|RellichKondrachov)(\.|$)/.test(name),
             ),
         ),
       ].sort(),

@@ -1,0 +1,30 @@
+{
+  "title": "Marked high-zero counting gives the all-Dirichlet boundary 0.874858",
+  "authors": [
+    {
+      "name": "timbalud",
+      "url": "https://github.com/timbalud"
+    }
+  ],
+  "description": "Proves the canonical all-moduli Dirichlet zero-free bound by retaining prime-slot amplitudes in high-zero counting and combining the resulting gain with common-allocation width conservation. Overlapping prime pools are handled by collision partitions. The source estimate gains 33/20000 before explicit losses. Builds on the complete Cycle61 construction and the listed predecessor proofs; inherited source attribution is preserved.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139"
+  ],
+  "references": [
+    {
+      "label": "Cycle61 proof",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Verified comparison bound 0.8748598",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

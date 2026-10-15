@@ -1,4 +1,4 @@
-// Read dependency names as data; setup builds only files in the pinned library.
+// Read Lean import declarations as data.
 export function leanImports(source) {
   let clean = "",
     depth = 0,
@@ -48,5 +48,3 @@ export function leanImports(source) {
         result.add(name);
   return [...result].sort();
 }
-export const upstreamImports = (source) =>
-  leanImports(source).filter((name) => name.startsWith("OAI."));

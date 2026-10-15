@@ -1,0 +1,25 @@
+{
+  "title": "Asymmetric reserves · 0.8748673",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "Refines affine local capacity to defect 1/241 using asymmetric LOW reserves and exact endpoint geometry. Complete 128-module candidate proof of the all-moduli Dirichlet theorem. Builds on Kari Roegnvaldsson, nielstron, OpenAI, Akash Levy, Hailey Collet, and Gao's earlier adapters. AI-assisted; inherited notices retained.",
+  "license": "Apache-2.0",
+  "builds_on": [
+    "reserve-local-20261013",
+    "affine-local-20261013",
+    "local44-20261013"
+  ],
+  "references": [
+    {
+      "label": "Asymmetric reserve allocation paper",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/c5235c0c4b21e548a86b0c616fb295e2c3a00441/proofs/gao-asymmetric-reserves-20261013/paper.pdf"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

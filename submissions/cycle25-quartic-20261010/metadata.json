@@ -1,0 +1,66 @@
+{
+  "submitted_at": "2026-10-10T12:08:27Z",
+  "published_at": "",
+  "merged_at": "",
+  "pr": 9,
+  "repository": "HaileyStorm/QuasiRiemannTracker",
+  "source_commit": "58344dfdbe756cf2f743da1908ffe0582418cf5b",
+  "first_verified_at": "2026-10-10T16:09:09.733191+00:00",
+  "entrypoint": {
+    "module": "Cycle25.Assembly.Final.Endpoint",
+    "declaration": "Cycle25.dirichlet_nonzero_catalogue"
+  },
+  "license": "Apache-2.0 (retained upstream notices)",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator"
+  ],
+  "id": "cycle25-quartic-20261010",
+  "title": "Hailey Collet · quartic boundary",
+  "theta": {
+    "numerator": "683505193",
+    "denominator": "781250000"
+  },
+  "authors": [
+    {
+      "name": "Hailey Collet"
+    }
+  ],
+  "method": "The exact boundary is 11/12−ℓ/4, where ℓ is the unique root in [1/6,1/5] of 927ℓ⁴−3135ℓ³+2433ℓ²+275ℓ−100=0. The plotted rational 683505193/781250000 is a proved upper bound less than 4×10⁻¹⁴ above it. The proof extends the unconditional common-mesh moving-radical moment and applies weighted low/high estimates and analytic continuation to Dirichlet, zeta and finite-order Eisenstein Hecke L-functions.",
+  "references": [
+    {
+      "label": "Verification record",
+      "url": "certificates/cycle25-quartic-20261010.json"
+    },
+    {
+      "label": "Checked Lean solution",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-20261010-safe-replay/solution-src/Solution.lean"
+    },
+    {
+      "label": "Paper (PDF)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-quartic-20261010/paper.pdf"
+    },
+    {
+      "label": "Paper source (TeX)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-quartic-20261010/paper.tex"
+    },
+    {
+      "label": "Finished proof source and evidence",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-quartic-20261010/source-public.tar.gz"
+    }
+  ],
+  "status": "framework-verified",
+  "timeline_at": "2026-10-10T16:09:09.733191+00:00",
+  "date_label": "Independent sandboxed verification",
+  "verification_note": "The 3,224 Lean modules were rebuilt in an offline Linux sandbox. Comparator verified the rational and exact quartic all-Dirichlet, zeta and Eisenstein Hecke bounds, quartic root existence and uniqueness, and the reusable moment theorem. Lean, NanoDa and con-ron accepted all eight targets. The timeline records this first independent acceptance.",
+  "attribution_note": "Human contributor: Hailey Collet. AI-assisted research and formalization, reusing OpenAI/math, Mathlib and Akash Levy’s weighted construction. The earlier single-compensating-prime development supplies a reused unconditional moment lemma; its terminal 29/33 bound is not an assumption. Upstream licenses and notices are retained.",
+  "certificate_url": "certificates/cycle25-quartic-20261010.json",
+  "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-20261010-safe-replay/solution-src/Solution.lean",
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "verification": {
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/cycle25-20261010-safe-replay/result.json",
+    "report_sha256": "7bd5988d958c5baab80d283be299b2a735355fee035045e61b11df9ce2e1ddd6"
+  }
+}

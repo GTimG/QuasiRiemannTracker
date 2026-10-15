@@ -77,7 +77,7 @@ test("dependency, toolchain and setup changes invalidate the shared environment"
   );
 });
 
-test("warming selects upstream imports while changes to proof bodies preserve the cache", (t) => {
+test("submission source changes preserve the shared toolchain and package cache", (t) => {
   const root = checkout(t),
     file = join(root, "submissions/example/src/Main.lean");
   const before = cachePlan(root, platform);
@@ -96,10 +96,5 @@ theorem example : True := by trivial
     readFileSync(file, "utf8") + "\nimport OAI.NumberTheory.Additional\n",
   );
   const after = cachePlan(root, platform);
-  assert.notEqual(after.key, before.key);
-  assert.equal(after.prefix, before.prefix);
-  assert.deepEqual(after.imports, [
-    "OAI.NumberTheory.Additional",
-    "OAI.NumberTheory.DirichletL.Nonvanishing",
-  ]);
+  assert.deepEqual(after, before);
 });

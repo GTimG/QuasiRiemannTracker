@@ -22,10 +22,14 @@ tests and production build.
 
 ## Data
 
-Proof sources live in `submissions/`. The build generates `public/catalogue.json`
-from existing proof metadata in `proofs/` and the admission records of merged
-submissions. Small verification records in `public/certificates/` link each
-checked bound to its source commit and verification report.
+Each `submissions/<result-id>/` directory contains `metadata.json` and its Lean
+source in `src/`. Website deployment combines this metadata with
+merged admission records to generate the catalogue. Generated catalogue JSON is
+ignored by Git. Local development and preview builds generate the same files.
+Builds generate small verification records in `public/certificates/` that link
+each checked bound to its source commit and verification report. These files are
+ignored by Git. Historical report URLs and hashes live in the corresponding
+submission's `metadata.json`; new submissions use their admission records.
 
 Verified PR contributions are plotted at their PR submission time. Older
 entries without a recorded PR submission date retain their documented date
@@ -39,12 +43,50 @@ the normal online main-branch build to recover older receipts from the archive.
 
 ## Submit
 
-1. Add Lean source under `submissions/<result-id>/src/Candidate/`, with theorem
+1. Start from the current `main` branch. Add Lean source under
+   `submissions/<result-id>/src/Candidate/`, with theorem
    `Candidate.bound` in `Main.lean`. Use the pinned dependencies in
    [verifier/pins.json](verifier/pins.json) and
    [verifier/standard/lake-manifest.json](verifier/standard/lake-manifest.json).
-2. Open a PR using the [submission template](.github/PULL_REQUEST_TEMPLATE.md).
-   Start its body with the result ID, exact bound, and decimal approximation:
+2. **Commit `submissions/<result-id>/metadata.json` alongside the Lean source.**
+   Admission reads this required file from the exact PR head. The submission
+   directory contains:
+
+   ```text
+   submissions/example-bound/
+     metadata.json
+     src/Candidate/Main.lean
+     src/Candidate/...           supporting Lean modules
+   ```
+
+   Use this JSON structure for a submission that imports the OpenAI baseline:
+
+   ```json
+   {
+     "title": "Result title",
+     "authors": [{ "name": "Your name" }],
+     "description": "Method and attribution to previous work.",
+     "dependencies": ["openai-baseline"]
+   }
+   ```
+
+   Required fields are `title`, `authors` (a nonempty array of objects with
+   `name` and an optional HTTPS `url`), and `description`. The description
+   explains the method and credits previous work.
+
+   Declare each directly imported submission in `dependencies`, using its
+   directory name under `submissions/`. It defaults to an empty list.
+   `builds_on` records attribution to existing result IDs; `dependencies`
+   supplies the source modules available to imports.
+
+   The other supported fields are `license` and `references` (an array of
+   objects with `label` and HTTPS `url`). The
+   [metadata validator](verifier/submission-metadata.mjs) defines the field
+   formats and size limits.
+
+3. Open a PR using the [submission template](.github/PULL_REQUEST_TEMPLATE.md).
+   Start its body with the result ID, exact bound, and decimal approximation.
+   The result ID must match the submission directory name:
 
    ```text
    QRH-Result: example-bound
@@ -52,15 +94,32 @@ the normal online main-branch build to recover older receipts from the archive.
    QRH-Decimal: 0.875
    ```
 
-   Give enough decimal digits to differ from the current best verified bound.
-   Equal bounds accept any supported decimal precision. Fill in the template's
-   `qrh-metadata` block with the title, authors, description, and source credits.
+   Use a reduced fraction or supported exact algebraic expression for
+   `QRH-Bound`. Give an accurate truncated `QRH-Decimal` with enough digits
+   to differ from the current best verified bound.
+   Equal bounds accept any supported decimal precision. These PR fields declare
+   the bound; the committed `metadata.json` supplies its publication metadata.
 
-3. GitHub Actions checks the exact PR head, including drafts. Comparator checks
+4. GitHub Actions checks the exact PR head, including drafts. Comparator checks
    the statement and allowed axioms against the
    [canonical target](verifier/upstream-challenge.lean), with the submitted bound
    substituted for $7/8$. Lean, NanoDa, and con-ron must all accept the proof.
    After review and merge, the website adds the result automatically.
+
+Reusable modules live in `src/Submissions/<result_id>/`, with hyphens in the
+result ID replaced by underscores. Declare direct source dependencies in
+`metadata.json`, for example `"dependencies": ["openai-baseline"]`, then import:
+
+```lean
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Nonvanishing
+```
+
+The baseline contains the relevant OpenAI proof sources at the revision recorded
+in [NOTICE](NOTICE). Every submission can use them through this dependency.
+`Submissions.openai_baseline.Main` also exposes its bound theorem. A dependency
+and its transitive imports are built from the same PR commit. Changes to shared
+source or dependency declarations trigger checks for all dependent results.
+Independent modules compile concurrently within the worker's CPU and memory limits.
 
 Verified bounds of any strength are eligible for admission. Improving bounds
 advance the best verified bound shown on the site. Maintenance PRs use a plain

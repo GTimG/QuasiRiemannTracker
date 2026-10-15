@@ -78,6 +78,14 @@ test("submission layout contains Lean source with a fixed entrypoint", (t) => {
   t.after(() => rmSync(root, { recursive: true, force: true }));
   mkdirSync(join(root, "src/Candidate"), { recursive: true });
   writeFileSync(join(root, "src/Candidate/Main.lean"), "import Mathlib\n");
+  writeFileSync(
+    join(root, "metadata.json"),
+    JSON.stringify({
+      title: "Test",
+      authors: [{ name: "Author" }],
+      description: "A proof.",
+    }),
+  );
   const declaration = {
     id: "test-bound",
     theta: { numerator: "1", denominator: "1" },
@@ -104,39 +112,5 @@ test("the certificate hash authenticates the exact archived report bytes", () =>
         Buffer.from("{}"),
       ),
     /Archived report differs/,
-  );
-});
-
-test("the worker accepts colocated metadata and hashes it with the Lean source", (t) => {
-  const root = mkdtempSync(join(tmpdir(), "qrh-colocated-"));
-  t.after(() => rmSync(root, { recursive: true, force: true }));
-  mkdirSync(join(root, "src/Candidate/lowercase"), { recursive: true });
-  writeFileSync(
-    join(root, "src/Candidate/Main.lean"),
-    "import Candidate.lowercase.Helper\n",
-  );
-  writeFileSync(
-    join(root, "src/Candidate/lowercase/Helper.lean"),
-    "import Mathlib\n",
-  );
-  writeFileSync(join(root, "metadata.json"), '{"title":"A proof"}');
-  const result = submission(root, {
-    id: "test-bound",
-    theta: { numerator: "1", denominator: "1" },
-  });
-  assert.ok(
-    result.inventory.some(
-      (file) =>
-        file.path === "metadata.json" && /^[a-f0-9]{64}$/.test(file.sha256),
-    ),
-  );
-  rmSync(join(root, "src/Candidate/Main.lean"));
-  assert.throws(
-    () =>
-      submission(root, {
-        id: "test-bound",
-        theta: { numerator: "1", denominator: "1" },
-      }),
-    /Missing src\/Candidate\/Main.lean/,
   );
 });

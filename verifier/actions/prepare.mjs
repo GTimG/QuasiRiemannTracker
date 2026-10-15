@@ -24,7 +24,6 @@ try {
   console.error(error.message);
   process.exit(1);
 }
-class WorkerProfileUnavailable extends Error {}
 const env = {
   PATH: process.env.PATH,
   HOME: process.env.RUNNER_TEMP || process.env.HOME,
@@ -88,6 +87,7 @@ try {
   const contract = JSON.parse(
     readFileSync("verification/prepared/contract.json", "utf8"),
   );
+  // All proof modules come from the prepared submission dependency graph.
   writeFileSync(
     "verification/imports.json",
     JSON.stringify(contract.package_imports) + "\n",
@@ -95,12 +95,7 @@ try {
   console.log(`Prepared ${contract.manifest.id} at ${e.head_sha}`);
 } catch (error) {
   const detail = error.stderr?.toString() || error.message;
-  result(
-    error instanceof WorkerProfileUnavailable
-      ? "infrastructure-blocked"
-      : "invalid-submission",
-    detail.slice(-4000),
-  );
+  result("invalid-submission", detail.slice(-4000));
   console.error(detail);
   process.exitCode = 1;
 }

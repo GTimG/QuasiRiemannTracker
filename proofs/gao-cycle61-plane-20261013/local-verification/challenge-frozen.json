@@ -1,9 +1,0 @@
-{
-  "candidate_imported": false,
-  "challenge_export_bytes": 382347652,
-  "challenge_export_sha256": "dd6035589bbebf9e9a302d00a4dfab2caada838bd426fa9b3983fe81fbe38968",
-  "challenge_object_sha256": "9a21e10bceee81767097d9be045835bbef0fb7249b866673b31cafe2e99667ae",
-  "challenge_source_sha256": "e7a05c63800a8bb37253cc0b47e4cd2ec27dc6b9d5f9336a4eef963b1f5f824c",
-  "status": "PASS_CHALLENGE_FROZEN_BEFORE_CANDIDATE_IMPORT",
-  "tool_snapshot_sha256": "e014c9003a259d07e1bc74d894e87e77e082a3a9ab41e40920e0c1cf5028543d"
-}

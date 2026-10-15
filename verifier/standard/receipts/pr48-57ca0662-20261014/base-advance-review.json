@@ -1,0 +1,12 @@
+{
+  "head_sha": "f7ec5c9559b3dec590bda3834c18c49494b9ea81",
+  "current_main": "afabe6f0909ef2bf74d12a3d25608a473d3ff5b2",
+  "prospective_merge_tree": "7f1cf26949a617d214a7ff4fb2384d8fd68364dc",
+  "old_dependency_tree": "5a3162c4be9d36826a17cb6ef99f9c09a1bf4bb2",
+  "merged_dependency_tree": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6",
+  "old_lean_tree": "b6b4373c097292b6bf9fc7b8a98a0b28ccd65392",
+  "merged_lean_tree": "b6b4373c097292b6bf9fc7b8a98a0b28ccd65392",
+  "dependency_changes": [
+    "submissions/openai-baseline/metadata.json"
+  ]
+}

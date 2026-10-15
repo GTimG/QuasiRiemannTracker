@@ -1,0 +1,8 @@
+{
+  "original_audit_revision": "89a055b81e8dcc2a18bdefe25239d4c1cc8394c6",
+  "current_protected_revision": "afabe6f0909ef2bf74d12a3d25608a473d3ff5b2",
+  "identical_files": {
+    "verifier/challenge.mjs": "833cbdae6efd4d5320e69b355a3eeaa58f17d5b349b3402deed7883d509ec582",
+    "verifier/pins.json": "e29c58a68a00e53348765fbb7a3a3fd111786535e6ce0410545e88c728e4c727"
+  }
+}

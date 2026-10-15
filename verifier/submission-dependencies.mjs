@@ -48,9 +48,6 @@ export function dependencyGraph(id, load) {
       modules.set(name, { owner, file });
     }
   }
-  const shared = [...modules.keys()].some((name) =>
-    name.startsWith("Submissions."),
-  );
   const order = [],
     dependencies = {},
     done = new Set(),
@@ -62,7 +59,7 @@ export function dependencyGraph(id, load) {
     const { owner, file } = modules.get(name);
     const local = [];
     for (const dep of leanImports(file.bytes.toString())) {
-      if (shared && (dep === "OAI" || dep.startsWith("OAI.")))
+      if (dep === "OAI" || dep.startsWith("OAI."))
         throw Error("Import OAI source through the openai-baseline submission");
       if (
         dep === "Candidate" ||

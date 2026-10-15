@@ -47,10 +47,7 @@ test("missing publication metadata fails before queuing a proof worker", (t) => 
     "QRH-Result: example-bound\nQRH-Bound: 7/8\nQRH-Decimal: 0.875";
   data.omitMetadata = true;
   const result = run(t, data, { QRH_PHASE: "prepare" });
-  assertFailure(
-    result,
-    "New bounds require exactly one fenced qrh-metadata JSON block in the PR body",
-  );
+  assertFailure(result, "Expected a regular submission metadata.json");
   assert.equal(result.context, null);
 });
 
@@ -93,7 +90,13 @@ globalThis.fetch = async (url, options = {}) => {
   const route = parsed.pathname;
   if (parsed.origin !== "https://api.github.com") throw Error("Unexpected API origin");
   let value;
-  if (request.method === "GET" && route === "/repos/${repository}/pulls/" + number) {
+  if (request.method === "GET" && route.includes("/git/trees/")) {
+    const key=route.split("/").at(-1), id=/QRH-Result: ([^\\n]+)/.exec(fixture.pr.body)[1];
+    const item=(path,sha,type="tree",mode="040000")=>({path,sha:sha.repeat(40),type,mode});
+    value={tree:key===fixture.pr.head.sha?[item("submissions","d")]:key==="d".repeat(40)?[item(id,"e")]:key==="e".repeat(40)?[item("src","f"),...(fixture.omitMetadata?[]:[item("metadata.json","1","blob","100644")])]:key==="f".repeat(40)?[item("Candidate","2")]:[item("Main.lean","3","blob","100644")]};
+  } else if (request.method === "GET" && route.includes("/git/blobs/")) {
+    value={encoding:"base64",size:100,content:Buffer.from(JSON.stringify({title:"Fixture result",authors:[{name:"Fixture author"}],description:"Synthetic proof description."})).toString("base64")};
+  } else if (request.method === "GET" && route === "/repos/${repository}/pulls/" + number) {
     value = prReads++ === 0 ? fixture.pr : (fixture.current ?? fixture.pr);
   } else if (request.method === "GET" && route === "/repos/${repository}/pulls/" + number + "/files") {
     if (parsed.searchParams.get("per_page") !== "100") throw Error("Unexpected page size");
@@ -293,7 +296,11 @@ test("publishes admission failure when a required label write fails", (t) => {
 for (const draft of [false, true]) {
   test(`PR #15 publishes the live verification failure as ${draft ? "a draft" : "ready for review"}`, (t) => {
     const data = fixture([
-      { filename: "proofs/candidate/Main.lean", status: "added" },
+      {
+        filename:
+          "submissions/gao-local-moment-20261011/src/Candidate/Main.lean",
+        status: "added",
+      },
     ]);
     data.pr.draft = draft;
     data.pr.body =
@@ -324,7 +331,8 @@ for (const [description, maintenanceFiles, message, labels] of [
   test(`PR #8 publishes the admission reason for ${description}`, (t) => {
     const data = fixture([
       {
-        filename: "proofs/single-prime-29-33-20261010/Solution.lean",
+        filename:
+          "submissions/single-prime-29-33-20261010/src/Candidate/Main.lean",
         status: "added",
       },
       ...maintenanceFiles,
@@ -343,7 +351,10 @@ for (const [description, maintenanceFiles, message, labels] of [
 
 test("a theta 1 submission publishes the live verification failure", (t) => {
   const data = fixture([
-    { filename: "proofs/theta-one/Solution.lean", status: "added" },
+    {
+      filename: "submissions/theta-one/src/Candidate/Main.lean",
+      status: "added",
+    },
   ]);
   data.pr.number = 5;
   data.pr.body = "QRH-Result: theta-one\nQRH-Bound: 1/1\nQRH-Decimal: 1.0";
@@ -429,7 +440,7 @@ for (const draft of [false, true]) {
   test(`cleanup defaults to maintenance without queuing a proof for draft=${draft}`, (t) => {
     const data = fixture([
       { filename: "proofs/old/Main.lean", status: "removed" },
-      { filename: "catalogue/results.json", status: "modified" },
+      { filename: "catalogue/results.json", status: "removed" },
       { filename: "src/App.tsx", status: "modified" },
     ]);
     data.pr.draft = draft;
@@ -480,9 +491,19 @@ for (const draft of [false, true]) {
       ],
     };
     data.snapshots = {
-      base: { "catalogue/results.json": catalogue },
+      base: Object.fromEntries(
+        catalogue.records.flatMap((r) => [
+          [`submissions/${r.id}/metadata.json`, r],
+          [`submissions/${r.id}/src/Candidate/Main.lean`, "theorem"],
+        ]),
+      ),
       head: {
-        "catalogue/results.json": catalogue,
+        ...Object.fromEntries(
+          catalogue.records.flatMap((r) => [
+            [`submissions/${r.id}/metadata.json`, r],
+            [`submissions/${r.id}/src/Candidate/Main.lean`, "theorem"],
+          ]),
+        ),
         "submissions/candidate/src/Candidate/Main.lean": "theorem",
       },
     };

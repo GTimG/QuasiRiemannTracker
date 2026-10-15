@@ -1,0 +1,44 @@
+{
+  "title": "Refine the Cycle61 zero-free boundary to 0.8748598",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "A Cycle61 parameter refinement at the canonical all-moduli Dirichlet boundary 4374299/5000000, adapting Hailey Collet’s complete source. It couples the density split and source/amplification parameters, propagates exact reserves through the actual analytic consumers, and supplies global quadratic row certificates. The 206-module source splits the slow B167/B176 compilation units. Prepared with AI assistance; original attribution and Apache-2.0 notices retained.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139"
+  ],
+  "references": [
+    {
+      "label": "Cycle61 source (PR #42)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Exact Cycle61 source snapshot",
+      "url": "https://github.com/HaileyStorm/QuasiRiemannTracker/tree/fb6d4fd11aeaff0b37dd96bad3b274ce28a5c08b/submissions/cycle61-c0125139/src/Candidate"
+    },
+    {
+      "label": "Gao local-refinement predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/15"
+    },
+    {
+      "label": "Three-page mathematical note",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/752fd1952a4dec6ef92181f6abc20e41269ff9b7/proofs/gao-cycle61-plane-20261013/paper.pdf"
+    },
+    {
+      "label": "Complete Lean source",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/0a73e73348befd36061ff251e43540c1b11135bc/submissions/gao-cycle61-plane-20261013/src/Candidate/Main.lean"
+    },
+    {
+      "label": "Independent maintainer verification and logs (14 October 2026)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/e238cab21d1ab48cfa17cff8f06ea11f0aaf3f7e/verifier/standard/receipts/pr43-9e000869-20261014/README.md"
+    }
+  ],
+  "dependencies": ["openai-baseline"]
+}

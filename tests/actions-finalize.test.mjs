@@ -125,10 +125,16 @@ function run(t, data, env = {}) {
  const requests=[];let prReads=0;globalThis.fetch=async(url,options={})=>{
  const request={url:String(url),method:options.method??"GET",body:options.body?JSON.parse(options.body):undefined};requests.push(request);
  if(request.method==="GET" && request.url==="https://api.github.com/repos/${repository}/pulls/15")return {ok:true,status:200,json:async()=>JSON.parse(prReads++ && process.env.FINAL_PR ? process.env.FINAL_PR : process.env.CURRENT_PR)};
+ if(request.method==="GET" && request.url.includes("/git/blobs/")) {
+ const body=JSON.parse(process.env.CURRENT_PR).body;
+ const match=/\x60\x60\x60qrh-metadata\\n([\\s\\S]*?)\\n\x60\x60\x60/.exec(body);
+ return {ok:true,status:200,json:async()=> match ? {type:"file",encoding:"base64",size:match[1].length,content:Buffer.from(match[1]).toString("base64")} : {}};
+ }
  if(request.method==="GET" && request.url.includes("/git/trees/")){
  const key=request.url.split("/").at(-1);
- const entry=key==="${head}"?{path:"submissions",sha:"${"d".repeat(40)}"}:key==="${"d".repeat(40)}"?{path:"candidate-proof",sha:"${"e".repeat(40)}"}:{path:"src",sha:"${"f".repeat(40)}"};
- return {ok:true,status:200,json:async()=>({tree:[{...entry,type:"tree",mode:"040000"}]})};}
+ const item=(path,sha,type="tree",mode="040000")=>({path,sha:sha.repeat(40),type,mode});
+ const tree=key==="${head}"?[item("submissions","d")]:key==="d".repeat(40)?[item("candidate-proof","e")]:key==="e".repeat(40)?[item("src","f"),item("metadata.json","1","blob","100644")]:key==="f".repeat(40)?[item("Candidate","2")]:[item("Main.lean","3","blob","100644")];
+ return {ok:true,status:200,json:async()=>({tree})};}
  if(request.method==="GET" && request.url.endsWith("/git/ref/heads/admission-records"))return {ok:false,status:404};
  if(request.method==="POST" && /\\/git\\/(blobs|trees|commits|refs)$/.test(request.url))return process.env.ARCHIVE_FAILURE ? {ok:false,status:403} : {ok:true,status:201,json:async()=>({sha:"${"9".repeat(40)}"})};
  if(request.method==="PATCH" && request.url==="https://api.github.com/repos/${repository}/check-runs/456")return {ok:true,status:200};
@@ -191,7 +197,11 @@ test("new-bound admission requires publication metadata before archival", (t) =>
   assert.equal(result.status, 1);
   assert.equal(result.requests.at(-1).body.conclusion, "failure");
   assert.match(result.requests.at(-1).body.output.summary, /metadata/i);
-  assert.ok(result.requests.every((r) => !r.url.includes("/git/")));
+  assert.ok(
+    result.requests.every(
+      (r) => !(r.method === "POST" && r.url.includes("/git/")),
+    ),
+  );
 });
 
 test("an unpublished predecessor fails admission before writing an archive", (t) => {
@@ -207,7 +217,11 @@ test("an unpublished predecessor fails admission before writing an archive", (t)
     result.requests.at(-1).body.output.summary,
     /Unknown or later catalogue predecessor/,
   );
-  assert.ok(result.requests.every((r) => !r.url.includes("/git/")));
+  assert.ok(
+    result.requests.every(
+      (r) => !(r.method === "POST" && r.url.includes("/git/")),
+    ),
+  );
 });
 
 test("a previously published result ID cannot receive new-bound admission", (t) => {
@@ -220,7 +234,11 @@ test("a previously published result ID cannot receive new-bound admission", (t) 
     result.requests.at(-1).body.output.summary,
     /Result ID already published/,
   );
-  assert.ok(result.requests.every((r) => !r.url.includes("/git/")));
+  assert.ok(
+    result.requests.every(
+      (r) => !(r.method === "POST" && r.url.includes("/git/")),
+    ),
+  );
 });
 test("a PR changed during archival cannot receive admission success", (t) => {
   const data = fixture();

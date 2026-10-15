@@ -22,9 +22,6 @@ runs:
       with:
         path: ${{ steps.plan.outputs.path }}
         key: ${{ steps.plan.outputs.key }}
-        # Earlier target sets use the same pinned sources and build settings.
-        # Setup builds any missing targets after restoring a compatible entry.
-        restore-keys: ${{ steps.plan.outputs.prefix }}
     - name: Start fresh when cache download fails
       if: steps.restore.outcome == 'failure'
       shell: bash

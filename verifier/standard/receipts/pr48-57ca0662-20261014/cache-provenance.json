@@ -1,0 +1,13 @@
+{
+  "source_build_head": "f7ec5c9559b3dec590bda3834c18c49494b9ea81",
+  "source_build_report_sha256": "80a14580f37a3706c19ca1e74a0be6aa7ea890bbb3b33b8dd8e1dc2f76d94be4",
+  "updated_head": "57ca0662b4ddeb2a75c0e302d0350cc65cf67c12",
+  "archive_sha256": "3fe516e0954ca0b05a7bed1de8861504106a70a42591d111aa30580c54044d73",
+  "module_count": 3808,
+  "inputs_sha256": "1bb601ef54217c4da058e5a848f288e22e7a77e61be3aa248e1fbfb35659c203",
+  "all_module_fingerprints_equal": true,
+  "changed_prepared_files": [
+    "dependencies/openai-baseline/metadata.json"
+  ],
+  "authentication": "Operator-owned completed ETH run; receipt authenticated over SSH. No public server-signing-key attestation is claimed."
+}

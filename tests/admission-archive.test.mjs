@@ -38,6 +38,11 @@ function fixture() {
   const reportBytes = Buffer.from(JSON.stringify(report));
   return {
     expected,
+    metadata: {
+      title: "A candidate bound",
+      authors: [{ name: "Contributor" }],
+      description: "An independently verified proof.",
+    },
     context: {
       repository: repo,
       defaultBranch: "main",
@@ -327,13 +332,13 @@ test("report bytes and complete kernel acceptance remain bound to the certificat
   assert.throws(() => validateAdmissionRecord(value), /report differs/);
 });
 
-test("publication metadata cannot differ from the exact admitted PR body", () => {
+test("publication metadata cannot differ from the exact admitted source metadata", () => {
   const value = admissionRecord({ ...fixture(), sourceTree: hex("e") });
   value.metadata.title = "An unreviewed title";
   assert.throws(() => validateAdmissionRecord(value), /metadata differs/);
 });
 
-test("same-head metadata edits and reversions retain separate admission history", () => {
+test("separate runs preserve their immutable metadata snapshots", () => {
   const data = fixture();
   const paths = new Set();
   for (const [runId, title] of [
@@ -345,6 +350,7 @@ test("same-head metadata edits and reversions retain separate admission history"
     revision.reportBytes = data.reportBytes;
     revision.context.run_id = runId;
     revision.record.report_url = `https://github.com/${repo}/actions/runs/${runId}/attempts/1`;
+    revision.metadata.title = title;
     revision.pr.body = revision.pr.body.replace(
       '"title":"A candidate bound"',
       `"title":"${title}"`,
@@ -375,7 +381,7 @@ test("a workflow retry cannot silently replace metadata for the same attempt", a
   ];
   await assert.rejects(
     archiveAdmission(data, api(steps)),
-    /identity conflicts/,
+    /identity conflicts|metadata differs/,
   );
 });
 

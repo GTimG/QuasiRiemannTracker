@@ -4,6 +4,7 @@ import { execFileSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
+  lstatSync,
   readFileSync,
   readdirSync,
   writeFileSync,
@@ -16,13 +17,21 @@ import {
   validateCatalogue,
   withSubmissionTimeline,
 } from "../core/catalogue.mjs";
-import { proofRevision } from "../core/catalogue-revisions.mjs";
+import {
+  catalogueProofRecords,
+  proofRevision,
+} from "../core/catalogue-revisions.mjs";
 import {
   ADMISSION_BRANCH,
   admissionPath,
   validateAdmissionRecord,
 } from "../verifier/admission-archive.mjs";
-import { certificate } from "../verifier/certificate.mjs";
+import {
+  certificate,
+  historicalCertificate,
+} from "../verifier/certificate.mjs";
+import { validateSubmissionMetadata } from "../verifier/submission-metadata.mjs";
+import { submissionFiles } from "../verifier/manifest.mjs";
 import { publicationRecord } from "../verifier/publication-record.mjs";
 
 const isSha = (value) => /^[a-f0-9]{40}$/.test(value ?? "");
@@ -100,14 +109,23 @@ function selectedAdmissions(admissions) {
 
 // admissions contains only envelopes whose merge and source were authenticated
 // by the online reconciler, with merged_at added to its local cache.
-export function generateCatalogue({ legacy, admissions }) {
+export function generateCatalogue({
+  legacy,
+  admissions,
+  metadataById = new Map(),
+}) {
   if (!Array.isArray(legacy) || !Array.isArray(admissions))
     throw Error("Invalid catalogue inputs");
   const records = [],
     historical = [],
     revisions = new Map();
   for (const input of legacy) {
-    const { historical: isHistorical, ...original } = structuredClone(input);
+    const {
+      historical: isHistorical,
+      dependencies,
+      verification,
+      ...original
+    } = structuredClone(input);
     const record = withSubmissionTimeline(original);
     const revision = proofRevision(record);
     if (revisions.has(revision))
@@ -144,7 +162,13 @@ export function generateCatalogue({ legacy, admissions }) {
       throw Error(
         `Admission conflicts with a proof revision: ${admission.result_id}`,
       );
-    const record = publicationRecord(admission, verification);
+    const record = publicationRecord(
+      {
+        ...admission,
+        metadata: metadataById.get(admission.result_id) ?? admission.metadata,
+      },
+      verification,
+    );
     records.push(record);
     revisions.set(admission.result_id, record);
     generated.set(admission.result_id, admission);
@@ -270,50 +294,43 @@ function sourceTree(root, admission) {
     throw Error(
       `Merged source differs from verified admission: ${admission.result_id}`,
     );
+  for (const [id, tree] of Object.entries(admission.dependency_trees ?? {})) {
+    const path = `submissions/${id}`;
+    const entry = gitRead(root, [
+      "ls-tree",
+      admission.merge_commit_sha,
+      "--",
+      path,
+    ]).trimEnd();
+    if (entry !== `040000 tree ${tree}\t${path}`)
+      throw Error(`Merged dependency differs from verified admission: ${id}`);
+  }
   return true;
 }
 
-function requireSourceCoverage(root, catalogue) {
-  const covered = new Set(
-    [...catalogue.records, ...(catalogue.historical_records || [])].map(
-      proofRevision,
-    ),
-  );
-  const paths = gitRead(root, [
-    "ls-tree",
-    "-r",
-    "--name-only",
-    "-z",
-    "HEAD",
-    "--",
-    "submissions",
-  ]).split("\0");
-  const sources = new Set(
-    paths
-      .map((path) => /^submissions\/([^/]+)\/src(?:\/|$)/.exec(path)?.[1])
-      .filter(Boolean),
-  );
-  for (const id of sources) {
-    if (!covered.has(id))
-      throw Error(
-        `Submission has no admitted or legacy publication record: ${id}`,
-      );
+export function readSubmissions(root) {
+  const directory = join(root, "submissions");
+  if (!existsSync(directory)) return new Map();
+  if (!lstatSync(directory).isDirectory())
+    throw Error("Expected a regular submissions directory");
+  const submissions = new Map();
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    if (!entry.isDirectory() || !/^[a-z][a-z0-9-]{2,63}$/.test(entry.name))
+      throw Error(`Invalid submission directory: ${entry.name}`);
+    const base = join(directory, entry.name);
+    submissionFiles(base);
+    const metadata = JSON.parse(
+      readFileSync(join(base, "metadata.json"), "utf8"),
+    );
+    if (metadata.id !== undefined) {
+      if (proofRevision(metadata) !== entry.name)
+        throw Error(
+          `Submission metadata path differs from revision: ${entry.name}`,
+        );
+    } else validateSubmissionMetadata(metadata);
+    submissions.set(entry.name, metadata);
   }
-}
-
-function readLegacy(root) {
-  const directory = join(root, "proofs");
-  if (!existsSync(directory)) return [];
-  return readdirSync(directory, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .flatMap((entry) => {
-      const path = join(directory, entry.name, "metadata.json");
-      if (!existsSync(path)) return [];
-      const record = JSON.parse(readFileSync(path, "utf8"));
-      if (proofRevision(record) !== entry.name)
-        throw Error(`Proof metadata path differs from revision: ${entry.name}`);
-      return [record];
-    });
+  return submissions;
 }
 
 export async function reconcileAdmissions({
@@ -324,7 +341,10 @@ export async function reconcileAdmissions({
   fetcher = fetch,
   token = process.env.GITHUB_TOKEN,
 } = {}) {
-  const legacy = readLegacy(root);
+  const submissions = readSubmissions(root);
+  const legacy = [...submissions.values()].filter(
+    (metadata) => metadata.id !== undefined,
+  );
   const legacyIds = new Set(legacy.map(proofRevision));
   let admissions;
   if (online) {
@@ -369,23 +389,42 @@ export async function reconcileAdmissions({
     admissions = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : [];
   }
   if (!Array.isArray(admissions)) throw Error("Invalid admission cache");
-  // Keep every eligible receipt in the offline cache. Selecting just the newest
-  // envelope here would lose the first verification on the next rebuild.
+  // Retain every eligible receipt so later rebuilds preserve first verification.
   admissions = eligibleAdmissions(admissions).filter(
-    (record) => legacyIds.has(record.result_id) || sourceTree(root, record),
+    (record) => submissions.has(record.result_id) && sourceTree(root, record),
   );
-  const catalogue = generateCatalogue({ legacy, admissions });
-  if (online) requireSourceCoverage(root, catalogue);
+  const catalogue = generateCatalogue({
+    legacy,
+    admissions,
+    metadataById: new Map(
+      [...submissions].filter(([id]) => !legacyIds.has(id)),
+    ),
+  });
+  if (online) {
+    const published = new Set(
+      [...catalogue.records, ...(catalogue.historical_records || [])].map(
+        proofRevision,
+      ),
+    );
+    for (const id of submissions.keys())
+      if (!published.has(id))
+        throw Error(`Submission has no verified publication record: ${id}`);
+  }
   const selected = selectedAdmissions(admissions);
   const newCertificates = new Map();
-  for (const record of catalogue.records) {
-    if (legacyIds.has(proofRevision(record))) continue;
-    const evidence = selected.find(
-      ({ admission, verification }) =>
-        admission.result_id === record.id &&
-        admission.head_sha === record.source_commit &&
-        verification.certificate.verified_at === record.first_verified_at,
-    )?.verification.certificate;
+  for (const record of catalogueProofRecords(catalogue)) {
+    if (record.status !== "framework-verified") continue;
+    const id = proofRevision(record);
+    if (record.certificate_url !== `certificates/${id}.json`)
+      throw Error(`Invalid verification record path: ${id}`);
+    const evidence = legacyIds.has(id)
+      ? historicalCertificate(submissions.get(id))
+      : selected.find(
+          ({ admission, verification }) =>
+            admission.result_id === record.id &&
+            admission.head_sha === record.source_commit &&
+            verification.certificate.verified_at === record.first_verified_at,
+        )?.verification.certificate;
     if (!evidence) throw Error(`Missing admitted certificate: ${record.id}`);
     const path = join(root, "public", record.certificate_url);
     if (existsSync(path)) {

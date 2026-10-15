@@ -8,7 +8,7 @@ import {
   evaluatePR,
   parseDeclaration,
 } from "./pr-admission.mjs";
-import { parseSubmissionMetadata } from "./submission-metadata.mjs";
+import { readSubmissionMetadata } from "./submission-metadata.mjs";
 import { syncPRLabels } from "./pr-labels.mjs";
 
 const repo = process.env.GITHUB_REPOSITORY;
@@ -91,7 +91,13 @@ try {
     defaultBranch,
   });
   await syncPRLabels(repo, number, classification);
-  if (parseDeclaration(pr.body)) parseSubmissionMetadata(pr.body);
+  const declaration = parseDeclaration(pr.body);
+  if (declaration)
+    await readSubmissionMetadata(api, {
+      repository: repo,
+      head_sha: pr.head.sha,
+      result_id: declaration.result_id,
+    });
   summary = await evaluatePR({
     pr,
     files,

@@ -1,0 +1,11 @@
+{
+  "source_build_head": "f7ec5c9559b3dec590bda3834c18c49494b9ea81",
+  "updated_head": "57ca0662b4ddeb2a75c0e302d0350cc65cf67c12",
+  "changed_prepared_files": [
+    "dependencies/openai-baseline/metadata.json"
+  ],
+  "all_lean_bytes_unchanged": true,
+  "module_graph_unchanged": true,
+  "generated_challenge_and_wrapper_unchanged": true,
+  "compilation_recipe_unchanged": true
+}

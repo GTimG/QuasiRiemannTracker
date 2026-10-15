@@ -7,7 +7,7 @@ import { validateDecimalApproximation } from "../pr-decimal.mjs";
 import { verificationResult } from "./result.mjs";
 import { workerCertificate } from "../certificate.mjs";
 import { archiveAdmission } from "../admission-archive.mjs";
-import { parseSubmissionMetadata } from "../submission-metadata.mjs";
+import { readSubmissionMetadata } from "../submission-metadata.mjs";
 import { validatePublication } from "../publication-record.mjs";
 const c = JSON.parse(readFileSync("verification-context/context.json", "utf8"));
 if (
@@ -39,7 +39,13 @@ try {
       "PR head, base or declaration changed during verification; rerun admission",
     );
   const declaration = parseDeclaration(p.body);
-  const metadata = declaration ? parseSubmissionMetadata(p.body) : null;
+  const metadata = declaration
+    ? await readSubmissionMetadata(api, {
+        repository: c.repository,
+        head_sha: p.head.sha,
+        result_id: declaration.result_id,
+      })
+    : null;
   const catalogue = declaration
     ? JSON.parse(readFileSync("verification-context/catalogue.json", "utf8"))
     : null;
@@ -99,6 +105,7 @@ try {
         pr: p,
         expected,
         record,
+        metadata,
         reportBytes:
           attempt.status === "accepted"
             ? readFileSync(join(directory, "run/result.json"))

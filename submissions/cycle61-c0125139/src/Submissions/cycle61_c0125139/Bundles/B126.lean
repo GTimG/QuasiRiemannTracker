@@ -1,0 +1,362 @@
+/- Packaging rehearsal. Original notices retained; separate replay required. -/
+import Submissions.cycle61_c0125139.Bundles.B125
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CommonHeightEnvelope
+
+/- BEGIN ORIGINAL Cycle61.Physical.FinalCapacity.Final; sha256 d770351ae2af3f86526b5dc61dc89bb1791755e5e07d7ce4657bb38375312bc5 -/
+section
+                                              
+
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+namespace OAI.SevenEighths.Cycle61FinalCapacity
+noncomputable section
+open scoped Classical BigOperators
+open HeckeFamily CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonProfile CenteredMomentCommonRawScale
+open CenteredMomentAmplificationChildInput CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentAllocatedChildCapacity CenteredMomentEligibleEnergy
+open CenteredMomentDivisorAllocation CenteredMomentDivisorRectangle
+open CenteredMomentDivisorExtraction CenteredMomentDivisorRaw CenteredMomentDivisorRetained
+open CenteredMomentSourceLiveColumn CenteredMomentAllocatedNaturalSource
+open CenteredMomentSecondCanonical CenteredMomentSectorLocalization
+open CompletedGauss CanonicalQuadraticSieve CenteredMomentEnergyBands
+open CenteredMomentCanonicalFirst
+local notation "O" => HeckeFamily.O
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+/-- The nominal width from the genuine second transform. Its common
+ frequency/unit shift is kept literal. -/
+def secondNominal (M Z amp omega : ℝ) (C₁ D₁ C₂ D₂ : Ideal O)
+    (U : Finset (CommonIndex C₂ D₂)) : ℝ :=
+  M-max (Real.logb Z (C₁.absNorm:ℝ)-Real.logb Z (D₁.absNorm:ℝ)) 0-6*amp-omega-
+    Real.logb Z (normValue (commonFrequencyGenerator C₂ D₂))+
+      Real.logb Z ((∏P∈U,P.val).absNorm:ℝ)
+
+/-- This support error is fixed before the original live input, both
+ common allocations, the residual selection, and every frequency/height. -/
+def supportPadding (N : ℕ) (b b₁ b₂ Z : ℝ) : ℝ :=
+  2*(N:ℝ)*Real.logb Z b+Real.logb Z (max 1 b₁*max 1 b₂)
+
+/-- The substantive final total-capacity gate. Original affine lengths pay
+ the raw volume; actual common coefficients pay both divisor shifts; a
+ nonzero final row pays its own selected-plain clipping. -/
+theorem actual_final_capacity (N : ℕ) (b : ℝ) (hb : 1 ≤ b)
+    (s : Input ι) (hcard : Fintype.card ι ≤ N) (hs : s.upper ≤ b)
+    (C₁ R₁ : Ideal O) (B₁ : actualAllocations s.pools C₁)
+    (hf₁ : frozenCoefficient B₁.val C₁ R₁ s.ν s.W s.P ≠ 0)
+    (χ : Character) (t : ℝ) (C₂ R₂ : Ideal O)
+    (B₂ : actualAllocations (child s C₁ R₁ B₁ χ t).pools C₂)
+    (hf₂ : let first := child s C₁ R₁ B₁ χ t
+      frozenCoefficient B₂.val C₂ R₂ first.ν first.W first.P ≠ 0)
+    (D₁ D₂ : Ideal O) (hD₁ : D₁ ≠ 0) (hC₂ : Supported C₂) (hD₂ : Supported D₂)
+    (hCD₂ : primeSupport C₂ = primeSupport D₂) (U : Finset (CommonIndex C₂ D₂))
+    (L : Ideal O) (a : Allocation L (Finset.univ : Finset
+      ((CenteredMomentCommonProfile.liveIndices B₂.val) ⊕ Fin 2)))
+    (Z M amp omega : ℝ) (hZ : 1 < Z) (hM : 0 < M) (hP : ∀i,1 ≤ s.P i)
+    (hz : (17/500)*M ≤ ∑i,Real.logb Z (s.P i) ∧
+      (∑i,Real.logb Z (s.P i)) ≤ (1/25)*M)
+    (haffine : length Z s.X₁+length Z s.X₂+
+      Cycle61.Arithmetic.lambda*(∑i,Real.logb Z (s.P i)) ≤ Cycle61.Arithmetic.B*M)
+    (X₁ X₂ : ℝ) (hX₁ : 0 < X₁) (hX₂ : 0 < X₂)
+    (hprod : X₁*X₂=(commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂).X₁*
+      (commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂).X₂)
+    (z : O) (hne : let v := commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂
+      allocatedPositiveRow v.η v.m v.A z v.t v.slots v.coefficient v.P L a
+        v.W₁ v.W₂ X₁ X₂ ≠ 0) :
+    let v := commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂
+    let cell := Cycle61.Arithmetic.cellUpper
+      (Cycle61.Moment.originalCell ((∑i,Real.logb Z (s.P i))/M))
+    plainLogs L a Z X₁ X₂+(9/2)*remainingLogs L a Z v.P-
+      secondNominal M Z amp omega C₁ D₁ C₂ D₂ U ≤
+        M*Cycle61.Arithmetic.g cell+6*amp+omega+supportPadding N b s.b₁ s.b₂ Z := by
+  have hc₁ := Real.logb_nonneg hZ (norm_ge_one C₁ (allocation_ne s C₁ B₁))
+  have hd₁ := Real.logb_nonneg hZ (norm_ge_one D₁ hD₁)
+  have hmax : max (Real.logb Z (C₁.absNorm:ℝ)-Real.logb Z (D₁.absNorm:ℝ)) 0 ≤
+      Real.logb Z (C₁.absNorm:ℝ) := max_le (by linarith) hc₁
+  have hshift := actual_common_shift_le C₂ D₂ hC₂ hD₂ hCD₂ U Z hZ
+  have hr₁ := common_reduction_log_lower N b hb s hcard hs C₁ R₁ B₁ hf₁ Z hZ
+  have hr₂ := common_reduction_log_lower N b hb (child s C₁ R₁ B₁ χ t)
+    ((live_card_le B₁.val).trans hcard) hs C₂ R₂ B₂ hf₂ Z hZ
+  have hcell := original_affine_capacity s Z M hZ hM hz haffine
+  have htotal := two_stage_supported_capacity s C₁ R₁ B₁ χ t C₂ R₂ B₂ L a
+    Z hZ hP X₁ X₂ hX₁ hX₂ hprod z hne
+  dsimp only at hcell htotal ⊢
+  change Real.logb Z (preVolume s.toData)+(7/2)*(∑i,Real.logb Z (s.P i)) ≤ _ at hcell
+  unfold secondNominal supportPadding
+  linarith
+
+/-- Right allocation of the same actual second-transform label pair. -/
+theorem actual_final_capacity_right (N : ℕ) (b : ℝ) (hb : 1 ≤ b)
+    (s : Input ι) (hcard : Fintype.card ι ≤ N) (hs : s.upper ≤ b)
+    (C₁ R₁ : Ideal O) (B₁ : actualAllocations s.pools C₁)
+    (hf₁ : frozenCoefficient B₁.val C₁ R₁ s.ν s.W s.P ≠ 0)
+    (χ : Character) (t : ℝ) (C₂ D₂ R₂ : Ideal O)
+    (B₂ : actualAllocations (child s C₁ R₁ B₁ χ t).pools D₂)
+    (hf₂ : let first := child s C₁ R₁ B₁ χ t
+      frozenCoefficient B₂.val D₂ R₂ first.ν first.W first.P ≠ 0)
+    (D₁ : Ideal O) (hD₁ : D₁ ≠ 0) (hC₂ : Supported C₂) (hD₂ : Supported D₂)
+    (hCD₂ : primeSupport C₂ = primeSupport D₂) (U : Finset (CommonIndex C₂ D₂))
+    (L : Ideal O) (a : Allocation L (Finset.univ : Finset
+      ((CenteredMomentCommonProfile.liveIndices B₂.val) ⊕ Fin 2)))
+    (Z M amp omega : ℝ) (hZ : 1 < Z) (hM : 0 < M) (hP : ∀i,1 ≤ s.P i)
+    (hz : (17/500)*M ≤ ∑i,Real.logb Z (s.P i) ∧
+      (∑i,Real.logb Z (s.P i)) ≤ (1/25)*M)
+    (haffine : length Z s.X₁+length Z s.X₂+
+      Cycle61.Arithmetic.lambda*(∑i,Real.logb Z (s.P i)) ≤ Cycle61.Arithmetic.B*M)
+    (X₁ X₂ : ℝ) (hX₁ : 0 < X₁) (hX₂ : 0 < X₂)
+    (hprod : X₁*X₂=(commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂).X₁*
+      (commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂).X₂)
+    (z : O) (hne : let v := commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂
+      allocatedPositiveRow v.η v.m v.A z v.t v.slots v.coefficient v.P L a
+        v.W₁ v.W₂ X₁ X₂ ≠ 0) :
+    let v := commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂
+    let cell := Cycle61.Arithmetic.cellUpper
+      (Cycle61.Moment.originalCell ((∑i,Real.logb Z (s.P i))/M))
+    plainLogs L a Z X₁ X₂+(9/2)*remainingLogs L a Z v.P-
+      secondNominal M Z amp omega C₁ D₁ C₂ D₂ U ≤
+        M*Cycle61.Arithmetic.g cell+6*amp+omega+supportPadding N b s.b₁ s.b₂ Z := by
+  have hc₁ := Real.logb_nonneg hZ (norm_ge_one C₁ (allocation_ne s C₁ B₁))
+  have hd₁ := Real.logb_nonneg hZ (norm_ge_one D₁ hD₁)
+  have hmax : max (Real.logb Z (C₁.absNorm:ℝ)-Real.logb Z (D₁.absNorm:ℝ)) 0 ≤
+      Real.logb Z (C₁.absNorm:ℝ) := max_le (by linarith) hc₁
+  have hshift := actual_common_shift_le_right C₂ D₂ hC₂ hD₂ hCD₂ U Z hZ
+  have hr₁ := common_reduction_log_lower N b hb s hcard hs C₁ R₁ B₁ hf₁ Z hZ
+  have hr₂ := common_reduction_log_lower N b hb (child s C₁ R₁ B₁ χ t)
+    ((live_card_le B₁.val).trans hcard) hs D₂ R₂ B₂ hf₂ Z hZ
+  have hcell := original_affine_capacity s Z M hZ hM hz haffine
+  have htotal := two_stage_supported_capacity s C₁ R₁ B₁ χ t D₂ R₂ B₂ L a
+    Z hZ hP X₁ X₂ hX₁ hX₂ hprod z hne
+  dsimp only at hcell htotal ⊢
+  change Real.logb Z (preVolume s.toData)+(7/2)*(∑i,Real.logb Z (s.P i)) ≤ _ at hcell
+  unfold secondNominal supportPadding
+  linarith
+
+
+#print axioms secondNominal
+#print axioms supportPadding
+#print axioms actual_final_capacity
+#print axioms actual_final_capacity_right
+end
+end OAI.SevenEighths.Cycle61FinalCapacity
+
+end
+/- END ORIGINAL Cycle61.Physical.FinalCapacity.Final -/
+
+/- BEGIN ORIGINAL Cycle61.Physical.FinalCapacity.Physical; sha256 e3e212f1decca87b8850859d84a328f699697d6a7db86e8c4563bd405d60abf3 -/
+section
+                                           
+                                            
+                                                               
+
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+namespace OAI.SevenEighths.Cycle61FinalCapacity
+noncomputable section
+open scoped Classical BigOperators
+open HeckeFamily CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonProfile CenteredMomentCommonRawScale
+open CenteredMomentAmplificationChildInput CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentAllocatedChildCapacity CenteredMomentEligibleEnergy
+open CenteredMomentDivisorAllocation CenteredMomentDivisorRectangle
+open CenteredMomentDivisorExtraction CenteredMomentDivisorRaw CenteredMomentDivisorRetained
+open CenteredMomentSourceLiveColumn CenteredMomentAllocatedNaturalSource
+open CenteredMomentSecondCanonical CenteredMomentSectorLocalization
+open CompletedGauss CanonicalQuadraticSieve CenteredMomentEnergyBands
+open CenteredMomentCanonicalFirst
+local notation "O" => HeckeFamily.O
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+open CenteredMomentRetainedProfile
+
+omit [DecidableEq ι] in
+/-- Independent second characters and Mellin heights change no allocation
+ or capacity scale. This identifies the actual second source dictionary. -/
+theorem child_with_height (s : Input ι) (C R : Ideal O)
+    (B : actualAllocations s.pools C) (χ ψ : Character) (t v : ℝ) :
+    CenteredMomentCommonHeightEnvelope.withHeight (child s C R B χ t) ψ v =
+      child s C R B ψ v := by
+  rfl
+
+/-- Literal final selected-plain lengths and the literal physical positive row.
+ Both signed rectangles inherit the capacity theorem without a scale hypothesis. -/
+theorem actual_final_source_capacity (N : ℕ) (b : ℝ) (hb : 1 ≤ b)
+    (s : Input ι) (hcard : Fintype.card ι ≤ N) (hs : s.upper ≤ b)
+    (C₁ R₁ : Ideal O) (B₁ : actualAllocations s.pools C₁)
+    (hf₁ : frozenCoefficient B₁.val C₁ R₁ s.ν s.W s.P ≠ 0)
+    (χ : Character) (t : ℝ) (C₂ R₂ : Ideal O)
+    (B₂ : actualAllocations (child s C₁ R₁ B₁ χ t).pools C₂)
+    (hf₂ : let first := child s C₁ R₁ B₁ χ t
+      frozenCoefficient B₂.val C₂ R₂ first.ν first.W first.P ≠ 0)
+    (D₁ D₂ : Ideal O) (hD₁ : D₁ ≠ 0) (hC₂ : Supported C₂) (hD₂ : Supported D₂)
+    (hCD₂ : primeSupport C₂ = primeSupport D₂) (U : Finset (CommonIndex C₂ D₂))
+    (L : Ideal O) (a : Allocation L (Finset.univ : Finset
+      ((CenteredMomentCommonProfile.liveIndices B₂.val) ⊕ Fin 2)))
+    (Z M amp omega : ℝ) (hZ : 1 < Z) (hM : 0 < M) (hP : ∀i,1 ≤ s.P i)
+    (hz : (17/500)*M ≤ ∑i,Real.logb Z (s.P i) ∧
+      (∑i,Real.logb Z (s.P i)) ≤ (1/25)*M)
+    (haffine : length Z s.X₁+length Z s.X₂+
+      Cycle61.Arithmetic.lambda*(∑i,Real.logb Z (s.P i)) ≤ Cycle61.Arithmetic.B*M)
+    (second : Bool) (z : O)
+    (hne : Cycle61.Physical.sourcePositiveRow
+      (commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂).toSource second L a z ≠ 0) :
+    let v := commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂
+    let cell := Cycle61.Arithmetic.cellUpper
+      (Cycle61.Moment.originalCell ((∑i,Real.logb Z (s.P i))/M))
+    length Z (Cycle61Moment.LowBranch.finalPlain v second L a 0)+
+      length Z (Cycle61Moment.LowBranch.finalPlain v second L a 1)+
+        (9/2)*remainingLogs L a Z v.P-
+      secondNominal M Z amp omega C₁ D₁ C₂ D₂ U ≤
+        M*Cycle61.Arithmetic.g cell+6*amp+omega+supportPadding N b s.b₁ s.b₂ Z := by
+  let v := commonData (child s C₁ R₁ B₁ χ t) C₂ R₂ B₂
+  let X := Cycle61.Physical.sourcePlainScales v.toSource second
+  have hx₁ := Cycle61Moment.LowBranch.source_plain_positive v second 0
+  have hx₂ := Cycle61Moment.LowBranch.source_plain_positive v second 1
+  have hprod : X 0*X 1=v.X₁*v.X₂ := by
+    cases second
+    · rfl
+    · exact v.same_product
+  have hb := actual_final_capacity N b hb s hcard hs C₁ R₁ B₁ hf₁ χ t C₂ R₂ B₂ hf₂
+    D₁ D₂ hD₁ hC₂ hD₂ hCD₂ U L a Z M amp omega hZ hM hP hz haffine
+    (X 0) (X 1) hx₁ hx₂ hprod z hne
+  have he : length Z (Cycle61Moment.LowBranch.finalPlain v second L a 0)+
+      length Z (Cycle61Moment.LowBranch.finalPlain v second L a 1) =
+        plainLogs L a Z (X 0) (X 1) := by
+    change Real.logb Z (max 1 (clippedScale (rawScale L a (X 0) 0)))+
+      Real.logb Z (max 1 (clippedScale (rawScale L a (X 1) 1))) = _
+    rw [max_eq_right (CenteredMomentRetainedProfile.clippedScale_ge_one _),
+      max_eq_right (CenteredMomentRetainedProfile.clippedScale_ge_one _)]
+    rfl
+  dsimp only at hb ⊢
+  rw [he]
+  exact hb
+
+/-- Literal right-source daughter for the unchanged partition U. -/
+theorem actual_final_source_capacity_right (N : ℕ) (b : ℝ) (hb : 1 ≤ b)
+    (s : Input ι) (hcard : Fintype.card ι ≤ N) (hs : s.upper ≤ b)
+    (C₁ R₁ : Ideal O) (B₁ : actualAllocations s.pools C₁)
+    (hf₁ : frozenCoefficient B₁.val C₁ R₁ s.ν s.W s.P ≠ 0)
+    (χ : Character) (t : ℝ) (C₂ D₂ R₂ : Ideal O)
+    (B₂ : actualAllocations (child s C₁ R₁ B₁ χ t).pools D₂)
+    (hf₂ : let first := child s C₁ R₁ B₁ χ t
+      frozenCoefficient B₂.val D₂ R₂ first.ν first.W first.P ≠ 0)
+    (D₁ : Ideal O) (hD₁ : D₁ ≠ 0) (hC₂ : Supported C₂) (hD₂ : Supported D₂)
+    (hCD₂ : primeSupport C₂ = primeSupport D₂) (U : Finset (CommonIndex C₂ D₂))
+    (L : Ideal O) (a : Allocation L (Finset.univ : Finset
+      ((CenteredMomentCommonProfile.liveIndices B₂.val) ⊕ Fin 2)))
+    (Z M amp omega : ℝ) (hZ : 1 < Z) (hM : 0 < M) (hP : ∀i,1 ≤ s.P i)
+    (hz : (17/500)*M ≤ ∑i,Real.logb Z (s.P i) ∧
+      (∑i,Real.logb Z (s.P i)) ≤ (1/25)*M)
+    (haffine : length Z s.X₁+length Z s.X₂+
+      Cycle61.Arithmetic.lambda*(∑i,Real.logb Z (s.P i)) ≤ Cycle61.Arithmetic.B*M)
+    (second : Bool) (z : O)
+    (hne : Cycle61.Physical.sourcePositiveRow
+      (commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂).toSource second L a z ≠ 0) :
+    let v := commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂
+    let cell := Cycle61.Arithmetic.cellUpper
+      (Cycle61.Moment.originalCell ((∑i,Real.logb Z (s.P i))/M))
+    length Z (Cycle61Moment.LowBranch.finalPlain v second L a 0)+
+      length Z (Cycle61Moment.LowBranch.finalPlain v second L a 1)+
+        (9/2)*remainingLogs L a Z v.P-
+      secondNominal M Z amp omega C₁ D₁ C₂ D₂ U ≤
+        M*Cycle61.Arithmetic.g cell+6*amp+omega+supportPadding N b s.b₁ s.b₂ Z := by
+  let v := commonData (child s C₁ R₁ B₁ χ t) D₂ R₂ B₂
+  let X := Cycle61.Physical.sourcePlainScales v.toSource second
+  have hx₁ := Cycle61Moment.LowBranch.source_plain_positive v second 0
+  have hx₂ := Cycle61Moment.LowBranch.source_plain_positive v second 1
+  have hprod : X 0*X 1=v.X₁*v.X₂ := by
+    cases second
+    · rfl
+    · exact v.same_product
+  have hb := actual_final_capacity_right N b hb s hcard hs C₁ R₁ B₁ hf₁ χ t C₂ D₂ R₂ B₂ hf₂
+    D₁ hD₁ hC₂ hD₂ hCD₂ U L a Z M amp omega hZ hM hP hz haffine
+    (X 0) (X 1) hx₁ hx₂ hprod z hne
+  have he : length Z (Cycle61Moment.LowBranch.finalPlain v second L a 0)+
+      length Z (Cycle61Moment.LowBranch.finalPlain v second L a 1) =
+        plainLogs L a Z (X 0) (X 1) := by
+    change Real.logb Z (max 1 (clippedScale (rawScale L a (X 0) 0)))+
+      Real.logb Z (max 1 (clippedScale (rawScale L a (X 1) 1))) = _
+    rw [max_eq_right (CenteredMomentRetainedProfile.clippedScale_ge_one _),
+      max_eq_right (CenteredMomentRetainedProfile.clippedScale_ge_one _)]
+    rfl
+  dsimp only at hb ⊢
+  rw [he]
+  exact hb
+
+
+#print axioms child_with_height
+#print axioms actual_final_source_capacity
+#print axioms actual_final_source_capacity_right
+end
+end OAI.SevenEighths.Cycle61FinalCapacity
+
+end
+/- END ORIGINAL Cycle61.Physical.FinalCapacity.Physical -/
+
+/- BEGIN ORIGINAL Cycle61.Physical.FinalCapacity.UniformPadding; sha256 2a5f73b0a9ce54b247061723c2d5bda230e2c93737a32cbc496d43391c5ce9c8 -/
+section
+                                           
+
+set_option autoImplicit false
+namespace OAI.SevenEighths.Cycle61FinalCapacity
+noncomputable section
+open scoped BigOperators
+open Filter
+
+/-- A common threshold pays the fixed support costs before every live input,
+ allocation, row, height and nominal exponent. -/
+theorem support_padding_eventually (N : ℕ) (b b₁ b₂ ε : ℝ)
+    (hb : 0 < b) (hε : 0 < ε) :
+    ∀ᶠ Z : ℝ in atTop,1 < Z ∧ supportPadding N b b₁ b₂ Z ≤ ε := by
+  let A := b^(2*N)*(max 1 b₁*max 1 b₂)
+  have hA : 0 < A := by dsimp [A]; positivity
+  filter_upwards [(Filter.tendsto_atTop.1 (tendsto_rpow_atTop hε)) A,
+    Filter.eventually_gt_atTop (1:ℝ)] with Z hAZ hZ
+  refine ⟨hZ,?_⟩
+  have hh := Real.logb_le_logb_of_le hZ hA hAZ
+  rw [Real.logb_rpow (zero_lt_one.trans hZ) hZ.ne'] at hh
+  dsimp [A] at hh
+  rw [Real.logb_mul (pow_pos hb _).ne' (by positivity),Real.logb_pow] at hh
+  unfold supportPadding
+  norm_num only [Nat.cast_mul,Nat.cast_ofNat] at hh
+  exact hh
+
+/-- Compact positive mass intervals permit the same threshold to pay an
+ arbitrarily small error proportional to the live original mass. -/
+theorem support_padding_eventually_mass (N : ℕ) (b b₁ b₂ ε Mmin : ℝ)
+    (hb : 0 < b) (hε : 0 < ε) (hMmin : 0 < Mmin) :
+    ∀ᶠ Z : ℝ in atTop,1 < Z ∧ ∀M:ℝ,Mmin ≤ M → supportPadding N b b₁ b₂ Z ≤ ε*M := by
+  filter_upwards [support_padding_eventually N b b₁ b₂ (ε*Mmin) hb (mul_pos hε hMmin)]
+    with Z hZ
+  exact ⟨hZ.1,fun M hM => hZ.2.trans (mul_le_mul_of_nonneg_left hM hε.le)⟩
+
+#print axioms support_padding_eventually
+#print axioms support_padding_eventually_mass
+end
+end OAI.SevenEighths.Cycle61FinalCapacity
+
+end
+/- END ORIGINAL Cycle61.Physical.FinalCapacity.UniformPadding -/
+
+/- BEGIN ORIGINAL Cycle61.Physical.FinalCapacity.Public; sha256 97305d53833d9ac98f83bf82e22617a4b6a1cd932ed0a267d267e5ceb6b740d5 -/
+section
+                                              
+                                                    
+
+/- Public audit: exact affine-cell to final selected-capacity bridge.
+   The literal physical row must survive; zero rows need no capacity gate. -/
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.common_reduction_log_lower
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.two_stage_raw_volume
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.original_affine_capacity
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_common_shift_le
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_common_shift_le_right
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.two_stage_supported_capacity
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_final_capacity
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_final_capacity_right
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.child_with_height
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_final_source_capacity
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.actual_final_source_capacity_right
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.support_padding_eventually
+#print axioms OAI.SevenEighths.Cycle61FinalCapacity.support_padding_eventually_mass
+
+end
+/- END ORIGINAL Cycle61.Physical.FinalCapacity.Public -/

@@ -1,0 +1,5 @@
+import Submissions.akashlevy_20261009_weighted_numerator.Main
+
+namespace Candidate
+export Submissions.akashlevy_20261009_weighted_numerator (bound)
+end Candidate

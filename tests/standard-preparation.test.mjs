@@ -35,10 +35,16 @@ test("standard preparation reads the committed source and rejects symlink blobs"
     git("init", "-q");
     git("config", "user.name", "Fixture");
     git("config", "user.email", "fixture@example.test");
-    cpSync(
-      "submissions/openai-baseline",
-      join(repo, "submissions/openai-baseline"),
-      { recursive: true },
+    mkdirSync(join(repo, "submissions/openai-baseline/src/Candidate"), {
+      recursive: true,
+    });
+    writeFileSync(
+      join(repo, "submissions/openai-baseline/src/Candidate/Main.lean"),
+      "import Mathlib\n",
+    );
+    writeFileSync(
+      join(repo, "submissions/openai-baseline/metadata.json"),
+      "{}",
     );
     git("add", ".");
     git("commit", "-qm", "Fixture");
@@ -97,11 +103,4 @@ test("standard preparation reads the committed source and rejects symlink blobs"
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
-});
-
-test("the published algebraic result uses a fixed canonical expression", async () => {
-  const { exactBound } = await import("../core/exact-bound.mjs");
-  const m = { id: "liu-20261008", ...exactBound("(1507 − 2√921) / 1653") };
-  assert.match(challenge(m), /1507 - 2 \* Real.sqrt 921/);
-  assert.throws(() => exactBound("(1507 − 2√922) / 1653"), /checking profile/);
 });

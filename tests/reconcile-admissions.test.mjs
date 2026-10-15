@@ -1,4 +1,5 @@
 import test from "node:test";
+import { canonical, sha256 } from "../verifier/common.mjs";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import {
@@ -67,6 +68,10 @@ function fixture(t) {
   writeFileSync(
     join(root, "submissions/candidate-proof/src/Candidate/Main.lean"),
     "-- Source is data; reconciliation never compiles or executes it.\n",
+  );
+  writeFileSync(
+    join(root, "submissions/candidate-proof/metadata.json"),
+    JSON.stringify(metadata),
   );
   git("init", "-q");
   git(
@@ -139,6 +144,7 @@ function fixture(t) {
     expected,
     reportBytes,
     archivedAt: "2026-10-13T00:01:00Z",
+    metadata,
     sourceTree: git("rev-parse", "HEAD:submissions/candidate-proof/src"),
     record: workerCertificate(
       expected,
@@ -160,10 +166,23 @@ function fixture(t) {
     merge_commit_sha: merged.merge_commit_sha,
   };
   const legacy = legacyRecord();
-  mkdirSync(join(root, "proofs/legacy-proof"), { recursive: true });
+  mkdirSync(join(root, "submissions/legacy-proof"), { recursive: true });
   writeFileSync(
-    join(root, "proofs/legacy-proof/metadata.json"),
-    JSON.stringify(legacy),
+    join(root, "submissions/legacy-proof/metadata.json"),
+    JSON.stringify({
+      ...legacy,
+      verification: {
+        report_url: `https://github.com/${repository}/actions/runs/100`,
+        report_sha256: "f".repeat(64),
+      },
+    }),
+  );
+  mkdirSync(join(root, "submissions/legacy-proof/src/Candidate"), {
+    recursive: true,
+  });
+  writeFileSync(
+    join(root, "submissions/legacy-proof/src/Candidate/Main.lean"),
+    "-- fixture source\n",
   );
   return { root, git, earlier, legacy, envelope, admission, merged };
 }
@@ -311,6 +330,84 @@ test("a merged exact-head admission generates the catalogue and certificate and 
   );
 });
 
+test("a clean offline build regenerates historical verification records", async (t) => {
+  const data = fixture(t);
+  const path = join(data.root, "public/certificates/legacy-proof.json");
+  assert.equal(existsSync(path), false);
+  const catalogue = await reconcileAdmissions({ root: data.root });
+  assert.deepEqual(catalogue.records, [data.legacy]);
+  const receipt = JSON.parse(readFileSync(path));
+  assert.deepEqual(receipt, {
+    schema_version: 1,
+    result_id: "legacy-proof",
+    theta_exact: "7/8",
+    verified_at: data.legacy.first_verified_at,
+    source_repository: repository,
+    source_commit: data.legacy.source_commit,
+    kernels: ["Lean default", "nanoda", "con-ron"],
+    report_url: `https://github.com/${repository}/actions/runs/100`,
+    report_sha256: "f".repeat(64),
+  });
+  rmSync(join(data.root, "public"), { recursive: true });
+  await reconcileAdmissions({ root: data.root });
+  assert.deepEqual(JSON.parse(readFileSync(path)), receipt);
+});
+
+test("missing historical report provenance fails before publishing generated files", async (t) => {
+  const data = fixture(t);
+  writeFileSync(
+    join(data.root, "submissions/legacy-proof/metadata.json"),
+    JSON.stringify(data.legacy),
+  );
+  await assert.rejects(
+    reconcileAdmissions({ root: data.root }),
+    /Invalid verification record/,
+  );
+  assert.equal(existsSync(join(data.root, "public/certificates")), false);
+  assert.equal(existsSync(join(data.root, "catalogue/results.json")), false);
+});
+
+test("historical certificate paths are validated before writing output", async (t) => {
+  const data = fixture(t);
+  const path = join(data.root, "submissions/legacy-proof/metadata.json");
+  const metadata = JSON.parse(readFileSync(path));
+  metadata.certificate_url = "../outside.json";
+  writeFileSync(path, JSON.stringify(metadata));
+  await assert.rejects(
+    reconcileAdmissions({ root: data.root }),
+    /Invalid verification record path: legacy-proof/,
+  );
+  assert.equal(existsSync(join(data.root, "outside.json")), false);
+  assert.equal(existsSync(join(data.root, "public/certificates")), false);
+});
+
+test("historical and current proof revisions both regenerate their receipts", async (t) => {
+  const data = fixture(t);
+  const oldPath = join(data.root, "submissions/legacy-proof/metadata.json");
+  const original = JSON.parse(readFileSync(oldPath));
+  writeFileSync(oldPath, JSON.stringify({ ...original, historical: true }));
+  const revised = {
+    ...original,
+    proof_revision: "legacy-revised",
+    timeline_at: "2026-10-11T00:00:00Z",
+    certificate_url: "certificates/legacy-revised.json",
+  };
+  const dir = join(data.root, "submissions/legacy-revised");
+  mkdirSync(join(dir, "src/Candidate"), { recursive: true });
+  writeFileSync(join(dir, "metadata.json"), JSON.stringify(revised));
+  writeFileSync(join(dir, "src/Candidate/Main.lean"), "-- fixture source\n");
+  const catalogue = await reconcileAdmissions({ root: data.root });
+  assert.equal(catalogue.records.length, 1);
+  assert.equal(catalogue.historical_records.length, 1);
+  for (const id of ["legacy-proof", "legacy-revised"])
+    assert.equal(
+      JSON.parse(
+        readFileSync(join(data.root, `public/certificates/${id}.json`)),
+      ).result_id,
+      id,
+    );
+});
+
 for (const [label, change] of [
   [
     "unmerged PR",
@@ -343,7 +440,7 @@ for (const [label, change] of [
     change(data.merged);
     await assert.rejects(
       online(data, mockApi(data)),
-      /no admitted or legacy publication record/,
+      /no verified publication record/,
     );
     assert.equal(
       existsSync(join(data.root, "public/certificates/candidate-proof.json")),
@@ -462,7 +559,7 @@ test("missing admission evidence cannot silently omit a merged proof from the we
   });
   await assert.rejects(
     online(data, api),
-    /Submission has no admitted or legacy publication record: candidate-proof/,
+    /Submission has no verified publication record: candidate-proof/,
   );
   assert.equal(existsSync(join(data.root, "catalogue/results.json")), false);
   const offline = await reconcileAdmissions({ root: data.root });
@@ -531,11 +628,12 @@ test("changing cached metadata cannot detach it from the admitted PR body", asyn
   );
 });
 
-test("metadata edits publish the latest admitted version before merge and ignore later edits", async (t) => {
+test("deployment uses colocated metadata and the latest pre-merge verification", async (t) => {
   const data = fixture(t);
   const revision = (attempt, archivedAt, title) => {
     const record = structuredClone(data.envelope);
     record.metadata.title = title;
+    record.metadata_sha256 = sha256(canonical(record.metadata));
     record.pr.body = record.pr.body.replace(
       JSON.stringify(metadata),
       JSON.stringify(record.metadata),
@@ -567,7 +665,7 @@ test("metadata edits publish the latest admitted version before merge and ignore
   const published = catalogue.records.find(
     (record) => record.id === latest.result_id,
   );
-  assert.equal(published.title, latest.metadata.title);
+  assert.equal(published.title, metadata.title);
   assert.deepEqual(
     JSON.parse(
       readFileSync(join(data.root, "public", published.certificate_url)),
@@ -615,6 +713,11 @@ test("reruns retain the first success, latest metadata and every receipt through
   const data = fixture(t);
   const later = rerun(data.envelope);
   later.metadata.title = "Corrected attribution";
+  later.metadata_sha256 = sha256(canonical(later.metadata));
+  writeFileSync(
+    join(data.root, "submissions/candidate-proof/metadata.json"),
+    JSON.stringify(later.metadata),
+  );
   later.pr.body = later.pr.body.replace(
     JSON.stringify(metadata),
     JSON.stringify(later.metadata),

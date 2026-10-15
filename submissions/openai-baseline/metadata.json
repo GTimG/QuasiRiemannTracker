@@ -1,0 +1,52 @@
+{
+  "submitted_at": "",
+  "published_at": "",
+  "merged_at": "",
+  "pr": null,
+  "repository": "openai/math",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "first_verified_at": "2026-10-09T11:37:19Z",
+  "entrypoint": {
+    "module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+    "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re"
+  },
+  "license": "Apache-2.0",
+  "builds_on": [],
+  "id": "openai-baseline",
+  "title": "OpenAI · seven eighths",
+  "theta": {
+    "numerator": "7",
+    "denominator": "8"
+  },
+  "authors": [
+    {
+      "name": "OpenAI"
+    }
+  ],
+  "method": "OpenAI’s quasi-Riemann framework establishes the 7/8 boundary. The original pinned proof has now been rebuilt and checked directly.",
+  "references": [
+    {
+      "label": "Verification record",
+      "url": "certificates/openai-baseline.json"
+    },
+    {
+      "label": "Checked Lean solution",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/openai/src/Solution.lean"
+    },
+    {
+      "label": "Original source and scope",
+      "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+    }
+  ],
+  "status": "framework-verified",
+  "timeline_at": "2026-10-06T00:00:00Z",
+  "date_label": "Public release",
+  "verification_note": "Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and their definitions. Lean, NanoDa and con-ron accepted the exported proofs.",
+  "certificate_url": "certificates/openai-baseline.json",
+  "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/openai/src/Solution.lean",
+  "dependencies": [],
+  "verification": {
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/openai/result.json",
+    "report_sha256": "1e63efa78f0cea4c2afee6634d16a9c848d61f02e9cad1634e01736dc024cdad"
+  }
+}

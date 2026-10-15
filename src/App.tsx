@@ -470,8 +470,8 @@ export default function App() {
               </li>
               <li>
                 Start the PR body with QRH-Result, QRH-Bound and QRH-Decimal.
-                Include the template’s qrh-metadata JSON block with the result
-                title, authors and description. Proof checks run automatically,
+                Add metadata.json beside the Lean source with the result title,
+                authors and description. Proof checks run automatically,
                 including on drafts.
               </li>
               <li>

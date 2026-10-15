@@ -61,13 +61,8 @@ if any(actual[k] != digest for k,digest in base_tools.items() if k != 'exporter'
 (OUT/'tool-pins.json').write_text(json.dumps(actual,indent=2)+'\n')
 project = ENV_ROOT/'project'
 project.mkdir(exist_ok=True)
-upstream = ENV_ROOT/'openai-math'
-clone(PINS['openai_math']['url'],PINS['openai_math']['commit'],upstream)
-if sha(upstream/'lean/ComparatorChallenges/DirichletSevenEighths.lean') != PINS['challenge_sha256']:
-    raise RuntimeError('Canonical challenge source differs')
-if not (project/'OAI').exists(): shutil.copytree(upstream/'lean/OAI',project/'OAI')
 shutil.copyfile(ROOT/'verifier/standard/lake-manifest.json',project/'lake-manifest.json')
-lakefile = (ROOT/'verifier/standard/lakefile.lean').read_text().replace('roots := #[`OAI.NumberTheory.DirichletL.Nonvanishing]', 'globs := #[`OAI.+]')
+lakefile = (ROOT/'verifier/standard/lakefile.lean').read_text()
 (project/'lakefile.lean').write_text(lakefile)
 (project/'lean-toolchain').write_text(PINS['lean']+'\n')
 packages = project/'.lake/packages'; packages.mkdir(parents=True,exist_ok=True)
@@ -75,28 +70,18 @@ for p in json.loads((project/'lake-manifest.json').read_text())['packages']:
     name = p['name'].strip('«»'); dest = packages/name
     clone(p['url'],p['rev'],dest)
     if name in ['rellich-kondrachov','PrimeNumberTheoremAnd']:
-        patch = upstream/'lean/patches'/(name+'-lean4341.patch')
+        patch = ROOT/'verifier/actions/patches'/(name+'-lean4341.patch')
         if subprocess.run(['git','-C',str(dest),'apply','--reverse','--check',str(patch)],capture_output=True).returncode:
             run('git','-C',dest,'apply',patch)
 # The official Mathlib cache is fetched from the pinned dependency sources.
 run(source/'bin/lake','exe','cache','get',cwd=project,env=env)
-# Build only protected upstream modules. Submitted module names select files
-# from this fixed tree; all mathematical checking happens later in confinement.
-modules = set()
-for name in json.loads((OUT/('cache-imports.json' if warm_cache else 'imports.json')).read_text()):
-    while name.startswith('OAI.'):
-        if (project/(name.replace('.','/')+'.lean')).is_file():
-            modules.add(name); break
-        name = name.rsplit('.',1)[0]
-print(f'Build {len(modules)} protected upstream import targets and their dependencies', flush=True)
-if modules: run(source/'bin/lake','build',*sorted(modules),cwd=project,env=env)
 # These package sources are fixed by the protected manifest and compatibility
 # patches. A submitted import can select a module within these fixed trees.
 package_roots = {'PrimeNumberTheoremAnd': packages/'PrimeNumberTheoremAnd',
                  'RellichKondrachov': packages/'rellich-kondrachov'}
 modules = (['PrimeNumberTheoremAnd.Wiener',
             'RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Rellich']
-           if warm_cache else [name for name in json.loads((OUT/'imports.json').read_text()) if not name.startswith('OAI.')])
+           if warm_cache else json.loads((OUT/'imports.json').read_text()))
 for module in modules:
     parts = module.split('.')
     if parts[0] not in package_roots or any(not part.isascii() or not part.isidentifier() for part in parts):
@@ -113,9 +98,6 @@ if warm_cache:
     print('Shared checking environment ready',flush=True)
     sys.exit(0)
 libraries = sorted(p.resolve() for p in packages.glob('*/.lake/build/lib/lean') if p.is_dir())
-local = project/'.lake/build/lib/lean'
-contract = json.loads((OUT/'prepared/contract.json').read_text())
-if local.exists() and not contract.get('vendored_sources'): libraries.append(local.resolve())
 inventory = {}
 for lib in libraries:
     for p in sorted(lib.rglob('*')):
