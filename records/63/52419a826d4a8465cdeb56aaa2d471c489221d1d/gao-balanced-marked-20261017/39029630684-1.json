@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 63,
+  "head_sha": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+  "result_id": "gao-balanced-marked-20261017",
+  "theta_exact": "87483/100000",
+  "source_path": "submissions/gao-balanced-marked-20261017/src",
+  "source_tree": "7307d956fe6c6117fc838e6ce4ac219e4a5a9dc4",
+  "dependency_trees": {
+    "gao-balanced-marked-20261017": "d4d4860d11683915a3c357f63863e7d7bf6d19a2",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "Balanced common geometry and adaptive marked source at 0.874830",
+    "authors": [
+      {
+        "name": "Zhongpai Gao",
+        "url": "https://github.com/Gaozhongpai"
+      }
+    ],
+    "description": "All-moduli Dirichlet zero-free boundary 87483/100000 (0.874830), combining balanced common-geometry normalization, density-adaptive marked caps, a finite two-plane affine source/count family, and the independently proved 0.874836 incumbent for LOW and ERROR. Builds on OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; all inherited source notices retained. Zhongpai Gao, with AI assistance.",
+    "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+    "dependencies": [
+      "openai-baseline"
+    ],
+    "builds_on": [
+      "gao-directional-affine-20261016",
+      "openai-baseline",
+      "akashlevy-20261009-weighted-numerator",
+      "cycle25-quartic-20261010",
+      "cycle61-c0125139",
+      "gao-cycle61-plane-20261013",
+      "radical-asymmetric-count-20261014",
+      "detector-affine-c0125154",
+      "gao-affine-asymmetric-20261015"
+    ],
+    "references": [
+      {
+        "label": "Accepted 0.874836 predecessor source and proof",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+      },
+      {
+        "label": "Paper",
+        "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.pdf"
+      },
+      {
+        "label": "Asymmetric marked counting and coupled radical allocation (timbalud)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+      },
+      {
+        "label": "Affine detector count source integration (DaysSky)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+      },
+      {
+        "label": "Cycle61 interior affine moment theorem (Hailey Collet)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+      },
+      {
+        "label": "Earlier affine plane refinement (Zhongpai Gao)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+      },
+      {
+        "label": "Related affine detector arithmetic proposal (liqsweep; incomplete integration)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+      },
+      {
+        "label": "Accepted all-moduli affine boundary 0.874840 (Zhongpai Gao)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/60"
+      }
+    ]
+  },
+  "metadata_sha256": "5a4cdda31330fa4d85d25f17f5f5d9f53ca977997b01f023f5bcbe316516caa3",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "gao-balanced-marked-20261017",
+    "theta_exact": "87483/100000",
+    "verified_at": "2026-10-17T11:32:52.190604+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/7ae053f42b59f65790c4b66bb6a2ae0f5a32474a/verifier/standard/receipts/pr63-52419a82-20261017/result.json",
+    "report_sha256": "459cd6948c5e2b0f2021e6ab2e0c7fd1dacff72122d91cc6503a9d7bee4af4d4",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 63,
+    "head_sha": "52419a826d4a8465cdeb56aaa2d471c489221d1d"
+  },
+  "report_json": null,
+  "pr": {
+    "number": 63,
+    "title": "Improve all-moduli Dirichlet boundary to 0.874830",
+    "body": "QRH-Result: gao-balanced-marked-20261017\nQRH-Bound: 87483/100000\nQRH-Decimal: 0.874830\n\nProves that every Dirichlet L-function is nonzero for Re(s) > 0.874830, with the principal pole excluded. The proof retains the common geometric surplus inside source energies, uses density-adaptive marked moments, and combines two affine source planes in the detector count while choosing the numerator moment separately. It uses the accepted 0.874836 theorem for the incumbent feedback.\n\n[Paper (4 pages)](https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.pdf) · [TeX source](https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.tex) · [Canonical Lean theorem](https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/52419a826d4a8465cdeb56aaa2d471c489221d1d/submissions/gao-balanced-marked-20261017/src/Candidate/Main.lean)\n\nValidation: all 405 new supporting modules and the complete `Candidate.bound` passed local Lean checks with accepted cached dependencies, using only `propext`, `Classical.choice`, and `Quot.sound`. Official metadata and import-closure checks pass. Local full replay was skipped; GitHub's exact-head replay, Comparator, and independent-kernel checks remain to run.\n\nThe paper is linked from its permanent companion commit so that this result PR contains only the required submission files. The submission includes the minimal required predecessor source closure, byte-identical to the accepted source, because those `Candidate` modules are not exported as reusable submission modules. Existing submissions are unchanged. Attribution to OpenAI, Hailey Collet, Akash Levy, timbalud, DaysSky and previous Gao contributions is retained in the metadata, paper and source notices. Zhongpai Gao, with AI assistance.\n",
+    "created_at": "2026-10-17T02:59:24Z",
+    "author": {
+      "login": "Gaozhongpai",
+      "url": "https://github.com/Gaozhongpai"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "39029630684",
+    "run_attempt": "1",
+    "workflow_sha": "c4bc7448b7a58a6affc4606dbbf7a138a1789f54",
+    "check_id": 117387405660,
+    "archived_at": "2026-10-17T14:48:30.326Z"
+  }
+}
