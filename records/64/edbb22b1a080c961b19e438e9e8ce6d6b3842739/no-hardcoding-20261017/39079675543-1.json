@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 64,
+  "head_sha": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+  "result_id": "no-hardcoding-20261017",
+  "theta_exact": "874835173/1000000000",
+  "source_path": "submissions/no-hardcoding-20261017/src",
+  "source_tree": "dc156951a8a86ceb1a8af10840963cf2b8e2e4b8",
+  "dependency_trees": {
+    "no-hardcoding-20261017": "b0d9f04b4df4760128765a4d97f3b51bad830bd0",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "No hardcoding: the marked ledger's constants computed from their constraints, at 0.874835173",
+    "authors": [
+      {
+        "name": "ArviFoxy",
+        "url": "https://github.com/ArviFoxy"
+      }
+    ],
+    "description": "Proves the all-moduli Dirichlet boundary 874835173/1000000000. Starting from PR 50's source tree with the affine detector count of PR 52 and PR 56, the hand-picked constants of the marked ledger are replaced by the quantities they stand for, computed in Lean. The bin split of the LOW/HIGH ledger is the root of a strictly increasing residual (the price channel and the capped live channel of the marked saving both tight in the top cell), located by interval arithmetic and proved exact; the slope is the moving slope (430q^2 - 399q + 135)/(q(24q^2 - 34q + 35)) that makes the price bound of the HIGH reserve equal in every cell; the intercept is the largest one the price channel allows; the caps of the marked count, its bin top, its root cutoff and the amplifier cap and floor are the values at which their constraints hold with equality; the row length is the optimum of the top-row certificate; the slacks with a gate are the formulas of that gate; the savings of the row certificates are fixed fractions of the claim margin. All enclosures are computed by a bracket command at elaboration time and checked by the kernel. A Lean theorem shows that no other bin split and intercept admitted by the marked ledger gives a smaller class bound. 33 hand-picked constants of the starting tree are eliminated. The valuation price and the per-cell supplied width follow PR 62. Inherited attribution is preserved in the modules.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "builds_on": [
+      "openai-baseline",
+      "akashlevy-20261009-weighted-numerator",
+      "cycle25-quartic-20261010",
+      "cycle61-c0125139",
+      "radical-asymmetric-count-20261014",
+      "detector-affine-c0125154",
+      "gao-directional-affine-20261016"
+    ],
+    "references": [
+      {
+        "label": "Asymmetric marked counting and source tree (PR 50)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+      },
+      {
+        "label": "Collet's affine moment in the detector count (PR 52)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+      },
+      {
+        "label": "Detector affine count on Cycle61 (PR 56)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+      },
+      {
+        "label": "Directional marked affine source (PR 62)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+      }
+    ],
+    "dependencies": [
+      "openai-baseline"
+    ]
+  },
+  "metadata_sha256": "7a5ff8650d50fc58c354149e192eff49924c966241ce49fb13eef385e5ddee06",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "no-hardcoding-20261017",
+    "theta_exact": "874835173/1000000000",
+    "verified_at": "2026-10-17T23:31:58.056623+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/71d2bbdffc5c0cc50449a88424de73233b71ef03/verifier/standard/receipts/pr64-edbb22b1-20261017/result.json",
+    "report_sha256": "590991f6564dc9e5b012d947e554354c8c0c8fa042a304a941b564cff020ceff",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 64,
+    "head_sha": "edbb22b1a080c961b19e438e9e8ce6d6b3842739"
+  },
+  "report_json": null,
+  "pr": {
+    "number": 64,
+    "title": "No hardcoding: the marked ledger's constants computed from their constraints, at 0.874835173",
+    "body": "QRH-Result: no-hardcoding-20261017\nQRH-Bound: 874835173/1000000000\nQRH-Decimal: 0.874835173\n\n## No hardcoding\n\nMany numbers in the proof tree this builds on were chosen by hand, checked numerically, and pasted into the source: a bin split, a slope, an intercept, caps, slacks, enclosures. Each has to be re-tuned whenever something around it moves, which costs effort and adds no mathematics. This submission removes that layer from the marked ledger of the affine detector count. Every constant there is now either the quantity it stands for, computed in Lean, or the formula of the inequality it pays for. A change elsewhere in the proof then needs no re-tuning, and the bound follows by itself. The hope is that effort goes into new estimates rather than into tuning constants.\n\nWhat is computed in Lean:\n\n- The bin split `q0` of the LOW/HIGH ledger is the root of a strictly increasing residual on `[1/2, 37/50]`: the point where the price channel and the capped live channel of the marked saving are both tight in the top cell. The root is located by interval arithmetic at elaboration time and proved exact by continuity and monotonicity (`bracket_root`).\n- The slope of Collet's affine moment is the moving slope `(430 q^2 - 399 q + 135)/(q (24 q^2 - 34 q + 35))`, for which the price bound of the HIGH reserve is the same in every cell. The intercept is the largest one the price channel allows. The row length is the optimum of the top-row certificate.\n- The caps of the marked count (inverse and plain widths, length caps), its bin top and its root cutoff are the values at which their constraints hold with equality. The amplifier cap and floor are the amplifier widths of the top and the first cell of the slot window.\n- The slacks with a gate are the formulas of that gate: the geometry loss cap, the frequency loss cap, the marked rate, pad and loss, the supply loss of the tiny-slot discard, and the common allocations.\n- The savings of the row certificates and the offset of the extended row are fixed fractions of the claim margin `m = theta - thetaMin`, where `thetaMin` is the class bound computed from the slope and intercept. The claim therefore only has to exceed the computed class bound. The junction row length is the root of the small-plain-capacity gate.\n- Every enclosure the certificates use is computed by the `bracket` command at elaboration time and checked by the kernel; no enclosure number appears in the source.\n- `markedSplit_optimal`: for every bin split `q` in `[1/2, 37/50]` and every positive intercept the ledger admits at `q` (price channel in every cell, capped live channel in the top cell with the caps of the count at the smallest bin top the HIGH growth allows), the class bound is at least the one at `q0`.\n- The windows of Collet's affine moment (slot sum in `[17/500, 1/25]`, plain lengths in `[41/100, 44/100]`, plain capacity top `264/625`) are each defined once and used by name; the padding of its comparison branch is `1/4 - (9/2) slotTop`. Changing a window is a one-line edit, and the proofs check whether the new value is admissible.\n\nCounted against the starting tree (the all-Dirichlet bound 874839/1000000 built from PR 50 with the affine count of PR 52 and PR 56): 33 hand-picked constants (25 distinct values) no longer exist. 12 became computed values, 9 the formulas of their gates, 7 fractions of the claim margin; 3 were merged into another allowance and 2 were removed with the code that used them. Besides these, 88 numerals that were values of formulas (749 lines) are now the formulas, and 6 generated certificate files with 787 numerals are replaced by certificates computed in Lean.\n\nThe claim `874835173/10^9` is the class bound, which lies in `[0.874835172009, 0.874835172023]`, rounded up at the ninth digit. The numbers that remain are positivity-only allowances (the cell mesh and the tail allowance `10^-8`, the marked bin width `10^-5`, the LOW reserve weight `1/400000`), the windows of Collet's affine moment, search intervals, and structural constants of the analytic argument. A smaller LOW reserve weight would lower the class bound slightly but makes the kernel-checked certificates about nine times slower, because its exact rational enters every Bernstein coefficient; the size of the cell mesh costs no kernel time.\n\n## Credits\n\nThe source tree is PR 50's (timbalud: asymmetric marked counting and coupled radical allocation). The affine detector count follows liqsweep's PR 52 and adapts DaysSky's construction of PR 56. The valuation price and the per-cell supplied width of the marked ledger come from Zhongpai Gao's PR 62. The Cycle61 construction is Hailey Collet's; the baseline is OpenAI's. Attribution in the modules is retained.\n\n## Verification\n\nFull build of all 913 modules from a clean build directory on Lean 4.34.1 with the tracker's pinned Mathlib: green. `Candidate.bound` depends on `propext`, `Classical.choice` and `Quot.sound` only; so does `markedSplit_optimal`.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+    "created_at": "2026-10-17T11:06:24Z",
+    "author": {
+      "login": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "39079675543",
+    "run_attempt": "1",
+    "workflow_sha": "5774c7bc24d611b0accc0e8e07ce7f9ca1fdbd36",
+    "check_id": 117533988138,
+    "archived_at": "2026-10-18T00:26:49.792Z"
+  }
+}
