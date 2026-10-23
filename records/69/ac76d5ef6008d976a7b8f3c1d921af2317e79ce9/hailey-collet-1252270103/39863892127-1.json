@@ -1,0 +1,96 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 69,
+  "head_sha": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+  "result_id": "hailey-collet-1252270103",
+  "theta_exact": "8747729897/10000000000",
+  "source_path": "submissions/hailey-collet-1252270103/src",
+  "source_tree": "69730d74f58b98bae53c77e72896eeb96488cd91",
+  "dependency_trees": {
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "A zero-free half-plane from finite ordinary source moments",
+    "authors": [
+      {
+        "name": "Hailey Collet",
+        "url": "https://x.com/HaileyStormC"
+      }
+    ],
+    "description": "Proves the all-moduli Dirichlet boundary 8747729897/10000000000, with the principal pole excluded. The direct proof uses the accepted two-level affine Hecke bound as its initial input, a finite global ordinary-source induction, an intermediate return, the selected final source graph and the final Mellin argument. The source estimates preserve the ordinary two-factor coefficient, natural character zeros, common punctures, profiles and independent heights. The exact scalar certificates cover the full closed intervals. Builds on OpenAI's original framework, Akash Levy's weighted numerator, Hailey Collet's earlier affine work, Zhongpai Gao's refinements, timbalud's marked asymmetric counting and common-radical allocation, DaysSky's detector and ArviFoxy's two-level affine construction, with inherited notices retained. QRH-Catalogue was used throughout the component search and reuse. Hailey Collet is the sole human author; the research, drafting and Lean development were AI-assisted.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "builds_on": [
+      "openai-baseline",
+      "akashlevy-20261009-weighted-numerator",
+      "cycle25-quartic-20261010",
+      "cycle61-c0125139",
+      "radical-asymmetric-count-20261014",
+      "detector-affine-c0125154",
+      "gao-directional-affine-20261016",
+      "gao-balanced-marked-20261017",
+      "no-hardcoding-20261017",
+      "two-level-affine-20261019"
+    ],
+    "dependencies": [
+      "openai-baseline"
+    ],
+    "references": [
+      {
+        "label": "QRH-Catalogue",
+        "url": "https://github.com/HaileyStorm/QRH-Catalogue"
+      },
+      {
+        "label": "Hailey Collet on X",
+        "url": "https://x.com/HaileyStormC"
+      },
+      {
+        "label": "Two-level affine bootstrap (PR 67)",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+      },
+      {
+        "label": "Standalone paper and formalization",
+        "url": "https://haileystorm.github.io/research/finite-ordinary-source-moments/"
+      }
+    ]
+  },
+  "metadata_sha256": "e7d92ab212c7d436319fa976de5b8a07899cf548790bbf61661633692b05af75",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "hailey-collet-1252270103",
+    "theta_exact": "8747729897/10000000000",
+    "verified_at": "2026-10-22T22:13:39.013693+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/2e5f260096b478003550046cab52e612c2c1dd03/verifier/standard/receipts/pr69-ac76d5ef-20261023/result.json",
+    "report_sha256": "b9976aad6617832a1140abcfa903bb2fa06c736e5578940ae5a814ef2a3fc877",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 69,
+    "head_sha": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9"
+  },
+  "report_json": null,
+  "pr": {
+    "number": 69,
+    "title": "Dirichlet boundary 0.8747729897 from finite ordinary source moments",
+    "body": "QRH-Result: hailey-collet-1252270103\nQRH-Bound: 8747729897/10000000000\nQRH-Decimal: 0.8747729897\n\n**Draft — verification pending.** Local verification is incomplete. Protected verification with the canonical Comparator and all three kernels is requested for frozen head `ac76d5ef6008d976a7b8f3c1d921af2317e79ce9`.\n\nThe proposed result is **c = 0.1252270103**: every presented Dirichlet L-function is nonzero for **Re(s) > 0.8747729897**, with the principal pole excluded. The accompanying declarations give the Riemann zeta and stated Eisenstein Hecke consequences at the same strict boundary.\n\nThe proof follows one dependency chain: the accepted PR67 input, 64 seed source faces, the intermediate return, the selected 221 derived source faces and the final return. The committed Lean sources provide the proof and exact certificates, retaining the contributors' attribution and licenses. The standalone paper and exact download bundle are prepared for publication with the verification update.\n\nI'm also sharing [QRH-Catalogue](https://github.com/HaileyStorm/QRH-Catalogue), the searchable catalogue of mathematical arguments and Lean components used extensively throughout this work. Its entries connect reusable results to their original sources and verification evidence.\n\n**Hailey Collet** · [@HaileyStormC](https://x.com/HaileyStormC) · HaileyCollet@gmail.com\n\nHailey Collet is the sole human author. The research, drafting and Lean development were AI-assisted; the source notices retain the contribution account.\n\n```qrh-metadata\n{\n  \"title\": \"A zero-free half-plane from finite ordinary source moments\",\n  \"authors\": [\n    {\n      \"name\": \"Hailey Collet\",\n      \"url\": \"https://x.com/HaileyStormC\"\n    }\n  ],\n  \"description\": \"Proves the all-moduli Dirichlet boundary 8747729897/10000000000, with the principal pole excluded. The direct proof uses the accepted two-level affine Hecke bound as its initial input, a finite global ordinary-source induction, an intermediate return, the selected final source graph and the final Mellin argument. The source estimates preserve the ordinary two-factor coefficient, natural character zeros, common punctures, profiles and independent heights. The exact scalar certificates cover the full closed intervals. Builds on OpenAI's original framework, Akash Levy's weighted numerator, Hailey Collet's earlier affine work, Zhongpai Gao's refinements, timbalud's marked asymmetric counting and common-radical allocation, DaysSky's detector and ArviFoxy's two-level affine construction, with inherited notices retained. QRH-Catalogue was used throughout the component search and reuse. Hailey Collet is the sole human author; the research, drafting and Lean development were AI-assisted.\",\n  \"license\": \"Apache-2.0; inherited notices and dependency licenses retained.\",\n  \"builds_on\": [\n    \"openai-baseline\",\n    \"akashlevy-20261009-weighted-numerator\",\n    \"cycle25-quartic-20261010\",\n    \"cycle61-c0125139\",\n    \"radical-asymmetric-count-20261014\",\n    \"detector-affine-c0125154\",\n    \"gao-directional-affine-20261016\",\n    \"gao-balanced-marked-20261017\",\n    \"no-hardcoding-20261017\",\n    \"two-level-affine-20261019\"\n  ],\n  \"dependencies\": [\n    \"openai-baseline\"\n  ],\n  \"references\": [\n    {\n      \"label\": \"QRH-Catalogue\",\n      \"url\": \"https://github.com/HaileyStorm/QRH-Catalogue\"\n    },\n    {\n      \"label\": \"Hailey Collet on X\",\n      \"url\": \"https://x.com/HaileyStormC\"\n    },\n    {\n      \"label\": \"Two-level affine bootstrap (PR 67)\",\n      \"url\": \"https://github.com/GTimG/QuasiRiemannTracker/pull/67\"\n    },\n    {\n      \"label\": \"Standalone paper and formalization\",\n      \"url\": \"https://haileystorm.github.io/research/finite-ordinary-source-moments/\"\n    }\n  ]\n}\n```\n",
+    "created_at": "2026-10-21T19:58:25Z",
+    "author": {
+      "login": "HaileyStorm",
+      "url": "https://github.com/HaileyStorm"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "39863892127",
+    "run_attempt": "1",
+    "workflow_sha": "01ddcdbdd2dcf7b191e10fd813417644e90b7d79",
+    "check_id": 120121403555,
+    "archived_at": "2026-10-23T01:28:33.023Z"
+  }
+}
