@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 70,
+  "head_sha": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+  "result_id": "lewko-acyclic-bootstrap-874772906",
+  "theta_exact": "437386453/500000000",
+  "source_path": "submissions/lewko-acyclic-bootstrap-874772906/src",
+  "source_tree": "b58265f50fcef585d7deaccf99c6d9313ec2501b",
+  "dependency_trees": {
+    "lewko-acyclic-bootstrap-874772906": "0a07c961b4ed9bb9dd2a83bf4d642a2a452a3597",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "An acyclic ordinary-source refinement targeting the Dirichlet boundary 0.874772906",
+    "authors": [
+      {
+        "name": "Mark Lewko"
+      }
+    ],
+    "description": "We prove that, for every positive modulus and every complex Dirichlet character χ, the Dirichlet L-function L(s,χ) is nonzero whenever Re(s) > 0.874772906, excluding the principal pole at χ = 1 and s = 1. The proof refines Hailey Collet’s construction in the OpenAI quasi-Riemann-hypothesis framework by optimizing admissible parameters in two successive, acyclic steps. The theorem is formalized in Lean. This is a parameter improvement of existing machinery, not a new analytic method.\n\nThe Lean theorem has passed local compilation and independent scope, hash and axiom audits using only propext, Classical.choice and Quot.sound. Official Comparator/Lean/NanoDa/con-ron admission remains pending.\n\nResearch, parameter optimization, drafting and Lean development were AI-assisted. We credit Hailey Collet’s finite ordinary-source construction and earlier work; OpenAI’s framework; Akash Levy’s weighted numerator; Zhongpai Gao’s refinements and physical-source machinery; timbalud’s marked asymmetric counting and coupled radical allocation; DaysSky’s affine detector; related arithmetic prepared for liqsweep; and ArviFoxy’s computed ledger and two-level affine bootstrap. The sole directly imported tracker submission is openai-baseline; reached Collet sources are vendored with pinned provenance. Lean, mathlib, the PrimeNumberTheoremAnd package by Alex Kontorovich and contributors, and Adam Benenson’s Rellich–Kondrachov package retain their original authorship, licenses and notices.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "dependencies": [
+      "openai-baseline"
+    ],
+    "builds_on": [
+      "openai-baseline",
+      "akashlevy-20261009-weighted-numerator",
+      "cycle25-quartic-20261010",
+      "cycle61-c0125139",
+      "radical-asymmetric-count-20261014",
+      "detector-affine-c0125154",
+      "gao-directional-affine-20261016",
+      "gao-balanced-marked-20261017",
+      "no-hardcoding-20261017",
+      "two-level-affine-20261019",
+      "hailey-collet-1252270103"
+    ],
+    "references": [
+      {
+        "label": "Hailey Collet, pinned finite ordinary-source paper and formalization",
+        "url": "https://github.com/rohanarun/quasi-rh-hillclimb/tree/594fc4838e9c92d5a16bedf270d07d1f51161be7/submissions/hailey-collet-1252270103"
+      },
+      {
+        "label": "Collet tracker PR69; admission status separate from paper publication",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
+      },
+      {
+        "label": "OpenAI mathematics, tracker-pinned framework",
+        "url": "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+      }
+    ]
+  },
+  "metadata_sha256": "8d3b7f03cb9bb0ba93d60f7faf1b9eb2cdc0666b6a1ec0112f640aff8b4248cb",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "lewko-acyclic-bootstrap-874772906",
+    "theta_exact": "437386453/500000000",
+    "verified_at": "2026-10-23T10:21:00.417245+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/2f6fe029c5640392ff429362f343481299f6242e/verifier/standard/receipts/pr70-8ee28f24-20261023/result.json",
+    "report_sha256": "2cb67e38d2a1d95690ffb491d158f888ab41d3c1267891abd4456153b618ab5b",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 70,
+    "head_sha": "8ee28f244ec11b180d09c9d3f92e34ee078c746a"
+  },
+  "report_json": null,
+  "pr": {
+    "number": 70,
+    "title": "Acyclic ordinary-source refinement targeting Dirichlet boundary 0.874772906",
+    "body": "QRH-Result: lewko-acyclic-bootstrap-874772906\nQRH-Bound: 437386453/500000000\nQRH-Decimal: 0.874772906\n\nWe prove that, for every positive modulus and every complex Dirichlet character χ, the Dirichlet L-function L(s,χ) is nonzero whenever Re(s) > 0.874772906, excluding the principal pole at χ = 1 and s = 1. The proof refines Hailey Collet’s construction in the OpenAI quasi-Riemann-hypothesis framework by optimizing admissible parameters in two successive, acyclic steps. The theorem is formalized in Lean. This is a parameter improvement of existing machinery, not a new analytic method.\n\nThe Lean theorem has passed local compilation and independent scope, hash and axiom audits using only propext, Classical.choice and Quot.sound. Official Comparator/Lean/NanoDa/con-ron admission remains pending.\n\nResearch, parameter optimization, drafting and Lean development were AI-assisted. We credit Hailey Collet’s finite ordinary-source construction and earlier work; OpenAI’s framework; Akash Levy’s weighted numerator; Zhongpai Gao’s refinements and physical-source machinery; timbalud’s marked asymmetric counting and coupled radical allocation; DaysSky’s affine detector; related arithmetic prepared for liqsweep; and ArviFoxy’s computed ledger and two-level affine bootstrap. The sole directly imported tracker submission is openai-baseline; reached Collet sources are vendored with pinned provenance. Lean, mathlib, the PrimeNumberTheoremAnd package by Alex Kontorovich and contributors, and Adam Benenson’s Rellich–Kondrachov package retain their original authorship, licenses and notices.\n\nPinned Collet paper and formalization: revision 594fc4838e9c92d5a16bedf270d07d1f51161be7.\nhttps://github.com/rohanarun/quasi-rh-hillclimb/pull/8\n",
+    "created_at": "2026-10-23T01:21:44Z",
+    "author": {
+      "login": "mrklwk",
+      "url": "https://github.com/mrklwk"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "39956245139",
+    "run_attempt": "1",
+    "workflow_sha": "1dee293b7d9e7c30e3fbfd3831d44335336936e4",
+    "check_id": 120422938105,
+    "archived_at": "2026-10-23T15:55:17.472Z"
+  }
+}
