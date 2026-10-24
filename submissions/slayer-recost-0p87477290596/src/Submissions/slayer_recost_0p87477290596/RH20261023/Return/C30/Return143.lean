@@ -1,0 +1,24 @@
+/- Modified 2026-10-22 for Mark Lewko private candidate.
+Original authors, license and notices retained below and in vendor/collet. -/
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.slayer_recost_0p87477290596.RH20261023.Return.C30.ReturnFormulas
+set_option autoImplicit false
+namespace RH20261023Return.C30
+noncomputable section
+def row143_coefficients : Fin 3 → Fin 4 → ℝ := ![![(263823753304310733644683173607621/2105210654944255018856250000000:ℝ), (8809789407875867959137953145321793/31578159824163825282843750000000:ℝ), (6261399741485414032727000476579141/31578159824163825282843750000000:ℝ), (463971013890498382379335603457221/10526053274721275094281250000000:ℝ)],
+![(898359331757374335491690341591927/3157815982416382528284375000000:ℝ), (601018965630750776188026770088407/1052605327472127509428125000000:ℝ), (1060023617501340197791317221021711/3157815982416382528284375000000:ℝ), (50069991638549541794180271616139/1052605327472127509428125000000:ℝ)],
+![(2059272720597440545971823982823371/6315631964832765056568750000000:ℝ), (23846425371300251600291446197396317/31578159824163825282843750000000:ℝ), (8941162556755517839519906892660597/15789079912081912641421875000000:ℝ), (357824397026407080298715768399311/2631513318680318773570312500000:ℝ)]]
+theorem row143_identity (δ p : ℝ) : rowMargin .newTop .old δ p =
+ Record12518109.Bernstein.bsum 2 3 (50069991638549541794180271616139/30659352329428154870169600000000000:ℝ) row143_coefficients (3/8:ℝ) (9/16:ℝ) (1/4:ℝ) (3/8:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_newTop,edgeC_newTop,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row143_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row143_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (3/8:ℝ) (9/16:ℝ))
+ (hp : p ∈ Set.Icc (1/4:ℝ) (3/8:ℝ)) : 0 < rowMargin .newTop .old δ p := by
+ rw [row143_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row143_coefficients]
+#print axioms row143_identity
+#print axioms row143_pos
+end
+end RH20261023Return.C30
