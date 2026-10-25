@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 73,
+  "head_sha": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+  "result_id": "arvi-repeated-marks-20261024",
+  "theta_exact": "8747289/10000000",
+  "source_path": "submissions/arvi-repeated-marks-20261024/src",
+  "source_tree": "9460f4668f6920d71cada72869f59b7036485542",
+  "dependency_trees": {
+    "arvi-repeated-marks-20261024": "d09eee018f93d7901b98aadba24af1067ed6b468",
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "Repeated marked slots in the source HIGH count",
+    "authors": [
+      {
+        "name": "ArviFoxy",
+        "url": "https://github.com/ArviFoxy"
+      }
+    ],
+    "description": "Proves the all-moduli Dirichlet boundary 8747289/10000000, with the principal pole excluded. The proof is Hailey Collet's record proof (hailey-collet-1252270103) with four changes. (1) In the source step, the inverse witness of the HIGH same-zero count may use each marked slot up to eight times: the overlap adapter of the marked inverse moment (foundations Lemma 8.1) already admits repeated prime lists, so Collet's inverse fiber count applies verbatim to the replicated slot set. (2) The detector cutoff is chosen per amplitude class of the fiber, and the HIGH gain becomes the infimum over classes of the class gains, a minimum of linear forms capped by the available-slot facet. Its common-width payment (Lemma C) replaces the slope check of the original gain. (3) The finite source graph is replaced by one explicit family of faces. In the continuum limit the source step is the ordinary differential equation E' = -6q*E/(1 - 6q*s) for the envelope E(s) of the faces, where 6q* = 5(sqrt(E) - 2 sqrt(s))^2/(2 - E - 4 sqrt(E s)) is the binding threshold over amplitude classes (each single class flow is solved by the Lambert W function). The faces are the secant lines of a five-piece cubic envelope that follows this flow with a small reserve, on the grid of 2^16 faces per piece. Each piece's faces are proved valid all at once: the scalar gates by one-variable polynomial positivity certificates in the face parameter, and the new HIGH gate by Bernstein trees in density and amplitude whose coefficients are polynomials in the face parameter. The chain is an induction along each piece, joined by four concrete junction steps. With this family the final return closes at 34989/40000 = 0.874725 (Candidate.bound_sharp); Candidate.bound states the declared value 8747289/10000000. (4) In the final return, the physical face is applied through its global source theorem at every shift (plain floor and width floor 0), so the windowed physical schedule, its free shift and its large-shift reserve are no longer needed: the width lost by a shift is at most 2t/Lambda and is paid by the shift. The generic return is re-elaborated with this schedule (numerator cap 9/200) and with relaxed coarse parameter bounds, and the final return is re-certified with the last face of the family as count face and an interior face as physical face (34 row rectangles, 11 admission windows); the count windows use the constant-width cap 13/250, the count face being proved up to its own cap 0.0549989. The seed step, the intermediate return, the natural premise and all analytic estimates are Collet's, imported unchanged. The research, drafting and Lean development were AI-assisted.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "builds_on": [
+      "hailey-collet-1252270103",
+      "two-level-affine-20261019",
+      "openai-baseline"
+    ],
+    "dependencies": [
+      "hailey-collet-1252270103",
+      "openai-baseline"
+    ],
+    "references": [
+      {
+        "label": "Research notes and exact certificates",
+        "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/repeated-marks"
+      },
+      {
+        "label": "The face family and its continuum flow",
+        "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain"
+      }
+    ]
+  },
+  "metadata_sha256": "f84a98d5c1eb7a1fb7aa9557268b6c03993d408fae6b7f7fe9c3fdb36b9bc936",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "arvi-repeated-marks-20261024",
+    "theta_exact": "8747289/10000000",
+    "verified_at": "2026-10-25T20:44:20.989546+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/335675f6a7112e7f903d65fc10710756528c3605/verifier/standard/receipts/pr73-41ddc0dd-20261025/result.json",
+    "report_sha256": "957a5129edb1911dfcd1d692c25b576359d27077d89a1e69e63f788d2fb401a4",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 73,
+    "head_sha": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "84d4031d20445163a6afa22a3559c8f4a95bdbf0158a8e143ef9cb7c78cf4e24"
+    }
+  },
+  "report_json": null,
+  "pr": {
+    "number": 73,
+    "title": "Add arvi-repeated-marks-20261024: Dirichlet boundary 0.8747289",
+    "body": "QRH-Result: arvi-repeated-marks-20261024\r\nQRH-Bound: 8747289/10000000\r\nQRH-Decimal: 0.8747289\r\n\r\nProves that every Dirichlet L-function L(s, χ), for every positive modulus, is nonzero for Re(s) > 8747289/10000000 = 0.8747289, excluding the principal pole. The current verified bound is 0.874772906 (PR #70); the open PR #72 claims 0.874771265.\r\n\r\nThe proof is Hailey Collet's record proof (`hailey-collet-1252270103`) with four changes:\r\n\r\n1. **Repeated marked slots in the source HIGH count.** The inverse witness of the HIGH same-zero count may use each marked slot up to eight times. The overlap adapter of the marked inverse moment (foundations Lemma 8.1) already admits repeated prime lists, so Collet's inverse fiber count applies verbatim to the replicated slot set.\r\n2. **Per-class detector cutoffs.** The detector cutoff is chosen per amplitude class, and the HIGH gain becomes the infimum over classes of the class gains. A general common-width payment lemma (Lemma C) replaces the slope check of the original gain.\r\n3. **A new 59-face source graph**, certified by exact bicubic Bernstein trees for the new HIGH gate.\r\n4. **Global physical face in the final return.** The physical face is applied through its global source theorem at every shift (Lemma D), so the windowed physical schedule is no longer needed. The final return is re-certified with the new count and physical faces.\r\n\r\nThe seed step, the intermediate return, the natural premise and all analytic estimates are Collet's, imported unchanged.\r\n\r\n**Local checks.** Full build with the pinned toolchain `leanprover/lean4:v4.34.1`. `Candidate.bound` depends only on `propext`, `Classical.choice` and `Quot.sound`. `metadata.json` passes `verifier/submission-metadata.mjs`. Every changed file is under `submissions/repeated-marks-20261024/`. Exact rational certificates and research notes: https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/repeated-marks\r\n\r\n**Credits.** Hailey Collet (finite ordinary source moments, the NF theorem and the record proof this builds on), the authors of `two-level-affine-20261019`, and OpenAI (analytic framework). Research, Lean development and drafting were substantially AI-assisted with Anthropic's Claude (Claude Code).\r\n\r\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\r\n",
+    "created_at": "2026-10-25T02:36:31Z",
+    "author": {
+      "login": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "40233268215",
+    "run_attempt": "1",
+    "workflow_sha": "c733be65279173155d4563d129b474807b74b525",
+    "check_id": 121289486864,
+    "archived_at": "2026-10-25T21:00:42.501Z"
+  }
+}
