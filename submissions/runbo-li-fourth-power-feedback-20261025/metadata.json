@@ -1,0 +1,41 @@
+{
+  "title": "Acyclic natural-tail feedback at 0.87469284",
+  "authors": [
+    {
+      "name": "Runbo Li"
+    }
+  ],
+  "description": "Candidate all-moduli Dirichlet nonvanishing boundary 21867321/25000000 (0.87469284), with the principal pole excluded. The original supplied Sil theorem at 0.8746935 is included in a separate namespace and used as an established prior for a second return. This reduces the natural moment cost, strengthens the tail, and yields a regenerated return with 108 rectangles, 21 admission windows and 423 Bernstein certificates. The original source construction is rebuilt at the new contrary-branch threshold, so the feedback dependency is acyclic. Sil is credited for the fourth-power Gauss-row transfer, positive pushforward, mixed retained-source moment and repaired analytic assembly; OpenAI for the original framework; Hailey Collet for the PR69 interfaces and PR67 bootstrap; and ArviFoxy for return algebra and certificate tooling. The independent finite Lean checker compiled, but the complete analytic theorem and tracker admission checks have not been run locally. Research and code were AI-assisted.",
+  "dependencies": [
+    "openai-baseline",
+    "hailey-collet-1252270103"
+  ],
+  "builds_on": [
+    "openai-baseline",
+    "hailey-collet-1252270103",
+    "two-level-affine-20261019"
+  ],
+  "license": "Apache-2.0",
+  "references": [
+    {
+      "label": "Original OpenAI analytic framework",
+      "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+    },
+    {
+      "label": "Hailey Collet source, count and transport interfaces (PR69)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
+    },
+    {
+      "label": "Two-level affine bootstrap (PR67)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+    },
+    {
+      "label": "Sil, author of the supplied fourth-power development",
+      "url": "https://github.com/TheSil"
+    },
+    {
+      "label": "ArviFoxy, return algebra and certificate tooling",
+      "url": "https://github.com/ArviFoxy"
+    }
+  ]
+}
