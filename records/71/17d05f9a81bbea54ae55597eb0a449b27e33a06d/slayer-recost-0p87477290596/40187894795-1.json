@@ -1,0 +1,100 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 71,
+  "head_sha": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+  "result_id": "slayer-recost-0p87477290596",
+  "theta_exact": "21869322649/25000000000",
+  "source_path": "submissions/slayer-recost-0p87477290596/src",
+  "source_tree": "464691cf67b47f5cc7c035e556d798a93d19f5e0",
+  "dependency_trees": {
+    "slayer-recost-0p87477290596": "67b0c380e185051078dd52736787c5656ee422b2",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6",
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d"
+  },
+  "metadata": {
+    "title": "A recosted accepted-source graph for the Dirichlet boundary 0.87477290596",
+    "authors": [
+      {
+        "name": "Slayer"
+      }
+    ],
+    "description": "We prove that, for every positive modulus and every complex Dirichlet character χ, the Dirichlet L-function L(s,χ) is nonzero whenever Re(s) > 21869322649/25000000000 = 0.87477290596, excluding the principal pole at χ = 1 and s = 1. This is a parameter improvement of existing machinery, not a new analytic method.\n\nThe proof starts from the accepted PR69 theorem of Hailey Collet (boundary 0.8747729897), imported directly as a dependency. It recosts the 221 retained nodes of the ordinary-source graph, recalculating each slope and auxiliary parameter under the fine accounting tuple (10^-17, 10^-12, 10^-10) permitted by the accepted source theorem, and applies the accepted source-lifting step along the acyclic graph. The final return reuses the parameterized formula template of Mark Lewko's PR70 under fresh namespaces, with regenerated exact certificates for c = 3130677351/25000000000 and h = 400051/500000: 224 return rectangles (row 171 proved through three closed sub-boxes), 38 full admission windows with 570 guard inequalities, and the geometry and schedule interfaces. The PR70 endpoint theorem is not assumed and no PR70 submission module is imported.\n\nAll finite certificates were replayed in exact rational arithmetic and independently re-derived; the finite certificate build and accounted induction compiled locally under the pinned Lean 4.34.1 and mathlib, with axioms limited to propext, Classical.choice and Quot.sound. The complete analytic endpoint has not been compiled locally; this PR relies on the tracker's admission run for that build and for the Comparator, Lean, NanoDa and con-ron checks.\n\nResearch, parameter optimization, certificate generation, drafting and Lean development were AI-assisted. We credit Hailey Collet's finite ordinary-source construction and accepted PR69 result; Mark Lewko's PR70 return template; OpenAI's framework; and the earlier contributions credited by those submissions, including Akash Levy's weighted numerator, Zhongpai Gao's refinements, timbalud's marked asymmetric counting and radical allocation, DaysSky's affine detector and ArviFoxy's two-level affine bootstrap. Lean, mathlib, PrimeNumberTheoremAnd and the Rellich–Kondrachov package retain their original authorship, licenses and notices.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "dependencies": [
+      "openai-baseline",
+      "hailey-collet-1252270103"
+    ],
+    "builds_on": [
+      "openai-baseline",
+      "akashlevy-20261009-weighted-numerator",
+      "cycle25-quartic-20261010",
+      "cycle61-c0125139",
+      "radical-asymmetric-count-20261014",
+      "detector-affine-c0125154",
+      "gao-directional-affine-20261016",
+      "gao-balanced-marked-20261017",
+      "no-hardcoding-20261017",
+      "two-level-affine-20261019",
+      "hailey-collet-1252270103",
+      "lewko-acyclic-bootstrap-874772906"
+    ],
+    "references": [
+      {
+        "label": "Collet tracker PR69, accepted boundary 0.8747729897",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
+      },
+      {
+        "label": "Lewko tracker PR70, accepted boundary 0.874772906; return template",
+        "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/70"
+      },
+      {
+        "label": "OpenAI mathematics, tracker-pinned framework",
+        "url": "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+      }
+    ]
+  },
+  "metadata_sha256": "45fb6c3259ad384b428bdaf0d9b7199d78b5a699ac8b9c5a8e576bebabc4d2f9",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "slayer-recost-0p87477290596",
+    "theta_exact": "21869322649/25000000000",
+    "verified_at": "2026-10-24T21:41:24.094983+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/54f1a9135b14dbc41762c69edfdc362317821702/verifier/standard/receipts/pr71-17d05f9a-20261024/result.json",
+    "report_sha256": "e8d412c8d30bee176a694d2528b84ecc1b1d2b1136379c900ce2668b409377c6",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 71,
+    "head_sha": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "bdf40c9ce9c3ccb826f0bd3247071cb83979a80ffb899edee783671085629cb3"
+    }
+  },
+  "report_json": null,
+  "pr": {
+    "number": 71,
+    "title": "Prove the Dirichlet boundary 21869322649/25000000000",
+    "body": "QRH-Result: slayer-recost-0p87477290596\nQRH-Bound: 21869322649/25000000000\nQRH-Decimal: 0.87477290596\n\nProves that L(s,χ) ≠ 0 for every positive modulus q, every complex Dirichlet character χ mod q, and every s with Re(s) > 21869322649/25000000000 = 0.87477290596, excluding the principal pole (χ = 1, s = 1). This improves the current best verified bound 0.874772906 (PR #70) by exactly 1/25000000000.\n\n**Method.** A parameter improvement of existing machinery, not a new analytic method.\n- Starts from the accepted PR #69 theorem (`QRH.Record1252270103Source.Endpoint.beta_bound`, boundary 0.8747729897), imported directly through the `hailey-collet-1252270103` dependency. The new bound is never used as an input.\n- Recosts the 221 retained ordinary-source nodes under the fine accounting tuple (10⁻¹⁷, 10⁻¹², 10⁻¹⁰) and lifts them through the accepted source step in topological order.\n- The final return reuses the PR #70 formula template under fresh namespaces, with regenerated exact certificates for c = 3130677351/25000000000 and h = 400051/500000: 224 return rectangles (row 171 proved through three closed sub-boxes), 38 full admission windows with 570 guard inequalities, and 77 geometry and schedule checks.\n- No PR #70 submission module is imported, and the PR #70 endpoint is not assumed.\n\n**Status before this PR.**\n- All finite certificates pass exact rational replay plus independent reconstruction.\n- The finite certificate build and the accounted induction compiled locally with Lean 4.34.1 and the pinned mathlib; reported axioms are `propext`, `Classical.choice` and `Quot.sound`.\n- No `sorry`, `admit` or new axiom appears in the source.\n- The full analytic endpoint has **not** been compiled locally (memory-limited machine). This PR relies on the admission run for that build and for the Comparator, Lean, NanoDa and con-ron checks.\n\n**Layout.** All modules live under `Submissions.slayer_recost_0p87477290596`. Relative to the locally prepared candidate, only `import` lines changed: module paths were re-prefixed and no declaration or proof body was edited. Accepted PR #69 and baseline sources are used unmodified.\n\nResearch, parameter optimization, certificate generation, drafting and Lean development were AI-assisted. Credits are in `metadata.json`.",
+    "created_at": "2026-10-24T14:16:57Z",
+    "author": {
+      "login": "Rexyysilent",
+      "url": "https://github.com/Rexyysilent"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "40187894795",
+    "run_attempt": "1",
+    "workflow_sha": "405cbb4e3b8e7c621baad578cbec50ccd765f487",
+    "check_id": 121152615664,
+    "archived_at": "2026-10-25T11:14:38.014Z"
+  }
+}
