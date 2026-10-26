@@ -1,0 +1,34 @@
+{
+  "title": "Runbo Li improved return on ArviFoxy's fourth-power face",
+  "authors": [
+    {
+      "name": "Runbo Li"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 4373037/5000000 = 0.8746074, with the principal pole excluded. The construction preserves ArviFoxy's repeated-mark source chain on Sil's fourth-power source face and replaces only the final return certificate. The exact rational return cover uses 50 Bernstein rows and 24 admission windows at h = 4009/5000, count cap 13/250, numerator cap 9/200, and natural cost K = 9/2. The six conductor edges have positive return and admission certificates; the new-top minimum return coefficient is positive. This is a one-unit-in-the-last-decimal improvement over 0.8746075. ArviFoxy and Sil are credited for the inherited source graph and fourth-power face; Hailey Collet and OpenAI are credited through the retained dependencies and notices.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "sil-fourth-power-20261025",
+    "arvi-repeated-marks-20261024",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "Research notes: the combined proof",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/combined"
+    },
+    {
+      "label": "Analysis of the fourth-power source face (PR 74)",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/blob/ccr-48c53b87-r20g37/research/upstream/PR74_ANALYSIS.md"
+    },
+    {
+      "label": "The face family and its continuum flow",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain"
+    }
+  ]
+}
