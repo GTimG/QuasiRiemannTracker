@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 76,
+  "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+  "result_id": "arvi-repeated-marks-on-sil-face-20261025",
+  "theta_exact": "349843/400000",
+  "source_path": "submissions/arvi-repeated-marks-on-sil-face-20261025/src",
+  "source_tree": "677f30089ad509698917fa977834316423112aba",
+  "dependency_trees": {
+    "arvi-repeated-marks-on-sil-face-20261025": "f75ddc12b7174ef8856b7743cb9e603415e0ee9e",
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "metadata": {
+    "title": "Repeated-mark face family started on Sil's fourth-power source face",
+    "authors": [
+      {
+        "name": "ArviFoxy",
+        "url": "https://github.com/ArviFoxy"
+      }
+    ],
+    "description": "Proves the all-moduli Dirichlet boundary 349843/400000 = 0.8746075, with the principal pole excluded. The fourth-power source face is Sil's; this submission contributes the combination with our repeated-mark chain. (1) Sil's fourth-power source face GlobalSource (99999/100000) (93/25) (3/50) (sil-fourth-power-20261025, PR 74), with slot cost 3.72 instead of the natural 9/2. That statement assumes theta < beta for the target 1749387/2000000 of PR 74, and the construction uses that only through 51/100 <= beta. The import closure of that theorem (421 of the modules of PR 74, Apache-2.0, notices kept) is included in FourthPower/ with that hypothesis weakened to 51/100 <= beta in eight files; no other proof changes. (2) The repeated-mark source chain of arvi-single-stage-20261025 (the face family, Lemma F, the packed certificates and the final return with Lemma D), started on Sil's face instead of Collet's natural face. The family must start where the continuum flow is tangent to the start face (s = 0.0329365): away from the tangency the first step's LOW amplifier stays near 0.7(b - s), above its gate 1/75. It runs in three pieces to s = 0.0472, where the HIGH density floor q >= 1/2 ends it (L/B = 3). The final count face is (0.96775, 2.91120) and the physical face (0.97187, 3.00000); the regenerated final return (42 rows, 17 windows) closes at 349843/400000. The natural cost is K = 9/2, whose cap is the baseline's beta <= 7/8, so the proof is a single stage: Collet's seed step, intermediate return and the PR 67 re-proof are not needed. (3) Faster verification: the HIGH-gate and sector certificates run in packed integer arithmetic (Kronecker packing, with pack/unpack proved mutually inverse and the packed formula proved to represent the rational one), which cuts the face-family kernel time from about 2600 s (PR 73) to under 170 s; the export of the bound is 3.0 GB in 300 s against 4.3 GB in 511 s for PR 73, although it now includes Sil's 421 modules. The research, drafting and Lean development were AI-assisted.",
+    "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+    "builds_on": [
+      "sil-fourth-power-20261025",
+      "arvi-repeated-marks-20261024",
+      "hailey-collet-1252270103",
+      "openai-baseline"
+    ],
+    "dependencies": [
+      "hailey-collet-1252270103",
+      "openai-baseline"
+    ],
+    "references": [
+      {
+        "label": "Research notes: the combined proof",
+        "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/combined"
+      },
+      {
+        "label": "Analysis of the fourth-power source face (PR 74)",
+        "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/blob/ccr-48c53b87-r20g37/research/upstream/PR74_ANALYSIS.md"
+      },
+      {
+        "label": "The face family and its continuum flow",
+        "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain"
+      }
+    ]
+  },
+  "metadata_sha256": "1b352558f8ac0ff454186f6de78808e355c735019c60fb41dd2c318ee0d69fb9",
+  "certificate": {
+    "schema_version": 1,
+    "result_id": "arvi-repeated-marks-on-sil-face-20261025",
+    "theta_exact": "349843/400000",
+    "verified_at": "2026-10-26T01:21:30.330565+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/0d4719757b4156ace59ea929fef10fed8f9eef91/verifier/standard/receipts/pr76-2fd55e03-20261026/result.json",
+    "report_sha256": "2214a2c2c2597b4697e1633673ca423045c6e6402d0b782a2380fb92b264feba",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 76,
+    "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "92fb0f0f52900a5c53899305b26110d257171629bb4695709a182ed97299d5ad"
+    }
+  },
+  "report_json": null,
+  "pr": {
+    "number": 76,
+    "title": "Submission repeated marks on sil face 0.8746075 ",
+    "body": "QRH-Result: arvi-repeated-marks-on-sil-face-20261025\r\nQRH-Bound: 349843/400000\r\nQRH-Decimal: 0.8746075\r\n\r\nProves that every Dirichlet L-function L(s, χ), for every positive modulus, is nonzero for Re(s) > 349843/400000 = 0.8746075, excluding the principal pole.\r\n\r\nFor comparison:\r\n- current verified bound: 0.87477290596 (PR #71);\r\n- open: PR #73 (ours, 0.8747289) and PR #74 (Sil, 0.8746935).\r\n\r\nThe proof combines two existing developments, and it is also much cheaper to verify than PR #73. The fourth-power move is Sil's; this submission contributes the combination and the speedups.\r\n\r\n## What the proof does\r\n\r\n1. **Sil's fourth-power source face** (`sil-fourth-power-20261025`, PR #74).\r\n   - **The face.** It is `GlobalSource (99999/100000) (93/25) (3/50)`: slot cost 3.72 per unit of slot width, against the natural 9/2.\r\n   - **Why it is vendored.** Sil's modules live under `Candidate/` and cannot be imported, so the import closure of Sil's `actual_global_source` (421 of the 478 modules of PR #74) is included under `FourthPower/`. It keeps the Apache-2.0 notices and namespaces of PR #74.\r\n   - **The one change.** Sil's statement assumes `theta < beta` for the target 1749387/2000000 of PR #74. The construction uses that only through `51/100 ≤ beta`. In eight files the hypothesis is stated as `51/100 ≤ beta`, and the two uses become `have hβ := hcontra`. No other proof changes; `research/combined/fork_sil.py` asserts this and shows the diff.\r\n2. **Our repeated-mark face family and final return** (`arvi-repeated-marks-20261024`, PR #73), started on Sil's face instead of Collet's natural face.\r\n   - **Tangency start.** The family must start where the continuum flow of the source step is tangent to the start face, at s = 0.0329365.\r\n     - Away from the tangency, the first step's LOW amplifier `(q·(L_S − L)(b − s₀)/L_S + fee)/(1 − 6q·B_S/L_S)` stays near `0.7(b − s₀)`, because the slope gap cancels between numerator and denominator. At the cap that is above its gate 1/75.\r\n     - At the tangency it is 0.0010.\r\n   - **Three pieces.** The family runs from 0.0329365 to 0.0472, where the HIGH density floor `q ≥ 1/2` ends it (L/B = 3). Each piece holds 2^16 faces, certified once per piece. The chain over the pieces is now generated for any number of pieces.\r\n   - **Final faces and return.**\r\n     - count face (0.96775, 2.91120), the last face;\r\n     - physical face (0.97187, 3.00000).\r\n     - The final return, with the physical face applied globally (Lemma D), is re-certified at 349843/400000: 42 row rectangles, 17 admission windows.\r\n     - At this θ, ℓ = 11/3 − 4θ = 0.16824, so the transport layer's coarse parameter bound is re-elaborated with ℓ < 0.1690. Only `4ℓ < h` and `ℓ ≤ 1` use it.\r\n\r\nThe analytic estimates are Sil's, Collet's and the baseline's, imported or vendored unchanged except for the hypothesis noted above.\r\n\r\n## Faster verification\r\n\r\nAgainst PR #73, measured locally on 4 cores and 15 GB:\r\n\r\n| | PR #73 | this PR |\r\n|---|---|---|\r\n| kernel time of the face-family certificates | ≈ 2600 s | 168 s with five pieces; this PR needs three |\r\n| `lean4export` of `Candidate.bound` | 4315 MB in 511 s | **3.0 GB in 300 s** (peak 11.6 GB), including Sil's 421 modules |\r\n| Collet's share of the export | 2336 MB | 714 MB (single-stage measurement) |\r\n\r\n1. **Packed certificates.**\r\n   - The HIGH-gate and special-sector certificates run in packed integer arithmetic. Each polynomial is carried as a few big integers `A(X), B(X), A(1), B(1)` (Kronecker packing), scaled by a power of a common denominator.\r\n   - `Faceless/Kronecker.lean` proves that packing and unpacking are mutually inverse (an `Equiv` onto `Fin (X^L)`), and that a Taylor shift is a change of base.\r\n   - The packed formula is proved to represent the rational one, and is checked once against literal integer data. The Bernstein trees and interval tests then run on that data.\r\n   - The common denominators are the least ones Lean itself accepts.\r\n2. **A single stage.**\r\n   - The natural cost is K = 9/2, whose cap 6(2β − 1) ≤ K is the baseline's β ≤ 7/8. Collet's seed step and intermediate return and the PR #67 re-proof (`incumbent_beta`) are no longer in the proof.\r\n   - In the single-stage measurement that removes about 1.6 GB of export.\r\n3. **Fewer certificates.** Starting at Sil's tangency, the face family needs three pieces instead of five. Building the whole family takes 468 s of CPU, of which the 36 HIGH modules are 308 s.\r\n4. **The rest of our package**, excluding Sil's modules, builds in 3172 s of CPU (about 13 minutes on 4 cores). Sil's vendored closure takes 3597 s.\r\n\r\n## Local checks\r\n\r\n- **Build.** Full build with the pinned toolchain `leanprover/lean4:v4.34.1` and Mathlib `d13f23b7`: 14,030 jobs. All 700 submission modules compile.\r\n- **Axioms.** `Candidate.bound` depends only on `propext`, `Classical.choice` and `Quot.sound`.\r\n- **Canonical wrapper.** The wrapper generated by `verifier/challenge.mjs` at `349843/400000` compiles against `Candidate.bound`.\r\n- **Repository checks.** `metadata.json` passes `verifier/submission-metadata.mjs`, the PR declaration parses, and `npm run check` passes (357 tests).\r\n- **Changed files.** Every changed file is under `submissions/arvi-repeated-marks-on-sil-face-20261025/`.\r\n- **External kernels.** con-ron `--verified` accepts all 140,334 declarations of the export (730 s, peak 9.0 GB). nanoda was killed by this machine's memory limit (15 GB; peak 13.4 GB after 348 s), as it already was on the smaller closure of our unposted single-stage variant, so it is left to the hosted check.\r\n\r\n## Research notes\r\n\r\n- The combination, the three exact constraints found on the way, and why Sil's slope 93/25 = 2 + 4·(43/100) cannot be lowered below 26/7 in Sil's argument: https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/combined\r\n- The speedups (packing, single stage, measurements): https://github.com/ArviFoxy/QuasiRiemannTracker/blob/ccr-48c53b87-r20g37/research/verification/AUDIT_FOLLOWUP.md\r\n- The face family: https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain\r\n\r\n## Credits\r\n\r\n- Sil, for the fourth-power transfer of Gauss sums and the source face this builds on.\r\n- Hailey Collet, for the finite ordinary source moments, the NF theorem and the return framework.\r\n- OpenAI, for the analytic framework and the 7/8 baseline.\r\n\r\nResearch, Lean development and drafting were substantially AI-assisted with Anthropic's Claude (Claude Code).\r\n\r\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+    "created_at": "2026-10-25T20:53:06Z",
+    "author": {
+      "login": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    },
+    "base_ref": "main"
+  },
+  "admission": {
+    "run_id": "40254135867",
+    "run_attempt": "1",
+    "workflow_sha": "b5a7a21e336a9714bc109703a6ee5c90d3183db2",
+    "check_id": 121352767729,
+    "archived_at": "2026-10-26T01:29:13.498Z"
+  }
+}
