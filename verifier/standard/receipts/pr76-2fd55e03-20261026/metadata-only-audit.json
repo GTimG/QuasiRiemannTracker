@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "prior_head": "47a530879054a24559fb62f8094308ed7fd51bab",
+  "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+  "changed_prepared_files": [
+    "metadata.json"
+  ],
+  "all_lean_files_and_dependency_trees_unchanged": true,
+  "change": "Remove unpublished arvi-single-stage-20261025 from builds_on only; attribution prose retained."
+}

@@ -1,0 +1,16 @@
+{
+  "source_build_head": "47a530879054a24559fb62f8094308ed7fd51bab",
+  "source_build_report_sha256": "cf73a09fcb4ccad054ed31f0a23c957b532479431a498fc2e56c751e1921006f",
+  "updated_head": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+  "archive_sha256": "60b2e72830198fc4ff1eb01c2fc2556b0ffb067e494d7b0f5aa66d43f7efdf06",
+  "module_count": 4944,
+  "source_module_count": 5086,
+  "expanded_object_bytes": 4264896392,
+  "unchanged_archive_limit_bytes": 4294967296,
+  "inputs_sha256": "2b194002096d208c870b028168197f19b4f49f95b253e9ee75741c84df13f9fc",
+  "all_module_fingerprints_equal": true,
+  "changed_prepared_files": [
+    "metadata.json"
+  ],
+  "authentication": "Maintainer-owned completed ETH run authenticated over SSH; private read-only subset archive. Remaining modules compile from source. All three kernels rerun. No public server-key signature is claimed."
+}

@@ -1,0 +1,87 @@
+services:
+  runner: &runner
+    image: qrh-proof-runner:2.338.2
+    build:
+      context: .
+    platform: linux/amd64
+    runtime: runc
+    cgroup: private
+    user: "10001:10001"
+    group_add:
+      - "${QRH_KVM_GID:?Set QRH_KVM_GID to the host KVM device group}"
+    devices:
+      - /dev/kvm:/dev/kvm:rw
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - apparmor:docker-default
+    # The immutable entrypoint sets no_new_privs after the AppArmor transition.
+    # Docker-level NNP breaks snap Docker's transition (LP#1908448).
+    cpus: 6
+    mem_limit: 26g
+    memswap_limit: 26g
+    pids_limit: 512
+    shm_size: 128m
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 4096
+      core: 0
+      # Bound an 80 GiB guest disk plus QCOW2 metadata overhead.
+      fsize:
+        soft: 88046829568
+        hard: 88046829568
+    volumes:
+      # Docker-owned disposable storage; no host paths are exposed. The image
+      # supplies UID 10001 ownership; compose run --rm removes this volume.
+      - /vm
+    tmpfs:
+      - /runner:rw,exec,nosuid,nodev,size=128m,uid=10001,gid=10001,mode=0700
+      - /tmp:rw,nosuid,nodev,noexec,size=128m,mode=1777
+    environment:
+      http_proxy: http://qrh-runner-proxy:3128
+      https_proxy: http://qrh-runner-proxy:3128
+      HTTP_PROXY: http://qrh-runner-proxy:3128
+      HTTPS_PROXY: http://qrh-runner-proxy:3128
+      no_proxy: localhost,127.0.0.1,::1
+      NO_PROXY: localhost,127.0.0.1,::1
+      NODE_USE_ENV_PROXY: "1"
+      ACTIONS_RUNNER_PRINT_LOG_TO_STDOUT: "1"
+    stdin_open: true
+    tty: false
+    restart: "no"
+    stop_grace_period: 30s
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: "3"
+    networks:
+      - runner-internal
+
+  registration:
+    <<: *runner
+    # .NET reserves a large sparse memfd for W^X code mappings. Keep that
+    # separate from the proof VM's backing-file limit and writable disk.
+    devices: []
+    group_add: []
+    volumes: []
+    cpus: 1
+    mem_limit: 1g
+    memswap_limit: 1g
+    pids_limit: 128
+    shm_size: 16m
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 4096
+      core: 0
+      fsize:
+        soft: -1
+        hard: -1
+
+networks:
+  runner-internal:
+    name: qrh-proof-internal
+    external: true

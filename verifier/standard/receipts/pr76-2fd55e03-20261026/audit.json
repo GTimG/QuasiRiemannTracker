@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+  "theta_exact": "349843/400000",
+  "verified_at": "2026-10-26T01:21:30.330565+00:00",
+  "report_sha256": "2214a2c2c2597b4697e1633673ca423045c6e6402d0b782a2380fb92b264feba",
+  "modules_freshly_compiled": 142,
+  "modules_authenticated_and_reused": 4944,
+  "candidate_cache_reused": true,
+  "trusted_verifier_revision": "82cba497ae4a5c7a8cb5908da90e6e9cdb7ba4fb",
+  "nanoda_revision": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "nanoda_pristine_upstream": true,
+  "baseline_and_forbidden_axiom_controls": "PASS",
+  "driver_unmodified": false,
+  "driver_change": "Only documented time-budget increases; see budget-only.patch",
+  "source_dependency_trees": {
+    "arvi-repeated-marks-on-sil-face-20261025": "f75ddc12b7174ef8856b7743cb9e603415e0ee9e",
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sandbox_controls": "PASS",
+  "approved_library_files": 44577,
+  "approved_OAI_objects_reused": false,
+  "evidence_transport": "Authenticated SSH; returned files checked against outside-sandbox receipt",
+  "limitations": "Pinned non-OAI package objects obtained from fresh dependency trees, official Mathlib cache and protected compatibility patches; complete runtime files copied into a private library and authenticated by manifest. All submitted and OpenAI modules were compiled fresh in the authenticated prior accepted run. Only metadata changed; all module, compiler and dependency fingerprints match. The new exact-head run used a private authenticated subset archive within the unchanged 4 GiB limit, recompiled the remaining modules, generated fresh challenge and solution exports, and reran Comparator and all three kernels. Compiler/exporter bootstrap trust remains."
+}

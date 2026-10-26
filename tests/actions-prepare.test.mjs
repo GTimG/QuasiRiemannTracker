@@ -90,3 +90,77 @@ test("a worker selects its own result from a maintenance batch before preparatio
   assert.equal(attempt.theta_exact, "sqrt(3)/2");
   assert.equal(attempt.status, "infrastructure-blocked");
 });
+
+test("source fetch retains the worker proxy but excludes credentials and injected Git settings", (t) => {
+  const cwd = mkdtempSync(join(tmpdir(), "qrh-fetch-env-"));
+  t.after(() => rmSync(cwd, { recursive: true, force: true }));
+  mkdirSync(join(cwd, "verification-context"));
+  mkdirSync(join(cwd, "bin"));
+  writeFileSync(
+    join(cwd, "verification-context/context.json"),
+    JSON.stringify({
+      expected: {
+        repository: "GTimG/QuasiRiemannTracker",
+        number: 15,
+        head_sha: "a".repeat(40),
+        result_id: "candidate-bound",
+        theta_exact: "1/1",
+      },
+    }),
+  );
+  writeFileSync(
+    join(cwd, "bin/git"),
+    `#!${process.execPath}
+const { appendFileSync } = require("node:fs");
+appendFileSync("git-environment.jsonl", JSON.stringify({
+  args: process.argv.slice(2), env: process.env,
+}) + "\\n");
+`,
+    { mode: 0o755 },
+  );
+  const proxy = {
+    HTTPS_PROXY: "http://proxy.example:3128",
+    https_proxy: "http://proxy.example:3128",
+    HTTP_PROXY: "http://proxy.example:3128",
+    http_proxy: "http://proxy.example:3128",
+    NO_PROXY: "localhost,127.0.0.1",
+    no_proxy: "localhost,127.0.0.1",
+  };
+  const prepared = spawnSync(process.execPath, [entrypoint], {
+    cwd,
+    encoding: "utf8",
+    timeout: 10000,
+    env: {
+      PATH: join(cwd, "bin"),
+      HOME: cwd,
+      ...proxy,
+      GITHUB_TOKEN: "test-credential",
+      UNRELATED_SECRET: "test-credential",
+      GIT_CONFIG_COUNT: "1",
+      GIT_CONFIG_KEY_0: "http.proxy",
+      GIT_CONFIG_VALUE_0: "http://injected.example:3128",
+    },
+  });
+  assert.ifError(prepared.error);
+  // The fake Git has no source listing, so preparation ends after the fetch.
+  assert.equal(prepared.status, 1, prepared.stderr);
+  const calls = readFileSync(join(cwd, "git-environment.jsonl"), "utf8")
+    .trim()
+    .split("\n")
+    .map((line) => JSON.parse(line));
+  const fetched = calls.find(({ args }) => args.includes("fetch"));
+  assert.ok(fetched, prepared.stderr);
+  for (const [name, value] of Object.entries(proxy))
+    assert.equal(fetched.env[name], value);
+  for (const name of [
+    "GITHUB_TOKEN",
+    "UNRELATED_SECRET",
+    "GIT_CONFIG_COUNT",
+    "GIT_CONFIG_KEY_0",
+    "GIT_CONFIG_VALUE_0",
+  ])
+    assert.equal(fetched.env[name], undefined);
+  assert.equal(fetched.env.GIT_CONFIG_NOSYSTEM, "1");
+  assert.equal(fetched.env.GIT_CONFIG_GLOBAL, "/dev/null");
+  assert.equal(fetched.env.GIT_TERMINAL_PROMPT, "0");
+});

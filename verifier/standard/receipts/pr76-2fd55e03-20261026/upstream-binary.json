@@ -1,0 +1,7 @@
+{
+  "revision": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "sha256": "7ed99e73afd390178b6f9ddcf812890a84bd94128e1807962a0cc1dbcbddd936",
+  "unmodified_upstream": true,
+  "cargo": "cargo 1.99.0 (5f94df478 2026-08-27) (Fedora 1.99.0-1.fc44)",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28) (Fedora 1.99.0-1.fc44)"
+}

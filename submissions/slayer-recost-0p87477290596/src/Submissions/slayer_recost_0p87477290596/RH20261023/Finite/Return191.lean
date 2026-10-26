@@ -1,0 +1,28 @@
+/- Generated 2026-10-23 by exact rational Bernstein conversion.
+Candidate c=3130677351/25000000000, h=400051/500000.
+Compilation status is recorded separately; no new axioms are introduced.
+Original mathematical/formal interface: Hailey Collet and Mark Lewko.
+Original source released under Apache-2.0. -/
+import Submissions.slayer_recost_0p87477290596.RH20261023.Finite.ReturnFormulas
+set_option autoImplicit false
+set_option maxHeartbeats 1000000
+namespace RH20261023Finite
+noncomputable section
+def row191_coefficients : Fin 3 → Fin 4 → ℝ := ![
+  ![(13739829095375438394742328109979953857/1277512086470286744699056353125000000:ℝ),(747465315827053374569072657308409447161/34492826334697742106874521534375000000:ℝ),(466123478651253215053273398339347633347/34492826334697742106874521534375000000:ℝ),(41966871423925244767671421586615773/17033494486270489929320751375000000:ℝ)],
+  ![(73644064627469133190470151498740295939/1916268129705430117048584529687500000:ℝ),(1292481462385522789845183310471821458593/17246413167348871053437260767187500000:ℝ),(757698040256892561303164454577083894737/17246413167348871053437260767187500000:ℝ),(23742378397363171439358913003785019919/3449282633469774210687452153437500000:ℝ)],
+  ![(228709802269959478687822728567540730307/3832536259410860234097169059375000000:ℝ),(4699687860883225463015499668434805195953/34492826334697742106874521534375000000:ℝ),(235482299153158093928315114628007102631/2299521755646516140458301435625000000:ℝ),(34893292471209161125951828917726716651/1379713053387909684274980861375000000:ℝ)]
+]
+theorem row191_identity (δ p : ℝ) : rowMargin .newKink .old δ p =
+ Record12518109.Bernstein.bsum 2 3 (125900614271775734303014264759847319/23256397805254642250165932544000000000:ℝ) row191_coefficients (3/8:ℝ) (3/4:ℝ) (0/1:ℝ) (1/4:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD,edgeC,oldCapacity,newCapacity,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row191_coefficients,Fin.sum_univ_succ] <;> ring
+theorem row191_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (3/8:ℝ) (3/4:ℝ))
+ (hp : p ∈ Set.Icc (0/1:ℝ) (1/4:ℝ)) : 0 < rowMargin .newKink .old δ p := by
+ rw [row191_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row191_coefficients]
+#print axioms row191_identity
+#print axioms row191_pos
+end
+end RH20261023Finite

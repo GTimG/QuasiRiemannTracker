@@ -31,6 +31,16 @@ const env = {
   GIT_CONFIG_GLOBAL: "/dev/null",
   GIT_TERMINAL_PROMPT: "0",
 };
+// The trusted source fetch must use the isolated worker's egress proxy.
+for (const name of [
+  "HTTPS_PROXY",
+  "https_proxy",
+  "HTTP_PROXY",
+  "http_proxy",
+  "NO_PROXY",
+  "no_proxy",
+])
+  if (process.env[name] !== undefined) env[name] = process.env[name];
 const git = (args) =>
   execFileSync("git", ["-c", "core.hooksPath=/dev/null", ...args], {
     env,

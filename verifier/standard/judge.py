@@ -40,10 +40,13 @@ def judge_exports(v, *, config, challenge_export, solution_export, scratch,
                   bundled, lean_prefix, environment, tools, capacity, timeout):
     workers = capacity['kernel_jobs']
     if workers == 1:
+        # Parallel checks each get this allowance; serial Comparator needs their sum.
+        # Palomar still caps the combined process by the shared replay deadline.
         return v.judge_exports(lake=bundled['lake'], config=config,
             challenge_export=challenge_export, solution_export=solution_export,
             scratch=scratch, bwrap=v._BWRAP, lean_prefix=lean_prefix,
-            environment=environment, tools=tools, timeout=timeout)
+            environment=environment, tools=tools,
+            timeout=timeout * (1 + len(v.protected_kernels(bundled))))
     scratch.mkdir(parents=True)
     # Comparator owns statement/axiom comparison and the default Lean replay.
     # The other two checks consume the identical frozen solution export.

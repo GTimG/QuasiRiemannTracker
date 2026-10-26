@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tested_revision": "0ce80fdddebb03128d30a917006d8520e7a774b8",
+  "commands": [
+    "npm ci --ignore-scripts --no-audit --no-fund",
+    "npm run check"
+  ],
+  "tests": 316,
+  "passed": 316,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "first_attempt": "315 passed; one existing Git fixture failed in temporary-directory cleanup with ENOTEMPTY. No test assertion failed.",
+  "retry": "Full suite rerun in a private temporary directory with automatic Git GC disabled; all tests passed.",
+  "scope": "Protected repository code. PR only adds submission files, separately validated against the protected schema and challenge generator.",
+  "source_changes_made": false,
+  "browser_checks": "Not rerun: no UI changes in this submission."
+}

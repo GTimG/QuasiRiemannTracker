@@ -114,7 +114,11 @@ try {
     summaries.push(
       `Proof verification accepts ${expected.result_id} at ${expected.theta_exact} for this exact PR head.`,
     );
-    if (attempt.status !== "accepted")
+    if (attempt.status === "registered")
+      summaries.push(
+        "A protected independently verified receipt was authenticated against this exact source and current verifier policy; no proof replay was needed.",
+      );
+    else if (attempt.status !== "accepted")
       summaries.push(
         "A matching independently verified local run supplied the result because hosted verification was unavailable.",
       );

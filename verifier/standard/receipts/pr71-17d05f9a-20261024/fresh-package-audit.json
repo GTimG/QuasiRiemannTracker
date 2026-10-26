@@ -1,0 +1,122 @@
+{
+  "mathlib": {
+    "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "efa132418a56d0e38c56cc412a06df22178dac5c"
+  },
+  "checkdecls": {
+    "revision": "3d425859e73fcfbef85b9638c2a91708ef4a22d4",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "303d5478ac0bb80be426a5a4a753ee70b07e7c47"
+  },
+  "doc-gen4": {
+    "revision": "953c8992d174b4e56955e01e101d46668c68f2bb",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "1701ebf143bc1374dfbbac8a5ede727d746fbec2"
+  },
+  "PrimeCert": {
+    "revision": "0803c2f6bd289c09704c7d352bb8fcf770cbb9b2",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "997b661840a4770c1f2591a51df5d0959f4a576e"
+  },
+  "LeanArchitect": {
+    "revision": "468e8f58fb4ad6e6ad672a08da6d0d0531e95a97",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "38f9ea325800b934afe4cd218710bbac8643a95d"
+  },
+  "leancert": {
+    "revision": "7f91b6eb3567437f6cfac03ed279706603ee22f4",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "811bbbceb3c6c3e0b2f6e387c7dba307244e134f"
+  },
+  "PrimeNumberTheoremAnd": {
+    "revision": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "patched_tree": "b7d455a31f9799c7b2b3485f3627f394db356064"
+  },
+  "rellich-kondrachov": {
+    "revision": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "patched_tree": "bfcc493ea4ec5071682badfba06ea30c0f40c2eb"
+  },
+  "plausible": {
+    "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "65aa28b2b3ba59d49736535935e4190f835b6ebc"
+  },
+  "LeanSearchClient": {
+    "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "04caafd1f6cc74938c7ad7d67a718c5104d5c95a"
+  },
+  "importGraph": {
+    "revision": "e928b72544873815af278d38681b31c0293588e3",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "92d47162cff41653a118b5fe376ab1428bd2e623"
+  },
+  "proofwidgets": {
+    "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "1a37533eb21ffa2595b3b782cd3a4909110a872c"
+  },
+  "aesop": {
+    "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "141698829a678f60c8a7fd0e54f9493ad05b986c"
+  },
+  "Qq": {
+    "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "c43f2cecf2a68cb6ef836660ec4d276ab5f9dcb4"
+  },
+  "batteries": {
+    "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "d6c196fbbaafd91f64547af4d95a36bd17d50c38"
+  },
+  "leansqlite": {
+    "revision": "f9cdb9eacb5c8b8ecc02ee9fd9e568d7d28c1416",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "5cc9839a594b1dc06991e8bf7dc2c594b6457aee"
+  },
+  "Cli": {
+    "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "6357519cce94feba4126121f34ea73cfdefc9b72"
+  },
+  "UnicodeBasic": {
+    "revision": "0e569d08b6443ce0908d356884c765397253e2f0",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "77c15783c9d7f5af419dbed1d67e59a3b1973064"
+  },
+  "BibtexQuery": {
+    "revision": "4d8616fd4870d0a3453d845770833eac7951fe1c",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "36f167e6d59595f064609fa983a87ded61693006"
+  },
+  "MD4Lean": {
+    "revision": "31907cc18f48a95384f99cee5582c00fb39e0f67",
+    "source_matches_pin_and_patch": true,
+    "patch_sha256": null,
+    "patched_tree": "968ae7de50111d78c47ecf0682e9de2dfd257f67"
+  }
+}

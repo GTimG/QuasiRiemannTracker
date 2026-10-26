@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+  "run_id": 40248941085,
+  "url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/40248941085",
+  "workflow": ".github/workflows/ci.yml",
+  "jobs": [
+    {
+      "id": 121336382112,
+      "name": "test",
+      "conclusion": "success"
+    },
+    {
+      "id": 121337232424,
+      "name": "deploy",
+      "conclusion": "skipped"
+    }
+  ],
+  "note": "Pull requests run tests; deployment is correctly skipped until main."
+}

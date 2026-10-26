@@ -1,0 +1,11 @@
+{
+  "reason": "Original authenticated build was 4429895816 bytes and exceeded the existing 4 GiB cache limit before candidate replay. No proof rejection occurred.",
+  "retry_script_sha256": "e32cbe9fbb21af91d8aa317d55bdae3e6100b636f12bdf256817bb92f28624e7",
+  "baseline_controls_authenticated_sha256": "3395275b508672881e0c906f73fd66d5c9abd9e6aa72d009d811f508c590f283",
+  "baseline_log_sha256": "e9371565d5e8d73eded0ef474cf92ec1dbc9b736c400b2a17b39870cf01e3e74",
+  "protected_cache_code_sha256": "a5acfcefa0e30ffbf030ca620b4cbe87dff44530ace952fcc00aae40398ef9c3",
+  "cache_size_limit_bytes": 4294967296,
+  "cache_size_limit_changed": false,
+  "method": "Authenticate unchanged source/compiler/dependency fingerprints, pack a private prefix within the original limit, let protected replay compile remaining modules and freshly run challenge, sandbox/rejection controls, Comparator and all three kernels.",
+  "prior_attempt_preserved": true
+}

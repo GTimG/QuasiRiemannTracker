@@ -1,0 +1,24 @@
+/- Modified 2026-10-22 for Mark Lewko private candidate.
+Original authors, license and notices retained below and in vendor/collet. -/
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.slayer_recost_0p87477290596.RH20261023.Return.C30.ReturnFormulas
+set_option autoImplicit false
+namespace RH20261023Return.C30
+noncomputable section
+def row147_coefficients : Fin 3 → Fin 4 → ℝ := ![![(132551869030251445386629621431702663/280862597480821875000000000000:ℝ), (321124818531575162192905321240939493/280862597480821875000000000000:ℝ), (246931376439768332982003106459113121/280862597480821875000000000000:ℝ), (19452808979481538725242468883292097/93620865826940625000000000000:ℝ)],
+![(120382981758213130594519046445929503/140431298740410937500000000000:ℝ), (279444108319473967156080800629256981/140431298740410937500000000000:ℝ), (13344963081084994993697117887963889/9362086582694062500000000000:ℝ), (41113319655014088343895014136130857/140431298740410937500000000000:ℝ)],
+![(127631077464754839304991306526577123/280862597480821875000000000000:ℝ), (59108829208522189924004729356360633/56172519496164375000000000000:ℝ), (52682929678930386294865271019439253/70215649370205468750000000000:ℝ), (4281865013786543486442874382253097/28086259748082187500000000000:ℝ)]]
+theorem row147_identity (δ p : ℝ) : rowMargin .newTop .capP δ p =
+ Record12518109.Bernstein.bsum 2 3 (41113319655014088343895014136130857/134032852316637993369600000000000000000:ℝ) row147_coefficients (27/64:ℝ) (57/128:ℝ) (15/32:ℝ) (31/64:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_newTop,edgeC_newTop,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row147_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row147_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (27/64:ℝ) (57/128:ℝ))
+ (hp : p ∈ Set.Icc (15/32:ℝ) (31/64:ℝ)) : 0 < rowMargin .newTop .capP δ p := by
+ rw [row147_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row147_coefficients]
+#print axioms row147_identity
+#print axioms row147_pos
+end
+end RH20261023Return.C30

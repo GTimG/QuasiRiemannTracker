@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse, datetime, hashlib, json, os, re, shutil, sys, tarfile, time
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from worker_resources import worker_capacity
+from worker_resources import replay_budget_seconds, worker_capacity
 from standard.judge import judge_exports
 from standard.compile import compile_modules, publish_module
 from standard.build_cache import build_inputs, restore_cache
@@ -10,6 +10,7 @@ from standard.build_cache import build_inputs, restore_cache
 if sys.flags.optimize or os.getuid() == 0:
     raise SystemExit('Use unoptimized Python as an unprivileged worker user')
 
+budget_seconds = replay_budget_seconds()
 sha = lambda p: hashlib.file_digest(open(p, 'rb'), 'sha256').hexdigest()
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--profile', type=Path, required=True)
@@ -56,7 +57,7 @@ v._BWRAP = Path(profile.get('bwrap', '/usr/bin/bwrap'))
 v.VERIFICATION_LIMITS = {**v.VERIFICATION_LIMITS,'memory_high_percent':75,'memory_max_percent':85,'tasks_max':256}
 # Compilation, export and all three kernel checks share this deadline.
 # Keep the Actions check step longer so timeout evidence can still be retained.
-v.install_execution_deadline(budget_seconds=10800)
+v.install_execution_deadline(budget_seconds=budget_seconds)
 bundled = {name:judge/'bin'/name for name in v.TOOLCHAIN_TOOLS}
 approved_tools=json.loads(args.tool_pins.read_text())
 selected_tools={'source_lean':old/'bin/lean','exporter':exporter,**{'judge_'+name:path for name,path in bundled.items()}}

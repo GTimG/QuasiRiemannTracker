@@ -43,6 +43,7 @@ with tempfile.TemporaryDirectory() as temporary:
             return {'nanoda':[str(tools['nanoda_bin'])], 'con-ron':[str(tools['con-ron']),'--jobs=2']}
         def system_readable_paths(self): return []
         def judge_exports(self,**kwargs):
+            assert kwargs['timeout']==600
             assert kwargs['challenge_export']==challenge
             assert kwargs['solution_export']==solution
             cfg=json.loads(kwargs['config'].read_text())
@@ -53,6 +54,7 @@ with tempfile.TemporaryDirectory() as temporary:
             barrier.wait()
             return subprocess.CompletedProcess([],0,'Your solution is okay!\\nLean default kernel accepts the solution','')
         def sandboxed_run(self,command,**kwargs):
+            assert kwargs['timeout']==600
             assert Path('/usr') in kwargs['executable_paths']  # ELF loader and system libraries
             assert solution in kwargs['readable_paths']
             assert solution not in kwargs['writable_directories']
@@ -76,6 +78,32 @@ with tempfile.TemporaryDirectory() as temporary:
     assert result.returncode==0
     assert all(name+' kernel accepts the solution' in result.stdout for name in checks)
     assert verifier.VERIFICATION_LIMITS['memory_max_percent']==85
+
+    # Serial Comparator runs all three checkers under one process allowance.
+    class SerialVerifier(Verifier):
+        expired=False
+        def judge_exports(self,**kwargs):
+            assert kwargs['timeout']==1800
+            assert kwargs['config']==config
+            assert kwargs['challenge_export']==challenge
+            assert kwargs['solution_export']==solution
+            assert self.VERIFICATION_LIMITS['memory_max_percent']==85
+            if self.expired:
+                # The protected verifier still enforces its shared deadline.
+                raise subprocess.TimeoutExpired(['lake','comparator'],123)
+            return subprocess.CompletedProcess([],0,'all three kernels accepted','')
+    serial=SerialVerifier()
+    kwargs=dict(config=config,challenge_export=challenge,solution_export=solution,
+        scratch=root/'serial',bundled=bundled,lean_prefix=root,environment={},tools={},
+        capacity={'kernel_jobs':1,'threads':12},timeout=600)
+    assert judge_exports(serial,**kwargs).returncode==0
+    serial.expired=True
+    try:
+        judge_exports(serial,**kwargs)
+    except subprocess.TimeoutExpired as error:
+        assert error.timeout==123
+    else:
+        raise AssertionError('Shared execution deadline was swallowed')
 `,
     ],
     { encoding: "utf8", timeout: 20_000 },

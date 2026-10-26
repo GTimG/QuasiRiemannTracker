@@ -139,8 +139,49 @@ dependencies retain their original licenses and attribution; see [NOTICE](NOTICE
 Workers automatically reuse server-built submission modules from the signed
 `submission-build-cache-v1` release. Cache keys bind each module to its Lean source,
 imported submission modules, compiler and library contents. Changed modules and
-their importers compile again. Every result still runs Comparator and all three
+their importers compile again. A proof replay still runs Comparator and all three
 kernels. An unavailable or incompatible cache triggers a source build.
+
+### Reuse an independently verified receipt
+
+A maintainer can approve an already completed independent verification for reuse
+without another proof replay. The protected workflow first reconstructs the exact
+PR source and dependency contract from immutable Git objects. It then validates
+the protected registration and full receipt before restoring caches, provisioning
+Lean or executing candidate code. The publishing job independently repeats the
+receipt validation, checks the current PR and publication metadata, and writes a
+durable admission record before granting the required `qrh/pr-admission` check.
+The original receipt URL and first successful verification time are preserved.
+
+Authentication comes from maintainer-reviewed evidence and registration in
+protected `main`; a hash or a candidate-written `PASS` alone is not authentication.
+For an ETH run, retrieve the outside-sandbox evidence over authenticated SSH and
+review its source binding, pinned tools/libraries, baseline and adversarial
+controls, isolation checks and Comparator/Lean/NanoDa/con-ron acceptance first.
+Keep the raw receipt unchanged in `verifier/standard/receipts/<run>/result.json`,
+with its hash-bound `contract.json`, `controls.json` and `dependency-pins.json`.
+The registration's `report_url` must identify an immutable commit and this evidence
+path in this repository. Candidate PRs cannot edit the verifier or register results.
+
+An eligible entry in `verifier/local-results.json` also needs a maintainer-approved
+`reuse` object with `schema_version: 1`, `policy_sha256` and `runtime_sha256`.
+Compute those hashes with `receiptPolicy(root)` and `receiptRuntime(report)` from
+`verifier/receipt-reuse.mjs`, **only after reviewing compatibility**. The policy
+hash covers verifier code, challenge, pins, admission workflow and package lock;
+the runtime hash binds actual checker/driver binaries and the verified library
+inventory. Explicitly review and document any runtime deviation, such as a newer
+NanoDa tested against the baseline. Never regenerate approvals merely to clear a
+failed check. Tool/dependency or verifier-policy changes require renewed review.
+
+Run `node --test tests/receipt-reuse.test.mjs tests/actions-finalize.test.mjs`
+and `npm run check` before publishing an approval or workflow change. Trigger
+**PR admission → Run workflow**, select `main`, and supply the PR number. A
+successful reuse logs that no replay was needed; it still requires successful
+source preparation, receipt validation, ordinary project tests and admission.
+Missing approvals use the full isolated verifier. Malformed, stale or incompatible
+approved receipts fail closed. A mathematical rejection cannot be overridden by
+the infrastructure-failure fallback. Keep branch protection requiring `test` and
+`qrh/pr-admission`, with verifier and registration updates reviewed by maintainers.
 
 The server publisher runs from a protected checkout after an isolated build has
 passed verification. Run `verifier/actions/setup.py` to prepare the server's

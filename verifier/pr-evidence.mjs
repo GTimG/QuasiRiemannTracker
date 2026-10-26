@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { certificate } from "./certificate.mjs";
-export function validateAdmission(root, expected) {
+export function validateAdmission(root, expected, { optional = false } = {}) {
   const entries = JSON.parse(
     readFileSync(join(root, "verifier/local-results.json"), "utf8"),
   );
@@ -10,6 +10,7 @@ export function validateAdmission(root, expected) {
   const matches = entries.filter((entry) =>
     keys.every((key) => entry[key] === expected[key]),
   );
+  if (optional && matches.length === 0) return null;
   if (matches.length !== 1)
     throw Error(
       "A verified local run must match this exact PR head, result ID and bound",
