@@ -1,0 +1,11 @@
+{
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 66,
+  "head_sha": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+  "run_id": 39255000018,
+  "attempt": 1,
+  "job_id": 118068322153,
+  "classification": "resource-exhausted",
+  "reason": "The hosted canonical checking step ran from 12:53:52 to 15:54:43 UTC and exhausted the shared three-hour deadline during Candidate.Uneven.MainPhysicalCompletePayment; the final command had 31 seconds remaining. The final Comparator and independent kernel stage did not run.",
+  "check_url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/39255000018"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Affine detector counting with asymmetric marked reserves at 0.874840",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "Submission of the canonical all-moduli Dirichlet bound 21871/25000 (0.874840); official admission remains pending. Combines timbalud's asymmetric marked counting and coupled radical allocation (PR50) with DaysSky's affine detector-count source integration (PR56), using Hailey Collet's Cycle61 interior affine moment theorem for each detector character. Uses h=1989/2500 and lower height 159/200. Prepared with AI assistance; inherited mathematical attribution and source notices retained.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "gao-cycle61-plane-20261013",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154"
+  ],
+  "references": [
+    {
+      "label": "Asymmetric marked counting and coupled radical allocation (timbalud)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+    },
+    {
+      "label": "Affine detector count source integration (DaysSky)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+    },
+    {
+      "label": "Cycle61 interior affine moment theorem (Hailey Collet)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Earlier affine plane refinement (Zhongpai Gao)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    },
+    {
+      "label": "Related affine detector arithmetic proposal (liqsweep; incomplete integration)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

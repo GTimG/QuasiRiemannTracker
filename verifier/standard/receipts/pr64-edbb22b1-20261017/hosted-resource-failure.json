@@ -1,0 +1,10 @@
+{
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 64,
+  "head_sha": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+  "result_id": "no-hardcoding-20261017",
+  "theta_exact": "874835173/1000000000",
+  "status": "resource-exhausted",
+  "reason": "worker resource ceiling reached while running lean (exit 143, result timeout)",
+  "report": null
+}

@@ -1,0 +1,40 @@
+import Candidate.Cycle63.Physical.InitialMass.GeometryLowColumn
+import Candidate.Cycle63.Physical.InitialMass.GeometryZeroPartition
+import Candidate.Cycle63.Physical.InitialMass.SecondChildLowPayment
+import Candidate.Cycle63.Arithmetic.Constants
+
+set_option autoImplicit false
+set_option maxHeartbeats 250000
+namespace OAI.SevenEighths.Cycle63InitialMass
+noncomputable section
+open scoped Classical BigOperators SchwartzMap ContDiff HeckeNotation
+open Filter Set HeckeFamily CanonicalQuadraticSieve ConcretePrimeRowBridge CompletedGauss
+open ActualEisensteinCubic ConcreteTraceCRT
+open CenteredMomentEnergyState CenteredMomentEnergyBands CenteredMomentCanonicalFirst
+open CenteredMomentSecondExceptionalFamily CenteredMomentSecondPhysicalBlock CenteredMomentSecondCanonical
+open CenteredMomentSectorLocalization CenteredMomentFirstAmplificationChoice CenteredMomentAmplifiedRetainedRadius
+open CenteredMomentSecondHeightFamily CenteredMomentSecondRadicalBudget
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum CenteredMomentCommonProfile
+open CenteredMomentCommonHeightEnvelope CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentDivisorRectangle CenteredMomentRetainedProfile CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentPrimeSlot HeckePrimeAnnular
+open CenteredMomentInductionEnergy CenteredMomentEligibleEnergy CenteredMomentFiniteProfileExceptional
+open CenteredMomentAmplificationChildInput CenteredMomentCommonRawScale
+open CenteredMomentCommonLinearNormalization CenteredMomentSourceLiveColumn
+open Cycle63Moment CenteredMomentLogDyadic CenteredMomentCommonPairedSource
+open CenteredMomentRankinRadical CenteredMomentSecondCanonicalScalar
+open HeckeDetectorZeros LocalMoment
+open Cycle63FinalLow
+open Cycle63Moment.LowBranch Cycle63FinalNatural Cycle63FinalCapacity
+open CenteredMomentDivisorExtraction
+open CenteredMomentEnergyAllocatedProfiles CenteredMomentAllocatedChildCapacity Cycle63FinalProfiles
+universe u v
+variable {α : Type u} [Fintype α] [DecidableEq α]
+local instance geometryMainBudgetSumDecidable : DecidableEq (α⊕Fin 2) := Classical.decEq _
+attribute [local irreducible] geometryLowActualChain geometryLowActualGeometry geometryLowSecondDatum
+
+variable (M : Ideal O) [NeZero M]
+variable (H : Subgroup (O⧸M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
+
+end
+end OAI.SevenEighths.Cycle63InitialMass

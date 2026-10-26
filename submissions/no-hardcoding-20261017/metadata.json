@@ -1,0 +1,41 @@
+{
+  "title": "No hardcoding: the marked ledger's constants computed from their constraints, at 0.874835173",
+  "authors": [
+    {
+      "name": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 874835173/1000000000. Starting from PR 50's source tree with the affine detector count of PR 52 and PR 56, the hand-picked constants of the marked ledger are replaced by the quantities they stand for, computed in Lean. The bin split of the LOW/HIGH ledger is the root of a strictly increasing residual (the price channel and the capped live channel of the marked saving both tight in the top cell), located by interval arithmetic and proved exact; the slope is the moving slope (430q^2 - 399q + 135)/(q(24q^2 - 34q + 35)) that makes the price bound of the HIGH reserve equal in every cell; the intercept is the largest one the price channel allows; the caps of the marked count, its bin top, its root cutoff and the amplifier cap and floor are the values at which their constraints hold with equality; the row length is the optimum of the top-row certificate; the slacks with a gate are the formulas of that gate; the savings of the row certificates are fixed fractions of the claim margin. All enclosures are computed by a bracket command at elaboration time and checked by the kernel. A Lean theorem shows that no other bin split and intercept admitted by the marked ledger gives a smaller class bound. 33 hand-picked constants of the starting tree are eliminated. The valuation price and the per-cell supplied width follow PR 62. Inherited attribution is preserved in the modules.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-directional-affine-20261016"
+  ],
+  "references": [
+    {
+      "label": "Asymmetric marked counting and source tree (PR 50)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+    },
+    {
+      "label": "Collet's affine moment in the detector count (PR 52)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+    },
+    {
+      "label": "Detector affine count on Cycle61 (PR 56)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+    },
+    {
+      "label": "Directional marked affine source (PR 62)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}

@@ -48,18 +48,6 @@ export default function CatalogueDetail({
           <strong>{boundLabel(r)}</strong>
           <code>≈ {decimal(r.theta, 18)}</code>
         </div>
-        {r.exact_bound && (
-          <p className="muted">
-            The algebraic expression is the exact bound. A certified rational
-            enclosure is used only to position its dot.
-          </p>
-        )}
-        <h3>
-          {historicalBaseline(r)
-            ? "Historical context"
-            : "Verification in this project"}
-        </h3>
-        <p>{r.verification_note}</p>
         <h3>Method</h3>
         <p>{r.method}</p>
         {r.attribution_note && (
@@ -81,7 +69,7 @@ export default function CatalogueDetail({
             {r.first_verified_at
               ? timestamp(r.first_verified_at)
               : historicalBaseline(r)
-                ? "No local checker run; historical reference"
+                ? "—"
                 : "Pending"}
           </dd>
           {r.merged_at && (

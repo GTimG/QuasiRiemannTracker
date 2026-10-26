@@ -1,0 +1,442 @@
+import Candidate.Uneven.AuxiliaryPointwise
+import Candidate.Uneven.AuxiliaryHighCoordinates
+import Candidate.Target830.High.BalancedMass
+import Candidate.Cycle63.Physical.InitialMass.GeometryLiteralHighFrequency
+import Candidate.Cycle63.Physical.InitialMass.GeometryZeroPartition
+import Candidate.Target830.High.GeometryHighPayment
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighAdmission
+import Candidate.Cycle63.Physical.InitialMass.MarkedGeometryPayment
+import Candidate.Uneven.SaturatedHighBins
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighPayment
+import Candidate.Target830.High.VariableJointMarkedBins
+import Candidate.Cycle63.Marked.GeometryUniformMarkedCount
+import Candidate.Cycle63.Density.CountingSetup
+import Candidate.Uneven.AuxiliaryHighAdmission
+import Candidate.Cycle63.Physical.InitialMass.MarkedSchedule
+import Candidate.Target830.High.Coordinates
+import Candidate.Target830.Marked.Schedule
+import Candidate.Uneven.AuxiliaryHighBranchJoin
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighFamily
+import Candidate.Cycle63.Physical.InitialMass.SecondWeightedCommon
+import Candidate.Cycle63.Moment.JointWindowFamily
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighWeightedSelection
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighWindow
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighCostNormalization
+import Candidate.Cycle63.Physical.InitialMass.SecondProjectorShell
+import Candidate.Target830.High.GeometryMainHighRows
+import Candidate.Cycle63.Physical.InitialMass.GeometryMainBufferedPartition
+import Candidate.Cycle63.Physical.InitialMass.GeometryMainOrdinaryFiber
+import Candidate.Cycle63.Physical.InitialMass.GeometryHighCoarseGates
+import Candidate.Cycle63.Moment.HighParameters
+
+/- Original module: Candidate.Uneven.AuxiliaryHighUnmarkedActualShell. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 3000000
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open scoped Classical BigOperators SchwartzMap
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.BalancedSaturatedHighPaid. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 6000000
+set_option maxRecDepth 4000
+namespace OAI.SevenEighths.TargetHigh830
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830
+open SaturatedPlain
+open Marked830Plain
+noncomputable section
+open scoped Classical BigOperators ContDiff SchwartzMap
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+open Cycle63MarkedPlain CenteredMomentDetectorEnergyInitialState
+local notation "O" => HeckeFamily.O
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+end
+end OAI.SevenEighths.TargetHigh830
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighMarkedActualShell. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 3000000
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighActualShell. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 3000000
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighColumn. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 6000000
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap ContDiff
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open MeasureTheory
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+open CenteredMomentCommonPairedSource CenteredMomentCommonLinearNormalization
+open CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentCommonWindowColumn CenteredMomentHeckeColumnWindow FourierBridge
+
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+
+
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighNormalized. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 6000000
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap ContDiff
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open MeasureTheory
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+open CenteredMomentCommonPairedSource CenteredMomentCommonLinearNormalization
+open CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentCommonWindowColumn CenteredMomentHeckeColumnWindow FourierBridge
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighMainSelected. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 6000000
+set_option maxRecDepth 2500
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap ContDiff
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open MeasureTheory
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+open CenteredMomentCommonPairedSource CenteredMomentCommonLinearNormalization
+open CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentCommonWindowColumn CenteredMomentHeckeColumnWindow FourierBridge
+
+open CenteredMomentWholeDivisorShell CenteredMomentLogDyadic
+open CenteredMomentSecondInputCapacitySource
+
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M  ≤  H)
+
+
+
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end
+
+/- Original module: Candidate.Uneven.AuxiliaryHighMainFull. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 6000000
+set_option maxRecDepth 2500
+namespace OAI.SevenEighths.AuxiliaryHigh
+open TargetHigh830 SaturatedPlain
+open OAI.SevenEighths.Cycle63InitialMass
+open Target830 Marked830Plain
+noncomputable section
+open Cycle63MarkedPlain
+open scoped ContDiff
+open scoped Classical BigOperators SchwartzMap ContDiff
+open CenteredMomentSectorLocalization
+open ActualEisensteinCubic
+open MeasureTheory
+open Filter HeckeFamily CenteredMomentEnergyState CenteredMomentNaturalRowSource
+open CenteredMomentEligibleEnergy CenteredMomentDivisorAllocation CenteredMomentDivisorRaw
+open CenteredMomentCommonRadialData CenteredMomentCommonAllocationSum
+open CenteredMomentCommonHeightEnvelope CenteredMomentAllocatedRayDictionary
+open CenteredMomentNaturalFixedRaySource CenteredMomentRetainedProfile
+open Cycle63HighProfiles Cycle63FinalLow CenteredMomentFiniteProfileExceptional
+open Cycle63HighResidual CanonicalQuadraticSieve IdealMobiusDivisorSum LocalMoment ConcreteTraceCRT
+open CenteredMomentAllocatedChildCapacity Cycle63Moment
+open CenteredMomentAmplificationChildInput CenteredMomentCommonProfile
+open CenteredMomentSlotRatios CenteredMomentSourceLiveColumn
+open CenteredMomentChildRows RayFourExpansion
+open CenteredMomentOriginalCommonHarmonic CenteredMomentExceptionalAmplitudePair
+open CenteredMomentFirstSourceReduction ConcretePrimeRowBridge
+open CenteredMomentCanonicalFirst CenteredMomentCompleteCommon CenteredMomentRankinRadical
+local notation "O" => HeckeFamily.O
+
+open CenteredMomentSecondCanonicalScalar
+open CenteredMomentSecondCanonical
+open CenteredMomentAmplifiedRetainedRadius CenteredMomentSecondCanonicalFrequency
+open CenteredMomentSecondCanonicalNonunit
+
+open CenteredMomentCommonPairedSource CenteredMomentCommonLinearNormalization
+open CenteredMomentAmplificationChildSourceCaps
+open CenteredMomentCommonWindowColumn CenteredMomentHeckeColumnWindow FourierBridge
+
+open CenteredMomentWholeDivisorShell CenteredMomentLogDyadic
+open CenteredMomentSecondInputCapacitySource
+
+
+open Cycle63FinalNatural CenteredMomentSourceRow CenteredMomentSecondEnergySplit
+open CenteredMomentSecondHeightFamily Cycle63Moment.LowBranch
+
+variable (M : Ideal O) [NeZero M]
+local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M ≤ H)
+
+
+
+omit [NeZero M] in
+
+
+
+
+
+
+
+
+
+
+end
+end OAI.SevenEighths.AuxiliaryHigh
+end

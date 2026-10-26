@@ -1,0 +1,34 @@
+[
+  {
+    "phase": "sandbox controls",
+    "at": "2026-10-23T07:56:50.135502+00:00"
+  },
+  {
+    "phase": "positive, mismatched statement and ill-typed proof controls",
+    "at": "2026-10-23T07:56:55.474694+00:00"
+  },
+  {
+    "phase": "compile and freeze canonical challenge",
+    "at": "2026-10-23T07:57:28.507320+00:00"
+  },
+  {
+    "phase": "candidate mount controls",
+    "at": "2026-10-23T07:57:51.503678+00:00"
+  },
+  {
+    "phase": "compile standard candidate",
+    "at": "2026-10-23T07:57:56.896186+00:00"
+  },
+  {
+    "phase": "compile and export standard solution wrapper",
+    "at": "2026-10-23T09:10:50.156547+00:00"
+  },
+  {
+    "phase": "Comparator and Lean, NanoDa, con-ron",
+    "at": "2026-10-23T09:16:19.224068+00:00"
+  },
+  {
+    "phase": "accepted",
+    "at": "2026-10-23T10:21:00.416919+00:00"
+  }
+]

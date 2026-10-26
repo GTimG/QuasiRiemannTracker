@@ -47,6 +47,9 @@ test("nearby chart names stay readable through resizing and zoom", async ({
 }) => {
   await routeCatalogue(page);
   await page.goto("/");
+  await page
+    .getByRole("button", { name: "Fit leaderboard", exact: true })
+    .click();
   await expect(page.locator('[data-id="fixture-newest"]')).toBeVisible();
   if (!isMobile) {
     const newest = page.locator('[data-id="fixture-newest"] .point-label');
@@ -83,7 +86,9 @@ test("nearby chart names stay readable through resizing and zoom", async ({
     }
     await page.getByRole("button", { name: "Zoom out", exact: true }).click();
     await expectReadableLabels(page);
-    await page.getByRole("button", { name: "Fit chart", exact: true }).click();
+    await page
+      .getByRole("button", { name: "Fit leaderboard", exact: true })
+      .click();
     await expectReadableLabels(page);
   } else {
     await expectReadableLabels(page);
@@ -125,6 +130,9 @@ test("a crowded cluster retains its newest name and every selectable dot", async
     }),
   );
   await page.goto("/");
+  await page
+    .getByRole("button", { name: "Fit leaderboard", exact: true })
+    .click();
   await expect(page.locator('[data-id^="label-fixture-"]')).toHaveCount(8);
   await expect(
     page.locator('[data-id="label-fixture-7"] .point-label'),

@@ -1,0 +1,56 @@
+{
+  "title": "A second affine step for the LOW children, at 0.874817065",
+  "authors": [
+    {
+      "name": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 174963413/200000000 = 0.874817065, the principal pole excluded. Collet's affine step deletes each LOW child into the old region at the price of the first junction; here each LOW child is deleted only by a width fixed by the cell of its parent, into the region of a second affine step at a second junction, which is Collet's plane at that junction. The child that remains lies in the old region, is reflected into it, is bounded by the second affine step with its own ledger, or is deleted directly into the old region at the original price, paid by an allowance freed by a per-class count of second labels. The second step's HIGH rows are returned as a count and counted jointly over the labels of both steps by the zero-density estimate on the fixed dictionary. The first junction 0.638012 (the crossing of the rate channel of the HIGH payment with the fee), the second junction 0.702651 (the minimizer of the class bound) and the window top 0.04005052 are computed in Lean; the class bound lies in [0.874817064464, 0.874817064465]. Collet's step is written once for a ledger class and runs at an arbitrary natural state: the first step is one instance, the second step a finite family of instances, one per grid position of a child. Builds on PR 64's tree, Zhongpai Gao's balanced marked ledger (PR 63) and Hailey Collet's affine step; the slot price uses Akash Levy's weighted-numerator bound. Inherited attribution is preserved in the modules.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-directional-affine-20261016",
+    "gao-balanced-marked-20261017",
+    "no-hardcoding-20261017"
+  ],
+  "references": [
+    {
+      "label": "Asymmetric marked counting and source tree (PR 50)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+    },
+    {
+      "label": "Affine moment in the detector count (PR 52)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+    },
+    {
+      "label": "Detector affine count on Cycle61 (PR 56)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+    },
+    {
+      "label": "Directional marked affine source (PR 62)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+    },
+    {
+      "label": "Balanced common geometry and adaptive marked source (PR 63)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/63"
+    },
+    {
+      "label": "No hardcoding: the marked ledger's constants computed from their constraints (PR 64)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/64"
+    },
+    {
+      "label": "Cycle61 interior affine moment theorem (PR 42)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator"
+  ]
+}

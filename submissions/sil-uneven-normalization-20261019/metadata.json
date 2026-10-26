@@ -1,0 +1,36 @@
+{
+  "title": "Uneven source normalization and the boundary 0.874828524351",
+  "authors": [
+    {
+      "name": "Sil",
+      "url": "https://github.com/TheSil"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet nonvanishing boundary 874828524351/1000000000000, with the principal pole excluded. Refines Gao PR63 using saturated marked capacities, retained sixth-root weights, a short-width moment bootstrap, and clipped uneven normalization with common-factor cost 2/5. The proof first improves the incumbent 0.87483 to 0.8748286 and then proves the stated exact boundary. Sil, with OpenAI Codex assistance. Builds on Zhongpai Gao, OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; inherited source notices are retained. Official admission is determined by the repository checks.",
+  "license": "Apache-2.0; inherited source and dependency notices retained.",
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "builds_on": [
+    "gao-balanced-marked-20261017",
+    "gao-directional-affine-20261016",
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "gao-cycle61-plane-20261013",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-affine-asymmetric-20261015"
+  ],
+  "references": [
+    {
+      "label": "Verified PR63 baseline",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/63"
+    },
+    {
+      "label": "Zhongpai Gao: PR63 predecessor paper (TeX source)",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.tex"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+--- protected/replay.py
++++ local/replay.py
+@@ -56,7 +56,7 @@
+ v.VERIFICATION_LIMITS = {**v.VERIFICATION_LIMITS,'memory_high_percent':75,'memory_max_percent':85,'tasks_max':256}
+ # Compilation, export and all three kernel checks share this deadline.
+ # Keep the Actions check step longer so timeout evidence can still be retained.
+-v.install_execution_deadline(budget_seconds=10800)
++v.install_execution_deadline(budget_seconds=21600)
+ bundled = {name:judge/'bin'/name for name in v.TOOLCHAIN_TOOLS}
+ approved_tools=json.loads(args.tool_pins.read_text())
+ selected_tools={'source_lean':old/'bin/lean','exporter':exporter,**{'judge_'+name:path for name,path in bundled.items()}}
+@@ -175,7 +175,7 @@
+ assert sha(work/'exports/Challenge.export') == challenge_hash
+ stage('Comparator and Lean, NanoDa, con-ron')
+ print(f"Kernel verification: {capacity['kernel_jobs']} simultaneous checks",flush=True)
+-result=judge_exports(v,config=work/'comparator.json',challenge_export=work/'exports/Challenge.export',solution_export=work/'exports/Solution.export',scratch=work/'judge',bundled=bundled,lean_prefix=judge,environment=env,tools=tools,capacity=capacity,timeout=3600)
++result=judge_exports(v,config=work/'comparator.json',challenge_export=work/'exports/Challenge.export',solution_export=work/'exports/Solution.export',scratch=work/'judge',bundled=bundled,lean_prefix=judge,environment=env,tools=tools,capacity=capacity,timeout=7200)
+ log('judge',result)
+ transcript=result.stdout+'\n'+result.stderr
+ assert 'Your solution is okay!' in transcript and all(k+' kernel accepts the solution' in transcript for k in ['Lean default','nanoda','con-ron'])

@@ -1,0 +1,24 @@
+/- Modified 2026-10-22 for Mark Lewko private candidate.
+Original authors, license and notices retained below and in vendor/collet. -/
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Lewko.QRH.Stage2.Finite.ReturnFormulas
+set_option autoImplicit false
+namespace LewkoStage2Finite
+noncomputable section
+def row022_coefficients : Fin 3 → Fin 4 → ℝ := ![![(29565955544556174341039253323459282073058/103689548287713744485051953125:ℝ),(49022428790854724670859131077278045994254/57605304604285413602806640625:ℝ),(1316757182235968313174904253681679327459914/1555343224315706167275779296875:ℝ),(436640929810944545158223576484561316710926/1555343224315706167275779296875:ℝ)],
+![(58583662658243261172270859342464470969348/103689548287713744485051953125:ℝ),(58279453778132606090356273658544497696452/34563182762571248161683984375:ℝ),(2608914114526995079963983210972964247619908/1555343224315706167275779296875:ℝ),(865093617799791636063879645512928915819788/1555343224315706167275779296875:ℝ)],
+![(145094506248840325373560333259749420383578/518447741438568722425259765625:ℝ),(28867190750546595996417194329586832565954/34563182762571248161683984375:ℝ),(17229475707764856110041811733644816271722/20737909657542748897010390625:ℝ),(142823534903120669086065719660192338687318/518447741438568722425259765625:ℝ)]]
+theorem row022_identity (δ p : ℝ) : rowMargin .oldSmall .C δ p =
+ Record12518109.Bernstein.bsum 2 3 (71411767451560334543032859830096169343659/506701617871921301245722737246208000000000:ℝ) row022_coefficients (237/512:ℝ) (477/1024:ℝ) (63/128:ℝ) (127/256:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_oldSmall,edgeC_oldSmall,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row022_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row022_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (237/512:ℝ) (477/1024:ℝ))
+ (hp : p ∈ Set.Icc (63/128:ℝ) (127/256:ℝ)) : 0 < rowMargin .oldSmall .C δ p := by
+ rw [row022_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row022_coefficients]
+#print axioms row022_identity
+#print axioms row022_pos
+end
+end LewkoStage2Finite

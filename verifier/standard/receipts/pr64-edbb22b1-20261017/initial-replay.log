@@ -1,0 +1,1876 @@
+Authenticated server build: 2923/3836 compatible modules; checking archive during replay
+Authenticate pinned library snapshot
+Proof compilation: using 11 Lean threads
+sandbox controls
+positive, mismatched statement and ill-typed proof controls
+compile and freeze canonical challenge
+candidate mount controls
+Reused 2923 authenticated compiled modules
+compile standard candidate
+Compiling up to 11 modules concurrently
+Compile Candidate.Cycle63.Certificate.Interval (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Optimization.TopRow (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Numerator.Holder (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Optimization.Slacks (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Numerator.FiniteHeight (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.ExternalHeight (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Numerator.Imported.Parameters (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Certificate.Polynomial (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Numerator.Damping (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Assembly.MomentData (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Energy.FirstSourceParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Polynomial in 5.1s
+Compile Candidate.Cycle25.Energy.ReflectionRetainedLength (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.MomentData in 5.2s
+Compile Candidate.ZetaZeroFree.Analytic.Moments.Plain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExternalHeight in 7.0s
+Compile Candidate.Cycle63.Certificate.Bernstein (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Damping in 7.2s
+Compile Candidate.Cycle25.Assembly.Count.Crossing (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Optimization.Slacks in 7.6s
+Compile Candidate.Cycle63.Arithmetic.Window (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Interval in 8.6s
+Compile Candidate.Cycle25.Assembly.Count.Moments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Holder in 8.6s
+Compile Candidate.Cycle25.Assembly.SourceData (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.FiniteHeight in 10.0s
+Compiled Candidate.Cycle63.Optimization.TopRow in 10.3s
+Compile Candidate.Cycle25.Assembly.Count.SlotWidths (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.InitialState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Arithmetic.Window in 4.1s
+Compile Candidate.LocalMoment.RestrictedIncumbent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.FirstSourceParameters in 10.4s
+Compile Candidate.Cycle63.Moment.JointKernel (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReflectionRetainedLength in 7.8s
+Compile Candidate.Cycle25.Energy.ReferenceState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Bernstein in 6.3s
+Compile Candidate.Cycle25.Energy.KappaGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.Parameters in 13.6s
+Compile Candidate.Cycle63.Certificate.RatExpr (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.SourceData in 5.2s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorMomentPrimeGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.ZetaZeroFree.Analytic.Moments.Plain in 8.9s
+Compile Candidate.ZetaZeroFree.Analytic.Moments.Exceptional (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Moments in 6.2s
+Compile Candidate.Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFixedIdeal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.SlotWidths in 5.5s
+Compile Candidate.Cycle25.Assembly.Count.SourceBatch (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.InitialState in 5.6s
+Compile Candidate.Cycle25.Energy.Physical.SourceState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointKernel in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.Decomposition (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.RestrictedIncumbent in 5.9s
+Compile Candidate.Cycle63.Physical.CoarseEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.RatExpr in 5.2s
+Compile Candidate.Cycle63.Certificate.Tactic (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.KappaGeometry in 5.4s
+Compile Candidate.Cycle63.Certificate.Derivative (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceState in 7.2s
+Compile Candidate.Cycle25.Energy.ReferenceDivisors (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFixedIdeal in 5.4s
+Compile Candidate.Cycle25.Energy.ReferenceDeletionCapacity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Crossing in 13.0s
+Compile Candidate.Cycle25.Assembly.Count.Endpoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorMomentPrimeGeometry in 7.0s
+Compile Candidate.Cycle25.Assembly.Count.Budget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.SourceState in 5.2s
+Compile Candidate.Cycle25.Assembly.Count.Optimization (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.SourceBatch in 5.6s
+Compile Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferencePrimeGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Derivative in 4.4s
+Compile Candidate.Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFreeExceptional (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Tactic in 6.6s
+Compile Candidate.Cycle63.Certificate.Bracket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceDivisors in 5.4s
+Compile Candidate.Cycle63.Certificate.MonoTactic (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.CoarseEnergy in 8.6s
+Compile Candidate.Cycle63.Optimization.Plane (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Endpoint in 6.1s
+Compile Candidate.Cycle25.Assembly.Count.SourceAmplitudeClasses (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferencePrimeGates in 5.8s
+Compile Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferenceDeletedEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceDeletionCapacity in 8.1s
+Compile Candidate.Cycle25.Energy.ReferenceDeletionClipped (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Budget in 9.3s
+Compile Candidate.Cycle25.Energy.Physical.PhysicalMoment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.ZetaZeroFree.Analytic.Moments.Exceptional in 16.0s
+Compile Candidate.ZetaZeroFree.Analytic.Moments.Unconditional (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentNaturalFixedRaySourceFreeExceptional in 7.1s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorEnergyInitialState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.Decomposition in 13.4s
+Compile Candidate.Cycle63.Physical.InitialMass.RatioBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.MonoTactic in 5.8s
+Compile Candidate.Cycle63.Physical.JointSourceAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Bracket in 7.6s
+Compile Candidate.Cycle63.Certificate.Root (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceDeletionClipped in 5.7s
+Compile Candidate.Cycle25.Energy.ReferenceLowBranchGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Optimization.Plane in 8.3s
+Compile Candidate.Cycle63.Physical.TerminalRadius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Optimization in 13.9s
+Compile Candidate.Cycle25.Assembly.Count.FromMoments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.SourceAmplitudeClasses in 8.9s
+Compile Candidate.Cycle63.Physical.InitialMass.JointAmplification (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.PhysicalMoment in 5.2s
+Compile Candidate.Cycle63.Physical.ClippedProjector (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferenceDeletedEnergy in 8.3s
+Compile Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferenceFiberEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorEnergyInitialState in 5.7s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainSlotProfile (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.JointSourceAssembly in 5.6s
+Compile Candidate.Cycle63.Physical.FirstBranches.Child (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Certificate.Root in 7.4s
+Compile Candidate.Cycle63.Optimization.MarkedCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.TerminalRadius in 6.8s
+Compile Candidate.Cycle63.Physical.InitialMass.Normalization (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainSlotProfile in 6.8s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainCapacity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.JointAmplification in 8.7s
+Compile Candidate.Cycle63.Physical.FirstBranches.Homogeneous (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ClippedProjector in 8.5s
+Compile Candidate.Cycle63.Physical.AllocationClipping (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.FromMoments in 9.0s
+Compile Candidate.Cycle25.Assembly.Count.FixedAmplitude (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Child in 8.0s
+Compile Candidate.Cycle63.Physical.FirstBranches.Direct (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.RatioBins in 14.9s
+Compile Candidate.Cycle63.Physical.InitialMass.JointBlock (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Optimization.MarkedCaps in 5.7s
+Compile Candidate.Cycle63.Optimization.MarkedSplit (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceLowBranchGeometry in 13.1s
+Compile Candidate.Cycle25.Energy.ReferenceLowWindow (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentInverseMarkedReferenceFiberEnergy in 12.4s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorInverseMarkedField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.Normalization in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainCapacity in 6.3s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainExceptional (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.FixedAmplitude in 5.7s
+Compile Candidate.Cycle25.Assembly.Count.Adaptive (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Direct in 5.8s
+Compile Candidate.Cycle63.Physical.FirstBranches.ChildUniform (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.AllocationClipping in 7.1s
+Compile Candidate.Cycle63.Physical.ClippedProjectorShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Homogeneous in 8.4s
+Compile Candidate.Cycle63.Physical.FirstBranches.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceLowWindow in 7.4s
+Compile Candidate.Cycle25.Energy.ReferenceLowDeletedGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorInverseMarkedField in 7.6s
+Compile Candidate.Cycle25.Energy.LiveClippingDefect (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Adaptive in 6.2s
+Compile Candidate.Cycle63.Physical.FirstBranches.Zero (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.ChildUniform in 5.5s
+Compile Candidate.Cycle63.Physical.FirstBranches.Reflection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainExceptional in 8.0s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMarkedState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ClippedProjectorShell in 6.6s
+Compile Candidate.Cycle63.Physical.ExceptionalReference (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Geometry in 6.8s
+Compile Candidate.Cycle63.Physical.SecondZero.Source (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.JointBlock in 14.5s
+Compile Candidate.Cycle63.Physical.InitialMass.LocalizedFirst (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryBins in 13.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Zero in 5.9s
+Compile Candidate.Cycle63.Moment.JointColumnExtraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceLowDeletedGeometry in 7.8s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Reflection in 8.2s
+Compile Candidate.Cycle63.Physical.BufferedPlain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMarkedState in 7.4s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMomentParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.SecondZero.Source in 6.7s
+Compile Candidate.Cycle63.Physical.SecondZero.Caps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExceptionalReference in 9.2s
+Compile Candidate.Cycle63.Physical.FinalRadius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.LocalizedFirst in 7.7s
+Compile Candidate.Cycle63.Physical.InitialMass.AnnularSourceEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointColumnExtraction in 6.8s
+Compile Candidate.LocalMoment.LowSourceAdapters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryPayment in 8.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionGeometry in 8.9s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionDeleted (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.SecondZero.Caps in 5.8s
+Compile Candidate.LocalMoment.BufferedSlot (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMomentParameters in 7.8s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMarkedFineField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.LiveClippingDefect in 18.0s
+Compile Candidate.Cycle25.Energy.DeletedRobustGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.AnnularSourceEnergy in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.ActiveColumns (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.LowSourceAdapters in 5.6s
+Compile Candidate.Cycle63.Moment.HighAllocationLedger (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalRadius in 7.9s
+Compile Candidate.Cycle63.Physical.NominalRadius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.BufferedPlain in 11.9s
+Compile Candidate.Cycle63.Moment.PositiveRowFactors (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.BufferedSlot in 5.3s
+Compile Candidate.LocalMoment.UnmarkedDensity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryContraction in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.JointWindowEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighAllocationLedger in 5.5s
+Compile Candidate.LocalMoment.FiniteDeletionBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.ActiveColumns in 5.9s
+Compile Candidate.LocalMoment.SignedRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.NominalRadius in 6.2s
+Compile Candidate.Cycle63.Physical.JointRowFibres (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainMarkedFineField in 9.0s
+Compile Candidate.Cycle63.Physical.SecondCommonRadical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.DeletedRobustGeometry in 8.3s
+Compile Candidate.Cycle25.Energy.ReferenceRobustDeletedEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.PositiveRowFactors in 6.2s
+Compile Candidate.Cycle63.Moment.BufferedRetainedRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionDeleted in 11.8s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionOriginal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.FiniteDeletionBins in 4.9s
+Compile Candidate.LocalMoment.SixthRowMask (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.SignedRows in 6.0s
+Compile Candidate.Cycle63.Moment.SignedSourceDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.JointWindowEnergy in 8.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySources (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.JointRowFibres in 6.0s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Allocation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.SecondCommonRadical in 5.8s
+Compile Candidate.Cycle63.Physical.HighResidualAllocation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.BufferedRetainedRows in 5.9s
+Compile Candidate.Cycle63.Moment.JointAllocationEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.SixthRowMask in 5.3s
+Compile Candidate.LocalMoment.RawSixthDensity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.UnmarkedDensity in 13.5s
+Compile Candidate.LocalMoment.UnmarkedBatch (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionOriginal in 8.0s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionPower (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.SignedSourceDictionary in 6.3s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionBounded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceRobustDeletedEnergy in 11.5s
+Compile Candidate.Cycle25.Energy.ReferenceRobustOriginal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Allocation in 6.6s
+Compile Candidate.LocalMoment.PlainUnmarkedAdapter (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySources in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointAllocationEnergy in 7.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryBudgetContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.HighResidualAllocation in 9.2s
+Compile Candidate.Cycle63.Density.Rounding (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.UnmarkedBatch in 6.5s
+Compile Candidate.LocalMoment.ActualUnmarkedInputs (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.RawSixthDensity in 7.0s
+Compile Candidate.LocalMoment.UniformDensity (1 threads, 2094 MiB memory limit)
+Candidate.Cycle63.Optimization.MarkedSplit: worker resource ceiling reached while running lean (exit 137, result oom-kill); memory limit 2196290094 bytes
+Memory limit reached for Candidate.Cycle63.Optimization.MarkedSplit; retrying alone after active compilers finish
+Compiled Candidate.LocalMoment.PlainUnmarkedAdapter in 8.0s
+Compiled Candidate.LocalMoment.ActualUnmarkedInputs in 5.3s
+Compiled Candidate.Cycle25.Energy.ReferenceRobustOriginal in 9.0s
+Compiled Candidate.LocalMoment.UniformDensity in 5.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAdmission in 8.3s
+Compiled Candidate.Cycle63.Density.Rounding in 6.7s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryBudgetContraction in 8.6s
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionPower in 14.4s
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionBounded in 13.5s
+Compiled Candidate.ZetaZeroFree.Analytic.Moments.Unconditional in 228.8s
+Compile Candidate.Cycle63.Optimization.MarkedSplit (1 threads, 23040 MiB memory limit, exclusive retry)
+Compiled Candidate.Cycle63.Optimization.MarkedSplit in 118.0s
+Compile Candidate.Cycle25.Energy.ReferenceRobustPower (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Energy.ReferenceRobustBounded (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionSymmetric (1 threads, 2094 MiB memory limit)
+Compile Candidate.LocalMoment.HeightUniformDensity (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Optimization.Ledger (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Density.ActualMoments (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.SignedPrimeProducts (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCorrelatedFamily (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.ActualJointKernel (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.JointWindow (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCorrelatedFamily in 4.7s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ActualJointKernel in 4.9s
+Compile Candidate.Cycle63.Physical.FinalProfiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Optimization.Ledger in 5.0s
+Compile Candidate.Cycle63.Arithmetic.Constants (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointWindow in 5.4s
+Compile Candidate.Cycle63.Moment.JointWindowFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.SignedPrimeProducts in 5.7s
+Compile Candidate.Cycle63.Moment.CanonicalFirstSigned (1 threads, 2094 MiB memory limit)
+Compiled Candidate.LocalMoment.HeightUniformDensity in 5.9s
+Compile Candidate.Cycle63.Physical.ExtractedBranches.Paid (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryTail in 6.1s
+Compile Candidate.Cycle63.Physical.FinalErrorRadius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionSymmetric in 6.5s
+Compile Candidate.Cycle25.Energy.OriginalHighReflectionSymmetricBounded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.ActualMoments in 6.9s
+Compile Candidate.Cycle63.Density.ActualBatchCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceRobustPower in 8.9s
+Compile Candidate.Cycle25.Energy.ReferenceLivePower (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceRobustBounded in 9.2s
+Compile Candidate.Cycle25.Energy.ReferenceLiveBounded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Geometry in 5.2s
+Compile Candidate.Cycle63.Density.NaturalDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalProfiles in 5.0s
+Compile Candidate.Cycle63.Physical.HighProfiles.Control (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExtractedBranches.Paid in 5.7s
+Compile Candidate.Cycle63.Physical.WidthLoss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointWindowFamily in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondBlock (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CanonicalFirstSigned in 6.4s
+Compile Candidate.Cycle63.Moment.CanonicalFirstDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.OriginalHighReflectionSymmetricBounded in 5.9s
+Compile Candidate.Cycle63.Moment.CanonicalFirstNorm (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.ActualBatchCount in 5.6s
+Compile Candidate.Cycle63.Density.CountingSetup (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceLiveBounded in 4.9s
+Compile Candidate.Cycle63.Physical.InitialMass.ScalarSupport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.ReferenceLivePower in 5.3s
+Compile Candidate.Cycle25.Energy.PositiveHighSource (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalErrorRadius in 8.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAmplification (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.HighProfiles.Control in 5.9s
+Compile Candidate.Cycle63.Physical.HighProfiles.Source (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.NaturalDictionary in 6.1s
+Compile Candidate.Cycle63.Density.BufferedPartition (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.WidthLoss in 5.2s
+Compile Candidate.Cycle25.Assembly.Continuation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.CountingSetup in 5.1s
+Compile Candidate.Cycle25.Numerator.Imported.FullWContour (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CanonicalFirstDictionary in 5.7s
+Compile Candidate.Cycle63.Moment.CanonicalPhaseCharacter (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondBlock in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondActive (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CanonicalFirstNorm in 6.6s
+Compile Candidate.Cycle63.Moment.CanonicalFirstSupport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Arithmetic.Constants in 14.3s
+Compile Candidate.Cycle63.Arithmetic.LocalReserves (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.HighProfiles.Source in 5.5s
+Compile Candidate.Cycle63.CountAffine.ClosedForm (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.ScalarSupport in 8.1s
+Compile Candidate.Cycle63.Moment.InitialAffineContract (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Continuation in 5.8s
+Compile Candidate.Cycle63.Assembly.Baseline (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighSource in 9.1s
+Compile Candidate.Cycle25.Energy.PositiveHighParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CanonicalPhaseCharacter in 5.6s
+Compile Candidate.Cycle25.Energy.PositiveHighAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAmplification in 8.6s
+Compile Candidate.Cycle25.Energy.PositiveHighSourceBounded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.BufferedPartition in 7.6s
+Compile Candidate.Cycle63.Moment.RestrictedLowMain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondActive in 5.7s
+Compile Candidate.Cycle63.Density.ActualMaximaCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.InitialAffineContract in 5.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondBatch (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Baseline in 5.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondWindows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CanonicalFirstSupport in 9.1s
+Compile Candidate.Cycle63.Moment.FirstSourceEncoding (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.FullWContour in 11.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryScalarCompensation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.RestrictedLowMain in 6.1s
+Compile Candidate.Cycle63.Moment.LowBranch.Families (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighAssembly in 6.8s
+Compile Candidate.Cycle25.Numerator.Imported.FullWTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighParameters in 7.4s
+Compile Candidate.Cycle25.Energy.PositiveBalancedAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighSourceBounded in 7.4s
+Compile Candidate.Cycle25.Energy.PositiveHighAssemblyBounded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.ActualMaximaCount in 7.7s
+Compile Candidate.Cycle63.Density.SmallHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.ClosedForm in 10.6s
+Compile Candidate.Cycle63.CountAffine.RegionFacts (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondWindows in 4.8s
+Compile Candidate.Cycle63.CountAffine.PlainFiber (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.FirstSourceEncoding in 5.2s
+Compile Candidate.Cycle63.Moment.FirstSourceCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondBatch in 7.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Families in 5.6s
+Compile Candidate.Cycle63.Moment.LowBranch.Slot (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryScalarCompensation in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryUniformScalar (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.PlainFiber in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.FirstLowLabelCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.SmallHeight in 7.0s
+Compile Candidate.Cycle63.Density.UniformFree (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighAssemblyBounded in 7.9s
+Compile Candidate.Cycle25.Energy.PositiveHighBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveBalancedAdmission in 8.2s
+Compile Candidate.Cycle25.Energy.NaturalLowPhysical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondInput in 5.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondExtraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.FirstSourceCount in 7.1s
+Compile Candidate.Cycle63.Moment.SecondSourceEncoding (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryUniformScalar in 5.6s
+Compile Candidate.Cycle25.Numerator.Imported.MellinReconstruction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.FirstLowLabelCount in 5.7s
+Compile Candidate.Cycle25.Numerator.AmplitudeHolder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondExtraction in 5.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.SecondSourceEncoding in 5.9s
+Compile Candidate.Cycle63.Moment.JointSourceCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.NaturalLowPhysical in 7.6s
+Compile Candidate.Cycle25.Energy.NaturalLowStage (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.MellinReconstruction in 8.1s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorLocalCoefficients (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.AmplitudeHolder in 5.9s
+Compile Candidate.Cycle25.Numerator.Imported.RowConductor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.FullWTransport in 19.8s
+Compile Candidate.Cycle25.Numerator.Imported.FullWFiniteError (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Slot in 15.9s
+Compile Candidate.Cycle63.Moment.LowBranch.Conductor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointSourceCount in 5.3s
+Compile Candidate.Cycle63.Physical.InitialMass.FirstProjectorMultiplicity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondFamily in 7.3s
+Compile Candidate.Cycle25.Numerator.ReflectionMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.UniformFree in 14.8s
+Compile Candidate.Cycle63.Density.FixedDensity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorLocalCoefficients in 8.0s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorPolynomialMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.FirstProjectorMultiplicity in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCommonSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Conductor in 7.8s
+Compile Candidate.Cycle63.Moment.LowBranch.Gate (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.ReflectionMass in 6.3s
+Compile Candidate.Cycle63.Physical.ExtractedBranches.Slots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.FixedDensity in 6.1s
+Compile Candidate.Cycle63.Density.ExceptionalLift (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighBound in 21.2s
+Compile Candidate.Cycle25.Energy.PositiveHighSourceBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.RowConductor in 10.0s
+Compile Candidate.Cycle25.Numerator.ReflectionProfiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.NaturalLowStage in 14.5s
+Compile Candidate.Cycle25.Energy.CappedLowStage (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCommonSelection in 6.8s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Gate in 5.9s
+Compile Candidate.Cycle63.Moment.HighSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorPolynomialMass in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondShellWindows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.ExceptionalLift in 6.5s
+Compile Candidate.Cycle63.Density.ActualZeros (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.ReflectionProfiles in 6.0s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorRamifiedMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExtractedBranches.Slots in 7.0s
+Compile Candidate.Cycle25.Numerator.ReflectionRetained (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.CappedLowStage in 6.8s
+Compile Candidate.Cycle25.Arithmetic.Endpoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighSourceBound in 9.3s
+Compile Candidate.Cycle25.Energy.PositiveHighPhysical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRows in 5.9s
+Compile Candidate.Cycle25.Energy.Physical.Discarded (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.FullWFiniteError in 20.2s
+Compile Candidate.Cycle63.Numerator.Finite.Partition (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondShellWindows in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondPhysicalWindows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.ReflectionRetained in 6.0s
+Compile Candidate.Cycle25.Numerator.Imported.FullWAggregate (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.ActualZeros in 7.0s
+Compile Candidate.Cycle63.Density.NaturalEndpoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Arithmetic.Endpoint in 5.7s
+Compile Candidate.Cycle25.Arithmetic.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorRamifiedMass in 7.7s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorUnramifiedMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.PositiveHighPhysical in 7.0s
+Compile Candidate.Cycle25.Energy.NaturalHighStage (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondPhysicalWindows in 5.1s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorReflectionData (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.NaturalEndpoint in 5.7s
+Compile Candidate.Cycle63.Density.NaturalMaskTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighSlots in 14.4s
+Compile Candidate.Cycle63.Moment.HighSlotProduct (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.FullWAggregate in 7.2s
+Compile Candidate.Cycle25.Numerator.Imported.FullWReconstruction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Partition in 9.6s
+Compile Candidate.Cycle25.Energy.Physical.RetainedGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorUnramifiedMass in 7.9s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorEulerExpansion (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.Discarded in 12.1s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorErrorMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.NaturalHighStage in 7.0s
+Compile Candidate.Cycle25.Energy.CappedAnalyticSuccessor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Arithmetic.LocalReserves in 64.8s
+Compile Candidate.Cycle63.Physical.Capacity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighSlotProduct in 5.6s
+Compile Candidate.Cycle63.Physical.TerminalLedger (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Density.NaturalMaskTransport in 6.3s
+Compile Candidate.Cycle63.Physical.AmplifierSupport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorReflectionData in 8.8s
+Compile Candidate.Cycle63.Moment.HighRetainedRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorEulerExpansion in 5.7s
+Compile Candidate.Cycle63.Moment.ActualRowDensity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.FullWReconstruction in 7.9s
+Compile Candidate.Cycle63.Moment.PrimaryMaskTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.RetainedGeometry in 8.1s
+Compile Candidate.Cycle63.Moment.CellGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.CappedAnalyticSuccessor in 6.6s
+Compile Candidate.Cycle25.Energy.CertifiedExistence (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.RegionFacts in 58.0s
+Compile Candidate.Cycle63.Arithmetic.Bernstein.Endpoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorErrorMass in 8.4s
+Compile Candidate.Cycle63.CountAffine.Branch (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.AmplifierSupport in 6.4s
+Compile Candidate.Cycle63.Physical.NonexceptionalLedger (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighRetainedRows in 6.4s
+Compile Candidate.Cycle63.Assembly.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.TerminalLedger in 6.9s
+Compile Candidate.Cycle63.Physical.SecondZero.Radius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ActualRowDensity in 6.1s
+Compile Candidate.Cycle63.Moment.JointHighDensity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.PrimaryMaskTransport in 6.1s
+Compile Candidate.Cycle63.Moment.SecondNaturalMask (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.CertifiedExistence in 5.5s
+Compile Candidate.Cycle25.Energy.Endpoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.CellGeometry in 8.1s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Affine (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Geometry in 6.1s
+Compile Candidate.Cycle63.Moment.CanonicalFirstMask (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.SecondZero.Radius in 6.5s
+Compile Candidate.Cycle63.Physical.SecondZero.Uniform (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Arithmetic.Geometry in 26.0s
+Compile Candidate.Cycle63.Assembly.Final.Baseline (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.SecondNaturalMask in 6.7s
+Compile Candidate.Cycle63.Assembly.Transport.GeometryFacts (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointHighDensity in 7.5s
+Compile Candidate.Cycle63.Moment.PhysicalHighRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Endpoint in 6.1s
+Compile Candidate.Cycle63.CountAffine.Mesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Affine in 5.6s
+Compile Candidate.Cycle25.Assembly.Mesh (1 threads, 2094 MiB memory limit)
+Candidate.Cycle63.Physical.Capacity: worker resource ceiling reached while running lean (exit 137, result oom-kill); memory limit 2196290094 bytes
+Memory limit reached for Candidate.Cycle63.Physical.Capacity; retrying alone after active compilers finish
+Compiled Candidate.Cycle63.Assembly.Final.Baseline in 5.4s
+Compiled Candidate.Cycle63.Moment.CanonicalFirstMask in 8.0s
+Compiled Candidate.Cycle63.Assembly.Transport.GeometryFacts in 5.6s
+Compiled Candidate.Cycle63.Physical.NonexceptionalLedger in 14.6s
+Compiled Candidate.Cycle63.CountAffine.Mesh in 5.1s
+Compiled Candidate.Cycle25.Assembly.Mesh in 4.9s
+Compiled Candidate.Cycle63.Moment.PhysicalHighRows in 6.0s
+Compiled Candidate.Cycle63.Physical.SecondZero.Uniform in 9.4s
+Compiled Candidate.Cycle63.Arithmetic.Bernstein.Endpoint in 18.6s
+Compiled Candidate.Cycle63.CountAffine.Branch in 22.7s
+Compile Candidate.Cycle63.Physical.Capacity (1 threads, 23040 MiB memory limit, exclusive retry)
+Compiled Candidate.Cycle63.Physical.Capacity in 57.4s
+Compile Candidate.Cycle63.Arithmetic.Bernstein.EndpointRows (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle25.Energy.Physical.PhysicalMomentInput (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.LowBranch.Incumbent (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Numerator.Capacity.Schedule (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.FirstBranches.Actual (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.SignalShift (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.FinalCapacity.Capacity (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderRegion (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderRayThresholds (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.FixedPairMasks (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Low.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Incumbent in 5.4s
+Compile Candidate.Cycle63.Physical.InitialCoarse (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Geometry in 5.4s
+Compile Candidate.Cycle63.Moment.LowBranch.Main (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.SignalShift in 5.6s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowGramScale (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderRayThresholds in 6.0s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowReflectedLength (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.PhysicalMomentInput in 6.5s
+Compile Candidate.Cycle25.Energy.Physical.FourierProfiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.FixedPairMasks in 6.6s
+Compile Candidate.Cycle63.Physical.InitialMass.FirstUniformDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Capacity in 7.0s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Final (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Capacity.Schedule in 8.1s
+Compile Candidate.Cycle63.Assembly.Low.Normalizer (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowGramScale in 5.3s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowSourceScales (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.FourierProfiles in 5.4s
+Compile Candidate.Cycle63.Numerator.Fourth.Input (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowReflectedLength in 6.2s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.ExponentRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.FirstUniformDictionary in 5.8s
+Compile Candidate.Cycle63.Assembly.Transport.TailScales (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.Main in 7.3s
+Compile Candidate.Cycle63.Moment.LowBranch.DaughterState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialCoarse in 8.7s
+Compile Candidate.Cycle63.Physical.InitialHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Normalizer in 6.0s
+Compile Candidate.Cycle63.Moment.LowBranch.Payment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderRegion in 14.6s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.Actual in 14.8s
+Compile Candidate.Cycle63.Physical.FirstBranches.FixedComparison (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Final in 7.9s
+Compile Candidate.Cycle63.Physical.FinalCapacity.UniformPadding (1 threads, 2094 MiB memory limit)
+Candidate.Cycle63.Arithmetic.Bernstein.EndpointRows: worker resource ceiling reached while running lean (exit 137, result oom-kill); memory limit 2196290094 bytes
+Memory limit reached for Candidate.Cycle63.Arithmetic.Bernstein.EndpointRows; retrying alone after active compilers finish
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowSourceScales in 5.2s
+Compiled Candidate.Cycle63.Assembly.Transport.TailScales in 4.9s
+Compiled Candidate.Cycle63.Numerator.Fourth.Input in 6.0s
+Compiled Candidate.Cycle63.Moment.LowBranch.DaughterState in 5.7s
+Compiled Candidate.Cycle63.Physical.FinalCapacity.UniformPadding in 4.8s
+Compiled Candidate.Cycle63.Moment.LowBranch.Payment in 5.8s
+Compiled Candidate.Cycle63.Physical.InitialHeight in 6.4s
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.ExponentRows in 8.8s
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalSlots in 17.8s
+Compiled Candidate.Cycle63.Physical.FirstBranches.FixedComparison in 28.3s
+Compile Candidate.Cycle63.Arithmetic.Bernstein.EndpointRows (1 threads, 23040 MiB memory limit, exclusive retry)
+Compiled Candidate.Cycle63.Arithmetic.Bernstein.EndpointRows in 219.4s
+Compile Candidate.Cycle63.Moment.LowBranch.ChildDictionary (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.FirstBranches.RawComparison (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Arithmetic.Bernstein.Feedback (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.FinalNatural.State (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Low.Reflection.RetainedRows (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.ExtractedBranches.Main (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderFiniteProduct (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Moment.LowBranch.PaidMain (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalSignal (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowSlotScales (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Assembly.Transport.CubeSlotExponent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowSlotScales in 5.5s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowOriginalPools (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeSlotExponent in 5.7s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorArithmetic (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.ChildDictionary in 6.5s
+Compile Candidate.Cycle63.Moment.LowBranch.FinalDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.PaidMain in 6.9s
+Compile Candidate.Cycle63.Physical.ChildMatches (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FirstBranches.RawComparison in 7.2s
+Compile Candidate.Cycle63.Physical.InitialSourceReduction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExtractedBranches.Main in 7.5s
+Compile Candidate.Cycle63.Physical.ExtractedBranches.Envelope (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalNatural.State in 7.6s
+Compile Candidate.Cycle63.Assembly.Transport.FloorExponent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowOriginalPools in 5.7s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowNominalGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.FinalDictionary in 5.4s
+Compile Candidate.Cycle63.Moment.FinalRowDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalSignal in 12.2s
+Compile Candidate.Cycle63.Moment.LowBranch.SideGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ChildMatches in 6.1s
+Compile Candidate.Cycle63.Physical.FinalNatural.Energy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.FloorExponent in 5.7s
+Compile Candidate.Cycle63.Assembly.Transport.LargeDyad (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderFiniteProduct in 14.2s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderFiniteProductX (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorArithmetic in 8.5s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderResidueActual (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.ExtractedBranches.Envelope in 7.0s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorGlobal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.FinalRowDictionary in 5.4s
+Compile Candidate.Cycle63.Moment.HighSourceRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowNominalGeometry in 6.3s
+Compile Candidate.Cycle63.Assembly.Low.Detector.LowCentralGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.LargeDyad in 4.8s
+Compile Candidate.Cycle63.Assembly.Transport.GeometricTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.LowBranch.SideGeometry in 6.0s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Physical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderResidueActual in 5.6s
+Compile Candidate.Cycle63.Assembly.Transport.SmallTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalNatural.Energy in 6.7s
+Compile Candidate.Cycle63.Physical.FinalNatural.Error (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderFiniteProductX in 6.0s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderContours (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorGlobal in 6.1s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorGlobalIntegral (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.RetainedRows in 22.3s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.FullBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.LowCentralGeometry in 5.1s
+Compile Candidate.Cycle63.Assembly.Transport.CentralErrorSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighSourceRows in 6.0s
+Compile Candidate.Cycle63.Moment.HighSourceEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.GeometricTail in 5.3s
+Compile Candidate.Cycle63.Assembly.Transport.LargeTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Arithmetic.Bernstein.Feedback in 23.7s
+Compile Candidate.Cycle63.Physical.WitnessGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Physical in 6.3s
+Compile Candidate.Cycle63.Physical.FinalCapacity.Public (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorGlobalIntegral in 5.9s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorNormalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.SmallTail in 6.7s
+Compile Candidate.Cycle63.Assembly.Transport.PhysicalSmallTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialSourceReduction in 19.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SourceCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalNatural.Error in 8.0s
+Compile Candidate.Cycle25.Numerator.SourceSZBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CentralErrorSaving in 6.2s
+Compile Candidate.Cycle63.Assembly.Transport.CentralFiniteError (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalCapacity.Public in 4.9s
+Compile Candidate.Cycle63.Physical.FinalLow.Chain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.LargeTail in 6.2s
+Compile Candidate.Cycle63.Assembly.Transport.LargeSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.WitnessGeometry in 7.7s
+Compile Candidate.Cycle63.Assembly.Count.ArithmeticIdentity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorNormalized in 5.1s
+Compile Candidate.Cycle63.Assembly.Count.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighSourceEnergy in 9.9s
+Compile Candidate.Cycle63.Moment.HighRawExponent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PhysicalSmallTail in 6.9s
+Compile Candidate.Cycle63.Moment.WholeSourceFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CentralFiniteError in 4.7s
+Compile Candidate.Cycle63.Moment.HighParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.LargeSaving in 4.9s
+Compile Candidate.Cycle63.Moment.ProfileHighEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SourceCaps in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.ArithmeticIdentity in 4.3s
+Compile Candidate.Cycle63.CountAffine.FiberCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalLow.Chain in 6.6s
+Compile Candidate.Cycle63.Physical.FinalLow.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.SourceSZBound in 8.5s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.Geometry in 4.7s
+Compile Candidate.Cycle63.Assembly.Transport.PhysicalLargeTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.WholeSourceFamily in 6.2s
+Compile Candidate.Cycle63.Moment.WholeSourceConductor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighRawExponent in 6.5s
+Compile Candidate.Cycle63.Moment.ActualRetainedMask (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ProfileHighEnergy in 6.6s
+Compile Candidate.Cycle63.Assembly.Transport.CubeErrorSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PhysicalLargeTail in 5.3s
+Compile Candidate.Cycle63.Assembly.Transport.CanonicalTails (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorSaving in 6.0s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFloorCollected (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineCaps in 10.1s
+Compile Candidate.Cycle25.Numerator.FullWBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalLow.Geometry in 9.0s
+Compile Candidate.Cycle63.Physical.FinalLow.Main (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.WholeSourceConductor in 5.9s
+Compile Candidate.Cycle63.Moment.WholeSourceDatum (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ActualRetainedMask in 5.8s
+Compile Candidate.Cycle63.Moment.ActualJointDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighParameters in 12.2s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorPrimeExpansion (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderContours in 27.2s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CanonicalTails in 6.1s
+Compile Candidate.Cycle63.Assembly.Transport.CanonicalReduction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeErrorSaving in 7.6s
+Compile Candidate.Cycle63.Assembly.Transport.CubeFiniteError (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFloorCollected in 6.9s
+Compile Candidate.Cycle25.Assembly.Parameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.FiberCount in 14.6s
+Compile Candidate.Cycle63.CountAffine.BatchCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.WholeSourceDatum in 5.3s
+Compile Candidate.Cycle63.Moment.HighCommonExponent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ActualJointDictionary in 5.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondEncoding (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorPrimeExpansion in 6.1s
+Compile Candidate.Cycle63.Physical.HighFrequency (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.FullWBound in 9.0s
+Compile Candidate.Cycle63.Moment.ReflectedJointRow (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CanonicalReduction in 7.1s
+Compile Candidate.Cycle63.Moment.JointShellEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalLow.Main in 11.0s
+Compile Candidate.Cycle63.Physical.FinalLow.Profiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CubeFiniteError in 7.7s
+Compile Candidate.Cycle63.Assembly.Transport.CanonicalCubeReduction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Parameters in 7.7s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorRamifiedProduct (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.BatchCount in 6.7s
+Compile Candidate.Cycle25.Assembly.Count.Parameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondEncoding in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondActualSources (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ReflectedJointRow in 5.3s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondEncodedGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.HighFrequency in 8.0s
+Compile Candidate.Cycle63.Physical.HighLedgerGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.HighCommonExponent in 9.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondSourceControls (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderTransport in 14.1s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderBounds (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CanonicalCubeReduction in 6.4s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderPhysical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.Parameters in 5.9s
+Compile Candidate.Cycle25.Assembly.Count.InverseRawField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondActualSources in 5.9s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.JointShellEnergy in 8.5s
+Compile Candidate.Cycle25.Assembly.Count.SourceParametersCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorRamifiedProduct in 6.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRetainedAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondEncodedGates in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalLow.Profiles in 10.8s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRowState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondSourceControls in 6.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorCoprime (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.FullBudget in 45.3s
+Compile Candidate.Cycle63.Moment.ProfileShellEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.HighLedgerGeometry in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondOrientedHigh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderPhysical in 5.9s
+Compile Candidate.Cycle63.Assembly.Count.Data (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedField in 5.9s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedRestrictedField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.InverseRawField in 6.5s
+Compile Candidate.Cycle25.Assembly.Count.MomentDetectorInverseFields (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.SourceParametersCount in 6.5s
+Compile Candidate.Cycle25.Assembly.Count.SourceMomentInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRetainedAssembly in 8.0s
+Compile Candidate.Cycle25.Assembly.Count.PlainInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondDictionary in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondDyadEnvelope (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorCoprime in 5.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRowFibres (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondOrientedHigh in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondSourceBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRowState in 7.1s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.MemberBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.Data in 6.0s
+Compile Candidate.Cycle63.Assembly.Count.BaselineGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorPlainUnmarkedRestrictedField in 6.2s
+Compile Candidate.Cycle63.Assembly.Transport.CanonicalCubeChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.SourceMomentInput in 5.9s
+Compile Candidate.Cycle25.Assembly.Count.MomentInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentDetectorInverseFields in 6.7s
+Compile Candidate.Cycle63.CountAffine.SourceLevel (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.PlainInput in 5.9s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorCorrectionExpansion (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ProfileShellEnergy in 9.9s
+Compile Candidate.Cycle63.Moment.ProfileCommonAdmissible (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondDyadEnvelope in 6.3s
+Compile Candidate.Cycle63.Moment.ProfileJointShellEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRowFibres in 6.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRowBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondSourceBudget in 5.7s
+Compile Candidate.Cycle25.Energy.Physical.Terminal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.BaselineGeometry in 5.8s
+Compile Candidate.Cycle63.Assembly.Final.Parameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MomentInput in 5.1s
+Compile Candidate.Cycle25.Assembly.Count.CertifiedMoments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.MemberBudget in 7.5s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.FixedDyads (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CanonicalCubeChoice in 7.0s
+Compile Candidate.Cycle63.Assembly.Transport.CanonicalRayCube (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.Terminal in 5.5s
+Compile Candidate.Cycle25.Energy.Physical.CertifiedFourier (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRowBudget in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondEnvelopeBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ProfileCommonAdmissible in 8.3s
+Compile Candidate.Cycle63.Numerator.Source.BinBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.SourceLevel in 9.7s
+Compile Candidate.Cycle63.Assembly.Count.MomentGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.ProfileJointShellEnergy in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondHighShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderBounds in 25.4s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderPhysicalBounds (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.CertifiedMoments in 6.5s
+Compile Candidate.Cycle25.Assembly.Count.ActualMoments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CanonicalRayCube in 6.6s
+Compile Candidate.Cycle25.Assembly.Count.MaskedCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.BinBound in 4.8s
+Compile Candidate.Cycle63.Numerator.Source.FiniteBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondEnvelopeBudget in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondActualRowBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.CertifiedFourier in 7.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainRadius (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.MomentGates in 6.4s
+Compile Candidate.Cycle25.Energy.Physical.CertifiedZero (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Final.Parameters in 11.9s
+Compile Candidate.Cycle63.Numerator.Fourth.Fourier (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.ActualMoments in 5.6s
+Compile Candidate.Cycle63.CountAffine.SourceMoments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondHighShell in 7.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondSelectedHighShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.FixedDyads in 12.2s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.ChoiceEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderPhysicalBounds in 7.3s
+Compile Candidate.Cycle63.Assembly.Transport.PrincipalRemainderNormalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.Count.MaskedCount in 7.5s
+Compile Candidate.Cycle25.Assembly.SlotLengths (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.FiniteBins in 6.1s
+Compile Candidate.Cycle63.Numerator.Scalar.Exponent (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.CertifiedZero in 5.8s
+Compile Candidate.Cycle25.Energy.Physical.CertifiedRetained (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainRadius in 7.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondChildCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Fourier in 7.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondScalarNormalization (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.SourceMoments in 7.1s
+Compile Candidate.Cycle63.Physical.InitialMass.FirstDictionaryIdentity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondActualRowBudget in 8.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryColumnFibres (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondSelectedHighShell in 8.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondChildHighShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Scalar.Exponent in 5.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySecondSplit (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.SlotLengths in 5.7s
+Compile Candidate.Cycle63.Assembly.Count.BaselineMoments (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorCorrectionExpansion in 25.0s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorActualError (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.ChoiceEnergy in 9.2s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.FrozenEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.PrincipalRemainderNormalized in 8.9s
+Compile Candidate.Cycle63.Assembly.Transport.NormalizedTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.FirstDictionaryIdentity in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondScalarNormalization in 7.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondHighPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.BaselineMoments in 5.0s
+Compile Candidate.Cycle63.Assembly.Count.ChosenHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryColumnFibres in 7.2s
+Compile Candidate.Cycle63.Numerator.Fourth.Hybrid (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorActualError in 6.2s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorDeficit (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondChildCaps in 10.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySecondCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.CertifiedRetained in 15.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondOrientedWidth (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryDictionary in 7.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySecondDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.FrozenEnergy in 11.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondFrequency (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondChildHighShell in 12.5s
+Compile Candidate.Cycle63.Assembly.Low.Reflection.CompletedEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.ChosenHeight in 7.4s
+Compile Candidate.Cycle63.Assembly.Final.Height (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.NormalizedTransport in 11.8s
+Compile Candidate.Cycle63.Assembly.Transport.NormalizedTransportSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySecondSplit in 13.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAllocationMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySecondCaps in 6.5s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorFinitePacket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorDeficit in 8.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorErrorPrimeSum (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondHighPayment in 10.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryTailChild (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySecondDictionary in 6.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryNaturalDictionary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondOrientedWidth in 7.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryWidth (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondFrequency in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondChildHighPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Reflection.CompletedEnergy in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondFrequencyBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorFinitePacket in 5.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondHighBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Final.Height in 8.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryZero (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorErrorPrimeSum in 5.9s
+Compile Candidate.Cycle63.Assembly.Low.Detector.SelectedEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.NormalizedTransportSaving in 9.8s
+Compile Candidate.Cycle63.Assembly.Transport.NonfloorTransport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryTailChild in 8.0s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorErrorPacket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAllocationMass in 10.2s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorTupleRestoration (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryNaturalDictionary in 6.1s
+Compile Candidate.Cycle25.Energy.Physical.RetainedFixed (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryWidth in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryNaturalState (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondChildHighPayment in 6.2s
+Compile Candidate.Cycle25.Assembly.HighData (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondFrequencyBudget in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseSupport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryZero in 7.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryZeroFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondHighBins in 9.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondHighCoordinates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorErrorPacket in 7.1s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorMassDamping (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorTupleRestoration in 6.5s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorPrimeSeparation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.HighData in 4.9s
+Compile Candidate.Cycle25.Numerator.FreeScalarBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.NonfloorTransport in 8.2s
+Compile Candidate.Cycle25.Numerator.PhysicalFront (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryNaturalState in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseSupport in 6.7s
+Compile Candidate.Cycle25.Assembly.HighDataFine (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.SelectedEnergy in 13.7s
+Compile Candidate.Cycle63.Assembly.Low.Detector.InverseEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryZeroFamily in 8.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryZeroPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondHighCoordinates in 6.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondHighBox (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.FreeScalarBound in 6.1s
+Compile Candidate.Cycle63.Numerator.Scalar.Schedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.RetainedFixed in 12.1s
+Compile Candidate.Cycle25.Energy.Physical.OriginalFourth (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorPrimeSeparation in 7.6s
+Compile Candidate.Cycle63.Assembly.Count.SourceCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.PhysicalFront in 7.5s
+Compile Candidate.Cycle25.Numerator.SourceScalar (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Hybrid in 33.3s
+Compile Candidate.Cycle63.Numerator.Fourth.Retained (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorMassDamping in 9.6s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorPacketMellin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Assembly.HighDataFine in 8.5s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorErrorLabels (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighShell in 10.3s
+Compile Candidate.Cycle25.Numerator.SlotSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.InverseEnergy in 7.5s
+Compile Candidate.Cycle63.Assembly.Low.Detector.TupleBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Scalar.Schedule in 5.9s
+Compile Candidate.Cycle25.Numerator.SourcePrimeBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.SourceScalar in 6.1s
+Compile Candidate.Cycle63.Numerator.Scalar.Loss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondHighBox in 8.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighSelected (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Energy.Physical.OriginalFourth in 8.8s
+Compile Candidate.Cycle63.Numerator.FiniteError.FullW (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Retained in 8.2s
+Compile Candidate.Cycle63.Numerator.Fourth.Fixed (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.SourceCount in 9.9s
+Compile Candidate.Cycle63.Assembly.Count.Canonical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.SourcePrimeBins in 5.8s
+Compile Candidate.Cycle63.Marked.FinitePositiveEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorPacketMellin in 8.6s
+Compile Candidate.Cycle25.Numerator.PacketFourth (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.SlotSelection in 7.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorIntegral (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorErrorLabels in 8.7s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorLabelPacket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.TupleBound in 9.2s
+Compile Candidate.Cycle63.Assembly.Low.Detector.GaussianFoundation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Scalar.Loss in 7.5s
+Compile Candidate.Cycle25.Numerator.SourceSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.Canonical in 5.6s
+Compile Candidate.Cycle63.Numerator.Scalar.SourcePacket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.FinitePositiveEnergy in 6.0s
+Compile Candidate.Cycle63.Assembly.Count.Errors (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighSelected in 9.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCompensatedHigh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.PacketFourth in 6.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Fixed in 9.0s
+Compile Candidate.Cycle25.Numerator.DilationBoxes (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorIntegral in 8.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorErrorIntegrable (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorLabelPacket in 7.8s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorLabelPrimeBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.GaussianFoundation in 6.9s
+Compile Candidate.Cycle63.Assembly.Low.Detector.GaussianTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.FiniteError.FullW in 13.0s
+Compile Candidate.Cycle63.Numerator.Fourth.Original (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.SourceSelection in 7.3s
+Compile Candidate.Cycle63.Numerator.FiniteError.CubeTransfer (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.Errors in 5.5s
+Compile Candidate.Cycle63.Assembly.Count.Public (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Scalar.SourcePacket in 6.8s
+Compile Candidate.Cycle63.Numerator.Source.Ledger (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCompensatedHigh in 6.4s
+Compile Candidate.Cycle63.Marked.NaturalMarkedPlain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.DilationBoxes in 8.3s
+Compile Candidate.Cycle25.Numerator.PacketBoxes (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighBins in 10.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorErrorIntegrable in 9.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorReconstruction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorLabelPrimeBound in 9.0s
+Compile Candidate.Cycle25.Numerator.BoxGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Count.Public in 7.0s
+Compile Candidate.Cycle63.Marked.MarkedHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.FiniteError.CubeTransfer in 7.6s
+Compile Candidate.Cycle63.Numerator.FiniteError.Normalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Original in 9.0s
+Compile Candidate.Cycle63.Marked.SlotPolarization (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.GaussianTail in 9.5s
+Compile Candidate.Cycle63.Assembly.Low.Detector.GaussianSum (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Ledger in 8.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineAmplification (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.MarkedHeight in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePoolCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.PacketBoxes in 7.3s
+Compile Candidate.Cycle25.Numerator.FiniteBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.SlotPolarization in 4.9s
+Compile Candidate.Cycle63.Marked.CommonSlotHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.FiniteError.Normalized in 7.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePrimeGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.GaussianSum in 7.6s
+Compile Candidate.Cycle63.Assembly.Low.Detector.Normalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.BoxGeometry in 9.9s
+Compile Candidate.Cycle63.Numerator.Fourth.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.NaturalMarkedPlain in 15.6s
+Compile Candidate.Cycle63.Numerator.OldFourth.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.CommonSlotHeight in 5.2s
+Compile Candidate.Cycle63.Marked.NaturalMarkedPlainField (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorReconstruction in 11.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorLabelReconstruction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineAmplification in 9.4s
+Compile Candidate.Cycle63.Marked.AnnularHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePoolCaps in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorActiveInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePrimeGates in 5.3s
+Compile Candidate.Cycle63.Physical.FinalErrorCapacity.Capacity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.FiniteBins in 8.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorRetained (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Detector.Normalized in 8.0s
+Compile Candidate.Cycle63.Assembly.Low.Probe (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.AnnularHeight in 5.4s
+Compile Candidate.Cycle63.Marked.PositiveInput (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.NaturalMarkedPlainField in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowGeometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorLabelReconstruction in 8.1s
+Compile Candidate.Cycle25.Numerator.BoxReconstruction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.OldFourth.Geometry in 9.4s
+Compile Candidate.Cycle25.Numerator.Imported.NumeratorPhysicalPacketMass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Geometry in 10.0s
+Compile Candidate.Cycle63.Numerator.Fourth.Active (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorRetained in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Low.Probe in 4.8s
+Compile Candidate.Cycle63.Assembly.Final.SourceProbe (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalErrorCapacity.Capacity in 8.7s
+Compile Candidate.Cycle63.Assembly.Transport.CommonProbe (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.PositiveInput in 5.3s
+Compile Candidate.Cycle63.Marked.ActualMarkedPlain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowGeometry in 9.5s
+Compile Candidate.Cycle63.Physical.FinalErrorCapacity.Physical (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.Imported.NumeratorPhysicalPacketMass in 7.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowUniform (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.CommonProbe in 5.7s
+Compile Candidate.Cycle63.Assembly.Transport.SharedNonfloor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseRows in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Final.SourceProbe in 6.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.BoxReconstruction in 8.9s
+Compile Candidate.Cycle25.Numerator.PacketBinBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ActualMarkedPlain in 7.6s
+Compile Candidate.Cycle63.Numerator.Source.PacketBound (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Active in 9.7s
+Compile Candidate.Cycle63.Numerator.Fourth.Public (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseShell in 5.2s
+Compile Candidate.Cycle63.Numerator.OldFourth.Active (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.SharedNonfloor in 5.5s
+Compile Candidate.Cycle63.Assembly.Transport.HighApproximation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryZeroPayment in 63.8s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalErrorCapacity.Physical in 6.7s
+Compile Candidate.Cycle63.Physical.FinalErrorCapacity.Paid (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowPayment in 7.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.PacketBinBound in 7.4s
+Compile Candidate.Cycle25.Numerator.AmplitudeLoss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.PacketBound in 8.3s
+Compile Candidate.Cycle63.Physical.InitialMass.LowOneSidedHarmonic (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Fourth.Public in 8.3s
+Compile Candidate.Cycle63.Physical.FixedInducing (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowUniform in 12.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowProfiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Transport.HighApproximation in 7.2s
+Compile Candidate.Cycle63.Assembly.Final.FixedHigh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalErrorCapacity.Paid in 9.3s
+Compile Candidate.Cycle63.Physical.FinalError.Chain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.OldFourth.Active in 10.7s
+Compile Candidate.Cycle63.Numerator.OldFourth.Public (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.AmplitudeLoss in 7.7s
+Compile Candidate.Cycle25.Numerator.ActualBin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowShell in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowCommon (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FixedInducing in 6.5s
+Compile Candidate.Cycle63.Physical.FixedInducingChosen (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.LowOneSidedHarmonic in 7.3s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowReciprocal (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Final.FixedHigh in 7.0s
+Compile Candidate.Cycle63.Assembly.Final.CommonProbe (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowProfiles in 10.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLow (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedParameters in 17.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySelectedSources (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowReciprocal in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowLabelBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.ActualBin in 8.2s
+Compile Candidate.Cycle25.Numerator.FiniteCollect (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.OldFourth.Public in 8.9s
+Compile Candidate.Cycle63.Numerator.Source.ActualBin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowCommon in 8.7s
+Compile Candidate.Cycle63.Numerator.Source.OldPacket (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalError.Chain in 9.3s
+Compile Candidate.Cycle63.Physical.FinalError.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FixedInducingChosen in 8.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowProfileCommon (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Final.CommonProbe in 6.5s
+Compile Candidate.Cycle63.Assembly.MeshChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighPayment in 56.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryTailPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLow in 6.1s
+Compile Candidate.Cycle63.Numerator.Finite.Cells (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySelectedSources in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalSplit (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorActiveInput in 47.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorModulus (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.MeshChoice in 5.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorSecondSplit (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowLabelBudget in 8.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondChildLowPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.FiniteCollect in 8.5s
+Compile Candidate.Cycle25.Numerator.PhysicalCollect (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalError.Geometry in 8.0s
+Compile Candidate.Cycle63.Physical.FinalError.Payment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.ActualBin in 8.7s
+Compile Candidate.Cycle63.Numerator.Source.Parameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowProfileCommon in 10.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowProfileColumn (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Cells in 8.0s
+Compile Candidate.Cycle63.Numerator.Finite.Geometry (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.OldPacket in 12.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryWeightedSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorModulus in 6.8s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseFrequency (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalSplit in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySelectedRows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondChildLowPayment in 7.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalError.Payment in 7.3s
+Compile Candidate.Cycle63.Physical.FinalError.Main (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle25.Numerator.PhysicalCollect in 7.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryZeroPartition (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Parameters in 9.4s
+Compile Candidate.Cycle63.Numerator.Source.SelectedBin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryWeightedSelection in 7.2s
+Compile Candidate.Cycle63.Numerator.Source.Selection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseFrequency in 6.1s
+Compile Candidate.Cycle63.Numerator.Source.OldSelected (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowProfileColumn in 9.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Geometry in 8.8s
+Compile Candidate.Cycle63.Numerator.Finite.Summation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowPayment in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCostSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryTailPayment in 18.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryZeroPartition in 10.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCoarseSupport (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCostSelection in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondBalanced (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowFamily in 8.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLiveAllocation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Selection in 9.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLiveWitness (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Summation in 9.7s
+Compile Candidate.Cycle63.Numerator.Finite.Transfer (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainTail in 8.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainRemainder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.SelectedBin in 13.7s
+Compile Candidate.Cycle63.Numerator.Source.Class (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCoarseSupport in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryPuncture (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLiveWitness in 4.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalScalar (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.OldSelected in 14.2s
+Compile Candidate.Cycle63.Numerator.Source.OldClass (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLiveAllocation in 5.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryBudgetCardinality (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Transfer in 7.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowSidePayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondBalanced in 9.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondBalancedScalar (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Class in 8.5s
+Compile Candidate.Cycle63.Numerator.Source.Mask (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryBudgetCardinality in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHeightAbsorption (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainRemainder in 10.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLossSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalScalar in 11.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineScheduleData (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.OldClass in 10.8s
+Compile Candidate.Cycle63.Numerator.Source.OldCollect (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryPuncture in 13.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowSidePayment in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCoarseSidePayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySelectedRows in 32.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryClosedRowBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHeightAbsorption in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryShiftedHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorSecondSplit in 40.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineScheduleData in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorTail (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLossSchedule in 9.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMeshChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryShiftedHeight in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorZero (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCoarseSidePayment in 9.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighLossChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondBalancedScalar in 19.2s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondOuterPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalBudget in 12.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowLossChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Mask in 18.3s
+Compile Candidate.Cycle63.Numerator.Source.Collect (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMeshChoice in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.OldCollect in 17.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighCoarseGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighLossChoice in 8.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryFinalParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondOuterPayment in 7.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondEffectiveScalar (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowLossChoice in 8.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCommonLossChoice (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Collect in 9.6s
+Compile Candidate.Cycle63.Numerator.Source.Combined (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighCoarseGates in 7.6s
+Compile Candidate.Cycle63.Numerator.Source.Helpers (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryFinalParameters in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryCommonHighParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorZero in 17.9s
+Compile Candidate.Cycle63.Moment.FirstNumeratorValuation (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondEffectiveScalar in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondNormalizedWindows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.FinalError.Main in 56.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorColumn (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorTail in 23.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorScalarPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineAssembly in 15.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRatioContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCommonLossChoice in 7.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorRemainder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryCommonHighParameters in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryUniformControls (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Moment.FirstNumeratorValuation in 7.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryFinalLossParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondNormalizedWindows in 7.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondColumnReindex (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Combined in 11.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryUniformHighParameters (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRatioContraction in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRatioCap (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryUniformControls in 5.4s
+Compile Candidate.Cycle63.Physical.CoupledRadicalSaving (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryClosedRowBudget in 35.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Helpers in 12.3s
+Compile Candidate.Cycle63.Numerator.Source.Actual (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondColumnReindex in 6.1s
+Compile Candidate.Cycle63.Physical.MarkedHighReserve (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryUniformHighParameters in 6.8s
+Compile Candidate.Cycle63.Marked.FiniteRowPullback (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorScalarPayment in 13.4s
+Compile Candidate.Cycle63.Marked.DeletionCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryFinalLossParameters in 8.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryFinalLowLoss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRatioCap in 9.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRetainedContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.FiniteRowPullback in 4.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryFinalErrorLoss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionCount in 5.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryFinalHighLoss (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.MarkedHighReserve in 9.1s
+Compile Candidate.Cycle63.Marked.DeletionSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.Actual in 12.2s
+Compile Candidate.Cycle63.Numerator.Source.FullW (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryFinalLowLoss in 8.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineFinalSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.CoupledRadicalSaving in 14.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePrimePayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryFinalErrorLoss in 7.6s
+Compile Candidate.Cycle63.Physical.MarkedAllocationReserve (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryFinalHighLoss in 6.7s
+Compile Candidate.Cycle63.Marked.NaturalSlotHeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRetainedContraction in 10.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLabelDisintegration (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorColumn in 28.5s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondProjectorShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionSlots in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondDatumReindex (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighAdmission in 18.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineFinalSchedule in 7.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondNormalizedRestriction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePrimePayment in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainScalarPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.NaturalSlotHeight in 5.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Source.FullW in 9.9s
+Compile Candidate.Cycle63.Numerator.Finite.SourceCells (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondDatumReindex in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLiteralHighFrequency (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.MarkedAllocationReserve in 9.0s
+Compile Candidate.Cycle63.Physical.MarkedHighLedger (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondNormalizedRestriction in 5.8s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondFullNormalizedContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainScalarPayment in 7.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineRetainedPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.SourceCells in 6.6s
+Compile Candidate.Cycle63.Numerator.Finite.Bridge (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLiteralHighFrequency in 6.1s
+Compile Candidate.Cycle63.Marked.AmplitudeCap (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondFullNormalizedContraction in 5.3s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondRatioBox (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorRemainder in 40.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAmplifiedRemainder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineRetainedPayment in 6.4s
+Compile Candidate.Cycle63.Marked.DeletionAnnular (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.AmplitudeCap in 6.5s
+Compile Candidate.Cycle63.Marked.AnnularPool (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowAdmission in 18.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryLowColumn (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.MarkedHighLedger in 12.9s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedOrientedHigh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Numerator.Finite.Bridge in 9.0s
+Compile Candidate.Cycle63.Assembly.ChosenAffine (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondRatioBox in 6.5s
+Compile Candidate.Cycle63.Marked.Route.RepeatedSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondProjectorShell in 22.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainFirstProjectorShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionAnnular in 6.5s
+Compile Candidate.Cycle63.Marked.DeletionRawLift (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.AnnularPool in 4.9s
+Compile Candidate.Cycle63.Marked.DeletionCollisionAlgebra (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.RepeatedSlots in 4.8s
+Compile Candidate.Cycle63.Marked.ColoringEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedOrientedHigh in 5.7s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedHighCoordinates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLabelDisintegration in 27.6s
+Compile Candidate.Cycle63.Marked.DeletionInverse (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.ChosenAffine in 7.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryChosenAffine (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawLift in 6.4s
+Compile Candidate.Cycle63.Marked.DeletionRawOrdinary (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ColoringEnergy in 5.0s
+Compile Candidate.Cycle63.Marked.DeletionRawRescale (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainFirstProjectorShell in 8.2s
+Compile Candidate.Cycle63.Marked.ActualMarkedPlainProfiles (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionCollisionAlgebra in 6.9s
+Compile Candidate.Cycle63.Marked.GenericFiberCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryLowColumn in 12.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedHighCoordinates in 8.0s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedGeometryPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawOrdinary in 6.1s
+Compile Candidate.Cycle63.Marked.Route.VariableSupply (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryChosenAffine in 8.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryChosenSetup (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionInverse in 10.1s
+Compile Candidate.Cycle63.Marked.DeletionInverseSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ActualMarkedPlainProfiles in 6.0s
+Compile Candidate.Cycle63.Marked.ActualRowwiseMarkedPlain (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawRescale in 7.0s
+Compile Candidate.Cycle63.Marked.NaturalSlotAnchor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GenericFiberCount in 7.1s
+Compile Candidate.Cycle63.Marked.NaturalSlotPhase (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedGeometryPayment in 8.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryUnmarkedActualShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionInverseSlots in 6.7s
+Compile Candidate.Cycle63.Marked.DeletionCollisionBounds (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.NaturalSlotAnchor in 6.5s
+Compile Candidate.Cycle63.Marked.WholeFamilyAnchor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.NaturalSlotPhase in 5.7s
+Compile Candidate.Cycle63.Marked.HighSourceFactors (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ActualRowwiseMarkedPlain in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAmplifiedRemainder in 29.9s
+Compile Candidate.Cycle63.Marked.ShellFactor (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryChosenSetup in 9.6s
+Compile Candidate.Cycle63.Marked.CommonSupply (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ShellFactor in 4.4s
+Compile Candidate.Cycle63.Marked.ResidualReserve (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeFamilyAnchor in 5.6s
+Compile Candidate.Cycle63.Marked.WholeFamilyZeros (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorAdmission in 101.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorColumnFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionCollisionBounds in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalAdmission (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedSchedule in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorAbsoluteBox (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.HighSourceFactors in 7.2s
+Compile Candidate.Cycle63.Marked.DeletionCollisionEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.CommonSupply in 6.0s
+Compile Candidate.Cycle63.Marked.RetainedSlotCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryUnmarkedActualShell in 13.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighBranchJoin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainBudget in 23.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainNormalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeFamilyZeros in 6.1s
+Compile Candidate.Cycle63.Marked.WholeFamilyMaximum (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ResidualReserve in 6.8s
+Compile Candidate.Cycle63.Marked.WholeFixedBad (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.VariableSupply in 21.4s
+Compile Candidate.Cycle63.Marked.Route.GenericCountAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.RetainedSlotCaps in 6.8s
+Compile Candidate.Cycle63.Marked.CommonStageSupply (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionCollisionEnergy in 7.3s
+Compile Candidate.Cycle63.Marked.DeletionOverlapSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeFixedBad in 5.0s
+Compile Candidate.Cycle63.Marked.HighFullSlotEnvelope (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighBranchJoin in 6.4s
+Compile Candidate.Cycle63.Marked.SmallSlotDiscard (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeFamilyMaximum in 6.5s
+Compile Candidate.Cycle63.Marked.JointWeightedMultiplicity (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionOverlapSlots in 4.9s
+Compile Candidate.Cycle63.Marked.DeletionOverlapEnergy (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.CommonStageSupply in 5.7s
+Compile Candidate.Cycle63.Marked.OriginalSlotPartition (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.SmallSlotDiscard in 5.3s
+Compile Candidate.Cycle63.Marked.WeightedSlotDiscard (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.HighFullSlotEnvelope in 6.4s
+Compile Candidate.Cycle63.Marked.ProfileMarkedShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.JointWeightedMultiplicity in 7.3s
+Compile Candidate.Cycle63.Marked.MarkedBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.OriginalSlotPartition in 5.4s
+Compile Candidate.Cycle63.Marked.JointWeightedFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WeightedSlotDiscard in 4.4s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedGeometrySupply (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionOverlapEnergy in 8.2s
+Compile Candidate.Cycle63.Marked.DeletionInverseOverlap (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ProfileMarkedShell in 7.8s
+Compile Candidate.Cycle63.Marked.ProfileMarkedFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.JointWeightedFamily in 5.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondWeightedCommon (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.MarkedBins in 7.2s
+Compile Candidate.Cycle63.Marked.JointMarkedBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedGeometrySupply in 5.9s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedGeometryPointwise (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionInverseOverlap in 6.7s
+Compile Candidate.Cycle63.Marked.ActualRowwiseMarkedInverse (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorAbsoluteBox in 30.4s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseControl (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighFamily in 77.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighWeightedSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ProfileMarkedFamily in 8.2s
+Compile Candidate.Cycle63.Marked.CommonMarkedShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.JointMarkedBins in 6.7s
+Compile Candidate.Cycle63.Marked.VariableJointMarkedBins (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedGeometryPointwise in 7.0s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.ActualRowwiseMarkedInverse in 6.7s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondLowSourceCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseControl in 7.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainAbsoluteBox (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.VariableJointMarkedBins in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryBudgetJoin (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.CommonMarkedShell in 7.0s
+Compile Candidate.Cycle63.Marked.TwoCommonMarkedShell (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseCount in 6.9s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseJoint (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.GenericCountAssembly in 33.6s
+Compile Candidate.Cycle63.Marked.Route.ActualUnmarkedGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondLowSourceCaps in 6.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondWeightedCommon in 20.1s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondWeightedShellWindows (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformSchedule in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAllocationCardinality (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalAdmission in 47.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalAggregate (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryBudgetJoin in 8.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySourceNaturalRow (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainAbsoluteBox in 9.3s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedParameterSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseJoint in 7.6s
+Compile Candidate.Cycle63.Physical.InitialMass.SecondCoarseChild (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualUnmarkedGates in 8.2s
+Compile Candidate.Cycle63.Marked.Route.ActualMarkedGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainNormalized in 44.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainOrdinaryContraction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.TwoCommonMarkedShell in 10.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighSourceCaps (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondWeightedShellWindows in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowAggregate (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAllocationCardinality in 5.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainCostReduction (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedParameterSchedule in 5.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainRatioPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySourceNaturalRow in 6.5s
+Compile Candidate.Cycle63.Physical.InitialMass.MarkedUniformSchedule (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.SecondCoarseChild in 6.2s
+Compile Candidate.Cycle63.Optimization.SplitOptimality (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualMarkedGates in 6.4s
+Compile Candidate.Cycle63.Marked.Route.ActualWeightedCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.MarkedUniformSchedule in 7.9s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainOrdinaryContraction in 13.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighSourceCaps in 14.9s
+Compile Candidate.Cycle63.Marked.DeletionGeometry (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorPuncture (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualWeightedCount in 12.8s
+Compile Candidate.Cycle63.Marked.Route.ActualWitnesses (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalAggregate in 23.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalClosure (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionGeometry in 7.5s
+Compile Candidate.Cycle63.Marked.GeometryMarkedPacket (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Marked.DeletionRawSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualWitnesses in 7.6s
+Compile Candidate.Cycle63.Marked.Route.ActualWeightedFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawSlots in 6.5s
+Compile Candidate.Cycle63.Marked.DeletionRawAssembly (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryMarkedPacket in 6.8s
+Compile Candidate.Cycle63.Marked.DeletionMaxAmplitude (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorPuncture in 15.4s
+Compile Candidate.Cycle63.Marked.WholeNaturalBatch (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionMaxAmplitude in 6.3s
+Compile Candidate.Cycle63.Marked.Route.ActualMaxWeighted (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawAssembly in 7.4s
+Compile Candidate.Cycle63.Marked.DeletionFiniteExceptions (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeNaturalBatch in 6.6s
+Compile Candidate.Cycle63.Marked.DeletionRawCleanSlots (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualWeightedFixedMesh in 13.7s
+Compile Candidate.Cycle63.Marked.Route.ActualWitnessesFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionFiniteExceptions in 6.1s
+Compile Candidate.Cycle63.Marked.DeletionSmallRoot (1 threads, 2094 MiB memory limit)
+Candidate.Cycle63.Optimization.SplitOptimality: worker resource ceiling reached while running lean (exit 137, result oom-kill); memory limit 2196290094 bytes
+Memory limit reached for Candidate.Cycle63.Optimization.SplitOptimality; retrying alone after active compilers finish
+Compiled Candidate.Cycle63.Marked.DeletionRawCleanSlots in 8.1s
+Compiled Candidate.Cycle63.Marked.Route.ActualWitnessesFixedMesh in 6.5s
+Compiled Candidate.Cycle63.Marked.DeletionSmallRoot in 6.3s
+Compiled Candidate.Cycle63.Marked.Route.ActualMaxWeighted in 23.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainCostReduction in 57.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainRatioPayment in 67.3s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalClosure in 66.3s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorColumnFamily in 139.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowAggregate in 113.9s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighWeightedSelection in 401.6s
+Compile Candidate.Cycle63.Optimization.SplitOptimality (1 threads, 23040 MiB memory limit, exclusive retry)
+Compiled Candidate.Cycle63.Optimization.SplitOptimality in 236.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainCostPartition (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Marked.DeletionRawPadded (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Marked.Route.ActualUnmarkedUniform (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedCost (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorBudget (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowSelected (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Marked.WholeBufferedMax (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalFullPayment (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainOrdinaryFiber (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedCost in 6.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainPhysicalSelection (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeBufferedMax in 6.8s
+Compile Candidate.Cycle63.Marked.WholeCoreGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualUnmarkedUniform in 7.4s
+Compile Candidate.Cycle63.Marked.Route.ActualMaxWeightedFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.DeletionRawPadded in 9.1s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorBudget in 11.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalized (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainPhysicalSelection in 5.6s
+Compiled Candidate.Cycle63.Marked.WholeCoreGates in 5.8s
+Compile Candidate.Cycle63.Marked.WholePaddedCore (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholePaddedCore in 5.7s
+Compile Candidate.Cycle63.Marked.WholeRawGates (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeRawGates in 4.9s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainCostPartition in 26.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighCostNormalization (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowRows (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.Route.ActualMaxWeightedFixedMesh in 19.0s
+Compile Candidate.Cycle63.Marked.WholeBufferedMaxFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighCostNormalization in 5.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowRows in 6.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighRows (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeBufferedMaxFixedMesh in 6.1s
+Compile Candidate.Cycle63.Marked.WholePaddedCoreFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighRows in 5.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainBufferedPartition (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholePaddedCoreFixedMesh in 5.7s
+Compile Candidate.Cycle63.Marked.WholeRawMaxFixedMesh (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalized in 27.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedAssembly (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalFullPayment in 39.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalErrorFamily (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainBufferedPartition in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedAssembly in 12.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedPayment (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalErrorFamily in 12.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalNormPayment (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedPayment in 50.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedClosure (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainOrdinaryFiber in 134.9s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowPayment in 159.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedRowEmbedding (3 threads, 6283 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedCompleteCost (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedRowEmbedding in 4.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalNormPayment in 156.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalErrorNormPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.WholeRawMaxFixedMesh in 172.9s
+Compile Candidate.Cycle63.Marked.LabeledRawMax (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.LabeledRawMax in 5.1s
+Compile Candidate.Cycle63.Marked.GeometryRawGates (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryRawGates in 5.6s
+Compile Candidate.Cycle63.Marked.GeometryStateRawMax (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedCompleteCost in 21.6s
+Compile Candidate.Cycle63.Marked.GeometryRawBudget (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Marked.RetainedWeightTransport (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryStateRawMax in 5.5s
+Compile Candidate.Cycle63.Marked.GeometryLiteralRawMax (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryRawBudget in 4.4s
+Compiled Candidate.Cycle63.Marked.RetainedWeightTransport in 4.5s
+Compile Candidate.Cycle63.Marked.RetainedFamilyDiscard (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.RetainedFamilyDiscard in 4.4s
+Compile Candidate.Cycle63.Marked.TwoCommonLargeSlotShell (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryLiteralRawMax in 5.3s
+Compile Candidate.Cycle63.Marked.GeometryLiteralMarkedCount (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.TwoCommonLargeSlotShell in 6.6s
+Compiled Candidate.Cycle63.Marked.GeometryLiteralMarkedCount in 8.0s
+Compile Candidate.Cycle63.Marked.GeometryUniformMarkedCount (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryUniformMarkedCount in 4.8s
+Compile Candidate.Cycle63.Marked.GeometryMarkedBins (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryMarkedBins in 10.6s
+Compile Candidate.Cycle63.Marked.GeometryMarkedPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Marked.GeometryMarkedPayment in 8.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMarkedActualShell (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMarkedActualShell in 9.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighActualShell (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalErrorNormPayment in 75.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineExceptionalGates (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighActualShell in 10.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighColumn (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighColumn in 9.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighWindow (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighWindow in 5.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryHighNormalized (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainCoarseNormalized (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainCoarseNormalized in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainCoarseFamily (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryHighNormalized in 7.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighSelected (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedClosure in 205.7s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedFullFamily (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineExceptionalGates in 23.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineRemainder (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainRatioPayment (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalPhaseNormPayment (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePhysicalSelection (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePhysicalSelection in 6.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainNormalized (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainRatioPayment in 6.5s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryExceptionalPhaseNormPayment in 8.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineExceptionalPayment (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineRemainder in 9.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorRemainder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainNormalized in 5.1s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighSelected in 12.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighFull (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorRemainder in 11.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformRemainder (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighFull in 10.5s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighProjectorPayment (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformRemainder in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineRetainedBudget (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighProjectorPayment in 9.3s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineRetainedBudget in 7.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedFullFamily in 38.9s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorFullPayment (3 threads, 6283 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorOrdinaryContraction (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorOrdinaryContraction in 27.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorRatioPayment (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorRatioPayment in 28.3s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineExceptionalPayment in 123.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorContraction (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineBudgetTransport (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainContraction (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineBudgetTransport in 4.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineFinalWeight (1 threads, 2094 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainContraction in 5.5s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineFinalWeight in 4.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidBudget (1 threads, 2094 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineActualBudget (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineActualBudget in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformBudget (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidBudget in 4.8s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineUniformBudget in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidAssembly (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidAssembly in 5.0s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorFullPayment in 145.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorSelectedPayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorSelectedPayment in 7.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorContraction in 137.9s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowSelected in 728.1s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowFull (5 threads, 10472 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorPhysicalPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowFull in 21.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorPhysicalPayment in 22.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorPhysicalTotal (9 threads, 18850 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorPhysicalTotal in 7.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorScalar (9 threads, 18850 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorScalar in 5.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorScalarTransport (9 threads, 18850 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorScalarTransport in 4.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorAggregate (5 threads, 10472 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorFullNormalizedPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorFullNormalizedPayment in 76.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedMenuPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorNormalizedMenuPayment in 9.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryErrorJointNormalizedTransport (2 threads, 4189 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorNormalized (2 threads, 4189 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryErrorJointNormalizedTransport in 14.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorNormalized in 70.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorPayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorPayment in 7.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorCompletePayment (4 threads, 8378 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorAggregate in 164.5s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorCompletePayment in 8.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorFamily (9 threads, 18850 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorFamily in 13.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySourceErrorPayment (9 threads, 18850 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySourceErrorPayment in 4.2s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainCoarseFamily in 667.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowNormalizedPayment (6 threads, 12567 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighPayment (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowNormalizedPayment in 9.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowQuantitativePayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighPayment in 13.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighNormalizedPayment (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighNormalizedPayment in 26.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowQuantitativePayment in 32.3s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighQuantitativePayment (5 threads, 10472 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowPhysicalPayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighQuantitativePayment in 8.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainHighFinalPayment (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowPhysicalPayment in 30.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainCompletePartition (3 threads, 6283 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowFinalPayment (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainCompletePartition in 4.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedPartition (3 threads, 6283 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainSelectedPartition in 4.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowFinalPayment in 18.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryMainLowCompletePayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainHighFinalPayment in 41.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighSelectedTransport (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighSelectedTransport in 5.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighSelectedFiber (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryMainLowCompletePayment in 34.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineLowPayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighSelectedFiber in 73.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineLowPayment in 47.4s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainLowPayment (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainLowPayment in 18.0s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighPayment (5 threads, 10472 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainPayment (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainPayment in 10.8s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighPayment in 32.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainHighReceipt (5 threads, 10472 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighUniform (6 threads, 12567 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineHighUniform in 4.6s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainHighReceipt in 4.8s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainCompletePayment (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainCompletePayment in 4.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainUniform (6 threads, 12567 MiB memory limit)
+Compile Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidComponents (5 threads, 10472 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffinePaidComponents in 4.4s
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometryAffineMainUniform in 4.6s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySourceMainPayment (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySourceMainPayment in 4.2s
+Compile Candidate.Cycle63.Physical.InitialMass.GeometrySourceBudget (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Physical.InitialMass.GeometrySourceBudget in 4.2s
+Compile Candidate.Cycle63.CountAffine.Supply (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.CountAffine.Supply in 10.8s
+Compile Candidate.Cycle63.Assembly.Unconditional (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Assembly.Unconditional in 5.4s
+Compile Candidate.Cycle63.Verification (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Cycle63.Verification in 5.4s
+Compile Candidate.Main (11 threads, 23040 MiB memory limit)
+Compiled Candidate.Main in 5.2s
+compile and export standard solution wrapper
+Comparator and Lean, NanoDa, con-ron
+Kernel verification: 1 simultaneous checks
+Traceback (most recent call last):
+  File "/home/checker/pr64-edbb22b1/verifier/standard/replay.py", line 178, in <module>
+    result=judge_exports(v,config=work/'comparator.json',challenge_export=work/'exports/Challenge.export',solution_export=work/'exports/Solution.export',scratch=work/'judge',bundled=bundled,lean_prefix=judge,environment=env,tools=tools,capacity=capacity,timeout=7200)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/checker/pr64-edbb22b1/verifier/standard/judge.py", line 43, in judge_exports
+    return v.judge_exports(lake=bundled['lake'], config=config,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/checker/cache-standard/verification/environment/palomar/scripts/verify_submission.py", line 5307, in judge_exports
+    return sandboxed_run(
+           ^^^^^^^^^^^^^^
+  File "/home/checker/cache-standard/verification/environment/palomar/scripts/verify_submission.py", line 3182, in sandboxed_run
+    return _cgroup_supervised_run(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/checker/cache-standard/verification/environment/palomar/scripts/verify_submission.py", line 3294, in _cgroup_supervised_run
+    return _classify_confined_result(command, proc, outcome, check=check)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/checker/cache-standard/verification/environment/palomar/scripts/verify_submission.py", line 3206, in _classify_confined_result
+    raise ResourceExhausted(
+scripts.verify_submission.ResourceExhausted: worker resource ceiling reached while running lake (exit 137, result oom-kill)
+Traceback (most recent call last):
+  File "/home/checker/pr64-edbb22b1/run.py", line 3, in <module>
+    subprocess.run(['python3','verifier/standard/replay.py','--profile','verification/profile.json','--prepared','verification/prepared','--work','verification/run','--tool-pins','verification/tool-pins.json'],check=True)
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['python3', 'verifier/standard/replay.py', '--profile', 'verification/profile.json', '--prepared', 'verification/prepared', '--work', 'verification/run', '--tool-pins', 'verification/tool-pins.json']' returned non-zero exit status 1.

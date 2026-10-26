@@ -14,7 +14,7 @@ from scripts.verify_submission import ResourceExhausted
 # The orchestration needs the user bus for delegated cgroups. Candidate phases
 # receive the separate minimal environment constructed by replay.py.
 for key in list(os.environ):
-    if key not in ['PATH','HOME','LANG','XDG_RUNTIME_DIR','DBUS_SESSION_BUS_ADDRESS','QRH_WORKER_THREADS','QRH_KERNEL_JOBS']:
+    if key not in ['PATH','HOME','LANG','XDG_RUNTIME_DIR','DBUS_SESSION_BUS_ADDRESS','QRH_WORKER_THREADS','QRH_KERNEL_JOBS','QRH_REPLAY_BUDGET_SECONDS']:
         del os.environ[key]
 sys.argv = ['replay.py','--profile',str(OUT/'profile.json'),'--prepared',str(OUT/'prepared'),
             '--work',str(OUT/'run'),'--tool-pins',str(OUT/'tool-pins.json')]

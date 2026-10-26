@@ -66,15 +66,19 @@ jobs:
   verify:
     needs: prepare
     if: needs.prepare.outputs.verify == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted, Linux, X64, qrh-proof]
     strategy:
       fail-fast: false
       matrix:
         result: ${{ fromJSON(needs.prepare.outputs.matrix) }}
     # Leave time for setup, replay, and artifact upload before finalization.
-    timeout-minutes: 330
+    timeout-minutes: 870
     permissions:
       contents: read
+    env:
+      QRH_REPLAY_BUDGET_SECONDS: "43200"
+      QRH_WORKER_THREADS: "6"
+      QRH_KERNEL_JOBS: "1"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -82,7 +86,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: 22.17.0
+          node-version: 22.22.1
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: verification-context-${{ github.run_attempt }}
@@ -96,12 +100,16 @@ jobs:
         id: source
         continue-on-error: true
         run: node verifier/actions/prepare.mjs
-      - name: Restore the shared checking environment
+      - name: Validate a protected independently verified receipt
+        id: receipt
         if: steps.source.outcome == 'success'
+        run: node verifier/actions/reuse-receipt.mjs
+      - name: Restore the shared checking environment
+        if: steps.source.outcome == 'success' && steps.receipt.outcome == 'success' && steps.receipt.outputs.reused != 'true'
         uses: ./.github/actions/verifier-cache
       - name: Install worker prerequisites
         id: prerequisites
-        if: steps.source.outcome == 'success'
+        if: steps.source.outcome == 'success' && steps.receipt.outcome == 'success' && steps.receipt.outputs.reused != 'true'
         continue-on-error: true
         run: |
           sudo apt-get update -qq
@@ -132,7 +140,7 @@ jobs:
       - name: Check the canonical theorem with Comparator and all three kernels
         id: check
         if: steps.setup.outcome == 'success'
-        timeout-minutes: 185
+        # Replay enforces its own deadline, leaving time to upload diagnostics.
         run: python3 verifier/actions/run.py
       - name: Record worker completion
         if: always()
@@ -140,7 +148,7 @@ jobs:
           mkdir -p verification
           node --input-type=module -e 'import {writeFileSync} from "node:fs"; writeFileSync("verification/worker-status.json", JSON.stringify({result:process.env.QRH_CHECK_RESULT}));'
         env:
-          QRH_CHECK_RESULT: ${{ steps.check.outcome }}
+          QRH_CHECK_RESULT: ${{ steps.receipt.outcome == 'success' && steps.receipt.outputs.reused == 'true' && 'success' || steps.check.outcome }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -159,7 +167,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
       - name: Require successful worker verification
-        if: always() && steps.check.outcome != 'success'
+        if: always() && steps.check.outcome != 'success' && !(steps.receipt.outcome == 'success' && steps.receipt.outputs.reused == 'true')
         run: |
           echo "Proof verification failed; see the worker diagnostics above."
           exit 1

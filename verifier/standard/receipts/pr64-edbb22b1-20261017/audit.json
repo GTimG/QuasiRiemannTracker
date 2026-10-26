@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "head_sha": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+  "theta_exact": "874835173/1000000000",
+  "verified_at": "2026-10-17T23:31:58.056623+00:00",
+  "report_sha256": "590991f6564dc9e5b012d947e554354c8c0c8fa042a304a941b564cff020ceff",
+  "trusted_verifier_revision": "c4bc7448b7a58a6affc4606dbbf7a138a1789f54",
+  "source_dependency_trees": {
+    "no-hardcoding-20261017": "b0d9f04b4df4760128765a4d97f3b51bad830bd0",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "source_trees_checked_against_git": true,
+  "receipt_artifacts_checked": 4794,
+  "modules_freshly_compiled": 913,
+  "authenticated_cached_modules": 2923,
+  "build_cache": {
+    "url": "https://github.com/GTimG/QuasiRiemannTracker/releases/download/submission-build-cache-v1/352ed90c28261e8b7a5ff8cd4eb012698aee2cecaa77b61a32cb007778e67b59.tar.gz",
+    "sha256": "352ed90c28261e8b7a5ff8cd4eb012698aee2cecaa77b61a32cb007778e67b59",
+    "signer": "e40b1ceb0779cb57cd34d1437db8f54a67d84f1661ea13397dc4e252364ed6d1",
+    "modules_reused": 2923
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "worker": {
+    "kind": "local KVM virtual machine",
+    "vm_memory_GiB": 32,
+    "orchestrator_memory_limit_GiB": 30,
+    "final_checker_memory_limit_GiB": 29,
+    "cpu_limit": 12,
+    "effective_compilation_slots": 11,
+    "kernel_jobs": 1
+  },
+  "driver_changes": "Initial replay extended time budgets. After con-ron OOM, resume-judge.py reauthenticated the completed build checkpoint and repeated sandbox/checker controls and the full final judge with con-ron --jobs=1.",
+  "resume_provenance": {
+    "checkpoint_sha256": "59df8d72c71ed850c06d5de39a76edbfaf2bbc38d2ce6d7b99498389e1f70952",
+    "original_driver_sha256": "e2a8dbce53ebab7642f8d8119d763f3b78e6fda53876ccca00f37e3f5f687dc1",
+    "reason": "Original final checker exhausted memory; repeat the entire Comparator/three-kernel stage with con-ron --jobs=1 on hash-frozen exports after reauthenticating source, tools, libraries and completed-build evidence."
+  },
+  "project_checks": {
+    "project": 316,
+    "production_build": "PASS",
+    "tested_tree": "prospective merge of current main and PR64; temporary merge aborted after tests"
+  },
+  "runtime_resource_adjustments": [
+    {
+      "at": "2026-10-17T22:37:24.282476+00:00",
+      "scope": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-r6fa6ebdbce4c416f86e6a1c127ae82d7.scope/palomar-3a6be69a6fc92c3535d5f7a2",
+      "before": {
+        "memory.high": "24159191040",
+        "memory.max": "27380416512",
+        "memory.current": "25260363776",
+        "memory.events": "low 0\nhigh 61538\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after_memory_high": "27380416512",
+      "reason": "Observed sustained memory.high reclaim throttling with 7 GiB guest memory available. Raised the soft threshold to the unchanged hard cap (25.5 GiB); sandbox, source, tools and acceptance policy unchanged."
+    },
+    {
+      "at": "2026-10-17T22:59:24.951278+00:00",
+      "scope": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-re2cbe06d619d467b92728ed0d692481e.scope/palomar-c5a412d6b8c4ee3578d2e800",
+      "before": {
+        "memory.high": "24159191040",
+        "memory.max": "27380416512",
+        "memory.current": "24755400704",
+        "memory.events": "low 0\nhigh 21844\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after": {
+        "memory.high": "31138512896",
+        "memory.max": "31138512896"
+      },
+      "reason": "Single-worker con-ron reached soft memory threshold; guest had about 7.6 GiB available. Raised local final-checker allowance to 29 GiB within the 32 GiB VM. Acceptance rules and sandbox confinement unchanged."
+    }
+  ],
+  "evidence_transport": "Authenticated SSH; every artifact digest checked against the outside-sandbox receipt.",
+  "publication_scope": "Original receipt, source contract, controls, logs, pins and execution provenance. Large exports and host-specific library inventories retained privately with receipt hashes."
+}

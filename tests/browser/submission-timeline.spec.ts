@@ -28,9 +28,19 @@ test("an earlier submission is a record even when the stronger proof verifies fi
       merged_at: "2030-10-13T02:01:00Z",
     }),
   );
+  const weaker = withSubmissionTimeline(
+    record({
+      id: "fixture-weaker-pr",
+      title: "Example later weaker submission",
+      pr: 43,
+      theta: { numerator: "874865", denominator: "1000000" },
+      submitted_at: "2030-10-12T18:00:00Z",
+      first_verified_at: "2030-10-13T01:00:00Z",
+    }),
+  );
   await routeCatalogue(page, {
     schema_version: 1,
-    records: [record(), stronger, early],
+    records: [record(), stronger, weaker, early],
   });
   await page.goto("/");
   const firstDot = page.locator('[data-dot][data-id="fixture-early-pr"]');
@@ -48,6 +58,43 @@ test("an earlier submission is a record even when the stronger proof verifies fi
       "fill",
       "#1d5d74",
     );
+  const weakerDot = page.locator('[data-dot][data-id="fixture-weaker-pr"]');
+  await expect(weakerDot.locator("circle[stroke]")).toHaveAttribute(
+    "fill",
+    "white",
+  );
+  await expect(weakerDot).toHaveAttribute(
+    "aria-description",
+    "Outside the verified frontier",
+  );
+  const weakerEntry = page.locator(`#entry-${weaker.id}`);
+  await expect(weakerEntry.locator(".entry-decimal")).toHaveCSS(
+    "color",
+    "rgb(107, 115, 120)",
+  );
+  for (const r of [early, stronger]) {
+    await expect(page.locator(`#entry-${r.id} .entry-decimal`)).toHaveCSS(
+      "color",
+      "rgb(19, 32, 42)",
+    );
+  }
+  await page.getByRole("button", { name: "Date", exact: true }).click();
+  await expect(weakerEntry.locator(".entry-decimal")).toHaveCSS(
+    "color",
+    "rgb(107, 115, 120)",
+  );
+  await weakerEntry
+    .getByRole("button", { name: weaker.title, exact: true })
+    .click();
+  await expect(weakerEntry.locator(".proof-detail")).toBeVisible();
+  await expect(weakerEntry.locator(".proof-detail")).toContainText(
+    weaker.method,
+  );
+  await expect(weakerDot.locator("circle[stroke]")).toHaveAttribute(
+    "fill",
+    "white",
+  );
+  await expect(weakerDot).toHaveAttribute("aria-pressed", "true");
   expect(
     Number(await firstDot.locator("circle[stroke]").getAttribute("cx")),
   ).toBeLessThan(

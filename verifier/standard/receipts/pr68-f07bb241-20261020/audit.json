@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "head_sha": "f07bb2418990a9976c0da5f65bb6a7a77da94c9a",
+  "theta_exact": "8748087/10000000",
+  "verified_at": "2026-10-20T23:12:52.462554+00:00",
+  "report_sha256": "9c7b0a2077fcb2c7d5921ede1125da63bde5f393463593469190df14f9930c45",
+  "modules_freshly_compiled": 4663,
+  "candidate_cache_reused": false,
+  "trusted_verifier_revision": "d6103b24af1e98b72bdba1044c1dad6f48d5b902",
+  "driver_unmodified": false,
+  "driver_change": "Only total budget 3h to 8h and judge timeout 1h to 4h; see budget-only.patch",
+  "source_dependency_trees": {
+    "gao-five-step-affine-20261020": "18383359655ea9c6f1942658c0db4da5dcb156b8",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6",
+    "akashlevy-20261009-weighted-numerator": "22982cba42e51462a9ad120e09ac307af6c62475"
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sandbox_controls": "PASS",
+  "approved_library_files": 44577,
+  "approved_OAI_objects_reused": false,
+  "evidence_transport": "Authenticated SSH; returned files checked against outside-sandbox receipt",
+  "limitations": "Pinned non-OAI package objects obtained from fresh dependency trees, official Mathlib cache and protected compatibility patches; complete runtime files copied into a private library and authenticated by manifest. All submitted and OpenAI source dependencies compiled fresh; full proof checked by Comparator and three kernels. Compiler/exporter bootstrap trust remains.",
+  "source_tree": "f94eb62a10f86c825f4ce2a598cb95c6a2bdbaf1",
+  "source_tree_checked_against_git": true,
+  "publication_scope": "Original outside-sandbox report, immutable source contract, exact UTF-8 log contents, checker policy and pins. Host-specific inventories and large exports retained privately with hashes.",
+  "dependency_object_manifest_sha256": "1e9a365fefcbb1c4b0fe7fa23fffa510815d975a0a39f25b527dd81ccb48ace7",
+  "fresh_dependency_provenance": {
+    "protected_revision": "d6103b24af1e98b72bdba1044c1dad6f48d5b902",
+    "manifest_sha256": "0fb03e97506caa2d8f3f0eb77f4de3db288b278571af16410ee25c72953a5911",
+    "runtime_files": 44577,
+    "runtime_manifest_sha256": "1e9a365fefcbb1c4b0fe7fa23fffa510815d975a0a39f25b527dd81ccb48ace7",
+    "source_map_sha256": "08c08d603cf9b8c9e69316ddf4c086d0a68f5b7431e3882e204f79755e840a7d",
+    "selection": "Every .olean, .olean.private, .olean.server, .ir and .ir.sig from the fresh pinned dependency build. Only Lake metadata and editor information omitted.",
+    "setup_sha256": "c85c57695730550a6493198ab571f6009e637916afafce3bd2a0694adfa4a692",
+    "setup_patch_sha256": "3a1f13e43fe8d14f0ae130ff84aa0c3b8f8f5173d0faea31dacfa50a62622211"
+  },
+  "website_checks": {
+    "unit_tests_passed": 316,
+    "build": "PASS",
+    "hosted_project_checks": "PASS",
+    "hosted_run_id": 39459198309,
+    "hosted_head": "f07bb2418990a9976c0da5f65bb6a7a77da94c9a",
+    "scope": "Local tests/build used protected main; hosted project tests passed on the PR merge revision. Proof acceptance remains a separate independent check.",
+    "browser_tests": "Not repeated locally for this source-only submission."
+  }
+}

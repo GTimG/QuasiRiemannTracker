@@ -1,0 +1,122 @@
+/- Actual original retained source/class count at the finite-GenericCount.envelope cutoff.
+Adapted from Gao Target830 physical source count, Apache-2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.Schedule
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.PhysicalDirect.MomentGates
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.PhysicalDirect.SourceCountInitial
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.RetainedBatches
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Cycle25.Assembly.Count.SourceAmplitudeClasses
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Cycle25.Assembly.Count.SourceParametersCount
+noncomputable section
+set_option maxHeartbeats 200000
+set_option autoImplicit false
+open scoped Classical BigOperators Topology ContDiff
+open Filter Set
+open QRH.Record1252270103Return
+
+namespace QRH.Record1252270103Return.GenericPhysical.PhysicalDirect
+variable [Geometry.Parameters] [Geometry.Bounds] [scheme : CountScheme] [GenericArithmetic.PhysicalSchedule]
+open QRH.Record1252270103Return.GenericArithmetic QRH.Record12518109Count OAI OAI.SevenEighths
+open QRH.Record1252270103Return.GenericPhysical (SourceData)
+open Cycle25ProbeFinalAssembly Cycle25ProbeHighRowFamily Cycle25WeightedHighRowFamily
+open ProbeFinalAssembly ProbeHighRowFamily
+open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary
+open ProbeRaySlots HeckeDetectorPhysicalSelection HeckeDetectorAmplitudeFirst HeckeDetectorFiberPartition
+local notation "O" => HeckeFamily.O
+
+theorem physical_source_amplitude_count (D : BaselineData) (F : SourceData) 
+    (counts : CountParameters F.modulus ⊤ D.t) (τ : ℝ) (n : ℕ)
+    (hτ : 0 < τ) (hτzero : τ < (1/200:ℝ)/2)
+    (hτheight : 4*τ < (1/200:ℝ)*D.cost) (hτ2 : 2*τ ≤ D.t) :
+    ∃C : ℝ,1 ≤ C ∧ ∀η : Character,∀ᶠZ : ℝ in atTop,
+      ∀d a C0 : ℝ,(1/200:ℝ) ≤ d → d ≤ 7/8 → 51/100 < a → a ≤ 7/8 → 1 ≤ C0 →
+      ∀rows : Finset FreeRow,
+      (∀u∈rows,u.val≠1 ∧ Z^(1/100:ℝ) ≤ rowNorm u ∧
+        (calibrationForSet F.S F.maximal).residueMonoid u.val≠0 ∧ rowNorm u ≤ Z^(d-D.t)) →
+      ∀i : ℕ,i ≤ n →
+      (∀u∈rows,detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        (3*(i+1:ℕ)*Z^τ) < a+2*D.e) →
+      (∀u∈rows,a ≤ detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        ((3*i:ℕ)*Z^τ)) →
+      ∀z : ℂ,z.re=17/50 → |z.im| ≤ Z^(2*τ) →
+      SourceMomentBound D F counts η Z τ (C0*Z^D.t) (Z^(2*τ)) →
+      let Q := physical F.modulus ⊤ (fun u : FreeRow=>u.val) (fun _ y=>(F.w y:ℂ))
+        (fun _=>2) (fun j=>D.length j/d) (fun _=>z) (Z^d)
+      ∀bin : BinLabel (Finset.univ : Finset (Fin D.N)) ((2*a-1)/2) D.t,
+      let rows' := amplitudeRows rows Finset.univ (Z^d) ((2*a-1)/2) D.t D.t_pos (fun j=>D.length j/d) Q bin
+      let q := classMean Finset.univ ((2*a-1)/2) D.t (fun j=>D.length j/d) bin
+      rows'.Nonempty → 0 ≤ q ∧ q ≤ (2*a-1)/2 ∧
+        (rows'.card:ℝ) ≤ C*C0*Z^(3*D.t)*
+          (Z^d)^(GenericCount.envelope D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t)) := by
+  obtain ⟨K,hK,hcount⟩ := selected_source_count F.modulus ⊤ D.t counts
+    (Sum Bool (RayQuotient.Characters F.modulus ⊤)) D.N n
+    (1/200) (7/8) τ D.t (2*τ) D.t D.t
+    (by norm_num) (by norm_num) hτ D.t_pos (by linarith) D.t_pos
+  refine ⟨K+1,by linarith,?_⟩
+  intro η
+  have hbatches := GenericCount.actual_source_amplitude_batches_at_cutoff F.modulus ⊤ le_top F.S F.exclusions F.maximal η
+    (1/200) (7/8) τ D.ε D.e D.witnessKappa D.cost D.t D.t D.t n (GenericCount.selectedCutoff D.momentKappa)
+    (fun δ p hδ hδhi hp hphi=>GenericCount.selectedCutoff_bounds D.momentKappa_lo D.momentKappa_hi ⟨hδ,hδhi⟩ ⟨hp,hphi⟩)
+    (by norm_num) (by norm_num) hτ hτzero hτheight
+    D.epsilon_pos D.e_pos D.e_small D.witnessKappa_pos D.witnessKappa_small D.cost_pos.le
+    D.t_pos D.t_pos.le D.t_pos (by nlinarith only [D.detector_budget])
+  filter_upwards [hcount,hbatches,eventually_gt_atTop (1:ℝ)] with Z hc hb hZ
+  intro d a C0 hd hd' ha ha' hC0 rows hrows i hi hnext hcurrent z hz hzim hmom
+  dsimp only
+  intro bin hne
+  have hZpos : 0 < Z := zero_lt_one.trans hZ
+  have hdpos : 0 < d := by linarith
+  let Q := physical F.modulus ⊤ (fun u : FreeRow=>u.val) (fun _ y=>(F.w y:ℂ))
+    (fun _=>2) (fun j=>D.length j/d) (fun _=>z) (Z^d)
+  let rows' := amplitudeRows rows Finset.univ (Z^d) ((2*a-1)/2) D.t D.t_pos
+    (fun j=>D.length j/d) Q bin
+  let q := classMean Finset.univ ((2*a-1)/2) D.t (fun j=>D.length j/d) bin
+  have hsub : rows'⊆rows := Finset.filter_subset _ _
+  have hband : rows⊆rowBand (Z^(1/100:ℝ)) (Z^(d-D.t)+1) := by
+    intro u hu
+    exact mem_rowBand.mpr ⟨(hrows u hu).1,(hrows u hu).2.1,by linarith [(hrows u hu).2.2.2]⟩
+  obtain ⟨B,hBr,hBd,hRev,hSlots,hWidths,hW,hUpper,hExternal,hMesh,hBin,hFam,hMean⟩ :=
+    hb d hd hd' (Z^(d-D.t)+1) rows (hne.mono hsub) hband
+      (fun u hu=>(hrows u hu).2.2.1) (fun u hu=>(hrows u hu).2.2.2)
+      a i hi ha (by linarith) hnext hcurrent D.N D.length D.slots_pos
+      D.slots_small (by rw [D.slots_sum]; linarith [Geometry.sixth_lt_ell,Geometry.ell_lt_fifth]) (fun _ y=>(F.w y:ℂ))
+      (fun _=>2) (fun _=>z) bin hne
+  have hBsub : B.rows⊆rows := hBr ▸ hsub
+  have hBfam : ∀u∈B.rows,∀j,B.family u j=
+      sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u) j := by
+    intro u hu j
+    exact hFam u (hBr ▸ hu) j
+  have hraw := (hmom rows d a hd hd' ha (by linarith) hrows i z hz hzim)
+    q B hBsub hBd hRev hSlots hWidths hW hUpper hExternal hMesh hBin hBfam
+  have hν1 : D.t ≤ 1/10000000 := by linarith [D.t_small]
+  have hcard := hc d hd hd' D.momentKappa a D.ε D.t C0 q i hi ha (by linarith)
+    (by linarith) D.epsilon_pos.le D.epsilon_count_small D.momentKappa_lo D.momentKappa_hi
+    D.t_pos hν1 (by linarith) B (by rw [hSlots];simp) hBin (hBr.symm ▸ hne) hMean
+    (fun bin j J K hne=>(hraw bin j J K hne).1)
+    (fun bin j J K hne=>(hraw bin j J K hne).2.1)
+    (fun w hw bin j J K hne=>(hraw bin j J K hne).2.2 w hw)
+  rw [hBr,hMesh] at hcard
+  have hqb := classMean_bounds rows Finset.univ (Z^d) (2*a-1) D.t D.t_pos
+    (fun j=>D.length j/d) Q bin (by linarith)
+    (fun j _=>(div_pos (D.slots_pos j) hdpos).le)
+    (by rw [←Finset.sum_div,D.slots_sum]; exact div_pos (show (0:ℝ)<ell by linarith [Geometry.ell_pos,Geometry.ell_lt_fifth]) hdpos) hne
+  refine ⟨hqb.1,hqb.2,?_⟩
+  have he : GenericCount.envelope D.momentKappa (2*a-1) (q/(2*a-1))+159*D.ε+D.t+D.t+7*D.t=GenericCount.envelope D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t) := by ring
+  rw [he] at hcard
+  apply hcard.trans
+  have hC0pos : 0 ≤ C0 := by linarith
+  have hcp : 0 ≤ (Z^d)^(GenericCount.envelope D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t)) := by positivity
+  apply mul_le_mul_of_nonneg_right _ hcp
+  apply mul_le_mul
+  · nlinarith
+  · apply Real.rpow_le_rpow_of_exponent_le hZ.le
+    linarith
+  · positivity
+  · positivity
+
+end QRH.Record1252270103Return.GenericPhysical.PhysicalDirect
+end
+
+
+#print axioms QRH.Record1252270103Return.GenericPhysical.PhysicalDirect.physical_source_amplitude_count

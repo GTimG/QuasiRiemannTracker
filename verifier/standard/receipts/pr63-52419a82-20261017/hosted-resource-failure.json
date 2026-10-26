@@ -1,0 +1,10 @@
+{
+  "run_url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/38997235503",
+  "head_sha": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+  "check_id": 117292456276,
+  "app": "github-actions",
+  "conclusion": "failure",
+  "completed_at": "2026-10-17T06:09:19Z",
+  "summary": "The final Comparator / three-kernel invocation timed out after 1106 seconds, the remainder of the shared 10800-second budget. Retry on a suitable worker or register a matching independently verified local run.",
+  "classification": "resource-exhausted; no mathematical rejection established"
+}

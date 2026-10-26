@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "head_sha": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+  "base_sha": "2cbdbe7c14e926c1eb33fea0919e561038a27880",
+  "changed_files": 5392,
+  "all_changes_are_new_submission_files": true,
+  "verifier_or_workflow_changes": false,
+  "declared_identity_and_bound_match_PR_body": true,
+  "metadata_license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "all_lineage_ids_exist_on_protected_main": true,
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "predecessor_files_reused_byte_identically": 166,
+  "source_header_credit_counts": {
+    "Hailey Collet": 3602,
+    "OpenAI": 610,
+    "Zhongpai Gao": 90,
+    "DaysSky": 25,
+    "Akash Levy": 33,
+    "ArviFoxy": 1,
+    "Mark Lewko": 1841
+  },
+  "modules_in_required_closure": 8310,
+  "openai_source_tree_unchanged": true,
+  "theta_exact": "437386453/500000000",
+  "previous_best": "8747729897/10000000000",
+  "exact_improvement": "837/10000000000",
+  "executable_or_axiom_keyword_scan": [
+    "src/Submissions/lewko_acyclic_bootstrap_874772906/Collet/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Tactic.lean",
+    "src/Submissions/lewko_acyclic_bootstrap_874772906/Collet/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/MonoTactic.lean",
+    "src/Submissions/lewko_acyclic_bootstrap_874772906/Collet/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Argmin.lean",
+    "src/Submissions/lewko_acyclic_bootstrap_874772906/Collet/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Bracket.lean"
+  ],
+  "proof_acceptance": "PASS: independently replayed with Comparator and Lean, NanoDa and con-ron; see the outside-sandbox receipt."
+}

@@ -1,0 +1,22 @@
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Finite.ReturnFormulas
+set_option autoImplicit false
+namespace Record1252270103Finite
+noncomputable section
+def row042_coefficients : Fin 3 → Fin 4 → ℝ := ![![(100162710035304516043150067233611451/1897288260356250000000000000:ℝ), (99166602734928218917432657709768923/632429420118750000000000000:ℝ), (98174633395160560406467198915687027/632429420118750000000000000:ℝ), (97186802016001540510253690851365763/1897288260356250000000000000:ℝ)],
+![(94458514144154929610454665356812811/948644130178125000000000000:ℝ), (31154040777190033145884832312904169/105404903353125000000000000:ℝ), (277410109682687771842514026000211837/948644130178125000000000000:ℝ), (10164695203570267015556133393431903/105404903353125000000000000:ℝ)],
+![(88992937989940375037594499341620291/1897288260356250000000000000:ℝ), (87996326995764861255190325414702219/632429420118750000000000000:ℝ), (52202517617411329341092770534348199/379457652071250000000000000:ℝ), (86016545089702437977487375769254629/1897288260356250000000000000:ℝ)]]
+theorem row042_identity (δ p : ℝ) : rowMargin .oldPeak .capP δ p =
+ Record12518109.Bernstein.bsum 2 3 (86016545089702437977487375769254629/905421225479425228800000000000000000:ℝ) row042_coefficients (27/64:ℝ) (57/128:ℝ) (15/32:ℝ) (31/64:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_oldPeak,edgeC_oldPeak,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row042_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row042_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (27/64:ℝ) (57/128:ℝ))
+ (hp : p ∈ Set.Icc (15/32:ℝ) (31/64:ℝ)) : 0 < rowMargin .oldPeak .capP δ p := by
+ rw [row042_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row042_coefficients]
+#print axioms row042_identity
+#print axioms row042_pos
+end
+end Record1252270103Finite

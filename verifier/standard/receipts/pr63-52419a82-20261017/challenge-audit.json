@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "reviewed_pr_head": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+  "protected_revision": "381e41b3fbe7050d60112fb7c0ef0fb29c079e78",
+  "canonical_upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "canonical_source_sha256": "8fb13ad977bca104591fcbc6ef01a58496e7385053c9b1445f95749afc0eff54",
+  "generated_challenge_sha256": "669e50f098090c4ac59e96c5b076d9b13bc7b5e7e3d75a3014ee4ab820b16d57",
+  "theta_exact": "87483/100000",
+  "mathematical_change": "Only 7/8 replaced by the submitted normalized rational",
+  "other_changes": "Theorem and enclosing namespace renamed for the comparator entrypoint",
+  "comparison": "Complete binder, hypotheses and conclusion bytes match after that single literal substitution. Comparator additionally accepted statement and transitive definition/axiom identity; all three kernels accepted."
+}

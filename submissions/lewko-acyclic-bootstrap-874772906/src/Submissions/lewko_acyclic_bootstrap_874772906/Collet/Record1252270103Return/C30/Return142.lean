@@ -1,0 +1,22 @@
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.C30.ReturnFormulas
+set_option autoImplicit false
+namespace Record1252270103Return.C30
+noncomputable section
+def row142_coefficients : Fin 3 → Fin 4 → ℝ := ![![(148204862478333640810482057865757/14034737699628366792375000000000:ℝ), (2670910815274682616339116772341651/126312639296655301131375000000000:ℝ), (1648396030356323288390000856447113/126312639296655301131375000000000:ℝ), (1307890603928584480995264355099/561389507985134671695000000000:ℝ)],
+![(268274412741224237909228972508413/7017368849814183396187500000000:ℝ), (4700616356289710562841734883814039/63156319648327650565687500000000:ℝ), (2748139300313600460322235887096927/63156319648327650565687500000000:ℝ), (85577095137896835284197101171721/12631263929665530113137500000000:ℝ)],
+![(837455569392222572363975887151069/14034737699628366792375000000000:ℝ), (17210133292953881459088325039468127/126312639296655301131375000000000:ℝ), (479178014534030483952665301410533/4678245899876122264125000000000:ℝ), (639311771596819406884853716595177/25262527859331060226275000000000:ℝ)]]
+theorem row142_identity (δ p : ℝ) : rowMargin .newTop .old δ p =
+ Record12518109.Bernstein.bsum 2 3 (1307890603928584480995264355099/255494602745234623918080000000000:ℝ) row142_coefficients (3/8:ℝ) (3/4:ℝ) (0:ℝ) (1/4:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_newTop,edgeC_newTop,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row142_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row142_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (3/8:ℝ) (3/4:ℝ))
+ (hp : p ∈ Set.Icc (0:ℝ) (1/4:ℝ)) : 0 < rowMargin .newTop .old δ p := by
+ rw [row142_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row142_coefficients]
+#print axioms row142_identity
+#print axioms row142_pos
+end
+end Record1252270103Return.C30

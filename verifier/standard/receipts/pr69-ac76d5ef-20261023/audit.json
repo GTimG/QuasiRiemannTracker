@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "repository": "GTimG/QuasiRiemannTracker",
+  "number": 69,
+  "head_sha": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+  "result_id": "hailey-collet-1252270103",
+  "theta_exact": "8747729897/10000000000",
+  "verified_at": "2026-10-22T22:13:39.013693+00:00",
+  "report_sha256": "b9976aad6617832a1140abcfa903bb2fa06c736e5578940ae5a814ef2a3fc877",
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "modules_freshly_compiled": 6471,
+  "candidate_cache_reused": false,
+  "source_files_verified": 6477,
+  "baseline": "PASS",
+  "sandbox_controls": "PASS",
+  "nanoda_revision": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "nanoda_binary_sha256": "7ed99e73afd390178b6f9ddcf812890a84bd94128e1807962a0cc1dbcbddd936",
+  "nanoda_upstream_unmodified": true,
+  "protected_revision": "b3c157e2e1278b7690eda65499bf9974dc59950c",
+  "independent_evidence_transport": "Authenticated SSH, per-file SHA-256 manifest, immutable Git source reconstruction",
+  "upstream_unit_tests": "54 passed; 0 failed; 8 documentation tests ignored upstream",
+  "publication": "not yet published"
+}

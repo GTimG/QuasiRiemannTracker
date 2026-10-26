@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "head_sha": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+  "base_sha": "381e41b3fbe7050d60112fb7c0ef0fb29c079e78",
+  "changed_files": 1621,
+  "all_changes_are_new_submission_files": true,
+  "verifier_or_workflow_changes": false,
+  "predecessor_files_reused_byte_identically": 1214,
+  "changed_predecessor_files": [
+    "Candidate/Main.lean"
+  ],
+  "new_Lean_files": 405,
+  "notices_preserved_byte_identically": true,
+  "metadata_license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "all_lineage_ids_exist_on_protected_main": true,
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "theta_exact": "87483/100000",
+  "previous_best": "218709/250000",
+  "exact_improvement": "3/500000",
+  "proof_acceptance": "PASS: independently replayed with Comparator and Lean, NanoDa and con-ron; see the outside-sandbox receipt."
+}

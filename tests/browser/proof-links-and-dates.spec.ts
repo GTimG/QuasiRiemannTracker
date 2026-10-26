@@ -15,7 +15,7 @@ test("verified proof badges open solution sources and contribution dates retain 
     page.getByRole("button", { name: "Date", exact: true }),
   ).toBeVisible();
   for (const record of catalogue.records) {
-    const row = page.locator("tbody tr").filter({
+    const row = page.locator(".leaderboard-entry").filter({
       has: page.getByRole("button", { name: record.title, exact: true }),
     });
     const badge = row.locator(".verification-badge");
@@ -35,13 +35,17 @@ test("verified proof badges open solution sources and contribution dates retain 
         "Verification pending",
       );
     }
-    const dateCell = row.locator('td[data-label="Date"]');
+    const dateCell = row.locator(".entry-meta");
     await expect(dateCell.locator("time")).toHaveAttribute(
       "datetime",
       record.date_precision === "year"
         ? record.timeline_at.slice(0, 4)
         : record.timeline_at,
     );
-    await expect(dateCell.locator("small")).toHaveText(record.date_label);
+    await expect(dateCell.locator("time")).toHaveAttribute(
+      "title",
+      `${record.date_label}: ${record.timeline_at}`,
+    );
+    await expect(dateCell.locator("small")).toHaveCount(0);
   }
 });

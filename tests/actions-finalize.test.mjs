@@ -5,6 +5,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { record as catalogueRecord } from "./fixtures/catalogue.mjs";
+import { registeredFixture } from "./fixtures/registered-receipt.mjs";
 const repository = "GTimG/QuasiRiemannTracker",
   head = "a".repeat(40);
 const entrypoint = new URL("../verifier/actions/finalize.mjs", import.meta.url)
@@ -77,6 +78,12 @@ function fixture() {
 function run(t, data, env = {}) {
   const cwd = mkdtempSync(join(tmpdir(), "qrh-finalize-"));
   t.after(() => rmSync(cwd, { recursive: true, force: true }));
+  if (data.registered) {
+    const f = registeredFixture(cwd, data.context.expected);
+    data.attempt = f.attempt();
+    if (data.registered === "forged")
+      data.attempt.registration_sha256 = "0".repeat(64);
+  }
   for (const dir of ["verification-context", "verification"])
     mkdirSync(join(cwd, dir));
   writeFileSync(
@@ -107,7 +114,7 @@ function run(t, data, env = {}) {
         writeFileSync(join(directory, "attempt.json"), JSON.stringify(attempt));
         writeFileSync(
           join(directory, "run/result.json"),
-          JSON.stringify(attempt.report),
+          JSON.stringify(attempt.report ?? {}),
         );
         writeFileSync(
           join(directory, "worker-status.json"),
@@ -180,6 +187,42 @@ test("publisher accepts current-run proof without reading local receipts", (t) =
   );
   assert.ok(archived > 0, "archive is durable before publishing success");
   assert.ok(archived < result.requests.length - 1);
+});
+test("publisher authenticates a registered receipt and archives it before admission", (t) => {
+  const data = fixture();
+  data.registered = true;
+  const result = run(t, data);
+  assert.equal(result.status, 0);
+  assert.equal(result.requests.at(-1).body.conclusion, "success");
+  assert.match(
+    result.requests.at(-1).body.output.summary,
+    /no proof replay was needed/,
+  );
+  const blob = result.requests.find(
+    (r) => r.method === "POST" && r.url.endsWith("/git/blobs"),
+  );
+  const archived = JSON.parse(
+    Buffer.from(blob.body.content, blob.body.encoding).toString(),
+  );
+  assert.equal(archived.certificate.verified_at, "2026-10-13T00:00:00Z");
+  assert.match(archived.certificate.report_url, /\/blob\/[a-f0-9]{40}\//);
+  assert.equal(archived.report_json, null);
+});
+test("a registered worker cannot forge evidence or skip successful completion", (t) => {
+  for (const mode of ["forged", "failed-job"]) {
+    const data = fixture();
+    data.registered = mode;
+    if (mode === "failed-job")
+      data.completions = { "candidate-proof": "failure" };
+    const result = run(t, data);
+    assert.equal(result.status, 1);
+    assert.equal(result.requests.at(-1).body.conclusion, "failure");
+    assert.ok(
+      result.requests.every(
+        (r) => !(r.method === "POST" && r.url.includes("/git/")),
+      ),
+    );
+  }
 });
 test("archive failure prevents a successful admission check", (t) => {
   const result = run(t, fixture(), { ARCHIVE_FAILURE: "1" });

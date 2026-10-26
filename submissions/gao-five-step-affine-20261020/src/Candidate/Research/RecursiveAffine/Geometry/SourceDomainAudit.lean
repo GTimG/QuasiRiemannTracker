@@ -1,0 +1,12 @@
+import Candidate.Research.RecursiveAffine.Geometry.SourceMask1
+import Candidate.Research.RecursiveAffine.Geometry.SourceMask2
+import Candidate.Research.RecursiveAffine.Geometry.SourceMask3
+import Candidate.Research.RecursiveAffine.Geometry.SourceMask4
+import Candidate.Research.RecursiveAffine.Geometry.SourceComparison1
+import Candidate.Research.RecursiveAffine.Geometry.SourceReflection1
+import Candidate.Research.RecursiveAffine.Geometry.SourceComparison2
+import Candidate.Research.RecursiveAffine.Geometry.SourceReflection2
+import Candidate.Research.RecursiveAffine.Geometry.SourceComparison3
+import Candidate.Research.RecursiveAffine.Geometry.SourceReflection3
+import Candidate.Research.RecursiveAffine.Geometry.SourceComparison4
+import Candidate.Research.RecursiveAffine.Geometry.SourceReflection4

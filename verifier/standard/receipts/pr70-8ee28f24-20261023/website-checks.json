@@ -1,0 +1,13 @@
+{
+  "unit_tests": 316,
+  "unit_test_failures": 0,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "tested_integration_base": "2cbdbe7c14e926c1eb33fea0919e561038a27880",
+  "tested_submission_head": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+  "hosted_project_checks": "PASS",
+  "browser_tests_passed": 47,
+  "browser_tests_skipped": 3,
+  "production_paths": "PASS",
+  "hosted_run": 39918917694
+}

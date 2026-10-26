@@ -1,0 +1,18 @@
+{
+  "protected_revision": "9c0e14f985041e397f71c574028193ee595a0f98",
+  "reviewed_head": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+  "source_repository": "GTimG/QuasiRiemannTracker",
+  "original_verifier_hashes": {
+    "verifier/worker_resources.py": "6adb10e4500471486ab1a8630e43222e782444598a41f96573a0f6ef47dd9c51",
+    "verifier/actions/library_contract.py": "4357ff48402e75d3b64d4a711232e40e88a123b452812059f2fe40d13c23b025",
+    "verifier/standard/compile.py": "f3f20b9272567d0724414721a5444749ff51259b9aea68bf4794f91486c303cd",
+    "verifier/standard/judge.py": "3bc5a9851c161d00f7f4837f24736bf7b82f7342b1998115aa26cc016514d1c9",
+    "verifier/standard/build_cache.py": "a5acfcefa0e30ffbf030ca620b4cbe87dff44530ace952fcc00aae40398ef9c3",
+    "verifier/standard/replay.py": "2ff5bceaca4de34cf10a64bbac1dcab550ebd019a54cca2b082ca5d974598c9e",
+    "verifier/standard/tool-pins.json": "2fe2e75e2a28d99ac1faefc44e127b44910730b4bcda303b5e0c5202c24895f2"
+  },
+  "original_driver_sha256": "2ff5bceaca4de34cf10a64bbac1dcab550ebd019a54cca2b082ca5d974598c9e",
+  "driver_sha256": "c0793e27b1b7c76d4df566db01c10a8801ef7f94a48645b01e6688d48dbcd999",
+  "only_changes": "Shared deadline 10800 -> 28800 seconds; final judge timeout 3600 -> 14400 seconds. No acceptance, sandbox, tool or axiom policy changes.",
+  "worker_sha256": "5a0426a607d55b4d21fc9008d10d406eedff71bf60b0940cd2654a9c3697357f"
+}

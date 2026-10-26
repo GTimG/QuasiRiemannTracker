@@ -1,0 +1,12 @@
+{
+  "logs.json:upstream/upstream-release.log": {
+    "original_sha256": "92b86a9653a9a33edea8aeb9bf8d2acfe69dd95194185550a0ecad16c36dace8",
+    "published_sha256": "9afaf039500deb9db8a6b3ee5d0a9ed684c29cd184afd8d21112c3f168ec2396",
+    "reason": "Private filesystem paths only"
+  },
+  "logs.json:upstream/upstream-tests.log": {
+    "original_sha256": "ba3cbd3611000073dc85c92d9159206ab30fb5889e92045b96cfdc141d609651",
+    "published_sha256": "ef81a258cca3710f4f9d1af2ff5106ceb3854fb7927a19cc58ce9b1f5e393d3d",
+    "reason": "Private filesystem paths only"
+  }
+}

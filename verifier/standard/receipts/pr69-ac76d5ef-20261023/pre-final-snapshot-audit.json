@@ -1,0 +1,17 @@
+{
+  "status.json": {
+    "recorded_sha256": "29f405dbc8793507a8b816c72601131ce4d18dfe0eb258513b2d75e068dab705",
+    "final_file_sha256": "6edf16fdfd478b314c7239cdb846620546fafe5eecace23da5dd6b3e37c253e8",
+    "note": "Recorded artifact hash is the pre-final snapshot, before the final PASS write/log line."
+  },
+  "attempt.json": {
+    "recorded_sha256": "50d8f66500849180a28993b8f40cb7960c2969595c38671dd75a40db10031892",
+    "final_file_sha256": "6b360efe12773736e8355f38b3cf120d9b235b181501b5d6cab276bc9c4c73d8",
+    "note": "Recorded artifact hash is the pre-final snapshot, before the final PASS write/log line."
+  },
+  "worker.log": {
+    "recorded_sha256": "4fc7d21c38edd97d0e2cd0c551054c46bd760f64f6347154deefe92b755ad55a",
+    "final_file_sha256": "d2a028db47d2b6d44dff930e66b25c3ad044e803310c3f3e43ca20872343b324",
+    "note": "Recorded artifact hash is the pre-final snapshot, before the final PASS write/log line."
+  }
+}

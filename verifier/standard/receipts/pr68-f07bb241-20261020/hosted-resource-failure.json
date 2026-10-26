@@ -1,0 +1,11 @@
+{
+  "source_head": "f07bb2418990a9976c0da5f65bb6a7a77da94c9a",
+  "run_id": 39459276356,
+  "run_attempt": 1,
+  "check_run_id": 118754595734,
+  "classification": "resource-exhausted",
+  "reason": "Admission failed: worker resource ceiling reached while running lake (exit 137, result oom-kill). Retry verification on a suitable worker, or register a matching independently verified local run.",
+  "mathematical_rejection": false,
+  "verification_status": "No accepted proof receipt from this hosted attempt",
+  "url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/39459276356"
+}

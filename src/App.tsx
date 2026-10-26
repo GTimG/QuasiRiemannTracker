@@ -1,63 +1,43 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MathJax } from "better-react-mathjax";
-import {
-  ExternalLink,
-  Github,
-  GitPullRequest,
-  BadgeCheck,
-  Clock,
-  X,
-  FileCheck2,
-} from "lucide-react";
+import { Github, GitPullRequest, X } from "lucide-react";
 import Chart from "./Chart";
 import { cmp, decimal, recordHistory } from "../core/rational.mjs";
 import type { Contribution } from "./types";
 import {
   contributionDate,
-  boundLabel,
   verifiedHere,
-  statusLabel,
   timelineRecords,
   historicalBaseline,
-  formatContributionDate,
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
-import CatalogueDetail from "./CatalogueDetail";
+import Leaderboard, { type SortKey } from "./Leaderboard";
+import Milestones from "./Milestones";
 import LeanCode from "./LeanCode";
+import { tabs, useNavigation, type Tab } from "./navigation";
 const upstream =
   "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/";
-const timestamp = (s: string) =>
-  new Date(s)
-    .toISOString()
-    .replace("T", " ")
-    .replace(".000Z", "Z")
-    .replace("Z", " UTC");
-type SortKey = "title" | "author" | "bound" | "date";
-const contributionTitle = (r: Contribution) =>
-  r.title.includes(" · ") ? r.title.split(" · ").slice(1).join(" · ") : r.title;
-const columns: { key: SortKey; label: string }[] = [
-  { key: "title", label: "Contribution" },
-  { key: "author", label: "Author" },
-  { key: "bound", label: "Exact bound θ" },
-  { key: "date", label: "Date" },
-];
-const proofSolutionUrl = (r: Contribution) => r.solution_url;
-const projectUrl = (r: Contribution) => {
-  if (r.repository) return `https://github.com/${r.repository}`;
-  const publication = r.references.find((ref) =>
-    /publication|paper|manuscript|writeup|homepage/i.test(ref.label),
-  );
-  if (publication) return publicUrl(publication.url);
-};
 const leanTheorem = `theorem quasi_riemann_bound
     {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
     (hs : (θ : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
     LFunction χ s ≠ 0 := by
   sorry`;
 export default function App() {
+  const { tab, graph, setTab, setGraph, tabHref } = useNavigation();
+  const navigate = (event: React.MouseEvent<HTMLAnchorElement>, next: Tab) => {
+    if (
+      event.button ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+    event.preventDefault();
+    setTab(next);
+  };
   const [catalogue, setCatalogue] = useState<Contribution[]>([]),
     [repository, setRepository] = useState<string | null>(null),
-    [tab, setTab] = useState("Timeline"),
     [sort, setSort] = useState<{
       key: SortKey;
       direction: "ascending" | "descending";
@@ -101,16 +81,14 @@ export default function App() {
         const comparison =
           sort.key === "bound"
             ? cmp(a.theta, b.theta)
-            : sort.key === "title"
-              ? contributionTitle(a).localeCompare(contributionTitle(b))
-              : sort.key === "author"
-                ? a.authors
-                    .map((author) => author.name)
-                    .join(", ")
-                    .localeCompare(
-                      b.authors.map((author) => author.name).join(", "),
-                    )
-                : contributionDate(a).localeCompare(contributionDate(b));
+            : sort.key === "author"
+              ? a.authors
+                  .map((author) => author.name)
+                  .join(", ")
+                  .localeCompare(
+                    b.authors.map((author) => author.name).join(", "),
+                  )
+              : contributionDate(a).localeCompare(contributionDate(b));
         return comparison * (sort.direction === "ascending" ? 1 : -1);
       }),
     [all, sort],
@@ -118,8 +96,15 @@ export default function App() {
   const active = all,
     best = [...active]
       .filter(verifiedHere)
-      .sort((a, b) => cmp(a.theta, b.theta))[0],
-    detail = all.find((r) => r.id === selected);
+      .sort((a, b) => cmp(a.theta, b.theta))[0];
+  const revealRecord = (id: string) => {
+    setSelected(id);
+    requestAnimationFrame(() =>
+      document
+        .getElementById(`entry-${id}`)
+        ?.scrollIntoView({ block: "nearest", behavior: "smooth" }),
+    );
+  };
   useEffect(() => {
     const context = (
       document as Document & {
@@ -154,7 +139,7 @@ export default function App() {
               throw Error("Expected a contribution ID");
             const r = all.find((r) => r.id === input.id);
             if (!r) throw Error("Unknown contribution");
-            setSelected(r.id);
+            revealRecord(r.id);
             await new Promise(requestAnimationFrame);
             return { id: r.id, theta: r.theta };
           },
@@ -168,7 +153,11 @@ export default function App() {
     <div className="shell">
       <main id="main">
         <header className="topbar">
-          <a className="brand" href="#main" onClick={() => setTab("Timeline")}>
+          <a
+            className="brand"
+            href={tabHref("Timeline")}
+            onClick={(event) => navigate(event, "Timeline")}
+          >
             <img src={publicUrl("favicon.svg")} alt="" width="36" height="36" />
             QRH Leaderboard
           </a>
@@ -214,7 +203,7 @@ export default function App() {
                 <button
                   className="best-bound"
                   aria-label="View best verified proof"
-                  onClick={() => setSelected(best.id)}
+                  onClick={() => revealRecord(best.id)}
                 >
                   <MathJax dynamic>
                     {`\\(\\theta \\le ${decimal(best.theta, 16).replace("…", "\\ldots")}\\)`}
@@ -226,15 +215,16 @@ export default function App() {
             </div>
           </section>
           <nav className="view-nav" aria-label="Research views">
-            {["Timeline", "Leaderboard", "Protocol"].map((name) => (
-              <button
+            {tabs.map((name) => (
+              <a
                 key={name}
+                href={tabHref(name)}
                 aria-current={tab === name ? "page" : undefined}
-                onClick={() => setTab(name)}
+                onClick={(event) => navigate(event, name)}
               >
                 {name}
                 {name === "Leaderboard" && <small>{all.length}</small>}
-              </button>
+              </a>
             ))}
           </nav>
           {error && (
@@ -244,14 +234,16 @@ export default function App() {
           )}
           {tab === "Protocol" ? (
             <Protocol />
+          ) : tab === "Milestones" ? (
+            <Milestones />
           ) : (
             <>
-              <div
-                className={"research-layout" + (detail ? " has-detail" : "")}
-              >
+              <div className="research-layout">
                 <div className="research-main">
                   {tab === "Timeline" && (
                     <Chart
+                      view={graph}
+                      onViewChange={setGraph}
                       events={[]}
                       records={records.filter(
                         (record) =>
@@ -262,179 +254,18 @@ export default function App() {
                           verifiedHere(record) || historicalBaseline(record),
                       )}
                       selected={selected}
-                      onSelect={(r) => setSelected(r.id)}
+                      onSelect={(r) => revealRecord(r.id)}
                     />
                   )}{" "}
-                  <section className="panel contribution-table">
-                    <div className="table-scroll">
-                      <table role="table">
-                        <caption className="sr-only">
-                          Equivalent keyboard-accessible table of every plotted
-                          contribution
-                        </caption>
-                        <thead>
-                          <tr>
-                            {columns.map(({ key, label }) => (
-                              <th
-                                key={key}
-                                scope="col"
-                                aria-sort={
-                                  sort.key === key ? sort.direction : "none"
-                                }
-                              >
-                                <button
-                                  onClick={() =>
-                                    setSort({
-                                      key,
-                                      direction:
-                                        sort.key === key &&
-                                        sort.direction === "ascending"
-                                          ? "descending"
-                                          : "ascending",
-                                    })
-                                  }
-                                >
-                                  {label}
-                                  {sort.key === key && (
-                                    <span aria-hidden="true">
-                                      {sort.direction === "ascending"
-                                        ? "↑"
-                                        : "↓"}
-                                    </span>
-                                  )}
-                                </button>
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {records.map((r) => (
-                            <tr
-                              key={r.id}
-                              onClick={() => setSelected(r.id)}
-                              className={
-                                selected === r.id ? "selected-row" : ""
-                              }
-                            >
-                              <td data-label="Contribution">
-                                <div className="contribution-name">
-                                  <button
-                                    className="row-title"
-                                    aria-label={r.title}
-                                    onClick={() => setSelected(r.id)}
-                                  >
-                                    {contributionTitle(r)}
-                                  </button>
-                                  {historicalBaseline(r) ? (
-                                    <span
-                                      className="tag historical"
-                                      title={statusLabel(r)}
-                                    >
-                                      {statusLabel(r)}
-                                    </span>
-                                  ) : (
-                                    <a
-                                      className={
-                                        "tag verification-badge " +
-                                        (verifiedHere(r) ? "teal" : "amber")
-                                      }
-                                      title={`${statusLabel(r)} · View checked solution`}
-                                      aria-label={`Verified solution for ${contributionTitle(r)}`}
-                                      href={proofSolutionUrl(r)}
-                                      onClick={(event) =>
-                                        event.stopPropagation()
-                                      }
-                                      target="_blank"
-                                      rel="noreferrer"
-                                    >
-                                      {verifiedHere(r) ? (
-                                        <BadgeCheck
-                                          size={18}
-                                          aria-hidden="true"
-                                        />
-                                      ) : (
-                                        <Clock size={18} aria-hidden="true" />
-                                      )}
-                                      <span className="sr-only">
-                                        {statusLabel(r)}
-                                      </span>
-                                    </a>
-                                  )}
-                                  {projectUrl(r) && (
-                                    <a
-                                      className="source-link"
-                                      href={projectUrl(r)}
-                                      onClick={(event) =>
-                                        event.stopPropagation()
-                                      }
-                                      aria-label={`Project homepage for ${contributionTitle(r)}`}
-                                      title="Project homepage"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                    >
-                                      <ExternalLink
-                                        size={16}
-                                        aria-hidden="true"
-                                      />
-                                    </a>
-                                  )}
-                                </div>
-                              </td>
-                              <td data-label="Author" className="author-cell">
-                                {r.authors.map((a) => a.name).join(", ")}
-                              </td>
-                              <td
-                                data-label="Exact bound θ"
-                                className="fraction-cell"
-                              >
-                                {boundLabel(r)}
-                                <small>{decimal(r.theta, 14)}</small>
-                              </td>
-                              <td data-label="Date">
-                                <time
-                                  dateTime={
-                                    r.date_precision === "year"
-                                      ? contributionDate(r).slice(0, 4)
-                                      : contributionDate(r)
-                                  }
-                                  title={
-                                    r.date_precision === "year"
-                                      ? `${formatContributionDate(r)} (year only)`
-                                      : timestamp(contributionDate(r))
-                                  }
-                                >
-                                  {formatContributionDate(r)}
-                                </time>
-                                <small>
-                                  {r.date_label || "First verified"}
-                                </small>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    {!records.length && (
-                      <div className="empty-table">
-                        <FileCheck2 size={24} />
-                        <h3>No active contributions yet</h3>
-                        <p>
-                          Successful Lean and NanoDa checks, followed by
-                          attribution review, unlock publication.
-                        </p>
-                      </div>
-                    )}
-                  </section>
+                  <Leaderboard
+                    records={records}
+                    selected={selected}
+                    onSelect={setSelected}
+                    onNavigate={revealRecord}
+                    sort={sort}
+                    onSort={setSort}
+                  />
                 </div>
-                {detail && (
-                  <aside className="details" aria-live="polite">
-                    <CatalogueDetail
-                      record={detail}
-                      onClose={() => setSelected(null)}
-                      onSelect={(id) => setSelected(id)}
-                    />
-                  </aside>
-                )}
               </div>
             </>
           )}

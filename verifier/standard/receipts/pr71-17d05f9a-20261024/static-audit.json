@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "head_sha": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+  "base_sha": "0ce80fdddebb03128d30a917006d8520e7a774b8",
+  "changed_files": 922,
+  "all_changes_are_new_submission_files": true,
+  "verifier_or_workflow_changes": false,
+  "declared_identity_and_bound_match_PR_body": true,
+  "metadata_license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "all_lineage_ids_exist_on_protected_main": true,
+  "dependencies": [
+    "openai-baseline",
+    "hailey-collet-1252270103"
+  ],
+  "dependency_source_trees_unchanged": true,
+  "introduced_namespace_modules": 920,
+  "required_build_modules": 7391,
+  "source_header_credit_counts": {
+    "Hailey Collet": 603,
+    "Mark Lewko": 696,
+    "Apache": 688,
+    "OpenAI": 110,
+    "DaysSky": 6,
+    "Zhongpai Gao": 8,
+    "Akash Levy": 10
+  },
+  "theta_exact": "21869322649/25000000000",
+  "previous_best": "437386453/500000000",
+  "exact_improvement": "1/25000000000",
+  "suspicious_code_keyword_scan": [],
+  "pr70_endpoint_not_imported": true,
+  "proof_acceptance": "PASS: independently replayed with Comparator and Lean, NanoDa and con-ron; see the outside-sandbox receipt."
+}

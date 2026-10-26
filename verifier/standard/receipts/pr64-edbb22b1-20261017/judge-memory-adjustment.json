@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-17T22:37:24.282476+00:00",
+  "scope": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-r6fa6ebdbce4c416f86e6a1c127ae82d7.scope/palomar-3a6be69a6fc92c3535d5f7a2",
+  "before": {
+    "memory.high": "24159191040",
+    "memory.max": "27380416512",
+    "memory.current": "25260363776",
+    "memory.events": "low 0\nhigh 61538\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "after_memory_high": "27380416512",
+  "reason": "Observed sustained memory.high reclaim throttling with 7 GiB guest memory available. Raised the soft threshold to the unchanged hard cap (25.5 GiB); sandbox, source, tools and acceptance policy unchanged."
+}

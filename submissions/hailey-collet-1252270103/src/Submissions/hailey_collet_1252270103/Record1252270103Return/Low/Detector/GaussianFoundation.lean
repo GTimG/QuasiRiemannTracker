@@ -1,0 +1,182 @@
+import Submissions.hailey_collet_1252270103.Record1252270103Return.Low.Detector.LowCentralGeometry
+import Submissions.hailey_collet_1252270103.Record1252270103Return.Low.Detector.TupleBound
+import Submissions.hailey_collet_1252270103.Record1252270103Return.Low.Geometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowRemoteMass
+
+set_option autoImplicit false
+
+/-! Adapted from OpenAI/math family003, pinned modules Detector/LowGaussianDyad, Detector/LowRemoteMass.
+Apache-2.0 upstream attribution retained. Physical lengths and scalar budgets use Cycle61. -/
+namespace OAI
+noncomputable section
+variable [QRH.Record1252270103Return.Geometry.Parameters]
+namespace SevenEighths.Record1252270103ProbeLow
+section
+open scoped Classical ContDiff SchwartzMap
+open MeasureTheory
+open ProbePhysical
+open CompletedGauss CanonicalQuadraticSieve RayFourExpansion
+local notation "O" => ActualEisensteinCubic.O
+local notation "Id" => Ideal O
+def lowCommonDyad {K : ℕ} (η : HeckeFamily.Character) (C : CalibrationData)
+    (W0 W1 : ℝ→ℂ) (slots : Fin K→Finset O) (W : Fin K→ℝ→ℂ) (Yp : Fin K→ℝ)
+    (J : Finset (Fin K)) (X Y U R : ℝ) (V : SchwartzMap ℝ ℂ)
+    (hV : HasCompactSupport (V:ℝ→ℂ)) : ℂ :=
+  ∫t : ℝ,(∑p : ∀i,slots i,compensationSubsetWeight η W Yp (fun i=>(p i).val) J*
+    compensationRowTest η C W0 W1 (fun i=>(p i).val) J X Y U t*
+      selectedSlotFactor W Yp (fun i=>(p i).val) J t)*gaussianJointDensity V hV (U/R) t
+lemma lowCommonDyad_eq_family {K : ℕ} (η : HeckeFamily.Character) (C : CalibrationData)
+    (W0 W1 : ℝ→ℂ) (slots : Fin K→Finset O) (W : Fin K→ℝ→ℂ) (Yp : Fin K→ℝ)
+    (J : Finset (Fin K)) (X Y U R : ℝ) (V : SchwartzMap ℝ ℂ)
+    (hV : HasCompactSupport (V:ℝ→ℂ)) :
+    lowCommonDyad η C W0 W1 slots W Yp J X Y U R V hV=
+    gaussianPhysicalFamilyIntegral η C W0 W1 (Finset.univ : Finset (∀i,slots i))
+      (fun p=>compensationSubsetWeight η W Yp (fun i=>(p i).val) J)
+      (fun p=>Ideal.span {slotProduct (fun i=>(p i).val) (Finset.univ\J)})
+      (fun p=>X/elementNorm (slotProduct (fun i=>(p i).val) J))
+      (fun p=>Y/elementNorm (slotProduct (fun i=>(p i).val) J))
+      (fun i : SelectedSlot J=>W i.val)
+      (fun p i=>elementNorm (p i.val).val/Yp i.val) V hV U R := rfl
+lemma lowCommonDyad_norm_of_bound {K : ℕ} (η : HeckeFamily.Character) (C : CalibrationData)
+    (W0 W1 : ℝ→ℂ) (slots : Fin K→Finset O) (W : Fin K→ℝ→ℂ) (Yp : Fin K→ℝ)
+    (J : Finset (Fin K)) (X Y U R B : ℝ) (degree : ℕ) (V : SchwartzMap ℝ ℂ)
+    (hV : HasCompactSupport (V:ℝ→ℂ))
+    (hb : ∀t : ℝ,‖∑p : ∀i,slots i,compensationSubsetWeight η W Yp (fun i=>(p i).val) J*
+      compensationRowTest η C W0 W1 (fun i=>(p i).val) J X Y U t*
+        selectedSlotFactor W Yp (fun i=>(p i).val) J t‖≤B*(1+‖t‖)^degree) :
+    ‖lowCommonDyad η C W0 W1 slots W Yp J X Y U R V hV‖≤
+      B*gaussianJointMoment V hV degree (U/R) := by
+  let f := fun t : ℝ=>(∑p : ∀i,slots i,compensationSubsetWeight η W Yp (fun i=>(p i).val) J*
+      compensationRowTest η C W0 W1 (fun i=>(p i).val) J X Y U t*
+        selectedSlotFactor W Yp (fun i=>(p i).val) J t)*gaussianJointDensity V hV (U/R) t
+  have hi := (JointLogSeparation.weighted_schwartz_integrable (gaussianJointDensity V hV (U/R)) degree).const_mul B
+  have hmajor (t : ℝ) : ‖f t‖≤B*((1+‖t‖)^degree*‖gaussianJointDensity V hV (U/R) t‖) := by
+    dsimp only [f]
+    rw [norm_mul]
+    simpa only [mul_assoc] using mul_le_mul_of_nonneg_right (hb t)
+      (norm_nonneg (gaussianJointDensity V hV (U/R) t))
+  have hh := norm_integral_le_of_norm_le hi (Filter.Eventually.of_forall hmajor)
+  simpa only [f,lowCommonDyad,gaussianJointMoment,integral_const_mul] using hh
+theorem low_central_gaussian_dyad (η : HeckeFamily.Character) (S : Finset Id)
+    (hS : ∀P∈S,P.IsMaximal) (hbad : fixedBadPrimes⊆S)
+    {K : ℕ} (ell : Fin K→ℝ) (hell : ∀i,0≤ell i) (hsum : ∑i,ell i≤QRH.Record1252270103Return.Geometry.ell)
+    (a b ε : ℝ) (ha : 0<a) (hε : 0<ε) (hε1 : ε<1)
+    (W0 W1 : ℝ→ℂ) (a0 b0 a1 b1 M : ℝ) (ha0 : 0<a0) (ha1 : 0<a1)
+    (hab1 : a1<b1) (hM : 0≤M)
+    (hW0 : Function.support W0⊆Set.Icc a0 b0) (hW1 : Function.support W1⊆Set.Icc a1 b1)
+    (hW0s : ContDiff ℝ ∞ W0) (hW1s : ContDiff ℝ ∞ W1) (hWM : ∀x,‖W1 x‖≤M) :
+    ∃degree : ℕ,∃C : ℝ,0<C ∧ ∀ᶠZ : ℝ in Filter.atTop,1<Z ∧
+    ∀(T : Fin K→Finset PrimeIdeal),(∀i P,P∈T i→Supported P.val)→
+      (∀i P,P∈T i→P.val∉S)→Pairwise (fun i j=>Disjoint (T i) (T j))→
+      (∀i P,P∈T i→a*Z^(ell i)≤(Ideal.absNorm P.val:ℝ) ∧ (Ideal.absNorm P.val:ℝ)≤b*Z^(ell i))→
+    ∀(J : Finset (Fin K))(U : ℝ),0<U→
+      Z^(1+lowSelectedLength ell J-ε/2)≤U→U≤Z^(1+lowSelectedLength ell J+ε/2)→
+    ∀(W : Fin K→ℝ→ℂ),(∀i x,‖W i x‖≤1)→
+    ∀(V : SchwartzMap ℝ ℂ)(hV : HasCompactSupport (V:ℝ→ℂ)),
+      ‖lowCommonDyad η (calibrationForSet S hS) W0 W1 (fun i=>canonicalSlotSupport (T i))
+        W (fun i=>Z^(ell i)) J (Z^(QRH.Record1252270103Return.Geometry.x:ℝ)) (Z^(QRH.Record1252270103Return.Geometry.y:ℝ)) U
+          (Z^(1+lowSelectedLength ell J)) V hV‖≤
+        C*Z^((QRH.Record1252270103Return.Geometry.signal QRH.Record1252270103Return.Geometry.theta)+254*ε)*gaussianJointMoment V hV degree (U/Z^(1+lowSelectedLength ell J)) := by
+  obtain ⟨degree,C,hC,he⟩ := low_central_compensated_tuple η S hS hbad ell hell hsum
+    a b ε ha hε hε1 W0 W1 a0 b0 a1 b1 M ha0 ha1 hab1 hM hW0 hW1 hW0s hW1s hWM
+  refine ⟨degree,C,hC,?_⟩
+  filter_upwards [he] with Z hZ
+  refine ⟨hZ.1,?_⟩
+  intro T hT hout hdis hnorm J U hU hlo hhi W hW V hV
+  apply lowCommonDyad_norm_of_bound
+  intro t
+  simpa only [mul_assoc,mul_left_comm,mul_comm] using hZ.2 T hT hout hdis hnorm J U hU hlo hhi W hW t
+end
+section
+open scoped Classical
+open ProbePhysical
+open CompletedGauss CanonicalQuadraticSieve
+local notation "O" => ActualEisensteinCubic.O
+local notation "Id" => Ideal O
+lemma canonicalSlot_count (T : Finset PrimeIdeal) (hT : ∀P∈T,Supported P.val)
+    (H : ℝ) (hH : 1≤H) (hnorm : ∀P∈T,(Ideal.absNorm P.val:ℝ)≤H) :
+    ((canonicalSlotSupport T).card:ℝ)≤128*H := by
+  have hh := DescentFiberCost.finite_ideal_count_real (lowPrimeIdealList T) H hH
+    (fun I hI=>(lowPrimeIdealList_prime T I hI).ne_zero) (lowPrimeIdealList_norm T H hnorm)
+  have he := Fintype.card_congr (canonicalSlotEquiv T hT)
+  simp only [Fintype.card_coe] at he
+  rw [lowPrimeIdealList,Finset.card_image_of_injective _ Subtype.val_injective,he] at hh
+  exact hh
+lemma canonicalTuple_count {K : ℕ} (ell : Fin K→ℝ) (hell : ∀i,0≤ell i)
+    (hsum : ∑i,ell i≤QRH.Record1252270103Return.Geometry.ell) (b Z : ℝ) (hZ : 1≤Z)
+    (T : Fin K→Finset PrimeIdeal) (hT : ∀i P,P∈T i→Supported P.val)
+    (hnorm : ∀i P,P∈T i→(Ideal.absNorm P.val:ℝ)≤b*Z^(ell i)) :
+    (Fintype.card (∀i,canonicalSlotSupport (T i)):ℝ)≤(128*max 1 b)^K*Z^(QRH.Record1252270103Return.Geometry.ell:ℝ) := by
+  rw [Fintype.card_pi,Nat.cast_prod]
+  calc
+    _≤∏i,128*(max 1 b*Z^(ell i)) := by
+      apply Finset.prod_le_prod₀ (fun i _=>Nat.cast_nonneg _)
+      intro i hi
+      simp only [Fintype.card_coe]
+      apply canonicalSlot_count _ (hT i) _
+        (one_le_mul_of_one_le_of_one_le (le_max_left _ _) (Real.one_le_rpow hZ (hell i)))
+      intro P hP
+      exact (hnorm i P hP).trans (mul_le_mul_of_nonneg_right (le_max_right _ _) (by positivity))
+    _=(128*max 1 b)^K*Z^(∑i,ell i) := by
+      simp_rw [←mul_assoc]
+      rw [Finset.prod_mul_distrib,Finset.prod_const,Finset.card_univ,Fintype.card_fin,
+        ←Real.rpow_sum_of_pos (lt_of_lt_of_le zero_lt_one hZ)]
+    _≤_ := mul_le_mul_of_nonneg_left (Real.rpow_le_rpow_of_exponent_le hZ hsum) (by positivity)
+lemma slotProduct_norm_ge_one {K : ℕ} (p : Fin K→O) (hp : ∀i,p i≠0) (J : Finset (Fin K)) :
+    1≤elementNorm (slotProduct p J) := by
+  unfold elementNorm
+  exact_mod_cast Nat.one_le_iff_ne_zero.mpr (Ideal.absNorm_eq_zero_iff.not.mpr
+    (Ideal.span_singleton_eq_bot.not.mpr (slotProduct_nonzero p hp J)))
+lemma compensationSubsetWeight_norm_le_one {K : ℕ} (η : HeckeFamily.Character)
+    (W : Fin K→ℝ→ℂ) (hW : ∀i x,‖W i x‖≤1) (Y : Fin K→ℝ)
+    (p : Fin K→O) (hp : ∀i,p i≠0) (J : Finset (Fin K)) :
+    ‖compensationSubsetWeight η W Y p J‖≤1 := by
+  rw [compensationSubsetWeight,norm_mul]
+  apply (mul_le_of_le_one_left (norm_nonneg _) _).trans _
+  · rw [compensationSubsetCoefficient,norm_mul,norm_mul,norm_pow,norm_neg,norm_one,one_pow,one_mul,
+      Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg (Real.rpow_nonneg (slotProduct_norm_pos p hp J).le _),norm_star]
+    exact (mul_le_of_le_one_left (norm_nonneg _) (Real.rpow_le_one_of_one_le_of_nonpos (slotProduct_norm_ge_one p hp J) (by norm_num))).trans (ProbeRow.targetMonoid_norm_le_one η _)
+  · rw [norm_prod]
+    exact Finset.prod_le_one₀ (fun _ _=>norm_nonneg _) (fun i _=>hW i _)
+lemma compensation_scale_mass_bound {K : ℕ} (η : HeckeFamily.Character) (C : CalibrationData)
+    (ell : Fin K→ℝ) (hell : ∀i,0≤ell i) (hsum : ∑i,ell i≤QRH.Record1252270103Return.Geometry.ell)
+    (b Z : ℝ) (hZ : 1≤Z) (T : Fin K→Finset PrimeIdeal)
+    (hT : ∀i P,P∈T i→Supported P.val)
+    (hnorm : ∀i P,P∈T i→(Ideal.absNorm P.val:ℝ)≤b*Z^(ell i))
+    (J : Finset (Fin K)) (W : Fin K→ℝ→ℂ) (hW : ∀i x,‖W i x‖≤1) :
+    gaussianPhysicalScaleMass C (Finset.univ : Finset (∀i,canonicalSlotSupport (T i)))
+      (fun p=>compensationSubsetWeight η W (fun i=>Z^(ell i)) (fun i=>(p i).val) J)
+      (fun p=>Z^(QRH.Record1252270103Return.Geometry.x:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J))
+      (fun p=>Z^(QRH.Record1252270103Return.Geometry.y:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J))
+      (fun i : SelectedSlot J=>W i.val)
+      (fun p i=>elementNorm (p i.val).val/Z^(ell i.val))≤
+        (elementNorm C.generator*(128*max 1 b)^K)*Z := by
+  have hz : 0<Z := lt_of_lt_of_le zero_lt_one hZ
+  have hp (p : ∀i,canonicalSlotSupport (T i)) (i : Fin K) : (p i).val≠0 :=
+    canonicalSlotSupport_nonzero _ (hT i) _ (p i).property
+  have hterm (p : ∀i,canonicalSlotSupport (T i)) :
+      ‖compensationSubsetWeight η W (fun i=>Z^(ell i)) (fun i=>(p i).val) J‖*
+        (∏i : SelectedSlot J,‖W i.val (elementNorm (p i.val).val/Z^(ell i.val))‖)*
+        lowPhysicalScale C (Z^(QRH.Record1252270103Return.Geometry.x:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J))
+          (Z^(QRH.Record1252270103Return.Geometry.y:ℝ)/elementNorm (slotProduct (fun i=>(p i).val) J))≤
+      elementNorm C.generator*Z^((1-QRH.Record1252270103Return.Geometry.ell):ℝ) := by
+    have hcoeff : ‖compensationSubsetWeight η W (fun i=>Z^(ell i)) (fun i=>(p i).val) J‖*
+        (∏i : SelectedSlot J,‖W i.val (elementNorm (p i.val).val/Z^(ell i.val))‖)≤1 := (mul_le_of_le_one_left (Finset.prod_nonneg (fun _ _=>norm_nonneg _)) (compensationSubsetWeight_norm_le_one η W hW _ _ (hp p) J)).trans (Finset.prod_le_one₀ (fun _ _=>norm_nonneg _) (fun (i : SelectedSlot J) _=>hW i.val _))
+    have hL := slotProduct_norm_ge_one _ (hp p) J
+    rw [lowPhysicalScale_source C Z _ hz]
+    apply (mul_le_of_le_one_left (by unfold elementNorm;positivity) hcoeff).trans
+    exact div_le_self (by unfold elementNorm;positivity) (one_le_pow₀ hL)
+  unfold gaussianPhysicalScaleMass
+  apply (Finset.sum_le_sum (fun p _=>hterm p)).trans
+  simp only [Finset.sum_const,Finset.card_univ,nsmul_eq_mul]
+  have hc := mul_le_mul_of_nonneg_right (canonicalTuple_count ell hell hsum b Z hZ T hT hnorm)
+    (show 0≤elementNorm C.generator*Z^((1-QRH.Record1252270103Return.Geometry.ell):ℝ) by unfold elementNorm;positivity)
+  apply hc.trans_eq
+  calc
+    _=(elementNorm C.generator*(128*max 1 b)^K)*(Z^(QRH.Record1252270103Return.Geometry.ell:ℝ)*Z^((1-QRH.Record1252270103Return.Geometry.ell):ℝ)) := by ring
+    _=_ := by rw [←Real.rpow_add hz];norm_num
+end
+end SevenEighths.Record1252270103ProbeLow
+end
+end OAI

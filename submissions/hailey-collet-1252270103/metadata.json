@@ -1,0 +1,44 @@
+{
+  "title": "A zero-free half-plane from finite ordinary source moments",
+  "authors": [
+    {
+      "name": "Hailey Collet",
+      "url": "https://x.com/HaileyStormC"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 8747729897/10000000000, with the principal pole excluded. The direct proof uses the accepted two-level affine Hecke bound as its initial input, a finite global ordinary-source induction, an intermediate return, the selected final source graph and the final Mellin argument. The source estimates preserve the ordinary two-factor coefficient, natural character zeros, common punctures, profiles and independent heights. The exact scalar certificates cover the full closed intervals. Builds on OpenAI's original framework, Akash Levy's weighted numerator, Hailey Collet's earlier affine work, Zhongpai Gao's refinements, timbalud's marked asymmetric counting and common-radical allocation, DaysSky's detector and ArviFoxy's two-level affine construction, with inherited notices retained. QRH-Catalogue was used throughout the component search and reuse. Hailey Collet is the sole human author; the research, drafting and Lean development were AI-assisted.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-directional-affine-20261016",
+    "gao-balanced-marked-20261017",
+    "no-hardcoding-20261017",
+    "two-level-affine-20261019"
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "QRH-Catalogue",
+      "url": "https://github.com/HaileyStorm/QRH-Catalogue"
+    },
+    {
+      "label": "Hailey Collet on X",
+      "url": "https://x.com/HaileyStormC"
+    },
+    {
+      "label": "Two-level affine bootstrap (PR 67)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+    },
+    {
+      "label": "Standalone paper and formalization",
+      "url": "https://haileystorm.github.io/research/finite-ordinary-source-moments/"
+    }
+  ]
+}

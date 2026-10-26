@@ -1,0 +1,69 @@
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Bootstrap.PR67Source.Cycle63.Moment.JointWindow
+namespace OAI.SevenEighths
+end OAI.SevenEighths
+open _root_.OAI _root_.OAI.SevenEighths
+namespace Record1252270103Bootstrap.PR67
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+namespace OAI.SevenEighths.Cycle63Moment
+noncomputable section
+open scoped Classical BigOperators SchwartzMap ContDiff
+open MeasureTheory HeckeFamily CanonicalQuadraticSieve
+open CenteredMomentCommonRadialData CenteredMomentCommonWindowColumn
+open CenteredMomentCommonPairedSource CenteredMomentCommonHeightEnvelope
+open CenteredMomentPlainWindowEnergy CenteredMomentExceptionalWindowPair
+open CenteredMomentHeckeColumnWindow CenteredMomentSmooth FourierBridge
+open CenteredMomentSourceRow
+open CenteredMomentHeckeWindowEnergy
+local notation "O" => HeckeFamily.O
+local instance heterogeneousWindowDecidableSum {ι : Type*} : DecidableEq (ι⊕Fin 2) := Classical.decEq _
+
+/-- A single Hilbert energy across different surviving slot sets, before
+Mellin integration. The scalar normalization is retained for every row. -/
+theorem actual_heterogeneous_joint_window_energy {α κ : Type*} [Fintype α] [DecidableEq α]
+    (rows : Finset κ) (slots : κ→Finset α) (s : (k : κ)→ Input (slots k))
+    (C R seed L : κ→ Ideal O) (hC : ∀k,Supported (C k)) (η : κ→ Character)
+    (t θ X : κ→ℝ) (hX : ∀k,0<X k) (z : κ→O) (scalar : κ→ℂ)
+    (V : ℝ→ℂ) (hc : HasCompactSupport V) (hs : ContDiff ℝ ∞ V)
+    (J : ℕ) (E : ℝ) (hE : 0≤E)
+    (henergy : ∀u : ℝ,
+      (∑k∈rows,‖scalar k*normalizedColumn
+        (withHeight (s k) (η k) (t k+2*Real.pi*(u-θ k)))
+        (C k) (hC k) (R k) (seed k) (L k) (z k)‖^2)≤E*(1+‖u‖)^(2*J)) :
+    (∑k∈rows,‖scalar k*windowColumn (s k) (C k) (hC k) (R k) (seed k) (L k)
+      (η k) (t k) (θ k) (X k) V (z k)‖^2)≤
+        E*(∫u : ℝ,(1+‖u‖)^J*‖columnDensity V hc hs u‖)^2 := by
+  let φ (k : κ) (u : ℝ) := logPhase (θ k-u) (Real.log (X k))*
+    (scalar k*normalizedColumn (withHeight (s k) (η k) (t k+2*Real.pi*(u-θ k)))
+      (C k) (hC k) (R k) (seed k) (L k) (z k))
+  have hi (k : κ) : Integrable (fun u=>columnDensity V hc hs u*φ k u) := by
+    have hh := (actual_window_column_integrable (s k) (C k) (hC k) (R k) (seed k) (L k)
+      (η k) (t k) (θ k) (X k) (hX k) V hc hs (z k)).const_mul (scalar k)
+    convert hh using 1
+    funext u
+    dsimp [φ]
+    ring
+  have hb (u : ℝ) : (∑k : rows,‖φ k.val u‖^2)≤E*((1+‖u‖)^J)^2 := by
+    rw [Finset.sum_coe_sort rows (fun k=>‖φ k u‖^2)]
+    simpa only [φ,norm_mul,logPhase_norm,one_mul,←pow_mul,Nat.mul_comm] using henergy u
+  have hh := finite_weighted_integral_energy (columnDensity V hc hs)
+    (fun k : rows=>φ k.val) (fun u=>(1+‖u‖)^J) (fun _=>by positivity)
+    E hE (columnDensity_moments V hc hs J) (fun k=>hi k.val) hb
+  have he (k : κ) : (∫u : ℝ,columnDensity V hc hs u*φ k u)=
+      scalar k*windowColumn (s k) (C k) (hC k) (R k) (seed k) (L k)
+        (η k) (t k) (θ k) (X k) V (z k) := by
+    rw [actual_window_column_integral (s k) (C k) (hC k) (R k) (seed k) (L k)
+      (η k) (t k) (θ k) (X k) (hX k) V hc hs (z k),←integral_const_mul]
+    apply integral_congr_ae
+    filter_upwards [] with u
+    dsimp [φ]
+    ring
+  simp only [he] at hh
+  rw [Finset.sum_coe_sort rows (fun k=>‖scalar k*windowColumn (s k) (C k) (hC k)
+    (R k) (seed k) (L k) (η k) (t k) (θ k) (X k) V (z k)‖^2)] at hh
+  exact hh
+
+end
+end OAI.SevenEighths.Cycle63Moment
+
+end Record1252270103Bootstrap.PR67

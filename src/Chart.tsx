@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Minus, Plus, Maximize2, Move } from "lucide-react";
+import { Minus, Plus, Maximize2, Move, Search } from "lucide-react";
+import { milestones } from "./bound-milestones";
 import {
   BASELINE,
   sub,
@@ -13,6 +14,7 @@ import {
 } from "../core/rational.mjs";
 import type { Contribution, Event, Rational } from "./types";
 import { chartExtent } from "../core/chart-viewport.mjs";
+import type { GraphView, HistoryMode, UpdateGraph } from "./navigation";
 import {
   contributionDate,
   formatContributionDate,
@@ -21,30 +23,71 @@ import {
   statusLabel,
   timelineRecords,
 } from "../core/catalogue.mjs";
+
+function zoomed(
+  current: GraphView,
+  factor: number,
+  anchorX = 0.5,
+  anchorY = 0.5,
+  scaleVertical = true,
+): GraphView {
+  const span = current.window[1] - current.window[0];
+  const nextSpan = Math.max(0.0001, Math.min(1e8, span * factor));
+  const anchor = current.window[0] + span * anchorX;
+  let vertical = current.vertical;
+  if (scaleVertical) {
+    const scale = Math.max(0.0001, Math.min(1e6, vertical.scale / factor));
+    const ratio = scale / vertical.scale;
+    vertical = {
+      scale,
+      offset: (1 - anchorY - 0.5) * (1 - ratio) + vertical.offset * ratio,
+    };
+  }
+  return {
+    ...current,
+    window: [anchor - nextSpan * anchorX, anchor + nextSpan * (1 - anchorX)],
+    vertical,
+  };
+}
+
 export default function Chart({
+  view,
+  onViewChange,
   records,
   allRecords,
   events,
   selected,
   onSelect,
 }: {
+  view: GraphView;
+  onViewChange: UpdateGraph;
   records: Contribution[];
   allRecords: Contribution[];
   events: Event[];
   selected: string | null;
   onSelect: (r: Contribution) => void;
 }) {
-  const [window, setWindow] = useState<[number, number]>([0, 100]),
-    [vertical, setVertical] = useState({ scale: 1, offset: 0 }),
-    [hover, setHover] = useState<Contribution | null>(null);
+  const { window, overview, vertical } = view;
+  const [viewedAt] = useState(Date.now);
+  const [hover, setHover] = useState<Contribution | null>(null);
+  const lastWheel = useRef(0);
   const dragging = useRef<{
     x: number;
     y: number;
     window: [number, number];
     offset: number;
+    moved: boolean;
   } | null>(null);
   const svg = useRef<SVGSVGElement>(null);
   const [W, setWidth] = useState(800);
+  useEffect(() => {
+    const endGesture = () => {
+      lastWheel.current = 0;
+      dragging.current = null;
+    };
+    globalThis.addEventListener("popstate", endGesture);
+    return () => globalThis.removeEventListener("popstate", endGesture);
+  }, []);
   useEffect(() => {
     const el = svg.current?.parentElement;
     if (!el) return;
@@ -62,15 +105,18 @@ export default function Chart({
   const width = W - L - R,
     height = H - T - B;
   const extent = useMemo(
-    () => chartExtent(allRecords, events, false, window),
-    [allRecords, events, window],
+    () => chartExtent(allRecords, events, overview, window, viewedAt),
+    [allRecords, events, overview, window, viewedAt],
   );
-  const { low, high } = extent;
+  const low = overview ? { numerator: "1", denominator: "2" } : extent.low;
+  const high = overview ? { numerator: "1", denominator: "1" } : extent.high;
   const span = extent.end - extent.start,
     start = extent.start + (span * window[0]) / 100,
     end = extent.start + (span * window[1]) / 100;
-  const x = (at: string) =>
-    L + ((Date.parse(at) - start) / (end - start)) * width;
+  const x = (at: string | number) =>
+    L +
+    (((typeof at === "number" ? at : Date.parse(at)) - start) / (end - start)) *
+      width;
   const y = (v: Rational) => {
     const ratio = relativePosition(v, low, high);
     return (
@@ -84,57 +130,66 @@ export default function Chart({
     anchorX = 0.5,
     anchorY = 0.5,
     scaleVertical = true,
+    history: HistoryMode = "push",
   ) => {
-    setWindow((current) => {
-      const span = current[1] - current[0],
-        nextSpan = Math.max(0.0001, span * factor),
-        anchor = current[0] + span * anchorX;
-      return [anchor - nextSpan * anchorX, anchor + nextSpan * (1 - anchorX)];
-    });
-    if (scaleVertical)
-      setVertical((v) => {
-        const scale = Math.max(0.0001, Math.min(1e6, v.scale / factor)),
-          ratio = scale / v.scale;
-        return {
-          scale,
-          offset: (1 - anchorY - 0.5) * (1 - ratio) + v.offset * ratio,
-        };
-      });
+    lastWheel.current = 0;
+    onViewChange(
+      (current) => zoomed(current, factor, anchorX, anchorY, scaleVertical),
+      history,
+    );
   };
-  const reset = () => {
-    setWindow([0, 100]);
-    setVertical({ scale: 1, offset: 0 });
+  const fit = (overview: boolean) => {
+    lastWheel.current = 0;
+    onViewChange(() => ({
+      overview,
+      window: [0, 100],
+      vertical: { scale: 1, offset: 0 },
+    }));
   };
+  const fitLeaderboard = () => fit(false);
+  const fitMilestones = () => fit(true);
+  const pointRadius = overview ? Math.min(5, 2 * Math.sqrt(vertical.scale)) : 5;
+  // SVG paints later elements on top. Keep every filled frontier point above
+  // hollow alternatives, independently of the leaderboard's sort order.
+  const plottedRecords = [...records].sort(
+    (a, b) => Number(Boolean(a.is_record)) - Number(Boolean(b.is_record)),
+  );
   useEffect(() => {
     const element = svg.current;
     if (!element) return;
     const wheel = (event: WheelEvent) => {
       event.preventDefault();
+      if (!event.deltaX && !event.deltaY) return;
       const bounds = element.getBoundingClientRect();
-      if (event.deltaX) {
-        setWindow((current) => {
-          const delta = (event.deltaX / width) * (current[1] - current[0]);
-          return [current[0] + delta, current[1] + delta];
-        });
-      }
-      if (event.deltaY) {
+      const now = Date.now();
+      const history = now - lastWheel.current < 400 ? "replace" : "push";
+      lastWheel.current = now;
+      onViewChange((current) => {
+        const delta =
+          (event.deltaX / width) * (current.window[1] - current.window[0]);
+        const panned: GraphView = {
+          ...current,
+          window: [current.window[0] + delta, current.window[1] + delta],
+        };
+        if (!event.deltaY) return panned;
         const unit =
           event.deltaMode === 1
             ? 16
             : event.deltaMode === 2
               ? bounds.height
               : 1;
-        zoom(
+        return zoomed(
+          panned,
           Math.exp(Math.max(-1, Math.min(1, event.deltaY * unit * 0.003))),
           Math.max(0, Math.min(1, (event.clientX - bounds.left - L) / width)),
           Math.max(0, Math.min(1, (event.clientY - bounds.top - T) / height)),
           !event.shiftKey,
         );
-      }
+      }, history);
     };
     element.addEventListener("wheel", wheel, { passive: false });
     return () => element.removeEventListener("wheel", wheel);
-  }, [window, W]);
+  }, [W, onViewChange]);
   const curve = useMemo(
     () =>
       frontierHistory(timelineRecords(allRecords.filter(verifiedHere)), events),
@@ -143,6 +198,7 @@ export default function Chart({
   let path = "",
     connected = false;
   for (const p of curve) {
+    if (Date.parse(p.at) > viewedAt) break;
     const px = x(p.at);
     if (!p.theta) {
       if (connected) path += ` H ${px}`;
@@ -153,7 +209,8 @@ export default function Chart({
     path += connected ? ` H ${px} V ${py}` : `M ${px} ${py}`;
     connected = true;
   }
-  if (connected) path += ` H ${W - R}`;
+  // The empty area to the right is padding, not a prediction of future records.
+  if (connected) path += ` H ${x(viewedAt)}`;
   const tiny =
     cmp(sub(high, low), { numerator: "1", denominator: "100000000" }) < 0;
   const tickValue = (t: number) => {
@@ -182,7 +239,9 @@ export default function Chart({
         exp = Math.floor(l);
       return `${n < 0n ? "-" : ""}${(10 ** (l - exp)).toFixed(1)}e${exp}`;
     }
-    return decimal(v, 8);
+    return overview
+      ? Number(decimal(v, 4).replace("…", "")).toFixed(2)
+      : decimal(v, 8);
   };
   // Measure actual SVG text so labels respect both neighbouring names and the
   // plot edges. Keep the newest label when a dense cluster has no free space.
@@ -294,9 +353,17 @@ export default function Chart({
           </button>
           <button
             className="icon"
-            aria-label="Fit chart"
-            title="Reset to initial view"
-            onClick={reset}
+            aria-label="Fit leaderboard"
+            title="Fit leaderboard bounds"
+            onClick={fitLeaderboard}
+          >
+            <Search size={16} />
+          </button>
+          <button
+            className="icon"
+            aria-label="Fit ½–1"
+            title="Fit full range: ½–1"
+            onClick={fitMilestones}
           >
             <Maximize2 size={16} />
           </button>
@@ -308,10 +375,11 @@ export default function Chart({
           viewBox={`0 0 ${W} ${H}`}
           className="chart"
           role="group"
-          aria-label="Interactive bound timeline. Plus and minus zoom; arrows pan; Home fits best verified bounds below 1. Tab to select points."
+          aria-label="Interactive bound timeline. Plus and minus zoom; arrows pan; Home fits leaderboard bounds. Tab to select points."
           tabIndex={0}
           onKeyDown={(e) => {
             if (e.target !== e.currentTarget) return;
+            lastWheel.current = 0;
             if (
               [
                 "+",
@@ -326,20 +394,38 @@ export default function Chart({
             )
               e.preventDefault();
             if (e.key === "+" || e.key === "=")
-              zoom(0.7, 0.5, 0.5, !e.shiftKey);
-            if (e.key === "-") zoom(1.4, 0.5, 0.5, !e.shiftKey);
-            if (e.key === "Home") reset();
+              zoom(0.7, 0.5, 0.5, !e.shiftKey, e.repeat ? "replace" : "push");
+            if (e.key === "-")
+              zoom(1.4, 0.5, 0.5, !e.shiftKey, e.repeat ? "replace" : "push");
+            if (e.key === "Home") fitLeaderboard();
             if (e.key === "ArrowUp" || e.key === "ArrowDown")
-              setVertical((v) => ({
-                ...v,
-                offset: v.offset + (e.key === "ArrowUp" ? 0.1 : -0.1),
-              }));
+              onViewChange(
+                (current) => ({
+                  ...current,
+                  vertical: {
+                    ...current.vertical,
+                    offset:
+                      current.vertical.offset +
+                      (e.key === "ArrowUp" ? 0.1 : -0.1),
+                  },
+                }),
+                e.repeat ? "replace" : "push",
+              );
             if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
               const delta =
                 (window[1] - window[0]) *
                 0.1 *
                 (e.key === "ArrowLeft" ? -1 : 1);
-              setWindow([window[0] + delta, window[1] + delta]);
+              onViewChange(
+                (current) => ({
+                  ...current,
+                  window: [
+                    current.window[0] + delta,
+                    current.window[1] + delta,
+                  ],
+                }),
+                e.repeat ? "replace" : "push",
+              );
             }
           }}
           onPointerDown={(e) => {
@@ -349,6 +435,7 @@ export default function Chart({
               y: e.clientY,
               window,
               offset: vertical.offset,
+              moved: false,
             };
             e.currentTarget.setPointerCapture(e.pointerId);
           }}
@@ -366,8 +453,17 @@ export default function Chart({
                 ((e.clientX - d.x) / bounds.width) *
                 (d.window[1] - d.window[0]),
               dy = (e.clientY - d.y) / bounds.height;
-            setWindow([d.window[0] - dx, d.window[1] - dx]);
-            setVertical((v) => ({ ...v, offset: d.offset - dy }));
+            if (!dx && !dy && !d.moved) return;
+            lastWheel.current = 0;
+            onViewChange(
+              (current) => ({
+                ...current,
+                window: [d.window[0] - dx, d.window[1] - dx],
+                vertical: { ...current.vertical, offset: d.offset - dy },
+              }),
+              d.moved ? "replace" : "push",
+            );
+            d.moved = true;
           }}
         >
           <defs>
@@ -396,7 +492,9 @@ export default function Chart({
                 className="axis"
                 data-axis="bound"
               >
-                {allRecords.length ? tickLabel(t) : (0.9 - t * 0.4).toFixed(2)}
+                {allRecords.length || overview
+                  ? tickLabel(t)
+                  : (0.9 - t * 0.4).toFixed(2)}
               </text>
               <text
                 x={L + t * width}
@@ -418,6 +516,23 @@ export default function Chart({
             {tiny ? "Offset from θ₀ · local scale" : "θ"}
           </text>
           <g clipPath="url(#plotClip)">
+            {milestones.map((m) => (
+              <line
+                key={m.id}
+                data-milestone={m.id}
+                x1={L}
+                x2={W - R}
+                y1={y(m.theta)}
+                y2={y(m.theta)}
+                stroke="#82959e"
+                strokeWidth={1.5}
+                strokeDasharray={m.dashed ? "7 5" : undefined}
+              >
+                <title>
+                  {m.label} · {m.title}
+                </title>
+              </line>
+            ))}
             {allRecords.length > 0 && (
               <path
                 className="verified-frontier"
@@ -428,7 +543,7 @@ export default function Chart({
                 strokeLinejoin="round"
               />
             )}
-            {records.map((r) => {
+            {plottedRecords.map((r) => {
               const px = x(contributionDate(r)),
                 py = y(r.theta),
                 label = labels[r.id];
@@ -447,6 +562,11 @@ export default function Chart({
                   role="button"
                   tabIndex={inView ? 0 : -1}
                   aria-label={`Select ${r.title}, theta ${boundLabel(r)}`}
+                  aria-description={
+                    r.is_record
+                      ? "On the verified frontier"
+                      : "Outside the verified frontier"
+                  }
                   aria-pressed={selected === r.id}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -468,21 +588,20 @@ export default function Chart({
                   </title>
                   <circle cx={px} cy={py} r={16} fill="transparent" />
                   {selected === r.id && (
-                    <circle cx={px} cy={py} r={12} fill="#1d5d7422" />
+                    <circle
+                      cx={px}
+                      cy={py}
+                      r={pointRadius + 7}
+                      fill="#1d5d7422"
+                    />
                   )}
                   <circle
                     cx={px}
                     cy={py}
-                    r={selected === r.id ? 6 : 5}
-                    fill={
-                      !verifiedHere(r)
-                        ? "white"
-                        : r.is_record
-                          ? "#1d5d74"
-                          : "#7184a2"
-                    }
-                    stroke={!verifiedHere(r) ? "#ad761e" : "white"}
-                    strokeWidth={2}
+                    r={pointRadius + (selected === r.id ? 1 : 0)}
+                    fill={r.is_record ? "#1d5d74" : "white"}
+                    stroke={!verifiedHere(r) ? "#ad761e" : "#1d5d74"}
+                    strokeWidth={overview ? 1 : 2}
                   />
                   {W > 600 &&
                     (r.timeline_at || cmp(r.theta, BASELINE) === 0) && (
@@ -512,6 +631,20 @@ export default function Chart({
               );
             })}
           </g>
+          {milestones.map((m) => {
+            const py = y(m.theta);
+            return py >= T && py <= H - B ? (
+              <text
+                key={m.id}
+                x={L + 6}
+                y={py - 7}
+                textAnchor="start"
+                className="milestone-label"
+              >
+                {m.label}
+              </text>
+            ) : null;
+          })}
         </svg>
         {!allRecords.length && (
           <div className="chart-empty">
@@ -540,10 +673,6 @@ export default function Chart({
           Drag to pan · scroll to zoom
         </span>
       </div>
-      <p className="chart-note">
-        PR submission dates where recorded; verification dates are shown
-        separately.
-      </p>
       {tiny && (
         <p className="chart-note">Local axis origin θ₀ = {fraction(low)}.</p>
       )}

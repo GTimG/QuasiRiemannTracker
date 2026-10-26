@@ -1,0 +1,17 @@
+{
+  "head_sha": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+  "base_sha": "9c0e14f985041e397f71c574028193ee595a0f98",
+  "changed_files": 1557,
+  "all_changes_are_new_submission_files": true,
+  "verifier_or_workflow_changes": false,
+  "metadata_entrypoint_and_notices_unchanged": true,
+  "changed_since_verified_revision": {
+    "M": 583,
+    "D": 711
+  },
+  "proof_acceptance": "PASS: independently replayed with Comparator and Lean, NanoDa and con-ron; see the outside-sandbox receipt.",
+  "theta_exact": "874828524351/1000000000000",
+  "canonical_statement_static_match": true,
+  "metadata_license": "Apache-2.0; inherited source and dependency notices retained.",
+  "static_scan_limitation": "Static scan is not independent kernel acceptance."
+}

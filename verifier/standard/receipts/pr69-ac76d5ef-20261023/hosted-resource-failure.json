@@ -1,0 +1,8 @@
+{
+  "classification": "resource-timeout",
+  "mathematical_rejection": false,
+  "check_url": "https://github.com/GTimG/QuasiRiemannTracker/runs/119452764252",
+  "started_at": "2026-10-21T20:00:05Z",
+  "completed_at": "2026-10-21T23:05:19Z",
+  "summary": "Hosted admission stopped compiling Record1252270103Source.Low.AnchorContract after its remaining deadline expired. No completed Comparator or three-kernel acceptance was produced."
+}

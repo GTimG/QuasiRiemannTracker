@@ -1,0 +1,59 @@
+{
+  "title": "Balanced common geometry and adaptive marked source at 0.874830",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "All-moduli Dirichlet zero-free boundary 87483/100000 (0.874830), combining balanced common-geometry normalization, density-adaptive marked caps, a finite two-plane affine source/count family, and the independently proved 0.874836 incumbent for LOW and ERROR. Builds on OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; all inherited source notices retained. Zhongpai Gao, with AI assistance.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "builds_on": [
+    "gao-directional-affine-20261016",
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "gao-cycle61-plane-20261013",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-affine-asymmetric-20261015"
+  ],
+  "references": [
+    {
+      "label": "Accepted 0.874836 predecessor source and proof",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+    },
+    {
+      "label": "Paper",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.pdf"
+    },
+    {
+      "label": "Asymmetric marked counting and coupled radical allocation (timbalud)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/50"
+    },
+    {
+      "label": "Affine detector count source integration (DaysSky)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
+    },
+    {
+      "label": "Cycle61 interior affine moment theorem (Hailey Collet)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Earlier affine plane refinement (Zhongpai Gao)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    },
+    {
+      "label": "Related affine detector arithmetic proposal (liqsweep; incomplete integration)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+    },
+    {
+      "label": "Accepted all-moduli affine boundary 0.874840 (Zhongpai Gao)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/60"
+    }
+  ]
+}

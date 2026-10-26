@@ -1,0 +1,35 @@
+{
+  "title": "CertB-pushed affine local moment and formal cubic-theta limit hierarchy (10935831/12500000 = 0.87486648)",
+  "authors": [
+    {
+      "name": "Devin Watson",
+      "url": "https://github.com/DevinWatson"
+    }
+  ],
+  "description": "Tightens the reserve-balanced affine local-moment defect from g = 1/250 = 400/100000 to g = 429/100000 by utilizing the available slack in the extracted-error B026/B025 budget (leaving 19/15000000 > 0 on Face 2) and tightening final analytic/endpoint reserves to 1/50000000. Regenerates the dyadic Bernstein enclosure certificates in B028, B030, B038, and B116 at h = 397/500, ell = 1567507/9375000, ly = 4308736/9375000, and kappa = 4685831/6250000, yielding theta = 10935831/12500000 = 0.87486648. Also adds B127.lean proving the formal multi-regime hard-limit hierarchy across the cubic-theta strip architecture (fixed-plane single-cell wall 10935831/12500000, B026 four-face ceiling g <= 36/8375, variable-slope pivot domination, truncated-sieve no-go, multi-regime base-contract closure walls down to 0.874835, Regime V interior coupled variable-slope physical envelope down to 328/375 = 0.87466667, and the universal 13/15 low-side LP floor). Builds on Kari Roegnvaldsson's reserve-local-20261013 and affine-local-20261013, nielstron's local44-20261013, Zhongpai Gao's local-moment work, Hailey Collet's Cycle25 framework, Akash Levy's weighted numerator, and OpenAI/math.",
+  "license": "Apache-2.0 (inherited notices retained)",
+  "builds_on": [
+    "reserve-local-20261013",
+    "affine-local-20261013",
+    "local44-20261013"
+  ],
+  "references": [
+    {
+      "label": "Reserve-balanced affine local moment predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/38"
+    },
+    {
+      "label": "Verified affine-capacity predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/37"
+    },
+    {
+      "label": "Local 22/5 predecessor",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/26"
+    }
+  ],
+  "dependencies": [
+    "reserve-local-20261013",
+    "local44-20261013",
+    "openai-baseline"
+  ]
+}

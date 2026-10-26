@@ -1,0 +1,444 @@
+import Candidate.Uneven.EndpointContract
+import Candidate.Cycle25.Energy.Physical.FourierProfiles
+import Candidate.Cycle25.Energy.Physical.CertifiedFourier
+import Candidate.Uneven.EndpointGeometry
+import Candidate.Cycle25.Energy.Physical.CertifiedZero
+import Candidate.Cycle25.Energy.Physical.RetainedGeometry
+import Candidate.Cycle25.Numerator.ReflectionRetained
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow
+
+/- Original module: Candidate.Uneven.EndpointInput. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+/- Target830 actual physical specialization, adapted from accepted .874836.
+Predecessor attribution retained. Apache-2.0. -/
+
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 1000000
+open scoped Classical BigOperators SchwartzMap ComplexConjugate
+open Filter
+namespace OAI.SevenEighths.UnevenEndpoint.Physical
+variable [config : Configuration]
+open OAI OAI.SevenEighths HeckeFamily HeckeDyadic HeckeInverseAmplification ProbeHighRowFamily
+open CenteredMomentDetectorDictionary CenteredMomentNaturalFixedRaySource
+open CenteredMomentDetectorEnergyInitialState CenteredMomentEnergyState
+open CenteredMomentFiniteProfileExceptional CenteredMomentSecondHeightFamily
+open CenteredMomentEnergyBands CenteredMomentRowNorm ConcretePrimeRowBridge
+open CenteredMomentHeckeSlots CenteredMomentRetainedEnergy QuadraticInitialBound
+open CenteredMomentScaleSupremum CenteredMomentSectorLocalization CenteredMomentNaturalPrimitive
+open ProbePhysical CenteredMomentWholeSlotDeletion
+open Cycle25WeightedNumeratorPhysical
+local notation "O" => HeckeFamily.O
+
+/-- The literal affine initial-energy input, evaluated at radial width one.
+The source is conjugated, matching the reflected physical numerator. -/
+def AffineAt (P : SourcePlane) {D : Cycle25.Weighted.MomentData}
+    (F : Cycle25ProbeFinalAssembly.WeightedSourceData D)
+    (bΦ mesh ε U : ℝ) (degree : ℕ) (control : Finset (ℕ×ℕ)) (C : ℝ) : Prop :=
+  let η := fixedSourcePrincipal F.S F.exclusions.prime
+  InitialAffineAt (P:=P) (α:=Fin D.N) F.modulus ⊤ le_top
+    (fun x=> conj (F.W x)) 2 (1/4) (9/4) bΦ mesh (33/50) (33/50) 1 1 ε U
+    η η (weighted_sourceFixedIdeal F) degree control C
+
+/-- The genuine initial energy controls the finite physical reflected pair.
+No conductor, Euler factor, source mask, or ramified zero is altered. -/
+theorem finite_physical_pair_affine (P : SourcePlane) {D : Cycle25.Weighted.MomentData}
+    (F : Cycle25ProbeFinalAssembly.WeightedSourceData D) (rows : Finset FreeRow)
+    (Φ : 𝓢(ℝ,ℂ)) (U bΦ mesh ε : ℝ)
+    (hU : 1 ≤ U) (hs : Function.support (Φ:ℝ→ℂ) ⊆ Set.Iic bΦ)
+    (hp : ∀x,0≤(Φ x).re)
+    (hη : ((fixedSourcePrincipal F.S F.exclusions.prime).modulus.absNorm:ℝ)≤ U)
+    (hrows : ∀u∈rows,rowNorm u≤ U)
+    (hkeep : ∀u∈rows, initialKeep (fixedSourcePrincipal F.S F.exclusions.prime)
+      (internalQ (weighted_sourceFixedIdeal F) (fixedSourcePrincipal F.S F.exclusions.prime)) u.val)
+    (hone : ∀x∈Set.Icc (0:ℝ) 1,Φ x=1)
+    (degree : ℕ) (control : Finset (ℕ×ℕ)) (C : ℝ)
+    (haffine : AffineAt P F bΦ mesh ε U degree control C)
+    (T : Finset (Fin D.N)) (width : T→ℝ) (z : T→ℂ) (height : ℝ)
+    (hw : ∀i,0≤ width i) (hwmax : ∀i,width i≤ mesh)
+    (hz : ∀i,(z i).re=17/50) (hh : 0≤ height) (hzim : ∀i,|(z i).im|≤ height)
+    (p : Profiles (1/4) (9/4)) (X₁ X₂ : ℝ)
+    (hX₁ : 0< X₁) (hX₂ : 0< X₂)
+    (hlo₁ : 81/200≤ length U X₁) (hhi₁ : length U X₁≤44/100)
+    (hlo₂ : 81/200≤ length U X₂) (hhi₂ : length U X₂≤44/100)
+    (hslotlo : 17/500≤∑i,width i) (hslothi : (∑i,width i)≤1/25)
+    (hcap : length U X₁+length U X₂+P.lambda*(∑i,width i)≤ P.B) :
+    (∑u∈rows, ‖polynomial ((momentData (fixedSourcePrincipal F.S F.exclusions.prime)).character
+      (momentElement u)) false (p.profile 0) X₁ 0 0 *
+      polynomial ((momentData (fixedSourcePrincipal F.S F.exclusions.prime)).character
+      (momentElement u)) false (p.profile 1) X₂ 0 0 *
+      ∏i,normalizedSlot (fixedSourcePrincipal F.S F.exclusions.prime) rowMaskElement 1 u.val
+        (CenteredMomentPrimeSlot.primePool F.modulus ⊤ 2 (U^(width i)))
+        (physicalSlotCoefficient (fixedSourcePrincipal F.S F.exclusions.prime) F.W (U^(width i)) (z i))
+        0 (U^(width i))‖^2) ≤ C*diagonalControl Φ*(p.control control)^2*(1+height)^degree*U^(1+ε) := by
+  let η := fixedSourcePrincipal F.S F.exclusions.prime
+  have he := finite_actual_pair_le_energy rows η (internalQ (weighted_sourceFixedIdeal F) η)
+    Φ U bΦ 1 hU (by norm_num) hs hp (by simpa using hη) hrows hkeep hone (p.profile 0) (p.profile 1)
+    (9/4) (9/4) X₁ X₂ (fun _ hx=>(p.support 0 hx).2)
+    (fun _ hx=>(p.support 1 hx).2) hX₁ hX₂
+    (fun i=> CenteredMomentPrimeSlot.primePool F.modulus ⊤ 2 (U^(width i)))
+    (fun i=> physicalSlotCoefficient η F.W (U^(width i)) (z i))
+    (fun i=> U^(width i)) (fun _=> Real.rpow_pos_of_pos (zero_lt_one.trans_le hU) _)
+  have hcoef : (fun (i:T) I=> physicalSlotCoefficient η F.W (U^(width i)) (z i) I) =
+      (fun (i:T) I=> idealCoeff η.inverse I*HeckePrimeAnnular.annularWeight
+        (fun x=> conj (F.W x)) (U^(width i)) (33/50) (-(z i).im) I) := by
+    funext i I
+    rw [weighted_physical_annular_all F η _ (Real.rpow_pos_of_pos (zero_lt_one.trans_le hU) _) (z i) I,hz i]
+    norm_num
+  rw [hcoef] at he
+  have heq := CenteredMomentDetectorPlainRelativeClass.energy_eq F.modulus ⊤ le_top
+    η η (fun (_:T)=>1) (fixedBadMask*idealGenerator 1) 1 (p.profile 0) (p.profile 1)
+    (fun _=>2) (fun i=> U^(width i))
+    (fun i I=> HeckePrimeAnnular.annularWeight (fun x=> conj (F.W x))
+      (U^(width i)) (33/50) (-(z i).im) I) 0 X₁ X₂
+    (initialKeep η (internalQ (weighted_sourceFixedIdeal F) η)) Φ U
+  have hb := haffine T (fun _=>1) width (fun _=>33/50) (fun i=>-(z i).im)
+    0 height hw hwmax (fun _=> le_rfl) (fun _=> le_rfl) hh
+    (fun i=> by simpa only [abs_neg] using hzim i) 1 le_rfl le_rfl Φ hs hp p X₁ X₂
+    hX₁ hX₂ (by simpa [plainLower] using hlo₁) (by norm_num [plainUpper] at hhi₁ ⊢; linarith only [hhi₁])
+    (by simpa [plainLower] using hlo₂) (by norm_num [plainUpper] at hhi₂ ⊢; linarith only [hhi₂])
+    (by simpa [widthLower] using hslotlo) (by simpa [widthUpper] using hslothi) (by simpa using hcap)
+  exact he.trans (heq.le.trans (by simpa [η] using hb))
+
+end OAI.SevenEighths.UnevenEndpoint.Physical
+end
+
+/- Original module: Candidate.Uneven.EndpointFourier. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+/- Target830 actual physical specialization, adapted from accepted .874836.
+Predecessor attribution retained. Apache-2.0. -/
+
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 1200000
+open scoped Classical BigOperators SchwartzMap ComplexConjugate
+open Filter
+namespace OAI.SevenEighths.UnevenEndpoint.Physical
+variable [config : Configuration]
+open OAI OAI.SevenEighths HeckeFamily HeckeDyadic HeckeInverseAmplification ProbeHighRowFamily
+open CenteredMomentDetectorDictionary CenteredMomentNaturalFixedRaySource
+open CenteredMomentDetectorEnergyInitialState CenteredMomentFiniteProfileExceptional
+open CenteredMomentSecondHeightFamily CenteredMomentEnergyBands CenteredMomentRowNorm
+open CenteredMomentDetectorPlainFiberSource CenteredMomentScaleSupremum CenteredMomentSectorLocalization
+open CenteredMomentHeckeSlots CenteredMomentRetainedEnergy QuadraticInitialBound
+open CenteredMomentNaturalPrimitive
+open ProbePhysical CenteredMomentWholeSlotDeletion
+open Cycle25WeightedNumeratorPhysical
+local notation "O" => HeckeFamily.O
+
+/-- Affine interior physical Fourier pair. The analytic premise is the actual
+initial radial energy, not a row fourth moment or an improved zero-free endpoint. -/
+theorem affine_fourier (P : SourcePlane) {D : Cycle25.Weighted.MomentData}
+    (F : Cycle25ProbeFinalAssembly.WeightedSourceData D)
+    (bΦ mesh ε : ℝ) (hsΦ : Function.support (radialMajorant:ℝ→ℂ)⊆Set.Iic bΦ)
+    (degree : ℕ) (control : Finset (ℕ×ℕ)) (Ci : ℝ) (hCi : 0< Ci)
+    (hinput : ∀ᶠU:ℝ in atTop,AffineAt P F bΦ mesh ε U degree control Ci) :
+    ∃J:ℕ,∃C:ℝ,0< C ∧ ∀ᶠU:ℝ in atTop,
+      1< U ∧ ∀rows:Finset FreeRow,
+      (∀u∈rows,U^(1/100:ℝ)≤ rowNorm u ∧ rowNorm u≤ U) →
+      ∀T:Finset (Fin D.N),∀width:T→ℝ,∀z:T→ℂ,∀height:ℝ,
+      (∀i,0≤ width i) → (∀i,width i≤ mesh) → (∀i,(z i).re=17/50) →
+      0≤ height → (∀i,|(z i).im|≤ height) →
+      ∀X₁ X₂:ℝ,0< X₁ → 0< X₂ →
+      81/200≤ length U X₁ → length U X₁≤44/100 →
+      81/200≤ length U X₂ → length U X₂≤44/100 →
+      17/500≤∑i,width i → (∑i,width i)≤1/25 →
+      length U X₁+length U X₂+P.lambda*(∑i,width i)≤ P.B →
+      ∀j k:Fin 2,∀v w:ℝ,
+      (∑u∈rows,‖polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+        (scaleTest (fun y:ℝ=>(annulus y:ℂ)) j) X₁ 0 (2*Real.pi*v) *
+        polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+        (scaleTest (fun y:ℝ=>(annulus y:ℂ)) k) X₂ 0 (2*Real.pi*w) *
+        ∏i,HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ u.val F.W 2 (U^(width i)) (z i)‖^2)
+      ≤ (C*(1+height)^degree*U^(1+ε))*((1+‖v‖)^J)^2*((1+‖w‖)^J)^2 := by
+  let η := fixedSourcePrincipal F.S F.exclusions.prime
+  obtain ⟨J,Cp,hCp,hprofile⟩:=numerator_fourier_profiles_control control
+  let C:=Ci*(1+diagonalControl radialMajorant)*Cp
+  have hC:0< C:=by have:=diagonalControl_nonneg radialMajorant;dsimp [C];positivity
+  refine ⟨J,C,hC,?_⟩
+  filter_upwards [hinput,eventually_fixed_source_keep F η,eventually_gt_atTop (1:ℝ),
+    eventually_ge_atTop (η.modulus.absNorm:ℝ)] with U ha hkeep hU hη
+  refine ⟨hU,?_⟩
+  intro rows hrows T width z height hw hwmax hz hh hzim X₁ X₂ hX₁ hX₂ hlo₁ hhi₁ hlo₂ hhi₂ hslo hshi hcap j k v w
+  have he:=finite_physical_pair_affine P F rows radialMajorant U bΦ mesh ε hU.le hsΦ
+    radialMajorant_nonneg hη (fun u hu=>(hrows u hu).2)
+    (fun u hu=> hkeep u (hrows u hu).1) radialMajorant_one degree control Ci ha
+    T width z height hw hwmax hz hh hzim (numeratorFourierProfiles j k v w) X₁ X₂
+    hX₁ hX₂ hlo₁ hhi₁ hlo₂ hhi₂ hslo hshi hcap
+  have heq :
+      (∑u∈rows, ‖polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+        (scaleTest (fun y:ℝ=>(annulus y:ℂ)) j) X₁ 0 (2*Real.pi*v) *
+        polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+          (scaleTest (fun y:ℝ=>(annulus y:ℂ)) k) X₂ 0 (2*Real.pi*w) *
+        ∏i,HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ u.val F.W 2 (U^(width i)) (z i)‖^2) =
+      (∑u∈rows, ‖polynomial ((momentData η).character (momentElement u)) false
+        ((numeratorFourierProfiles j k v w).profile 0) X₁ 0 0 *
+        polynomial ((momentData η).character (momentElement u)) false
+        ((numeratorFourierProfiles j k v w).profile 1) X₂ 0 0 *
+        ∏i,normalizedSlot η rowMaskElement 1 u.val (CenteredMomentPrimeSlot.primePool F.modulus ⊤ 2 (U^(width i)))
+          (physicalSlotCoefficient η F.W (U^(width i)) (z i)) 0 (U^(width i))‖^2) := by
+    apply Finset.sum_congr rfl
+    intro u hu
+    dsimp only [η]
+    simp_rw [numerator_fourier_polynomial_zero,numerator_fourier_polynomial_one,
+      source_physical_slot_conj F u _ _ (Real.rpow_pos_of_pos (zero_lt_one.trans hU) _),
+      norm_mul,inverse_annular_norm_eq F u j v X₁ hX₁,
+      inverse_annular_norm_eq F u k w X₂ hX₂,←map_prod,Complex.norm_conj]
+  rw [heq]
+  apply he.trans
+  have hd:=diagonalControl_nonneg radialMajorant
+  have hp:=hprofile j k v w
+  calc
+    _ ≤ (Ci*(1+diagonalControl radialMajorant))*
+        (Cp*((1+‖v‖)^J)^2*((1+‖w‖)^J)^2)*(1+height)^degree*U^(1+ε) := by
+      gcongr
+      linarith
+    _ = _ := by dsimp [C];ring
+
+end OAI.SevenEighths.UnevenEndpoint.Physical
+end
+
+/- Original module: Candidate.Uneven.EndpointHybrid. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+/- Target830 actual physical specialization, adapted from accepted .874836.
+Predecessor attribution retained. Apache-2.0. -/
+
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 1500000
+open scoped Classical BigOperators SchwartzMap ComplexConjugate
+open Filter
+namespace OAI.SevenEighths.UnevenEndpoint.Physical
+variable [config : Configuration]
+open OAI OAI.SevenEighths HeckeFamily HeckeDyadic HeckeInverseAmplification ProbeHighRowFamily
+open CenteredMomentFiniteProfileExceptional CenteredMomentEnergyBands CenteredMomentScaleSupremum
+open CenteredMomentSectorLocalization CenteredMomentDetectorPlainFiberSource
+open Cycle25WeightedNumeratorPhysical
+
+/-- The improved interior is combined with genuine original small-plain,
+small-slot and empty-slot bounds, covering every dual scale in restoration. -/
+theorem hybrid_fourier (P : SourcePlane) {D : Cycle25.Weighted.MomentData}
+    (F : Cycle25ProbeFinalAssembly.WeightedSourceData D) (κ : ℝ)
+    (hk0 : 7/10≤ κ) (hk1 : κ≤3/4) (hb : 51/100≤ HeckeZeroSupremum.beta)
+    (hkb : 2*HeckeZeroSupremum.beta-1≤ κ)
+    (bΦ mesh ε : ℝ) (hε : 0< ε)
+    (hsΦ : Function.support (radialMajorant:ℝ→ℂ)⊆Set.Iic bΦ)
+    (di : ℕ) (control : Finset (ℕ×ℕ)) (Ci : ℝ) (hCi : 0< Ci)
+    (hinput : ∀ᶠU:ℝ in atTop,AffineAt P F bΦ mesh ε U di control Ci) :
+    ∃degree J:ℕ,∃C:ℝ,0< C ∧ ∀ᶠU:ℝ in atTop,
+      1< U ∧ ∀rows:Finset FreeRow,
+      (∀u∈rows,U^(1/100:ℝ)≤ rowNorm u ∧ rowNorm u≤ U) →
+      ∀T:Finset (Fin D.N),∀width:T→ℝ,∀z:T→ℂ,∀height n:ℝ,
+      (∀i,0≤ width i) → (∀i,width i≤ mesh) →
+      (∀i,width i≤ Cycle25.Energy.commonMesh 2 0 1 (D.t/4)) →
+      (∀i,(z i).re=17/50) → 0≤ height → (∀i,|(z i).im|≤ height) →
+      0≤ n → n≤2 →
+      ((∃d t:ℝ,dMinus≤ d ∧ d≤ dPlus ∧ 0≤ t ∧ t≤ physicalSwitch ∧
+        n=plainScale d t ∧ (∑i,width i)≤ affineCapacity P d t) ∨
+        (2*n+6*κ*(∑i,width i)≤1 ∨ T=∅)) →
+      ∀X₁ X₂:ℝ,0< X₁ → 0< X₂ → X₁≤ U^n → X₂≤ U^n →
+      length U X₁≤ n → length U X₂≤ n → ∀j k:Fin 2,∀v w:ℝ,
+      (∑u∈rows,‖polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+        (scaleTest (fun y:ℝ=>(annulus y:ℂ)) j) X₁ 0 (2*Real.pi*v) *
+        polynomial (rowCharacter F.S F.exclusions.prime u).inverse false
+        (scaleTest (fun y:ℝ=>(annulus y:ℂ)) k) X₂ 0 (2*Real.pi*w) *
+        ∏i,HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ u.val F.W 2 (U^(width i)) (z i)‖^2)
+      ≤ (C*(1+height)^degree*U^(1+D.t+ε))*((1+‖v‖)^J)^2*((1+‖w‖)^J)^2 := by
+  obtain ⟨Ja,Ca,hCa,ha⟩:=affine_fourier P F bΦ mesh ε hsΦ di control Ci hCi hinput
+  obtain ⟨dp,Jp,Cp,hCp,hp⟩:=certified_reflected_fourier_moment F κ hk0 hk1 hb hkb
+  obtain ⟨Jz,Cz,hCz,hz⟩:=certified_reflected_zero_fourier_moment F
+  refine ⟨di+dp,Ja+Jp+Jz,Ca+Cp+Cz,by positivity,?_⟩
+  filter_upwards [ha,hp,hz] with U ha hp hz
+  have hU:=ha.1
+  have hUp:=zero_lt_one.trans hU
+  refine ⟨hU,?_⟩
+  intro rows hrows T width z height n hw hmesh hwmax hzre hh him hn hn2 hcap X₁ X₂ hX₁ hX₂ hX₁max hX₂max hx₁ hx₂ j k v w
+  have hsum:0≤∑i,width i:=Finset.sum_nonneg (fun i _=> hw i)
+  have hUε:U^(1+ε)≤ U^(1+D.t+ε):=Real.rpow_le_rpow_of_exponent_le hU.le (by linarith [D.t_pos])
+  have hUt:U^(1+D.t)≤ U^(1+D.t+ε):=Real.rpow_le_rpow_of_exponent_le hU.le (by linarith)
+  have baseline (hbudget : 2*n+6*κ*(∑i,width i)≤1) := by
+    have hn1:n≤1:=by nlinarith
+    have hpow:U^n≤ U:=by simpa using Real.rpow_le_rpow_of_exponent_le hU.le hn1
+    have hb':=hp.2 rows hrows T width z height hw hwmax hzre hh him X₁ X₂ hX₁ hX₂
+      (hX₁max.trans hpow) (hX₂max.trans hpow) (by linarith) j k v w
+    exact hb'
+  rcases hcap with ⟨d,t,hd0,hd1,ht0,ht1,heq,hslots⟩ | hold
+  · have hnhi:= (plainScale_interior ⟨hd0,hd1⟩ ⟨ht0,ht1⟩).2
+    have hslotshi:= (affineCapacity_interior P ⟨hd0,hd1⟩ ⟨ht0,ht1⟩).2
+    rw [←heq] at hnhi
+    have hx1hi:length U X₁≤264/625:=hx₁.trans hnhi.le
+    have hx2hi:length U X₂≤264/625:=hx₂.trans hnhi.le
+    have hs40:(∑i,width i)≤ widthUpper:=by
+      have hh:=hslots.trans hslotshi.le
+      have hclip : slotClip≤ widthUpper := by norm_num [slotClip,widthUpper]
+      exact hh.trans hclip
+    have hs38 : (∑i,width i) ≤ 19/500 := hslots.trans (affineCapacity_bounds P ⟨hd0,hd1⟩ ⟨ht0,ht1⟩).2.le
+    have hparentcone : 2*n+P.lambda*(∑i,width i)≤ P.B := by
+      have hh:=affine_shortening P (le_refl (plainScale d t)) (le_refl (plainScale d t)) hslots
+      simpa only [heq, two_mul] using hh
+    by_cases hslo:widthLower≤∑i,width i
+    · by_cases h1:plainLower≤ length U X₁
+      · by_cases h2:plainLower≤ length U X₂
+        · have hbound:=ha.2 rows hrows T width z height hw hmesh hzre hh him X₁ X₂ hX₁ hX₂
+            (by simpa [plainLower] using h1) (by linarith) (by simpa [plainLower] using h2) (by linarith) (by simpa [widthLower] using hslo) (by simpa [widthUpper] using hs40)
+            (affine_shortening P (heq ▸ hx₁) (heq ▸ hx₂) hslots) j k v w
+          apply hbound.trans
+          gcongr <;> first | linarith [norm_nonneg v,norm_nonneg w]
+        · have hc:=small_plain_shortening P (le_of_not_ge h2) hx₁ hparentcone hs38
+          have hb':=hp.2 rows hrows T width z height hw hwmax hzre hh him X₁ X₂ hX₁ hX₂
+            (hX₁max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+            (hX₂max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+            (by nlinarith) j k v w
+          apply hb'.trans
+          gcongr <;> first | linarith [norm_nonneg v,norm_nonneg w]
+      · have hc:=small_plain_shortening P (le_of_not_ge h1) hx₂ hparentcone hs38
+        have hb':=hp.2 rows hrows T width z height hw hwmax hzre hh him X₁ X₂ hX₁ hX₂
+          (hX₁max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+          (hX₂max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+          (by nlinarith) j k v w
+        apply hb'.trans
+        gcongr <;> first | linarith [norm_nonneg v,norm_nonneg w]
+    · have hc:=small_slot_shortening hx1hi hx2hi (le_of_not_ge hslo)
+      have hb':=hp.2 rows hrows T width z height hw hwmax hzre hh him X₁ X₂ hX₁ hX₂
+        (hX₁max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+        (hX₂max.trans (by simpa using Real.rpow_le_rpow_of_exponent_le hU.le (by linarith : n≤1)))
+        (by nlinarith) j k v w
+      apply hb'.trans
+      gcongr <;> first | linarith [norm_nonneg v,norm_nonneg w]
+  · rcases hold with hbudget | hempty
+    · apply (baseline hbudget).trans
+      gcongr <;> first | linarith [norm_nonneg v,norm_nonneg w]
+    · subst T
+      simp only [Finset.univ_eq_empty,Finset.prod_empty,mul_one]
+      have hb':=hz.2 rows hrows X₁ X₂ hX₁ hX₂
+        (hX₁max.trans (Real.rpow_le_rpow_of_exponent_le hU.le hn2))
+        (hX₂max.trans (Real.rpow_le_rpow_of_exponent_le hU.le hn2)) j k v w
+      apply hb'.trans
+      have hheight:1≤(1+height)^(di+dp):=one_le_pow₀ (by linarith)
+      have hc:Cz≤(Ca+Cp+Cz)*(1+height)^(di+dp):=by nlinarith
+      gcongr <;> first | exact hc | linarith [norm_nonneg v,norm_nonneg w]
+
+end OAI.SevenEighths.UnevenEndpoint.Physical
+end
+
+/- Original module: Candidate.Uneven.EndpointRetained. -/
+section
+/- Adapted from PR63 by Sil with OpenAI Codex assistance. Apache-2.0. -/
+/- Target830 actual physical specialization, adapted from accepted .874836.
+Predecessor attribution retained. Apache-2.0. -/
+
+namespace OAI
+noncomputable section
+set_option autoImplicit false
+open OAI.SevenEighths.CenteredMomentDetectorPlainFiberSource
+open scoped Classical BigOperators SchwartzMap ComplexConjugate
+open Filter
+namespace SevenEighths.UnevenEndpoint.Physical
+variable [config : Configuration]
+open Cycle25WeightedNumeratorReflection
+open Cycle25WeightedNumeratorPhysical OAI.SevenEighths.UnevenEndpoint.Physical
+open HeckeFamily HeckeDyadic HeckeInverseAmplification ProbeHighRowFamily
+open CenteredMomentFiniteProfileExceptional CenteredMomentEnergyBands
+open CenteredMomentRetainedWeightedSource CenteredMomentUniformReflectionApproximation
+open CenteredMomentScaleSupremum CenteredMomentSectorLocalization
+open CenteredMomentEnergyReferenceLowWindow CenteredMomentNaturalPrimitive
+local notation "O" => HeckeFamily.O
+set_option maxHeartbeats 1000000
+
+/-- Certified fourth moment of the actual natural primitive restoration. The
+original scale X, presentation τ, primitive ψ and profile may vary independently
+with the row. All dependence on that choice is controlled by the combined
+conductor/scale bound and the stated profile seminorm. The selected family can
+also be empty, in which case the zero-slot endpoint covers lengths up to U². -/
+theorem affine_actual_retained_fourth (P : SourcePlane) {D : Cycle25.Weighted.MomentData}
+    (F : Cycle25ProbeFinalAssembly.WeightedSourceData D) (κ : ℝ) (hκlo : 7/10 ≤ κ) (hκhi : κ ≤ 3/4)
+    (hbeta : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+    (hκbeta : 2*HeckeZeroSupremum.beta-1 ≤ κ)
+    (bΦ mesh affineError : ℝ) (hAffineError : 0< affineError)
+    (hsΦ : Function.support (radialMajorant:ℝ→ℂ)⊆Set.Iic bΦ)
+    (di : ℕ) (control : Finset (ℕ×ℕ)) (Ci : ℝ) (hCi : 0< Ci)
+    (hinput : ∀ᶠU:ℝ in atTop,AffineAt P F bΦ mesh affineError U di control Ci)
+    (epsilon Cscale xi : ℝ) (hepsilon : 0 < epsilon) (hCscale : 0 < Cscale) (hxi : 0 < xi) :
+    ∃degree:ℕ, ∃H:Finset (ℕ×ℕ), ∃C:ℝ, 0 < C ∧ ∀ᶠU:ℝ in atTop,
+      1 < U ∧ ∀rows:Finset FreeRow,
+      (∀u∈rows, U^(1/100:ℝ) ≤ rowNorm u ∧ rowNorm u ≤ U) →
+      ∀(τ ψ:rows→Character) (G:rows→𝓢(ℝ,ℂ)) (X:rows→ℝ) (m B Rcap:ℝ),
+      (∀i, ∀n:O, elementCoeff (rowCharacter F.S F.exclusions.prime i.val) n = elementCoeff (τ i) n) →
+      (∀i, 0 < X i) → 0 ≤ m → m+xi ≤ 2 → 0 < B →
+      (∀i, H.sup (schwartzSeminormFamily ℝ ℝ ℂ) (G i) ≤ B) →
+      1 ≤ Rcap → (∀i, (Ideal.absNorm (∏P∈sourcePrimes (τ i) (ψ i),P):ℝ) ≤ Rcap) →
+      (∀i, ((ψ i).modulus.absNorm:ℝ)*(Ideal.absNorm (∏P∈sourcePrimes (τ i) (ψ i),P):ℝ)
+        ≤ Cscale*U^m*X i) →
+      ∀T:Finset (Fin D.N), ∀width:T→ℝ, ∀z:T→ℂ, ∀height:ℝ,
+      (∀i, 0 ≤ width i) →
+      (∀i,width i≤ mesh) →
+      (∀i, width i ≤ Cycle25.Energy.commonMesh 2 0 1 (D.t/4)) →
+      (∀i, (z i).re = 17/50) → 0 ≤ height → (∀i, |(z i).im| ≤ height) →
+      ((∃d t:ℝ,OAI.SevenEighths.UnevenEndpoint.dMinus≤ d ∧ d≤ OAI.SevenEighths.UnevenEndpoint.dPlus ∧
+        0≤ t ∧ t≤ physicalSwitch ∧ m+xi=plainScale d t ∧
+        (∑i,width i)≤ affineCapacity P d t) ∨
+        (2*(m+xi)+6*κ*(∑i,width i)≤1 ∨ T=∅)) →
+      (∑i:rows, ‖retainedSchwartz (τ i) (ψ i) (G i) (X i) (U^(xi/4))‖^4 *
+        ‖∏s,HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ i.val.val F.W 2
+          (U^(width s)) (z s)‖^2)
+        ≤ C*Rcap^epsilon*B^4*(1+2*((m+xi)*Real.log U))^2*
+          (1+height)^degree*U^(1+D.t+affineError) := by
+  obtain ⟨degree,Jp,Cp,hCp,hpositive⟩:=hybrid_fourier P F κ hκlo hκhi hbeta hκbeta
+    bΦ mesh affineError hAffineError hsΦ di control Ci hCi hinput
+  obtain ⟨H,Cr,hCr,hretained⟩ := actual_retained_uniform_fourth epsilon hepsilon 2 Jp (by norm_num)
+  refine ⟨degree,H,Cr*Cp,by positivity,?_⟩
+  filter_upwards [hpositive,eventually_retained_log_interval Cscale xi hCscale hxi]
+    with U hp hg
+  have hκpos : 0 < κ := by linarith
+  have hU := hp.1
+  have hUpos := zero_lt_one.trans hU
+  refine ⟨hU,?_⟩
+  intro rows hrows τ ψ G X m B Rcap he hX hm hmmax hB hG hRcap hR
+    hcombined T width z height hw hwmesh hwmax hreal hheight hzim hcapacity
+  let n := m+xi
+  have hn : 0 ≤ n := by dsimp [n]; linarith
+  let P (i:rows) := ∏s,HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ i.val.val F.W 2
+    (U^(width s)) (z s)
+  let E := Cp*(1+height)^degree*U^(1+D.t+affineError)
+  have hE : 0 ≤ E := by dsimp [E]; positivity
+  have hinterval : 0 ≤ n*Real.log U := mul_nonneg hn (Real.log_pos hU).le
+  have hgeom (i:rows) (a:CenteredMomentReflectionWeightedEnergy.Index (sourcePrimes (τ i) (ψ i)))
+      (hY:0 < dualScale (τ i) (ψ i) (X i) a.1.1 a.1.2)
+      (ha:a.2∈CenteredMomentReflectedTruncation.retainedAnnuli (U^(xi/4))
+        (dualScale (τ i) (ψ i) (X i) a.1.1 a.1.2) hY) :
+      Real.log (dyadicScale a.2*dualScale (τ i) (ψ i) (X i) a.1.1 a.1.2)
+        ∈ Set.Icc 0 (n*Real.log U) := hg.2 (τ i) (ψ i) (X i) m (hX i) (hcombined i) a hY ha
+  have hpoly (i:rows) (W:ℝ→ℂ) (x freq:ℝ) :
+      polynomial (τ i).inverse false W x 0 freq =
+        polynomial (rowCharacter F.S F.exclusions.prime i.val).inverse false W x 0 freq :=
+    (Cycle25.Weighted.RowConductor.polynomial_eq_of_elementCoeff_eq _ _
+      (Cycle25.Weighted.RowConductor.inverse_elementCoeff_eq _ _ (he i)) false W x 0 freq).symm
+  have hmoment (v w:ℝ) (j k:Fin 2) (x:ℝ) (hx:x∈Set.Icc 0 (n*Real.log U))
+      (y:ℝ) (hy:y∈Set.Icc 0 (n*Real.log U)) :
+      (∑i:rows, ‖polynomial (τ i).inverse false (scaleTest (fun z:ℝ=>(annulus z:ℂ)) j)
+        (Real.exp x) 0 (2*Real.pi*v) *
+        polynomial (τ i).inverse false (scaleTest (fun z:ℝ=>(annulus z:ℂ)) k)
+        (Real.exp y) 0 (2*Real.pi*w) * P i‖^2)
+        ≤ E*((1+‖v‖)^Jp)^2*((1+‖w‖)^Jp)^2 := by
+    have hxlen := reflection_window_length U n x hU hn hx
+    have hylen := reflection_window_length U n y hU hn hy
+    simp_rw [hpoly]
+    have hb:=hp.2 rows hrows T width z height n hw hwmesh hwmax hreal hheight hzim
+      hn hmmax hcapacity (Real.exp x) (Real.exp y) (Real.exp_pos _) (Real.exp_pos _)
+      hxlen.2 hylen.2 hxlen.1 hylen.1 j k v w
+    rw [←Finset.sum_coe_sort rows] at hb
+    simpa only [P,E] using hb
+  have hresult := hretained G τ ψ P X (fun _=> U^(xi/4)) 0 (n*Real.log U) B E Rcap
+    hX hinterval hgeom hB hE hG hRcap hR hmoment
+  convert hresult using 1 <;> dsimp [E,n] <;> ring
+
+end SevenEighths.UnevenEndpoint.Physical
+end
+end OAI
+
+/- Adapted from Cycle25 physical primitive restoration and its Apache-2.0 source.
+The Cycle63 affine input is explicit; both old fallback branches are proved. -/
+end

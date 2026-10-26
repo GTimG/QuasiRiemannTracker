@@ -1,0 +1,23 @@
+{
+  "trusted_verifier_revision": "c4bc7448b7a58a6affc4606dbbf7a138a1789f54",
+  "source_head": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+  "components": {
+    "verifier/standard/replay.py": "2ff5bceaca4de34cf10a64bbac1dcab550ebd019a54cca2b082ca5d974598c9e",
+    "verifier/standard/compile.py": "f3f20b9272567d0724414721a5444749ff51259b9aea68bf4794f91486c303cd",
+    "verifier/standard/judge.py": "3bc5a9851c161d00f7f4837f24736bf7b82f7342b1998115aa26cc016514d1c9",
+    "verifier/standard/prepare.mjs": "6532587df62ca790a8459a8e4f93c987f3dc65347a9a3a0415acc33828862605",
+    "verifier/worker_resources.py": "6adb10e4500471486ab1a8630e43222e782444598a41f96573a0f6ef47dd9c51",
+    "verifier/standard/tool-pins.json": "2fe2e75e2a28d99ac1faefc44e127b44910730b4bcda303b5e0c5202c24895f2"
+  },
+  "local_replay_sha256": "e2a8dbce53ebab7642f8d8119d763f3b78e6fda53876ccca00f37e3f5f687dc1",
+  "changes": "Only execution budgets: total 3h to 6h, per-module 30m to 2h, final judge 1h to 2h",
+  "worker_limits": {
+    "cpu_threads": 12,
+    "memory_max_GiB": 30,
+    "parallel_kernels": 1
+  },
+  "project_checks": {
+    "tests_passed": 316,
+    "production_build": "PASS"
+  }
+}

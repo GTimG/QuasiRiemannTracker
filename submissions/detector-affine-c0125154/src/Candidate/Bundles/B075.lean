@@ -1,0 +1,233 @@
+/- Packaging rehearsal. Original notices retained; separate replay required. -/
+import Candidate.Bundles.B008
+import Candidate.Bundles.B023
+import Candidate.Bundles.B070
+import Candidate.Bundles.B074
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDictionary
+
+/- BEGIN ORIGINAL Cycle61.Assembly.Count.SourceCount; sha256 c38671415a77f3f20d037afb9e79f2870ce318a54e78be1def24bce3ac777cf6 -/
+section
+                                         
+                                                
+                                                    
+                                                   
+/-! Source specialization of the original certified amplitude-class row count.
+This stops before any physical numerator estimate. -/
+noncomputable section
+open scoped Classical BigOperators Topology ContDiff
+open Filter Set
+namespace OAI.SevenEighths.Cycle61DetectorCount
+open Cycle25ProbeFinalAssembly Cycle25ProbeHighRowFamily Cycle25WeightedHighRowFamily
+open ProbeFinalAssembly ProbeHighRowFamily
+open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary
+open ProbeRaySlots HeckeDetectorPhysicalSelection HeckeDetectorAmplitudeFirst HeckeDetectorFiberPartition
+local notation "O" => HeckeFamily.O
+
+theorem physical_source_amplitude_count (D : Data) (F : SourceData)
+    (counts : Cycle25ProbeHighRowFamily.CountParameters F.modulus ⊤ D.t) (τ : ℝ) (n : ℕ)
+    (hτ : 0 < τ) (hτzero : τ < (1/200:ℝ)/2)
+    (hτheight : 4*τ < (1/200:ℝ)*D.cost) (hτ2 : 2*τ ≤ D.t) :
+    ∃C : ℝ,1 ≤ C ∧ ∀η : Character,∀ᶠZ : ℝ in atTop,
+      ∀d a C0 : ℝ,(1/200:ℝ) ≤ d → d ≤ 7/8 → 51/100 < a → a ≤ 7/8 → 1 ≤ C0 →
+      ∀rows : Finset FreeRow,
+      (∀u∈rows,u.val≠1 ∧ Z^(1/100:ℝ) ≤ rowNorm u ∧
+        (calibrationForSet F.S F.maximal).residueMonoid u.val≠0 ∧ rowNorm u ≤ Z^(d-D.t)) →
+      ∀i : ℕ,i ≤ n →
+      (∀u∈rows,detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        (3*(i+1:ℕ)*Z^τ) < a+2*D.e) →
+      (∀u∈rows,a ≤ detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        ((3*i:ℕ)*Z^τ)) →
+      ∀z : ℂ,z.re=17/50 → |z.im| ≤ Z^(2*τ) →
+      SourceMomentBound D F counts η Z τ (C0*Z^D.t) (Z^(2*τ)) →
+      let Q := physical F.modulus ⊤ (fun u : FreeRow=>u.val) (fun _ y=>(F.w y:ℂ))
+        (fun _=>2) (fun j=>D.length j/d) (fun _=>z) (Z^d)
+      ∀bin : BinLabel (Finset.univ : Finset (Fin D.N)) ((2*a-1)/2) D.t,
+      let rows' := amplitudeRows rows Finset.univ (Z^d) ((2*a-1)/2) D.t D.t_pos (fun j=>D.length j/d) Q bin
+      let q := classMean Finset.univ ((2*a-1)/2) D.t (fun j=>D.length j/d) bin
+      rows'.Nonempty → 0 ≤ q ∧ q ≤ (2*a-1)/2 ∧
+        (rows'.card:ℝ) ≤ C*C0*Z^(3*D.t)*
+          (Z^d)^(Cycle61.Arithmetic.Bernstein.countingR D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t)) := by
+  obtain ⟨K,hK,hcount⟩ := Cycle25ProbeFinalAssembly.balanced_source_count_affine F.modulus ⊤
+    D.t (Sum Bool (RayQuotient.Characters F.modulus ⊤)) D.N n
+    (1/200) (7/8) τ D.t (2*τ) D.t D.t
+    (by norm_num) (by norm_num) hτ D.t_pos (by linarith) D.t_pos counts
+  refine ⟨K+1,by linarith,?_⟩
+  intro η
+  have hbatches := Cycle25WeightedHighRowFamily.actual_source_amplitude_batchesA F.modulus ⊤ le_top F.S F.exclusions F.maximal η
+    (1/200) (7/8) τ D.ε D.e D.witnessKappa D.cost D.t D.t D.t D.momentKappa n
+    (by norm_num) (by norm_num) D.momentKappa_lo D.momentKappa_hi hτ hτzero hτheight
+    D.epsilon_pos D.e_pos D.e_small D.witnessKappa_pos D.witnessKappa_small D.cost_pos.le
+    D.t_pos D.t_pos.le D.t_pos (by nlinarith only [D.detector_budget])
+  filter_upwards [hcount,hbatches,eventually_gt_atTop (1:ℝ)] with Z hc hb hZ
+  intro d a C0 hd hd' ha ha' hC0 rows hrows i hi hnext hcurrent z hz hzim hmom
+  dsimp only
+  intro bin hne
+  have hZpos : 0 < Z := zero_lt_one.trans hZ
+  have hdpos : 0 < d := by linarith
+  let Q := physical F.modulus ⊤ (fun u : FreeRow=>u.val) (fun _ y=>(F.w y:ℂ))
+    (fun _=>2) (fun j=>D.length j/d) (fun _=>z) (Z^d)
+  let rows' := amplitudeRows rows Finset.univ (Z^d) ((2*a-1)/2) D.t D.t_pos
+    (fun j=>D.length j/d) Q bin
+  let q := classMean Finset.univ ((2*a-1)/2) D.t (fun j=>D.length j/d) bin
+  have hsub : rows'⊆rows := Finset.filter_subset _ _
+  have hband : rows⊆rowBand (Z^(1/100:ℝ)) (Z^(d-D.t)+1) := by
+    intro u hu
+    exact mem_rowBand.mpr ⟨(hrows u hu).1,(hrows u hu).2.1,by linarith [(hrows u hu).2.2.2]⟩
+  obtain ⟨B,hBr,hBd,hRev,hSlots,hWidths,hW,hUpper,hExternal,hMesh,hBin,hFam,hMean⟩ :=
+    hb d hd hd' (Z^(d-D.t)+1) rows (hne.mono hsub) hband
+      (fun u hu=>(hrows u hu).2.2.1) (fun u hu=>(hrows u hu).2.2.2)
+      a i hi ha (by linarith) hnext hcurrent D.N D.length D.slots_pos
+      D.slots_small (by rw [D.slots_sum]; exact Cycle61.Assembly.Count.count_slot_supply) (fun _ y=>(F.w y:ℂ))
+      (fun _=>2) (fun _=>z) bin hne
+  have hBsub : B.rows⊆rows := hBr ▸ hsub
+  have hBfam : ∀u∈B.rows,∀j,B.family u j=
+      sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u) j := by
+    intro u hu j
+    exact hFam u (hBr ▸ hu) j
+  have hraw := (hmom rows d a hd hd' ha (by linarith) hrows i z hz hzim)
+    q B hBsub hBd hRev hSlots hWidths hW hUpper hExternal hMesh hBin hBfam
+  have hν1 : D.t ≤ 1/100 := D.t_le
+  have hcard := hc d hd hd' a D.ε D.momentKappa D.t C0 q i hi ha (by linarith) (by linarith)
+    D.epsilon_pos.le D.epsilon_small D.momentKappa_lo D.momentKappa_hi D.t_pos hν1 (by linarith)
+    B (by rw [hSlots];simp) hBin (hBr.symm ▸ hne) hMean (fun bin j J K hne=>(hraw bin j J K hne).1)
+    (fun bin j J K hne=>(hraw bin j J K hne).2)
+  rw [hBr,hMesh] at hcard
+  have hqb := classMean_bounds rows Finset.univ (Z^d) (2*a-1) D.t D.t_pos
+    (fun j=>D.length j/d) Q bin (by linarith)
+    (fun j _=>(div_pos (D.slots_pos j) hdpos).le)
+    (by rw [←Finset.sum_div,D.slots_sum]; exact div_pos Cycle61.Assembly.Count.ell_pos hdpos) hne
+  refine ⟨hqb.1,hqb.2,?_⟩
+  have he : Cycle61.Arithmetic.Bernstein.countingR D.momentKappa (2*a-1) (q/(2*a-1))+159*D.ε+D.t+D.t+7*D.t=Cycle61.Arithmetic.Bernstein.countingR D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t) := by ring
+  rw [he] at hcard
+  apply hcard.trans
+  have hC0pos : 0 ≤ C0 := by linarith
+  have hcp : 0 ≤ (Z^d)^(Cycle61.Arithmetic.Bernstein.countingR D.momentKappa (2*a-1) (q/(2*a-1))+(159*D.ε+9*D.t)) := by positivity
+  apply mul_le_mul_of_nonneg_right _ hcp
+  apply mul_le_mul
+  · nlinarith
+  · apply Real.rpow_le_rpow_of_exponent_le hZ.le
+    linarith
+  · positivity
+  · positivity
+
+end OAI.SevenEighths.Cycle61DetectorCount
+end
+
+end
+/- END ORIGINAL Cycle61.Assembly.Count.SourceCount -/
+
+/- BEGIN ORIGINAL Cycle61.Assembly.Count.Canonical; sha256 e6fd093b5ba127bb01b67cf66ec6041978997d6604c440a2b108f4f8dac25b58 -/
+section
+                                         
+                                                               
+
+namespace OAI.SevenEighths.Cycle61DetectorCount
+noncomputable section
+open HeckeFamily HeckeInverseAmplification HeckeDetectorPhysicalSelection ProbeHighRowFamily
+
+def canonicalFamily (D : Data) (F : SourceData) (Z : ℝ) (z : ℂ) : FreeRow→Fin D.N→ℂ :=
+  fun u j=>HeckePrimeRow.canonicalPrimeAmplitude F.modulus ⊤ u.val
+    (fun y=>(F.w y:ℂ)) 2 (Z^(D.length j)) z
+
+theorem physical_eq_canonical (D : Data) (F : SourceData) (Z d : ℝ)
+    (hZ : 0<Z) (hd : d≠0) (z : ℂ) :
+    physical F.modulus ⊤ (fun u : FreeRow=>u.val) (fun _ y=>(F.w y:ℂ))
+      (fun _=>2) (fun j=>D.length j/d) (fun _=>z) (Z^d) = canonicalFamily D F Z z := by
+  funext u j
+  exact source_physical_amplitude F.modulus ⊤ D.length (fun _ y=>(F.w y:ℂ)) Z d 2 z hZ hd u j
+end
+end OAI.SevenEighths.Cycle61DetectorCount
+
+end
+/- END ORIGINAL Cycle61.Assembly.Count.Canonical -/
+
+/- BEGIN ORIGINAL Cycle61.Assembly.Count.Errors; sha256 79eba16826d1d069a3da9c1c4ee9fbe427ea598abd586a713e85b2f2a02ee86d -/
+section
+                                       
+
+namespace OAI.SevenEighths.Cycle61DetectorCount
+noncomputable section
+
+theorem source_error_absorption (Z d t ε R σ A : ℝ)
+    (hZ : 1≤Z) (hd : (1/200:ℝ)≤d) (ht : 0≤t) (hA : 0≤A)
+    (hbudget : 159*ε+609*t≤σ) :
+    A*Z^(3*t)*(Z^d)^(R+(159*ε+9*t))≤A*(Z^d)^(R+σ) := by
+  have hZp : 0<Z := zero_lt_one.trans_le hZ
+  have hdp : 0<d := by linarith
+  have hscale : 1≤Z^d := Real.one_le_rpow hZ hdp.le
+  have hratio : 3*t/d≤600*t := by
+    apply (div_le_iff₀ hdp).mpr
+    nlinarith
+  have hid : Z^(3*t)=(Z^d)^(3*t/d) := by
+    rw [←Real.rpow_mul hZp.le]
+    congr 1
+    field_simp
+  rw [hid,mul_assoc,←Real.rpow_add (Real.rpow_pos_of_pos hZp d)]
+  apply mul_le_mul_of_nonneg_left _ hA
+  exact Real.rpow_le_rpow_of_exponent_le hscale (by linarith)
+end
+end OAI.SevenEighths.Cycle61DetectorCount
+
+end
+/- END ORIGINAL Cycle61.Assembly.Count.Errors -/
+
+/- BEGIN ORIGINAL Cycle61.Assembly.Count.Public; sha256 8a9c9abc25c0a64e2a18fa8ad957865bde407563c8d967e16d71d3d99e9a2b5d -/
+section
+                                    
+noncomputable section
+open scoped Classical BigOperators Topology ContDiff
+open Filter Set
+namespace OAI.SevenEighths.Cycle61DetectorCount
+open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeHighRowFamily
+open HeckeDetectorPhysicalSelection HeckeDetectorAmplitudeFirst HeckeDetectorFiberPartition
+theorem canonical_source_count_with_error (D : Data) (F : SourceData)
+    (counts : Cycle25ProbeHighRowFamily.CountParameters F.modulus ⊤ D.t) (τ σ : ℝ) (n : ℕ)
+    (hτ : 0 < τ) (hτzero : τ < (1/200:ℝ)/2)
+    (hτheight : 4*τ < (1/200:ℝ)*D.cost) (hτ2 : 2*τ ≤ D.t) (herror : 159*D.ε+609*D.t≤σ) :
+    ∃C : ℝ,1 ≤ C ∧ ∀η : Character,∀ᶠZ : ℝ in atTop,
+      ∀d a C0 : ℝ,(1/200:ℝ) ≤ d → d ≤ 7/8 → 51/100 < a → a ≤ 7/8 → 1 ≤ C0 →
+      ∀rows : Finset FreeRow,
+      (∀u∈rows,u.val≠1 ∧ Z^(1/100:ℝ) ≤ rowNorm u ∧
+        (calibrationForSet F.S F.maximal).residueMonoid u.val≠0 ∧ rowNorm u ≤ Z^(d-D.t)) →
+      ∀i : ℕ,i ≤ n →
+      (∀u∈rows,detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        (3*(i+1:ℕ)*Z^τ) < a+2*D.e) →
+      (∀u∈rows,a ≤ detectorMaximum
+        (sourceDetectorFamily F.S F.exclusions.prime η u (rayCubeFamily F.modulus ⊤ le_top u))
+        ((3*i:ℕ)*Z^τ)) →
+      ∀z : ℂ,z.re=17/50 → |z.im| ≤ Z^(2*τ) →
+      SourceMomentBound D F counts η Z τ (C0*Z^D.t) (Z^(2*τ)) →
+      let Q := canonicalFamily D F Z z
+      ∀bin : BinLabel (Finset.univ : Finset (Fin D.N)) ((2*a-1)/2) D.t,
+      let rows' := amplitudeRows rows Finset.univ (Z^d) ((2*a-1)/2) D.t D.t_pos (fun j=>D.length j/d) Q bin
+      let q := classMean Finset.univ ((2*a-1)/2) D.t (fun j=>D.length j/d) bin
+      rows'.Nonempty → 0 ≤ q ∧ q ≤ (2*a-1)/2 ∧
+        (rows'.card:ℝ) ≤ C*C0*
+          (Z^d)^(Cycle61.Arithmetic.Bernstein.countingR D.momentKappa (2*a-1) (q/(2*a-1))+σ) := by
+  obtain ⟨C,hC,hcount⟩ := physical_source_amplitude_count D F counts τ n hτ hτzero hτheight hτ2
+  refine ⟨C,hC,?_⟩
+  intro η
+  filter_upwards [hcount η,eventually_gt_atTop (1:ℝ)] with Z hc hZ
+  intro d a C0 hd hd' ha ha' hC0 rows hrows i hi hnext hcurrent z hz hzim hmom
+  dsimp only
+  intro bin hne
+  have hZp : 0<Z := zero_lt_one.trans hZ
+  have hdp : 0<d := by linarith
+  have hb := hc d a C0 hd hd' ha ha' hC0 rows hrows i hi hnext hcurrent z hz hzim hmom
+  dsimp only at hb
+  rw [physical_eq_canonical D F Z d hZp hdp.ne'] at hb
+  have hbound := hb bin hne
+  refine ⟨hbound.1,hbound.2.1,?_⟩
+  apply hbound.2.2.trans
+  apply source_error_absorption Z d D.t D.ε _ σ (C*C0) hZ.le hd D.t_pos.le
+  · exact mul_nonneg (by linarith) (by linarith)
+  · exact herror
+
+end OAI.SevenEighths.Cycle61DetectorCount
+end
+
+end
+/- END ORIGINAL Cycle61.Assembly.Count.Public -/

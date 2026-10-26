@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "head_sha": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+  "base_sha": "b3c157e2e1278b7690eda65499bf9974dc59950c",
+  "changed_files": 3549,
+  "all_changes_are_new_submission_files": true,
+  "verifier_or_workflow_changes": false,
+  "metadata_matches_PR_body": true,
+  "metadata_license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "all_lineage_ids_exist_on_protected_main": true,
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "predecessor_files_reused_byte_identically": 1,
+  "source_header_credit_counts": {
+    "Hailey Collet": 1951,
+    "OpenAI": 394,
+    "Zhongpai Gao": 74,
+    "DaysSky": 14,
+    "Akash Levy": 13,
+    "ArviFoxy": 1
+  },
+  "modules_in_required_closure": 6471,
+  "openai_source_tree_unchanged": true,
+  "theta_exact": "8747729897/10000000000",
+  "previous_best": "8748087/10000000",
+  "exact_improvement": "357103/10000000000",
+  "executable_or_axiom_keyword_scan": [
+    "src/Submissions/hailey_collet_1252270103/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Tactic.lean",
+    "src/Submissions/hailey_collet_1252270103/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/MonoTactic.lean",
+    "src/Submissions/hailey_collet_1252270103/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Argmin.lean",
+    "src/Submissions/hailey_collet_1252270103/Record1252270103Bootstrap/PR67Source/Cycle63/Certificate/Bracket.lean"
+  ],
+  "proof_acceptance": "PASS: Comparator and Lean, NanoDa and con-ron accepted the exact revision. OpenAI baseline and rejection controls passed."
+}

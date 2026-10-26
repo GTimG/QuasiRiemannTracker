@@ -1,0 +1,190 @@
+import Submissions.hailey_collet_1252270103.Record1252270103Bootstrap.PR67Source.Cycle63.Assembly.Low.Detector.InverseEnergy
+import Submissions.hailey_collet_1252270103.Record1252270103Bootstrap.PR67Source.Cycle63.Assembly.Low.Detector.LowNominalGeometry
+import Submissions.hailey_collet_1252270103.Record1252270103Bootstrap.PR67Source.Cycle63.Assembly.Low.Detector.LowSlotScales
+import Submissions.hailey_collet_1252270103.Record1252270103Bootstrap.PR67Source.Cycle63.Assembly.Low.Geometry
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowCentralTuple
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass
+import Submissions.hailey_collet_1252270103.Record1252270103Bootstrap.PR67Weighted.WeightedQRH.LowDetector.LowCentralTuple
+namespace OAI.SevenEighths
+end OAI.SevenEighths
+open _root_.OAI _root_.OAI.SevenEighths
+namespace Record1252270103Bootstrap.PR67
+set_option autoImplicit false
+
+/-! Adapted from OpenAI/math family003, pinned modules Detector/LowUnselectedMass, Detector/LowCentralTuple.
+Apache-2.0 upstream attribution retained. Physical lengths and scalar budgets use Cycle63. -/
+namespace OAI
+noncomputable section
+namespace SevenEighths.Cycle63ProbeLow
+section
+open scoped Classical
+open ProbePhysical
+open CompletedGauss CanonicalQuadraticSieve
+local notation "O" => ActualEisensteinCubic.O
+local notation "SupportedIdeal" => {I : Ideal O // Supported I}
+/-- The unselected prime norm supplies the exact power needed by the relaxed energy. -/
+theorem lowUnselectedMass_decay (K : ℕ) (M a : ℝ) (hM : 0≤M) (ha : 0<a) :
+    ∃C : ℝ,0<C ∧ ∀(ell : Fin K→ℝ)(Z : ℝ),0<Z→
+    ∀(T : Fin K→Finset PrimeIdeal)(_hT : ∀i P,P∈T i→Supported P.val),
+    (∀i n,n∈canonicalSlotSupport (T i)→a*Z^(ell i)≤elementNorm n)→
+    ∀(J : Finset (Fin K))(W : Fin K→ℝ→ℂ)(P : Fin K→ℝ),
+    (∀i x,‖W i x‖≤M)→
+    (∑p : LowUnselectedTuple (fun i=>canonicalSlotSupport (T i)) J,
+      ‖lowUnselectedWeight (fun i=>canonicalSlotSupport (T i)) J W P p‖*
+        elementNorm (∏i : J,(p i).val)^(-(1/2:ℝ)))≤C*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2) := by
+  obtain ⟨C,hC,hbound⟩ := OAI.SevenEighths.WeightedProbeLow.lowUnselectedMass_bound K M hM
+  let c := (min 1 a)^K
+  have hc : 0<c := by dsimp [c];positivity
+  refine ⟨C*c^(-(1/2:ℝ)),by positivity,?_⟩
+  intro ell Z hZ T hT hlower J W P hW
+  have hp (p : LowUnselectedTuple (fun i=>canonicalSlotSupport (T i)) J) :
+      elementNorm (∏i : J,(p i).val)^(-(1/2:ℝ))≤ c^(-(1/2:ℝ))*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2) := by
+    have hh := OAI.SevenEighths.WeightedProbeLow.lowUnselectedProduct_norm_lower ell a Z ha hZ _ hlower J p
+    have hb := Real.rpow_le_rpow_of_nonpos (show 0<c*Z^(OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J) by positivity) hh (show -(1/2:ℝ)≤0 by norm_num)
+    have hid : (c*Z^(OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J))^(-(1/2:ℝ))=c^(-(1/2:ℝ))*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2) := by
+      rw [Real.mul_rpow hc.le (Real.rpow_nonneg hZ.le _),←Real.rpow_mul hZ.le]
+      congr 2
+      ring
+    exact hb.trans_eq hid
+  calc
+    _≤∑p : LowUnselectedTuple (fun i=>canonicalSlotSupport (T i)) J,
+      ‖lowUnselectedWeight (fun i=>canonicalSlotSupport (T i)) J W P p‖*(c^(-(1/2:ℝ))*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)) :=
+        Finset.sum_le_sum (fun p _=>mul_le_mul_of_nonneg_left (hp p) (norm_nonneg _))
+    _=(∑p : LowUnselectedTuple (fun i=>canonicalSlotSupport (T i)) J,
+      ‖lowUnselectedWeight (fun i=>canonicalSlotSupport (T i)) J W P p‖)*(c^(-(1/2:ℝ))*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)) := (Finset.sum_mul ..).symm
+    _≤C*(c^(-(1/2:ℝ))*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)) :=
+      mul_le_mul_of_nonneg_right (hbound T hT J W P hW) (by positivity)
+    _=_ := by ring
+end
+section
+open scoped Classical ContDiff
+open ProbePhysical
+open CompletedGauss CanonicalQuadraticSieve RayFourExpansion
+local notation "O" => ActualEisensteinCubic.O
+local notation "Id" => Ideal O
+theorem low_central_compensated_tuple (η : HeckeFamily.Character) (S : Finset Id)
+    (hS : ∀P∈S,P.IsMaximal) (hbad : fixedBadPrimes⊆S)
+    {K : ℕ} (ell : Fin K→ℝ) (hell : ∀i,0≤ell i) (hsum : ∑i,ell i≤Cycle63.Arithmetic.ell)
+    (a b ε : ℝ) (ha : 0<a) (hε : 0<ε) (hε1 : ε<1)
+    (W0 W1 : ℝ→ℂ) (a0 b0 a1 b1 M : ℝ) (ha0 : 0<a0) (ha1 : 0<a1)
+    (hab1 : a1<b1) (hM : 0≤M)
+    (hW0 : Function.support W0⊆Set.Icc a0 b0) (hW1 : Function.support W1⊆Set.Icc a1 b1)
+    (hW0s : ContDiff ℝ ∞ W0) (hW1s : ContDiff ℝ ∞ W1) (hWM : ∀x,‖W1 x‖≤M) :
+    ∃degree : ℕ,∃C : ℝ,0<C ∧ ∀ᶠZ : ℝ in Filter.atTop,1<Z ∧
+    ∀(T : Fin K→Finset PrimeIdeal),(∀i P,P∈T i→Supported P.val)→
+      (∀i P,P∈T i→P.val∉S)→Pairwise (fun i j=>Disjoint (T i) (T j))→
+      (∀i P,P∈T i→a*Z^(ell i)≤(Ideal.absNorm P.val:ℝ) ∧ (Ideal.absNorm P.val:ℝ)≤b*Z^(ell i))→
+    ∀(J : Finset (Fin K))(X : ℝ),0<X→
+      Z^(1+OAI.SevenEighths.WeightedProbeLow.lowSelectedLength ell J-ε/2)≤X→X≤Z^(1+OAI.SevenEighths.WeightedProbeLow.lowSelectedLength ell J+ε/2)→
+    ∀(W : Fin K→ℝ→ℂ),(∀i x,‖W i x‖≤1)→∀t : ℝ,
+      ‖∑p : ∀i,canonicalSlotSupport (T i),
+        compensationSubsetWeight η W (fun i=>Z^(ell i)) (fun i=>(p i).val) J*
+          compensationRowTest η (calibrationForSet S hS) W0 W1 (fun i=>(p i).val) J
+            (Z^(Cycle63.Arithmetic.x:ℝ)) (Z^(Cycle63.Arithmetic.y:ℝ)) X t*
+          selectedSlotFactor W (fun i=>Z^(ell i)) (fun i=>(p i).val) J t‖≤
+        C*(1+‖t‖)^degree*Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε) := by
+  obtain ⟨Cg,hCg,hgram⟩ := compensation_tuple_actual_gram ε hε hε1 W0 W1
+    a0 b0 a1 b1 M ha0 ha1 hab1 hM hW0 hW1 hW0s hW1s hWM S hS hbad
+  obtain ⟨degree,Ci,hCi,hinverse⟩ := low_physical_inverse_normalized η S hS hbad ell hell hsum
+    a b (a0*a1) (max 1 (b0*b1)) ε ha (mul_pos ha0 ha1)
+    (lt_of_lt_of_le zero_lt_one (le_max_left _ _)) hε hε1.le
+  obtain ⟨Cu,hCu,hmass⟩ := lowUnselectedMass_decay K 1 a (by norm_num) ha
+  let q := elementNorm (calibrationForSet S hS).generator
+  have hq : 0<q := calibration_elementNorm_pos _
+  let C0 := Cg*Ci*Real.sqrt (3*q)*Cu
+  have hC0 : 0<C0 := by dsimp [C0];positivity
+  refine ⟨degree,C0,hC0,?_⟩
+  filter_upwards [hinverse,eventually_original_slot_scales (calibrationForSet S hS)
+    ell hell hsum (max 1 b) (le_max_left _ _)] with Z hInv hScale
+  refine ⟨hInv.1,?_⟩
+  intro T hT hout hdis hnorm J X hX hXlo hXhi W hW t
+  let slots := fun i=>canonicalSlotSupport (T i)
+  let Yp := fun i=>Z^(ell i)
+  have hz : 0<Z := lt_trans zero_lt_one hInv.1
+  have hslots : ∀i n,n∈slots i→n≠0 := fun i=>canonicalSlotSupport_nonzero _ (hT i)
+  have hnormE : ∀i n,n∈slots i→elementNorm n≤ max 1 b*Z^(ell i) := by
+    intro i n hn
+    obtain ⟨P,hP,rfl⟩ := Finset.mem_image.mp hn
+    rw [primaryTuple_norm P (hT i P hP)]
+    exact (hnorm i P hP).2.trans (mul_le_mul_of_nonneg_right (le_max_right _ _) (by positivity))
+  have hs := hScale.2 slots hslots hnormE J
+  have hg := hgram K η slots hslots J W Yp (Z^(Cycle63.Arithmetic.x:ℝ)) (Z^(Cycle63.Arithmetic.y:ℝ)) X t
+    (by positivity) (by positivity) hX (fun p=>(hs p).1) (fun p=>(hs p).2.1)
+  apply hg.trans
+  let G := Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+((Cycle63.Arithmetic.y/2))*ε:ℝ)
+  let V := Ci*(1+‖t‖)^degree*Z^((OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J+507*ε)/2)
+  have hGV : G*V≤Ci*(1+‖t‖)^degree*Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε+OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2) := by
+    dsimp only [G,V]
+    calc
+      _=Ci*(1+‖t‖)^degree*(Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+((Cycle63.Arithmetic.y/2))*ε:ℝ)*Z^((OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J+507*ε)/2)) := by ring
+      _≤_ := by
+        rw [←Real.rpow_add hz]
+        apply mul_le_mul_of_nonneg_left _ (by positivity)
+        exact Real.rpow_le_rpow_of_exponent_le hInv.1.le (by nlinarith [Cycle63.Arithmetic.y_lt_half])
+  have hterm (p : LowUnselectedTuple slots J) :
+      let L := elementNorm (∏i : J,(p i).val)
+      let Q := lowPhysicalScale (calibrationForSet S hS) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L)
+      ‖lowUnselectedWeight slots J W Yp p‖*((Real.sqrt Q)⁻¹/(2*Real.pi))*
+        lowGramFactor (calibrationForSet S hS) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L) ε*
+        lowInverseMass (calibrationForSet S hS) (a0*a1) (max 1 (b0*b1)) (mul_pos ha0 ha1)
+          (lt_of_lt_of_le zero_lt_one (le_max_left _ _))
+          (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L)
+          (div_pos (by positivity) (lowUnselectedProduct_norm_pos slots hslots J p))
+          (div_pos (by positivity) (lowUnselectedProduct_norm_pos slots hslots J p))
+          (lowSelectedInverseRow Finset.univ (lowSelectedWeight η slots J W Yp t)
+            η S hS (lowSelectedIdeal slots J) X t)≤
+      (Ci*Real.sqrt (3*q)*(1+‖t‖)^degree*Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε+OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2))*
+        (‖lowUnselectedWeight slots J W Yp p‖*L^(-(1/2:ℝ))) := by
+    dsimp only
+    let L := elementNorm (∏i : J,(p i).val)
+    let Q := lowPhysicalScale (calibrationForSet S hS) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L)
+    have hL := lowUnselectedProduct_norm_pos slots hslots J p
+    have hgb := (hs p).2.2 ε hε.le
+    have hib := hInv.2 T hT hout hdis hnorm J p X hX hXlo hXhi W hW t
+      (div_pos (by positivity) hL) (div_pos (by positivity) hL)
+    have hgn : 0≤lowGramFactor (calibrationForSet S hS) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L) ε := Real.sqrt_nonneg _
+    have hh := mul_le_mul_of_nonneg_left hib
+      (mul_nonneg (norm_nonneg (lowUnselectedWeight slots J W Yp p)) hgn)
+    have hh2 := mul_le_mul_of_nonneg_right
+      (mul_le_mul_of_nonneg_left hgb (norm_nonneg (lowUnselectedWeight slots J W Yp p)))
+      (show 0≤V by dsimp [V];positivity)
+    calc
+      _=‖lowUnselectedWeight slots J W Yp p‖*
+        lowGramFactor (calibrationForSet S hS) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L) ε*
+        (Real.sqrt Q)⁻¹/(2*Real.pi)*
+        lowInverseMass (calibrationForSet S hS) (a0*a1) (max 1 (b0*b1)) (mul_pos ha0 ha1)
+          (lt_of_lt_of_le zero_lt_one (le_max_left _ _)) (Z^(Cycle63.Arithmetic.x:ℝ)/L) (Z^(Cycle63.Arithmetic.y:ℝ)/L)
+          (div_pos (by positivity) hL) (div_pos (by positivity) hL)
+          (lowSelectedInverseRow Finset.univ (lowSelectedWeight η slots J W Yp t) η S hS (lowSelectedIdeal slots J) X t) := by ring
+      _≤(‖lowUnselectedWeight slots J W Yp p‖*Real.sqrt (3*q/L))*(G*V) := by
+        have hh3 := hh.trans hh2
+        simp only [G,V,div_eq_mul_inv,mul_assoc] at hh3 ⊢
+        convert hh3 using 1 ; congr 7
+      _≤(‖lowUnselectedWeight slots J W Yp p‖*Real.sqrt (3*q/L))*
+          (Ci*(1+‖t‖)^degree*Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε+OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)) :=
+        mul_le_mul_of_nonneg_left hGV (by positivity)
+      _=_ := by rw [OAI.SevenEighths.WeightedProbeLow.low_compensated_sqrt_factor q L hq.le hL];ring
+  have hh := mul_le_mul_of_nonneg_left (Finset.sum_le_sum (s:=Finset.univ) (fun p _=>hterm p)) hCg.le
+  apply hh.trans
+  rw [←Finset.mul_sum]
+  have hlo : ∀i n,n∈canonicalSlotSupport (T i)→a*Z^(ell i)≤elementNorm n := by
+    intro i n hn
+    obtain ⟨P,hP,rfl⟩ := Finset.mem_image.mp hn
+    rw [primaryTuple_norm P (hT i P hP)]
+    exact (hnorm i P hP).1
+  have hm := hmass ell Z hz T hT hlo J W Yp hW
+  calc
+    _≤Cg*((Ci*Real.sqrt (3*q)*(1+‖t‖)^degree*Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε+OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2))*(Cu*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2))) := by gcongr
+    _=_ := by
+      have he : Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε+OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)*Z^(-OAI.SevenEighths.WeightedProbeLow.lowUnselectedLength ell J/2)=Z^((Cycle63.Assembly.signal Cycle63.Arithmetic.theta)+254*ε) := by
+        rw [←Real.rpow_add hz]
+        congr 1
+        ring
+      dsimp [C0]
+      linear_combination (Cg*Ci*Real.sqrt (3*q)*Cu*(1+‖t‖)^degree)*he
+end
+end SevenEighths.Cycle63ProbeLow
+end
+end OAI
+
+end Record1252270103Bootstrap.PR67

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "reviewed_pr_head": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+  "protected_revision": "b3c157e2e1278b7690eda65499bf9974dc59950c",
+  "canonical_upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "canonical_source_sha256": "8fb13ad977bca104591fcbc6ef01a58496e7385053c9b1445f95749afc0eff54",
+  "generated_challenge_sha256": "c4439a08eb7bd586c1e949ea52dac3ed1b6fcea8c42aea6b1ef60821c590531a",
+  "theta_exact": "8747729897/10000000000",
+  "mathematical_change": "Only 7/8 replaced by the submitted normalized rational",
+  "other_changes": "Theorem and enclosing namespace renamed for the comparator entrypoint",
+  "comparison": "The canonical binders, hypotheses and conclusion match after the rational replacement. Comparator statement, transitive-definition and axiom checks passed.",
+  "proof_acceptance": "PASS: Comparator and Lean, NanoDa and con-ron accepted the exact revision. OpenAI baseline and rejection controls passed."
+}

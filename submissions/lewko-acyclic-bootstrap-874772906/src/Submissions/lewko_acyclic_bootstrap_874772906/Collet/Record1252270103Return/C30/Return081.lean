@@ -1,0 +1,22 @@
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Return.C30.ReturnFormulas
+set_option autoImplicit false
+namespace Record1252270103Return.C30
+noncomputable section
+def row081_coefficients : Fin 3 → Fin 4 → ℝ := ![![(60856870315119766844750071679465192/37318998047758674969568359375:ℝ), (170957224743090546114485553340463264/37318998047758674969568359375:ℝ), (159704800551384847786828403650925902/37318998047758674969568359375:ℝ), (9920377730032426679395459397985566/7463799609551734993913671875:ℝ)],
+![(115458629697165714290552117572786912/37318998047758674969568359375:ℝ), (322185594857521622697831274567222624/37318998047758674969568359375:ℝ), (298752290588848390355744343055830512/37318998047758674969568359375:ℝ), (3680797650971115267823607442455792/1492759921910346998782734375:ℝ)],
+![(11315371367390438287918119238672144/7463799609551734993913671875:ℝ), (31417639255993497125189042872269232/7463799609551734993913671875:ℝ), (28968539137012159685359180061622032/7463799609551734993913671875:ℝ), (8865704495333879768838256428024944/7463799609551734993913671875:ℝ)]]
+theorem row081_identity (δ p : ℝ) : rowMargin .oldSwitch .weakC2 δ p =
+ Record12518109.Bernstein.bsum 2 3 (554106530958367485552391026751559/222616494631404659853597081600000000:ℝ) row081_coefficients (57/128:ℝ) (15/32:ℝ) (15/32:ℝ) (31/64:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_oldSwitch,edgeC_oldSwitch,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row081_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row081_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (57/128:ℝ) (15/32:ℝ))
+ (hp : p ∈ Set.Icc (15/32:ℝ) (31/64:ℝ)) : 0 < rowMargin .oldSwitch .weakC2 δ p := by
+ rw [row081_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row081_coefficients]
+#print axioms row081_identity
+#print axioms row081_pos
+end
+end Record1252270103Return.C30

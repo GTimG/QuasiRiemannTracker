@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "head_sha": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+  "theta_exact": "874828524351/1000000000000",
+  "verified_at": "2026-10-19T18:54:39.570286+00:00",
+  "report_sha256": "b30fc3ffe7065070dd66eaea8239f07464de852afc1a3274cd7e708e7dc0e8a3",
+  "modules_freshly_compiled": 4479,
+  "candidate_cache_reused": false,
+  "trusted_verifier_revision": "9c0e14f985041e397f71c574028193ee595a0f98",
+  "driver_unmodified": false,
+  "driver_change": "Only total budget 3h to 8h and judge timeout 1h to 4h; see budget-only.patch",
+  "source_dependency_trees": {
+    "sil-uneven-normalization-20261019": "bc0d103646a16771127b776112950f57a37654bb",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sandbox_controls": "PASS",
+  "approved_library_files": 34945,
+  "approved_OAI_objects_reused": false,
+  "evidence_transport": "Authenticated SSH; returned files checked against outside-sandbox receipt",
+  "limitations": "Pinned non-OAI package objects reused after matching the prior authenticated inventory. All submitted and OpenAI source dependencies compiled fresh; full proof checked by Comparator and three kernels. Compiler/exporter bootstrap trust remains.",
+  "source_tree": "75c15a513946e91e3abfa9c869dd88b7c8753e30",
+  "source_tree_checked_against_git": true,
+  "publication_scope": "Original outside-sandbox report, immutable source contract, exact UTF-8 log contents, checker policy and pins. Host-specific inventories and large exports retained privately with hashes.",
+  "dependency_object_manifest_sha256": "701fcf9a60ff294d696f1924fafa2186e5395f1e7d5c526818fbb4b85d7ea338",
+  "prior_dependency_receipt_sha256": "83caa5da50d8ea98b1eb16c17d1a3ff01eff96c93334ae1cc3ed235f1c93250c",
+  "prior_dependency_receipt_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/e238cab21d1ab48cfa17cff8f06ea11f0aaf3f7e/verifier/standard/receipts/pr43-9e000869-20261014/result.json",
+  "website_checks": {
+    "unit_tests_passed": 316,
+    "browser_tests_passed": 47,
+    "browser_tests_configured_skips": 3,
+    "build": "PASS",
+    "hosted_project_checks": "PASS",
+    "hosted_run_id": 39255002444,
+    "hosted_run_attempt": 2,
+    "hosted_head": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+    "scope": "Project tests run on protected main; GitHub project checks additionally run on the reviewed PR merge revision. Proof acceptance is a separate independent check.",
+    "production_path_checks": "PASS",
+    "production_path": "/",
+    "local_harness_note": "Initial preview used a mismatched base path; rerun with QRH_BASE_PATH=/ matching the build passed."
+  }
+}

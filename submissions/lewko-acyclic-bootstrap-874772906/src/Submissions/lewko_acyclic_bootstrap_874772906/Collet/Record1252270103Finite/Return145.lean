@@ -1,0 +1,22 @@
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Submissions.lewko_acyclic_bootstrap_874772906.Collet.Record1252270103Finite.ReturnFormulas
+set_option autoImplicit false
+namespace Record1252270103Finite
+noncomputable section
+def row145_coefficients : Fin 3 → Fin 4 → ℝ := ![![(195025944766098312941300671315679/34520765138764382812500000000:ℝ), (11492735274873224223567951944986513/863019128469109570312500000000:ℝ), (8733555469705166603797146976741807/863019128469109570312500000000:ℝ), (2116468813984400203761711814647269/863019128469109570312500000000:ℝ)],
+![(15531065785611604567729041064467151/1726038256938219140625000000000:ℝ), (32288882445326446699085846588221559/1726038256938219140625000000000:ℝ), (4905909389235575055862835806607903/431509564234554785156250000000:ℝ), (716455224306864523023634425669301/431509564234554785156250000000:ℝ)],
+![(4581836709723113326979580426386591/1022837485593018750000000000000:ℝ), (15971279343786233377209428837433131/1841107474067433750000000000000:ℝ), (1274209591217698754576642029491547/287673042823036523437500000000:ℝ), (67338768360725412600675768563849/287673042823036523437500000000:ℝ)]]
+theorem row145_identity (δ p : ℝ) : rowMargin .newTop .capC δ p =
+ Record12518109.Bernstein.bsum 2 3 (67338768360725412600675768563849/536261419646592614400000000000000000:ℝ) row145_coefficients (3/8:ℝ) (27/64:ℝ) (7/16:ℝ) (1/2:ℝ) δ p := by
+ norm_num [rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD_newTop,edgeC_newTop,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row145_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row145_pos {δ p : ℝ} (hδ : δ ∈ Set.Icc (3/8:ℝ) (27/64:ℝ))
+ (hp : p ∈ Set.Icc (7/16:ℝ) (1/2:ℝ)) : 0 < rowMargin .newTop .capC δ p := by
+ rw [row145_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hδ hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row145_coefficients]
+#print axioms row145_identity
+#print axioms row145_pos
+end
+end Record1252270103Finite

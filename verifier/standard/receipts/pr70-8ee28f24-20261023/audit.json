@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "head_sha": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+  "theta_exact": "437386453/500000000",
+  "verified_at": "2026-10-23T10:21:00.417245+00:00",
+  "report_sha256": "2cb67e38d2a1d95690ffb491d158f888ab41d3c1267891abd4456153b618ab5b",
+  "modules_freshly_compiled": 8310,
+  "candidate_cache_reused": false,
+  "trusted_verifier_revision": "2cbdbe7c14e926c1eb33fea0919e561038a27880",
+  "nanoda_revision": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "nanoda_pristine_upstream": true,
+  "baseline_and_forbidden_axiom_controls": "PASS",
+  "driver_unmodified": false,
+  "driver_change": "Only documented time-budget increases; see budget-only.patch",
+  "source_dependency_trees": {
+    "lewko-acyclic-bootstrap-874772906": "0a07c961b4ed9bb9dd2a83bf4d642a2a452a3597",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sandbox_controls": "PASS",
+  "approved_library_files": 44577,
+  "approved_OAI_objects_reused": false,
+  "evidence_transport": "Authenticated SSH; returned files checked against outside-sandbox receipt",
+  "limitations": "Pinned non-OAI package objects obtained from fresh dependency trees, official Mathlib cache and protected compatibility patches; complete runtime files copied into a private library and authenticated by manifest. All submitted and OpenAI source dependencies compiled fresh; full proof checked by Comparator and three kernels. Compiler/exporter bootstrap trust remains."
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Dirichlet nonvanishing at 0.8746935 via fourth-power source moments",
+  "authors": [
+    {
+      "name": "Sil",
+      "url": "https://github.com/TheSil"
+    }
+  ],
+  "description": "A fourth-power source argument for the exact all-moduli Dirichlet nonvanishing boundary 1749387/2000000, with the principal pole excluded. The argument transfers normalized Gauss sums to fourth powers, preserves the original restricted source and its natural zeros, and combines the resulting mixed moment with an exact finite return certificate and a same-source Mellin argument. It reuses OpenAI's original framework and generic source, counting and transport results from Hailey Collet's PR69. The earlier two-level affine bound from PR67 is used through PR69's pinned bootstrap modules. Inherited authorship and license notices are retained in the reused and adapted sources. The mathematical development and Lean formalization were AI-assisted.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "hailey-collet-1252270103",
+    "two-level-affine-20261019"
+  ],
+  "dependencies": [
+    "openai-baseline",
+    "hailey-collet-1252270103"
+  ],
+  "references": [
+    {
+      "label": "Original OpenAI framework and scope",
+      "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+    },
+    {
+      "label": "Finite ordinary source moments and return framework (PR69)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
+    },
+    {
+      "label": "Two-level affine bootstrap (PR67)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+    }
+  ]
+}

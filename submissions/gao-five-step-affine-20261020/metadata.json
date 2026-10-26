@@ -1,0 +1,49 @@
+{
+  "title": "Five affine steps with joint returned-source counting · 0.8748087",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "Proves all-moduli Dirichlet nonvanishing for Re(s) > 8748087/10000000 = 0.8748087, excluding the principal pole. The finite-depth affine argument retains residual reduction and reciprocal source weights, follows LOW continuations through five affine stages, and counts returned HIGH histories jointly with one final density payment. Both the detector and weighted numerator use an actual uniformly constructed root moment; the finite backward induction, all-height split, source thresholds and canonical endpoint are supplied as Lean proofs. Builds on ArviFoxy’s two-level affine source construction, Zhongpai Gao’s balanced marked ledger, Hailey Collet’s affine moment and quartic framework, Akash Levy’s weighted numerator, and the OpenAI baseline; inherited contributions and license notices are retained. Developed with AI assistance.",
+  "dependencies": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator"
+  ],
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-directional-affine-20261016",
+    "gao-balanced-marked-20261017",
+    "no-hardcoding-20261017",
+    "two-level-affine-20261019"
+  ],
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "references": [
+    {
+      "label": "Four-page paper: finite-depth affine source returns",
+      "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/5085baa8fd0814c60f3ae523c6d1ce697bf12752/submissions/gao-five-step-affine-20261020/paper/paper.pdf"
+    },
+    {
+      "label": "Two-level affine returned-source count (ArviFoxy, PR 67)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+    },
+    {
+      "label": "Balanced marked affine source (Zhongpai Gao, PR 63)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/63"
+    },
+    {
+      "label": "Affine source framework (Hailey Collet, PR 42)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "OpenAI mathematical source",
+      "url": "https://github.com/openai/math"
+    }
+  ]
+}

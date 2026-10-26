@@ -1,8 +1,17 @@
-"""Choose Lean parallelism within the worker's CPU and memory allocation."""
+"""Choose replay limits within the worker's time, CPU and memory allocation."""
 from pathlib import Path
 import os
 
 GIB = 1024 ** 3
+
+
+def replay_budget_seconds(environ=None):
+    environ = os.environ if environ is None else environ
+    value = environ.get('QRH_REPLAY_BUDGET_SECONDS', '10800')
+    if (not value.isascii() or not value.isdecimal()
+            or not 1 <= int(value) <= 43200):
+        raise ValueError('QRH_REPLAY_BUDGET_SECONDS must be an integer from 1 to 43200')
+    return int(value)
 
 
 def worker_capacity(*, environ=None, affinity=None, memory_bytes=None,

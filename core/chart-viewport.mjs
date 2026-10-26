@@ -10,6 +10,7 @@ export function chartExtent(
   events = [],
   fullHistory = false,
   window = [0, 100],
+  now = Date.now(),
 ) {
   const verified = records.filter(verifiedHere);
   const frontier = frontierHistory(timelineRecords(verified), events);
@@ -36,8 +37,9 @@ export function chartExtent(
     ...fitted.map((point) => Date.parse(point.at)),
     ...(fullHistory ? events.map((event) => Date.parse(event.at)) : []),
   ];
-  const first = times.length ? Math.min(...times) : Date.UTC(2026, 9, 1);
-  const last = times.length ? Math.max(...times) : Date.UTC(2026, 9, 9);
+  const first = times.length ? Math.min(...times) : now;
+  // Include the time of viewing, even when no new record has been submitted.
+  const last = Math.max(now, times.length ? Math.max(...times) : now);
   const pad = Math.max((last - first) * 0.06, 86400000);
   const start = first - pad,
     end = last + pad;

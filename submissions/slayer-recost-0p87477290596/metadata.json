@@ -1,0 +1,42 @@
+{
+  "title": "A recosted accepted-source graph for the Dirichlet boundary 0.87477290596",
+  "authors": [
+    {
+      "name": "Slayer"
+    }
+  ],
+  "description": "We prove that, for every positive modulus and every complex Dirichlet character χ, the Dirichlet L-function L(s,χ) is nonzero whenever Re(s) > 21869322649/25000000000 = 0.87477290596, excluding the principal pole at χ = 1 and s = 1. This is a parameter improvement of existing machinery, not a new analytic method.\n\nThe proof starts from the accepted PR69 theorem of Hailey Collet (boundary 0.8747729897), imported directly as a dependency. It recosts the 221 retained nodes of the ordinary-source graph, recalculating each slope and auxiliary parameter under the fine accounting tuple (10^-17, 10^-12, 10^-10) permitted by the accepted source theorem, and applies the accepted source-lifting step along the acyclic graph. The final return reuses the parameterized formula template of Mark Lewko's PR70 under fresh namespaces, with regenerated exact certificates for c = 3130677351/25000000000 and h = 400051/500000: 224 return rectangles (row 171 proved through three closed sub-boxes), 38 full admission windows with 570 guard inequalities, and the geometry and schedule interfaces. The PR70 endpoint theorem is not assumed and no PR70 submission module is imported.\n\nAll finite certificates were replayed in exact rational arithmetic and independently re-derived; the finite certificate build and accounted induction compiled locally under the pinned Lean 4.34.1 and mathlib, with axioms limited to propext, Classical.choice and Quot.sound. The complete analytic endpoint has not been compiled locally; this PR relies on the tracker's admission run for that build and for the Comparator, Lean, NanoDa and con-ron checks.\n\nResearch, parameter optimization, certificate generation, drafting and Lean development were AI-assisted. We credit Hailey Collet's finite ordinary-source construction and accepted PR69 result; Mark Lewko's PR70 return template; OpenAI's framework; and the earlier contributions credited by those submissions, including Akash Levy's weighted numerator, Zhongpai Gao's refinements, timbalud's marked asymmetric counting and radical allocation, DaysSky's affine detector and ArviFoxy's two-level affine bootstrap. Lean, mathlib, PrimeNumberTheoremAnd and the Rellich–Kondrachov package retain their original authorship, licenses and notices.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "dependencies": [
+    "openai-baseline",
+    "hailey-collet-1252270103"
+  ],
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "radical-asymmetric-count-20261014",
+    "detector-affine-c0125154",
+    "gao-directional-affine-20261016",
+    "gao-balanced-marked-20261017",
+    "no-hardcoding-20261017",
+    "two-level-affine-20261019",
+    "hailey-collet-1252270103",
+    "lewko-acyclic-bootstrap-874772906"
+  ],
+  "references": [
+    {
+      "label": "Collet tracker PR69, accepted boundary 0.8747729897",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
+    },
+    {
+      "label": "Lewko tracker PR70, accepted boundary 0.874772906; return template",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/70"
+    },
+    {
+      "label": "OpenAI mathematics, tracker-pinned framework",
+      "url": "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    }
+  ]
+}

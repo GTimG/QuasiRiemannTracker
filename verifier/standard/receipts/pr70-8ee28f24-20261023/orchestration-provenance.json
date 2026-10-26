@@ -1,0 +1,54 @@
+{
+  "protected_revision": "2cbdbe7c14e926c1eb33fea0919e561038a27880",
+  "reviewed_head": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+  "source_repository": "GTimG/QuasiRiemannTracker",
+  "original_verifier_hashes": {
+    "verifier/worker_resources.py": "6adb10e4500471486ab1a8630e43222e782444598a41f96573a0f6ef47dd9c51",
+    "verifier/actions/library_contract.py": "4357ff48402e75d3b64d4a711232e40e88a123b452812059f2fe40d13c23b025",
+    "verifier/standard/compile.py": "f3f20b9272567d0724414721a5444749ff51259b9aea68bf4794f91486c303cd",
+    "verifier/standard/judge.py": "3bc5a9851c161d00f7f4837f24736bf7b82f7342b1998115aa26cc016514d1c9",
+    "verifier/standard/build_cache.py": "a5acfcefa0e30ffbf030ca620b4cbe87dff44530ace952fcc00aae40398ef9c3",
+    "verifier/standard/replay.py": "2ff5bceaca4de34cf10a64bbac1dcab550ebd019a54cca2b082ca5d974598c9e",
+    "verifier/standard/tool-pins.json": "2fe2e75e2a28d99ac1faefc44e127b44910730b4bcda303b5e0c5202c24895f2"
+  },
+  "original_driver_sha256": "2ff5bceaca4de34cf10a64bbac1dcab550ebd019a54cca2b082ca5d974598c9e",
+  "driver_sha256": "bcca8a36563dc52836ae1f95257061766c124a7f77bbec592607a12c3d28c49c",
+  "only_changes": "Pinned pristine upstream NanoDa 0.4.26 replaces 0.4.17; fresh runtime preflight before candidate. Shared deadline 3h to 12h; final judge 1h to 8h; each module 30min to 1h; exports 10min to 1h. Acceptance, sandbox, tool and axiom policies unchanged.",
+  "worker_sha256": "9b3672b18f8d9ff092581a5ed4e7b9bbda6fa0b133b9187d1f59f95b632c2c3e",
+  "palomar_snapshot": {
+    "commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+    "archive_sha256": "08a523e3813d574c2a005f543e1d11ba48611e16127b19b77e373d94f1ca418d",
+    "file_manifest_sha256": "ebbca9464864d5b2ca5a742fbd35a2c2fe1521ba354e73e2800dee02ebd14423",
+    "files": 85,
+    "method": "Clean local Git archive of pinned commit, authenticated file-by-file in private worker. Shared remote checkout left unchanged."
+  },
+  "checker_runtime_restoration": {
+    "version": "4.35.0-rc2",
+    "archive_sha256": "b67d0e0ba959fc74e186f1b44aebca32d6ecb6a28f8e9a029fc4e9f73398a049",
+    "reason": "Shared temporary installation had missing runtime files; private exact release restored. Same pinned checker binaries required."
+  },
+  "fresh_dependencies": {
+    "protected_revision": "d6103b24af1e98b72bdba1044c1dad6f48d5b902",
+    "manifest_sha256": "0fb03e97506caa2d8f3f0eb77f4de3db288b278571af16410ee25c72953a5911",
+    "runtime_files": 44577,
+    "runtime_manifest_sha256": "1e9a365fefcbb1c4b0fe7fa23fffa510815d975a0a39f25b527dd81ccb48ace7",
+    "source_map_sha256": "08c08d603cf9b8c9e69316ddf4c086d0a68f5b7431e3882e204f79755e840a7d",
+    "selection": "Every .olean, .olean.private, .olean.server, .ir and .ir.sig from the fresh pinned dependency build. Only Lake metadata and editor information omitted.",
+    "setup_sha256": "c85c57695730550a6493198ab571f6009e637916afafce3bd2a0694adfa4a692",
+    "setup_patch_sha256": "3a1f13e43fe8d14f0ae130ff84aa0c3b8f8f5173d0faea31dacfa50a62622211"
+  },
+  "budget_replacements": {
+    "budget_seconds=10800": "budget_seconds=43200",
+    "capacity=capacity,timeout=3600)": "capacity=capacity,timeout=28800)",
+    "timeout=max(0, 1800 -": "timeout=max(0, 3600 -",
+    "executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=600))": "executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=3600))"
+  },
+  "resources": {
+    "threads": 16,
+    "memory_max_gib": 192,
+    "memory_high_gib": 168,
+    "service_runtime_seconds": 46800
+  },
+  "candidate_cache_reused": false,
+  "nanoda_revision": "998e0a84e4c1572ca279ff05007af6ec6639405a"
+}

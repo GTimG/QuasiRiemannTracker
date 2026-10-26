@@ -1,0 +1,24 @@
+[
+  {
+    "name": "PalomarPreflightSolution",
+    "exit": 0
+  },
+  {
+    "name": "PalomarPreflightWrong",
+    "exit": 1
+  },
+  {
+    "name": "PalomarPreflightIllTyped",
+    "exit": 1
+  },
+  {
+    "name": "Forbidden",
+    "forbidden_axiom": "hidden_assumption",
+    "exit": 1
+  },
+  {
+    "name": "Sorry",
+    "forbidden_axiom": "sorryAx",
+    "exit": 1
+  }
+]

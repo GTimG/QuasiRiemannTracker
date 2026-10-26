@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source_sha256": "8fb13ad977bca104591fcbc6ef01a58496e7385053c9b1445f95749afc0eff54",
+  "generated_challenge_sha256": "b692796026f3af640a754c8b8f65bd8e94d58885171083b0f3a25a88492fa516",
+  "theta_exact": "349843/400000",
+  "change": "Only the rational constant; binders, hypotheses and conclusion unchanged.",
+  "comparison": "Complete binder, hypotheses and conclusion bytes match after that single literal substitution. Comparator additionally accepted statement and transitive definition/axiom identity; all three kernels accepted.",
+  "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a"
+}

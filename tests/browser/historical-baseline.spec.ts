@@ -29,14 +29,17 @@ test("historical catalogue entries display their status and year precision", asy
     }),
   );
   await page.goto("/");
-  const row = page.locator("tbody tr");
+  const row = page.locator(".leaderboard-entry");
   await expect(row.locator(".tag.historical")).toHaveText(
     "Historical baseline",
   );
-  const date = row.locator('td[data-label="Date"] time');
+  const date = row.locator(".entry-meta time");
   await expect(date).toHaveText("1922");
   await expect(date).toHaveAttribute("datetime", "1922");
-  await expect(date).toHaveAttribute("title", "1922 (year only)");
+  await expect(date).toHaveAttribute(
+    "title",
+    `${baseline.date_label}: ${baseline.timeline_at}`,
+  );
   await page.getByRole("button", { name: baseline.title, exact: true }).click();
   const detail = page.locator(".proof-detail");
   await expect(detail).toContainText("Historical baseline");

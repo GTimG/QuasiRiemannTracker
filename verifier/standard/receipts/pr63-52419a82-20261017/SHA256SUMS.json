@@ -1,0 +1,21 @@
+{
+  "Challenge.lean": "669e50f098090c4ac59e96c5b076d9b13bc7b5e7e3d75a3014ee4ab820b16d57",
+  "README.md": "8c26291f08170b3035a142d9a3c0ed1675b6340f5ae8546bdb818a109860e3e0",
+  "Solution.lean": "66998ef706d8ebddc28c2eb1163720e14d1902c4bd2fab823e2d1c9f6c59a553",
+  "audit.json": "8f9d6385ad1d382a9fd59d6f8c133d62ec60d688ce80a8e1f31d1d45147d04de",
+  "budget-only.patch": "94c96e3975ae8de3e7e5ba75ab09f5d671106b0b9e3d3745661d2138d3e1c20c",
+  "challenge-audit.json": "8275ffcdbfffefacbada20c3f189e602c4ed37cdd4775c866325329407383dc0",
+  "challenge-pins.json": "e29c58a68a00e53348765fbb7a3a3fd111786535e6ce0410545e88c728e4c727",
+  "contract.json": "a9fbccf9044f868acc3257d1d1c3bca69ff0c181e3be7766b467777b8ce8d338",
+  "controls.json": "83782e525741e374d2ea9378ad8728baab7fcbd86178673c7e0d14373e179bac",
+  "dependency-pins.json": "5c6d8777513f3fa9eee95a8475ea8d2109e7efaff4b315d8c22d4d2714ec9c79",
+  "hosted-resource-failure.json": "7da878976c3a8269988c889cfa7a077c2dfe3a088b477707726cabadcd5abfd6",
+  "judge.log": "135710da4d3fc3397067d026c307a03746f2c5385e5c48e38bf61c1be237b3b8",
+  "logs.json": "cc3154d6ef6530a243eb337aec8b6e5e78f9f71e54054198dd1e5f43c8cb2a48",
+  "orchestration-provenance.json": "451a9191aa49f1b0b14e6a26d0b8279c59684009b1ca94384141ff29216dc5a9",
+  "phases.json": "8ea64539e5f412dbf48232430ac94126d223d2c35a94ef1ca272ffd6145ab75d",
+  "replay-driver.txt": "f7327c2cf0bd071a264d815e0e2a0a4a5d942fa00b69f5003fb4340802b60566",
+  "result.json": "459cd6948c5e2b0f2021e6ab2e0c7fd1dacff72122d91cc6503a9d7bee4af4d4",
+  "static-audit.json": "b96f3f02aa26b9af8f9d752e1500cd58079b8ff86c4ead44fa494742316d75d6",
+  "tool-pins.json": "2fe2e75e2a28d99ac1faefc44e127b44910730b4bcda303b5e0c5202c24895f2"
+}

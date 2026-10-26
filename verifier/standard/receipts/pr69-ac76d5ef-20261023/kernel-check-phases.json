@@ -1,0 +1,22 @@
+[
+  {
+    "status": "running",
+    "phase": "authenticate completed upstream build, baseline, controls and original source closure",
+    "at": "2026-10-22T21:31:20.882029+00:00"
+  },
+  {
+    "status": "running",
+    "phase": "fresh confinement and Comparator positive/mismatched/ill-typed controls",
+    "at": "2026-10-22T21:31:39.734529+00:00"
+  },
+  {
+    "status": "running",
+    "phase": "full PR69 Comparator + con-ron + NanoDa + Lean; eight-hour judge limit",
+    "at": "2026-10-22T21:31:59.291524+00:00"
+  },
+  {
+    "status": "running",
+    "phase": "authenticate final source, libraries, checker binaries and frozen exports",
+    "at": "2026-10-22T22:13:28.499065+00:00"
+  }
+]

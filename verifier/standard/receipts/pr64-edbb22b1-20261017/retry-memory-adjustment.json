@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-17T22:59:24.951278+00:00",
+  "scope": "/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-re2cbe06d619d467b92728ed0d692481e.scope/palomar-c5a412d6b8c4ee3578d2e800",
+  "before": {
+    "memory.high": "24159191040",
+    "memory.max": "27380416512",
+    "memory.current": "24755400704",
+    "memory.events": "low 0\nhigh 21844\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "after": {
+    "memory.high": "31138512896",
+    "memory.max": "31138512896"
+  },
+  "reason": "Single-worker con-ron reached soft memory threshold; guest had about 7.6 GiB available. Raised local final-checker allowance to 29 GiB within the 32 GiB VM. Acceptance rules and sandbox confinement unchanged."
+}

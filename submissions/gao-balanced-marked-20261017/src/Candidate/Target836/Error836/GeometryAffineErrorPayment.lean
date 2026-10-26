@@ -1,0 +1,234 @@
+import Candidate.Target836.SourceProvider.ErrorMain
+/- Copyright (c) 2026 Hailey Collet. Released under Apache 2.0. -/
+import Candidate.Target836.Source836.GeometryAffineErrorContraction
+import Candidate.Cycle63.Physical.InitialMass.GeometryAffineErrorRatioPayment
+import Candidate.Cycle63.Physical.InitialMass.GeometryFinalErrorLoss
+import Candidate.Cycle63.Physical.InitialMass.GeometryAffineRetainedPayment
+import Candidate.Cycle63.Physical.InitialMass.GeometryAffineBudgetTransport
+import Candidate.Target836.Error836.GeometryAffineErrorNormalized
+
+set_option autoImplicit false
+set_option maxHeartbeats 100000
+set_option maxRecDepth 3000
+namespace OAI.SevenEighths.Target836ErrorPayment
+open OAI.SevenEighths.Cycle63InitialMass
+open Target874836.SourceProvider
+noncomputable section
+open scoped Classical BigOperators SchwartzMap ContDiff
+open HeckeFamily CanonicalQuadraticSieve ConcretePrimeRowBridge QuadraticInitialBound
+open CenteredMomentCommonRadialData CenteredMomentAmplificationChildInput
+open CenteredMomentSecondPhysicalBlock CenteredMomentSecondEnergySplit
+open CenteredMomentAmplificationErrorEnergy CenteredMomentAllocatedRayDictionary
+open CenteredMomentPrimeElements CenteredMomentSectorLocalization CenteredMomentFirstAmplificationChoice
+open CenteredMomentLogDyadic RayFourExpansion
+open Filter CenteredMomentCommonProfile CenteredMomentEnergyState CenteredMomentEnergyBands
+open Cycle63InitialSource CenteredMomentAmplificationRadicalFamily CenteredMomentChildRows
+open CenteredMomentSecondHeightFamily CenteredMomentAmplificationActiveFactor
+open CenteredMomentFiniteProfileExceptional
+local notation "O" => HeckeFamily.O
+attribute [local instance] geometryErrorOrdinaryContractionDecidable
+
+variable {α : Type}[Fintype α]
+
+/-- The exact global ordinary normalized family required by the retained
+contraction. A receipt must be obtained from the actual normalized/menu proof. -/
+def GeometryErrorNormalizedFamilyReceipt
+    (degree windowDegree : ℕ)(reflected : Bool)(s : Input α)(Ψ : 𝓢(ℝ,ℂ))
+    (Z amp ξ reserve t : ℝ)(hZ : 1 < Z)(key : ℤ×(Fin 5→ℤ))(P : Finset (Ideal O))
+    (υ : GeometryLowFirstIndex (α:=α) reflected s (1:Ideal O) (1:Ideal O)
+      (Z^(1:ℝ)) Z ξ (Real.rpow_pos_of_pos (zero_lt_one.trans hZ) (1:ℝ)) key→
+      elementPool P→Fin 3→RayCharacter→Character)(hz₁ : s.W₁ 0=0)(hz₂ : s.W₂ 0=0)
+    (Qfix : Ideal O)(m : O)(numerator : ℝ) : Prop :=
+  let selected:=GeometryJointErrorSelectedIndex (α:=α) reflected s 1 1 Z 1 amp ξ reserve
+    (9/4) t hZ key P υ hz₁ hz₂
+  let d:=geometryJointErrorDatum (α:=α) reflected s 1 1 Z 1 amp ξ reserve (9/4) t hZ key P υ hz₁ hz₂
+  let phase:=fun c=>normPhase (coordinateBlock s 1 1 Ψ (Z^(1:ℝ)) Z ξ c)
+  let coeff:=geometryJointErrorWeight (α:=α) reflected s 1 1 Z 1 amp ξ reserve (9/4) t hZ key P υ
+    1 (Real.logb Z (volume s)) phase hz₁ hz₂
+  ∃(χ : selected→RayCharacter)(Hratio : ℤ→ℝ),
+    (∀r∈secondRatioBins (fun j=>(d j).block),0 < Hratio r) ∧
+    SecondNormalizedBound ballProfile degree windowDegree
+      (fun j=>ordinarySecondDatum (d j) (χ j) Qfix m) coeff (fun _=>numerator) Hratio
+
+attribute [local irreducible] geometryErrorSecondDatum geometryErrorNonzeroBlocks
+  geometryErrorChild geometryLowFirstChild geometryJointErrorDatum geometryJointErrorWeight
+
+/-- Join the exact normalized receipt and the proved finite ratio envelope.
+The conclusion is the original retained sum, with its prime average once. -/
+theorem geometry_affine_error_paid_source_of_receipts
+    (A degree windowDegree : ℕ)(reflected : Bool)(s : Input α)(Ψ : 𝓢(ℝ,ℂ))
+    (Z amp ξ reserve t : ℝ)(hZ : 1 < Z)(key : ℤ×(Fin 5→ℤ))(P : Finset (Ideal O))
+    (υ : GeometryLowFirstIndex (α:=α) reflected s (1:Ideal O) (1:Ideal O)
+      (Z^(1:ℝ)) Z ξ (Real.rpow_pos_of_pos (zero_lt_one.trans hZ) (1:ℝ)) key→
+      elementPool P→Fin 3→RayCharacter→Character)(hz₁ : s.W₁ 0=0)(hz₂ : s.W₂ 0=0)
+    (Qfix : Ideal O)(m : O)(box : Finset (Fin 4→ℤ))
+    (εratio exponent target Cb C Ce Co control cap : ℝ)
+    (hCb : 0 ≤ Cb)(hC : 0 ≤ C)(hCo : 0 ≤ Co)(hcontrol : 0 ≤ control)
+    (hcontract : OAI.SevenEighths.Target836SourceAssembly.GeometryErrorSourceRetainedSpec A degree windowDegree reflected s Ψ
+      Z amp ξ reserve t hZ key P υ hz₁ hz₂ Qfix m cap Co)
+    (hnormalized : GeometryErrorNormalizedFamilyReceipt degree windowDegree reflected s Ψ
+      Z amp ξ reserve t hZ key P υ hz₁ hz₂ Qfix m (C*control*Z^exponent))
+    (hratio : GeometryErrorBoxRatioSpec
+      (geometryJointErrorDatum (α:=α) reflected s 1 1 Z 1 amp ξ reserve (9/4) t hZ key P υ hz₁ hz₂)
+      box Cb εratio Z)
+    (hexceptional : cap ≤ Ce*control*Z^target)(hexponent : exponent+εratio ≤ target) :
+    (56/(P.card:ℝ))*‖geometryAffineErrorRetainedSum s Ψ Z amp ξ reserve t hZ reflected key P υ‖ ≤ 
+      (Ce+Co*Cb*C)*control*Z^target := by
+  letI : DecidableEq α:=Classical.decEq α
+  obtain ⟨χ,Hratio,hH,hnorm⟩:=hnormalized
+  have hnum : 0 ≤ C*control*Z^exponent := by positivity
+  have hc:=hcontract χ (fun _=>C*control*Z^exponent) Hratio (fun _ _=>hnum) hH hnorm
+  have hr:=hratio.2.2.1 (C*control*Z^exponent) hnum A
+  have hp:=geometry_affine_error_contracted_payment Z εratio exponent target Cb C Ce Co
+    control ((56/(P.card:ℝ))*‖OAI.SevenEighths.Target836SourceAssembly.geometryAffineErrorRetainedContractSum reflected s Ψ Z amp ξ reserve t hZ key P υ‖)
+    cap (∑r∈secondRatioBins (fun j=>(geometryJointErrorDatum (α:=α) reflected s 1 1 Z 1 amp ξ reserve
+      (9/4) t hZ key P υ hz₁ hz₂ j).block), (C*control*Z^exponent)/(1+dyadicScale r)^A)
+    hZ hCb hC hCo hcontrol hc hexceptional hr hexponent
+  rwa [OAI.SevenEighths.Target836SourceAssembly.geometry_affine_error_retained_contract_sum_eq_original] at hp
+
+/-- The common ambient rate pays projector, the explicit menu box cardinality,
+allocation, shell and finite ratio losses. Common scalar loss and ratio fee are δ. -/
+theorem geometry_affine_error_final_source_exponent (εaffine : ℝ)(N : ℕ)(hε : 0 < εaffine) :
+    let μ:=geometryLossUnit 1 εaffine
+    let δ:=geometryFinalDictionaryRate μ 31 3 4 3 130 (3*((N:ℝ)+2)) N
+    (2*δ+3*(3*((N:ℝ)+2))*δ)+(4*δ+δ-(7/60000000:ℝ))+δ ≤ -(7/120000000:ℝ) := by
+  intro μ δ
+  have hμ:=geometry_loss_unit_pos 1 εaffine (by norm_num) hε
+  have hb:=geometry_final_dictionary_budgets μ 31 3 4 3 130 (3*((N:ℝ)+2)) N
+    hμ (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by positivity)
+  have hp:=hb.2.2.2.2.2.1
+  change 130*δ+3*(3*((N:ℝ)+2))*δ+δ+8*δ ≤ μ at hp
+  have paid : (2*δ+3*(3*((N:ℝ)+2))*δ)+(4*δ+δ-(7/60000000:ℝ))+δ ≤ 
+      -(7/60000000:ℝ)+μ := by linarith only [hp,hb.1]
+  exact paid.trans (geometry_final_error_exponent_saving εaffine)
+
+private theorem affine_error_paid_plain_zero (p : Profiles (1/4) (9/4)) (i : Fin 2) :
+    p.profile i 0=0 := by
+  by_contra h
+  have hh:=(p.support i h).1
+  norm_num at hh
+
+variable [DecidableEq α]
+variable (rayM : Ideal O)[NeZero rayM]
+local instance affineErrorPaidFiniteQuotient : Finite (O⧸rayM):=
+  Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne rayM)
+variable (H : Subgroup (O⧸rayM)ˣ)(hH : RayOrthogonality.globalUnits rayM ≤ H)
+
+/-- Genuine affine exceptional and ratio payments close the original retained
+error after the exact named normalized-family receipt is supplied. -/
+theorem actual_affine_error_uniform_component_payment
+    (A degree windowDegree : ℕ)(hc : HasCompactSupport logAnnulus)(hs : ContDiff ℝ ∞ logAnnulus)
+    (Sbad : Finset (Ideal O))(hbad : fixedBadPrimes⊆Sbad)
+    (W : ℝ→ℂ)(hW : Continuous W)(hWs : Function.support W⊆Set.Icc (1:ℝ) 2)
+    (ηseed : Character)(εaffine mesh : ℝ)(hε : 0 < εaffine)
+    (hmesh : mesh < (902420521/120632400000:ℝ)/2)
+    (Qfix : Ideal O)(hQ : Qfix≠0)(hQt : Qfix≠⊤)(hQ72 : Qfix ≤ Ideal.span {(72:O)})
+    (C : ℝ)(hC : 0 ≤ C) :
+    ∃K : ℝ,0 ≤ K ∧ ∃SE : Finset (ℕ×ℕ),∃dE : ℕ,
+    ∀ᶠZ : ℝ in atTop,1 < Z ∧
+    ∀(hZ : 1 < Z)(T : Finset α)(η₀ : Character)(θ : T→RayQuotient.Characters rayM H)
+      (w σ freq : T→ℝ)(hσ : ∀i,σ i∈Set.Icc (33/50:ℝ) (33/50))
+      (bΦ : ℝ)(state : NaturalState Z 0 bΦ)(hη : state.character=ηseed)
+      (p : Profiles (1/4) (9/4))(t X₁ X₂ : ℝ)(hX₁ : 0 < X₁)(hX₂ : 0 < X₂),
+      (∀i,0 ≤ w i) → (∀i,w i ≤ mesh) →
+      (41/100:ℝ) ≤ length Z X₁ → (41/100:ℝ) ≤ length Z X₂ →
+      length Z X₁ ≤ (44/100:ℝ) → length Z X₂ ≤ (44/100:ℝ) →
+      (17/500:ℝ) ≤ ∑i,w i → (∑i,w i) ≤ (1/25:ℝ) →
+      length Z X₁+length Z X₂+Named.lam*(∑i,w i) ≤ Named.B →
+      ∀(S : Finset (ℕ×ℕ))(D : ℕ),SE⊆S → dE ≤ D →
+      ∀(Ψ : 𝓢(ℝ,ℂ))(reflected : Bool)(key : ℤ×(Fin 5→ℤ))(firstHeight height : ℝ),0 ≤ height →
+      let s:=affineInput rayM H hH η₀ θ W hW 1 2 (33/50) (33/50)
+        (by norm_num) hWs w σ freq hσ state p (by norm_num) 1 t X₁ X₂ hX₁ hX₂
+      let μ:=geometryLossUnit 1 εaffine
+      let N:=Fintype.card α
+      let δ:=geometryFinalDictionaryRate μ 31 3 4 3 130 (3*((N:ℝ)+2)) N
+      let amp:=Named.amp (Cycle63.Arithmetic.cellUpper (Cycle63.Moment.originalCell (∑i,w i)))
+      let P:=CenteredMomentPrimePool.primePool rayM H Sbad (1/2) 1 (Z^amp)
+      let control:=(p.control S)^2*geometryHighFactor reflected
+        (geometrySupportConstant (Fintype.card T) 1 (1/4) (1/4)) key*(1+|firstHeight|+height)^D
+      let exponent:=(2*δ+3*(3*((N:ℝ)+2))*δ)+(4*δ+δ-(7/60000000:ℝ))
+      ∀(υ : GeometryLowFirstIndex (α:=T) reflected s (1:Ideal O) (1:Ideal O)
+        (Z^(1:ℝ)) Z (μ/64) (Real.rpow_pos_of_pos (zero_lt_one.trans hZ) (1:ℝ)) key→
+        elementPool P→Fin 3→RayCharacter→Character),
+      (∀q p i ψ,(υ q p i ψ).modulus.absNorm ≤ radicalBound (childCharacter
+        (geometryColumnCharacter reflected s 1 1 (Z^(1:ℝ)) Z (μ/64)
+          (Real.rpow_pos_of_pos (zero_lt_one.trans hZ) (1:ℝ)) key q.1.val) ψ)
+        fixedBadMask p.val (errorMovingExponent (errorIndex i))) →
+      letI : DecidableEq T:=Classical.decEq T;
+      GeometryErrorNormalizedFamilyReceipt degree windowDegree reflected s Ψ Z amp (μ/64) (μ/8)
+        firstHeight hZ key P υ (affine_error_paid_plain_zero p 0) (affine_error_paid_plain_zero p 1)
+        Qfix fixedBadMask (C*control*Z^exponent) →
+      (56/(P.card:ℝ))*‖geometryAffineErrorRetainedSum s Ψ Z amp (μ/64) (μ/8) firstHeight
+        hZ reflected key P υ‖ ≤ K*control*Z^(-(7/120000000:ℝ)) := by
+  let μ:=geometryLossUnit 1 εaffine
+  let N:=Fintype.card α
+  let δ:=geometryFinalDictionaryRate μ 31 3 4 3 130 (3*((N:ℝ)+2)) N
+  have hμ : 0 < μ:=geometry_loss_unit_pos 1 εaffine (by norm_num) hε
+  have hδ : 0 < δ:=(geometry_final_dictionary_budgets μ 31 3 4 3 130 (3*((N:ℝ)+2)) N
+    hμ (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by positivity)).1
+  obtain ⟨Cs,hCs,hcaps⟩:=eventual_actual_affine_exceptional_source_gates (α:=α) rayM H hH W hW hWs
+  obtain ⟨Ce,hCe,SE,dE,Co,hCo,hcontract⟩:=OAI.SevenEighths.Target836SourceAssembly.actual_affine_error_retained_contraction (α:=α)
+    rayM H hH A degree windowDegree hc hs Sbad hbad W hW hWs ηseed εaffine mesh hε hmesh
+    Qfix hQ hQt hQ72 fixedBadMask fixedBadMask_ne_zero (dvd_mul_right _ _) (dvd_mul_left _ _)
+  obtain ⟨Cb,hCb,hratio⟩:=eventual_actual_geometry_affine_error_ratio_payment N (μ/8) (μ/64) δ
+    (by positivity) (by linarith) hδ
+  let K:=Ce+Co*Cb*C
+  refine ⟨K,by dsimp only [K];positivity,SE,dE,?_⟩
+  filter_upwards [hcaps,hcontract,hratio,eventual_geometry_small_frequency μ hμ] with Z hz hcZ hrZ hfZ
+  refine ⟨hz.1,?_⟩
+  intro hZ T η₀ θ w σ freq hσ bΦ state hη p t X₁ X₂ hX₁ hX₂ hw hwm hlo₁ hlo₂ hhi₁ hhi₂
+    hwlo hwhi hcone S D hSE hdE Ψ reflected key firstHeight height hheight s μ' N' δ' amp P control exponent υ hυ
+  letI : DecidableEq T:=Classical.decEq T
+  intro hnormalized
+  have caps:=hz.2 T η₀ θ w σ freq hσ bΦ state p t X₁ X₂ hX₁ hX₂ hw hlo₁ hlo₂ hhi₁ hhi₂ hwhi
+  have hcpaid:=hcZ.2 hZ T η₀ θ w σ freq hσ bΦ state hη p t X₁ X₂ hX₁ hX₂ hw hwm
+    hlo₁ hlo₂ hhi₁ hhi₂ hwlo hwhi hcone Ψ reflected key firstHeight υ hυ
+  have hside : 0 < geometryHighFactor reflected (geometrySupportConstant (Fintype.card T) 1 (1/4) (1/4)) key :=
+    geometry_high_factor_pos reflected _ key (by unfold geometrySupportConstant;positivity)
+  have hcontrol : 0 ≤ control:=by dsimp only [control];positivity
+  have hcell:=Cycle63.Moment.originalCell_mem ⟨hwlo,hwhi⟩
+  have hb:=Cycle63.Arithmetic.cellUpper_bounds hcell.1 hcell.2.1
+  have hamp0 : 0 ≤ amp:=(Named.amp_pos hb).le
+  have hamp : |amp| ≤ 3:=by
+    rw [abs_of_nonneg hamp0]
+    exact (Named.amp_bounds hb).2.trans (by norm_num)
+  have homega : |frequencyLoss Z 32 (μ/64)+μ/8| ≤ 3:=by
+    rw [abs_of_nonneg hfZ.2.1]
+    have hmucap:=(geometry_loss_unit_reserve 1 εaffine 1 le_rfl).2
+    linarith [hfZ.2.2]
+  have hp (pp : elementPool P) : pp.val≠0:=
+    (actual_affine_error_prime_norm_cap rayM H Sbad hbad Z hZ _ hb pp).1
+  have hbox:=hrZ.2 reflected s (1:Ideal O) (1:Ideal O) p Cs amp (μ/8) firstHeight hZ key
+    caps squarefree_one hamp homega P hp υ
+  have hex : Ce*geometryAffineExceptionalShell reflected Z key*(p.control SE)^2*
+      (1+‖firstHeight‖)^dE*Z^(-(1/100:ℝ)) ≤ Ce*control*Z^(-(7/120000000:ℝ)) := by
+    rw [geometry_affine_exceptional_shell_eq (Fintype.card T) Z hZ]
+    have hprofile:=pow_le_pow_left₀ (p.control_nonneg SE) (Cycle63Physical.profile_control_mono p hSE) 2
+    have hbase : (1+‖firstHeight‖)^dE ≤ (1+|firstHeight|+height)^D := by
+      rw [Real.norm_eq_abs]
+      exact (pow_le_pow_left₀ (by positivity) (by linarith) _).trans
+        (pow_le_pow_right₀ (by linarith [abs_nonneg firstHeight]) hdE)
+    have hpow:=Real.rpow_le_rpow_of_exponent_le hZ.le
+      (by norm_num : -(1/100:ℝ) ≤ -(7/120000000:ℝ))
+    have hh : Ce*geometryHighFactor reflected
+        (geometrySupportConstant (Fintype.card T) 1 (1/4) (1/4)) key*(p.control SE)^2*
+        (1+‖firstHeight‖)^dE ≤ Ce*geometryHighFactor reflected
+        (geometrySupportConstant (Fintype.card T) 1 (1/4) (1/4)) key*(p.control S)^2*
+        (1+|firstHeight|+height)^D :=
+      mul_le_mul (mul_le_mul_of_nonneg_left hprofile (mul_nonneg hCe.le hside.le))
+        hbase (pow_nonneg (by positivity) _) (by positivity)
+    have hm:=mul_le_mul hh hpow (Real.rpow_nonneg (zero_lt_one.trans hZ).le _) (by positivity)
+    convert hm using 1;dsimp only [control];ring
+  have hexponent : exponent+δ ≤ -(7/120000000:ℝ):=
+    geometry_affine_error_final_source_exponent εaffine N hε
+  exact geometry_affine_error_paid_source_of_receipts A degree windowDegree reflected s Ψ Z amp
+    (μ/64) (μ/8) firstHeight hZ key P υ (affine_error_paid_plain_zero p 0) (affine_error_paid_plain_zero p 1)
+    Qfix fixedBadMask (geometryErrorAbsoluteBox Z N 3 (μ/8) (9/4)) δ exponent
+    (-(7/120000000:ℝ)) Cb C Ce Co control _ hCb.le hC hCo.le hcontrol hcpaid hnormalized hbox hex hexponent
+
+end
+end OAI.SevenEighths.Target836ErrorPayment
+#print axioms OAI.SevenEighths.Target836ErrorPayment.geometry_affine_error_paid_source_of_receipts
+#print axioms OAI.SevenEighths.Target836ErrorPayment.geometry_affine_error_final_source_exponent
+
+#print axioms OAI.SevenEighths.Target836ErrorPayment.actual_affine_error_uniform_component_payment

@@ -1,0 +1,23 @@
+{
+  "title": "Cycle61 with the affine moment in the detector count",
+  "authors": [
+    {
+      "name": "DaysSky",
+      "url": "https://github.com/DaysSky"
+    }
+  ],
+  "description": "Builds on Hailey Collet's Cycle61 (874861/1000000). Cycle61's initial affine moment (Theorem 2.2), previously used only in the source row, is also applied in the detector's per-fiber count. For plain lengths m in [0.4137, 0.4235], the marked plain capacity (1-2m)/(6κ) becomes (B-2m)/Λ. On the critical region δ ∈ [0.445, 0.485], p ∈ [0.495, 0.5], this replaces Cycle25's countingR κ* by a κ-independent closed form and moves the endpoint to 437423/500000 with h = 15903/20000. The detector moment is supplied by Cycle61's generic paid main and error families at each dictionary character, with heights chosen per character. All other estimates are Cycle61's, rechecked at the new endpoint with exact rational certificates. AI disclosure: DaysSky with Claude assistance.",
+  "license": "Apache-2.0",
+  "builds_on": [
+    "cycle61-c0125139"
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "Original manuscript, provenance, licenses and supporting verification material",
+      "url": "https://github.com/DaysSky/QuasiRiemannTracker/tree/a0efd9ee546b417de650f36bc8403f781706a94e/proofs/detector-affine-c0125154"
+    }
+  ]
+}

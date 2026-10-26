@@ -1,6 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { cmp, decimal } from "../../core/rational.mjs";
-import { catalogue as fixtureCatalogue } from "./catalogue-fixture";
+import {
+  catalogue as fixtureCatalogue,
+  routeCatalogue,
+} from "./catalogue-fixture";
 
 const catalogue = fixtureCatalogue();
 const verified = catalogue.records.filter(
@@ -8,7 +11,7 @@ const verified = catalogue.records.filter(
 );
 const best = [...verified].sort((a, b) => cmp(a.theta, b.theta))[0];
 
-test("all points stay in the chart while default zoom fits the verified frontier below one", async ({
+test("the default view focuses verified improvements and reset restores it", async ({
   page,
 }) => {
   const source = verified[0];
@@ -49,23 +52,23 @@ test("all points stay in the chart while default zoom fits the verified frontier
     first_verified_at: "",
     builds_on: [],
   };
-  await page.route("**/catalogue.json", (route) =>
-    route.fulfill({
-      json: {
-        ...catalogue,
-        records: [...catalogue.records, historical, weaker, pending],
-      },
-    }),
-  );
+  await routeCatalogue(page, {
+    ...catalogue,
+    records: [...catalogue.records, historical, weaker, pending],
+  });
   await page.goto("/");
 
   const chart = page.locator(".chart");
-  const fit = page.getByRole("button", { name: "Fit chart", exact: true });
+  const fit = page.getByRole("button", {
+    name: "Fit leaderboard",
+    exact: true,
+  });
   const summary = page.getByRole("button", {
     name: "View best verified proof",
   });
   const boundTicks = chart.locator('[data-axis="bound"]');
   const dateTicks = chart.locator('[data-axis="date"]');
+  await expect(chart.locator("[data-dot]").first()).toBeAttached();
 
   await expect(
     page.getByRole("group", { name: "Chart view", exact: true }),
@@ -135,7 +138,7 @@ test("all points stay in the chart while default zoom fits the verified frontier
   await expect(dateTicks).toHaveText(initialDates);
 });
 
-test("a verified theta-one baseline connects to the next bound while default zoom stays below one", async ({
+test("a verified theta-one baseline connects to the next bound while leaderboard zoom stays below one", async ({
   page,
 }) => {
   const initial = verified[0];
@@ -150,22 +153,21 @@ test("a verified theta-one baseline connects to the next bound while default zoo
     first_verified_at: "2026-10-12T17:39:36Z",
     builds_on: [],
   };
-  await page.route("**/catalogue.json", (route) =>
-    route.fulfill({
-      json: {
-        ...catalogue,
-        records: [
-          classical,
-          ...catalogue.records.filter(
-            (r: { id: string }) => r.status !== "historical-baseline",
-          ),
-        ],
-      },
-    }),
-  );
+  await routeCatalogue(page, {
+    ...catalogue,
+    records: [
+      classical,
+      ...catalogue.records.filter(
+        (r: { id: string }) => r.status !== "historical-baseline",
+      ),
+    ],
+  });
   await page.goto("/");
   const chart = page.locator(".chart");
   const point = chart.locator('[data-id="verified-classical-fixture"]');
+  await page
+    .getByRole("button", { name: "Fit leaderboard", exact: true })
+    .click();
   await expect(point).toHaveAttribute("aria-hidden", "true");
   for (const text of await chart
     .locator('[data-axis="bound"]')

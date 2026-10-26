@@ -70,5 +70,182 @@
     "repository": "GTimG/QuasiRiemannTracker",
     "number": 48,
     "head_sha": "57ca0662b4ddeb2a75c0e302d0350cc65cf67c12"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "gao-balanced-marked-20261017",
+    "theta_exact": "87483/100000",
+    "verified_at": "2026-10-17T11:32:52.190604+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "52419a826d4a8465cdeb56aaa2d471c489221d1d",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/7ae053f42b59f65790c4b66bb6a2ae0f5a32474a/verifier/standard/receipts/pr63-52419a82-20261017/result.json",
+    "report_sha256": "459cd6948c5e2b0f2021e6ab2e0c7fd1dacff72122d91cc6503a9d7bee4af4d4",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 63,
+    "head_sha": "52419a826d4a8465cdeb56aaa2d471c489221d1d"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "no-hardcoding-20261017",
+    "theta_exact": "874835173/1000000000",
+    "verified_at": "2026-10-17T23:31:58.056623+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "edbb22b1a080c961b19e438e9e8ce6d6b3842739",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/71d2bbdffc5c0cc50449a88424de73233b71ef03/verifier/standard/receipts/pr64-edbb22b1-20261017/result.json",
+    "report_sha256": "590991f6564dc9e5b012d947e554354c8c0c8fa042a304a941b564cff020ceff",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 64,
+    "head_sha": "edbb22b1a080c961b19e438e9e8ce6d6b3842739"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "sil-uneven-normalization-20261019",
+    "theta_exact": "874828524351/1000000000000",
+    "verified_at": "2026-10-19T18:54:39.570286+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/302e388161cb7724d0fcc4bcc588adbdb34684e5/verifier/standard/receipts/pr66-c68a3b2b-20261019/result.json",
+    "report_sha256": "b30fc3ffe7065070dd66eaea8239f07464de852afc1a3274cd7e708e7dc0e8a3",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 66,
+    "head_sha": "c68a3b2ba5b28b9c9b4bf26966ed6ee04ffa29b9"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "gao-five-step-affine-20261020",
+    "theta_exact": "8748087/10000000",
+    "verified_at": "2026-10-20T23:12:52.462554+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "f07bb2418990a9976c0da5f65bb6a7a77da94c9a",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/abf5d4116a9cba5ce82f3158f546e65e7bc32f2b/verifier/standard/receipts/pr68-f07bb241-20261020/result.json",
+    "report_sha256": "9c7b0a2077fcb2c7d5921ede1125da63bde5f393463593469190df14f9930c45",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 68,
+    "head_sha": "f07bb2418990a9976c0da5f65bb6a7a77da94c9a"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "hailey-collet-1252270103",
+    "theta_exact": "8747729897/10000000000",
+    "verified_at": "2026-10-22T22:13:39.013693+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/2e5f260096b478003550046cab52e612c2c1dd03/verifier/standard/receipts/pr69-ac76d5ef-20261023/result.json",
+    "report_sha256": "b9976aad6617832a1140abcfa903bb2fa06c736e5578940ae5a814ef2a3fc877",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 69,
+    "head_sha": "ac76d5ef6008d976a7b8f3c1d921af2317e79ce9"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "lewko-acyclic-bootstrap-874772906",
+    "theta_exact": "437386453/500000000",
+    "verified_at": "2026-10-23T10:21:00.417245+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "8ee28f244ec11b180d09c9d3f92e34ee078c746a",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/2f6fe029c5640392ff429362f343481299f6242e/verifier/standard/receipts/pr70-8ee28f24-20261023/result.json",
+    "report_sha256": "2cb67e38d2a1d95690ffb491d158f888ab41d3c1267891abd4456153b618ab5b",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 70,
+    "head_sha": "8ee28f244ec11b180d09c9d3f92e34ee078c746a"
+  },
+  {
+    "schema_version": 1,
+    "result_id": "slayer-recost-0p87477290596",
+    "theta_exact": "21869322649/25000000000",
+    "verified_at": "2026-10-24T21:41:24.094983+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/54f1a9135b14dbc41762c69edfdc362317821702/verifier/standard/receipts/pr71-17d05f9a-20261024/result.json",
+    "report_sha256": "e8d412c8d30bee176a694d2528b84ecc1b1d2b1136379c900ce2668b409377c6",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 71,
+    "head_sha": "17d05f9a81bbea54ae55597eb0a449b27e33a06d",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "bdf40c9ce9c3ccb826f0bd3247071cb83979a80ffb899edee783671085629cb3"
+    }
+  },
+  {
+    "schema_version": 1,
+    "result_id": "arvi-repeated-marks-20261024",
+    "theta_exact": "8747289/10000000",
+    "verified_at": "2026-10-25T20:44:20.989546+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/335675f6a7112e7f903d65fc10710756528c3605/verifier/standard/receipts/pr73-41ddc0dd-20261025/result.json",
+    "report_sha256": "957a5129edb1911dfcd1d692c25b576359d27077d89a1e69e63f788d2fb401a4",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 73,
+    "head_sha": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "84d4031d20445163a6afa22a3559c8f4a95bdbf0158a8e143ef9cb7c78cf4e24"
+    }
+  },
+  {
+    "schema_version": 1,
+    "result_id": "arvi-repeated-marks-on-sil-face-20261025",
+    "theta_exact": "349843/400000",
+    "verified_at": "2026-10-26T01:21:30.330565+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/0d4719757b4156ace59ea929fef10fed8f9eef91/verifier/standard/receipts/pr76-2fd55e03-20261026/result.json",
+    "report_sha256": "2214a2c2c2597b4697e1633673ca423045c6e6402d0b782a2380fb92b264feba",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 76,
+    "head_sha": "2fd55e03fd33d0f181cdd74ab1bd0a87b949f53a",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "92fb0f0f52900a5c53899305b26110d257171629bb4695709a182ed97299d5ad"
+    }
   }
 ]

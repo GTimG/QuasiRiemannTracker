@@ -1,0 +1,44 @@
+--- protected/replay.py
++++ local/replay.py
+@@ -56,7 +56,7 @@
+ v.VERIFICATION_LIMITS = {**v.VERIFICATION_LIMITS,'memory_high_percent':75,'memory_max_percent':85,'tasks_max':256}
+ # Compilation, export and all three kernel checks share this deadline.
+ # Keep the Actions check step longer so timeout evidence can still be retained.
+-v.install_execution_deadline(budget_seconds=10800)
++v.install_execution_deadline(budget_seconds=86400)
+ bundled = {name:judge/'bin'/name for name in v.TOOLCHAIN_TOOLS}
+ approved_tools=json.loads(args.tool_pins.read_text())
+ selected_tools={'source_lean':old/'bin/lean','exporter':exporter,**{'judge_'+name:path for name,path in bundled.items()}}
+@@ -103,7 +103,7 @@
+ challenge_env={**env,'LEAN_PATH':':'.join(map(str,[work/'challenge-lib',*libs]))}
+ stage('compile and freeze canonical challenge')
+ log('challenge-compile',v.sandboxed_run([str(old/'bin/lean'),f'-j{threads}','-o',str(work/'challenge-lib/Challenge.olean'),'Challenge.lean'],cwd=work/'challenge-src',environment=challenge_env,writable_directories=[work/'challenge-lib',work/'home',work/'tmp'],readable_paths=[*libs,*system],executable_paths=[old,Path('/usr')],tools=tools,timeout=600))
+-log('challenge-export',v.export_module('Challenge',targets,output=work/'exports/Challenge.export',leanexport=exporter,cwd=work/'challenge-src',environment=challenge_env,readable_paths=[work/'challenge-lib',*libs,*system],executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=600))
++log('challenge-export',v.export_module('Challenge',targets,output=work/'exports/Challenge.export',leanexport=exporter,cwd=work/'challenge-src',environment=challenge_env,readable_paths=[work/'challenge-lib',*libs,*system],executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=7200))
+ v.verify_export(work/'exports/Challenge.export')
+ challenge_hash=sha(work/'exports/Challenge.export')
+ candidate_env={**env,'LEAN_PATH':':'.join(map(str,[work/'candidate-lib',*libs]))}
+@@ -152,7 +152,7 @@
+             writable_directories=[scratch/'out', scratch/'home', scratch/'tmp'],
+             readable_paths=[work/'candidate-lib', *libs, *system], executable_paths=[old, Path('/usr')],
+             # The retry shares the module deadline and the overall replay deadline.
+-            tools=tools, timeout=max(0, 1800 - (time.monotonic() - module_started[module])),
++            tools=tools, timeout=max(0, 7200 - (time.monotonic() - module_started[module])),
+             resource_properties=(f"MemoryMax={memory_limit}",)))
+     except v.ResourceExhausted as error:
+         detail = f'{module}: {error}; memory limit {memory_limit} bytes'
+@@ -170,12 +170,12 @@
+ solution_env={**env,'LEAN_PATH':':'.join(map(str,[work/'solution-lib',work/'candidate-lib',*libs]))}
+ stage('compile and export standard solution wrapper')
+ log('solution-compile',v.sandboxed_run([str(old/'bin/lean'),f'-j{threads}','-o',str(work/'solution-lib/Solution.olean'),'Solution.lean'],cwd=work/'solution-src',environment=solution_env,writable_directories=[work/'solution-lib',work/'home',work/'tmp'],readable_paths=[work/'candidate-lib',*libs,*system],executable_paths=[old,Path('/usr')],tools=tools,timeout=600))
+-log('solution-export',v.export_module('Solution',targets,output=work/'exports/Solution.export',leanexport=exporter,cwd=work/'solution-src',environment=solution_env,readable_paths=[work/'solution-lib',work/'candidate-lib',*libs,*system],executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=600))
++log('solution-export',v.export_module('Solution',targets,output=work/'exports/Solution.export',leanexport=exporter,cwd=work/'solution-src',environment=solution_env,readable_paths=[work/'solution-lib',work/'candidate-lib',*libs,*system],executable_paths=[old,exporter,Path('/usr')],tools=tools,timeout=7200))
+ v.verify_export(work/'exports/Solution.export')
+ assert sha(work/'exports/Challenge.export') == challenge_hash
+ stage('Comparator and Lean, NanoDa, con-ron')
+ print(f"Kernel verification: {capacity['kernel_jobs']} simultaneous checks",flush=True)
+-result=judge_exports(v,config=work/'comparator.json',challenge_export=work/'exports/Challenge.export',solution_export=work/'exports/Solution.export',scratch=work/'judge',bundled=bundled,lean_prefix=judge,environment=env,tools=tools,capacity=capacity,timeout=3600)
++result=judge_exports(v,config=work/'comparator.json',challenge_export=work/'exports/Challenge.export',solution_export=work/'exports/Solution.export',scratch=work/'judge',bundled=bundled,lean_prefix=judge,environment=env,tools=tools,capacity=capacity,timeout=57600)
+ log('judge',result)
+ transcript=result.stdout+'\n'+result.stderr
+ assert 'Your solution is okay!' in transcript and all(k+' kernel accepts the solution' in transcript for k in ['Lean default','nanoda','con-ron'])

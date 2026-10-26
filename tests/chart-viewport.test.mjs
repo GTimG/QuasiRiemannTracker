@@ -27,12 +27,30 @@ test("default extent follows verified record improvements below one", () => {
     record("tie", "2040-01-01", "8749", "10000"),
     record("pending", "1859-01-01", "1", "2", "verification-pending"),
   ];
-  assert.deepEqual(chartExtent([...additions, improved, first]), {
-    start: Date.parse("2026-10-05T00:00:00Z"),
-    end: Date.parse("2026-10-11T00:00:00Z"),
-    low: improved.theta,
-    high: first.theta,
-  });
+  assert.deepEqual(
+    chartExtent(
+      [...additions, improved, first],
+      [],
+      false,
+      [0, 100],
+      Date.parse(improved.timeline_at),
+    ),
+    {
+      start: Date.parse("2026-10-05T00:00:00Z"),
+      end: Date.parse("2026-10-11T00:00:00Z"),
+      low: improved.theta,
+      high: first.theta,
+    },
+  );
+});
+
+test("the fitted timeline includes the viewing time without widening the bound range", () => {
+  const now = Date.parse("2026-10-20T12:00:00Z");
+  const extent = chartExtent([first, improved], [], false, [0, 100], now);
+  assert.ok(extent.start < Date.parse(first.timeline_at));
+  assert.equal(extent.end, now + 86400000);
+  assert.deepEqual(extent.low, improved.theta);
+  assert.deepEqual(extent.high, first.theta);
 });
 
 test("full history includes historical, weaker and later results", () => {

@@ -1,0 +1,35 @@
+{
+  "title": "Repeated-mark face family started on Sil's fourth-power source face",
+  "authors": [
+    {
+      "name": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    }
+  ],
+  "description": "Proves the all-moduli Dirichlet boundary 349843/400000 = 0.8746075, with the principal pole excluded. The fourth-power source face is Sil's; this submission contributes the combination with our repeated-mark chain. (1) Sil's fourth-power source face GlobalSource (99999/100000) (93/25) (3/50) (sil-fourth-power-20261025, PR 74), with slot cost 3.72 instead of the natural 9/2. That statement assumes theta < beta for the target 1749387/2000000 of PR 74, and the construction uses that only through 51/100 <= beta. The import closure of that theorem (421 of the modules of PR 74, Apache-2.0, notices kept) is included in FourthPower/ with that hypothesis weakened to 51/100 <= beta in eight files; no other proof changes. (2) The repeated-mark source chain of arvi-single-stage-20261025 (the face family, Lemma F, the packed certificates and the final return with Lemma D), started on Sil's face instead of Collet's natural face. The family must start where the continuum flow is tangent to the start face (s = 0.0329365): away from the tangency the first step's LOW amplifier stays near 0.7(b - s), above its gate 1/75. It runs in three pieces to s = 0.0472, where the HIGH density floor q >= 1/2 ends it (L/B = 3). The final count face is (0.96775, 2.91120) and the physical face (0.97187, 3.00000); the regenerated final return (42 rows, 17 windows) closes at 349843/400000. The natural cost is K = 9/2, whose cap is the baseline's beta <= 7/8, so the proof is a single stage: Collet's seed step, intermediate return and the PR 67 re-proof are not needed. (3) Faster verification: the HIGH-gate and sector certificates run in packed integer arithmetic (Kronecker packing, with pack/unpack proved mutually inverse and the packed formula proved to represent the rational one), which cuts the face-family kernel time from about 2600 s (PR 73) to under 170 s; the export of the bound is 3.0 GB in 300 s against 4.3 GB in 511 s for PR 73, although it now includes Sil's 421 modules. The research, drafting and Lean development were AI-assisted.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "sil-fourth-power-20261025",
+    "arvi-repeated-marks-20261024",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "Research notes: the combined proof",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/combined"
+    },
+    {
+      "label": "Analysis of the fourth-power source face (PR 74)",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/blob/ccr-48c53b87-r20g37/research/upstream/PR74_ANALYSIS.md"
+    },
+    {
+      "label": "The face family and its continuum flow",
+      "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain"
+    }
+  ]
+}
