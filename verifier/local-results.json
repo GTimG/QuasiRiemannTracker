@@ -247,5 +247,28 @@
       "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
       "runtime_sha256": "92fb0f0f52900a5c53899305b26110d257171629bb4695709a182ed97299d5ad"
     }
+  },
+  {
+    "schema_version": 1,
+    "result_id": "runbo-li-arvi-face-8746074-20261026",
+    "theta_exact": "4373037/5000000",
+    "verified_at": "2026-10-26T18:56:58.020243+00:00",
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "source_commit": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+    "kernels": [
+      "Lean default",
+      "nanoda",
+      "con-ron"
+    ],
+    "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/cfdb7fedd2f0bc550c2f6e746a8d6d2f8103a255/verifier/standard/receipts/pr79-3dcd2742-20261026/result.json",
+    "report_sha256": "0571399fe05bb67dcb1d2bb074ecea2e453aaa2440d0a04d65929c96f631528e",
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 79,
+    "head_sha": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+    "reuse": {
+      "schema_version": 1,
+      "policy_sha256": "b8bf491d68ed3d0c2d1cb5053ca5ae460e3d7897657d4d34206327db111f05c7",
+      "runtime_sha256": "fbee9d5f249b69f5b4d5f6dcd1a3d054e67ce11e18806fabfd4a065f4c94abe3"
+    }
   }
 ]
