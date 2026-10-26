@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "head_sha": "41ddc0ddea6b4de6829d8cc1f94afa4e22c748f3",
+  "protected_revision": "5c8b17807e9d11f500d79de487fa38ace7265bfb",
+  "changed_files": 294,
+  "only_new_submission_files": true,
+  "no_verifier_workflow_dependency_changes": true,
+  "declared_bound": "8747289/10000000",
+  "source_header_credit_counts": {
+    "Apache": 210,
+    "Hailey Collet": 89,
+    "OpenAI": 93
+  },
+  "metadata_license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "dependencies": [
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "builds_on_exist_on_main": true,
+  "dependency_trees_unchanged": true,
+  "flagged_code": [],
+  "proof_acceptance": "PASS: independently replayed with Comparator and Lean, NanoDa and con-ron; see the outside-sandbox receipt."
+}
