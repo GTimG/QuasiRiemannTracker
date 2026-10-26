@@ -9785,49 +9785,64 @@ private theorem admission000 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq000]
+  · change 0 < admissionGuard branchPcap δ p (0 : Fin 15)
+    rw [eq000]
     exact cert000 hδ hp
 
-  · rw [eq001]
+  · change 0 < admissionGuard branchPcap δ p (1 : Fin 15)
+    rw [eq001]
     exact cert001 hδ hp
 
-  · rw [eq002]
+  · change 0 < admissionGuard branchPcap δ p (2 : Fin 15)
+    rw [eq002]
     exact cert002 hδ hp
 
-  · rw [eq003]
+  · change 0 < admissionGuard branchPcap δ p (3 : Fin 15)
+    rw [eq003]
     exact cert003 hδ hp
 
-  · rw [eq004]
+  · change 0 < admissionGuard branchPcap δ p (4 : Fin 15)
+    rw [eq004]
     exact cert004 hδ hp
 
-  · rw [eq005]
+  · change 0 < admissionGuard branchPcap δ p (5 : Fin 15)
+    rw [eq005]
     exact cert005 hδ hp
 
-  · rw [eq006]
+  · change 0 < admissionGuard branchPcap δ p (6 : Fin 15)
+    rw [eq006]
     exact cert006 hδ hp
 
-  · rw [eq007]
+  · change 0 < admissionGuard branchPcap δ p (7 : Fin 15)
+    rw [eq007]
     exact cert007 hδ hp
 
-  · rw [eq008]
+  · change 0 < admissionGuard branchPcap δ p (8 : Fin 15)
+    rw [eq008]
     exact cert008 hδ hp
 
-  · rw [eq009]
+  · change 0 < admissionGuard branchPcap δ p (9 : Fin 15)
+    rw [eq009]
     exact cert009 hδ hp
 
-  · rw [eq010]
+  · change 0 < admissionGuard branchPcap δ p (10 : Fin 15)
+    rw [eq010]
     exact cert010 hδ hp
 
-  · rw [eq011]
+  · change 0 < admissionGuard branchPcap δ p (11 : Fin 15)
+    rw [eq011]
     exact cert011 hδ hp
 
-  · rw [eq012]
+  · change 0 < admissionGuard branchPcap δ p (12 : Fin 15)
+    rw [eq012]
     exact cert012 hδ hp
 
-  · rw [eq013]
+  · change 0 < admissionGuard branchPcap δ p (13 : Fin 15)
+    rw [eq013]
     exact cert013 hδ hp
 
-  · rw [eq014]
+  · change 0 < admissionGuard branchPcap δ p (14 : Fin 15)
+    rw [eq014]
     exact cert014 hδ hp
 
 private theorem admission001 {δ p : ℝ}
@@ -9835,49 +9850,64 @@ private theorem admission001 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert015 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert016 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert017 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert018 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert019 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert020 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert021 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert022 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert023 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert024 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert025 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert026 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert027 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert028 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert029 hδ hp
 
 private theorem admission002 {δ p : ℝ}
@@ -9885,49 +9915,64 @@ private theorem admission002 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert030 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert031 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert032 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert033 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert034 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert035 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert036 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert037 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert038 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert039 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert040 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert041 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert042 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert043 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert044 hδ hp
 
 private theorem admission003 {δ p : ℝ}
@@ -9935,49 +9980,64 @@ private theorem admission003 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq000]
+  · change 0 < admissionGuard branchPcap δ p (0 : Fin 15)
+    rw [eq000]
     exact cert045 hδ hp
 
-  · rw [eq001]
+  · change 0 < admissionGuard branchPcap δ p (1 : Fin 15)
+    rw [eq001]
     exact cert046 hδ hp
 
-  · rw [eq002]
+  · change 0 < admissionGuard branchPcap δ p (2 : Fin 15)
+    rw [eq002]
     exact cert047 hδ hp
 
-  · rw [eq003]
+  · change 0 < admissionGuard branchPcap δ p (3 : Fin 15)
+    rw [eq003]
     exact cert048 hδ hp
 
-  · rw [eq004]
+  · change 0 < admissionGuard branchPcap δ p (4 : Fin 15)
+    rw [eq004]
     exact cert049 hδ hp
 
-  · rw [eq005]
+  · change 0 < admissionGuard branchPcap δ p (5 : Fin 15)
+    rw [eq005]
     exact cert050 hδ hp
 
-  · rw [eq006]
+  · change 0 < admissionGuard branchPcap δ p (6 : Fin 15)
+    rw [eq006]
     exact cert051 hδ hp
 
-  · rw [eq007]
+  · change 0 < admissionGuard branchPcap δ p (7 : Fin 15)
+    rw [eq007]
     exact cert052 hδ hp
 
-  · rw [eq008]
+  · change 0 < admissionGuard branchPcap δ p (8 : Fin 15)
+    rw [eq008]
     exact cert053 hδ hp
 
-  · rw [eq009]
+  · change 0 < admissionGuard branchPcap δ p (9 : Fin 15)
+    rw [eq009]
     exact cert054 hδ hp
 
-  · rw [eq010]
+  · change 0 < admissionGuard branchPcap δ p (10 : Fin 15)
+    rw [eq010]
     exact cert055 hδ hp
 
-  · rw [eq011]
+  · change 0 < admissionGuard branchPcap δ p (11 : Fin 15)
+    rw [eq011]
     exact cert056 hδ hp
 
-  · rw [eq012]
+  · change 0 < admissionGuard branchPcap δ p (12 : Fin 15)
+    rw [eq012]
     exact cert057 hδ hp
 
-  · rw [eq013]
+  · change 0 < admissionGuard branchPcap δ p (13 : Fin 15)
+    rw [eq013]
     exact cert058 hδ hp
 
-  · rw [eq014]
+  · change 0 < admissionGuard branchPcap δ p (14 : Fin 15)
+    rw [eq014]
     exact cert059 hδ hp
 
 private theorem admission004 {δ p : ℝ}
@@ -9985,49 +10045,64 @@ private theorem admission004 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert060 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert061 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert062 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert063 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert064 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert065 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert066 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert067 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert068 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert069 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert070 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert071 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert072 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert073 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert074 hδ hp
 
 private theorem admission005 {δ p : ℝ}
@@ -10035,49 +10110,64 @@ private theorem admission005 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert075 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert076 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert077 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert078 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert079 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert080 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert081 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert082 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert083 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert084 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert085 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert086 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert087 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert088 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert089 hδ hp
 
 private theorem admission006 {δ p : ℝ}
@@ -10085,49 +10175,64 @@ private theorem admission006 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert090 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert091 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert092 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert093 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert094 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert095 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert096 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert097 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert098 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert099 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert100 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert101 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert102 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert103 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert104 hδ hp
 
 private theorem admission007 {δ p : ℝ}
@@ -10135,49 +10240,64 @@ private theorem admission007 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert105 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert106 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert107 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert108 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert109 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert110 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert111 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert112 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert113 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert114 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert115 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert116 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert117 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert118 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert119 hδ hp
 
 private theorem admission008 {δ p : ℝ}
@@ -10185,49 +10305,64 @@ private theorem admission008 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert120 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert121 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert122 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert123 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert124 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert125 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert126 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert127 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert128 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert129 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert130 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert131 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert132 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert133 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert134 hδ hp
 
 private theorem admission009 {δ p : ℝ}
@@ -10235,49 +10370,64 @@ private theorem admission009 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert135 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert136 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert137 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert138 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert139 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert140 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert141 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert142 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert143 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert144 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert145 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert146 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert147 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert148 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert149 hδ hp
 
 private theorem admission010 {δ p : ℝ}
@@ -10285,49 +10435,64 @@ private theorem admission010 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert150 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert151 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert152 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert153 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert154 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert155 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert156 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert157 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert158 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert159 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert160 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert161 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert162 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert163 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert164 hδ hp
 
 private theorem admission011 {δ p : ℝ}
@@ -10335,49 +10500,64 @@ private theorem admission011 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert165 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert166 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert167 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert168 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert169 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert170 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert171 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert172 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert173 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert174 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert175 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert176 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert177 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert178 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert179 hδ hp
 
 private theorem admission012 {δ p : ℝ}
@@ -10385,49 +10565,64 @@ private theorem admission012 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq015]
+  · change 0 < admissionGuard branchC δ p (0 : Fin 15)
+    rw [eq015]
     exact cert180 hδ hp
 
-  · rw [eq016]
+  · change 0 < admissionGuard branchC δ p (1 : Fin 15)
+    rw [eq016]
     exact cert181 hδ hp
 
-  · rw [eq017]
+  · change 0 < admissionGuard branchC δ p (2 : Fin 15)
+    rw [eq017]
     exact cert182 hδ hp
 
-  · rw [eq018]
+  · change 0 < admissionGuard branchC δ p (3 : Fin 15)
+    rw [eq018]
     exact cert183 hδ hp
 
-  · rw [eq019]
+  · change 0 < admissionGuard branchC δ p (4 : Fin 15)
+    rw [eq019]
     exact cert184 hδ hp
 
-  · rw [eq020]
+  · change 0 < admissionGuard branchC δ p (5 : Fin 15)
+    rw [eq020]
     exact cert185 hδ hp
 
-  · rw [eq021]
+  · change 0 < admissionGuard branchC δ p (6 : Fin 15)
+    rw [eq021]
     exact cert186 hδ hp
 
-  · rw [eq022]
+  · change 0 < admissionGuard branchC δ p (7 : Fin 15)
+    rw [eq022]
     exact cert187 hδ hp
 
-  · rw [eq023]
+  · change 0 < admissionGuard branchC δ p (8 : Fin 15)
+    rw [eq023]
     exact cert188 hδ hp
 
-  · rw [eq024]
+  · change 0 < admissionGuard branchC δ p (9 : Fin 15)
+    rw [eq024]
     exact cert189 hδ hp
 
-  · rw [eq025]
+  · change 0 < admissionGuard branchC δ p (10 : Fin 15)
+    rw [eq025]
     exact cert190 hδ hp
 
-  · rw [eq026]
+  · change 0 < admissionGuard branchC δ p (11 : Fin 15)
+    rw [eq026]
     exact cert191 hδ hp
 
-  · rw [eq027]
+  · change 0 < admissionGuard branchC δ p (12 : Fin 15)
+    rw [eq027]
     exact cert192 hδ hp
 
-  · rw [eq028]
+  · change 0 < admissionGuard branchC δ p (13 : Fin 15)
+    rw [eq028]
     exact cert193 hδ hp
 
-  · rw [eq029]
+  · change 0 < admissionGuard branchC δ p (14 : Fin 15)
+    rw [eq029]
     exact cert194 hδ hp
 
 private theorem admission013 {δ p : ℝ}
@@ -10435,49 +10630,64 @@ private theorem admission013 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq030]
+  · change 0 < admissionGuard branchP δ p (0 : Fin 15)
+    rw [eq030]
     exact cert195 hδ hp
 
-  · rw [eq031]
+  · change 0 < admissionGuard branchP δ p (1 : Fin 15)
+    rw [eq031]
     exact cert196 hδ hp
 
-  · rw [eq032]
+  · change 0 < admissionGuard branchP δ p (2 : Fin 15)
+    rw [eq032]
     exact cert197 hδ hp
 
-  · rw [eq033]
+  · change 0 < admissionGuard branchP δ p (3 : Fin 15)
+    rw [eq033]
     exact cert198 hδ hp
 
-  · rw [eq034]
+  · change 0 < admissionGuard branchP δ p (4 : Fin 15)
+    rw [eq034]
     exact cert199 hδ hp
 
-  · rw [eq035]
+  · change 0 < admissionGuard branchP δ p (5 : Fin 15)
+    rw [eq035]
     exact cert200 hδ hp
 
-  · rw [eq036]
+  · change 0 < admissionGuard branchP δ p (6 : Fin 15)
+    rw [eq036]
     exact cert201 hδ hp
 
-  · rw [eq037]
+  · change 0 < admissionGuard branchP δ p (7 : Fin 15)
+    rw [eq037]
     exact cert202 hδ hp
 
-  · rw [eq038]
+  · change 0 < admissionGuard branchP δ p (8 : Fin 15)
+    rw [eq038]
     exact cert203 hδ hp
 
-  · rw [eq039]
+  · change 0 < admissionGuard branchP δ p (9 : Fin 15)
+    rw [eq039]
     exact cert204 hδ hp
 
-  · rw [eq040]
+  · change 0 < admissionGuard branchP δ p (10 : Fin 15)
+    rw [eq040]
     exact cert205 hδ hp
 
-  · rw [eq041]
+  · change 0 < admissionGuard branchP δ p (11 : Fin 15)
+    rw [eq041]
     exact cert206 hδ hp
 
-  · rw [eq042]
+  · change 0 < admissionGuard branchP δ p (12 : Fin 15)
+    rw [eq042]
     exact cert207 hδ hp
 
-  · rw [eq043]
+  · change 0 < admissionGuard branchP δ p (13 : Fin 15)
+    rw [eq043]
     exact cert208 hδ hp
 
-  · rw [eq044]
+  · change 0 < admissionGuard branchP δ p (14 : Fin 15)
+    rw [eq044]
     exact cert209 hδ hp
 
 private theorem admission014 {δ p : ℝ}
@@ -10485,49 +10695,64 @@ private theorem admission014 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq045]
+  · change 0 < admissionGuard branchY δ p (0 : Fin 15)
+    rw [eq045]
     exact cert210 hδ hp
 
-  · rw [eq046]
+  · change 0 < admissionGuard branchY δ p (1 : Fin 15)
+    rw [eq046]
     exact cert211 hδ hp
 
-  · rw [eq047]
+  · change 0 < admissionGuard branchY δ p (2 : Fin 15)
+    rw [eq047]
     exact cert212 hδ hp
 
-  · rw [eq048]
+  · change 0 < admissionGuard branchY δ p (3 : Fin 15)
+    rw [eq048]
     exact cert213 hδ hp
 
-  · rw [eq049]
+  · change 0 < admissionGuard branchY δ p (4 : Fin 15)
+    rw [eq049]
     exact cert214 hδ hp
 
-  · rw [eq050]
+  · change 0 < admissionGuard branchY δ p (5 : Fin 15)
+    rw [eq050]
     exact cert215 hδ hp
 
-  · rw [eq051]
+  · change 0 < admissionGuard branchY δ p (6 : Fin 15)
+    rw [eq051]
     exact cert216 hδ hp
 
-  · rw [eq052]
+  · change 0 < admissionGuard branchY δ p (7 : Fin 15)
+    rw [eq052]
     exact cert217 hδ hp
 
-  · rw [eq053]
+  · change 0 < admissionGuard branchY δ p (8 : Fin 15)
+    rw [eq053]
     exact cert218 hδ hp
 
-  · rw [eq054]
+  · change 0 < admissionGuard branchY δ p (9 : Fin 15)
+    rw [eq054]
     exact cert219 hδ hp
 
-  · rw [eq055]
+  · change 0 < admissionGuard branchY δ p (10 : Fin 15)
+    rw [eq055]
     exact cert220 hδ hp
 
-  · rw [eq056]
+  · change 0 < admissionGuard branchY δ p (11 : Fin 15)
+    rw [eq056]
     exact cert221 hδ hp
 
-  · rw [eq057]
+  · change 0 < admissionGuard branchY δ p (12 : Fin 15)
+    rw [eq057]
     exact cert222 hδ hp
 
-  · rw [eq058]
+  · change 0 < admissionGuard branchY δ p (13 : Fin 15)
+    rw [eq058]
     exact cert223 hδ hp
 
-  · rw [eq059]
+  · change 0 < admissionGuard branchY δ p (14 : Fin 15)
+    rw [eq059]
     exact cert224 hδ hp
 
 private theorem admission015 {δ p : ℝ}
@@ -10535,49 +10760,64 @@ private theorem admission015 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq060]
+  · change 0 < admissionGuard branchY3 δ p (0 : Fin 15)
+    rw [eq060]
     exact cert225 hδ hp
 
-  · rw [eq061]
+  · change 0 < admissionGuard branchY3 δ p (1 : Fin 15)
+    rw [eq061]
     exact cert226 hδ hp
 
-  · rw [eq062]
+  · change 0 < admissionGuard branchY3 δ p (2 : Fin 15)
+    rw [eq062]
     exact cert227 hδ hp
 
-  · rw [eq063]
+  · change 0 < admissionGuard branchY3 δ p (3 : Fin 15)
+    rw [eq063]
     exact cert228 hδ hp
 
-  · rw [eq064]
+  · change 0 < admissionGuard branchY3 δ p (4 : Fin 15)
+    rw [eq064]
     exact cert229 hδ hp
 
-  · rw [eq065]
+  · change 0 < admissionGuard branchY3 δ p (5 : Fin 15)
+    rw [eq065]
     exact cert230 hδ hp
 
-  · rw [eq066]
+  · change 0 < admissionGuard branchY3 δ p (6 : Fin 15)
+    rw [eq066]
     exact cert231 hδ hp
 
-  · rw [eq067]
+  · change 0 < admissionGuard branchY3 δ p (7 : Fin 15)
+    rw [eq067]
     exact cert232 hδ hp
 
-  · rw [eq068]
+  · change 0 < admissionGuard branchY3 δ p (8 : Fin 15)
+    rw [eq068]
     exact cert233 hδ hp
 
-  · rw [eq069]
+  · change 0 < admissionGuard branchY3 δ p (9 : Fin 15)
+    rw [eq069]
     exact cert234 hδ hp
 
-  · rw [eq070]
+  · change 0 < admissionGuard branchY3 δ p (10 : Fin 15)
+    rw [eq070]
     exact cert235 hδ hp
 
-  · rw [eq071]
+  · change 0 < admissionGuard branchY3 δ p (11 : Fin 15)
+    rw [eq071]
     exact cert236 hδ hp
 
-  · rw [eq072]
+  · change 0 < admissionGuard branchY3 δ p (12 : Fin 15)
+    rw [eq072]
     exact cert237 hδ hp
 
-  · rw [eq073]
+  · change 0 < admissionGuard branchY3 δ p (13 : Fin 15)
+    rw [eq073]
     exact cert238 hδ hp
 
-  · rw [eq074]
+  · change 0 < admissionGuard branchY3 δ p (14 : Fin 15)
+    rw [eq074]
     exact cert239 hδ hp
 
 private theorem admission016 {δ p : ℝ}
@@ -10585,49 +10825,64 @@ private theorem admission016 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq075]
+  · change 0 < admissionGuard branchX8 δ p (0 : Fin 15)
+    rw [eq075]
     exact cert240 hδ hp
 
-  · rw [eq076]
+  · change 0 < admissionGuard branchX8 δ p (1 : Fin 15)
+    rw [eq076]
     exact cert241 hδ hp
 
-  · rw [eq077]
+  · change 0 < admissionGuard branchX8 δ p (2 : Fin 15)
+    rw [eq077]
     exact cert242 hδ hp
 
-  · rw [eq078]
+  · change 0 < admissionGuard branchX8 δ p (3 : Fin 15)
+    rw [eq078]
     exact cert243 hδ hp
 
-  · rw [eq079]
+  · change 0 < admissionGuard branchX8 δ p (4 : Fin 15)
+    rw [eq079]
     exact cert244 hδ hp
 
-  · rw [eq080]
+  · change 0 < admissionGuard branchX8 δ p (5 : Fin 15)
+    rw [eq080]
     exact cert245 hδ hp
 
-  · rw [eq081]
+  · change 0 < admissionGuard branchX8 δ p (6 : Fin 15)
+    rw [eq081]
     exact cert246 hδ hp
 
-  · rw [eq082]
+  · change 0 < admissionGuard branchX8 δ p (7 : Fin 15)
+    rw [eq082]
     exact cert247 hδ hp
 
-  · rw [eq083]
+  · change 0 < admissionGuard branchX8 δ p (8 : Fin 15)
+    rw [eq083]
     exact cert248 hδ hp
 
-  · rw [eq084]
+  · change 0 < admissionGuard branchX8 δ p (9 : Fin 15)
+    rw [eq084]
     exact cert249 hδ hp
 
-  · rw [eq085]
+  · change 0 < admissionGuard branchX8 δ p (10 : Fin 15)
+    rw [eq085]
     exact cert250 hδ hp
 
-  · rw [eq086]
+  · change 0 < admissionGuard branchX8 δ p (11 : Fin 15)
+    rw [eq086]
     exact cert251 hδ hp
 
-  · rw [eq087]
+  · change 0 < admissionGuard branchX8 δ p (12 : Fin 15)
+    rw [eq087]
     exact cert252 hδ hp
 
-  · rw [eq088]
+  · change 0 < admissionGuard branchX8 δ p (13 : Fin 15)
+    rw [eq088]
     exact cert253 hδ hp
 
-  · rw [eq089]
+  · change 0 < admissionGuard branchX8 δ p (14 : Fin 15)
+    rw [eq089]
     exact cert254 hδ hp
 
 private theorem admission017 {δ p : ℝ}
@@ -10635,49 +10890,64 @@ private theorem admission017 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq075]
+  · change 0 < admissionGuard branchX8 δ p (0 : Fin 15)
+    rw [eq075]
     exact cert255 hδ hp
 
-  · rw [eq076]
+  · change 0 < admissionGuard branchX8 δ p (1 : Fin 15)
+    rw [eq076]
     exact cert256 hδ hp
 
-  · rw [eq077]
+  · change 0 < admissionGuard branchX8 δ p (2 : Fin 15)
+    rw [eq077]
     exact cert257 hδ hp
 
-  · rw [eq078]
+  · change 0 < admissionGuard branchX8 δ p (3 : Fin 15)
+    rw [eq078]
     exact cert258 hδ hp
 
-  · rw [eq079]
+  · change 0 < admissionGuard branchX8 δ p (4 : Fin 15)
+    rw [eq079]
     exact cert259 hδ hp
 
-  · rw [eq080]
+  · change 0 < admissionGuard branchX8 δ p (5 : Fin 15)
+    rw [eq080]
     exact cert260 hδ hp
 
-  · rw [eq081]
+  · change 0 < admissionGuard branchX8 δ p (6 : Fin 15)
+    rw [eq081]
     exact cert261 hδ hp
 
-  · rw [eq082]
+  · change 0 < admissionGuard branchX8 δ p (7 : Fin 15)
+    rw [eq082]
     exact cert262 hδ hp
 
-  · rw [eq083]
+  · change 0 < admissionGuard branchX8 δ p (8 : Fin 15)
+    rw [eq083]
     exact cert263 hδ hp
 
-  · rw [eq084]
+  · change 0 < admissionGuard branchX8 δ p (9 : Fin 15)
+    rw [eq084]
     exact cert264 hδ hp
 
-  · rw [eq085]
+  · change 0 < admissionGuard branchX8 δ p (10 : Fin 15)
+    rw [eq085]
     exact cert265 hδ hp
 
-  · rw [eq086]
+  · change 0 < admissionGuard branchX8 δ p (11 : Fin 15)
+    rw [eq086]
     exact cert266 hδ hp
 
-  · rw [eq087]
+  · change 0 < admissionGuard branchX8 δ p (12 : Fin 15)
+    rw [eq087]
     exact cert267 hδ hp
 
-  · rw [eq088]
+  · change 0 < admissionGuard branchX8 δ p (13 : Fin 15)
+    rw [eq088]
     exact cert268 hδ hp
 
-  · rw [eq089]
+  · change 0 < admissionGuard branchX8 δ p (14 : Fin 15)
+    rw [eq089]
     exact cert269 hδ hp
 
 private theorem admission018 {δ p : ℝ}
@@ -10685,49 +10955,64 @@ private theorem admission018 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq075]
+  · change 0 < admissionGuard branchX8 δ p (0 : Fin 15)
+    rw [eq075]
     exact cert270 hδ hp
 
-  · rw [eq076]
+  · change 0 < admissionGuard branchX8 δ p (1 : Fin 15)
+    rw [eq076]
     exact cert271 hδ hp
 
-  · rw [eq077]
+  · change 0 < admissionGuard branchX8 δ p (2 : Fin 15)
+    rw [eq077]
     exact cert272 hδ hp
 
-  · rw [eq078]
+  · change 0 < admissionGuard branchX8 δ p (3 : Fin 15)
+    rw [eq078]
     exact cert273 hδ hp
 
-  · rw [eq079]
+  · change 0 < admissionGuard branchX8 δ p (4 : Fin 15)
+    rw [eq079]
     exact cert274 hδ hp
 
-  · rw [eq080]
+  · change 0 < admissionGuard branchX8 δ p (5 : Fin 15)
+    rw [eq080]
     exact cert275 hδ hp
 
-  · rw [eq081]
+  · change 0 < admissionGuard branchX8 δ p (6 : Fin 15)
+    rw [eq081]
     exact cert276 hδ hp
 
-  · rw [eq082]
+  · change 0 < admissionGuard branchX8 δ p (7 : Fin 15)
+    rw [eq082]
     exact cert277 hδ hp
 
-  · rw [eq083]
+  · change 0 < admissionGuard branchX8 δ p (8 : Fin 15)
+    rw [eq083]
     exact cert278 hδ hp
 
-  · rw [eq084]
+  · change 0 < admissionGuard branchX8 δ p (9 : Fin 15)
+    rw [eq084]
     exact cert279 hδ hp
 
-  · rw [eq085]
+  · change 0 < admissionGuard branchX8 δ p (10 : Fin 15)
+    rw [eq085]
     exact cert280 hδ hp
 
-  · rw [eq086]
+  · change 0 < admissionGuard branchX8 δ p (11 : Fin 15)
+    rw [eq086]
     exact cert281 hδ hp
 
-  · rw [eq087]
+  · change 0 < admissionGuard branchX8 δ p (12 : Fin 15)
+    rw [eq087]
     exact cert282 hδ hp
 
-  · rw [eq088]
+  · change 0 < admissionGuard branchX8 δ p (13 : Fin 15)
+    rw [eq088]
     exact cert283 hδ hp
 
-  · rw [eq089]
+  · change 0 < admissionGuard branchX8 δ p (14 : Fin 15)
+    rw [eq089]
     exact cert284 hδ hp
 
 private theorem admission019 {δ p : ℝ}
@@ -10735,49 +11020,64 @@ private theorem admission019 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq075]
+  · change 0 < admissionGuard branchX8 δ p (0 : Fin 15)
+    rw [eq075]
     exact cert285 hδ hp
 
-  · rw [eq076]
+  · change 0 < admissionGuard branchX8 δ p (1 : Fin 15)
+    rw [eq076]
     exact cert286 hδ hp
 
-  · rw [eq077]
+  · change 0 < admissionGuard branchX8 δ p (2 : Fin 15)
+    rw [eq077]
     exact cert287 hδ hp
 
-  · rw [eq078]
+  · change 0 < admissionGuard branchX8 δ p (3 : Fin 15)
+    rw [eq078]
     exact cert288 hδ hp
 
-  · rw [eq079]
+  · change 0 < admissionGuard branchX8 δ p (4 : Fin 15)
+    rw [eq079]
     exact cert289 hδ hp
 
-  · rw [eq080]
+  · change 0 < admissionGuard branchX8 δ p (5 : Fin 15)
+    rw [eq080]
     exact cert290 hδ hp
 
-  · rw [eq081]
+  · change 0 < admissionGuard branchX8 δ p (6 : Fin 15)
+    rw [eq081]
     exact cert291 hδ hp
 
-  · rw [eq082]
+  · change 0 < admissionGuard branchX8 δ p (7 : Fin 15)
+    rw [eq082]
     exact cert292 hδ hp
 
-  · rw [eq083]
+  · change 0 < admissionGuard branchX8 δ p (8 : Fin 15)
+    rw [eq083]
     exact cert293 hδ hp
 
-  · rw [eq084]
+  · change 0 < admissionGuard branchX8 δ p (9 : Fin 15)
+    rw [eq084]
     exact cert294 hδ hp
 
-  · rw [eq085]
+  · change 0 < admissionGuard branchX8 δ p (10 : Fin 15)
+    rw [eq085]
     exact cert295 hδ hp
 
-  · rw [eq086]
+  · change 0 < admissionGuard branchX8 δ p (11 : Fin 15)
+    rw [eq086]
     exact cert296 hδ hp
 
-  · rw [eq087]
+  · change 0 < admissionGuard branchX8 δ p (12 : Fin 15)
+    rw [eq087]
     exact cert297 hδ hp
 
-  · rw [eq088]
+  · change 0 < admissionGuard branchX8 δ p (13 : Fin 15)
+    rw [eq088]
     exact cert298 hδ hp
 
-  · rw [eq089]
+  · change 0 < admissionGuard branchX8 δ p (14 : Fin 15)
+    rw [eq089]
     exact cert299 hδ hp
 
 private theorem admission020 {δ p : ℝ}
@@ -10785,49 +11085,64 @@ private theorem admission020 {δ p : ℝ}
   intro i
   fin_cases i
 
-  · rw [eq075]
+  · change 0 < admissionGuard branchX8 δ p (0 : Fin 15)
+    rw [eq075]
     exact cert300 hδ hp
 
-  · rw [eq076]
+  · change 0 < admissionGuard branchX8 δ p (1 : Fin 15)
+    rw [eq076]
     exact cert301 hδ hp
 
-  · rw [eq077]
+  · change 0 < admissionGuard branchX8 δ p (2 : Fin 15)
+    rw [eq077]
     exact cert302 hδ hp
 
-  · rw [eq078]
+  · change 0 < admissionGuard branchX8 δ p (3 : Fin 15)
+    rw [eq078]
     exact cert303 hδ hp
 
-  · rw [eq079]
+  · change 0 < admissionGuard branchX8 δ p (4 : Fin 15)
+    rw [eq079]
     exact cert304 hδ hp
 
-  · rw [eq080]
+  · change 0 < admissionGuard branchX8 δ p (5 : Fin 15)
+    rw [eq080]
     exact cert305 hδ hp
 
-  · rw [eq081]
+  · change 0 < admissionGuard branchX8 δ p (6 : Fin 15)
+    rw [eq081]
     exact cert306 hδ hp
 
-  · rw [eq082]
+  · change 0 < admissionGuard branchX8 δ p (7 : Fin 15)
+    rw [eq082]
     exact cert307 hδ hp
 
-  · rw [eq083]
+  · change 0 < admissionGuard branchX8 δ p (8 : Fin 15)
+    rw [eq083]
     exact cert308 hδ hp
 
-  · rw [eq084]
+  · change 0 < admissionGuard branchX8 δ p (9 : Fin 15)
+    rw [eq084]
     exact cert309 hδ hp
 
-  · rw [eq085]
+  · change 0 < admissionGuard branchX8 δ p (10 : Fin 15)
+    rw [eq085]
     exact cert310 hδ hp
 
-  · rw [eq086]
+  · change 0 < admissionGuard branchX8 δ p (11 : Fin 15)
+    rw [eq086]
     exact cert311 hδ hp
 
-  · rw [eq087]
+  · change 0 < admissionGuard branchX8 δ p (12 : Fin 15)
+    rw [eq087]
     exact cert312 hδ hp
 
-  · rw [eq088]
+  · change 0 < admissionGuard branchX8 δ p (13 : Fin 15)
+    rw [eq088]
     exact cert313 hδ hp
 
-  · rw [eq089]
+  · change 0 < admissionGuard branchX8 δ p (14 : Fin 15)
+    rw [eq089]
     exact cert314 hδ hp
 
 theorem window_admitted (i : Fin 21) {δ p : ℝ}
