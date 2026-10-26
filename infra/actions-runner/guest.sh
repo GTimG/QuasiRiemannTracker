@@ -153,13 +153,13 @@ chown runner:runner /home/runner/actions-runner/.path /home/runner/actions-runne
 
 # An idle guest expires after an hour. A trusted pre-job hook cancels only this
 # guest timer; the host independently enforces the absolute VM lifetime.
-cat > /usr/local/bin/qrh-job-started <<'EOF'
+cat > /usr/local/bin/qrh-job-started.sh <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 sudo -n systemctl stop qrh-idle.timer
 EOF
-chmod 0755 /usr/local/bin/qrh-job-started
-printf '%s\n' 'ACTIONS_RUNNER_HOOK_JOB_STARTED=/usr/local/bin/qrh-job-started' >> /etc/qrh-runner.env
+chmod 0755 /usr/local/bin/qrh-job-started.sh
+printf '%s\n' 'ACTIONS_RUNNER_HOOK_JOB_STARTED=/usr/local/bin/qrh-job-started.sh' >> /etc/qrh-runner.env
 systemd-run --unit=qrh-idle --on-active=60m /usr/bin/systemctl poweroff
 systemd-run --unit=qrh-runner --wait --pipe --collect \
   --uid=runner --gid=runner --working-directory=/home/runner/actions-runner \
