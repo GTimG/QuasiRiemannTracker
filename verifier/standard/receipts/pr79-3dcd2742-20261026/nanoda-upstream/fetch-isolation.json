@@ -1,0 +1,32 @@
+{
+  "id": "5a6fa83e374e2795e3ca3cef296eee4c5dfda3059d11e3f498af9beed6268f94",
+  "image": "sha256:988fe32926b2df3e7bdd07646b5ad310aab6a621ddd2e744d6878000311aa2de",
+  "name": "qrh-nanoda-fetch-retry-20261026",
+  "user": "10001:10001",
+  "entrypoint": [
+    "/usr/bin/setpriv"
+  ],
+  "cmd": [
+    "--no-new-privs",
+    "/bin/bash",
+    "/opt/nanoda/fetch.sh"
+  ],
+  "network_mode": "bridge",
+  "readonly_rootfs": true,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": null,
+  "nano_cpus": 4000000000,
+  "memory": 4294967296,
+  "memory_swap": 4294967296,
+  "pids_limit": 256,
+  "mounts": [
+    {
+      "type": "volume",
+      "name": "qrh-nanoda-build-20261026",
+      "destination": "/work",
+      "rw": true
+    }
+  ]
+}

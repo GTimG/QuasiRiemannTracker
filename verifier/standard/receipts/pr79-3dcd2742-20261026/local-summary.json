@@ -1,0 +1,40 @@
+{
+  "job": "pr79",
+  "status": "PASS",
+  "started_at": "2026-10-26T16:37:53.191487+00:00",
+  "completed_at": "2026-10-26T18:57:05.272240+00:00",
+  "stages": [
+    {
+      "stage": "setup",
+      "exit_code": 0,
+      "seconds": 152.53420371200002
+    },
+    {
+      "stage": "restore-build",
+      "exit_code": 0,
+      "seconds": 38.44244142599999
+    },
+    {
+      "stage": "baseline",
+      "exit_code": 0,
+      "seconds": 1148.630176621
+    },
+    {
+      "stage": "control-sorry",
+      "exit_code": 1,
+      "seconds": 190.59194886799992
+    },
+    {
+      "stage": "control-hidden",
+      "exit_code": 1,
+      "seconds": 189.42081410600008
+    },
+    {
+      "stage": "candidate",
+      "exit_code": 0,
+      "seconds": 6629.781719323
+    }
+  ],
+  "threads": 12,
+  "kernel_jobs": 1
+}

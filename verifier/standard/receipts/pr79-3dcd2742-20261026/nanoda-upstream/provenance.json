@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "commit": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "version": "0.4.26",
+  "binary_sha256": "1d96ec2adb1edbc57ec9b25423f26d9526512e994e8e0b312cdcfc584a1ddd5d",
+  "tests_passed": true,
+  "test_summary": {
+    "passed": 54,
+    "failed": 0,
+    "ignored": 8
+  },
+  "test_suites": [
+    {
+      "passed": 54,
+      "failed": 0,
+      "ignored": 0
+    },
+    {
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0
+    },
+    {
+      "passed": 0,
+      "failed": 0,
+      "ignored": 8
+    }
+  ],
+  "source_archive_sha256": "cb4333414faa3a7d3fdb49c04f60b9e3c30be30807e8352ab4f60bd2234fc421",
+  "source_manifest_sha256": "b039a7095f932b9a4a1f84de44dd3374a5fbff721d373e9b67ff2919d3a91ca3",
+  "cargo_lock_sha256": "25850627ff7406e5a2775cf8e44aa114bb86a70e491849a0d90674d5103cf708",
+  "license_sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b",
+  "builder_base_image_digest": "sha256:b36c246742b4d323472588f789601be34eb4af053255e2af53969078ee8dcec7",
+  "builder_image_digest": "sha256:988fe32926b2df3e7bdd07646b5ad310aab6a621ddd2e744d6878000311aa2de",
+  "build_network": "none",
+  "tests_network": "none",
+  "source_unmodified": true,
+  "build_exit_code": 0,
+  "started_at": "2026-10-26T16:33:52.227087435Z",
+  "finished_at": "2026-10-26T16:34:19.266227975Z",
+  "test_log_sha256": "8e34486d0ee49b4b6c25e78f929362b908a7c96a7eece55f930ff2a4f7023a99",
+  "build_log_sha256": "660c10c79048fa222b332bec7c97f1fd6324e48a984a510712cc25e96ed17650",
+  "note": "Fresh nonroot Docker build of Tim-reviewed upstream revision; binary differs from the prior Fedora build and must undergo fresh baseline, isolation/adversarial controls and complete proof verification."
+}

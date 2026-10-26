@@ -1,0 +1,11 @@
+{
+  "job": "pr79",
+  "started_at": "2026-10-26T16:37:53.142670+00:00",
+  "kernel": "6.8.0-147-generic",
+  "processors": 12,
+  "memory": "MemTotal:       49330568 kB",
+  "exit_status": 0,
+  "phase": "job-finished",
+  "finished_at": "2026-10-26T18:57:05.305398+00:00",
+  "evidence_files": 4065
+}

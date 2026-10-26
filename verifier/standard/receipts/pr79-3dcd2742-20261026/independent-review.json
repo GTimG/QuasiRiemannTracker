@@ -1,0 +1,70 @@
+{
+  "reviewed_at": "2026-10-26T19:02:21.438722+00:00",
+  "reviewer": "Independent read-only subagent review",
+  "conclusion": "PASS evidence is internally consistent and sufficient for a reviewed certificate proposal; no mathematical acceptance blocker found. Registration still requires final protected policy/head check and normal maintainer review.",
+  "protected_commit": "4691ba8e244ff645b2a9082187b1739e940f7e50",
+  "identity": {
+    "source_repository": "GTimG/QuasiRiemannTracker",
+    "reviewed_pr_head": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+    "source_commit": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+    "result_id": "runbo-li-arvi-face-8746074-20261026",
+    "theta_exact": "4373037/5000000"
+  },
+  "verified_at": "2026-10-26T18:56:58.020243+00:00",
+  "raw_report_sha256": "0571399fe05bb67dcb1d2bb074ecea2e453aaa2440d0a04d65929c96f631528e",
+  "raw_report_bytes": 3244216,
+  "evidence_sha256": "7384f9da4ab72ab5b442951cbda3275e2cf09e86d55c3b9155a6445f11798983",
+  "archive_members_verified": 4066,
+  "candidate_present_artifact_hashes_verified": 3967,
+  "baseline_present_artifact_hashes_verified": 18,
+  "runtime_files_verified": 57,
+  "runtime_source_changes": [
+    "verifier/standard/replay.py"
+  ],
+  "tool_change": {
+    "tool": "NanoDa",
+    "commit": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+    "sha256": "1d96ec2adb1edbc57ec9b25423f26d9526512e994e8e0b312cdcfc584a1ddd5d",
+    "tests_passed": 54,
+    "doctests_ignored": 8
+  },
+  "checks": [
+    "Exact expected PR head, repository, result and rational bound",
+    "All three kernels explicitly accept; canonical comparator target and exact allowed axioms",
+    "Raw receipt hash-bound contract, controls, logs, driver, tool pins and library inventory",
+    "Same-runtime real OpenAI 7/8 baseline accepts",
+    "Positive/mismatched-statement/ill-typed controls behave as expected",
+    "sorryAx and Candidate.hidden_assumption negative controls reach judge and reject without success receipt",
+    "All 4066 evidence archive members regular, safe unique names and matching transport digests",
+    "Protected dependency pins and generated theorem wrappers exact match",
+    "57 protected runtime files authenticated; only replay.py changed by exact retained timeout-only patch",
+    "Only NanoDa tool changed; documented upstream source/build/test metadata hashes match",
+    "Detached server cache signature verified against protected public key; compiler, environment and all 44577 library entries match actual cache inputs; 2923 module keys match",
+    "No candidate compile retry, resource exhaustion or outer OOM/deadline event"
+  ],
+  "cache": {
+    "index_sha256": "21cec1d4949d791d01894118faa268ab6125d25b46fbd549f4cdcf699107958f",
+    "signature_sha256": "1d30622a8fec6740ad786a22a0e0c2160f78cb88972e1558785af41ae96668bf",
+    "archive_sha256": "5a36a0a56a4425d6f7cbf1e6e303ef2dfbd318f638addd20dc949df787578361",
+    "archive_bytes": 1056853185,
+    "signer_sha256": "e40b1ceb0779cb57cd34d1437db8f54a67d84f1661ea13397dc4e252364ed6d1",
+    "cached_modules": 2923,
+    "fresh_modules": 3952
+  },
+  "timings_seconds": {
+    "total_container": 8443.958323459141,
+    "candidate_stage": 6629.781719323,
+    "compile_phase": 4442.429638,
+    "wrapper_compile_export": 195.651822,
+    "comparator_three_kernels": 1828.653132,
+    "former_timeout_module": 6.5
+  },
+  "publication_notes": [
+    "Publish raw result bytes unchanged, hash-bound contract/controls/dependency pins and logs/provenance per receipt plan. Include original cache.json/cache.sig and public-key digest so the cache can be independently authenticated.",
+    "Host preparation intentionally used an empty library inventory. All source contract fields match; actual guest inventory replaces only library_inventory_sha256 and is consistently bound by both accepted receipts.",
+    "The 4065 guest evidence_files count excludes the separately added guest-runtime.json member, yielding 4066 transported members.",
+    "Full exports, binaries and installed libraries are outside the compact archive and remain on the retained original VM volume; retain that volume and its backing images. Actual cache archive digest was authenticated by protected restore/replay code; this subreview reverified its signed provenance but did not remount and independently rehash the retained 1 GB archive.",
+    "Parent independently reviewed host collector/image/immutable input provenance; this review did not repeat the complete host isolation audit.",
+    "Do not reuse this evidence for another head or silently refresh unrelated policy approvals."
+  ]
+}

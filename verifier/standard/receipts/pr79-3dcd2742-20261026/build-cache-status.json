@@ -1,0 +1,8 @@
+{
+  "status": "hit",
+  "cache_environment": "aea7ad38ebebc547968c7ea50dafc45430ee6a802ee39d7e160f99bd4bf6d045",
+  "worker_environment": "aea7ad38ebebc547968c7ea50dafc45430ee6a802ee39d7e160f99bd4bf6d045",
+  "matching_modules": 2923,
+  "required_modules": 6875,
+  "archive_sha256": "5a36a0a56a4425d6f7cbf1e6e303ef2dfbd318f638addd20dc949df787578361"
+}

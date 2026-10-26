@@ -1,0 +1,103 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 94355    0 94355    0     0   332k      0 --:--:-- --:--:-- --:--:--  332k
+cb4333414faa3a7d3fdb49c04f60b9e3c30be30807e8352ab4f60bd2234fc421  /work/source.tar.gz
+.github/workflows/release.yml: OK
+.gitignore: OK
+Cargo.lock: OK
+Cargo.toml: OK
+LICENSE: OK
+README.md: OK
+rustfmt.toml: OK
+src/debug_printer.rs: OK
+src/env.rs: OK
+src/expr.rs: OK
+src/inductive.rs: OK
+src/level.rs: OK
+src/lib.rs: OK
+src/main.rs: OK
+src/name.rs: OK
+src/parser.rs: OK
+src/pretty_printer.rs: OK
+src/quot.rs: OK
+src/tc.rs: OK
+src/tests.rs: OK
+src/tests/expr.rs: OK
+src/tests/level.rs: OK
+src/tests/name.rs: OK
+src/tests/natlit.rs: OK
+src/tests/pretty_printer.rs: OK
+src/tests/util.rs: OK
+src/union_find.rs: OK
+src/unique_hasher.rs: OK
+src/util.rs: OK
+test_resources/Config/invalid_json.json: OK
+test_resources/Config/invalid_option_type.json: OK
+test_resources/Config/valid.json: OK
+test_resources/Empty/export: OK
+test_resources/ProjFromProp/config.json: OK
+test_resources/ProjFromProp/export: OK
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded itoa v1.0.15
+  Downloaded ryu v1.0.20
+  Downloaded cpufeatures v0.3.1
+  Downloaded cfg-if v1.0.0
+  Downloaded equivalent v1.0.1
+  Downloaded autocfg v1.1.0
+  Downloaded rustc-hash v1.1.0
+  Downloaded num-integer v0.1.47
+  Downloaded rand_core v0.10.1
+  Downloaded quote v1.0.35
+  Downloaded semver v1.0.27
+  Downloaded chacha20 v0.10.2
+  Downloaded unicode-ident v1.0.12
+  Downloaded getrandom v0.4.3
+  Downloaded serde_derive v1.0.228
+  Downloaded num-traits v0.2.19
+  Downloaded serde_core v1.0.228
+  Downloaded proc-macro2 v1.0.103
+  Downloaded serde_json v1.0.145
+  Downloaded serde v1.0.228
+  Downloaded memchr v2.7.6
+  Downloaded rand v0.10.2
+  Downloaded indexmap v2.13.0
+  Downloaded num-bigint v0.5.1
+  Downloaded hashbrown v0.16.1
+  Downloaded syn v2.0.111
+  Downloaded libc v0.2.180
+.github/workflows/release.yml: OK
+.gitignore: OK
+Cargo.lock: OK
+Cargo.toml: OK
+LICENSE: OK
+README.md: OK
+rustfmt.toml: OK
+src/debug_printer.rs: OK
+src/env.rs: OK
+src/expr.rs: OK
+src/inductive.rs: OK
+src/level.rs: OK
+src/lib.rs: OK
+src/main.rs: OK
+src/name.rs: OK
+src/parser.rs: OK
+src/pretty_printer.rs: OK
+src/quot.rs: OK
+src/tc.rs: OK
+src/tests.rs: OK
+src/tests/expr.rs: OK
+src/tests/level.rs: OK
+src/tests/name.rs: OK
+src/tests/natlit.rs: OK
+src/tests/pretty_printer.rs: OK
+src/tests/util.rs: OK
+src/union_find.rs: OK
+src/unique_hasher.rs: OK
+src/util.rs: OK
+test_resources/Config/invalid_json.json: OK
+test_resources/Config/invalid_option_type.json: OK
+test_resources/Config/valid.json: OK
+test_resources/Empty/export: OK
+test_resources/ProjFromProp/config.json: OK
+test_resources/ProjFromProp/export: OK

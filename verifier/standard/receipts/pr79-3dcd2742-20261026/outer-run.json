@@ -1,0 +1,55 @@
+{
+  "job": "pr79",
+  "started_at": "2026-10-26T16:36:40.324760+00:00",
+  "finished_at": "2026-10-26T18:57:24.283081+00:00",
+  "observed_seconds": 8443.958323459141,
+  "container": "qrh-local-pr79",
+  "container_exit": 0,
+  "oom_killed": false,
+  "timed_out": false,
+  "image_id": "sha256:aa25ef0935e709953d4ed06710a12c946fc394874fe8b8287b99391b48a996f8",
+  "inputs_sha256": "e3d05a87e0d003e0ead45192494f0fb90956a501e9257e7ce4690900a7f769ca",
+  "guest_exit": 0,
+  "summary": {
+    "job": "pr79",
+    "status": "PASS",
+    "started_at": "2026-10-26T16:37:53.191487+00:00",
+    "completed_at": "2026-10-26T18:57:05.272240+00:00",
+    "stages": [
+      {
+        "stage": "setup",
+        "exit_code": 0,
+        "seconds": 152.53420371200002
+      },
+      {
+        "stage": "restore-build",
+        "exit_code": 0,
+        "seconds": 38.44244142599999
+      },
+      {
+        "stage": "baseline",
+        "exit_code": 0,
+        "seconds": 1148.630176621
+      },
+      {
+        "stage": "control-sorry",
+        "exit_code": 1,
+        "seconds": 190.59194886799992
+      },
+      {
+        "stage": "control-hidden",
+        "exit_code": 1,
+        "seconds": 189.42081410600008
+      },
+      {
+        "stage": "candidate",
+        "exit_code": 0,
+        "seconds": 6629.781719323
+      }
+    ],
+    "threads": 12,
+    "kernel_jobs": 1
+  },
+  "evidence_sha256": "7384f9da4ab72ab5b442951cbda3275e2cf09e86d55c3b9155a6445f11798983",
+  "classification": "candidate-passed"
+}

@@ -1,0 +1,9 @@
+{
+  "expected": {
+    "repository": "GTimG/QuasiRiemannTracker",
+    "number": 79,
+    "head_sha": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+    "result_id": "runbo-li-arvi-face-8746074-20261026",
+    "theta_exact": "4373037/5000000"
+  }
+}

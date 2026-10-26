@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "head_sha": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+  "theta_exact": "4373037/5000000",
+  "verified_at": "2026-10-26T18:56:58.020243+00:00",
+  "report_sha256": "0571399fe05bb67dcb1d2bb074ecea2e453aaa2440d0a04d65929c96f631528e",
+  "trusted_verifier_revision": "4691ba8e244ff645b2a9082187b1739e940f7e50",
+  "modules_freshly_compiled": 3952,
+  "modules_authenticated_and_reused": 2923,
+  "source_dependency_trees": {
+    "runbo-li-arvi-face-8746074-20261026": "4e751858ec91f3abac526f8fc836fdbd2ecbf413",
+    "hailey-collet-1252270103": "56039549fff3a07c3e0ab83e3264ad5ae498c35d",
+    "openai-baseline": "e470d11a2c5b310e5d8fe5a6263acb376aff9cd6"
+  },
+  "build_cache": {
+    "url": "https://github.com/GTimG/QuasiRiemannTracker/releases/download/submission-build-cache-v1/5a36a0a56a4425d6f7cbf1e6e303ef2dfbd318f638addd20dc949df787578361.tar.gz",
+    "sha256": "5a36a0a56a4425d6f7cbf1e6e303ef2dfbd318f638addd20dc949df787578361",
+    "signer": "e40b1ceb0779cb57cd34d1437db8f54a67d84f1661ea13397dc4e252364ed6d1",
+    "modules_reused": 2923
+  },
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "baseline_and_forbidden_axiom_controls": "PASS",
+  "driver_change": "Documented time-budget increases only; exact executed driver and patch preserved",
+  "nanoda_revision": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "nanoda_pristine_upstream": true,
+  "nanoda_binary_sha256": "1d96ec2adb1edbc57ec9b25423f26d9526512e994e8e0b312cdcfc584a1ddd5d",
+  "other_checker_binaries_changed": false,
+  "resources": {
+    "compilation_workers": 12,
+    "kernel_jobs": 1,
+    "guest_ram_gib": 48,
+    "outer_memory_gib": 52,
+    "guest_disk_gib": 80
+  },
+  "timing_seconds": {
+    "compile": 4442.429638,
+    "solution_wrapper": 195.651822,
+    "comparator_and_all_kernels": 1828.653132,
+    "candidate_stage": 6629.781719323,
+    "container_including_setup_baseline_controls": 8443.958323459141
+  },
+  "fresh_preparation": "Regenerated from the exact immutable Git head with the unchanged protected generator before registration. Library inventory is bound separately by the accepted runtime.",
+  "earlier_attempts": "One setup failure from a missing Mathlib proxy allowlist entry; one setup attempt superseded before proof execution to install pristine upstream NanoDa. Both retained locally; no earlier candidate result or unverified build was reused.",
+  "limitations": "Compiler/exporter bootstrap and pinned dependency/tool provenance remain trusted. This explicit local runtime approval does not update production checker pins. Publication requires protected exact-head registration and ordinary admission checks."
+}

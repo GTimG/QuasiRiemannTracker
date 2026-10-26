@@ -1,0 +1,17 @@
+[
+  {
+    "expected": "accepted",
+    "exit_code": 0,
+    "log": "logs/control-PalomarPreflightSolution.log"
+  },
+  {
+    "expected": "statement-mismatch",
+    "exit_code": 1,
+    "log": "logs/control-PalomarPreflightWrong.log"
+  },
+  {
+    "expected": "ill-typed-proof",
+    "exit_code": 1,
+    "log": "logs/control-PalomarPreflightIllTyped.log"
+  }
+]

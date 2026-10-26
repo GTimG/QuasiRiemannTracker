@@ -1,0 +1,8 @@
+{
+  "reason": "Pristine upstream NanoDa 0.4.26, matching Tim PR69/76 capacity remediation",
+  "commit": "998e0a84e4c1572ca279ff05007af6ec6639405a",
+  "before_sha256": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
+  "after_sha256": "1d96ec2adb1edbc57ec9b25423f26d9526512e994e8e0b312cdcfc584a1ddd5d",
+  "baseline_and_controls": "run freshly below before the candidate",
+  "other_checker_tools_changed": false
+}

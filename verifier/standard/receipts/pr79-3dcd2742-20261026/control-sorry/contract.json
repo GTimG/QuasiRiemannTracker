@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "repository": "GTimG/QuasiRiemannTracker",
+  "head_sha": "4691ba8e244ff645b2a9082187b1739e940f7e50",
+  "source_commit": "4691ba8e244ff645b2a9082187b1739e940f7e50",
+  "manifest": {
+    "id": "classical-euler-product",
+    "theta": {
+      "numerator": "1",
+      "denominator": "1"
+    },
+    "entrypoint": {
+      "module": "Candidate.Main",
+      "declaration": "Candidate.bound"
+    }
+  },
+  "source_files": {
+    "metadata.json": "146213264c3f8e182f262e656a4e5ed0397c122cff069a89c7aa06255f304112",
+    "src/Candidate/Main.lean": "9baaba508e275e0d3512d9ea00eb6673ef62adde1d72d5c27de7da1de0576b03",
+    "src/Submissions/classical_euler_product/Main.lean": "ed539d606ebe50194e7c9f14819a40478236ea7659f1e48b0ce0969cf85827f3"
+  },
+  "submission_trees": {
+    "classical-euler-product": "9b7fd696cdf775b190b5c71c1abb1ebed0c064bf"
+  },
+  "module_dependencies": {
+    "Submissions.classical_euler_product.Main": [],
+    "Candidate.Main": [
+      "Submissions.classical_euler_product.Main"
+    ]
+  },
+  "package_imports": [],
+  "build_order": [
+    "Submissions.classical_euler_product.Main",
+    "Candidate.Main"
+  ],
+  "generated_files": {
+    "Challenge.lean": "590bc671b8193122ae5d899671cec09bee4fec42623169540ab24b4466d9ac7a",
+    "Solution.lean": "faab92b97cd7016c34115bfeaab6cc3c84c61bdc2435724195e851272413a8c4"
+  },
+  "library_inventory_sha256": "ac51f9a3a5d49c0f88e0a1185b986c41d9e46adb6197f2f74fbdab6b70e9cede"
+}

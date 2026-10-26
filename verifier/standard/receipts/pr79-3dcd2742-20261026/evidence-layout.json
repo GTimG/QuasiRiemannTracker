@@ -1,0 +1,284 @@
+{
+  "transport_sha256": "7384f9da4ab72ab5b442951cbda3275e2cf09e86d55c3b9155a6445f11798983",
+  "raw_report_unchanged": true,
+  "files": {
+    "guest-runtime.json": {
+      "collected_path": "guest-runtime.json",
+      "sha256": "7b69e3e7043ded3aca12db67d81f1fb6e370b8bc1209a322b6ada86d7f020007"
+    },
+    "attempt.json": {
+      "collected_path": "attempt.json",
+      "sha256": "3380c95eafd01f69c5456b521d06f8e19f25bfc966276c6ad26f16c59ccc9df2"
+    },
+    "baseline/challenge-src/Challenge.lean": {
+      "collected_path": "baseline/challenge-src/Challenge.lean",
+      "sha256": "a9d290c74920624ba06f66da0a56b633876e2a0ac230613add78b61370fbfe12"
+    },
+    "baseline/comparator.json": {
+      "collected_path": "baseline/comparator.json",
+      "sha256": "412074bf40324cf2dd6d9213ace1dc477bb860b5b2c10f21f51226249a132674"
+    },
+    "baseline/contract.json": {
+      "collected_path": "baseline/contract.json",
+      "sha256": "c5c3bc9df317f1c3e5830c82206366b3510f92e81434b0783bf5d2f140ecdfbc"
+    },
+    "baseline/controls.json": {
+      "collected_path": "baseline/controls.json",
+      "sha256": "83782e525741e374d2ea9378ad8728baab7fcbd86178673c7e0d14373e179bac"
+    },
+    "baseline/phases.json": {
+      "collected_path": "baseline/phases.json",
+      "sha256": "03338b295c7b50524b1884603e8f30e11fddcce9b61b23cd3f4c2636fdbae05b"
+    },
+    "baseline/result.json": {
+      "collected_path": "baseline/result.json",
+      "sha256": "77c47f7f4b64ce52698e485b0162cc81b8d081b3f23660296071e0a71469175a"
+    },
+    "baseline/solution-src/Solution.lean": {
+      "collected_path": "baseline/solution-src/Solution.lean",
+      "sha256": "704bccefad1dfc92056eefec4b5cbe1a22c0f9a7dc1ea72e803402fe48cde476"
+    },
+    "baseline/tools.json": {
+      "collected_path": "baseline/tools.json",
+      "sha256": "ae49f95cdfc42c5cdb3340a43a8784e25cbc00173703a0f9d9129e7727af3a7c"
+    },
+    "budget-only.patch": {
+      "collected_path": "budget-only.patch",
+      "sha256": "3bf811b5ded64d647f18f5585761a17196703b4beea46584d5e22a91cf469c3a"
+    },
+    "build-cache-status.json": {
+      "collected_path": "build-cache-status.json",
+      "sha256": "cc8f401a5d168d34d1957e1dd6393a2a1f9f440c3fd54b6c7dd4a79f1e843fd4"
+    },
+    "Challenge.lean": {
+      "collected_path": "candidate/challenge-src/Challenge.lean",
+      "sha256": "d02acc6b59a722974e33fcd2a79d9c3daa459d3f14fbf83edc169722e0030a7a"
+    },
+    "comparator.json": {
+      "collected_path": "candidate/comparator.json",
+      "sha256": "412074bf40324cf2dd6d9213ace1dc477bb860b5b2c10f21f51226249a132674"
+    },
+    "contract.json": {
+      "collected_path": "candidate/contract.json",
+      "sha256": "e9bbb3901be50b2cebe39fcda21a74cc193a051e22154339a581be97d3857988"
+    },
+    "controls.json": {
+      "collected_path": "candidate/controls.json",
+      "sha256": "83782e525741e374d2ea9378ad8728baab7fcbd86178673c7e0d14373e179bac"
+    },
+    "phases.json": {
+      "collected_path": "candidate/phases.json",
+      "sha256": "19a0d01fb270883705ec1033e3da254c8fb57814343e890a068a8eed40c447cd"
+    },
+    "result.json": {
+      "collected_path": "candidate/result.json",
+      "sha256": "0571399fe05bb67dcb1d2bb074ecea2e453aaa2440d0a04d65929c96f631528e"
+    },
+    "Solution.lean": {
+      "collected_path": "candidate/solution-src/Solution.lean",
+      "sha256": "bf5e5f209038f1b70dbc7999a3fa991b3c0a9371eafb72a7ac920b313768d9b5"
+    },
+    "tools.json": {
+      "collected_path": "candidate/tools.json",
+      "sha256": "ae49f95cdfc42c5cdb3340a43a8784e25cbc00173703a0f9d9129e7727af3a7c"
+    },
+    "context.json": {
+      "collected_path": "context.json",
+      "sha256": "2f56ac42db8832416c43196ba008cad6b6e20e01075dd86eeed167fe2bcf672b"
+    },
+    "control-hidden/challenge-src/Challenge.lean": {
+      "collected_path": "control-hidden/challenge-src/Challenge.lean",
+      "sha256": "590bc671b8193122ae5d899671cec09bee4fec42623169540ab24b4466d9ac7a"
+    },
+    "control-hidden/comparator.json": {
+      "collected_path": "control-hidden/comparator.json",
+      "sha256": "412074bf40324cf2dd6d9213ace1dc477bb860b5b2c10f21f51226249a132674"
+    },
+    "control-hidden/contract.json": {
+      "collected_path": "control-hidden/contract.json",
+      "sha256": "f9ee7412c91ab3ffce8ec3dc534d831553950d86528b07f398a232523b603d1e"
+    },
+    "control-hidden/controls.json": {
+      "collected_path": "control-hidden/controls.json",
+      "sha256": "83782e525741e374d2ea9378ad8728baab7fcbd86178673c7e0d14373e179bac"
+    },
+    "control-hidden/phases.json": {
+      "collected_path": "control-hidden/phases.json",
+      "sha256": "57c9d74b9462dbd0c12d22a9519687d890f69604fe38ffe5a65a50e7e2cc7724"
+    },
+    "control-hidden/solution-src/Solution.lean": {
+      "collected_path": "control-hidden/solution-src/Solution.lean",
+      "sha256": "faab92b97cd7016c34115bfeaab6cc3c84c61bdc2435724195e851272413a8c4"
+    },
+    "control-hidden/tools.json": {
+      "collected_path": "control-hidden/tools.json",
+      "sha256": "ae49f95cdfc42c5cdb3340a43a8784e25cbc00173703a0f9d9129e7727af3a7c"
+    },
+    "control-sorry/challenge-src/Challenge.lean": {
+      "collected_path": "control-sorry/challenge-src/Challenge.lean",
+      "sha256": "590bc671b8193122ae5d899671cec09bee4fec42623169540ab24b4466d9ac7a"
+    },
+    "control-sorry/comparator.json": {
+      "collected_path": "control-sorry/comparator.json",
+      "sha256": "412074bf40324cf2dd6d9213ace1dc477bb860b5b2c10f21f51226249a132674"
+    },
+    "control-sorry/contract.json": {
+      "collected_path": "control-sorry/contract.json",
+      "sha256": "b8c9d0c547c2206bbd0ae4a94833ff9bb62bd4c9e78c9a2e0e69b2cb0eca379a"
+    },
+    "control-sorry/controls.json": {
+      "collected_path": "control-sorry/controls.json",
+      "sha256": "83782e525741e374d2ea9378ad8728baab7fcbd86178673c7e0d14373e179bac"
+    },
+    "control-sorry/phases.json": {
+      "collected_path": "control-sorry/phases.json",
+      "sha256": "4e1ef1d3ec0e37cc59f43b131b8c493c510c44e9da194e40b2c8b8b276785182"
+    },
+    "control-sorry/solution-src/Solution.lean": {
+      "collected_path": "control-sorry/solution-src/Solution.lean",
+      "sha256": "faab92b97cd7016c34115bfeaab6cc3c84c61bdc2435724195e851272413a8c4"
+    },
+    "control-sorry/tools.json": {
+      "collected_path": "control-sorry/tools.json",
+      "sha256": "ae49f95cdfc42c5cdb3340a43a8784e25cbc00173703a0f9d9129e7727af3a7c"
+    },
+    "dependency-pins.json": {
+      "collected_path": "dependency-pins.json",
+      "sha256": "5c6d8777513f3fa9eee95a8475ea8d2109e7efaff4b315d8c22d4d2714ec9c79"
+    },
+    "orchestration/guesthook.sh": {
+      "collected_path": "guesthook.sh",
+      "sha256": "c6d1fd50e16bf1f719606e8068d1e6b309ee58db0126789a9718f43e6e8bb87f"
+    },
+    "orchestration/local-job.py": {
+      "collected_path": "local-job.py",
+      "sha256": "648028d73ddd3de202735d7f7e202bc6bdd21b2e607cd91c80c5792b2e09f6f7"
+    },
+    "orchestration/local-job.sh": {
+      "collected_path": "local-job.sh",
+      "sha256": "d93794eea3d832243632aecd787e4ddd928546e7675b76bf76b4414ebfa9795d"
+    },
+    "local-summary.json": {
+      "collected_path": "local-summary.json",
+      "sha256": "12a79da02ad37b87a9a989179f506c1af65bc5e4ffb1d955ed03d7dc9a0f84fb"
+    },
+    "nanoda-upstream/Cargo.lock": {
+      "collected_path": "nanoda-upstream/Cargo.lock",
+      "sha256": "25850627ff7406e5a2775cf8e44aa114bb86a70e491849a0d90674d5103cf708"
+    },
+    "nanoda-upstream/Dockerfile": {
+      "collected_path": "nanoda-upstream/Dockerfile",
+      "sha256": "e909944bc1f72550d0f1444a5cfcbae3d3e011713bedeacd9d4597d7c7cfa6fa"
+    },
+    "nanoda-upstream/LICENSE": {
+      "collected_path": "nanoda-upstream/LICENSE",
+      "sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b"
+    },
+    "nanoda-upstream/SHA256SUMS.json": {
+      "collected_path": "nanoda-upstream/SHA256SUMS.json",
+      "sha256": "99c43400b86c3b6ebbd266c5a57aaa37f39a5840bf9bf6a2737db0b302a651bc"
+    },
+    "nanoda-upstream/archive.sha256": {
+      "collected_path": "nanoda-upstream/archive.sha256",
+      "sha256": "2f9cebff7cf66a4590ac210352f49e23c851961015e9ea670b341098cc27ee2c"
+    },
+    "nanoda-upstream/build.log": {
+      "collected_path": "nanoda-upstream/build.log",
+      "sha256": "660c10c79048fa222b332bec7c97f1fd6324e48a984a510712cc25e96ed17650"
+    },
+    "nanoda-upstream/build.sh": {
+      "collected_path": "nanoda-upstream/build.sh",
+      "sha256": "ede73573157301f9efcfb6cea10c0b0872cef1f95449dff39c9c68bcabc7bb8a"
+    },
+    "nanoda-upstream/fetch-isolation.json": {
+      "collected_path": "nanoda-upstream/fetch-isolation.json",
+      "sha256": "3c594e8fcc5232f471fcda7dae74a5610ae1c8cdc9a523f0d258052e3d260b9a"
+    },
+    "nanoda-upstream/fetch.log": {
+      "collected_path": "nanoda-upstream/fetch.log",
+      "sha256": "3c01b85aa230d2587e325202aca964dae75b8f5b80c19576c8d796be9f55f861"
+    },
+    "nanoda-upstream/fetch.sh": {
+      "collected_path": "nanoda-upstream/fetch.sh",
+      "sha256": "fb4f3c3597bdea664caf30f73cc15ba6e5ad9c3f14e79922e26acb3bae99c83a"
+    },
+    "nanoda-upstream/offline-build-isolation.json": {
+      "collected_path": "nanoda-upstream/offline-build-isolation.json",
+      "sha256": "8209aa7687275916d7f838de2cc82329f1fd2ba9908e1b6e98c9ec6f053bf542"
+    },
+    "nanoda-upstream/provenance.json": {
+      "collected_path": "nanoda-upstream/provenance.json",
+      "sha256": "214ee4e998248960c5833260665462aa23bcd2c38ecb5ab44a0bce8de630eddd"
+    },
+    "nanoda-upstream/source-after.log": {
+      "collected_path": "nanoda-upstream/source-after.log",
+      "sha256": "56cd3841155b494c58cd25c87f04380e8244a0e85c2aa5d0862e466f54f7e8c6"
+    },
+    "nanoda-upstream/source-before.log": {
+      "collected_path": "nanoda-upstream/source-before.log",
+      "sha256": "56cd3841155b494c58cd25c87f04380e8244a0e85c2aa5d0862e466f54f7e8c6"
+    },
+    "nanoda-upstream/source-manifest.json": {
+      "collected_path": "nanoda-upstream/source-manifest.json",
+      "sha256": "b039a7095f932b9a4a1f84de44dd3374a5fbff721d373e9b67ff2919d3a91ca3"
+    },
+    "nanoda-upstream/test.log": {
+      "collected_path": "nanoda-upstream/test.log",
+      "sha256": "8e34486d0ee49b4b6c25e78f929362b908a7c96a7eece55f930ff2a4f7023a99"
+    },
+    "nanoda-upstream/toolchain-versions.txt": {
+      "collected_path": "nanoda-upstream/toolchain-versions.txt",
+      "sha256": "873b299b9c724d341fab137536042dbb4477b044b9973bbadc7f53a82c9af89f"
+    },
+    "original-tool-pins.json": {
+      "collected_path": "original-tool-pins.json",
+      "sha256": "2fe2e75e2a28d99ac1faefc44e127b44910730b4bcda303b5e0c5202c24895f2"
+    },
+    "protected-runtime-manifest.json": {
+      "collected_path": "protected-runtime-manifest.json",
+      "sha256": "d2808c8ab0e1c0a84c53416c83756de310e2e3f312ac0b693b2bf59c80a4b169"
+    },
+    "protected-sha.txt": {
+      "collected_path": "protected-sha.txt",
+      "sha256": "01ce7e18499379bc4bb5ffe1c9cc0b32686f47ed837a6264ed6eec16b05c11ab"
+    },
+    "replay-driver.txt": {
+      "collected_path": "replay-driver.txt",
+      "sha256": "2c8fe67acc5cee31aeffdb1636fac455ffb0d62c89d9ecd4d8d4a9520aea9a48"
+    },
+    "runtime-deviation.json": {
+      "collected_path": "runtime-deviation.json",
+      "sha256": "de9eaa0c2b51706a329dd23feed55e83168acd24340583a814363a6973ee0ae0"
+    },
+    "runtime-manifest.json": {
+      "collected_path": "runtime-manifest.json",
+      "sha256": "27e33793b3b35d4df265f242c0fd811ac1cebceff88f05bb4dcca424371bd762"
+    },
+    "stages.json": {
+      "collected_path": "stages.json",
+      "sha256": "3be0773725dafd83330cf47721ced1daf79e26232ab042f2e5f4c1995c2ac098"
+    },
+    "tool-pins.json": {
+      "collected_path": "tool-pins.json",
+      "sha256": "aade4cf44ffa354ac5cf5a97e5fb3fbaa66b6428492481766ba2eee5abbb11ff"
+    },
+    "orchestration/vm.py": {
+      "collected_path": "vm.py",
+      "sha256": "f8aefa22bf69b8c5592be57ff0e39852447f60f86e980caad628dc4d7e9ad1f4"
+    },
+    "judge.log": {
+      "collected_path": "candidate/logs/judge.log",
+      "sha256": "b46214c60ad4371561f2ed7271a372a1c990968bdf5d4f728986b5b1877c8f45"
+    },
+    "baseline-judge.log": {
+      "collected_path": "baseline/logs/judge.log",
+      "sha256": "e614a8ec1854b79204a28cb483c8b3658f3e91e9471147328f3301a5de412766"
+    }
+  },
+  "logs": "logs.json maps original collected paths to exact UTF-8 content; log-archive.json records the original hashes",
+  "retained_not_published": {
+    "prepared/libraries.json": "ac51f9a3a5d49c0f88e0a1185b986c41d9e46adb6197f2f74fbdab6b70e9cede",
+    "build-cache-inputs.json": "4a09b02e956f9b7f3ba1c96ab1fdbcd2ebaf6714a70af0237bd6a73181e29ffa",
+    "profile.json": "e205d11fd97ce0bc0db8e1b4eed83345bbc475ff9f0157a930a00cb6ce9f9f83"
+  }
+}

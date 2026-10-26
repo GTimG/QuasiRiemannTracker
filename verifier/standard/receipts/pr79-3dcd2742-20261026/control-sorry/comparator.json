@@ -1,0 +1,22 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "QRH.canonical_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "external_kernels": {
+    "nanoda": [
+      "/home/runner/repository/verification/environment/lean-4.35.0-rc2-linux/bin/nanoda_bin"
+    ],
+    "con-ron": [
+      "/home/runner/repository/verification/environment/lean-4.35.0-rc2-linux/bin/con-ron",
+      "--jobs=2"
+    ]
+  }
+}

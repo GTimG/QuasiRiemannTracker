@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-26T18:26:46.227105+00:00",
+  "pr": 79,
+  "head_sha": "3dcd2742e2a605f2f480e46b824cb695d3fc4863",
+  "scope": "Source compilation only; solution export and final Comparator/three-kernel acceptance remain pending.",
+  "ci": {
+    "run_url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/40317900115",
+    "job_id": 121555340782,
+    "log_path": "evidence/pr79/worker.log",
+    "log_sha256": "08ce6f10be0895aa0127048dca9cf8688e2bfe28f29a51026ae7be596b43da91",
+    "parallel_compiler_budget": 4,
+    "cached_modules": 2923,
+    "fresh_modules_started": 3517,
+    "fresh_modules_completed": 3513,
+    "compilation_incomplete": true,
+    "first_compile_at_utc": "2026-10-26T11:56:50.175620+00:00",
+    "first_start_to_last_completed_seconds": 10685.551599025726,
+    "global_replay_deadline_seconds": 10800
+  },
+  "local": {
+    "container": "qrh-local-pr79",
+    "input_iso_sha256": "e3d05a87e0d003e0ead45192494f0fb90956a501e9257e7ce4690900a7f769ca",
+    "image_id": "sha256:aa25ef0935e709953d4ed06710a12c946fc394874fe8b8287b99391b48a996f8",
+    "parallel_compiler_budget": 12,
+    "guest_memory_gib": 48,
+    "outer_container_memory_gib": 52,
+    "cached_modules": 2923,
+    "fresh_modules_started": 3952,
+    "fresh_modules_completed": 3952,
+    "total_source_modules": 6875,
+    "first_compile_guest_seconds": 1949.492656,
+    "last_compile_guest_seconds": 6391.913857,
+    "first_start_to_last_completed_seconds": 4442.421200999999,
+    "candidate_compile_threads": 12,
+    "candidate_compile_memory_mib": 36130,
+    "retries_in_source_compilation": 0,
+    "errors_or_oom_in_source_compilation": 0
+  },
+  "all_matched_modules": {
+    "count": 3513,
+    "ci_thread_distribution": {
+      "1": 3513
+    },
+    "local_thread_distribution": {
+      "1": 3509,
+      "5": 2,
+      "3": 2
+    },
+    "ci_memory_mib": [
+      2997
+    ],
+    "local_memory_mib": [
+      3010,
+      9032,
+      15054
+    ],
+    "ci_sum_module_wall_seconds": 41984.0,
+    "local_sum_module_wall_seconds": 43150.6,
+    "aggregate_ci_over_local_speed_ratio": 0.9729644547236886,
+    "median_module_ci_over_local_speed_ratio": 0.927710843373494,
+    "local_aggregate_module_seconds_change_percent": 2.7786775914634188,
+    "ci_first_start_to_all_completed_seconds": 10685.551599025726,
+    "local_first_start_to_all_completed_seconds": 3883.722287,
+    "set_completion_wall_speed_ratio": 2.7513686122186227
+  },
+  "same_single_thread_subset": {
+    "count": 3509,
+    "ci_thread_distribution": {
+      "1": 3509
+    },
+    "local_thread_distribution": {
+      "1": 3509
+    },
+    "ci_memory_mib": [
+      2997
+    ],
+    "local_memory_mib": [
+      3010
+    ],
+    "ci_sum_module_wall_seconds": 41953.4,
+    "local_sum_module_wall_seconds": 43131.4,
+    "aggregate_ci_over_local_speed_ratio": 0.9726881112136402,
+    "median_module_ci_over_local_speed_ratio": 0.927710843373494,
+    "local_aggregate_module_seconds_change_percent": 2.8078773114932343,
+    "ci_first_start_to_all_completed_seconds": 10685.551599025726,
+    "local_first_start_to_all_completed_seconds": 3864.55457,
+    "set_completion_wall_speed_ratio": 2.7650150633079886
+  },
+  "local_extra_modules_completed": 439,
+  "different_thread_modules": [
+    {
+      "module": "Submissions.hailey_collet_1252270103.Record12518109Source.ActualFirstCone",
+      "ci_threads": 1,
+      "local_threads": 5,
+      "ci_seconds": 5.5,
+      "local_seconds": 4.0
+    },
+    {
+      "module": "Submissions.hailey_collet_1252270103.Record12518109Source.GlobalCone",
+      "ci_threads": 1,
+      "local_threads": 3,
+      "ci_seconds": 7.1,
+      "local_seconds": 4.2
+    },
+    {
+      "module": "Submissions.hailey_collet_1252270103.Record12518109Source.GlobalSurplus",
+      "ci_threads": 1,
+      "local_threads": 5,
+      "ci_seconds": 6.7,
+      "local_seconds": 4.0
+    },
+    {
+      "module": "Submissions.hailey_collet_1252270103.Record12518109Source.PairedValuations",
+      "ci_threads": 1,
+      "local_threads": 3,
+      "ci_seconds": 11.3,
+      "local_seconds": 7.0
+    }
+  ],
+  "previous_timeout_module": {
+    "module": "Submissions.hailey_collet_1252270103.Record12518109Gain.WholeRootMaxima",
+    "ci_status": "Timed out at the shared 3-hour replay deadline, after a 4-second remaining module allowance; no completed timing.",
+    "ci_start_at_utc": "2026-10-26T14:54:54.018734+00:00",
+    "local_status": "compiled",
+    "local_start_guest_seconds": 5582.343102,
+    "local_end_guest_seconds": 5588.880328,
+    "local_reported_seconds": 6.5
+  },
+  "interpretation": [
+    "Identical exact-head source and 2923 authenticated reused modules in both runs.",
+    "Summed per-module durations overlap in real time and are not build wall time.",
+    "The matching completed-set wall comparison includes different dependency scheduling and additional local module work; it is not an isolated CPU benchmark.",
+    "Four overlapping modules received 3 or 5 Lean threads locally versus 1 on CI; the separate 3509-module subset holds threads at 1 on both.",
+    "The wall improvement comes from greater parallelism; overlapping individual modules are not uniformly faster.",
+    "CI never completed this full build, so no measured full-build speedup or final-proof speedup can be claimed."
+  ],
+  "earlier_ci_completed_sets": [
+    {
+      "count": 2000,
+      "ci_seconds": 5534.73829293251,
+      "local_seconds": 1999.0693380000002,
+      "wall_speed_ratio": 2.7686574886240938
+    },
+    {
+      "count": 2500,
+      "ci_seconds": 6931.261904001236,
+      "local_seconds": 2585.0657269999997,
+      "wall_speed_ratio": 2.681271053036261
+    }
+  ]
+}

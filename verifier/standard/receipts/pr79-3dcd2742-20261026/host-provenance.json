@@ -1,0 +1,69 @@
+{
+  "authentication": "Maintainer-operated local host launched an immutable one-off Docker/KVM image; root guest collector used a separate bounded virtio-serial channel. Host strictly validated the archive after VM exit. Console markers alone were not accepted.",
+  "protected_revision": "4691ba8e244ff645b2a9082187b1739e940f7e50",
+  "image_id": "sha256:aa25ef0935e709953d4ed06710a12c946fc394874fe8b8287b99391b48a996f8",
+  "container_id": "9202c3f0d83d7ae40370bff2a6dbfda86fcac74232e3a1db5923320a33de9182",
+  "input_iso_sha256": "e3d05a87e0d003e0ead45192494f0fb90956a501e9257e7ce4690900a7f769ca",
+  "input_manifest_sha256": "c7bb5ac4b30fa338cdb344bf7401d65699adc779d4f0456f5a44fd704b76044a",
+  "host_controller_sha256": "3b08c14d7a73cf6b5575c8891612ada71f8769ff9375cd8b32e7f9c756108004",
+  "outer_launcher_sha256": "f8aefa22bf69b8c5592be57ff0e39852447f60f86e980caad628dc4d7e9ad1f4",
+  "guest_hook_sha256": "c6d1fd50e16bf1f719606e8068d1e6b309ee58db0126789a9718f43e6e8bb87f",
+  "container_start_record_sha256": "f7d46782b9cac7f106fe486acf3a7531b24e610940d506f7ab2648bccafbfbf5",
+  "container_finish_record_sha256": "6b14c12dcd53fc34b18650f4d1dd9ec23e305ef3d2afecce094bba267e110e39",
+  "original_batch_record_sha256": "b1fb93d624baeeeb2719aabcfd89d89f9eddb29bd2e8d49388a7caf36b16e06c",
+  "evidence_tar_sha256": "7384f9da4ab72ab5b442951cbda3275e2cf09e86d55c3b9155a6445f11798983",
+  "isolation": {
+    "user": "10001:10001",
+    "entrypoint": [
+      "/usr/bin/setpriv",
+      "--no-new-privs",
+      "python3",
+      "/opt/local-vm.py"
+    ],
+    "privileged": false,
+    "capabilities_dropped": [
+      "ALL"
+    ],
+    "read_only_root": true,
+    "memory_bytes": 55834574848,
+    "memory_plus_swap_bytes": 55834574848,
+    "nano_cpus": 12000000000,
+    "pids_limit": 512,
+    "cgroup_namespace": "private",
+    "security_options": [
+      "apparmor:docker-default"
+    ],
+    "devices": [
+      {
+        "PathOnHost": "/dev/kvm",
+        "PathInContainer": "/dev/kvm",
+        "CgroupPermissions": "rw"
+      }
+    ],
+    "mounts": [
+      {
+        "type": "volume",
+        "destination": "/vm",
+        "read_write": true
+      }
+    ],
+    "networks": [
+      "qrh-proof-internal"
+    ],
+    "published_ports": {},
+    "guest_vcpus": 12,
+    "guest_ram_gib": 48,
+    "guest_disk_gib": 80,
+    "host_credentials_in_guest": false,
+    "proof_checking_network": "disabled by the actual Palomar sandbox; setup uses the restricted proxy"
+  },
+  "finished": {
+    "Status": "exited",
+    "Running": false,
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "StartedAt": "2026-10-26T16:36:40.023855967Z",
+    "FinishedAt": "2026-10-26T18:57:23.680235096Z"
+  },
+  "retention": "Original input ISO, evidence archive, complete Docker records, build-cache-inputs/library inventory and the exited VM disk (including full exports) remain on the verification host. Published layout and transport manifest retain their hashes."
+}

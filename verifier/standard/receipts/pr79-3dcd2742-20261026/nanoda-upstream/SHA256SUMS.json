@@ -1,0 +1,19 @@
+{
+  "Cargo.lock": "25850627ff7406e5a2775cf8e44aa114bb86a70e491849a0d90674d5103cf708",
+  "Dockerfile": "e909944bc1f72550d0f1444a5cfcbae3d3e011713bedeacd9d4597d7c7cfa6fa",
+  "LICENSE": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b",
+  "archive.sha256": "2f9cebff7cf66a4590ac210352f49e23c851961015e9ea670b341098cc27ee2c",
+  "build.log": "660c10c79048fa222b332bec7c97f1fd6324e48a984a510712cc25e96ed17650",
+  "build.sh": "ede73573157301f9efcfb6cea10c0b0872cef1f95449dff39c9c68bcabc7bb8a",
+  "fetch-isolation.json": "3c594e8fcc5232f471fcda7dae74a5610ae1c8cdc9a523f0d258052e3d260b9a",
+  "fetch.log": "3c01b85aa230d2587e325202aca964dae75b8f5b80c19576c8d796be9f55f861",
+  "fetch.sh": "fb4f3c3597bdea664caf30f73cc15ba6e5ad9c3f14e79922e26acb3bae99c83a",
+  "nanoda_bin": "1d96ec2adb1edbc57ec9b25423f26d9526512e994e8e0b312cdcfc584a1ddd5d",
+  "offline-build-isolation.json": "8209aa7687275916d7f838de2cc82329f1fd2ba9908e1b6e98c9ec6f053bf542",
+  "provenance.json": "214ee4e998248960c5833260665462aa23bcd2c38ecb5ab44a0bce8de630eddd",
+  "source-after.log": "56cd3841155b494c58cd25c87f04380e8244a0e85c2aa5d0862e466f54f7e8c6",
+  "source-before.log": "56cd3841155b494c58cd25c87f04380e8244a0e85c2aa5d0862e466f54f7e8c6",
+  "source-manifest.json": "b039a7095f932b9a4a1f84de44dd3374a5fbff721d373e9b67ff2919d3a91ca3",
+  "test.log": "8e34486d0ee49b4b6c25e78f929362b908a7c96a7eece55f930ff2a4f7023a99",
+  "toolchain-versions.txt": "873b299b9c724d341fab137536042dbb4477b044b9973bbadc7f53a82c9af89f"
+}
