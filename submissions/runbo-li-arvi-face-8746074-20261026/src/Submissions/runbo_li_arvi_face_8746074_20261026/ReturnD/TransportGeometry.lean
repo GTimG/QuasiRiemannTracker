@@ -14,7 +14,7 @@ class BoundsR : Prop where
  theta_bounds : 874/1000<theta ∧ theta<7/8
  h_interval : 793/1000<h ∧ h<803/1000
  ly_coarse : 458/1000<y ∧ y<467/1000
- ell_interval : 1672/10000<ell ∧ ell<1678/10000
+ ell_interval : 1672/10000<ell ∧ ell<169/1000
  small_saving : 7/100<y/2-h*(17/50-1/6)-1/50
  floor_margin : 4/25*x-3/20-51/100*y+67/100*dPlus-3/20*ell ≤ signal theta-1/200
 end
@@ -51,7 +51,7 @@ theorem sixth_lt_ell : 1/6<ell := Geometry.sixth_lt_ell
 theorem ell_lt_fifth : ell<1/5 := Geometry.ell_lt_fifth
 theorem four_ell_lt_h : 4*ell<h := by
  have hh : 793/1000<h := Geometry.BoundsR.h_interval.1
- have he : ell<1678/10000 := Geometry.BoundsR.ell_interval.2
+ have he : ell<169/1000 := Geometry.BoundsR.ell_interval.2
  linarith
 theorem x_add_y : x+y=1-ell := Geometry.x_add_y
 theorem h_lt_dPlus : h<dPlus := by dsimp [dPlus,Geometry.dPlus];linarith
@@ -86,7 +86,7 @@ abbrev h : ℝ := Arithmetic.h
 def b : ℝ := ly-lx
 abbrev signal := Assembly.signal
 def rowExtension : ℝ := 1/10000000000
-theorem ell_interval : 1672/10000<ell ∧ ell<1678/10000 := QRH.Record1252270103Return.Geometry.BoundsR.ell_interval
+theorem ell_interval : 1672/10000<ell ∧ ell<169/1000 := QRH.Record1252270103Return.Geometry.BoundsR.ell_interval
 theorem h_pos : 0<h := by linarith [QRH.Record1252270103Return.Geometry.BoundsR.h_interval.1]
 theorem extended_h_lt_one : h+rowExtension<1 := by dsimp [rowExtension];linarith [QRH.Record1252270103Return.Geometry.BoundsR.h_interval.2]
 theorem theta_lower : 874/1000<theta := QRH.Record1252270103Return.Geometry.BoundsR.theta_bounds.1
