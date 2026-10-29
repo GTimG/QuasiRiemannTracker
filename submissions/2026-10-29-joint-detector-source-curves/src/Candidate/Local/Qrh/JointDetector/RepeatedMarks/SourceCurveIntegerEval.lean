@@ -1,0 +1,52 @@
+/- Copyright (c) 2026 Joseph Bebel. Apache-2.0. -/
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval0
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval1
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval2
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval3
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval4
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval5
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval6
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval7
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval8
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCombinedEval9
+import Candidate.Local.Qrh.JointDetector.RepeatedMarks.SourceCurveIntegerCasts
+
+namespace Qrh.JointDetector.RepeatedMarks.SourceCurveInteger
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 12000000
+set_option maxRecDepth 300000
+open FractionArithmetic
+
+/-- The generated coefficient arrays are exact identities, not samples. -/
+theorem eval_commonPower (p : Params) (i : Fin 20) (u : ℝ) :
+    SourceCurveCertificate.eval (fun j => (commonPower p i j).evalR) u=commonGate p.toReal i u := by
+  have hd : (p.den:ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt p.den_pos)
+  fin_cases i <;>
+    norm_num [-cast_combinedCoefficient0_0,-cast_combinedCoefficient0_1,-cast_combinedCoefficient1_0,-cast_combinedCoefficient1_1,-cast_combinedCoefficient1_2,-cast_combinedCoefficient1_3,-cast_combinedCoefficient2_0,-cast_combinedCoefficient2_1,-cast_combinedCoefficient2_2,-cast_combinedCoefficient2_3,-cast_combinedCoefficient3_0,-cast_combinedCoefficient3_1,-cast_combinedCoefficient3_2,-cast_combinedCoefficient3_3,-cast_combinedCoefficient3_4,-cast_combinedCoefficient4_0,-cast_combinedCoefficient4_1,-cast_combinedCoefficient4_2,-cast_combinedCoefficient4_3,-cast_combinedCoefficient4_4,-cast_combinedCoefficient4_5,-cast_combinedCoefficient4_6,-cast_combinedCoefficient4_7,-cast_combinedCoefficient4_8,-cast_combinedCoefficient5_0,-cast_combinedCoefficient5_1,-cast_combinedCoefficient5_2,-cast_combinedCoefficient5_3,-cast_combinedCoefficient5_4,-cast_combinedCoefficient5_5,-cast_combinedCoefficient5_6,-cast_combinedCoefficient5_7,-cast_combinedCoefficient5_8,-cast_combinedCoefficient5_9,-cast_combinedCoefficient5_10,-cast_combinedCoefficient5_11,-cast_combinedCoefficient6_0,-cast_combinedCoefficient6_1,-cast_combinedCoefficient6_2,-cast_combinedCoefficient6_3,-cast_combinedCoefficient6_4,-cast_combinedCoefficient6_5,-cast_combinedCoefficient6_6,-cast_combinedCoefficient6_7,-cast_combinedCoefficient6_8,-cast_combinedCoefficient6_9,-cast_combinedCoefficient6_10,-cast_combinedCoefficient6_11,-cast_combinedCoefficient7_0,-cast_combinedCoefficient7_1,-cast_combinedCoefficient7_2,-cast_combinedCoefficient7_3,-cast_combinedCoefficient7_4,-cast_combinedCoefficient7_5,-cast_combinedCoefficient7_6,-cast_combinedCoefficient7_7,-cast_combinedCoefficient8_0,-cast_combinedCoefficient8_1,-cast_combinedCoefficient8_2,-cast_combinedCoefficient8_3,-cast_combinedCoefficient8_4,-cast_combinedCoefficient8_5,-cast_combinedCoefficient8_6,-cast_combinedCoefficient8_7,-cast_combinedCoefficient8_8,-cast_combinedCoefficient8_9,-cast_combinedCoefficient8_10,-cast_combinedCoefficient9_0,-cast_combinedCoefficient9_1,-cast_combinedCoefficient9_2,-cast_combinedCoefficient9_3,-cast_combinedCoefficient9_4,-cast_combinedCoefficient9_5,-cast_combinedCoefficient9_6,-cast_combinedCoefficient9_7,-cast_combinedCoefficient9_8,-cast_combinedCoefficient9_9,-cast_combinedCoefficient9_10,SourceCurveCertificate.eval,commonPower,commonNumerator,denominator,scale,order,commonCoefficient0_0,commonCoefficient0_1,commonCoefficient1_0,commonCoefficient1_1,commonCoefficient2_0,commonCoefficient2_1,commonCoefficient2_2,commonCoefficient2_3,commonCoefficient3_0,commonCoefficient3_1,commonCoefficient3_2,commonCoefficient3_3,commonCoefficient4_0,commonCoefficient4_1,commonCoefficient4_2,commonCoefficient5_0,commonCoefficient5_1,commonCoefficient5_2,commonCoefficient5_3,commonCoefficient5_4,commonCoefficient6_0,commonCoefficient6_1,commonCoefficient6_2,commonCoefficient6_3,commonCoefficient6_4,commonCoefficient7_0,commonCoefficient7_1,commonCoefficient7_2,commonCoefficient7_3,commonCoefficient7_4,commonCoefficient8_0,commonCoefficient8_1,commonCoefficient8_2,commonCoefficient8_3,commonCoefficient8_4,commonCoefficient9_0,commonCoefficient9_1,commonCoefficient9_2,commonCoefficient9_3,commonCoefficient9_4,commonCoefficient10_0,commonCoefficient10_1,commonCoefficient11_0,commonCoefficient11_1,commonCoefficient11_2,commonCoefficient11_3,commonCoefficient11_4,commonCoefficient12_0,commonCoefficient12_1,commonCoefficient12_2,commonCoefficient12_3,commonCoefficient12_4,commonCoefficient13_0,commonCoefficient13_1,commonCoefficient13_2,commonCoefficient13_3,commonCoefficient13_4,commonCoefficient14_0,commonCoefficient14_1,commonCoefficient14_2,commonCoefficient14_3,commonCoefficient14_4,commonCoefficient15_0,commonCoefficient15_1,commonCoefficient15_2,commonCoefficient15_3,commonCoefficient15_4,commonCoefficient16_0,commonCoefficient16_1,commonCoefficient16_2,commonCoefficient16_3,commonCoefficient16_4,commonCoefficient17_0,commonCoefficient18_0,commonCoefficient18_1,commonCoefficient18_2,commonCoefficient18_3,commonCoefficient18_4,commonCoefficient19_0,commonCoefficient19_1,commonCoefficient19_2,commonCoefficient19_3,commonNumerator0,commonNumerator1,commonNumerator2,commonNumerator3,commonNumerator4,commonNumerator5,commonNumerator6,commonNumerator7,commonNumerator8,commonNumerator9,commonNumerator10,commonNumerator11,commonNumerator12,commonNumerator13,commonNumerator14,commonNumerator15,commonNumerator16,commonNumerator17,commonNumerator18,commonNumerator19,commonGate,Params.toReal,Fin.sum_univ_succ,Fraction.evalR,Fraction.eval] <;>
+    field_simp [hd] <;> ring
+
+theorem eval_combinedPower (p : Params) (i : Fin 10) (u : ℝ) :
+    SourceCurveCertificate.eval (fun j => (combinedPower p i j).evalR) u=combinedGate p.toReal i u := by
+  fin_cases i
+  · exact eval_combinedPower0 p u
+  · exact eval_combinedPower1 p u
+  · exact eval_combinedPower2 p u
+  · exact eval_combinedPower3 p u
+  · exact eval_combinedPower4 p u
+  · exact eval_combinedPower5 p u
+  · exact eval_combinedPower6 p u
+  · exact eval_combinedPower7 p u
+  · exact eval_combinedPower8 p u
+  · exact eval_combinedPower9 p u
+
+theorem eval_purePower (p : Params) (i : Fin 4) (u : ℝ) :
+    SourceCurveCertificate.eval (fun j => (purePower p i j).evalR) u=pureGate p.toReal i u := by
+  have hd : (p.den:ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt p.den_pos)
+  fin_cases i <;>
+    norm_num [-cast_combinedCoefficient0_0,-cast_combinedCoefficient0_1,-cast_combinedCoefficient1_0,-cast_combinedCoefficient1_1,-cast_combinedCoefficient1_2,-cast_combinedCoefficient1_3,-cast_combinedCoefficient2_0,-cast_combinedCoefficient2_1,-cast_combinedCoefficient2_2,-cast_combinedCoefficient2_3,-cast_combinedCoefficient3_0,-cast_combinedCoefficient3_1,-cast_combinedCoefficient3_2,-cast_combinedCoefficient3_3,-cast_combinedCoefficient3_4,-cast_combinedCoefficient4_0,-cast_combinedCoefficient4_1,-cast_combinedCoefficient4_2,-cast_combinedCoefficient4_3,-cast_combinedCoefficient4_4,-cast_combinedCoefficient4_5,-cast_combinedCoefficient4_6,-cast_combinedCoefficient4_7,-cast_combinedCoefficient4_8,-cast_combinedCoefficient5_0,-cast_combinedCoefficient5_1,-cast_combinedCoefficient5_2,-cast_combinedCoefficient5_3,-cast_combinedCoefficient5_4,-cast_combinedCoefficient5_5,-cast_combinedCoefficient5_6,-cast_combinedCoefficient5_7,-cast_combinedCoefficient5_8,-cast_combinedCoefficient5_9,-cast_combinedCoefficient5_10,-cast_combinedCoefficient5_11,-cast_combinedCoefficient6_0,-cast_combinedCoefficient6_1,-cast_combinedCoefficient6_2,-cast_combinedCoefficient6_3,-cast_combinedCoefficient6_4,-cast_combinedCoefficient6_5,-cast_combinedCoefficient6_6,-cast_combinedCoefficient6_7,-cast_combinedCoefficient6_8,-cast_combinedCoefficient6_9,-cast_combinedCoefficient6_10,-cast_combinedCoefficient6_11,-cast_combinedCoefficient7_0,-cast_combinedCoefficient7_1,-cast_combinedCoefficient7_2,-cast_combinedCoefficient7_3,-cast_combinedCoefficient7_4,-cast_combinedCoefficient7_5,-cast_combinedCoefficient7_6,-cast_combinedCoefficient7_7,-cast_combinedCoefficient8_0,-cast_combinedCoefficient8_1,-cast_combinedCoefficient8_2,-cast_combinedCoefficient8_3,-cast_combinedCoefficient8_4,-cast_combinedCoefficient8_5,-cast_combinedCoefficient8_6,-cast_combinedCoefficient8_7,-cast_combinedCoefficient8_8,-cast_combinedCoefficient8_9,-cast_combinedCoefficient8_10,-cast_combinedCoefficient9_0,-cast_combinedCoefficient9_1,-cast_combinedCoefficient9_2,-cast_combinedCoefficient9_3,-cast_combinedCoefficient9_4,-cast_combinedCoefficient9_5,-cast_combinedCoefficient9_6,-cast_combinedCoefficient9_7,-cast_combinedCoefficient9_8,-cast_combinedCoefficient9_9,-cast_combinedCoefficient9_10,SourceCurveCertificate.eval,purePower,pureNumerator,denominator,scale,order,pureCoefficient0_0,pureCoefficient0_1,pureCoefficient0_2,pureCoefficient0_3,pureCoefficient0_4,pureCoefficient0_5,pureCoefficient1_0,pureCoefficient1_1,pureCoefficient1_2,pureCoefficient1_3,pureCoefficient1_4,pureCoefficient1_5,pureCoefficient2_0,pureCoefficient2_1,pureCoefficient2_2,pureCoefficient2_3,pureCoefficient2_4,pureCoefficient3_0,pureCoefficient3_1,pureCoefficient3_2,pureCoefficient3_3,pureCoefficient3_4,pureNumerator0,pureNumerator1,pureNumerator2,pureNumerator3,pureGate,Params.toReal,Fin.sum_univ_succ,Fraction.evalR,Fraction.eval] <;>
+    field_simp [hd] <;> ring
+
+end
+end Qrh.JointDetector.RepeatedMarks.SourceCurveInteger
+#print axioms Qrh.JointDetector.RepeatedMarks.SourceCurveInteger.eval_combinedPower

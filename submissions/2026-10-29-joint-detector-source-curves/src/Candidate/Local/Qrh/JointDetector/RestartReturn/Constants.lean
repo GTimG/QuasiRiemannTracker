@@ -1,0 +1,51 @@
+/- Copyright (c) 2026 Joseph Bebel. -/
+/- Generated/adapted by docs/research/tools/restart_return_lean.py.
+Finite return algebra adapted from Hailey Collet, Sil and Sussman's PR86
+at a284f4da56f7d65b3b4bd4c3f6b00699f9dddde1, Apache-2.0.
+A finite count-source bank and physical source remain explicit; no missing estimate is asserted. -/
+import Submissions.hailey_collet_1252270103.Record1252270103Return.Geometry
+import Mathlib.Tactic.NormNum
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+set_option linter.unnecessarySeqFocus false
+namespace Qrh.JointDetector.RestartReturn
+open QRH.Record1252270103Return
+noncomputable section
+
+-- Supplemental certificate SHA-256: 1d717c08af242e378306eefea0d85025e159c1a3d34affab3457fe79288beeb7
+def theta : ℝ := (1747671527/2000000000:ℝ)
+def targetTheta : ℝ := (1747671527/2000000000:ℝ)
+def h : ℝ := (2029520931311/2500000000000:ℝ)
+def physicalB : ℝ := (49136538916807/50000000000000:ℝ)
+def physicalLambda : ℝ := (436853181897/200000000000:ℝ)
+def physicalCap : ℝ := (9999/100000:ℝ)
+def countCB : ℝ := (94429431246019/100000000000000:ℝ)
+def countCL : ℝ := (342923181897/200000000000:ℝ)
+def countCap : ℝ := (10099/100000:ℝ)
+def naturalK : ℝ := (9/2:ℝ)
+def sMinus : ℝ := (3/100:ℝ)
+def mMinus : ℝ := (377/1000:ℝ)
+def numeratorCap : ℝ := (13/200:ℝ)
+def dm : ℝ := (19/25:ℝ)
+def d0 : ℝ := (1/200:ℝ)
+def reserve : ℝ := (1/1000000000:ℝ)
+def c : ℝ := 1-theta
+def ell : ℝ := 11/3-4*theta
+def x : ℝ := 1+ell-h
+def y : ℝ := h-2*ell
+def kappa : ℝ := 2*theta-1
+def dp : ℝ := h+1/10000000000
+def oldCapacity (d : ℝ) : ℝ := min d (2*y-d)/(6*kappa)
+def newCapacity (d : ℝ) : ℝ := min (numeratorCap*d) ((2*y-(2-physicalB)*d)/physicalLambda)
+inductive Edge | oldSmall | oldSwitch | newSwitch | newTop
+  deriving DecidableEq
+def edgeD : Edge → ℝ
+  | .oldSmall => d0
+  | .oldSwitch | .newSwitch => dm
+  | .newTop => dp
+def edgeC (e : Edge) : ℝ := match e with
+  | .oldSmall | .oldSwitch => oldCapacity (edgeD e)
+  | .newSwitch | .newTop => newCapacity (edgeD e)
+
+end
+end Qrh.JointDetector.RestartReturn

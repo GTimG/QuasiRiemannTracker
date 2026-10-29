@@ -1,0 +1,44 @@
+/- Copyright (c) 2026 Joseph Bebel. -/
+/- Generated/adapted by docs/research/tools/restart_return_lean.py.
+Finite return algebra adapted from Hailey Collet, Sil and Sussman's PR86
+at a284f4da56f7d65b3b4bd4c3f6b00699f9dddde1, Apache-2.0.
+A finite count-source bank and physical source remain explicit; no missing estimate is asserted. -/
+import Candidate.Local.Qrh.JointDetector.RayCurveReturn.PowerAdmissions
+import Candidate.Local.Qrh.JointDetector.AdmissionBlockCommands
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+set_option linter.unnecessarySeqFocus false
+namespace Qrh.JointDetector.RayCurveReturn
+open QRH.Record1252270103Return
+noncomputable section
+
+admission_block admission264 branch Pcountmid box((5/16:ℝ),(41/128:ℝ),(31/64:ℝ),(1/2:ℝ)) where
+guard(0,1) margin (5/2:ℝ) coeffs ![![1,0]]
+guard(0,0) margin (2:ℝ) coeffs ![![0]]
+guard(0,1) margin (8995101/10000000:ℝ) coeffs (fun i j => (![![1004899,0]] i j)/(5000000:ℝ))
+guard(1,1) margin (1231/768:ℝ) coeffs (fun i j => (![![728,288],
+![443,0]] i j)/(3:ℝ))
+guard(1,2) margin (8995101/64000000:ℝ) coeffs (fun i j => (![![12840195960,12800000000,0],
+![22372184283,31541966848,9210983424]] i j)/(5000000:ℝ))
+guard(1,2) margin (671030238757/2621440000000:ℝ) coeffs (fun i j => (![![17128948323,35409648566,18240504283],
+![0,1393793718,1352592859]] i j)/(5000000:ℝ))
+guard(1,2) margin (101181263/284160000:ℝ) coeffs (fun i j => (![![4409123414600,4385759667200,0],
+![6359178363701,8221988872832,1886495800320]] i j)/(555000000:ℝ))
+guard(1,2) margin (590678299/512000000:ℝ) coeffs (fun i j => (![![228091145560,366054917120,138164751360],
+![88577498287,88379533184,0]] i j)/(15000000:ℝ))
+guard(1,3) margin (4091781673/12582912000000:ℝ) coeffs (fun i j => (![![0,252998118600,523833154760,270714448280],
+![1210644802857,3811214835144,4009228714184,1408535079320]] i j)/(15000000:ℝ))
+guard(1,3) margin (15729646902786430377390976818537/477635868528785428480000000000000:ℝ) coeffs (fun i j => (![![27103696666258678460275725321424600,72966339771109180022645137438742040,64380060202483804975615433398161920,18519174821534604833955106205844480],
+![7531199725991554261760473087206415,15315069369085288165816996858484247,7782067976094899947829711723152832,0]] i j)/(218644348996941571875000000000:ℝ))
+guard(2,2) margin (6552960259/327680000000:ℝ) coeffs (fun i j => (![![1722492668352,1946986952704,227253476352],
+![3233936402544,3473715253248,245209626624],
+![1492509269223,1489841600000,0]] i j)/(15000000:ℝ))
+guard(1,2) margin (8325170257/7680000000:ℝ) coeffs (fun i j => (![![199983890472,319334685184,119792950272],
+![79615133073,79169962816,0]] i j)/(15000000:ℝ))
+guard(0,0) margin (74999/10000000:ℝ) coeffs ![![0]]
+guard(0,0) margin (64972424551037892165253918981/2332206389300710100000000000000:ℝ) coeffs ![![0]]
+guard(1,2) margin (144621573/512000000:ℝ) coeffs (fun i j => (![![18397837800,23759761920,5413616640],
+![13007130345,12955085376,0]] i j)/(5000000:ℝ))
+end_admission
+end
+end Qrh.JointDetector.RayCurveReturn

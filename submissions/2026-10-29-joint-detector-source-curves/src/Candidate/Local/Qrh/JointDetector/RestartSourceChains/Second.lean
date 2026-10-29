@@ -1,0 +1,4420 @@
+/- Copyright (c) 2026 Joseph Bebel. Apache-2.0. -/
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00001_00032
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00033_00064
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00065_00096
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00097_00128
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00129_00160
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00161_00192
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00193_00224
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00225_00256
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00257_00288
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00289_00320
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00321_00352
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00353_00384
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00385_00416
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00417_00448
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00449_00480
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00481_00512
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00513_00544
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00545_00576
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00577_00608
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00609_00640
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00641_00672
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00673_00704
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00705_00736
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00737_00768
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00769_00800
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00801_00832
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00833_00864
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00865_00896
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00897_00928
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00929_00960
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00961_00992
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second00993_01024
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01025_01056
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01057_01088
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01089_01120
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01121_01152
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01153_01184
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01185_01216
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01217_01248
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01249_01280
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01281_01312
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01313_01344
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01345_01376
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01377_01408
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01409_01440
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01441_01472
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01473_01504
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01505_01536
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01537_01568
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01569_01600
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01601_01632
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01633_01664
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01665_01696
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01697_01728
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01729_01760
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01761_01792
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01793_01824
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01825_01856
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01857_01888
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01889_01920
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01921_01952
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01953_01984
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second01985_02016
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02017_02048
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02049_02080
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02081_02112
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02113_02144
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02145_02176
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02177_02208
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02209_02240
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02241_02272
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02273_02304
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02305_02336
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02337_02368
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02369_02400
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02401_02432
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02433_02464
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02465_02496
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02497_02528
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02529_02560
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02561_02592
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02593_02624
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02625_02656
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02657_02688
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02689_02720
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02721_02752
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02753_02784
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02785_02816
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02817_02848
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02849_02880
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02881_02912
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02913_02944
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02945_02976
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second02977_03008
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03009_03040
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03041_03072
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03073_03104
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03105_03136
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03137_03168
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03169_03200
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03201_03232
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03233_03264
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03265_03296
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03297_03328
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03329_03360
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03361_03392
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03393_03424
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03425_03456
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03457_03488
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03489_03520
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03521_03552
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03553_03584
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03585_03616
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03617_03648
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03649_03680
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03681_03712
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03713_03744
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03745_03776
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03777_03808
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03809_03840
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03841_03872
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03873_03904
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03905_03936
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03937_03968
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second03969_04000
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04001_04032
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04033_04064
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04065_04096
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04097_04128
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04129_04160
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04161_04192
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04193_04224
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04225_04256
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04257_04288
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04289_04320
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04321_04352
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04353_04384
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04385_04416
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04417_04448
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04449_04480
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04481_04512
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04513_04544
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04545_04576
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04577_04608
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04609_04640
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04641_04672
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04673_04704
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04705_04736
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04737_04768
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04769_04800
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04801_04832
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04833_04864
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04865_04896
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04897_04928
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04929_04960
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04961_04992
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second04993_05024
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05025_05056
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05057_05088
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05089_05120
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05121_05152
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05153_05184
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05185_05216
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05217_05248
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05249_05280
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05281_05312
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05313_05344
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05345_05376
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05377_05408
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05409_05440
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05441_05472
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05473_05504
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05505_05536
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05537_05568
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05569_05600
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05601_05632
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05633_05664
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05665_05696
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05697_05728
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05729_05760
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05761_05792
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05793_05824
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05825_05856
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05857_05888
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05889_05920
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05921_05952
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05953_05984
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second05985_06016
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06017_06048
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06049_06080
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06081_06112
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06113_06144
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06145_06176
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06177_06208
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06209_06240
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06241_06272
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06273_06304
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06305_06336
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06337_06368
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06369_06400
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06401_06432
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06433_06464
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06465_06496
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06497_06528
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06529_06560
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06561_06592
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06593_06624
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06625_06656
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06657_06688
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06689_06720
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06721_06752
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06753_06784
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06785_06816
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06817_06848
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06849_06880
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06881_06912
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06913_06944
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06945_06976
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second06977_07008
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07009_07040
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07041_07072
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07073_07104
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07105_07136
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07137_07168
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07169_07200
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07201_07232
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07233_07264
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07265_07296
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07297_07328
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07329_07360
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07361_07392
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07393_07424
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07425_07456
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07457_07488
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07489_07520
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07521_07552
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07553_07584
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07585_07616
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07617_07648
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07649_07680
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07681_07712
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07713_07744
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07745_07776
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07777_07808
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07809_07840
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07841_07872
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07873_07904
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07905_07936
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07937_07968
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second07969_08000
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08001_08032
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08033_08064
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08065_08096
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08097_08128
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08129_08160
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08161_08192
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08193_08224
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08225_08256
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08257_08288
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08289_08320
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08321_08352
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08353_08384
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08385_08416
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08417_08448
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08449_08480
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08481_08512
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08513_08544
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08545_08576
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08577_08608
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08609_08640
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08641_08672
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08673_08704
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08705_08736
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08737_08768
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08769_08800
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08801_08832
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08833_08864
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08865_08896
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08897_08928
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08929_08960
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08961_08992
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second08993_09024
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09025_09056
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09057_09088
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09089_09120
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09121_09152
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09153_09184
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09185_09216
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09217_09248
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09249_09280
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09281_09312
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09313_09344
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09345_09376
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09377_09408
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09409_09440
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09441_09472
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09473_09504
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09505_09536
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09537_09568
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09569_09600
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09601_09632
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09633_09664
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09665_09696
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09697_09728
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09729_09760
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09761_09792
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09793_09824
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09825_09856
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09857_09888
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09889_09920
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09921_09952
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09953_09984
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second09985_10016
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10017_10048
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10049_10080
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10081_10112
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10113_10144
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10145_10176
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10177_10208
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10209_10240
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10241_10272
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10273_10304
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10305_10336
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10337_10368
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10369_10400
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10401_10432
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10433_10464
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10465_10496
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10497_10528
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10529_10560
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10561_10592
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10593_10624
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10625_10656
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10657_10688
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10689_10720
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10721_10752
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10753_10784
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10785_10816
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10817_10848
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10849_10880
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10881_10912
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10913_10944
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10945_10976
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second10977_11008
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11009_11040
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11041_11072
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11073_11104
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11105_11136
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11137_11168
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11169_11200
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11201_11232
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11233_11264
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11265_11296
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11297_11328
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11329_11360
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11361_11392
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11393_11424
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11425_11456
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11457_11488
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11489_11520
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11521_11552
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11553_11584
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11585_11616
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11617_11648
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11649_11680
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11681_11712
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11713_11744
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11745_11776
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11777_11808
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11809_11840
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11841_11872
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11873_11904
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11905_11936
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11937_11968
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second11969_12000
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12001_12032
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12033_12064
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12065_12096
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12097_12128
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12129_12160
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12161_12192
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12193_12224
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12225_12256
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12257_12288
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12289_12320
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12321_12352
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12353_12384
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12385_12416
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12417_12448
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12449_12480
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12481_12512
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12513_12544
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12545_12576
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12577_12608
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12609_12640
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12641_12672
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12673_12704
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12705_12736
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12737_12768
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12769_12800
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12801_12832
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12833_12864
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12865_12896
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12897_12928
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12929_12960
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12961_12992
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second12993_13024
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13025_13056
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13057_13088
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13089_13120
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13121_13152
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13153_13184
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13185_13216
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13217_13248
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13249_13280
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13281_13312
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13313_13344
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13345_13376
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13377_13408
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13409_13440
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13441_13472
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13473_13504
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13505_13536
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13537_13568
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13569_13600
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13601_13632
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13633_13664
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13665_13696
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13697_13728
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13729_13760
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13761_13792
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13793_13824
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13825_13856
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13857_13888
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13889_13920
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13921_13952
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13953_13984
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second13985_14016
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14017_14048
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14049_14080
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14081_14112
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14113_14144
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14145_14176
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14177_14208
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14209_14240
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14241_14272
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14273_14304
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14305_14336
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14337_14368
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14369_14400
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14401_14432
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14433_14464
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14465_14496
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14497_14528
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14529_14560
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14561_14592
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14593_14624
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14625_14656
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14657_14688
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14689_14720
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14721_14752
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14753_14784
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14785_14816
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14817_14848
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14849_14880
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14881_14912
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14913_14944
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14945_14976
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second14977_15008
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15009_15040
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15041_15072
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15073_15104
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15105_15136
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15137_15168
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15169_15200
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15201_15232
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15233_15264
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15265_15296
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15297_15328
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15329_15360
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15361_15392
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15393_15424
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15425_15456
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15457_15488
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15489_15520
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15521_15552
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15553_15584
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15585_15616
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15617_15648
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15649_15680
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15681_15712
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15713_15744
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15745_15776
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15777_15808
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15809_15840
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15841_15872
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15873_15904
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15905_15936
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15937_15968
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second15969_16000
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16001_16032
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16033_16064
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16065_16096
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16097_16128
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16129_16160
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16161_16192
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16193_16224
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16225_16256
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16257_16288
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16289_16320
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16321_16352
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16353_16384
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16385_16416
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16417_16448
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16449_16480
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16481_16512
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16513_16544
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16545_16576
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16577_16608
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16609_16640
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16641_16672
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16673_16704
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16705_16736
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16737_16768
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16769_16800
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16801_16832
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16833_16864
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16865_16896
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16897_16928
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16929_16960
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16961_16992
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second16993_17024
+import Candidate.Local.Qrh.JointDetector.RestartSourceChains.Second17025_17045
+namespace Qrh.JointDetector.RestartSourceChains.Second
+noncomputable section
+set_option autoImplicit false
+open OAI.SevenEighths QRH.Record1252270103Source
+
+theorem source04088 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (49629406483459/50000000000000:ℝ) (472493181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.prefix04088 hcores hβ h4064
+ exact h4096
+
+theorem source06048 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (3086039422459/3125000000000:ℝ) (452893181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ exact h6048
+
+theorem source07337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (24592977418591/25000000000000:ℝ) (440003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.prefix07337 hcores hβ h7328
+ exact h7360
+
+theorem source07652 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (49136538916807/50000000000000:ℝ) (436853181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.prefix07652 hcores hβ h7648
+ exact h7680
+
+theorem source09337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (48854077528557/50000000000000:ℝ) (420003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.prefix09337 hcores hβ h9312
+ exact h9344
+
+theorem source11337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (96961445541543/100000000000000:ℝ) (400003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.prefix11337 hcores hβ h11328
+ exact h11360
+
+theorem source13337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (19227283965471/20000000000000:ℝ) (380003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.source hcores hβ h11328
+ have h11392 := Second11361_11392.source hcores hβ h11360
+ have h11424 := Second11393_11424.source hcores hβ h11392
+ have h11456 := Second11425_11456.source hcores hβ h11424
+ have h11488 := Second11457_11488.source hcores hβ h11456
+ have h11520 := Second11489_11520.source hcores hβ h11488
+ have h11552 := Second11521_11552.source hcores hβ h11520
+ have h11584 := Second11553_11584.source hcores hβ h11552
+ have h11616 := Second11585_11616.source hcores hβ h11584
+ have h11648 := Second11617_11648.source hcores hβ h11616
+ have h11680 := Second11649_11680.source hcores hβ h11648
+ have h11712 := Second11681_11712.source hcores hβ h11680
+ have h11744 := Second11713_11744.source hcores hβ h11712
+ have h11776 := Second11745_11776.source hcores hβ h11744
+ have h11808 := Second11777_11808.source hcores hβ h11776
+ have h11840 := Second11809_11840.source hcores hβ h11808
+ have h11872 := Second11841_11872.source hcores hβ h11840
+ have h11904 := Second11873_11904.source hcores hβ h11872
+ have h11936 := Second11905_11936.source hcores hβ h11904
+ have h11968 := Second11937_11968.source hcores hβ h11936
+ have h12000 := Second11969_12000.source hcores hβ h11968
+ have h12032 := Second12001_12032.source hcores hβ h12000
+ have h12064 := Second12033_12064.source hcores hβ h12032
+ have h12096 := Second12065_12096.source hcores hβ h12064
+ have h12128 := Second12097_12128.source hcores hβ h12096
+ have h12160 := Second12129_12160.source hcores hβ h12128
+ have h12192 := Second12161_12192.source hcores hβ h12160
+ have h12224 := Second12193_12224.source hcores hβ h12192
+ have h12256 := Second12225_12256.source hcores hβ h12224
+ have h12288 := Second12257_12288.source hcores hβ h12256
+ have h12320 := Second12289_12320.source hcores hβ h12288
+ have h12352 := Second12321_12352.source hcores hβ h12320
+ have h12384 := Second12353_12384.source hcores hβ h12352
+ have h12416 := Second12385_12416.source hcores hβ h12384
+ have h12448 := Second12417_12448.source hcores hβ h12416
+ have h12480 := Second12449_12480.source hcores hβ h12448
+ have h12512 := Second12481_12512.source hcores hβ h12480
+ have h12544 := Second12513_12544.source hcores hβ h12512
+ have h12576 := Second12545_12576.source hcores hβ h12544
+ have h12608 := Second12577_12608.source hcores hβ h12576
+ have h12640 := Second12609_12640.source hcores hβ h12608
+ have h12672 := Second12641_12672.source hcores hβ h12640
+ have h12704 := Second12673_12704.source hcores hβ h12672
+ have h12736 := Second12705_12736.source hcores hβ h12704
+ have h12768 := Second12737_12768.source hcores hβ h12736
+ have h12800 := Second12769_12800.source hcores hβ h12768
+ have h12832 := Second12801_12832.source hcores hβ h12800
+ have h12864 := Second12833_12864.source hcores hβ h12832
+ have h12896 := Second12865_12896.source hcores hβ h12864
+ have h12928 := Second12897_12928.source hcores hβ h12896
+ have h12960 := Second12929_12960.source hcores hβ h12928
+ have h12992 := Second12961_12992.source hcores hβ h12960
+ have h13024 := Second12993_13024.source hcores hβ h12992
+ have h13056 := Second13025_13056.source hcores hβ h13024
+ have h13088 := Second13057_13088.source hcores hβ h13056
+ have h13120 := Second13089_13120.source hcores hβ h13088
+ have h13152 := Second13121_13152.source hcores hβ h13120
+ have h13184 := Second13153_13184.source hcores hβ h13152
+ have h13216 := Second13185_13216.source hcores hβ h13184
+ have h13248 := Second13217_13248.source hcores hβ h13216
+ have h13280 := Second13249_13280.source hcores hβ h13248
+ have h13312 := Second13281_13312.source hcores hβ h13280
+ have h13344 := Second13313_13344.prefix13337 hcores hβ h13312
+ exact h13344
+
+theorem source14337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (47848933494537/50000000000000:ℝ) (370003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.source hcores hβ h11328
+ have h11392 := Second11361_11392.source hcores hβ h11360
+ have h11424 := Second11393_11424.source hcores hβ h11392
+ have h11456 := Second11425_11456.source hcores hβ h11424
+ have h11488 := Second11457_11488.source hcores hβ h11456
+ have h11520 := Second11489_11520.source hcores hβ h11488
+ have h11552 := Second11521_11552.source hcores hβ h11520
+ have h11584 := Second11553_11584.source hcores hβ h11552
+ have h11616 := Second11585_11616.source hcores hβ h11584
+ have h11648 := Second11617_11648.source hcores hβ h11616
+ have h11680 := Second11649_11680.source hcores hβ h11648
+ have h11712 := Second11681_11712.source hcores hβ h11680
+ have h11744 := Second11713_11744.source hcores hβ h11712
+ have h11776 := Second11745_11776.source hcores hβ h11744
+ have h11808 := Second11777_11808.source hcores hβ h11776
+ have h11840 := Second11809_11840.source hcores hβ h11808
+ have h11872 := Second11841_11872.source hcores hβ h11840
+ have h11904 := Second11873_11904.source hcores hβ h11872
+ have h11936 := Second11905_11936.source hcores hβ h11904
+ have h11968 := Second11937_11968.source hcores hβ h11936
+ have h12000 := Second11969_12000.source hcores hβ h11968
+ have h12032 := Second12001_12032.source hcores hβ h12000
+ have h12064 := Second12033_12064.source hcores hβ h12032
+ have h12096 := Second12065_12096.source hcores hβ h12064
+ have h12128 := Second12097_12128.source hcores hβ h12096
+ have h12160 := Second12129_12160.source hcores hβ h12128
+ have h12192 := Second12161_12192.source hcores hβ h12160
+ have h12224 := Second12193_12224.source hcores hβ h12192
+ have h12256 := Second12225_12256.source hcores hβ h12224
+ have h12288 := Second12257_12288.source hcores hβ h12256
+ have h12320 := Second12289_12320.source hcores hβ h12288
+ have h12352 := Second12321_12352.source hcores hβ h12320
+ have h12384 := Second12353_12384.source hcores hβ h12352
+ have h12416 := Second12385_12416.source hcores hβ h12384
+ have h12448 := Second12417_12448.source hcores hβ h12416
+ have h12480 := Second12449_12480.source hcores hβ h12448
+ have h12512 := Second12481_12512.source hcores hβ h12480
+ have h12544 := Second12513_12544.source hcores hβ h12512
+ have h12576 := Second12545_12576.source hcores hβ h12544
+ have h12608 := Second12577_12608.source hcores hβ h12576
+ have h12640 := Second12609_12640.source hcores hβ h12608
+ have h12672 := Second12641_12672.source hcores hβ h12640
+ have h12704 := Second12673_12704.source hcores hβ h12672
+ have h12736 := Second12705_12736.source hcores hβ h12704
+ have h12768 := Second12737_12768.source hcores hβ h12736
+ have h12800 := Second12769_12800.source hcores hβ h12768
+ have h12832 := Second12801_12832.source hcores hβ h12800
+ have h12864 := Second12833_12864.source hcores hβ h12832
+ have h12896 := Second12865_12896.source hcores hβ h12864
+ have h12928 := Second12897_12928.source hcores hβ h12896
+ have h12960 := Second12929_12960.source hcores hβ h12928
+ have h12992 := Second12961_12992.source hcores hβ h12960
+ have h13024 := Second12993_13024.source hcores hβ h12992
+ have h13056 := Second13025_13056.source hcores hβ h13024
+ have h13088 := Second13057_13088.source hcores hβ h13056
+ have h13120 := Second13089_13120.source hcores hβ h13088
+ have h13152 := Second13121_13152.source hcores hβ h13120
+ have h13184 := Second13153_13184.source hcores hβ h13152
+ have h13216 := Second13185_13216.source hcores hβ h13184
+ have h13248 := Second13217_13248.source hcores hβ h13216
+ have h13280 := Second13249_13280.source hcores hβ h13248
+ have h13312 := Second13281_13312.source hcores hβ h13280
+ have h13344 := Second13313_13344.source hcores hβ h13312
+ have h13376 := Second13345_13376.source hcores hβ h13344
+ have h13408 := Second13377_13408.source hcores hβ h13376
+ have h13440 := Second13409_13440.source hcores hβ h13408
+ have h13472 := Second13441_13472.source hcores hβ h13440
+ have h13504 := Second13473_13504.source hcores hβ h13472
+ have h13536 := Second13505_13536.source hcores hβ h13504
+ have h13568 := Second13537_13568.source hcores hβ h13536
+ have h13600 := Second13569_13600.source hcores hβ h13568
+ have h13632 := Second13601_13632.source hcores hβ h13600
+ have h13664 := Second13633_13664.source hcores hβ h13632
+ have h13696 := Second13665_13696.source hcores hβ h13664
+ have h13728 := Second13697_13728.source hcores hβ h13696
+ have h13760 := Second13729_13760.source hcores hβ h13728
+ have h13792 := Second13761_13792.source hcores hβ h13760
+ have h13824 := Second13793_13824.source hcores hβ h13792
+ have h13856 := Second13825_13856.source hcores hβ h13824
+ have h13888 := Second13857_13888.source hcores hβ h13856
+ have h13920 := Second13889_13920.source hcores hβ h13888
+ have h13952 := Second13921_13952.source hcores hβ h13920
+ have h13984 := Second13953_13984.source hcores hβ h13952
+ have h14016 := Second13985_14016.source hcores hβ h13984
+ have h14048 := Second14017_14048.source hcores hβ h14016
+ have h14080 := Second14049_14080.source hcores hβ h14048
+ have h14112 := Second14081_14112.source hcores hβ h14080
+ have h14144 := Second14113_14144.source hcores hβ h14112
+ have h14176 := Second14145_14176.source hcores hβ h14144
+ have h14208 := Second14177_14208.source hcores hβ h14176
+ have h14240 := Second14209_14240.source hcores hβ h14208
+ have h14272 := Second14241_14272.source hcores hβ h14240
+ have h14304 := Second14273_14304.source hcores hβ h14272
+ have h14336 := Second14305_14336.source hcores hβ h14304
+ have h14368 := Second14337_14368.prefix14337 hcores hβ h14336
+ exact h14368
+
+theorem source15337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (47621575591377/50000000000000:ℝ) (360003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.source hcores hβ h11328
+ have h11392 := Second11361_11392.source hcores hβ h11360
+ have h11424 := Second11393_11424.source hcores hβ h11392
+ have h11456 := Second11425_11456.source hcores hβ h11424
+ have h11488 := Second11457_11488.source hcores hβ h11456
+ have h11520 := Second11489_11520.source hcores hβ h11488
+ have h11552 := Second11521_11552.source hcores hβ h11520
+ have h11584 := Second11553_11584.source hcores hβ h11552
+ have h11616 := Second11585_11616.source hcores hβ h11584
+ have h11648 := Second11617_11648.source hcores hβ h11616
+ have h11680 := Second11649_11680.source hcores hβ h11648
+ have h11712 := Second11681_11712.source hcores hβ h11680
+ have h11744 := Second11713_11744.source hcores hβ h11712
+ have h11776 := Second11745_11776.source hcores hβ h11744
+ have h11808 := Second11777_11808.source hcores hβ h11776
+ have h11840 := Second11809_11840.source hcores hβ h11808
+ have h11872 := Second11841_11872.source hcores hβ h11840
+ have h11904 := Second11873_11904.source hcores hβ h11872
+ have h11936 := Second11905_11936.source hcores hβ h11904
+ have h11968 := Second11937_11968.source hcores hβ h11936
+ have h12000 := Second11969_12000.source hcores hβ h11968
+ have h12032 := Second12001_12032.source hcores hβ h12000
+ have h12064 := Second12033_12064.source hcores hβ h12032
+ have h12096 := Second12065_12096.source hcores hβ h12064
+ have h12128 := Second12097_12128.source hcores hβ h12096
+ have h12160 := Second12129_12160.source hcores hβ h12128
+ have h12192 := Second12161_12192.source hcores hβ h12160
+ have h12224 := Second12193_12224.source hcores hβ h12192
+ have h12256 := Second12225_12256.source hcores hβ h12224
+ have h12288 := Second12257_12288.source hcores hβ h12256
+ have h12320 := Second12289_12320.source hcores hβ h12288
+ have h12352 := Second12321_12352.source hcores hβ h12320
+ have h12384 := Second12353_12384.source hcores hβ h12352
+ have h12416 := Second12385_12416.source hcores hβ h12384
+ have h12448 := Second12417_12448.source hcores hβ h12416
+ have h12480 := Second12449_12480.source hcores hβ h12448
+ have h12512 := Second12481_12512.source hcores hβ h12480
+ have h12544 := Second12513_12544.source hcores hβ h12512
+ have h12576 := Second12545_12576.source hcores hβ h12544
+ have h12608 := Second12577_12608.source hcores hβ h12576
+ have h12640 := Second12609_12640.source hcores hβ h12608
+ have h12672 := Second12641_12672.source hcores hβ h12640
+ have h12704 := Second12673_12704.source hcores hβ h12672
+ have h12736 := Second12705_12736.source hcores hβ h12704
+ have h12768 := Second12737_12768.source hcores hβ h12736
+ have h12800 := Second12769_12800.source hcores hβ h12768
+ have h12832 := Second12801_12832.source hcores hβ h12800
+ have h12864 := Second12833_12864.source hcores hβ h12832
+ have h12896 := Second12865_12896.source hcores hβ h12864
+ have h12928 := Second12897_12928.source hcores hβ h12896
+ have h12960 := Second12929_12960.source hcores hβ h12928
+ have h12992 := Second12961_12992.source hcores hβ h12960
+ have h13024 := Second12993_13024.source hcores hβ h12992
+ have h13056 := Second13025_13056.source hcores hβ h13024
+ have h13088 := Second13057_13088.source hcores hβ h13056
+ have h13120 := Second13089_13120.source hcores hβ h13088
+ have h13152 := Second13121_13152.source hcores hβ h13120
+ have h13184 := Second13153_13184.source hcores hβ h13152
+ have h13216 := Second13185_13216.source hcores hβ h13184
+ have h13248 := Second13217_13248.source hcores hβ h13216
+ have h13280 := Second13249_13280.source hcores hβ h13248
+ have h13312 := Second13281_13312.source hcores hβ h13280
+ have h13344 := Second13313_13344.source hcores hβ h13312
+ have h13376 := Second13345_13376.source hcores hβ h13344
+ have h13408 := Second13377_13408.source hcores hβ h13376
+ have h13440 := Second13409_13440.source hcores hβ h13408
+ have h13472 := Second13441_13472.source hcores hβ h13440
+ have h13504 := Second13473_13504.source hcores hβ h13472
+ have h13536 := Second13505_13536.source hcores hβ h13504
+ have h13568 := Second13537_13568.source hcores hβ h13536
+ have h13600 := Second13569_13600.source hcores hβ h13568
+ have h13632 := Second13601_13632.source hcores hβ h13600
+ have h13664 := Second13633_13664.source hcores hβ h13632
+ have h13696 := Second13665_13696.source hcores hβ h13664
+ have h13728 := Second13697_13728.source hcores hβ h13696
+ have h13760 := Second13729_13760.source hcores hβ h13728
+ have h13792 := Second13761_13792.source hcores hβ h13760
+ have h13824 := Second13793_13824.source hcores hβ h13792
+ have h13856 := Second13825_13856.source hcores hβ h13824
+ have h13888 := Second13857_13888.source hcores hβ h13856
+ have h13920 := Second13889_13920.source hcores hβ h13888
+ have h13952 := Second13921_13952.source hcores hβ h13920
+ have h13984 := Second13953_13984.source hcores hβ h13952
+ have h14016 := Second13985_14016.source hcores hβ h13984
+ have h14048 := Second14017_14048.source hcores hβ h14016
+ have h14080 := Second14049_14080.source hcores hβ h14048
+ have h14112 := Second14081_14112.source hcores hβ h14080
+ have h14144 := Second14113_14144.source hcores hβ h14112
+ have h14176 := Second14145_14176.source hcores hβ h14144
+ have h14208 := Second14177_14208.source hcores hβ h14176
+ have h14240 := Second14209_14240.source hcores hβ h14208
+ have h14272 := Second14241_14272.source hcores hβ h14240
+ have h14304 := Second14273_14304.source hcores hβ h14272
+ have h14336 := Second14305_14336.source hcores hβ h14304
+ have h14368 := Second14337_14368.source hcores hβ h14336
+ have h14400 := Second14369_14400.source hcores hβ h14368
+ have h14432 := Second14401_14432.source hcores hβ h14400
+ have h14464 := Second14433_14464.source hcores hβ h14432
+ have h14496 := Second14465_14496.source hcores hβ h14464
+ have h14528 := Second14497_14528.source hcores hβ h14496
+ have h14560 := Second14529_14560.source hcores hβ h14528
+ have h14592 := Second14561_14592.source hcores hβ h14560
+ have h14624 := Second14593_14624.source hcores hβ h14592
+ have h14656 := Second14625_14656.source hcores hβ h14624
+ have h14688 := Second14657_14688.source hcores hβ h14656
+ have h14720 := Second14689_14720.source hcores hβ h14688
+ have h14752 := Second14721_14752.source hcores hβ h14720
+ have h14784 := Second14753_14784.source hcores hβ h14752
+ have h14816 := Second14785_14816.source hcores hβ h14784
+ have h14848 := Second14817_14848.source hcores hβ h14816
+ have h14880 := Second14849_14880.source hcores hβ h14848
+ have h14912 := Second14881_14912.source hcores hβ h14880
+ have h14944 := Second14913_14944.source hcores hβ h14912
+ have h14976 := Second14945_14976.source hcores hβ h14944
+ have h15008 := Second14977_15008.source hcores hβ h14976
+ have h15040 := Second15009_15040.source hcores hβ h15008
+ have h15072 := Second15041_15072.source hcores hβ h15040
+ have h15104 := Second15073_15104.source hcores hβ h15072
+ have h15136 := Second15105_15136.source hcores hβ h15104
+ have h15168 := Second15137_15168.source hcores hβ h15136
+ have h15200 := Second15169_15200.source hcores hβ h15168
+ have h15232 := Second15201_15232.source hcores hβ h15200
+ have h15264 := Second15233_15264.source hcores hβ h15232
+ have h15296 := Second15265_15296.source hcores hβ h15264
+ have h15328 := Second15297_15328.source hcores hβ h15296
+ have h15360 := Second15329_15360.prefix15337 hcores hβ h15328
+ exact h15360
+
+theorem source16337 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (94772395367213/100000000000000:ℝ) (350003181897/200000000000:ℝ) (1/10:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.source hcores hβ h11328
+ have h11392 := Second11361_11392.source hcores hβ h11360
+ have h11424 := Second11393_11424.source hcores hβ h11392
+ have h11456 := Second11425_11456.source hcores hβ h11424
+ have h11488 := Second11457_11488.source hcores hβ h11456
+ have h11520 := Second11489_11520.source hcores hβ h11488
+ have h11552 := Second11521_11552.source hcores hβ h11520
+ have h11584 := Second11553_11584.source hcores hβ h11552
+ have h11616 := Second11585_11616.source hcores hβ h11584
+ have h11648 := Second11617_11648.source hcores hβ h11616
+ have h11680 := Second11649_11680.source hcores hβ h11648
+ have h11712 := Second11681_11712.source hcores hβ h11680
+ have h11744 := Second11713_11744.source hcores hβ h11712
+ have h11776 := Second11745_11776.source hcores hβ h11744
+ have h11808 := Second11777_11808.source hcores hβ h11776
+ have h11840 := Second11809_11840.source hcores hβ h11808
+ have h11872 := Second11841_11872.source hcores hβ h11840
+ have h11904 := Second11873_11904.source hcores hβ h11872
+ have h11936 := Second11905_11936.source hcores hβ h11904
+ have h11968 := Second11937_11968.source hcores hβ h11936
+ have h12000 := Second11969_12000.source hcores hβ h11968
+ have h12032 := Second12001_12032.source hcores hβ h12000
+ have h12064 := Second12033_12064.source hcores hβ h12032
+ have h12096 := Second12065_12096.source hcores hβ h12064
+ have h12128 := Second12097_12128.source hcores hβ h12096
+ have h12160 := Second12129_12160.source hcores hβ h12128
+ have h12192 := Second12161_12192.source hcores hβ h12160
+ have h12224 := Second12193_12224.source hcores hβ h12192
+ have h12256 := Second12225_12256.source hcores hβ h12224
+ have h12288 := Second12257_12288.source hcores hβ h12256
+ have h12320 := Second12289_12320.source hcores hβ h12288
+ have h12352 := Second12321_12352.source hcores hβ h12320
+ have h12384 := Second12353_12384.source hcores hβ h12352
+ have h12416 := Second12385_12416.source hcores hβ h12384
+ have h12448 := Second12417_12448.source hcores hβ h12416
+ have h12480 := Second12449_12480.source hcores hβ h12448
+ have h12512 := Second12481_12512.source hcores hβ h12480
+ have h12544 := Second12513_12544.source hcores hβ h12512
+ have h12576 := Second12545_12576.source hcores hβ h12544
+ have h12608 := Second12577_12608.source hcores hβ h12576
+ have h12640 := Second12609_12640.source hcores hβ h12608
+ have h12672 := Second12641_12672.source hcores hβ h12640
+ have h12704 := Second12673_12704.source hcores hβ h12672
+ have h12736 := Second12705_12736.source hcores hβ h12704
+ have h12768 := Second12737_12768.source hcores hβ h12736
+ have h12800 := Second12769_12800.source hcores hβ h12768
+ have h12832 := Second12801_12832.source hcores hβ h12800
+ have h12864 := Second12833_12864.source hcores hβ h12832
+ have h12896 := Second12865_12896.source hcores hβ h12864
+ have h12928 := Second12897_12928.source hcores hβ h12896
+ have h12960 := Second12929_12960.source hcores hβ h12928
+ have h12992 := Second12961_12992.source hcores hβ h12960
+ have h13024 := Second12993_13024.source hcores hβ h12992
+ have h13056 := Second13025_13056.source hcores hβ h13024
+ have h13088 := Second13057_13088.source hcores hβ h13056
+ have h13120 := Second13089_13120.source hcores hβ h13088
+ have h13152 := Second13121_13152.source hcores hβ h13120
+ have h13184 := Second13153_13184.source hcores hβ h13152
+ have h13216 := Second13185_13216.source hcores hβ h13184
+ have h13248 := Second13217_13248.source hcores hβ h13216
+ have h13280 := Second13249_13280.source hcores hβ h13248
+ have h13312 := Second13281_13312.source hcores hβ h13280
+ have h13344 := Second13313_13344.source hcores hβ h13312
+ have h13376 := Second13345_13376.source hcores hβ h13344
+ have h13408 := Second13377_13408.source hcores hβ h13376
+ have h13440 := Second13409_13440.source hcores hβ h13408
+ have h13472 := Second13441_13472.source hcores hβ h13440
+ have h13504 := Second13473_13504.source hcores hβ h13472
+ have h13536 := Second13505_13536.source hcores hβ h13504
+ have h13568 := Second13537_13568.source hcores hβ h13536
+ have h13600 := Second13569_13600.source hcores hβ h13568
+ have h13632 := Second13601_13632.source hcores hβ h13600
+ have h13664 := Second13633_13664.source hcores hβ h13632
+ have h13696 := Second13665_13696.source hcores hβ h13664
+ have h13728 := Second13697_13728.source hcores hβ h13696
+ have h13760 := Second13729_13760.source hcores hβ h13728
+ have h13792 := Second13761_13792.source hcores hβ h13760
+ have h13824 := Second13793_13824.source hcores hβ h13792
+ have h13856 := Second13825_13856.source hcores hβ h13824
+ have h13888 := Second13857_13888.source hcores hβ h13856
+ have h13920 := Second13889_13920.source hcores hβ h13888
+ have h13952 := Second13921_13952.source hcores hβ h13920
+ have h13984 := Second13953_13984.source hcores hβ h13952
+ have h14016 := Second13985_14016.source hcores hβ h13984
+ have h14048 := Second14017_14048.source hcores hβ h14016
+ have h14080 := Second14049_14080.source hcores hβ h14048
+ have h14112 := Second14081_14112.source hcores hβ h14080
+ have h14144 := Second14113_14144.source hcores hβ h14112
+ have h14176 := Second14145_14176.source hcores hβ h14144
+ have h14208 := Second14177_14208.source hcores hβ h14176
+ have h14240 := Second14209_14240.source hcores hβ h14208
+ have h14272 := Second14241_14272.source hcores hβ h14240
+ have h14304 := Second14273_14304.source hcores hβ h14272
+ have h14336 := Second14305_14336.source hcores hβ h14304
+ have h14368 := Second14337_14368.source hcores hβ h14336
+ have h14400 := Second14369_14400.source hcores hβ h14368
+ have h14432 := Second14401_14432.source hcores hβ h14400
+ have h14464 := Second14433_14464.source hcores hβ h14432
+ have h14496 := Second14465_14496.source hcores hβ h14464
+ have h14528 := Second14497_14528.source hcores hβ h14496
+ have h14560 := Second14529_14560.source hcores hβ h14528
+ have h14592 := Second14561_14592.source hcores hβ h14560
+ have h14624 := Second14593_14624.source hcores hβ h14592
+ have h14656 := Second14625_14656.source hcores hβ h14624
+ have h14688 := Second14657_14688.source hcores hβ h14656
+ have h14720 := Second14689_14720.source hcores hβ h14688
+ have h14752 := Second14721_14752.source hcores hβ h14720
+ have h14784 := Second14753_14784.source hcores hβ h14752
+ have h14816 := Second14785_14816.source hcores hβ h14784
+ have h14848 := Second14817_14848.source hcores hβ h14816
+ have h14880 := Second14849_14880.source hcores hβ h14848
+ have h14912 := Second14881_14912.source hcores hβ h14880
+ have h14944 := Second14913_14944.source hcores hβ h14912
+ have h14976 := Second14945_14976.source hcores hβ h14944
+ have h15008 := Second14977_15008.source hcores hβ h14976
+ have h15040 := Second15009_15040.source hcores hβ h15008
+ have h15072 := Second15041_15072.source hcores hβ h15040
+ have h15104 := Second15073_15104.source hcores hβ h15072
+ have h15136 := Second15105_15136.source hcores hβ h15104
+ have h15168 := Second15137_15168.source hcores hβ h15136
+ have h15200 := Second15169_15200.source hcores hβ h15168
+ have h15232 := Second15201_15232.source hcores hβ h15200
+ have h15264 := Second15233_15264.source hcores hβ h15232
+ have h15296 := Second15265_15296.source hcores hβ h15264
+ have h15328 := Second15297_15328.source hcores hβ h15296
+ have h15360 := Second15329_15360.source hcores hβ h15328
+ have h15392 := Second15361_15392.source hcores hβ h15360
+ have h15424 := Second15393_15424.source hcores hβ h15392
+ have h15456 := Second15425_15456.source hcores hβ h15424
+ have h15488 := Second15457_15488.source hcores hβ h15456
+ have h15520 := Second15489_15520.source hcores hβ h15488
+ have h15552 := Second15521_15552.source hcores hβ h15520
+ have h15584 := Second15553_15584.source hcores hβ h15552
+ have h15616 := Second15585_15616.source hcores hβ h15584
+ have h15648 := Second15617_15648.source hcores hβ h15616
+ have h15680 := Second15649_15680.source hcores hβ h15648
+ have h15712 := Second15681_15712.source hcores hβ h15680
+ have h15744 := Second15713_15744.source hcores hβ h15712
+ have h15776 := Second15745_15776.source hcores hβ h15744
+ have h15808 := Second15777_15808.source hcores hβ h15776
+ have h15840 := Second15809_15840.source hcores hβ h15808
+ have h15872 := Second15841_15872.source hcores hβ h15840
+ have h15904 := Second15873_15904.source hcores hβ h15872
+ have h15936 := Second15905_15936.source hcores hβ h15904
+ have h15968 := Second15937_15968.source hcores hβ h15936
+ have h16000 := Second15969_16000.source hcores hβ h15968
+ have h16032 := Second16001_16032.source hcores hβ h16000
+ have h16064 := Second16033_16064.source hcores hβ h16032
+ have h16096 := Second16065_16096.source hcores hβ h16064
+ have h16128 := Second16097_16128.source hcores hβ h16096
+ have h16160 := Second16129_16160.source hcores hβ h16128
+ have h16192 := Second16161_16192.source hcores hβ h16160
+ have h16224 := Second16193_16224.source hcores hβ h16192
+ have h16256 := Second16225_16256.source hcores hβ h16224
+ have h16288 := Second16257_16288.source hcores hβ h16256
+ have h16320 := Second16289_16320.source hcores hβ h16288
+ have h16352 := Second16321_16352.prefix16337 hcores hβ h16320
+ exact h16352
+
+theorem source17045 (hcores : ParentCoreProvider)
+ (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta)
+ (hp : GlobalSource (999999999/1000000000:ℝ) (513373181897/200000000000:ℝ) (1/10:ℝ)) : GlobalSource (94429431246019/100000000000000:ℝ) (342923181897/200000000000:ℝ) (101/1000:ℝ) := by
+ have h32 := Second00001_00032.source hcores hβ hp
+ have h64 := Second00033_00064.source hcores hβ h32
+ have h96 := Second00065_00096.source hcores hβ h64
+ have h128 := Second00097_00128.source hcores hβ h96
+ have h160 := Second00129_00160.source hcores hβ h128
+ have h192 := Second00161_00192.source hcores hβ h160
+ have h224 := Second00193_00224.source hcores hβ h192
+ have h256 := Second00225_00256.source hcores hβ h224
+ have h288 := Second00257_00288.source hcores hβ h256
+ have h320 := Second00289_00320.source hcores hβ h288
+ have h352 := Second00321_00352.source hcores hβ h320
+ have h384 := Second00353_00384.source hcores hβ h352
+ have h416 := Second00385_00416.source hcores hβ h384
+ have h448 := Second00417_00448.source hcores hβ h416
+ have h480 := Second00449_00480.source hcores hβ h448
+ have h512 := Second00481_00512.source hcores hβ h480
+ have h544 := Second00513_00544.source hcores hβ h512
+ have h576 := Second00545_00576.source hcores hβ h544
+ have h608 := Second00577_00608.source hcores hβ h576
+ have h640 := Second00609_00640.source hcores hβ h608
+ have h672 := Second00641_00672.source hcores hβ h640
+ have h704 := Second00673_00704.source hcores hβ h672
+ have h736 := Second00705_00736.source hcores hβ h704
+ have h768 := Second00737_00768.source hcores hβ h736
+ have h800 := Second00769_00800.source hcores hβ h768
+ have h832 := Second00801_00832.source hcores hβ h800
+ have h864 := Second00833_00864.source hcores hβ h832
+ have h896 := Second00865_00896.source hcores hβ h864
+ have h928 := Second00897_00928.source hcores hβ h896
+ have h960 := Second00929_00960.source hcores hβ h928
+ have h992 := Second00961_00992.source hcores hβ h960
+ have h1024 := Second00993_01024.source hcores hβ h992
+ have h1056 := Second01025_01056.source hcores hβ h1024
+ have h1088 := Second01057_01088.source hcores hβ h1056
+ have h1120 := Second01089_01120.source hcores hβ h1088
+ have h1152 := Second01121_01152.source hcores hβ h1120
+ have h1184 := Second01153_01184.source hcores hβ h1152
+ have h1216 := Second01185_01216.source hcores hβ h1184
+ have h1248 := Second01217_01248.source hcores hβ h1216
+ have h1280 := Second01249_01280.source hcores hβ h1248
+ have h1312 := Second01281_01312.source hcores hβ h1280
+ have h1344 := Second01313_01344.source hcores hβ h1312
+ have h1376 := Second01345_01376.source hcores hβ h1344
+ have h1408 := Second01377_01408.source hcores hβ h1376
+ have h1440 := Second01409_01440.source hcores hβ h1408
+ have h1472 := Second01441_01472.source hcores hβ h1440
+ have h1504 := Second01473_01504.source hcores hβ h1472
+ have h1536 := Second01505_01536.source hcores hβ h1504
+ have h1568 := Second01537_01568.source hcores hβ h1536
+ have h1600 := Second01569_01600.source hcores hβ h1568
+ have h1632 := Second01601_01632.source hcores hβ h1600
+ have h1664 := Second01633_01664.source hcores hβ h1632
+ have h1696 := Second01665_01696.source hcores hβ h1664
+ have h1728 := Second01697_01728.source hcores hβ h1696
+ have h1760 := Second01729_01760.source hcores hβ h1728
+ have h1792 := Second01761_01792.source hcores hβ h1760
+ have h1824 := Second01793_01824.source hcores hβ h1792
+ have h1856 := Second01825_01856.source hcores hβ h1824
+ have h1888 := Second01857_01888.source hcores hβ h1856
+ have h1920 := Second01889_01920.source hcores hβ h1888
+ have h1952 := Second01921_01952.source hcores hβ h1920
+ have h1984 := Second01953_01984.source hcores hβ h1952
+ have h2016 := Second01985_02016.source hcores hβ h1984
+ have h2048 := Second02017_02048.source hcores hβ h2016
+ have h2080 := Second02049_02080.source hcores hβ h2048
+ have h2112 := Second02081_02112.source hcores hβ h2080
+ have h2144 := Second02113_02144.source hcores hβ h2112
+ have h2176 := Second02145_02176.source hcores hβ h2144
+ have h2208 := Second02177_02208.source hcores hβ h2176
+ have h2240 := Second02209_02240.source hcores hβ h2208
+ have h2272 := Second02241_02272.source hcores hβ h2240
+ have h2304 := Second02273_02304.source hcores hβ h2272
+ have h2336 := Second02305_02336.source hcores hβ h2304
+ have h2368 := Second02337_02368.source hcores hβ h2336
+ have h2400 := Second02369_02400.source hcores hβ h2368
+ have h2432 := Second02401_02432.source hcores hβ h2400
+ have h2464 := Second02433_02464.source hcores hβ h2432
+ have h2496 := Second02465_02496.source hcores hβ h2464
+ have h2528 := Second02497_02528.source hcores hβ h2496
+ have h2560 := Second02529_02560.source hcores hβ h2528
+ have h2592 := Second02561_02592.source hcores hβ h2560
+ have h2624 := Second02593_02624.source hcores hβ h2592
+ have h2656 := Second02625_02656.source hcores hβ h2624
+ have h2688 := Second02657_02688.source hcores hβ h2656
+ have h2720 := Second02689_02720.source hcores hβ h2688
+ have h2752 := Second02721_02752.source hcores hβ h2720
+ have h2784 := Second02753_02784.source hcores hβ h2752
+ have h2816 := Second02785_02816.source hcores hβ h2784
+ have h2848 := Second02817_02848.source hcores hβ h2816
+ have h2880 := Second02849_02880.source hcores hβ h2848
+ have h2912 := Second02881_02912.source hcores hβ h2880
+ have h2944 := Second02913_02944.source hcores hβ h2912
+ have h2976 := Second02945_02976.source hcores hβ h2944
+ have h3008 := Second02977_03008.source hcores hβ h2976
+ have h3040 := Second03009_03040.source hcores hβ h3008
+ have h3072 := Second03041_03072.source hcores hβ h3040
+ have h3104 := Second03073_03104.source hcores hβ h3072
+ have h3136 := Second03105_03136.source hcores hβ h3104
+ have h3168 := Second03137_03168.source hcores hβ h3136
+ have h3200 := Second03169_03200.source hcores hβ h3168
+ have h3232 := Second03201_03232.source hcores hβ h3200
+ have h3264 := Second03233_03264.source hcores hβ h3232
+ have h3296 := Second03265_03296.source hcores hβ h3264
+ have h3328 := Second03297_03328.source hcores hβ h3296
+ have h3360 := Second03329_03360.source hcores hβ h3328
+ have h3392 := Second03361_03392.source hcores hβ h3360
+ have h3424 := Second03393_03424.source hcores hβ h3392
+ have h3456 := Second03425_03456.source hcores hβ h3424
+ have h3488 := Second03457_03488.source hcores hβ h3456
+ have h3520 := Second03489_03520.source hcores hβ h3488
+ have h3552 := Second03521_03552.source hcores hβ h3520
+ have h3584 := Second03553_03584.source hcores hβ h3552
+ have h3616 := Second03585_03616.source hcores hβ h3584
+ have h3648 := Second03617_03648.source hcores hβ h3616
+ have h3680 := Second03649_03680.source hcores hβ h3648
+ have h3712 := Second03681_03712.source hcores hβ h3680
+ have h3744 := Second03713_03744.source hcores hβ h3712
+ have h3776 := Second03745_03776.source hcores hβ h3744
+ have h3808 := Second03777_03808.source hcores hβ h3776
+ have h3840 := Second03809_03840.source hcores hβ h3808
+ have h3872 := Second03841_03872.source hcores hβ h3840
+ have h3904 := Second03873_03904.source hcores hβ h3872
+ have h3936 := Second03905_03936.source hcores hβ h3904
+ have h3968 := Second03937_03968.source hcores hβ h3936
+ have h4000 := Second03969_04000.source hcores hβ h3968
+ have h4032 := Second04001_04032.source hcores hβ h4000
+ have h4064 := Second04033_04064.source hcores hβ h4032
+ have h4096 := Second04065_04096.source hcores hβ h4064
+ have h4128 := Second04097_04128.source hcores hβ h4096
+ have h4160 := Second04129_04160.source hcores hβ h4128
+ have h4192 := Second04161_04192.source hcores hβ h4160
+ have h4224 := Second04193_04224.source hcores hβ h4192
+ have h4256 := Second04225_04256.source hcores hβ h4224
+ have h4288 := Second04257_04288.source hcores hβ h4256
+ have h4320 := Second04289_04320.source hcores hβ h4288
+ have h4352 := Second04321_04352.source hcores hβ h4320
+ have h4384 := Second04353_04384.source hcores hβ h4352
+ have h4416 := Second04385_04416.source hcores hβ h4384
+ have h4448 := Second04417_04448.source hcores hβ h4416
+ have h4480 := Second04449_04480.source hcores hβ h4448
+ have h4512 := Second04481_04512.source hcores hβ h4480
+ have h4544 := Second04513_04544.source hcores hβ h4512
+ have h4576 := Second04545_04576.source hcores hβ h4544
+ have h4608 := Second04577_04608.source hcores hβ h4576
+ have h4640 := Second04609_04640.source hcores hβ h4608
+ have h4672 := Second04641_04672.source hcores hβ h4640
+ have h4704 := Second04673_04704.source hcores hβ h4672
+ have h4736 := Second04705_04736.source hcores hβ h4704
+ have h4768 := Second04737_04768.source hcores hβ h4736
+ have h4800 := Second04769_04800.source hcores hβ h4768
+ have h4832 := Second04801_04832.source hcores hβ h4800
+ have h4864 := Second04833_04864.source hcores hβ h4832
+ have h4896 := Second04865_04896.source hcores hβ h4864
+ have h4928 := Second04897_04928.source hcores hβ h4896
+ have h4960 := Second04929_04960.source hcores hβ h4928
+ have h4992 := Second04961_04992.source hcores hβ h4960
+ have h5024 := Second04993_05024.source hcores hβ h4992
+ have h5056 := Second05025_05056.source hcores hβ h5024
+ have h5088 := Second05057_05088.source hcores hβ h5056
+ have h5120 := Second05089_05120.source hcores hβ h5088
+ have h5152 := Second05121_05152.source hcores hβ h5120
+ have h5184 := Second05153_05184.source hcores hβ h5152
+ have h5216 := Second05185_05216.source hcores hβ h5184
+ have h5248 := Second05217_05248.source hcores hβ h5216
+ have h5280 := Second05249_05280.source hcores hβ h5248
+ have h5312 := Second05281_05312.source hcores hβ h5280
+ have h5344 := Second05313_05344.source hcores hβ h5312
+ have h5376 := Second05345_05376.source hcores hβ h5344
+ have h5408 := Second05377_05408.source hcores hβ h5376
+ have h5440 := Second05409_05440.source hcores hβ h5408
+ have h5472 := Second05441_05472.source hcores hβ h5440
+ have h5504 := Second05473_05504.source hcores hβ h5472
+ have h5536 := Second05505_05536.source hcores hβ h5504
+ have h5568 := Second05537_05568.source hcores hβ h5536
+ have h5600 := Second05569_05600.source hcores hβ h5568
+ have h5632 := Second05601_05632.source hcores hβ h5600
+ have h5664 := Second05633_05664.source hcores hβ h5632
+ have h5696 := Second05665_05696.source hcores hβ h5664
+ have h5728 := Second05697_05728.source hcores hβ h5696
+ have h5760 := Second05729_05760.source hcores hβ h5728
+ have h5792 := Second05761_05792.source hcores hβ h5760
+ have h5824 := Second05793_05824.source hcores hβ h5792
+ have h5856 := Second05825_05856.source hcores hβ h5824
+ have h5888 := Second05857_05888.source hcores hβ h5856
+ have h5920 := Second05889_05920.source hcores hβ h5888
+ have h5952 := Second05921_05952.source hcores hβ h5920
+ have h5984 := Second05953_05984.source hcores hβ h5952
+ have h6016 := Second05985_06016.source hcores hβ h5984
+ have h6048 := Second06017_06048.source hcores hβ h6016
+ have h6080 := Second06049_06080.source hcores hβ h6048
+ have h6112 := Second06081_06112.source hcores hβ h6080
+ have h6144 := Second06113_06144.source hcores hβ h6112
+ have h6176 := Second06145_06176.source hcores hβ h6144
+ have h6208 := Second06177_06208.source hcores hβ h6176
+ have h6240 := Second06209_06240.source hcores hβ h6208
+ have h6272 := Second06241_06272.source hcores hβ h6240
+ have h6304 := Second06273_06304.source hcores hβ h6272
+ have h6336 := Second06305_06336.source hcores hβ h6304
+ have h6368 := Second06337_06368.source hcores hβ h6336
+ have h6400 := Second06369_06400.source hcores hβ h6368
+ have h6432 := Second06401_06432.source hcores hβ h6400
+ have h6464 := Second06433_06464.source hcores hβ h6432
+ have h6496 := Second06465_06496.source hcores hβ h6464
+ have h6528 := Second06497_06528.source hcores hβ h6496
+ have h6560 := Second06529_06560.source hcores hβ h6528
+ have h6592 := Second06561_06592.source hcores hβ h6560
+ have h6624 := Second06593_06624.source hcores hβ h6592
+ have h6656 := Second06625_06656.source hcores hβ h6624
+ have h6688 := Second06657_06688.source hcores hβ h6656
+ have h6720 := Second06689_06720.source hcores hβ h6688
+ have h6752 := Second06721_06752.source hcores hβ h6720
+ have h6784 := Second06753_06784.source hcores hβ h6752
+ have h6816 := Second06785_06816.source hcores hβ h6784
+ have h6848 := Second06817_06848.source hcores hβ h6816
+ have h6880 := Second06849_06880.source hcores hβ h6848
+ have h6912 := Second06881_06912.source hcores hβ h6880
+ have h6944 := Second06913_06944.source hcores hβ h6912
+ have h6976 := Second06945_06976.source hcores hβ h6944
+ have h7008 := Second06977_07008.source hcores hβ h6976
+ have h7040 := Second07009_07040.source hcores hβ h7008
+ have h7072 := Second07041_07072.source hcores hβ h7040
+ have h7104 := Second07073_07104.source hcores hβ h7072
+ have h7136 := Second07105_07136.source hcores hβ h7104
+ have h7168 := Second07137_07168.source hcores hβ h7136
+ have h7200 := Second07169_07200.source hcores hβ h7168
+ have h7232 := Second07201_07232.source hcores hβ h7200
+ have h7264 := Second07233_07264.source hcores hβ h7232
+ have h7296 := Second07265_07296.source hcores hβ h7264
+ have h7328 := Second07297_07328.source hcores hβ h7296
+ have h7360 := Second07329_07360.source hcores hβ h7328
+ have h7392 := Second07361_07392.source hcores hβ h7360
+ have h7424 := Second07393_07424.source hcores hβ h7392
+ have h7456 := Second07425_07456.source hcores hβ h7424
+ have h7488 := Second07457_07488.source hcores hβ h7456
+ have h7520 := Second07489_07520.source hcores hβ h7488
+ have h7552 := Second07521_07552.source hcores hβ h7520
+ have h7584 := Second07553_07584.source hcores hβ h7552
+ have h7616 := Second07585_07616.source hcores hβ h7584
+ have h7648 := Second07617_07648.source hcores hβ h7616
+ have h7680 := Second07649_07680.source hcores hβ h7648
+ have h7712 := Second07681_07712.source hcores hβ h7680
+ have h7744 := Second07713_07744.source hcores hβ h7712
+ have h7776 := Second07745_07776.source hcores hβ h7744
+ have h7808 := Second07777_07808.source hcores hβ h7776
+ have h7840 := Second07809_07840.source hcores hβ h7808
+ have h7872 := Second07841_07872.source hcores hβ h7840
+ have h7904 := Second07873_07904.source hcores hβ h7872
+ have h7936 := Second07905_07936.source hcores hβ h7904
+ have h7968 := Second07937_07968.source hcores hβ h7936
+ have h8000 := Second07969_08000.source hcores hβ h7968
+ have h8032 := Second08001_08032.source hcores hβ h8000
+ have h8064 := Second08033_08064.source hcores hβ h8032
+ have h8096 := Second08065_08096.source hcores hβ h8064
+ have h8128 := Second08097_08128.source hcores hβ h8096
+ have h8160 := Second08129_08160.source hcores hβ h8128
+ have h8192 := Second08161_08192.source hcores hβ h8160
+ have h8224 := Second08193_08224.source hcores hβ h8192
+ have h8256 := Second08225_08256.source hcores hβ h8224
+ have h8288 := Second08257_08288.source hcores hβ h8256
+ have h8320 := Second08289_08320.source hcores hβ h8288
+ have h8352 := Second08321_08352.source hcores hβ h8320
+ have h8384 := Second08353_08384.source hcores hβ h8352
+ have h8416 := Second08385_08416.source hcores hβ h8384
+ have h8448 := Second08417_08448.source hcores hβ h8416
+ have h8480 := Second08449_08480.source hcores hβ h8448
+ have h8512 := Second08481_08512.source hcores hβ h8480
+ have h8544 := Second08513_08544.source hcores hβ h8512
+ have h8576 := Second08545_08576.source hcores hβ h8544
+ have h8608 := Second08577_08608.source hcores hβ h8576
+ have h8640 := Second08609_08640.source hcores hβ h8608
+ have h8672 := Second08641_08672.source hcores hβ h8640
+ have h8704 := Second08673_08704.source hcores hβ h8672
+ have h8736 := Second08705_08736.source hcores hβ h8704
+ have h8768 := Second08737_08768.source hcores hβ h8736
+ have h8800 := Second08769_08800.source hcores hβ h8768
+ have h8832 := Second08801_08832.source hcores hβ h8800
+ have h8864 := Second08833_08864.source hcores hβ h8832
+ have h8896 := Second08865_08896.source hcores hβ h8864
+ have h8928 := Second08897_08928.source hcores hβ h8896
+ have h8960 := Second08929_08960.source hcores hβ h8928
+ have h8992 := Second08961_08992.source hcores hβ h8960
+ have h9024 := Second08993_09024.source hcores hβ h8992
+ have h9056 := Second09025_09056.source hcores hβ h9024
+ have h9088 := Second09057_09088.source hcores hβ h9056
+ have h9120 := Second09089_09120.source hcores hβ h9088
+ have h9152 := Second09121_09152.source hcores hβ h9120
+ have h9184 := Second09153_09184.source hcores hβ h9152
+ have h9216 := Second09185_09216.source hcores hβ h9184
+ have h9248 := Second09217_09248.source hcores hβ h9216
+ have h9280 := Second09249_09280.source hcores hβ h9248
+ have h9312 := Second09281_09312.source hcores hβ h9280
+ have h9344 := Second09313_09344.source hcores hβ h9312
+ have h9376 := Second09345_09376.source hcores hβ h9344
+ have h9408 := Second09377_09408.source hcores hβ h9376
+ have h9440 := Second09409_09440.source hcores hβ h9408
+ have h9472 := Second09441_09472.source hcores hβ h9440
+ have h9504 := Second09473_09504.source hcores hβ h9472
+ have h9536 := Second09505_09536.source hcores hβ h9504
+ have h9568 := Second09537_09568.source hcores hβ h9536
+ have h9600 := Second09569_09600.source hcores hβ h9568
+ have h9632 := Second09601_09632.source hcores hβ h9600
+ have h9664 := Second09633_09664.source hcores hβ h9632
+ have h9696 := Second09665_09696.source hcores hβ h9664
+ have h9728 := Second09697_09728.source hcores hβ h9696
+ have h9760 := Second09729_09760.source hcores hβ h9728
+ have h9792 := Second09761_09792.source hcores hβ h9760
+ have h9824 := Second09793_09824.source hcores hβ h9792
+ have h9856 := Second09825_09856.source hcores hβ h9824
+ have h9888 := Second09857_09888.source hcores hβ h9856
+ have h9920 := Second09889_09920.source hcores hβ h9888
+ have h9952 := Second09921_09952.source hcores hβ h9920
+ have h9984 := Second09953_09984.source hcores hβ h9952
+ have h10016 := Second09985_10016.source hcores hβ h9984
+ have h10048 := Second10017_10048.source hcores hβ h10016
+ have h10080 := Second10049_10080.source hcores hβ h10048
+ have h10112 := Second10081_10112.source hcores hβ h10080
+ have h10144 := Second10113_10144.source hcores hβ h10112
+ have h10176 := Second10145_10176.source hcores hβ h10144
+ have h10208 := Second10177_10208.source hcores hβ h10176
+ have h10240 := Second10209_10240.source hcores hβ h10208
+ have h10272 := Second10241_10272.source hcores hβ h10240
+ have h10304 := Second10273_10304.source hcores hβ h10272
+ have h10336 := Second10305_10336.source hcores hβ h10304
+ have h10368 := Second10337_10368.source hcores hβ h10336
+ have h10400 := Second10369_10400.source hcores hβ h10368
+ have h10432 := Second10401_10432.source hcores hβ h10400
+ have h10464 := Second10433_10464.source hcores hβ h10432
+ have h10496 := Second10465_10496.source hcores hβ h10464
+ have h10528 := Second10497_10528.source hcores hβ h10496
+ have h10560 := Second10529_10560.source hcores hβ h10528
+ have h10592 := Second10561_10592.source hcores hβ h10560
+ have h10624 := Second10593_10624.source hcores hβ h10592
+ have h10656 := Second10625_10656.source hcores hβ h10624
+ have h10688 := Second10657_10688.source hcores hβ h10656
+ have h10720 := Second10689_10720.source hcores hβ h10688
+ have h10752 := Second10721_10752.source hcores hβ h10720
+ have h10784 := Second10753_10784.source hcores hβ h10752
+ have h10816 := Second10785_10816.source hcores hβ h10784
+ have h10848 := Second10817_10848.source hcores hβ h10816
+ have h10880 := Second10849_10880.source hcores hβ h10848
+ have h10912 := Second10881_10912.source hcores hβ h10880
+ have h10944 := Second10913_10944.source hcores hβ h10912
+ have h10976 := Second10945_10976.source hcores hβ h10944
+ have h11008 := Second10977_11008.source hcores hβ h10976
+ have h11040 := Second11009_11040.source hcores hβ h11008
+ have h11072 := Second11041_11072.source hcores hβ h11040
+ have h11104 := Second11073_11104.source hcores hβ h11072
+ have h11136 := Second11105_11136.source hcores hβ h11104
+ have h11168 := Second11137_11168.source hcores hβ h11136
+ have h11200 := Second11169_11200.source hcores hβ h11168
+ have h11232 := Second11201_11232.source hcores hβ h11200
+ have h11264 := Second11233_11264.source hcores hβ h11232
+ have h11296 := Second11265_11296.source hcores hβ h11264
+ have h11328 := Second11297_11328.source hcores hβ h11296
+ have h11360 := Second11329_11360.source hcores hβ h11328
+ have h11392 := Second11361_11392.source hcores hβ h11360
+ have h11424 := Second11393_11424.source hcores hβ h11392
+ have h11456 := Second11425_11456.source hcores hβ h11424
+ have h11488 := Second11457_11488.source hcores hβ h11456
+ have h11520 := Second11489_11520.source hcores hβ h11488
+ have h11552 := Second11521_11552.source hcores hβ h11520
+ have h11584 := Second11553_11584.source hcores hβ h11552
+ have h11616 := Second11585_11616.source hcores hβ h11584
+ have h11648 := Second11617_11648.source hcores hβ h11616
+ have h11680 := Second11649_11680.source hcores hβ h11648
+ have h11712 := Second11681_11712.source hcores hβ h11680
+ have h11744 := Second11713_11744.source hcores hβ h11712
+ have h11776 := Second11745_11776.source hcores hβ h11744
+ have h11808 := Second11777_11808.source hcores hβ h11776
+ have h11840 := Second11809_11840.source hcores hβ h11808
+ have h11872 := Second11841_11872.source hcores hβ h11840
+ have h11904 := Second11873_11904.source hcores hβ h11872
+ have h11936 := Second11905_11936.source hcores hβ h11904
+ have h11968 := Second11937_11968.source hcores hβ h11936
+ have h12000 := Second11969_12000.source hcores hβ h11968
+ have h12032 := Second12001_12032.source hcores hβ h12000
+ have h12064 := Second12033_12064.source hcores hβ h12032
+ have h12096 := Second12065_12096.source hcores hβ h12064
+ have h12128 := Second12097_12128.source hcores hβ h12096
+ have h12160 := Second12129_12160.source hcores hβ h12128
+ have h12192 := Second12161_12192.source hcores hβ h12160
+ have h12224 := Second12193_12224.source hcores hβ h12192
+ have h12256 := Second12225_12256.source hcores hβ h12224
+ have h12288 := Second12257_12288.source hcores hβ h12256
+ have h12320 := Second12289_12320.source hcores hβ h12288
+ have h12352 := Second12321_12352.source hcores hβ h12320
+ have h12384 := Second12353_12384.source hcores hβ h12352
+ have h12416 := Second12385_12416.source hcores hβ h12384
+ have h12448 := Second12417_12448.source hcores hβ h12416
+ have h12480 := Second12449_12480.source hcores hβ h12448
+ have h12512 := Second12481_12512.source hcores hβ h12480
+ have h12544 := Second12513_12544.source hcores hβ h12512
+ have h12576 := Second12545_12576.source hcores hβ h12544
+ have h12608 := Second12577_12608.source hcores hβ h12576
+ have h12640 := Second12609_12640.source hcores hβ h12608
+ have h12672 := Second12641_12672.source hcores hβ h12640
+ have h12704 := Second12673_12704.source hcores hβ h12672
+ have h12736 := Second12705_12736.source hcores hβ h12704
+ have h12768 := Second12737_12768.source hcores hβ h12736
+ have h12800 := Second12769_12800.source hcores hβ h12768
+ have h12832 := Second12801_12832.source hcores hβ h12800
+ have h12864 := Second12833_12864.source hcores hβ h12832
+ have h12896 := Second12865_12896.source hcores hβ h12864
+ have h12928 := Second12897_12928.source hcores hβ h12896
+ have h12960 := Second12929_12960.source hcores hβ h12928
+ have h12992 := Second12961_12992.source hcores hβ h12960
+ have h13024 := Second12993_13024.source hcores hβ h12992
+ have h13056 := Second13025_13056.source hcores hβ h13024
+ have h13088 := Second13057_13088.source hcores hβ h13056
+ have h13120 := Second13089_13120.source hcores hβ h13088
+ have h13152 := Second13121_13152.source hcores hβ h13120
+ have h13184 := Second13153_13184.source hcores hβ h13152
+ have h13216 := Second13185_13216.source hcores hβ h13184
+ have h13248 := Second13217_13248.source hcores hβ h13216
+ have h13280 := Second13249_13280.source hcores hβ h13248
+ have h13312 := Second13281_13312.source hcores hβ h13280
+ have h13344 := Second13313_13344.source hcores hβ h13312
+ have h13376 := Second13345_13376.source hcores hβ h13344
+ have h13408 := Second13377_13408.source hcores hβ h13376
+ have h13440 := Second13409_13440.source hcores hβ h13408
+ have h13472 := Second13441_13472.source hcores hβ h13440
+ have h13504 := Second13473_13504.source hcores hβ h13472
+ have h13536 := Second13505_13536.source hcores hβ h13504
+ have h13568 := Second13537_13568.source hcores hβ h13536
+ have h13600 := Second13569_13600.source hcores hβ h13568
+ have h13632 := Second13601_13632.source hcores hβ h13600
+ have h13664 := Second13633_13664.source hcores hβ h13632
+ have h13696 := Second13665_13696.source hcores hβ h13664
+ have h13728 := Second13697_13728.source hcores hβ h13696
+ have h13760 := Second13729_13760.source hcores hβ h13728
+ have h13792 := Second13761_13792.source hcores hβ h13760
+ have h13824 := Second13793_13824.source hcores hβ h13792
+ have h13856 := Second13825_13856.source hcores hβ h13824
+ have h13888 := Second13857_13888.source hcores hβ h13856
+ have h13920 := Second13889_13920.source hcores hβ h13888
+ have h13952 := Second13921_13952.source hcores hβ h13920
+ have h13984 := Second13953_13984.source hcores hβ h13952
+ have h14016 := Second13985_14016.source hcores hβ h13984
+ have h14048 := Second14017_14048.source hcores hβ h14016
+ have h14080 := Second14049_14080.source hcores hβ h14048
+ have h14112 := Second14081_14112.source hcores hβ h14080
+ have h14144 := Second14113_14144.source hcores hβ h14112
+ have h14176 := Second14145_14176.source hcores hβ h14144
+ have h14208 := Second14177_14208.source hcores hβ h14176
+ have h14240 := Second14209_14240.source hcores hβ h14208
+ have h14272 := Second14241_14272.source hcores hβ h14240
+ have h14304 := Second14273_14304.source hcores hβ h14272
+ have h14336 := Second14305_14336.source hcores hβ h14304
+ have h14368 := Second14337_14368.source hcores hβ h14336
+ have h14400 := Second14369_14400.source hcores hβ h14368
+ have h14432 := Second14401_14432.source hcores hβ h14400
+ have h14464 := Second14433_14464.source hcores hβ h14432
+ have h14496 := Second14465_14496.source hcores hβ h14464
+ have h14528 := Second14497_14528.source hcores hβ h14496
+ have h14560 := Second14529_14560.source hcores hβ h14528
+ have h14592 := Second14561_14592.source hcores hβ h14560
+ have h14624 := Second14593_14624.source hcores hβ h14592
+ have h14656 := Second14625_14656.source hcores hβ h14624
+ have h14688 := Second14657_14688.source hcores hβ h14656
+ have h14720 := Second14689_14720.source hcores hβ h14688
+ have h14752 := Second14721_14752.source hcores hβ h14720
+ have h14784 := Second14753_14784.source hcores hβ h14752
+ have h14816 := Second14785_14816.source hcores hβ h14784
+ have h14848 := Second14817_14848.source hcores hβ h14816
+ have h14880 := Second14849_14880.source hcores hβ h14848
+ have h14912 := Second14881_14912.source hcores hβ h14880
+ have h14944 := Second14913_14944.source hcores hβ h14912
+ have h14976 := Second14945_14976.source hcores hβ h14944
+ have h15008 := Second14977_15008.source hcores hβ h14976
+ have h15040 := Second15009_15040.source hcores hβ h15008
+ have h15072 := Second15041_15072.source hcores hβ h15040
+ have h15104 := Second15073_15104.source hcores hβ h15072
+ have h15136 := Second15105_15136.source hcores hβ h15104
+ have h15168 := Second15137_15168.source hcores hβ h15136
+ have h15200 := Second15169_15200.source hcores hβ h15168
+ have h15232 := Second15201_15232.source hcores hβ h15200
+ have h15264 := Second15233_15264.source hcores hβ h15232
+ have h15296 := Second15265_15296.source hcores hβ h15264
+ have h15328 := Second15297_15328.source hcores hβ h15296
+ have h15360 := Second15329_15360.source hcores hβ h15328
+ have h15392 := Second15361_15392.source hcores hβ h15360
+ have h15424 := Second15393_15424.source hcores hβ h15392
+ have h15456 := Second15425_15456.source hcores hβ h15424
+ have h15488 := Second15457_15488.source hcores hβ h15456
+ have h15520 := Second15489_15520.source hcores hβ h15488
+ have h15552 := Second15521_15552.source hcores hβ h15520
+ have h15584 := Second15553_15584.source hcores hβ h15552
+ have h15616 := Second15585_15616.source hcores hβ h15584
+ have h15648 := Second15617_15648.source hcores hβ h15616
+ have h15680 := Second15649_15680.source hcores hβ h15648
+ have h15712 := Second15681_15712.source hcores hβ h15680
+ have h15744 := Second15713_15744.source hcores hβ h15712
+ have h15776 := Second15745_15776.source hcores hβ h15744
+ have h15808 := Second15777_15808.source hcores hβ h15776
+ have h15840 := Second15809_15840.source hcores hβ h15808
+ have h15872 := Second15841_15872.source hcores hβ h15840
+ have h15904 := Second15873_15904.source hcores hβ h15872
+ have h15936 := Second15905_15936.source hcores hβ h15904
+ have h15968 := Second15937_15968.source hcores hβ h15936
+ have h16000 := Second15969_16000.source hcores hβ h15968
+ have h16032 := Second16001_16032.source hcores hβ h16000
+ have h16064 := Second16033_16064.source hcores hβ h16032
+ have h16096 := Second16065_16096.source hcores hβ h16064
+ have h16128 := Second16097_16128.source hcores hβ h16096
+ have h16160 := Second16129_16160.source hcores hβ h16128
+ have h16192 := Second16161_16192.source hcores hβ h16160
+ have h16224 := Second16193_16224.source hcores hβ h16192
+ have h16256 := Second16225_16256.source hcores hβ h16224
+ have h16288 := Second16257_16288.source hcores hβ h16256
+ have h16320 := Second16289_16320.source hcores hβ h16288
+ have h16352 := Second16321_16352.source hcores hβ h16320
+ have h16384 := Second16353_16384.source hcores hβ h16352
+ have h16416 := Second16385_16416.source hcores hβ h16384
+ have h16448 := Second16417_16448.source hcores hβ h16416
+ have h16480 := Second16449_16480.source hcores hβ h16448
+ have h16512 := Second16481_16512.source hcores hβ h16480
+ have h16544 := Second16513_16544.source hcores hβ h16512
+ have h16576 := Second16545_16576.source hcores hβ h16544
+ have h16608 := Second16577_16608.source hcores hβ h16576
+ have h16640 := Second16609_16640.source hcores hβ h16608
+ have h16672 := Second16641_16672.source hcores hβ h16640
+ have h16704 := Second16673_16704.source hcores hβ h16672
+ have h16736 := Second16705_16736.source hcores hβ h16704
+ have h16768 := Second16737_16768.source hcores hβ h16736
+ have h16800 := Second16769_16800.source hcores hβ h16768
+ have h16832 := Second16801_16832.source hcores hβ h16800
+ have h16864 := Second16833_16864.source hcores hβ h16832
+ have h16896 := Second16865_16896.source hcores hβ h16864
+ have h16928 := Second16897_16928.source hcores hβ h16896
+ have h16960 := Second16929_16960.source hcores hβ h16928
+ have h16992 := Second16961_16992.source hcores hβ h16960
+ have h17024 := Second16993_17024.source hcores hβ h16992
+ have h17045 := Second17025_17045.source hcores hβ h17024
+ exact h17045
+
+end
+end Qrh.JointDetector.RestartSourceChains.Second

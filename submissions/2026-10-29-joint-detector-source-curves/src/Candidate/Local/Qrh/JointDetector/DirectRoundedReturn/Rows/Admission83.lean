@@ -1,0 +1,44 @@
+/- Copyright (c) 2026 Joseph Bebel. -/
+/- Generated/adapted by docs/research/tools/restart_return_lean.py.
+Finite return algebra adapted from Hailey Collet, Sil and Sussman's PR86
+at a284f4da56f7d65b3b4bd4c3f6b00699f9dddde1, Apache-2.0.
+A finite count-source bank and physical source remain explicit; no missing estimate is asserted. -/
+import Candidate.Local.Qrh.JointDetector.DirectRoundedReturn.PowerAdmissions
+import Candidate.Local.Qrh.JointDetector.AdmissionBlockCommands
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+set_option linter.unnecessarySeqFocus false
+namespace Qrh.JointDetector.DirectRoundedReturn
+open QRH.Record1252270103Return
+noncomputable section
+
+admission_block admission83 branch Pwide box((11/32:ℝ),(45/128:ℝ),(3/8:ℝ),(1/2:ℝ)) where
+guard(0,1) margin (5/2:ℝ) coeffs ![![1,0]]
+guard(0,0) margin (2:ℝ) coeffs ![![0]]
+guard(0,1) margin (9100001/10000000:ℝ) coeffs (fun i j => (![![899999,0]] i j)/(5000000:ℝ))
+guard(1,1) margin (1195/768:ℝ) coeffs (fun i j => (![![488,36],
+![455,0]] i j)/(3:ℝ))
+guard(1,2) margin (100100011/640000000:ℝ) coeffs (fun i j => (![![1799599956,1760000000,0],
+![1986099971,2091200032,145600016]] i j)/(5000000:ℝ))
+guard(1,2) margin (362020773/1638400000:ℝ) coeffs (fun i j => (![![296456015,926047942,589991971],
+![0,364939910,324439955]] i j)/(5000000:ℝ))
+guard(1,2) margin (1748366087/4736000000:ℝ) coeffs (fun i j => (![![616893318252,591513711296,0],
+![655329625245,660048127280,30408008880]] i j)/(555000000:ℝ))
+guard(1,2) margin (336700037/307200000:ℝ) coeffs (fun i j => (![![12580397044,14595197472,2184000240],
+![10230496855,10063997040,0]] i j)/(15000000:ℝ))
+guard(1,3) margin (1217819549/46080000000:ℝ) coeffs (fun i j => (![![2431510324,0,354969984,2430080704],
+![12633736939,26431579152,22957228272,8794886464]] i j)/(45000000:ℝ))
+guard(1,3) margin (137059002710554888984326909984297684187021/4137728462031583837960531650445964912640000:ℝ) coeffs (fun i j => (![![1587296328682791706013927146488786257005970572,3811006712127095545314491900851405469458800864,2555831476468473651101157631445292065249621696,348122447031630592131994066837972422222385920],
+![1069222837394945766753796772998034293585236565,2441638336287190923252167319962411664334909320,1356050477748251176613982966532820992928042000,0]] i j)/(2020375225601359295879165844944318805000000:ℝ))
+guard(2,2) margin (257250111/13107200000:ℝ) coeffs (fun i j => (![![190963990880,195191998304,5706399152],
+![375199982600,378359998400,5991999200],
+![183824991675,182475000000,0]] i j)/(15000000:ℝ))
+guard(1,2) margin (520633303/512000000:ℝ) coeffs (fun i j => (![![10952389964,12422390464,1876800048],
+![9013489985,8603990440,0]] i j)/(15000000:ℝ))
+guard(0,0) margin (74999/10000000:ℝ) coeffs ![![0]]
+guard(0,0) margin (11718914943364343199184707587777249423471/224486136177928810653240649438257645000000:ℝ) coeffs ![![0]]
+guard(1,2) margin (71699761/307200000:ℝ) coeffs (fun i j => (![![4508384972,4588784704,215999280],
+![4300485665,4163986120,0]] i j)/(15000000:ℝ))
+end_admission
+end
+end Qrh.JointDetector.DirectRoundedReturn
