@@ -1,0 +1,51 @@
+{
+  "title": "Dirichlet nonvanishing at 0.87341198 with a selected-norm leaf",
+  "authors": [
+    {
+      "name": "ArviFoxy",
+      "url": "https://github.com/ArviFoxy"
+    }
+  ],
+  "description": "Dirichlet nonvanishing for Re(s) > 43670599/50000000 = 0.87341198, principal pole excluded. A new estimate (R1) bounds the energy of rows with a heavy prime-slot block, for cuts K between 0.500001 and 3/4: the rows are split into sixth-root classes, and each class is bounded by Joseph Bebel's selected sextic norm and by the baseline's reflected radial engine. This lets the leaf of Sil's cube-free native step use K = 501/1000 instead of 3/4, so the line of native faces continues from the fourth-power face G(99999/100000, 93/25, 3/50) down to G(99999/100000, 401/200, 13399/100000). The faces are proved by induction along the line, without a list of steps or a density chain. arvi-density's return is retuned to the end face (three windows). The modules of joint-detector-fine-chain that the selected norm needs, and the part of arvi-density's return that reads its constants, are copied into this package. Builds on OpenAI, Hailey Collet, Sil, Jacob Sussman, Joseph Bebel and our earlier work; inherited notices and licenses are retained. The research and Lean development were AI-assisted.",
+  "license": "Apache-2.0; inherited notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "hailey-collet-1252270103",
+    "sil-fourth-power-20261025",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "sil-density-split-20261026",
+    "density-split-fine-chain",
+    "joint-detector-fine-chain",
+    "arvi-density"
+  ],
+  "dependencies": [
+    "openai-baseline",
+    "hailey-collet-1252270103",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "sil-density-split-20261026",
+    "arvi-density"
+  ],
+  "references": [
+    {
+      "label": "Joseph Bebel: joint detector and selected sextic norm",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/93"
+    },
+    {
+      "label": "ArviFoxy: marked density chain and return (arvi-density)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/94"
+    },
+    {
+      "label": "Sil: density-split bootstrap and cube-free native step",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/83"
+    },
+    {
+      "label": "Jacob Sussman: exact fine density chain",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/86"
+    },
+    {
+      "label": "ArviFoxy: repeated-mark face family on Sil's fourth-power face",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/76"
+    }
+  ],
+  "agent_traces": []
+}
