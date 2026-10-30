@@ -55,6 +55,8 @@ project or maintainer endorsement is implied.
 
 ## Retained copyright notices
 
+PR97 (`arvi-selected-leaf`): Copyright (c) 2026 ArviFoxy. Apache-2.0.
+
 Cycle61 (`cycle61-c0125139`): Copyright 2026 Hailey Collet, Apache-2.0.
 
 Copyright 2026 Hailey Collet. New manuscript and formalization material are
