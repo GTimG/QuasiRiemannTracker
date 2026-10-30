@@ -1,0 +1,13 @@
+{
+  "title": "Zero-free half-plane Re s > 1049/1250 by a two-slot sextic-cubic probe (paper; no Lean proof)",
+  "authors": [{ "name": "liqsweep" }],
+  "description": "Paper claim, not Lean-checked: every Dirichlet L-function, the Riemann zeta function and every finite-order Hecke L-function of Q(sqrt(-3)) has no zeros in Re s > 1049/1250 = 0.8392. This submission contains no Lean proof, so it cannot pass admission. It records the result next to the verified entries.\n\nMethod. The proof keeps OpenAI's continuation criterion and replaces its probe by a two-slot probe over Z[omega]: one sextic and one cubic Poisson slot, each amplified by Gauss sums, with a Hecke target twisted by the angular character, a copy sieve, and amplifiers coupled to the normalisation of the Kubota series. The direct side splits exactly into a Patterson part (Patterson's cubic theta coefficients) and a remainder, each bounded block by block. The binding estimate is the square-factor tail of the Patterson part, where a Voronoi chart meets the floor of a new block large sieve built on a graded inverse theorem for the sextic large sieve. The method gives every B > 11/15 + q1/12 = 6713583/8000000 at the geometry used; 1049/1250 leaves a margin of 17/4000000 in the binding estimate.\n\nThe bound is below 13/15, the limit of OpenAI's architecture in tomoto0's exponent model (Lean-checked by DevinWatson). In the same model this design has its own limit, 35/48 = 0.7291..., certified in exact rational arithmetic, not in Lean.\n\nCertificates. Every inequality between exponents is a finite computation in exact rational arithmetic or by sound box bounds with an explicit rounding margin; Appendix A of the paper lists each program and output with MD5 sums, and the repository holds the matching files. The paper has not been peer reviewed.\n\nCredits. OpenAI's continuation criterion and its 7/8 theorem (used only for four ray-class L-functions mod 12); de Faveri (arXiv:2610.04045) for the large sieves of n-th order Hecke characters; Heath-Brown, Goldmakher-Louvel, Kazhdan-Patterson and Patterson for the cubic and sextic large sieves and the theory of Kubota series; Hecke and Tate. Full credits are in the paper.",
+  "builds_on": ["openai-baseline"],
+  "dependencies": [],
+  "references": [
+    { "label": "Paper (PDF, 224 pages)", "url": "https://github.com/blueberryvertigo/zero-free-1049-1250/blob/main/zero-free-1049-1250.pdf" },
+    { "label": "LaTeX source and certificate programs", "url": "https://github.com/blueberryvertigo/zero-free-1049-1250" },
+    { "label": "de Faveri, large sieves for n-th order Hecke characters", "url": "https://arxiv.org/abs/2610.04045" }
+  ],
+  "agent_traces": []
+}
