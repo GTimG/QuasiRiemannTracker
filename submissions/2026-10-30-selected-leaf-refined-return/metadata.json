@@ -1,0 +1,37 @@
+{
+  "title": "All-moduli Dirichlet nonvanishing at 0.8733821435",
+  "authors": [
+    {
+      "name": "Joseph Bebel"
+    }
+  ],
+  "description": "Proves Dirichlet nonvanishing for every positive modulus and every character when Re(s) > 1746764287/2000000000 = 0.8733821435, excluding only the principal pole. The proof refines ArviFoxy's selected-leaf source from PR97 by generic native-line induction, widens the elementary physical-return geometry, and checks a five-window return over the complete density/amplitude domain. The final theorem discharges all analytic and source-provider inputs. Builds on OpenAI, Hailey Collet, ArviFoxy, Sil and Jacob Sussman, including Joseph Bebel's selected sextic norm from PR93. Inherited notices and licenses are retained. The research and Lean development were AI-assisted.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "arvi-selected-leaf",
+    "joint-detector-fine-chain",
+    "arvi-density",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "sil-density-split-20261026",
+    "density-split-fine-chain",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "PR97: selected heavy-row estimate and native source-line induction",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/97"
+    },
+    {
+      "label": "PR93: selected sextic norm",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/93"
+    }
+  ],
+  "agent_traces": []
+}
