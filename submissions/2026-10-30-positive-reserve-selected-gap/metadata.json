@@ -1,0 +1,41 @@
+{
+  "title": "All-moduli Dirichlet nonvanishing at 0.8733819666133",
+  "authors": [
+    {
+      "name": "Joseph Bebel"
+    }
+  ],
+  "description": "Proves Dirichlet nonvanishing for every positive modulus and character when Re(s) > 8733819666133/10000000000000, excluding only the principal pole. A reserve-parametric fourth-power seed and a selected-energy adapter for every fixed positive gap above one half supply two finite source lines and a complete five-window return. The final theorem has no analytic or source-provider premise. Builds on OpenAI, Hailey Collet, ArviFoxy, Sil and Jacob Sussman, including the PR93 selected sextic norm and PR97 selected-leaf energy. Inherited notices and licenses are retained. The development was AI-assisted.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "arvi-selected-leaf",
+    "joint-detector-fine-chain",
+    "arvi-density",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "sil-density-split-20261026",
+    "density-split-fine-chain",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "PR98: refined source and physical return",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/98"
+    },
+    {
+      "label": "PR97: selected heavy-row estimate and native source-line induction",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/97"
+    },
+    {
+      "label": "PR93: selected sextic norm",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/93"
+    }
+  ],
+  "agent_traces": []
+}
