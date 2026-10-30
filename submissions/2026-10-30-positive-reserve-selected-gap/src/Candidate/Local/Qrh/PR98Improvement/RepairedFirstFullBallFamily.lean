@@ -65,4 +65,3 @@ theorem fullBallCost_of_raw_sides_family
 
 end
 end Candidate.PR98.RepairedFirstFullBallFamily
-

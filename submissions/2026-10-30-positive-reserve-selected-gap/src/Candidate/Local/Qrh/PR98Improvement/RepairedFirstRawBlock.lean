@@ -147,4 +147,3 @@ theorem block_of_raw_sides (Φ : 𝓢(ℝ,ℂ)) (J : ℕ) :
 
 end
 end Candidate.PR98.RepairedFirstRawBlock
-

@@ -205,6 +205,3 @@ theorem uniform_generic_first_large_block
 
 end
 end Candidate.PR98.RepairedLargeBlock
-
-
-

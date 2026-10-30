@@ -96,4 +96,3 @@ theorem frozen_of_first_caps (Z : ℝ) (hZ : 1 < Z)
 
 end
 end Candidate.PR98.RepairedDescendantBounds
-

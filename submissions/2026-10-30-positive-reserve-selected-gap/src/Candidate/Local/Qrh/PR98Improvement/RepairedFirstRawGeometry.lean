@@ -88,4 +88,3 @@ theorem uniform_unit_retained_of_raw_sides
 
 end
 end Candidate.PR98.RepairedFirstRawGeometry
-

@@ -108,4 +108,3 @@ theorem fullBallCost_of_raw_sides (N J : ℕ) (cRad Cp ξ κ εmass εout : ℝ)
 
 end
 end Candidate.PR98.RepairedFirstFullBall
-

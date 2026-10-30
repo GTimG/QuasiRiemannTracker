@@ -101,4 +101,3 @@ theorem kernel_from_raw (Φ : 𝓢(ℝ,ℂ)) (J : ℕ) :
 
 end
 end Candidate.PR98.RepairedFirstRawKernel
-

@@ -82,5 +82,3 @@ def Result (N : ℕ) (ε : ℝ) (hε : 0 < ε) (Kslot : ℝ)
 
 end
 end Candidate.PR98.RepairedLargeTail
-
-

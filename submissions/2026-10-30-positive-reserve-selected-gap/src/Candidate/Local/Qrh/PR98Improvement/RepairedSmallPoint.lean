@@ -183,4 +183,3 @@ theorem uniform_small_point
 
 end
 end Candidate.PR98.RepairedSmallPoint
-

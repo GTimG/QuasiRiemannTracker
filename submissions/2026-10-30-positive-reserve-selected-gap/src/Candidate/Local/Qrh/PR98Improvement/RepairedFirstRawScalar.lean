@@ -129,4 +129,3 @@ theorem window_pair_reference (s : Source ι a b) (ha : 0 < a)
 
 end
 end Candidate.PR98.RepairedFirstRawScalar
-
