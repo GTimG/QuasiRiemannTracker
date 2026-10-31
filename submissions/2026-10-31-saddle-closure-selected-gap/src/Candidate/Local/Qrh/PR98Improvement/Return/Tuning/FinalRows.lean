@@ -70,7 +70,6 @@ theorem reserve_le : theta-reserve≤GenericArithmetic.theta-GenericArithmetic.r
  have h1 : GenericArithmetic.rowFee = (1/10000000000000000000000:ℝ) := rfl
  have h2 : reserve = (1/10000000000000000000000:ℝ) := rfl
  rw [h1,h2]
- linarith
 end FinalRows
 
 theorem final_old_rows {d δ p:ℝ}
