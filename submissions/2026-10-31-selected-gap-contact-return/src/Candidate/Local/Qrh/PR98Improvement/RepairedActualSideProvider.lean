@@ -1,0 +1,45 @@
+/- Reserve-parametric adaptation by Joseph Bebel (2026). -/
+/- Copyright (c) 2026 Sil. Apache-2.0.
+Modified by Arvi (2026-10-25): the contrary hypothesis `theta < beta` is replaced by
+`51/100 ≤ beta`, the only consequence of it that the source construction uses.
+Combines the proved small-source and large-source estimates to supply
+actual_contrary_raw_side_provider.
+-/
+import Candidate.Local.Qrh.PR98Improvement.RepairedCombinedSideFromSmall
+import Candidate.Local.Qrh.PR98Improvement.RepairedSmallContribution
+
+set_option autoImplicit false
+namespace Candidate.PR98.RepairedActualSideProvider
+noncomputable section
+variable [Candidate.PR98.RepairedRootParameters.Reserve]
+open Candidate.FourthPower
+open scoped Classical BigOperators SchwartzMap ContDiff
+open Filter Set OAI OAI.SevenEighths HeckeFamily
+open Candidate.PR98.RepairedRootParameters Candidate.PR98.RepairedRawContext Candidate.PR98.RepairedSourceSideSupply
+open Candidate.PR98.RepairedContributionContract Candidate.PR98.RepairedCombinedSideFromSmall
+open Candidate.PR98.RepairedSmallContribution
+local notation "O" => HeckeFamily.O
+local notation "Id" => Ideal O
+local instance {κ : Type*} : DecidableEq κ := Classical.decEq _
+local instance (M : Id) [NeZero M] : Finite (O⧸M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+
+/-- This is a proof of the exact former pending proposition, not an
+assumption of it. All finite families and constants retain their order. -/
+theorem actual_small_contribution : PendingSmallContribution := by
+  intro hcontra ε hε α instα decα M instM H hH W hW hWs η η₀ Q instQ hQt hQ72 hQM hQη₀ N Kslot
+  have hKslot : 1 ≤ Kslot := (RestoredRootSource.slotBound_spec W hW.continuous hWs).1
+  have hβ := hcontra
+  obtain ⟨J,S,h00,C,hC,hsmall⟩ := uniform_small_contribution (M:=M) (H:=H) (hH:=hH)
+    (RootShape α) (fun k => RootSlot k) N (2*N) (fun k => root_slot_card k)
+    ε hε W hW hWs Kslot hKslot hβ Q hQt hQ72 hQM η η₀ hQη₀
+  refine ⟨J,S,h00,C,hC,hsmall.mono ?_⟩
+  intro Z hZ k d f u hu hucap tp rows
+  simpa only [contributionBound,amplitude] using hZ k d f u hu hucap tp rows
+
+/-- Actual all-root supplier. ContraryRawSideProvider itself describes
+the contrary branch; there is no additional energy/source premise. -/
+theorem actual_contrary_raw_side_provider : ContraryRawSideProvider :=
+  contrary_provider_of_pending_small actual_small_contribution
+
+end
+end Candidate.PR98.RepairedActualSideProvider
