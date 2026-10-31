@@ -1,0 +1,51 @@
+{
+  "title": "All-moduli Dirichlet nonvanishing at 0.87338196661320751993",
+  "authors": [
+    {
+      "name": "Devin Watson",
+      "url": "https://github.com/DevinWatson"
+    },
+    {
+      "name": "Joseph Bebel"
+    }
+  ],
+  "description": "Proves Dirichlet nonvanishing for every positive modulus and character when Re(s) > 87338196661320751993/100000000000000000000, excluding only the principal pole. Tightens the reserve-parametric fourth-power seed and selected-energy gap to 10^-22 (matching the row fee and transport step), supplying two finite source lines and a complete five-window return within 10^-20 of the limiting contact (777 - sqrt(1081))/852. The final theorem has no analytic or source-provider premise. Builds on Joseph Bebel (PR93, PR98, PR99), ArviFoxy (PR97), Jacob Sussman, Sil, Hailey Collet and OpenAI. Inherited notices and licenses are retained. The development was AI-assisted.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "positive-reserve-selected-gap",
+    "selected-leaf-refined-return",
+    "arvi-selected-leaf",
+    "joint-detector-fine-chain",
+    "arvi-density",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "sil-density-split-20261026",
+    "density-split-fine-chain",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "PR99: positive-reserve seed, selected-energy gap and five-window return",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/99"
+    },
+    {
+      "label": "PR98: refined source and physical return",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/98"
+    },
+    {
+      "label": "PR97: selected heavy-row estimate and native source-line induction",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/97"
+    },
+    {
+      "label": "PR93: selected sextic norm",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/93"
+    }
+  ],
+  "agent_traces": []
+}
