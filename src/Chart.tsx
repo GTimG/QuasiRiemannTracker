@@ -98,10 +98,10 @@ export default function Chart({
     return () => observer.disconnect();
   }, []);
   const H = 355,
-    L = 112,
+    L = 82,
     R = 24,
-    T = 35,
-    B = 60;
+    T = 55,
+    B = 85;
   const width = W - L - R,
     height = H - T - B;
   const extent = useMemo(
@@ -211,8 +211,7 @@ export default function Chart({
   }
   // The empty area to the right is padding, not a prediction of future records.
   if (connected) path += ` H ${x(viewedAt)}`;
-  const tiny =
-    cmp(sub(high, low), { numerator: "1", denominator: "100000000" }) < 0;
+  const tiny = cmp(sub(high, low), { numerator: "1", denominator: "1000" }) < 0;
   const tickValue = (t: number) => {
     const ratio = (1 - t - 0.5 - vertical.offset) / vertical.scale / 0.83 + 0.5;
     const k = BigInt(Math.round(ratio * 1e9));
@@ -241,7 +240,9 @@ export default function Chart({
     }
     return overview
       ? Number(decimal(v, 4).replace("…", "")).toFixed(2)
-      : decimal(v, 8);
+      : Number(
+          Number(decimal(v, 6).replace("…", "")).toPrecision(5),
+        ).toString();
   };
   // Measure actual SVG text so labels respect both neighbouring names and the
   // plot edges. Keep the newest label when a dense cluster has no free space.
@@ -335,41 +336,41 @@ export default function Chart({
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return (
     <section className="panel chart-panel" aria-label="Bound progress">
-      <div className="chart-toolbar">
-        <div className="chart-tools">
-          <button
-            className="icon"
-            aria-label="Zoom in"
-            onClick={() => zoom(0.7)}
-          >
-            <Plus size={17} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Zoom out"
-            onClick={() => zoom(1.4)}
-          >
-            <Minus size={17} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Fit leaderboard"
-            title="Fit leaderboard bounds"
-            onClick={fitLeaderboard}
-          >
-            <Search size={16} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Fit ½–1"
-            title="Fit full range: ½–1"
-            onClick={fitMilestones}
-          >
-            <Maximize2 size={16} />
-          </button>
-        </div>
-      </div>
       <div className="chart-wrap">
+        <div className="chart-toolbar">
+          <div className="chart-tools">
+            <button
+              className="icon"
+              aria-label="Zoom in"
+              onClick={() => zoom(0.7)}
+            >
+              <Plus size={17} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Zoom out"
+              onClick={() => zoom(1.4)}
+            >
+              <Minus size={17} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Fit leaderboard"
+              title="Fit leaderboard bounds"
+              onClick={fitLeaderboard}
+            >
+              <Search size={16} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Fit ½–1"
+              title="Fit full range: ½–1"
+              onClick={fitMilestones}
+            >
+              <Maximize2 size={16} />
+            </button>
+          </div>
+        </div>
         <svg
           ref={svg}
           viewBox={`0 0 ${W} ${H}`}
@@ -513,7 +514,7 @@ export default function Chart({
             </g>
           ))}
           <text x={L} y={16} className="axis-label">
-            {tiny ? "Offset from θ₀ · local scale" : "θ"}
+            {tiny ? "θ − θ₀" : "θ"}
           </text>
           <g clipPath="url(#plotClip)">
             {milestones.map((m) => (
@@ -662,19 +663,21 @@ export default function Chart({
             <small>{statusLabel(hover)}</small>
           </div>
         )}
-      </div>
-      <div className="chart-bottom">
-        <span>
-          <i className="legend-line" />
-          Best verified bound
-        </span>
-        <span className="pan-hint">
-          <Move size={13} />
-          Drag to pan · scroll to zoom
-        </span>
+        <div className="chart-bottom">
+          <span>
+            <i className="legend-line" />
+            Best verified bound
+          </span>
+          <span className="pan-hint">
+            <Move size={13} />
+            Drag to pan · scroll to zoom
+          </span>
+        </div>
       </div>
       {tiny && (
-        <p className="chart-note">Local axis origin θ₀ = {fraction(low)}.</p>
+        <p className="chart-note" title={`Exact origin: ${fraction(low)}`}>
+          θ₀ ≈ {decimal(low, 6)} · axis shows offsets.
+        </p>
       )}
     </section>
   );

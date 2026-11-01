@@ -254,6 +254,7 @@ main {
 }
 .view-nav a:hover {
   color: var(--ink);
+  text-decoration: none;
 }
 .view-nav a[aria-current="page"] {
   color: var(--teal);
@@ -404,7 +405,9 @@ select {
   gap: 4px;
 }
 .chart-panel .chart-toolbar {
-  position: static;
+  position: absolute;
+  top: 4px;
+  right: 8px;
   justify-content: flex-end;
 }
 
@@ -430,7 +433,7 @@ select {
 .axis {
   font-size: 12px;
   fill: var(--muted);
-  font-family: var(--mono);
+  font-family: inherit;
 }
 .axis-label {
   font-size: 12px;
@@ -499,11 +502,17 @@ select {
   color: #efd9a1;
 }
 .chart-bottom {
+  position: absolute;
+  left: 82px;
+  bottom: 40px;
+  z-index: 1;
+  background: #fbfcfced;
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px 20px;
-  padding: 6px 0 16px;
+  padding: 5px 7px;
   font-size: 0.75rem;
   color: #475661;
 }
