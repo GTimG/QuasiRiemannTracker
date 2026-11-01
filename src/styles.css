@@ -1030,6 +1030,19 @@ dialog .protocol-grid h2 {
     display: none !important;
   }
 }
+@media (max-width: 360px) {
+  .shell .topbar {
+    gap: 4px;
+  }
+  .topbar .brand {
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+  .topbar .brand img {
+    width: 20px;
+    height: 20px;
+  }
+}
 @media (max-width: 640px) {
   .qrh-statement,
   .current-bound {
@@ -1039,16 +1052,30 @@ dialog .protocol-grid h2 {
     padding: 0 16px;
   }
   .topbar {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 18px 0;
-    gap: 12px;
+    gap: 8px;
   }
   .brand {
-    font-size: 1.2rem;
+    font-size: clamp(0.875rem, 3.8vw, 1.2rem);
+    gap: 6px;
+  }
+  .brand img {
+    width: 28px;
+    height: 28px;
   }
   .header-links {
-    gap: 14px;
+    gap: 6px;
     font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  .header-links .github-badge {
+    gap: 4px;
+    padding: 6px;
+  }
+  .header-links .pr-button {
+    gap: 4px;
+    padding: 0 4px;
   }
   .content {
     padding-top: 28px;
