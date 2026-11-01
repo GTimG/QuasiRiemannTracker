@@ -1179,8 +1179,39 @@ dialog .protocol-grid h2 {
   width: 100%;
   overflow-wrap: anywhere;
 }
-.contributor-name .entry-chevron {
-  margin-left: auto;
+.contributor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+.contributor-summary {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.contributor-summary .contributor-name {
+  width: auto;
+  min-width: 0;
+}
+.contributor-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contributor-name > .muted,
+.contributor-name > .contributor-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.contributor-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 .contributor-scores {
   display: flex;

@@ -34,7 +34,7 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await expect(board.locator(".contributor-summary").first()).toContainText(
     "3.5e-1",
   );
-  await expect(board.locator(".contributor-summary").first()).toContainText(
+  await expect(board.locator(".contributor-summary").first()).not.toContainText(
     "0.6",
   );
   await board.getByRole("button", { name: /Alice/ }).click();

@@ -40,9 +40,9 @@ export default function Contributors({
       className="panel contribution-list contributor-board"
       aria-label="Contributor leaderboard"
     >
-      <div className="contributor-scores contributor-columns">
+      <div className="contributor-header">
+        <strong>Contributors</strong>
         <span>Total Δ</span>
-        <span>Best θ</span>
       </div>
       <ol className="leaderboard" aria-label="Contributors">
         {people.map((person, index) => (
@@ -55,15 +55,13 @@ export default function Contributors({
               }
             >
               <span className="contributor-name">
-                <span className="muted">{index + 1}.</span> {person.name}
+                <span className="muted">{index + 1}.</span>
+                <span className="contributor-label" title={person.name}>
+                  {person.name}
+                </span>
                 <span className="contributor-count">{person.count}</span>
-                <ChevronDown
-                  size={16}
-                  className="entry-chevron"
-                  aria-hidden="true"
-                />
               </span>
-              <span className="contributor-scores">
+              <span className="contributor-total">
                 <span
                   className="contributor-improvement"
                   title={fraction(person.improvement)}
@@ -73,12 +71,11 @@ export default function Contributors({
                     {scientific(person.improvement)}
                   </span>
                 </span>
-                <span
-                  className="contributor-best"
-                  title={boundLabel(person.best)}
-                >
-                  <span>{decimal(person.best.theta, 14)}</span>
-                </span>
+                <ChevronDown
+                  size={16}
+                  className="entry-chevron"
+                  aria-hidden="true"
+                />
               </span>
             </button>
             {expanded === person.name && (
