@@ -23,7 +23,11 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await routeCatalogue(page, { schema_version: 1, records: records.reverse() });
   await page.goto("/");
   const board = page.getByRole("region", { name: "Contributor leaderboard" });
-  await expect(board.locator(".contributor-summary")).toHaveCount(3);
+  await expect(board.locator(".contributor-summary")).toHaveCount(2);
+  await expect(board.getByRole("heading")).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: /^Contributors\s*2$/ }),
+  ).toBeVisible();
   await expect(board.locator(".contributor-summary").first()).toContainText(
     "Alice",
   );
@@ -59,7 +63,7 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await expect(
     table.getByRole("button", { name: "Exact bound θ" }),
   ).toBeVisible();
-  await page.getByRole("link", { name: "Contributors", exact: true }).click();
+  await page.getByRole("link", { name: /^Contributors\s*2$/ }).click();
   await expect(board).toBeVisible();
   await expect(board).not.toContainText("Each coauthor");
   await expect(
