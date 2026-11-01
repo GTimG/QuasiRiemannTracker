@@ -25,16 +25,17 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   const board = page.getByRole("region", { name: "Contributor leaderboard" });
   await expect(board.locator(".contributor-summary")).toHaveCount(2);
   await expect(board.getByRole("heading")).toHaveCount(0);
+  await expect(board.locator(".contributor-header mjx-container svg")).toBeVisible();
   await expect(
     page.getByRole("link", { name: /^Contributors\s*2$/ }),
   ).toBeVisible();
   await expect(board.locator(".contributor-summary").first()).toContainText(
     "Alice",
   );
-  await expect(board.locator(".contributor-summary").first()).toContainText(
-    "3.5e-1",
-  );
-  await expect(board.locator(".contributor-summary").first()).toContainText(
+  await expect(board.locator(".contributor-summary").first().locator('mjx-container svg')).toBeVisible();
+  await expect(board.locator(".contributor-summary").first().locator('mjx-container')).toHaveAttribute('jax', 'SVG');
+  await expect(board.locator(".contributor-summary").first().locator('[data-mml-node="msup"]')).toHaveCount(1);
+  await expect(board.locator(".contributor-summary").first()).not.toContainText(
     "0.6",
   );
   await board.getByRole("button", { name: /Alice/ }).click();

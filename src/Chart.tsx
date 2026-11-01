@@ -1,3 +1,4 @@
+import { MathJax } from "better-react-mathjax";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Minus, Plus, Maximize2, Move, Search } from "lucide-react";
 import { milestones } from "./bound-milestones";
@@ -71,6 +72,7 @@ export default function Chart({
   const [viewedAt] = useState(Date.now);
   const [hover, setHover] = useState<Contribution | null>(null);
   const lastWheel = useRef(0);
+  const [touchHint, setTouchHint] = useState(false);
   const dragging = useRef<{
     x: number;
     y: number;
@@ -98,10 +100,10 @@ export default function Chart({
     return () => observer.disconnect();
   }, []);
   const H = 355,
-    L = 112,
+    L = 82,
     R = 24,
-    T = 35,
-    B = 60;
+    T = 55,
+    B = 85;
   const width = W - L - R,
     height = H - T - B;
   const extent = useMemo(
@@ -190,6 +192,80 @@ export default function Chart({
     element.addEventListener("wheel", wheel, { passive: false });
     return () => element.removeEventListener("wheel", wheel);
   }, [W, onViewChange]);
+  useEffect(() => {
+    const element = svg.current;
+    if (!element) return;
+    let gesture: {
+      x: number;
+      y: number;
+      distance: number;
+      moved: boolean;
+    } | null = null;
+    let hintTimer: ReturnType<typeof setTimeout>;
+    const update = (event: TouchEvent) => {
+      if (event.touches.length !== 2) {
+        gesture = null;
+        if (event.touches.length === 1) {
+          setTouchHint(true);
+          clearTimeout(hintTimer);
+          hintTimer = setTimeout(() => setTouchHint(false), 1200);
+        }
+        return;
+      }
+      event.preventDefault();
+      setTouchHint(false);
+      clearTimeout(hintTimer);
+      const [a, b] = Array.from(event.touches);
+      const x = (a.clientX + b.clientX) / 2;
+      const y = (a.clientY + b.clientY) / 2;
+      const distance = Math.max(
+        1,
+        Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+      );
+      if (gesture) {
+        const previous = gesture;
+        const bounds = element.getBoundingClientRect();
+        onViewChange(
+          (current) => {
+            const next = zoomed(
+              current,
+              previous.distance / distance,
+              Math.max(0, Math.min(1, (x - bounds.left - L) / width)),
+              Math.max(0, Math.min(1, (y - bounds.top - T) / height)),
+              true,
+            );
+            const dx =
+              ((x - previous.x) / bounds.width) *
+              (next.window[1] - next.window[0]);
+            return {
+              ...next,
+              window: [next.window[0] - dx, next.window[1] - dx],
+              vertical: {
+                ...next.vertical,
+                offset: next.vertical.offset - (y - previous.y) / bounds.height,
+              },
+            };
+          },
+          previous.moved ? "replace" : "push",
+        );
+      }
+      gesture = { x, y, distance, moved: event.type === "touchmove" };
+    };
+    const end = () => {
+      gesture = null;
+    };
+    element.addEventListener("touchstart", update, { passive: false });
+    element.addEventListener("touchmove", update, { passive: false });
+    element.addEventListener("touchend", end);
+    element.addEventListener("touchcancel", end);
+    return () => {
+      clearTimeout(hintTimer);
+      element.removeEventListener("touchstart", update);
+      element.removeEventListener("touchmove", update);
+      element.removeEventListener("touchend", end);
+      element.removeEventListener("touchcancel", end);
+    };
+  }, [W, onViewChange]);
   const curve = useMemo(
     () =>
       frontierHistory(timelineRecords(allRecords.filter(verifiedHere)), events),
@@ -211,8 +287,7 @@ export default function Chart({
   }
   // The empty area to the right is padding, not a prediction of future records.
   if (connected) path += ` H ${x(viewedAt)}`;
-  const tiny =
-    cmp(sub(high, low), { numerator: "1", denominator: "100000000" }) < 0;
+  const tiny = cmp(sub(high, low), { numerator: "1", denominator: "1000" }) < 0;
   const tickValue = (t: number) => {
     const ratio = (1 - t - 0.5 - vertical.offset) / vertical.scale / 0.83 + 0.5;
     const k = BigInt(Math.round(ratio * 1e9));
@@ -241,7 +316,9 @@ export default function Chart({
     }
     return overview
       ? Number(decimal(v, 4).replace("…", "")).toFixed(2)
-      : decimal(v, 8);
+      : Number(
+          Number(decimal(v, 6).replace("…", "")).toPrecision(5),
+        ).toString();
   };
   // Measure actual SVG text so labels respect both neighbouring names and the
   // plot edges. Keep the newest label when a dense cluster has no free space.
@@ -335,41 +412,41 @@ export default function Chart({
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return (
     <section className="panel chart-panel" aria-label="Bound progress">
-      <div className="chart-toolbar">
-        <div className="chart-tools">
-          <button
-            className="icon"
-            aria-label="Zoom in"
-            onClick={() => zoom(0.7)}
-          >
-            <Plus size={17} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Zoom out"
-            onClick={() => zoom(1.4)}
-          >
-            <Minus size={17} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Fit leaderboard"
-            title="Fit leaderboard bounds"
-            onClick={fitLeaderboard}
-          >
-            <Search size={16} />
-          </button>
-          <button
-            className="icon"
-            aria-label="Fit ½–1"
-            title="Fit full range: ½–1"
-            onClick={fitMilestones}
-          >
-            <Maximize2 size={16} />
-          </button>
-        </div>
-      </div>
       <div className="chart-wrap">
+        <div className="chart-toolbar">
+          <div className="chart-tools">
+            <button
+              className="icon"
+              aria-label="Zoom in"
+              onClick={() => zoom(0.7)}
+            >
+              <Plus size={17} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Zoom out"
+              onClick={() => zoom(1.4)}
+            >
+              <Minus size={17} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Fit leaderboard"
+              title="Fit leaderboard bounds"
+              onClick={fitLeaderboard}
+            >
+              <Search size={16} />
+            </button>
+            <button
+              className="icon"
+              aria-label="Fit ½–1"
+              title="Fit full range: ½–1"
+              onClick={fitMilestones}
+            >
+              <Maximize2 size={16} />
+            </button>
+          </div>
+        </div>
         <svg
           ref={svg}
           viewBox={`0 0 ${W} ${H}`}
@@ -429,6 +506,7 @@ export default function Chart({
             }
           }}
           onPointerDown={(e) => {
+            if (e.pointerType === "touch") return;
             if ((e.target as Element).closest("[data-dot]")) return;
             dragging.current = {
               x: e.clientX,
@@ -446,6 +524,7 @@ export default function Chart({
             dragging.current = null;
           }}
           onPointerMove={(e) => {
+            if (e.pointerType === "touch") return;
             if (!dragging.current) return;
             const d = dragging.current,
               bounds = e.currentTarget.getBoundingClientRect(),
@@ -491,6 +570,7 @@ export default function Chart({
                 textAnchor="end"
                 className="axis"
                 data-axis="bound"
+                data-bound={decimal(tickValue(t), 14)}
               >
                 {allRecords.length || overview
                   ? tickLabel(t)
@@ -512,9 +592,19 @@ export default function Chart({
               </text>
             </g>
           ))}
-          <text x={L} y={16} className="axis-label">
-            {tiny ? "Offset from θ₀ · local scale" : "θ"}
-          </text>
+          <foreignObject
+            x={L}
+            y={0}
+            width={100}
+            height={26}
+            className="axis-label"
+          >
+            <MathJax inline dynamic>
+              {tiny
+                ? String.raw`\(\theta - \theta_0\)`
+                : String.raw`\(\theta\)`}
+            </MathJax>
+          </foreignObject>
           <g clipPath="url(#plotClip)">
             {milestones.map((m) => (
               <line
@@ -646,6 +736,11 @@ export default function Chart({
             ) : null;
           })}
         </svg>
+        {touchHint && (
+          <div className="chart-touch-hint" role="status">
+            Use two fingers to move the graph
+          </div>
+        )}
         {!allRecords.length && (
           <div className="chart-empty">
             <span className="empty-mark">∅</span>
@@ -656,25 +751,34 @@ export default function Chart({
           <div className="chart-tooltip" role="status">
             <strong>{hover.title}</strong>
             <span>
-              θ = {boundLabel(hover)} ·{" "}
+              <MathJax inline>{String.raw`\(\theta\)`}</MathJax> ={" "}
+              {boundLabel(hover)} ·{" "}
               {hover.authors.map((a) => a.name).join(", ")}
             </span>
             <small>{statusLabel(hover)}</small>
           </div>
         )}
-      </div>
-      <div className="chart-bottom">
-        <span>
-          <i className="legend-line" />
-          Best verified bound
-        </span>
-        <span className="pan-hint">
-          <Move size={13} />
-          Drag to pan · scroll to zoom
-        </span>
+        <div className="chart-bottom">
+          <span>
+            <i className="legend-line" />
+            Best verified bound
+          </span>
+          <span className="pan-hint">
+            <Move size={13} />
+            <span className="desktop-pan-hint">
+              Drag to pan · scroll to zoom
+            </span>
+            <span className="mobile-pan-hint">
+              Use two fingers to pan and zoom
+            </span>
+          </span>
+        </div>
       </div>
       {tiny && (
-        <p className="chart-note">Local axis origin θ₀ = {fraction(low)}.</p>
+        <p className="chart-note" title={`Exact origin: ${fraction(low)}`}>
+          <MathJax inline>{String.raw`\(\theta_0 \approx\)`}</MathJax>{" "}
+          {decimal(low, 6)} · axis shows offsets.
+        </p>
       )}
     </section>
   );

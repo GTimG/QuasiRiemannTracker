@@ -85,7 +85,11 @@ test("the default view focuses verified improvements and reset restores it", asy
   );
   const initialBounds = await boundTicks.allTextContents();
   expect(initialBounds).toHaveLength(5);
-  for (const text of initialBounds) {
+  for (const text of await chart
+    .locator('[data-axis="bound"]')
+    .evaluateAll((ticks) =>
+      ticks.map((tick) => tick.getAttribute("data-bound")!),
+    )) {
     const theta = Number(text.replace("…", ""));
     expect(theta).toBeGreaterThan(0.874);
     expect(theta).toBeLessThan(0.876);
@@ -173,7 +177,9 @@ test("a verified theta-one baseline connects to the next bound while leaderboard
   await expect(point).toHaveAttribute("aria-hidden", "true");
   for (const text of await chart
     .locator('[data-axis="bound"]')
-    .allTextContents())
+    .evaluateAll((ticks) =>
+      ticks.map((tick) => tick.getAttribute("data-bound")!),
+    ))
     expect(Number(text.replace("…", ""))).toBeLessThan(1);
   await chart.focus();
   for (let i = 0; i < 30; i++) await chart.press("-");

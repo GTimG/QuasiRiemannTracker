@@ -1,9 +1,31 @@
 import { useState } from "react";
+import { MathJax } from "better-react-mathjax";
 import { ChevronDown } from "lucide-react";
 import { contributorLeaderboard } from "../core/contributors.mjs";
 import { decimal, fraction, scientific } from "../core/rational.mjs";
 import { boundLabel, formatContributionDate } from "../core/catalogue.mjs";
 import type { Contribution, Rational } from "./types";
+
+function DeltaMath({
+  value,
+  approximate = false,
+  prefix = false,
+}: {
+  value: Rational;
+  approximate?: boolean;
+  prefix?: boolean;
+}) {
+  const formatted = scientific(value).replace(
+    /e([+-]?\d+)$/,
+    String.raw`\times 10^{$1}`,
+  );
+  return (
+    <MathJax
+      inline
+      dynamic
+    >{`\\(${prefix ? "\\Delta " : ""}${approximate ? "\\approx " : ""}${formatted}\\)`}</MathJax>
+  );
+}
 
 export default function Contributors({
   records,
@@ -40,9 +62,11 @@ export default function Contributors({
       className="panel contribution-list contributor-board"
       aria-label="Contributor leaderboard"
     >
-      <div className="contributor-scores contributor-columns">
-        <span>Total Δ</span>
-        <span>Best θ</span>
+      <div className="contributor-header">
+        <strong>Contributors</strong>
+        <span>
+          Total <MathJax inline>{String.raw`\(\Delta\)`}</MathJax>
+        </span>
       </div>
       <ol className="leaderboard" aria-label="Contributors">
         {people.map((person, index) => (
@@ -55,33 +79,29 @@ export default function Contributors({
               }
             >
               <span className="contributor-name">
-                <span className="muted">{index + 1}.</span> {person.name}
-                <ChevronDown
-                  size={16}
-                  className="entry-chevron"
-                  aria-hidden="true"
-                />
+                <span className="muted">{index + 1}.</span>
+                <span className="contributor-label" title={person.name}>
+                  {person.name}
+                </span>
+                <span className="contributor-count">{person.count}</span>
               </span>
-              <span className="contributor-scores">
+              <span className="contributor-total">
                 <span
                   className="contributor-improvement"
                   title={fraction(person.improvement)}
                 >
                   <span className="entry-decimal">
-                    Δ {person.approximate ? "≈ " : ""}
-                    {scientific(person.improvement)}
+                    <DeltaMath
+                      value={person.improvement}
+                      approximate={person.approximate}
+                    />
                   </span>
                 </span>
-                <span
-                  className="contributor-best"
-                  title={boundLabel(person.best)}
-                >
-                  <span>{decimal(person.best.theta, 14)}</span>
-                </span>
-              </span>
-              <span className="entry-meta">
-                {person.count}{" "}
-                {person.count === 1 ? "submission" : "submissions"}
+                <ChevronDown
+                  size={16}
+                  className="entry-chevron"
+                  aria-hidden="true"
+                />
               </span>
             </button>
             {expanded === person.name && (
@@ -102,8 +122,11 @@ export default function Contributors({
                       </span>
                       <span className="contributor-scores">
                         <span title={fraction(delta)}>
-                          Δ {approximate ? "≈ " : ""}
-                          {scientific(delta)}
+                          <DeltaMath
+                            value={delta}
+                            approximate={approximate}
+                            prefix
+                          />
                         </span>
                         <span title={boundLabel(record)}>
                           {submissionLink(record, decimal(record.theta, 14))}

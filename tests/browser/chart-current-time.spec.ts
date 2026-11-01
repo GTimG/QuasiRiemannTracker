@@ -56,7 +56,9 @@ test("the frontier stops at the viewing time, including after pan, zoom and a la
   expect(revisited.lastX).toBeGreaterThan(revisited.next.x);
   for (const label of await chart
     .locator('[data-axis="bound"]')
-    .allTextContents()) {
+    .evaluateAll((ticks) =>
+      ticks.map((tick) => tick.getAttribute("data-bound")!),
+    )) {
     expect(Number(label.replace("…", ""))).toBeGreaterThan(0.874);
     expect(Number(label.replace("…", ""))).toBeLessThan(0.876);
   }

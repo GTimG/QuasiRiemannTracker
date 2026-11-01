@@ -254,6 +254,7 @@ main {
 }
 .view-nav a:hover {
   color: var(--ink);
+  text-decoration: none;
 }
 .view-nav a[aria-current="page"] {
   color: var(--teal);
@@ -263,6 +264,11 @@ main {
 .view-nav small {
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+  font-size: 0.625rem;
+  line-height: 1;
+  padding: 3px 4px;
+  border-radius: 999px;
+  background: var(--wash, #eef2f3);
 }
 .milestones {
   max-width: 860px;
@@ -399,15 +405,20 @@ select {
   gap: 4px;
 }
 .chart-panel .chart-toolbar {
-  position: static;
+  position: absolute;
+  top: 4px;
+  right: 8px;
   justify-content: flex-end;
 }
 
 .chart-tools .icon {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
   border: 1px solid var(--control);
   background: #fff;
-  width: 36px;
-  height: 36px;
+  width: 27px;
+  height: 27px;
 }
 .chart-tools .icon:hover {
   background: #f2f5f6;
@@ -419,13 +430,13 @@ select {
   display: block;
   width: 100%;
   height: 355px;
-  touch-action: none;
+  touch-action: pan-y;
   cursor: grab;
 }
 .axis {
   font-size: 12px;
   fill: var(--muted);
-  font-family: var(--mono);
+  font-family: inherit;
 }
 .axis-label {
   font-size: 12px;
@@ -494,11 +505,17 @@ select {
   color: #efd9a1;
 }
 .chart-bottom {
+  position: absolute;
+  left: 82px;
+  bottom: 40px;
+  z-index: 1;
+  background: #fbfcfced;
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px 20px;
-  padding: 6px 0 16px;
+  padding: 5px 7px;
   font-size: 0.75rem;
   color: #475661;
 }
@@ -1133,8 +1150,8 @@ dialog .protocol-grid h2 {
     flex-wrap: wrap;
   }
   .chart-tools .icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
   .protocol-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -1162,8 +1179,39 @@ dialog .protocol-grid h2 {
   width: 100%;
   overflow-wrap: anywhere;
 }
-.contributor-name .entry-chevron {
-  margin-left: auto;
+.contributor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+.contributor-summary {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.contributor-summary .contributor-name {
+  width: auto;
+  min-width: 0;
+}
+.contributor-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contributor-name > .muted,
+.contributor-name > .contributor-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.contributor-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 .contributor-scores {
   display: flex;
@@ -1229,11 +1277,15 @@ dialog .protocol-grid h2 {
 
 @media (max-width: 640px) {
   .view-nav {
-    flex-wrap: wrap;
-    gap: 4px 16px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
   }
   .view-nav a {
     flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.6875rem;
+    gap: 3px;
   }
   .contribution-list:not(.contributor-board) .entry-meta {
     grid-template-columns: minmax(0, 1fr) max-content;
@@ -1246,4 +1298,43 @@ dialog .protocol-grid h2 {
     grid-column: 2;
     grid-row: 1;
   }
+}
+
+.chart-tools .icon svg {
+  width: 12px;
+  height: 12px;
+}
+.chart-touch-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 50%);
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+.mobile-pan-hint {
+  display: none;
+}
+@media (pointer: coarse) {
+  .desktop-pan-hint {
+    display: none;
+  }
+  .mobile-pan-hint {
+    display: inline;
+  }
+}
+
+.contributor-count {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  background: #edf1f4;
+  color: var(--muted);
 }
