@@ -41,6 +41,10 @@ export default function Contributors({
       aria-label="Contributor leaderboard"
     >
       <h2>Contributor leaderboard</h2>
+      <div className="contributor-scores contributor-columns">
+        <span>Total δ</span>
+        <span>Best θ</span>
+      </div>
       <ol className="leaderboard" aria-label="Contributors">
         {people.map((person, index) => (
           <li className="leaderboard-entry" key={person.name}>
@@ -68,14 +72,12 @@ export default function Contributors({
                     Δ {person.approximate ? "≈ " : ""}
                     {scientific(person.improvement)}
                   </span>
-                  <span className="contributor-caption">Total improvement</span>
                 </span>
                 <span
                   className="contributor-best"
                   title={boundLabel(person.best)}
                 >
                   <span>{decimal(person.best.theta, 14)}</span>
-                  <span className="contributor-caption">Best bound θ</span>
                 </span>
               </span>
               <span className="entry-meta">
