@@ -92,7 +92,7 @@ lemma physical_packet_certificate (D : BaselineData) (eps sigma affineError d a 
   have hdel : 0 ≤ 2*a-1 ∧ 2*a-1 ≤ 3/4 := by constructor <;> linarith
   have hp : q/(2*a-1) ∈ Set.Icc 0 (1/2) :=
     ⟨div_nonneg hq.1 hdelta.le,(div_le_iff₀ hdelta).mpr (by linarith [hq.2])⟩
-  have hd1 : d ≤ 1 := hd.2.trans (by change Geometry.h+1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ≤ _; linarith [Qrh.JointDetector.BoundaryPhysical.Return.Geometry.BoundsN.h_interval.2])
+  have hd1 : d ≤ 1 := hd.2.trans (by change Geometry.h+1/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ≤ _; linarith [Qrh.JointDetector.BoundaryPhysical.Return.Geometry.BoundsN.h_interval.2])
   have hl := physical_loss_bound D eps sigma affineError d (2*a-1) heps hsigma haff hd1 hdel
   have hh := new_packet_certificate GenericCount.admittedBranches (physicalLoss D eps sigma affineError) hgap hbeta hd hdel hp (PhysicalSchedule.new_rows hd hdel hp)
     (by linarith : 16*D.e+weightedSourceLoss d (2*a-1) (physicalLoss D eps sigma affineError)+D.t ≤
