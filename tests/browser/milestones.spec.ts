@@ -64,7 +64,7 @@ test("milestones sit between leaderboard and protocol and fit narrow screens", a
   const nav = page.getByRole("navigation", { name: "Research views" });
   await expect(nav.getByRole("link")).toHaveText([
     "Timeline",
-    "Contributors",
+    "Contributors3",
     /Submissions/,
     "Milestones",
     "Protocol",
