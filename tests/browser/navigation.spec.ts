@@ -146,9 +146,9 @@ test("continuous wheel and drag gestures each take one history step", async ({
 
   await chart.scrollIntoViewIfNeeded();
   const box = (await chart.boundingBox())!;
-  await page.mouse.move(box.x + box.width * 0.7, box.y + box.height * 0.7);
+  await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.5);
   await page.mouse.down();
-  await page.mouse.move(box.x + box.width * 0.8, box.y + box.height * 0.8, {
+  await page.mouse.move(box.x + box.width * 0.6, box.y + box.height * 0.6, {
     steps: 5,
   });
   await page.mouse.up();
