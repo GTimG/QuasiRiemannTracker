@@ -64,7 +64,8 @@ test("milestones sit between leaderboard and protocol and fit narrow screens", a
   const nav = page.getByRole("navigation", { name: "Research views" });
   await expect(nav.getByRole("link")).toHaveText([
     "Timeline",
-    /Leaderboard/,
+    "Contributors",
+    /Submissions/,
     "Milestones",
     "Protocol",
   ]);
@@ -130,11 +131,10 @@ test("overview dots are small and filled points paint above overlapping hollow p
     ).toEqual(["z-alternative", "a-frontier"]);
   };
   await assertOrder();
-  await page
-    .getByRole("button", { name: "Exact bound θ", exact: true })
-    .click();
-  await assertOrder();
+  await page.getByRole("link", { name: /Submissions/ }).click();
+  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
   await page.getByRole("button", { name: hollow.title, exact: true }).click();
+  await page.getByRole("link", { name: "Timeline", exact: true }).click();
   await expect(hollowDot).toHaveAttribute("aria-pressed", "true");
   await assertOrder();
   await page

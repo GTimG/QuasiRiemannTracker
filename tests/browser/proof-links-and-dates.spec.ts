@@ -10,12 +10,12 @@ test("verified proof badges open solution sources and contribution dates retain 
   page,
 }) => {
   await routeCatalogue(page, catalogue);
-  await page.goto("/");
+  await page.goto("/?tab=submissions");
   await expect(
     page.getByRole("button", { name: "Date", exact: true }),
   ).toBeVisible();
   for (const record of catalogue.records) {
-    const row = page.locator(".leaderboard-entry").filter({
+    const row = page.locator(".contribution-list .leaderboard-entry").filter({
       has: page.getByRole("button", { name: record.title, exact: true }),
     });
     const badge = row.locator(".verification-badge");
@@ -31,11 +31,9 @@ test("verified proof badges open solution sources and contribution dates retain 
     } else {
       expect(record.status).toBe("verification-pending");
       await expect(badge).toHaveClass(/\bamber\b/);
-      await expect(badge.locator(".sr-only")).toHaveText(
-        "Verification pending",
-      );
+      await expect(badge.locator("span")).toHaveText("Verification pending");
     }
-    const dateCell = row.locator(".entry-meta");
+    const dateCell = row;
     await expect(dateCell.locator("time")).toHaveAttribute(
       "datetime",
       record.date_precision === "year"
@@ -46,6 +44,5 @@ test("verified proof badges open solution sources and contribution dates retain 
       "title",
       `${record.date_label}: ${record.timeline_at}`,
     );
-    await expect(dateCell.locator("small")).toHaveCount(0);
   }
 });

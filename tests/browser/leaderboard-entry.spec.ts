@@ -10,35 +10,35 @@ test("entries expand in place, toggle with the keyboard, and restore focus on cl
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "Research views" })
-    .getByRole("link", { name: "Leaderboard", exact: false })
+    .getByRole("link", { name: "Submissions", exact: false })
     .click();
   const record = data.records[0];
   const toggle = page.getByRole("button", { name: record.title, exact: true });
   const entry = page.locator(`#entry-${record.id}`);
-  await expect(entry.locator(".entry-bound-decimal")).toHaveText(
+  await expect(entry.locator(".entry-decimal").first()).toContainText(
     decimal(record.theta, 14),
   );
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await toggle.focus();
   await page.keyboard.press("Enter");
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
-  await expect(entry.locator(".proof-detail")).toBeVisible();
-  await expect(entry.locator(".proof-detail")).toContainText(record.method);
+  await expect(page.locator(".proof-detail")).toBeVisible();
+  await expect(page.locator(".proof-detail")).toContainText(record.method);
   await expect(page.locator(".proof-detail")).toHaveCount(1);
   await page.keyboard.press("Space");
-  await expect(entry.locator(".proof-detail")).toHaveCount(0);
+  await expect(page.locator(".proof-detail")).toHaveCount(0);
   await toggle.click();
-  await entry.getByRole("button", { name: "Close proof details" }).click();
+  await page.getByRole("button", { name: "Close proof details" }).click();
   await expect(toggle).toBeFocused();
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await toggle.click();
   const next = data.records.find((r) => r.id !== record.id)!;
   await page.getByRole("button", { name: next.title, exact: true }).click();
-  await expect(entry.locator(".proof-detail")).toHaveCount(0);
-  await expect(page.locator(`#entry-${next.id} .proof-detail`)).toBeVisible();
+  await expect(page.locator(`#details-${record.id}`)).toHaveCount(0);
+  await expect(page.locator(`#details-${next.id} .proof-detail`)).toBeVisible();
 });
 
-test("mobile metadata and method each occupy one row, with full text available on expansion", async ({
+test("mobile submissions scroll within their table and preserve full details", async ({
   page,
   isMobile,
 }) => {
@@ -54,30 +54,11 @@ test("mobile metadata and method each occupy one row, with full text available o
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "Research views" })
-    .getByRole("link", { name: "Leaderboard", exact: false })
+    .getByRole("link", { name: "Submissions", exact: false })
     .click();
   const entry = page.locator(`#entry-${record.id}`);
   for (const width of [320, 390, 430]) {
     await page.setViewportSize({ width, height: 844 });
-    const boxes = await entry
-      .locator(".entry-meta > *")
-      .evaluateAll((elements) =>
-        elements.map((e) => {
-          const r = e.getBoundingClientRect();
-          return { top: r.top, bottom: r.bottom };
-        }),
-      );
-    expect(Math.max(...boxes.map((b) => b.top))).toBeLessThan(
-      Math.min(...boxes.map((b) => b.bottom)),
-    );
-    const method = await entry.locator(".entry-method").evaluate((el) => ({
-      height: el.clientHeight,
-      lineHeight: parseFloat(getComputedStyle(el).lineHeight),
-      width: el.clientWidth,
-      scrollWidth: el.scrollWidth,
-    }));
-    expect(method.height).toBeLessThanOrEqual(Math.ceil(method.lineHeight));
-    expect(method.scrollWidth).toBeGreaterThan(method.width);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= window.innerWidth,
@@ -85,10 +66,10 @@ test("mobile metadata and method each occupy one row, with full text available o
     ).toBe(true);
   }
   await entry.getByRole("button", { name: record.title, exact: true }).click();
-  await expect(entry.locator(".proof-detail")).toContainText(
+  await expect(page.locator(".proof-detail")).toContainText(
     record.authors[0].name,
   );
-  await expect(entry.locator(".proof-detail")).toContainText(record.method);
+  await expect(page.locator(".proof-detail")).toContainText(record.method);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,

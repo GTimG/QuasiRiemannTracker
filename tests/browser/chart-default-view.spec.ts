@@ -94,12 +94,14 @@ test("the default view focuses verified improvements and reset restores it", asy
   expect(initialDates.every((date) => date.includes("Oct"))).toBe(true);
   const summaryText = await summary.innerText();
   expect(summaryText).toContain(decimal(best.theta, 8).replace("…", ""));
+  await page.getByRole("link", { name: /Submissions/ }).click();
   for (const result of [historical, weaker, pending]) {
     await expect(
       page.getByRole("button", { name: result.title, exact: true }),
     ).toBeVisible();
   }
 
+  await page.getByRole("link", { name: "Timeline", exact: true }).click();
   const pointCount = await chart.locator("[data-dot]").count();
   await chart.focus();
   for (let i = 0; i < 30; i++) await chart.press("-");

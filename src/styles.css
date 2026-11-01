@@ -635,7 +635,7 @@ select {
 }
 .entry-meta {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) max-content;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
   align-items: baseline;
   gap: 12px;
   width: 100%;
@@ -1148,4 +1148,102 @@ dialog .protocol-grid h2 {
 .tag.historical {
   color: #56677f;
   background: #edf1f6;
+}
+
+/* Contributor entries share the submissions list's spacing and separators. */
+.contributor-board h2 {
+  margin-top: 0;
+}
+.contributor-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+.contributor-name .entry-chevron {
+  margin-left: auto;
+}
+.contributor-scores {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+.contributor-columns {
+  color: var(--muted);
+  font-family: var(--sans, sans-serif);
+  padding-bottom: 8px;
+}
+.contributor-improvement,
+.contributor-best {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.contributor-best {
+  text-align: right;
+}
+.contributor-caption {
+  color: var(--muted);
+  font: 0.75rem/1.5 var(--sans, sans-serif);
+}
+.contributor-submissions {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--line);
+}
+.contributor-submission {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.contributor-submission-title {
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+.contributor-submission a {
+  color: inherit;
+}
+@media (max-width: 640px) {
+  .contributor-scores {
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+  .contributor-improvement .entry-decimal {
+    font-size: 1rem;
+  }
+  .contributor-name {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .view-nav {
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  .view-nav a {
+    flex-shrink: 0;
+  }
+  .contribution-list:not(.contributor-board) .entry-meta {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .contribution-list:not(.contributor-board) .entry-exact {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .contribution-list:not(.contributor-board) .entry-meta time {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }

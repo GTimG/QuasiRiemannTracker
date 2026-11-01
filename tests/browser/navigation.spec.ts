@@ -5,7 +5,7 @@ const nav = (page: Page) =>
   page.getByRole("navigation", { name: "Research views" });
 const curve = (page: Page) => page.locator(".verified-frontier");
 const tabLink = (page: Page, name: string) =>
-  nav(page).getByRole("link", { name, exact: name !== "Leaderboard" });
+  nav(page).getByRole("link", { name, exact: name !== "Submissions" });
 
 async function graphSnapshot(page: Page) {
   await expect(curve(page)).toHaveAttribute("d", /^M/);
@@ -30,7 +30,7 @@ test("tab links survive refresh, direct visits and back/forward", async ({
 }) => {
   await routeCatalogue(page);
   await page.goto("/?preview=keep#main");
-  for (const name of ["Leaderboard", "Milestones", "Protocol", "Timeline"]) {
+  for (const name of ["Submissions", "Milestones", "Protocol", "Timeline"]) {
     await tabLink(page, name).click();
     expect(new URL(page.url()).searchParams.get("tab")).toBe(
       name.toLowerCase(),

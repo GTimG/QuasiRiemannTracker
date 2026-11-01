@@ -5,7 +5,7 @@ import {
   ExternalLink,
   FileCheck2,
 } from "lucide-react";
-import { decimal, fraction, scientific } from "../core/rational.mjs";
+import { decimal } from "../core/rational.mjs";
 import {
   boundLabel,
   contributionDate,
@@ -15,20 +15,12 @@ import {
   verifiedHere,
 } from "../core/catalogue.mjs";
 import CatalogueDetail from "./CatalogueDetail";
-import type { Contribution, Rational } from "./types";
+import type { Contribution } from "./types";
 import { publicUrl } from "./urls";
 
-export type SortKey = "delta" | "bound" | "author" | "date";
-type LeaderboardRecord = Contribution & {
-  jump: {
-    value: Rational;
-    previous: Contribution;
-    approximate: boolean;
-  } | null;
-};
+export type SortKey = "bound" | "author" | "date";
 type Sort = { key: SortKey; direction: "ascending" | "descending" };
 const columns: { key: SortKey; label: string }[] = [
-  { key: "delta", label: "Improvement" },
   { key: "bound", label: "Exact bound θ" },
   { key: "author", label: "Author" },
   { key: "date", label: "Date" },
@@ -49,7 +41,7 @@ export default function Leaderboard({
   sort,
   onSort,
 }: {
-  records: LeaderboardRecord[];
+  records: Contribution[];
   selected: string | null;
   onSelect: (id: string | null) => void;
   onNavigate: (id: string) => void;
@@ -57,7 +49,7 @@ export default function Leaderboard({
   onSort: (sort: Sort) => void;
 }) {
   return (
-    <section className="panel contribution-list" aria-label="Leaderboard">
+    <section className="panel contribution-list" aria-label="Submissions">
       <div
         className="leaderboard-sort"
         role="group"
@@ -113,27 +105,8 @@ export default function Leaderboard({
                   onClick={() => onSelect(expanded ? null : r.id)}
                 >
                   <span className="entry-heading">
-                    <span
-                      className="entry-decimal entry-delta"
-                      title={
-                        r.jump
-                          ? `Previous submission: ${r.jump.previous.title}. Exact delta: ${fraction(r.jump.value)}. Positive means a lower bound.${r.jump.approximate ? " Computed from certified rational enclosures." : ""}`
-                          : "No previous submission"
-                      }
-                    >
-                      <span className="sr-only">Improvement: </span>
-                      {r.jump
-                        ? `Δ ${r.jump.approximate ? "≈ " : ""}${scientific(r.jump.value)}`
-                        : "—"}
-                    </span>
-                    <span className="entry-bound">
-                      <span className="sr-only">Bound: </span>
-                      <span className="entry-bound-decimal">
-                        {decimal(r.theta, 14)}
-                      </span>
-                      <span className="entry-exact" title={boundLabel(r)}>
-                        {boundLabel(r)}
-                      </span>
+                    <span className="entry-decimal">
+                      {decimal(r.theta, 14)}
                     </span>
                     <ChevronDown
                       size={16}
@@ -144,6 +117,9 @@ export default function Leaderboard({
                   <span id={`meta-${r.id}`} className="entry-meta">
                     <span className="entry-author" title={authors}>
                       {authors}
+                    </span>
+                    <span className="entry-exact" title={boundLabel(r)}>
+                      {boundLabel(r)}
                     </span>
                     <time
                       dateTime={

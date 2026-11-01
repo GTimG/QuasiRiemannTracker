@@ -82,6 +82,11 @@ try {
     (count) => document.querySelectorAll("[data-dot]").length === count,
     plottedCount,
   );
+  await page
+    .getByRole("navigation", { name: "Research views" })
+    .getByRole("link", { name: /Submissions/ })
+    .click();
+  await page.getByRole("list", { name: "Contributions", exact: true }).waitFor();
   assert.equal(
     await page
       .getByRole("list", { name: "Contributions", exact: true })

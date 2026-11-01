@@ -2,7 +2,8 @@ import { useSyncExternalStore } from "react";
 
 export const tabs = [
   "Timeline",
-  "Leaderboard",
+  "Contributors",
+  "Submissions",
   "Milestones",
   "Protocol",
 ] as const;
@@ -50,7 +51,9 @@ function readView(url: URL): View {
     graph.vertical = { scale: y[0], offset: y[1] };
   return {
     tab:
-      tabs.find((tab) => tab.toLowerCase() === params.get("tab")) ?? "Timeline",
+      (params.get("tab") === "leaderboard" ? "Submissions" : undefined) ??
+      tabs.find((tab) => tab.toLowerCase() === params.get("tab")) ??
+      "Timeline",
     graph,
   };
 }

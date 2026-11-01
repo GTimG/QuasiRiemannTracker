@@ -28,12 +28,12 @@ test("historical catalogue entries display their status and year precision", asy
       json: { schema_version: 1, records: [baseline] },
     }),
   );
-  await page.goto("/");
-  const row = page.locator(".leaderboard-entry");
+  await page.goto("/?tab=submissions");
+  const row = page.locator(".contribution-list .leaderboard-entry");
   await expect(row.locator(".tag.historical")).toHaveText(
     "Historical baseline",
   );
-  const date = row.locator(".entry-meta time");
+  const date = row.locator("time");
   await expect(date).toHaveText("1922");
   await expect(date).toHaveAttribute("datetime", "1922");
   await expect(date).toHaveAttribute(
