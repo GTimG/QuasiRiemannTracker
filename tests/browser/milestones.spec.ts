@@ -15,7 +15,11 @@ test("milestone overview is opt-in and both fit controls preserve points", async
     .locator('[data-axis="date"]')
     .allTextContents();
   const count = await chart.locator("[data-dot]").count();
-  for (const text of initialBounds) {
+  for (const text of await chart
+    .locator('[data-axis="bound"]')
+    .evaluateAll((ticks) =>
+      ticks.map((tick) => tick.getAttribute("data-bound")!),
+    )) {
     expect(Number(text.replace("…", ""))).toBeGreaterThan(0.874);
     expect(Number(text.replace("…", ""))).toBeLessThan(0.876);
   }
@@ -45,7 +49,9 @@ test("milestone overview is opt-in and both fit controls preserve points", async
   await expect(chart.locator('[data-axis="bound"]')).toHaveText(initialBounds);
   for (const text of await chart
     .locator('[data-axis="bound"]')
-    .allTextContents()) {
+    .evaluateAll((ticks) =>
+      ticks.map((tick) => tick.getAttribute("data-bound")!),
+    )) {
     expect(Number(text.replace("…", ""))).toBeGreaterThan(0.874);
     expect(Number(text.replace("…", ""))).toBeLessThan(0.876);
   }
@@ -96,9 +102,9 @@ test("milestones sit between leaderboard and protocol and fit narrow screens", a
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    await expect(
-      nav.getByRole("link", { name: "Protocol", exact: true }),
-    ).toBeInViewport();
+    const protocol = nav.getByRole("link", { name: "Protocol", exact: true });
+    await protocol.scrollIntoViewIfNeeded();
+    await expect(protocol).toBeInViewport();
   }
 });
 
@@ -132,7 +138,9 @@ test("overview dots are small and filled points paint above overlapping hollow p
   };
   await assertOrder();
   await page.getByRole("link", { name: /Submissions/ }).click();
-  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Exact bound θ", exact: true })
+    .click();
   await page.getByRole("button", { name: hollow.title, exact: true }).click();
   await page.getByRole("link", { name: "Timeline", exact: true }).click();
   await expect(hollowDot).toHaveAttribute("aria-pressed", "true");

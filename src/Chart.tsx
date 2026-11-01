@@ -570,6 +570,7 @@ export default function Chart({
                 textAnchor="end"
                 className="axis"
                 data-axis="bound"
+                data-bound={decimal(tickValue(t), 14)}
               >
                 {allRecords.length || overview
                   ? tickLabel(t)

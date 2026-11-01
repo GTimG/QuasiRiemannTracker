@@ -108,7 +108,9 @@ test("selection, exact sorting and zoom", async ({ page }) => {
     "id",
     `entry-${recordsByBound[0].id}`,
   );
-  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Exact bound θ", exact: true })
+    .click();
   await expect(page.locator(".leaderboard-entry").first()).toHaveAttribute(
     "id",
     `entry-${recordsByBound.at(-1)!.id}`,
@@ -196,10 +198,10 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
       name: /Interactive bound timeline/,
     });
     await plot.hover();
-    const before = await plot.locator("path").first().getAttribute("d");
+    const before = await plot.locator(".verified-frontier").getAttribute("d");
     await page.mouse.wheel(0, -100);
     await expect
-      .poll(() => plot.locator("path").first().getAttribute("d"))
+      .poll(() => plot.locator(".verified-frontier").getAttribute("d"))
       .not.toBe(before);
     expect(warnings.filter((x) => x.includes("passive"))).toEqual([]);
   }
