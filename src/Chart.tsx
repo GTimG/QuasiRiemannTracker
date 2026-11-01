@@ -71,6 +71,7 @@ export default function Chart({
   const [viewedAt] = useState(Date.now);
   const [hover, setHover] = useState<Contribution | null>(null);
   const lastWheel = useRef(0);
+  const [touchHint, setTouchHint] = useState(false);
   const dragging = useRef<{
     x: number;
     y: number;
@@ -189,6 +190,80 @@ export default function Chart({
     };
     element.addEventListener("wheel", wheel, { passive: false });
     return () => element.removeEventListener("wheel", wheel);
+  }, [W, onViewChange]);
+  useEffect(() => {
+    const element = svg.current;
+    if (!element) return;
+    let gesture: {
+      x: number;
+      y: number;
+      distance: number;
+      moved: boolean;
+    } | null = null;
+    let hintTimer: ReturnType<typeof setTimeout>;
+    const update = (event: TouchEvent) => {
+      if (event.touches.length !== 2) {
+        gesture = null;
+        if (event.touches.length === 1) {
+          setTouchHint(true);
+          clearTimeout(hintTimer);
+          hintTimer = setTimeout(() => setTouchHint(false), 1200);
+        }
+        return;
+      }
+      event.preventDefault();
+      setTouchHint(false);
+      clearTimeout(hintTimer);
+      const [a, b] = Array.from(event.touches);
+      const x = (a.clientX + b.clientX) / 2;
+      const y = (a.clientY + b.clientY) / 2;
+      const distance = Math.max(
+        1,
+        Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+      );
+      if (gesture) {
+        const previous = gesture;
+        const bounds = element.getBoundingClientRect();
+        onViewChange(
+          (current) => {
+            const next = zoomed(
+              current,
+              previous.distance / distance,
+              Math.max(0, Math.min(1, (x - bounds.left - L) / width)),
+              Math.max(0, Math.min(1, (y - bounds.top - T) / height)),
+              true,
+            );
+            const dx =
+              ((x - previous.x) / bounds.width) *
+              (next.window[1] - next.window[0]);
+            return {
+              ...next,
+              window: [next.window[0] - dx, next.window[1] - dx],
+              vertical: {
+                ...next.vertical,
+                offset: next.vertical.offset - (y - previous.y) / bounds.height,
+              },
+            };
+          },
+          previous.moved ? "replace" : "push",
+        );
+      }
+      gesture = { x, y, distance, moved: event.type === "touchmove" };
+    };
+    const end = () => {
+      gesture = null;
+    };
+    element.addEventListener("touchstart", update, { passive: false });
+    element.addEventListener("touchmove", update, { passive: false });
+    element.addEventListener("touchend", end);
+    element.addEventListener("touchcancel", end);
+    return () => {
+      clearTimeout(hintTimer);
+      element.removeEventListener("touchstart", update);
+      element.removeEventListener("touchmove", update);
+      element.removeEventListener("touchend", end);
+      element.removeEventListener("touchcancel", end);
+    };
   }, [W, onViewChange]);
   const curve = useMemo(
     () =>
@@ -430,6 +505,7 @@ export default function Chart({
             }
           }}
           onPointerDown={(e) => {
+            if (e.pointerType === "touch") return;
             if ((e.target as Element).closest("[data-dot]")) return;
             dragging.current = {
               x: e.clientX,
@@ -447,6 +523,7 @@ export default function Chart({
             dragging.current = null;
           }}
           onPointerMove={(e) => {
+            if (e.pointerType === "touch") return;
             if (!dragging.current) return;
             const d = dragging.current,
               bounds = e.currentTarget.getBoundingClientRect(),
@@ -647,6 +724,11 @@ export default function Chart({
             ) : null;
           })}
         </svg>
+        {touchHint && (
+          <div className="chart-touch-hint" role="status">
+            Use two fingers to move the graph
+          </div>
+        )}
         {!allRecords.length && (
           <div className="chart-empty">
             <span className="empty-mark">∅</span>
@@ -670,7 +752,12 @@ export default function Chart({
           </span>
           <span className="pan-hint">
             <Move size={13} />
-            Drag to pan · scroll to zoom
+            <span className="desktop-pan-hint">
+              Drag to pan · scroll to zoom
+            </span>
+            <span className="mobile-pan-hint">
+              Use two fingers to pan and zoom
+            </span>
           </span>
         </div>
       </div>

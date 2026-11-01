@@ -412,10 +412,13 @@ select {
 }
 
 .chart-tools .icon {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
   border: 1px solid var(--control);
   background: #fff;
-  width: 36px;
-  height: 36px;
+  width: 27px;
+  height: 27px;
 }
 .chart-tools .icon:hover {
   background: #f2f5f6;
@@ -427,7 +430,7 @@ select {
   display: block;
   width: 100%;
   height: 355px;
-  touch-action: none;
+  touch-action: pan-y;
   cursor: grab;
 }
 .axis {
@@ -1147,8 +1150,8 @@ dialog .protocol-grid h2 {
     flex-wrap: wrap;
   }
   .chart-tools .icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
   .protocol-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -1264,4 +1267,43 @@ dialog .protocol-grid h2 {
     grid-column: 2;
     grid-row: 1;
   }
+}
+
+.chart-tools .icon svg {
+  width: 12px;
+  height: 12px;
+}
+.chart-touch-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 50%);
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+.mobile-pan-hint {
+  display: none;
+}
+@media (pointer: coarse) {
+  .desktop-pan-hint {
+    display: none;
+  }
+  .mobile-pan-hint {
+    display: inline;
+  }
+}
+
+.contributor-count {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  background: #edf1f4;
+  color: var(--muted);
 }

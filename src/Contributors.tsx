@@ -56,6 +56,7 @@ export default function Contributors({
             >
               <span className="contributor-name">
                 <span className="muted">{index + 1}.</span> {person.name}
+                <span className="contributor-count">{person.count}</span>
                 <ChevronDown
                   size={16}
                   className="entry-chevron"
@@ -78,10 +79,6 @@ export default function Contributors({
                 >
                   <span>{decimal(person.best.theta, 14)}</span>
                 </span>
-              </span>
-              <span className="entry-meta">
-                {person.count}{" "}
-                {person.count === 1 ? "submission" : "submissions"}
               </span>
             </button>
             {expanded === person.name && (
