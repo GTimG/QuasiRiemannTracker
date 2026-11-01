@@ -67,7 +67,7 @@ export default function Contributors({
                   title={fraction(person.improvement)}
                 >
                   <span className="entry-decimal">
-                    Δ {person.approximate ? "≈ " : ""}
+                    {person.approximate ? "≈ " : ""}
                     {scientific(person.improvement)}
                   </span>
                 </span>
