@@ -263,6 +263,11 @@ main {
 .view-nav small {
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+  font-size: 0.625rem;
+  line-height: 1;
+  padding: 3px 4px;
+  border-radius: 999px;
+  background: var(--wash, #eef2f3);
 }
 .milestones {
   max-width: 860px;
@@ -1229,11 +1234,15 @@ dialog .protocol-grid h2 {
 
 @media (max-width: 640px) {
   .view-nav {
-    flex-wrap: wrap;
-    gap: 4px 16px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
   }
   .view-nav a {
     flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.6875rem;
+    gap: 3px;
   }
   .contribution-list:not(.contributor-board) .entry-meta {
     grid-template-columns: minmax(0, 1fr) max-content;
