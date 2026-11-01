@@ -25,6 +25,7 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   const board = page.getByRole("region", { name: "Contributor leaderboard" });
   await expect(board.locator(".contributor-summary")).toHaveCount(2);
   await expect(board.getByRole("heading")).toHaveCount(0);
+  await expect(board.locator(".contributor-header mjx-container svg")).toBeVisible();
   await expect(
     page.getByRole("link", { name: /^Contributors\s*2$/ }),
   ).toBeVisible();

@@ -1,3 +1,4 @@
+import { MathJax } from "better-react-mathjax";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Minus, Plus, Maximize2, Move, Search } from "lucide-react";
 import { milestones } from "./bound-milestones";
@@ -590,9 +591,19 @@ export default function Chart({
               </text>
             </g>
           ))}
-          <text x={L} y={16} className="axis-label">
-            {tiny ? "θ − θ₀" : "θ"}
-          </text>
+          <foreignObject
+            x={L}
+            y={0}
+            width={100}
+            height={26}
+            className="axis-label"
+          >
+            <MathJax inline dynamic>
+              {tiny
+                ? String.raw`\(\theta - \theta_0\)`
+                : String.raw`\(\theta\)`}
+            </MathJax>
+          </foreignObject>
           <g clipPath="url(#plotClip)">
             {milestones.map((m) => (
               <line
@@ -739,7 +750,8 @@ export default function Chart({
           <div className="chart-tooltip" role="status">
             <strong>{hover.title}</strong>
             <span>
-              θ = {boundLabel(hover)} ·{" "}
+              <MathJax inline>{String.raw`\(\theta\)`}</MathJax> ={" "}
+              {boundLabel(hover)} ·{" "}
               {hover.authors.map((a) => a.name).join(", ")}
             </span>
             <small>{statusLabel(hover)}</small>
@@ -763,7 +775,8 @@ export default function Chart({
       </div>
       {tiny && (
         <p className="chart-note" title={`Exact origin: ${fraction(low)}`}>
-          θ₀ ≈ {decimal(low, 6)} · axis shows offsets.
+          <MathJax inline>{String.raw`\(\theta_0 \approx\)`}</MathJax>{" "}
+          {decimal(low, 6)} · axis shows offsets.
         </p>
       )}
     </section>

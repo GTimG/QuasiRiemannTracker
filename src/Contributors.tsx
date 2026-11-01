@@ -64,7 +64,9 @@ export default function Contributors({
     >
       <div className="contributor-header">
         <strong>Contributors</strong>
-        <span>Total Δ</span>
+        <span>
+          Total <MathJax inline>{String.raw`\(\Delta\)`}</MathJax>
+        </span>
       </div>
       <ol className="leaderboard" aria-label="Contributors">
         {people.map((person, index) => (

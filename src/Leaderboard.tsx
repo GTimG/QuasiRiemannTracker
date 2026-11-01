@@ -1,3 +1,4 @@
+import { MathJax } from "better-react-mathjax";
 import {
   BadgeCheck,
   ChevronDown,
@@ -71,7 +72,13 @@ export default function Leaderboard({
               })
             }
           >
-            {key === "bound" ? "Bound" : label}
+            {key === "bound" ? (
+              <>
+                Bound <MathJax inline>{String.raw`\(\theta\)`}</MathJax>
+              </>
+            ) : (
+              label
+            )}
             {sort.key === key && (
               <>
                 <span aria-hidden="true">
