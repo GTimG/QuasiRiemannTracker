@@ -18,7 +18,7 @@ test("aggregates exact signed deltas per person, ranks totals and retains each b
   const result = contributorLeaderboard(records.reverse());
   assert.deepEqual(
     result.map((p) => p.name),
-    ["Alice", "Carol", "Baseline", "Bob"],
+    ["Alice", "Carol"],
   );
   assert.deepEqual(result[0].improvement, {
     numerator: "7",
@@ -26,11 +26,6 @@ test("aggregates exact signed deltas per person, ranks totals and retains each b
   });
   assert.equal(result[0].best.id, "c");
   assert.equal(result[0].count, 2);
-  assert.deepEqual(result.at(-1).improvement, {
-    numerator: "-3",
-    denominator: "20",
-  });
-  assert.equal(result.at(-1).best.id, "b");
 });
 test("normalizes names and credits a repeated coauthor only once per submission", () => {
   const result = contributorLeaderboard([

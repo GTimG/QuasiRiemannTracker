@@ -13,6 +13,7 @@ import {
 import { publicUrl } from "./urls";
 import Leaderboard, { type SortKey } from "./Leaderboard";
 import Contributors from "./Contributors";
+import { contributorLeaderboard } from "../core/contributors.mjs";
 import Milestones from "./Milestones";
 import LeanCode from "./LeanCode";
 import { tabs, useNavigation, type Tab } from "./navigation";
@@ -230,6 +231,9 @@ export default function App() {
               >
                 {name}
                 {name === "Submissions" && <small>{all.length}</small>}
+                {name === "Contributors" && (
+                  <small>{contributorLeaderboard(all).length}</small>
+                )}
               </a>
             ))}
           </nav>

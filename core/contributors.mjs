@@ -51,10 +51,15 @@ export function contributorLeaderboard(records) {
       if (cmp(record.theta, person.best.theta) < 0) person.best = record;
     }
   });
-  return [...people.values()].sort(
-    (a, b) =>
-      cmp(b.improvement, a.improvement) ||
-      cmp(a.best.theta, b.best.theta) ||
-      a.name.localeCompare(b.name),
-  );
+  return [...people.values()]
+    .filter(
+      (person) =>
+        cmp(person.improvement, { numerator: "0", denominator: "1" }) > 0,
+    )
+    .sort(
+      (a, b) =>
+        cmp(b.improvement, a.improvement) ||
+        cmp(a.best.theta, b.best.theta) ||
+        a.name.localeCompare(b.name),
+    );
 }

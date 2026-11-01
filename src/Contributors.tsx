@@ -40,7 +40,6 @@ export default function Contributors({
       className="panel contribution-list contributor-board"
       aria-label="Contributor leaderboard"
     >
-      <h2>Contributor leaderboard</h2>
       <div className="contributor-scores contributor-columns">
         <span>Total Δ</span>
         <span>Best θ</span>
