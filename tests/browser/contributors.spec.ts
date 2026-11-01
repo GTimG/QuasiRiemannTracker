@@ -31,9 +31,9 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await expect(board.locator(".contributor-summary").first()).toContainText(
     "Alice",
   );
-  await expect(board.locator(".contributor-summary").first()).toContainText(
-    "3.5e-1",
-  );
+  await expect(board.locator(".contributor-summary").first().locator('mjx-container svg')).toBeVisible();
+  await expect(board.locator(".contributor-summary").first().locator('mjx-container')).toHaveAttribute('jax', 'SVG');
+  await expect(board.locator(".contributor-summary").first().locator('[data-mml-node="msup"]')).toHaveCount(1);
   await expect(board.locator(".contributor-summary").first()).not.toContainText(
     "0.6",
   );

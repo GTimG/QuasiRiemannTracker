@@ -1,9 +1,31 @@
 import { useState } from "react";
+import { MathJax } from "better-react-mathjax";
 import { ChevronDown } from "lucide-react";
 import { contributorLeaderboard } from "../core/contributors.mjs";
 import { decimal, fraction, scientific } from "../core/rational.mjs";
 import { boundLabel, formatContributionDate } from "../core/catalogue.mjs";
 import type { Contribution, Rational } from "./types";
+
+function DeltaMath({
+  value,
+  approximate = false,
+  prefix = false,
+}: {
+  value: Rational;
+  approximate?: boolean;
+  prefix?: boolean;
+}) {
+  const formatted = scientific(value).replace(
+    /e([+-]?\d+)$/,
+    String.raw`\times 10^{$1}`,
+  );
+  return (
+    <MathJax
+      inline
+      dynamic
+    >{`\\(${prefix ? "\\Delta " : ""}${approximate ? "\\approx " : ""}${formatted}\\)`}</MathJax>
+  );
+}
 
 export default function Contributors({
   records,
@@ -67,8 +89,10 @@ export default function Contributors({
                   title={fraction(person.improvement)}
                 >
                   <span className="entry-decimal">
-                    {person.approximate ? "≈ " : ""}
-                    {scientific(person.improvement)}
+                    <DeltaMath
+                      value={person.improvement}
+                      approximate={person.approximate}
+                    />
                   </span>
                 </span>
                 <ChevronDown
@@ -96,8 +120,11 @@ export default function Contributors({
                       </span>
                       <span className="contributor-scores">
                         <span title={fraction(delta)}>
-                          Δ {approximate ? "≈ " : ""}
-                          {scientific(delta)}
+                          <DeltaMath
+                            value={delta}
+                            approximate={approximate}
+                            prefix
+                          />
                         </span>
                         <span title={boundLabel(record)}>
                           {submissionLink(record, decimal(record.theta, 14))}
