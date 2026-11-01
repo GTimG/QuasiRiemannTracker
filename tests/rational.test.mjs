@@ -10,6 +10,7 @@ import {
   frontierHistory,
   relativePosition,
   decimal,
+  scientific,
   log10Rational,
 } from "../core/rational.mjs";
 test("rationals reject noncanonical, zero/negative denominators and injection", () => {
@@ -116,4 +117,18 @@ test("checked bounds above the baseline and tied bounds remain alternatives to t
     activeRecords(rows, []).map((row) => row.id),
     ["baseline", "best", "single-prime", "unit-bound", "tied-best"],
   );
+});
+
+test("scientific deltas retain tiny values, sign and three significant digits", () => {
+  const cases = [
+    ["0", "1", "0"],
+    ["1", "4", "2.5e-1"],
+    ["-1", "10", "-1e-1"],
+    ["1", "3", "3.33e-1"],
+    ["9999", "10000", "1e+0"],
+    ["100", "1", "1e+2"],
+    ["1", "1" + "0".repeat(400), "1e-400"],
+  ];
+  for (const [numerator, denominator, expected] of cases)
+    assert.equal(scientific({ numerator, denominator }), expected);
 });

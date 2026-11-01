@@ -61,6 +61,30 @@ export function decimal(a, digits = 18) {
   }
   return out + (r ? "…" : "");
 }
+// Normalize using integers so tiny deltas do not underflow or lose their sign.
+export function scientific(a) {
+  let n = BigInt(a.numerator);
+  let d = BigInt(a.denominator);
+  if (n === 0n) return "0";
+  const sign = n < 0n ? "-" : "";
+  n = n < 0n ? -n : n;
+  let exponent = 0;
+  while (n < d) {
+    n *= 10n;
+    exponent--;
+  }
+  while (n >= d * 10n) {
+    d *= 10n;
+    exponent++;
+  }
+  let rounded = (n * 100n + d / 2n) / d;
+  if (rounded === 1000n) {
+    rounded = 100n;
+    exponent++;
+  }
+  const mantissa = (Number(rounded) / 100).toFixed(2).replace(/\.?0+$/, "");
+  return `${sign}${mantissa}e${exponent >= 0 ? "+" : ""}${exponent}`;
+}
 // Ratios/differences are computed exactly BEFORE conversion; tiny improvements survive cancellation.
 export function relativePosition(value, low, high) {
   const v = sub(value, low),

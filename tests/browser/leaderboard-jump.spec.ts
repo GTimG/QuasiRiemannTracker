@@ -33,13 +33,13 @@ test("default ranking uses previous chronological submission and shows delta lef
       "entry-regression",
       "entry-baseline",
     ]);
-  await expect(entries.nth(0).locator(".entry-delta")).toContainText("0.25");
+  await expect(entries.nth(0).locator(".entry-delta")).toContainText("2.5e-1");
   await expect(entries.nth(0).locator(".entry-bound-decimal")).toHaveText(
     "0.75",
   );
   await expect(entries.nth(0).locator(".entry-exact")).toHaveText("3/4");
   await expect(entries.nth(2).locator(".entry-delta")).toContainText("0");
-  await expect(entries.nth(3).locator(".entry-delta")).toContainText("-0.1");
+  await expect(entries.nth(3).locator(".entry-delta")).toContainText("-1e-1");
   await expect(entries.last().locator(".entry-delta")).toContainText("—");
   const deltaBox = await entries.first().locator(".entry-delta").boundingBox();
   const boundBox = await entries.first().locator(".entry-bound").boundingBox();
