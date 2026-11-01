@@ -113,8 +113,17 @@ test("selection, exact sorting and zoom", async ({ page }, info) => {
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
   await expect(
-    page.locator(".leaderboard-entry").first().locator(".entry-decimal"),
-  ).toHaveText(decimal(bestVerified.theta, 14));
+    page.getByRole("button", { name: "Bound improvement Δθ", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page
+    .getByRole("button", { name: "Exact bound θ", exact: true })
+    .click();
+  await expect(
+    page.locator(".leaderboard-entry").first().getByRole("button", {
+      name: recordsByBound[0].title,
+      exact: true,
+    }),
+  ).toBeVisible();
   await page
     .getByRole("button", { name: "Exact bound θ", exact: true })
     .click();
@@ -126,15 +135,6 @@ test("selection, exact sorting and zoom", async ({ page }, info) => {
         name: recordsByBound.at(-1).title,
         exact: true,
       }),
-  ).toBeVisible();
-  await page
-    .getByRole("button", { name: "Exact bound θ", exact: true })
-    .click();
-  await expect(
-    page.locator(".leaderboard-entry").first().getByRole("button", {
-      name: recordsByBound[0].title,
-      exact: true,
-    }),
   ).toBeVisible();
   await page.screenshot({
     path: `evidence/screenshots/${info.project.name}-interactions.png`,

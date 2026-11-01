@@ -15,12 +15,20 @@ import {
   verifiedHere,
 } from "../core/catalogue.mjs";
 import CatalogueDetail from "./CatalogueDetail";
-import type { Contribution } from "./types";
+import type { Contribution, Rational } from "./types";
 import { publicUrl } from "./urls";
 
-export type SortKey = "bound" | "author" | "date";
+export type SortKey = "delta" | "bound" | "author" | "date";
+type LeaderboardRecord = Contribution & {
+  jump: {
+    value: Rational;
+    previous: Contribution;
+    approximate: boolean;
+  } | null;
+};
 type Sort = { key: SortKey; direction: "ascending" | "descending" };
 const columns: { key: SortKey; label: string }[] = [
+  { key: "delta", label: "Bound improvement Δθ" },
   { key: "bound", label: "Exact bound θ" },
   { key: "author", label: "Author" },
   { key: "date", label: "Date" },
@@ -41,7 +49,7 @@ export default function Leaderboard({
   sort,
   onSort,
 }: {
-  records: Contribution[];
+  records: LeaderboardRecord[];
   selected: string | null;
   onSelect: (id: string | null) => void;
   onNavigate: (id: string) => void;
@@ -105,8 +113,27 @@ export default function Leaderboard({
                   onClick={() => onSelect(expanded ? null : r.id)}
                 >
                   <span className="entry-heading">
-                    <span className="entry-decimal">
-                      {decimal(r.theta, 14)}
+                    <span
+                      className="entry-decimal entry-delta"
+                      title={
+                        r.jump
+                          ? `Previous submission: ${r.jump.previous.title}. Positive means a lower bound.${r.jump.approximate ? " Computed from certified rational enclosures." : ""}`
+                          : "No previous submission"
+                      }
+                    >
+                      <span className="sr-only">Bound improvement: </span>
+                      {r.jump
+                        ? `${r.jump.approximate ? "≈ " : ""}${decimal(r.jump.value, 14)}`
+                        : "—"}
+                    </span>
+                    <span className="entry-bound">
+                      <span className="sr-only">Bound: </span>
+                      <span className="entry-bound-decimal">
+                        {decimal(r.theta, 14)}
+                      </span>
+                      <span className="entry-exact" title={boundLabel(r)}>
+                        {boundLabel(r)}
+                      </span>
                     </span>
                     <ChevronDown
                       size={16}
@@ -117,9 +144,6 @@ export default function Leaderboard({
                   <span id={`meta-${r.id}`} className="entry-meta">
                     <span className="entry-author" title={authors}>
                       {authors}
-                    </span>
-                    <span className="entry-exact" title={boundLabel(r)}>
-                      {boundLabel(r)}
                     </span>
                     <time
                       dateTime={

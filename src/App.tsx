@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MathJax } from "better-react-mathjax";
 import { Github, GitPullRequest, X } from "lucide-react";
 import Chart from "./Chart";
-import { cmp, decimal, recordHistory } from "../core/rational.mjs";
+import { cmp, decimal, sub, recordHistory } from "../core/rational.mjs";
 import type { Contribution } from "./types";
 import {
   contributionDate,
@@ -41,7 +41,7 @@ export default function App() {
     [sort, setSort] = useState<{
       key: SortKey;
       direction: "ascending" | "descending";
-    }>({ key: "bound", direction: "ascending" }),
+    }>({ key: "delta", direction: "descending" }),
     [selected, setSelected] = useState<string | null>(null),
     [error, setError] = useState(""),
     [modal, setModal] = useState<"submit" | "policy" | null>(null);
@@ -71,24 +71,49 @@ export default function App() {
       r.is_record,
     ]),
   );
+  const chronological = [...catalogue].sort(
+    (a, b) =>
+      contributionDate(a).localeCompare(contributionDate(b)) ||
+      a.id.localeCompare(b.id),
+  );
+  const jumps = new Map(
+    chronological.map((r, index) => {
+      const previous = chronological[index - 1];
+      return [
+        r.id,
+        previous
+          ? {
+              value: sub(previous.theta, r.theta),
+              previous,
+              approximate: Boolean(previous.exact_bound || r.exact_bound),
+            }
+          : null,
+      ] as const;
+    }),
+  );
   const all = catalogue.map((r) => ({
     ...r,
     is_record: ranked.get(r.id) === true,
+    jump: jumps.get(r.id) ?? null,
   }));
   const records = useMemo(
     () =>
-      all.sort((a, b) => {
+      [...all].sort((a, b) => {
+        if (sort.key === "delta" && (!a.jump || !b.jump))
+          return a.jump ? -1 : b.jump ? 1 : 0;
         const comparison =
-          sort.key === "bound"
-            ? cmp(a.theta, b.theta)
-            : sort.key === "author"
-              ? a.authors
-                  .map((author) => author.name)
-                  .join(", ")
-                  .localeCompare(
-                    b.authors.map((author) => author.name).join(", "),
-                  )
-              : contributionDate(a).localeCompare(contributionDate(b));
+          sort.key === "delta"
+            ? cmp(a.jump!.value, b.jump!.value)
+            : sort.key === "bound"
+              ? cmp(a.theta, b.theta)
+              : sort.key === "author"
+                ? a.authors
+                    .map((author) => author.name)
+                    .join(", ")
+                    .localeCompare(
+                      b.authors.map((author) => author.name).join(", "),
+                    )
+                : contributionDate(a).localeCompare(contributionDate(b));
         return comparison * (sort.direction === "ascending" ? 1 : -1);
       }),
     [all, sort],
