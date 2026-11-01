@@ -42,7 +42,7 @@ export default function Contributors({
     >
       <h2>Contributor leaderboard</h2>
       <div className="contributor-scores contributor-columns">
-        <span>Total δ</span>
+        <span>Total Δ</span>
         <span>Best θ</span>
       </div>
       <ol className="leaderboard" aria-label="Contributors">
