@@ -45,7 +45,7 @@ test("default ranking uses previous chronological submission and shows delta lef
   const boundBox = await entries.first().locator(".entry-bound").boundingBox();
   expect(deltaBox!.x + deltaBox!.width).toBeLessThanOrEqual(boundBox!.x);
   await page
-    .getByRole("button", { name: "Bound improvement Δθ", exact: true })
+    .getByRole("button", { name: "Improvement Δθ", exact: true })
     .click();
   await expect
     .poll(ids)

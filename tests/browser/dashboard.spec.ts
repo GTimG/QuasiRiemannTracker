@@ -113,7 +113,7 @@ test("selection, exact sorting and zoom", async ({ page }, info) => {
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
   await expect(
-    page.getByRole("button", { name: "Bound improvement Δθ", exact: true }),
+    page.getByRole("button", { name: "Improvement Δθ", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await page
     .getByRole("button", { name: "Exact bound θ", exact: true })

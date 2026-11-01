@@ -28,7 +28,7 @@ type LeaderboardRecord = Contribution & {
 };
 type Sort = { key: SortKey; direction: "ascending" | "descending" };
 const columns: { key: SortKey; label: string }[] = [
-  { key: "delta", label: "Bound improvement Δθ" },
+  { key: "delta", label: "Improvement Δθ" },
   { key: "bound", label: "Exact bound θ" },
   { key: "author", label: "Author" },
   { key: "date", label: "Date" },
@@ -121,7 +121,7 @@ export default function Leaderboard({
                           : "No previous submission"
                       }
                     >
-                      <span className="sr-only">Bound improvement: </span>
+                      <span className="sr-only">Improvement: </span>
                       {r.jump
                         ? `${r.jump.approximate ? "≈ " : ""}${decimal(r.jump.value, 14)}`
                         : "—"}
