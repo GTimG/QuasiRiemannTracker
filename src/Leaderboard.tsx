@@ -5,7 +5,7 @@ import {
   ExternalLink,
   FileCheck2,
 } from "lucide-react";
-import { decimal } from "../core/rational.mjs";
+import { decimal, fraction, scientific } from "../core/rational.mjs";
 import {
   boundLabel,
   contributionDate,
@@ -28,7 +28,7 @@ type LeaderboardRecord = Contribution & {
 };
 type Sort = { key: SortKey; direction: "ascending" | "descending" };
 const columns: { key: SortKey; label: string }[] = [
-  { key: "delta", label: "Bound improvement Δθ" },
+  { key: "delta", label: "Improvement" },
   { key: "bound", label: "Exact bound θ" },
   { key: "author", label: "Author" },
   { key: "date", label: "Date" },
@@ -117,13 +117,13 @@ export default function Leaderboard({
                       className="entry-decimal entry-delta"
                       title={
                         r.jump
-                          ? `Previous submission: ${r.jump.previous.title}. Positive means a lower bound.${r.jump.approximate ? " Computed from certified rational enclosures." : ""}`
+                          ? `Previous submission: ${r.jump.previous.title}. Exact delta: ${fraction(r.jump.value)}. Positive means a lower bound.${r.jump.approximate ? " Computed from certified rational enclosures." : ""}`
                           : "No previous submission"
                       }
                     >
-                      <span className="sr-only">Bound improvement: </span>
+                      <span className="sr-only">Improvement: </span>
                       {r.jump
-                        ? `${r.jump.approximate ? "≈ " : ""}${decimal(r.jump.value, 14)}`
+                        ? `Δ ${r.jump.approximate ? "≈ " : ""}${scientific(r.jump.value)}`
                         : "—"}
                     </span>
                     <span className="entry-bound">
