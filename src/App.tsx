@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MathJax } from "better-react-mathjax";
 import { Github, GitPullRequest, X } from "lucide-react";
 import Chart from "./Chart";
-import { cmp, decimal, sub, recordHistory } from "../core/rational.mjs";
+import { cmp, decimal, recordHistory } from "../core/rational.mjs";
 import type { Contribution } from "./types";
 import {
   contributionDate,
@@ -12,6 +12,7 @@ import {
 } from "../core/catalogue.mjs";
 import { publicUrl } from "./urls";
 import Leaderboard, { type SortKey } from "./Leaderboard";
+import Contributors from "./Contributors";
 import Milestones from "./Milestones";
 import LeanCode from "./LeanCode";
 import { tabs, useNavigation, type Tab } from "./navigation";
@@ -41,8 +42,12 @@ export default function App() {
     [sort, setSort] = useState<{
       key: SortKey;
       direction: "ascending" | "descending";
-    }>({ key: "delta", direction: "descending" }),
-    [selected, setSelected] = useState<string | null>(null),
+    }>({ key: "bound", direction: "ascending" }),
+    [selected, setSelected] = useState<string | null>(() =>
+      window.location.hash.startsWith("#entry-")
+        ? decodeURIComponent(window.location.hash.slice(7))
+        : null,
+    ),
     [error, setError] = useState(""),
     [modal, setModal] = useState<"submit" | "policy" | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -71,49 +76,24 @@ export default function App() {
       r.is_record,
     ]),
   );
-  const chronological = [...catalogue].sort(
-    (a, b) =>
-      contributionDate(a).localeCompare(contributionDate(b)) ||
-      a.id.localeCompare(b.id),
-  );
-  const jumps = new Map(
-    chronological.map((r, index) => {
-      const previous = chronological[index - 1];
-      return [
-        r.id,
-        previous
-          ? {
-              value: sub(previous.theta, r.theta),
-              previous,
-              approximate: Boolean(previous.exact_bound || r.exact_bound),
-            }
-          : null,
-      ] as const;
-    }),
-  );
   const all = catalogue.map((r) => ({
     ...r,
     is_record: ranked.get(r.id) === true,
-    jump: jumps.get(r.id) ?? null,
   }));
   const records = useMemo(
     () =>
       [...all].sort((a, b) => {
-        if (sort.key === "delta" && (!a.jump || !b.jump))
-          return a.jump ? -1 : b.jump ? 1 : 0;
         const comparison =
-          sort.key === "delta"
-            ? cmp(a.jump!.value, b.jump!.value)
-            : sort.key === "bound"
-              ? cmp(a.theta, b.theta)
-              : sort.key === "author"
-                ? a.authors
-                    .map((author) => author.name)
-                    .join(", ")
-                    .localeCompare(
-                      b.authors.map((author) => author.name).join(", "),
-                    )
-                : contributionDate(a).localeCompare(contributionDate(b));
+          sort.key === "bound"
+            ? cmp(a.theta, b.theta)
+            : sort.key === "author"
+              ? a.authors
+                  .map((author) => author.name)
+                  .join(", ")
+                  .localeCompare(
+                    b.authors.map((author) => author.name).join(", "),
+                  )
+              : contributionDate(a).localeCompare(contributionDate(b));
         return comparison * (sort.direction === "ascending" ? 1 : -1);
       }),
     [all, sort],
@@ -123,6 +103,7 @@ export default function App() {
       .filter(verifiedHere)
       .sort((a, b) => cmp(a.theta, b.theta))[0];
   const revealRecord = (id: string) => {
+    setTab("Submissions");
     setSelected(id);
     requestAnimationFrame(() =>
       document
@@ -248,7 +229,7 @@ export default function App() {
                 onClick={(event) => navigate(event, name)}
               >
                 {name}
-                {name === "Leaderboard" && <small>{all.length}</small>}
+                {name === "Submissions" && <small>{all.length}</small>}
               </a>
             ))}
           </nav>
@@ -282,14 +263,22 @@ export default function App() {
                       onSelect={(r) => revealRecord(r.id)}
                     />
                   )}{" "}
-                  <Leaderboard
-                    records={records}
-                    selected={selected}
-                    onSelect={setSelected}
-                    onNavigate={revealRecord}
-                    sort={sort}
-                    onSort={setSort}
-                  />
+                  {tab === "Timeline" ? (
+                    <Contributors
+                      records={all}
+                      onSelect={revealRecord}
+                      submissionsHref={tabHref("Submissions")}
+                    />
+                  ) : (
+                    <Leaderboard
+                      records={records}
+                      selected={selected}
+                      onSelect={setSelected}
+                      onNavigate={revealRecord}
+                      sort={sort}
+                      onSort={setSort}
+                    />
+                  )}
                 </div>
               </div>
             </>

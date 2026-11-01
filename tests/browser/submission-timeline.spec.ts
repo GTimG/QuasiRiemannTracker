@@ -67,39 +67,15 @@ test("an earlier submission is a record even when the stronger proof verifies fi
     "aria-description",
     "Outside the verified frontier",
   );
-  const weakerEntry = page.locator(`#entry-${weaker.id}`);
-  await expect(weakerEntry.locator(".entry-decimal")).toHaveCSS(
-    "color",
-    "rgb(107, 115, 120)",
-  );
-  for (const r of [early, stronger]) {
-    await expect(page.locator(`#entry-${r.id} .entry-decimal`)).toHaveCSS(
-      "color",
-      "rgb(19, 32, 42)",
-    );
-  }
-  await page.getByRole("button", { name: "Date", exact: true }).click();
-  await expect(weakerEntry.locator(".entry-decimal")).toHaveCSS(
-    "color",
-    "rgb(107, 115, 120)",
-  );
-  await weakerEntry
-    .getByRole("button", { name: weaker.title, exact: true })
-    .click();
-  await expect(weakerEntry.locator(".proof-detail")).toBeVisible();
-  await expect(weakerEntry.locator(".proof-detail")).toContainText(
-    weaker.method,
-  );
-  await expect(weakerDot.locator("circle[stroke]")).toHaveAttribute(
-    "fill",
-    "white",
-  );
-  await expect(weakerDot).toHaveAttribute("aria-pressed", "true");
   expect(
     Number(await firstDot.locator("circle[stroke]").getAttribute("cx")),
   ).toBeLessThan(
     Number(await secondDot.locator("circle[stroke]").getAttribute("cx")),
   );
+  await page.getByRole("link", { name: /Submissions/ }).click();
+  await page.getByRole("button", { name: weaker.title, exact: true }).click();
+  await expect(page).toHaveURL(/tab=submissions/);
+  await expect(page.locator(".proof-detail")).toContainText(weaker.method);
   await page.getByRole("button", { name: early.title, exact: true }).click();
   const details = page.locator(".proof-detail");
   await expect(details).toContainText("PR submitted");

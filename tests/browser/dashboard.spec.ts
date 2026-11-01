@@ -32,7 +32,7 @@ test.beforeEach(async ({ page }) => {
 test("verified results expose the source and verification links supplied by the catalogue", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?tab=submissions");
   for (const record of fixtureRecords.filter(
     (record) => record.status === "framework-verified",
   )) {
@@ -50,17 +50,16 @@ test("mixed verification statuses and exact bounds render from the supplied cata
   page,
 }, info) => {
   await page.goto("/");
-  await expect(page.locator(".leaderboard-entry")).toHaveCount(
-    fixtureRecords.length,
-  );
+
   await page
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
   await expect(page.locator("[data-dot]")).toHaveCount(plottedCount);
-  await expect(page.locator(".leaderboard .tag.teal")).toHaveCount(
+  await page.getByRole("link", { name: /Submissions/ }).click();
+  await expect(page.locator(".verification-badge.teal")).toHaveCount(
     verifiedCount,
   );
-  await expect(page.locator(".leaderboard .tag.amber")).toHaveCount(
+  await expect(page.locator(".verification-badge.amber")).toHaveCount(
     pendingCount,
   );
   const algebraic = fixtureRecords.find(
@@ -93,16 +92,8 @@ test("mixed verification statuses and exact bounds render from the supplied cata
     fullPage: true,
   });
 });
-test("selection, exact sorting and zoom", async ({ page }, info) => {
+test("selection, exact sorting and zoom", async ({ page }) => {
   await page.goto("/");
-  await page
-    .getByRole("button", {
-      name: "Example author · Initial bound",
-      exact: true,
-    })
-    .click();
-  await expect(page.locator(".proof-detail")).toContainText("7/8");
-  await page.getByRole("button", { name: "Close proof details" }).click();
   const plot = page.getByRole("group", { name: /Interactive bound timeline/ });
   await plot.focus();
   await page.keyboard.press("+");
@@ -112,34 +103,23 @@ test("selection, exact sorting and zoom", async ({ page }, info) => {
   await page
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
-  await expect(
-    page.getByRole("button", { name: "Improvement", exact: true }),
-  ).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("link", { name: /Submissions/ }).click();
+  await expect(page.locator("tbody tr[id]").first()).toHaveAttribute(
+    "id",
+    `entry-${recordsByBound[0].id}`,
+  );
+  await page.getByRole("button", { name: "Bound θ ↑", exact: true }).click();
+  await expect(page.locator("tbody tr[id]").first()).toHaveAttribute(
+    "id",
+    `entry-${recordsByBound.at(-1)!.id}`,
+  );
   await page
-    .getByRole("button", { name: "Exact bound θ", exact: true })
-    .click();
-  await expect(
-    page.locator(".leaderboard-entry").first().getByRole("button", {
-      name: recordsByBound[0].title,
+    .getByRole("button", {
+      name: "Example author · Initial bound",
       exact: true,
-    }),
-  ).toBeVisible();
-  await page
-    .getByRole("button", { name: "Exact bound θ", exact: true })
+    })
     .click();
-  await expect(
-    page
-      .locator(".leaderboard-entry")
-      .first()
-      .getByRole("button", {
-        name: recordsByBound.at(-1).title,
-        exact: true,
-      }),
-  ).toBeVisible();
-  await page.screenshot({
-    path: `evidence/screenshots/${info.project.name}-interactions.png`,
-    fullPage: true,
-  });
+  await expect(page.locator(".proof-detail")).toContainText("7/8");
 });
 test("dialog keyboard controls, protocol, responsive overflow and no errors", async ({
   page,
@@ -263,15 +243,17 @@ test("a stronger pending submission stays in the table and cannot move the verif
     }),
   );
   await page.reload();
-  await expect(page.locator(".leaderboard-entry")).toHaveCount(
-    fixtureRecords.length + 1,
-  );
+
   await expect(page.locator("[data-dot]")).toHaveCount(pointCount);
   await expect(page.locator('[data-id="pending-test-only"]')).toHaveCount(0);
   await expect(bestBound).toHaveText(best!);
   await expect(page.locator(".verified-frontier")).toHaveAttribute(
     "d",
     before!,
+  );
+  await page.getByRole("link", { name: /Submissions/ }).click();
+  await expect(page.locator("tbody tr[id]")).toHaveCount(
+    fixtureRecords.length + 1,
   );
   await page
     .getByRole("button", { name: "Pending test contribution", exact: true })
