@@ -33,7 +33,7 @@ test("default ranking uses previous chronological submission and shows delta lef
       "entry-regression",
       "entry-baseline",
     ]);
-  await expect(entries.nth(0).locator(".entry-delta")).toContainText("2.5e-1");
+  await expect(entries.nth(0).locator(".entry-delta")).toContainText("Δ 2.5e-1");
   await expect(entries.nth(0).locator(".entry-bound-decimal")).toHaveText(
     "0.75",
   );
@@ -45,7 +45,7 @@ test("default ranking uses previous chronological submission and shows delta lef
   const boundBox = await entries.first().locator(".entry-bound").boundingBox();
   expect(deltaBox!.x + deltaBox!.width).toBeLessThanOrEqual(boundBox!.x);
   await page
-    .getByRole("button", { name: "Improvement Δθ", exact: true })
+    .getByRole("button", { name: "Improvement", exact: true })
     .click();
   await expect
     .poll(ids)
