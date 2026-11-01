@@ -607,6 +607,25 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.entry-bound {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+.entry-bound > span:not(.sr-only) {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.entry-delta {
+  min-width: 0;
+  flex: 1;
+}
 .entry-chevron {
   flex-shrink: 0;
   color: var(--muted);
@@ -616,7 +635,7 @@ select {
 }
 .entry-meta {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) max-content;
+  grid-template-columns: minmax(0, 1fr) max-content;
   align-items: baseline;
   gap: 12px;
   width: 100%;

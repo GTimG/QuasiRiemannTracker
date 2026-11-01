@@ -15,7 +15,7 @@ test("entries expand in place, toggle with the keyboard, and restore focus on cl
   const record = data.records[0];
   const toggle = page.getByRole("button", { name: record.title, exact: true });
   const entry = page.locator(`#entry-${record.id}`);
-  await expect(entry.locator(".entry-decimal")).toHaveText(
+  await expect(entry.locator(".entry-bound-decimal")).toHaveText(
     decimal(record.theta, 14),
   );
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
