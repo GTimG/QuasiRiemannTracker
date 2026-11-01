@@ -15,7 +15,7 @@ test("verified proof badges open solution sources and contribution dates retain 
     page.getByRole("button", { name: "Date", exact: true }),
   ).toBeVisible();
   for (const record of catalogue.records) {
-    const row = page.locator("tbody tr[id]").filter({
+    const row = page.locator(".contribution-list .leaderboard-entry").filter({
       has: page.getByRole("button", { name: record.title, exact: true }),
     });
     const badge = row.locator(".verification-badge");

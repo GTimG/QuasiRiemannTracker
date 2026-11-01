@@ -29,7 +29,7 @@ test("historical catalogue entries display their status and year precision", asy
     }),
   );
   await page.goto("/?tab=submissions");
-  const row = page.locator("tbody tr[id]");
+  const row = page.locator(".contribution-list .leaderboard-entry");
   await expect(row.locator(".tag.historical")).toHaveText(
     "Historical baseline",
   );
