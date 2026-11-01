@@ -104,12 +104,12 @@ test("selection, exact sorting and zoom", async ({ page }) => {
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
   await page.getByRole("link", { name: /Submissions/ }).click();
-  await expect(page.locator("tbody tr[id]").first()).toHaveAttribute(
+  await expect(page.locator(".leaderboard-entry").first()).toHaveAttribute(
     "id",
     `entry-${recordsByBound[0].id}`,
   );
-  await page.getByRole("button", { name: "Bound θ ↑", exact: true }).click();
-  await expect(page.locator("tbody tr[id]").first()).toHaveAttribute(
+  await page.getByRole("button", { name: "Exact bound θ", exact: true }).click();
+  await expect(page.locator(".leaderboard-entry").first()).toHaveAttribute(
     "id",
     `entry-${recordsByBound.at(-1)!.id}`,
   );
@@ -252,7 +252,7 @@ test("a stronger pending submission stays in the table and cannot move the verif
     before!,
   );
   await page.getByRole("link", { name: /Submissions/ }).click();
-  await expect(page.locator("tbody tr[id]")).toHaveCount(
+  await expect(page.locator(".leaderboard-entry")).toHaveCount(
     fixtureRecords.length + 1,
   );
   await page

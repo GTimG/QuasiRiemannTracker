@@ -263,7 +263,7 @@ export default function App() {
                       onSelect={(r) => revealRecord(r.id)}
                     />
                   )}{" "}
-                  {tab === "Timeline" ? (
+                  {tab === "Timeline" || tab === "Contributors" ? (
                     <Contributors
                       records={all}
                       onSelect={revealRecord}

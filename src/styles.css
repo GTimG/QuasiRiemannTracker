@@ -635,7 +635,7 @@ select {
 }
 .entry-meta {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) max-content;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
   align-items: baseline;
   gap: 12px;
   width: 100%;
@@ -1150,56 +1150,95 @@ dialog .protocol-grid h2 {
   background: #edf1f6;
 }
 
-.contributor-board {
-  padding: 1rem;
-}
+/* Contributor entries share the submissions list's spacing and separators. */
 .contributor-board h2 {
   margin-top: 0;
 }
-.contributor-scroll {
-  overflow-x: auto;
-}
-.contributor-board table {
+.contributor-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
   width: 100%;
-  border-collapse: collapse;
-  text-align: left;
+  overflow-wrap: anywhere;
 }
-.contributor-board th,
-.contributor-board td {
-  padding: 0.7rem 0.5rem;
-  border-bottom: 1px solid var(--border, #ddd);
+.contributor-name .entry-chevron {
+  margin-left: auto;
 }
-.contributor-board td {
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.contributor-bound {
-  color: inherit;
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
-  font: inherit;
-}
-.contributor-board td[colspan] {
-  white-space: normal;
-  max-width: 75vw;
-}
-.contributor-submission th {
-  font-weight: normal;
-}
-.contributor-submission td,
-.contributor-submission th {
-  color: var(--muted);
+.contributor-scores {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  font-family: var(--mono);
   font-size: 0.875rem;
 }
-.contributor-board thead button {
-  border: 0;
-  background: none;
+.contributor-improvement,
+.contributor-best {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.contributor-best {
+  text-align: right;
+}
+.contributor-caption {
+  color: var(--muted);
+  font: 0.75rem/1.5 var(--sans, sans-serif);
+}
+.contributor-submissions {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--line);
+}
+.contributor-submission {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.contributor-submission-title {
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+.contributor-submission a {
   color: inherit;
-  font: inherit;
-  font-weight: 600;
-  padding: 0;
-  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .contributor-scores {
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+  .contributor-improvement .entry-decimal {
+    font-size: 1rem;
+  }
+  .contributor-name {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .view-nav {
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  .view-nav a {
+    flex-shrink: 0;
+  }
+  .contribution-list:not(.contributor-board) .entry-meta {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .contribution-list:not(.contributor-board) .entry-exact {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .contribution-list:not(.contributor-board) .entry-meta time {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }

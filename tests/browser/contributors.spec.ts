@@ -23,10 +23,14 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await routeCatalogue(page, { schema_version: 1, records: records.reverse() });
   await page.goto("/");
   const board = page.getByRole("region", { name: "Contributor leaderboard" });
-  await expect(board.locator("tbody tr")).toHaveCount(3);
-  await expect(board.locator("tbody tr").first()).toContainText("Alice");
-  await expect(board.locator("tbody tr").first()).toContainText("3.5e-1");
-  await expect(board.locator("tbody tr").first().getByRole("link")).toHaveText(
+  await expect(board.locator(".contributor-summary")).toHaveCount(3);
+  await expect(board.locator(".contributor-summary").first()).toContainText(
+    "Alice",
+  );
+  await expect(board.locator(".contributor-summary").first()).toContainText(
+    "3.5e-1",
+  );
+  await expect(board.locator(".contributor-summary").first()).toContainText(
     "0.6",
   );
   await board.getByRole("button", { name: /Alice/ }).click();
@@ -41,7 +45,7 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
     .click();
   await expect(page).toHaveURL(/tab=submissions/);
   const table = page.getByRole("region", { name: "Submissions" });
-  await expect(table.locator("tbody tr[id]").first()).toHaveAttribute(
+  await expect(table.locator(".leaderboard-entry").first()).toHaveAttribute(
     "id",
     "entry-c",
   );
@@ -52,7 +56,12 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
   await page.getByRole("link", { name: /Timeline/ }).click();
   await expect(board).toBeVisible();
   await page.getByRole("link", { name: /Submissions/ }).click();
-  await expect(table.locator("thead")).toContainText("Bound θ");
+  await expect(
+    table.getByRole("button", { name: "Exact bound θ" }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: "Contributors", exact: true }).click();
+  await expect(board).toBeVisible();
+  await expect(board).not.toContainText("Each coauthor");
   await expect(
     page
       .getByRole("navigation", { name: "Research views" })

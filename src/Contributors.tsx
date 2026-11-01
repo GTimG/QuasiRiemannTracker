@@ -1,4 +1,5 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { contributorLeaderboard } from "../core/contributors.mjs";
 import { decimal, fraction, scientific } from "../core/rational.mjs";
 import { boundLabel, formatContributionDate } from "../core/catalogue.mjs";
@@ -36,87 +37,88 @@ export default function Contributors({
   );
   return (
     <section
-      className="panel contributor-board"
+      className="panel contribution-list contributor-board"
       aria-label="Contributor leaderboard"
     >
       <h2>Contributor leaderboard</h2>
-      <p className="muted">
-        Ranked by the sum of submission improvements. Each coauthor receives the
-        full delta; the first submission contributes zero.
-      </p>
-      <div className="contributor-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Rank</th>
-              <th scope="col">Contributor</th>
-              <th scope="col">Total improvement</th>
-              <th scope="col">Submissions</th>
-              <th scope="col">Best bound θ</th>
-            </tr>
-          </thead>
-          <tbody>
-            {people.map((person, index) => (
-              <Fragment key={person.name}>
-                <tr className="contributor-summary">
-                  <td>{index + 1}</td>
-                  <th scope="row">
-                    <button
-                      className="contributor-bound"
-                      aria-expanded={expanded === person.name}
-                      onClick={() =>
-                        setExpanded(
-                          expanded === person.name ? null : person.name,
-                        )
-                      }
-                    >
-                      {person.name} {expanded === person.name ? "▴" : "▾"}
-                    </button>
-                  </th>
-                  <td title={fraction(person.improvement)}>
+      <ol className="leaderboard" aria-label="Contributors">
+        {people.map((person, index) => (
+          <li className="leaderboard-entry" key={person.name}>
+            <button
+              className="entry-toggle contributor-summary"
+              aria-expanded={expanded === person.name}
+              onClick={() =>
+                setExpanded(expanded === person.name ? null : person.name)
+              }
+            >
+              <span className="contributor-name">
+                <span className="muted">{index + 1}.</span> {person.name}
+                <ChevronDown
+                  size={16}
+                  className="entry-chevron"
+                  aria-hidden="true"
+                />
+              </span>
+              <span className="contributor-scores">
+                <span
+                  className="contributor-improvement"
+                  title={fraction(person.improvement)}
+                >
+                  <span className="entry-decimal">
                     Δ {person.approximate ? "≈ " : ""}
                     {scientific(person.improvement)}
-                  </td>
-                  <td>{person.count}</td>
-                  <td title={boundLabel(person.best)}>
-                    {submissionLink(
-                      person.best,
-                      decimal(person.best.theta, 14),
-                    )}
-                  </td>
-                </tr>
-                {expanded === person.name &&
-                  person.submissions.map(
-                    ({
-                      record,
-                      delta,
-                      approximate,
-                    }: {
-                      record: Contribution;
-                      delta: Rational;
-                      approximate: boolean;
-                    }) => (
-                      <tr className="contributor-submission" key={record.id}>
-                        <td aria-hidden="true">↳</td>
-                        <th scope="row">
-                          {submissionLink(record, record.title)}
-                        </th>
-                        <td title={fraction(delta)}>
+                  </span>
+                  <span className="contributor-caption">Total improvement</span>
+                </span>
+                <span
+                  className="contributor-best"
+                  title={boundLabel(person.best)}
+                >
+                  <span>{decimal(person.best.theta, 14)}</span>
+                  <span className="contributor-caption">Best bound θ</span>
+                </span>
+              </span>
+              <span className="entry-meta">
+                {person.count}{" "}
+                {person.count === 1 ? "submission" : "submissions"}
+              </span>
+            </button>
+            {expanded === person.name && (
+              <ol className="contributor-submissions">
+                {person.submissions.map(
+                  ({
+                    record,
+                    delta,
+                    approximate,
+                  }: {
+                    record: Contribution;
+                    delta: Rational;
+                    approximate: boolean;
+                  }) => (
+                    <li className="contributor-submission" key={record.id}>
+                      <span className="contributor-submission-title">
+                        {submissionLink(record, record.title)}
+                      </span>
+                      <span className="contributor-scores">
+                        <span title={fraction(delta)}>
                           Δ {approximate ? "≈ " : ""}
                           {scientific(delta)}
-                        </td>
-                        <td>{formatContributionDate(record)}</td>
-                        <td title={boundLabel(record)}>
+                        </span>
+                        <span title={boundLabel(record)}>
                           {submissionLink(record, decimal(record.theta, 14))}
-                        </td>
-                      </tr>
-                    ),
-                  )}
-              </Fragment>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                        </span>
+                      </span>
+                      <time className="contributor-caption">
+                        {formatContributionDate(record)}
+                      </time>
+                    </li>
+                  ),
+                )}
+              </ol>
+            )}
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

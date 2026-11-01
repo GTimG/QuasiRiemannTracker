@@ -2,6 +2,7 @@ import { useSyncExternalStore } from "react";
 
 export const tabs = [
   "Timeline",
+  "Contributors",
   "Submissions",
   "Milestones",
   "Protocol",
