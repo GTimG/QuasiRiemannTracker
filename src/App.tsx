@@ -407,8 +407,9 @@ function Protocol() {
           .
         </p>
         <p>
-          GitHub Actions checks each submitted proof. Each accepted result links
-          to a verification record and its exact source commit.
+          GitHub Actions or a local maintainer run checks a proof before it is
+          merged. Accepted results link to their committed source and any
+          recorded verification report.
         </p>
         <p>
           The permitted axioms are propext, Classical.choice and Quot.sound.
@@ -429,12 +430,12 @@ function Protocol() {
         <h2>Dates</h2>
         <p>
           The timeline orders verified PR contributions by submission time, not
-          by when a checker finishes. Older results without a recorded PR date
-          retain their documented publication, announcement or check date, as
+          by when a checker finishes. Historical imports retain their original
+          source date and an additional Historical tag. Entries without a
+          recorded PR date use their source directory or documented date, as
           labelled in the table. Dates are in UTC; hover for the full timestamp.
-          The first successful verification and merge dates appear separately in
-          the result details. Reruns do not reset the first verification date
-          for the same proof revision. Submission time is not a discovery date.
+          Recorded verification dates appear separately in the result details.
+          Submission time is not a discovery date.
         </p>
       </article>
     </section>

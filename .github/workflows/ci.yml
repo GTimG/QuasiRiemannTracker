@@ -18,16 +18,14 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
-          fetch-depth: 0
+          fetch-depth: 1
+      - name: Fetch publication branch tip
+        continue-on-error: true
+        run: git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/origin/admission-records
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.17.0
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Generate catalogue from proof metadata and admitted merges
-        run: node scripts/reconcile-admissions.mjs ${{ github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && '--online' || '' }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          QRH_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       - name: Configure GitHub Pages
         id: pages
         if: github.event_name != 'pull_request'
@@ -53,7 +51,7 @@ jobs:
           PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: "60000"
         run: npx playwright install --only-shell chromium
       - run: npm run test:browser
-      - name: Test production paths and verification records
+      - name: Test production paths and local provenance
         run: node scripts/test-deployment.mjs
         env:
           QRH_BASE_PATH: ${{ steps.pages.outputs.base_path }}/

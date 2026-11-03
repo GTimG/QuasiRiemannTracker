@@ -277,3 +277,156 @@ test("historical imported results keep their original timeline and normal verifi
     /cannot be after/,
   );
 });
+
+test("accepted checkout sources join the frontier without a fabricated verification date", () => {
+  const accepted = record({
+    id: "accepted-source",
+    status: "accepted",
+    theta: { numerator: "4", denominator: "5" },
+    timeline_at: "2030-10-08T00:00:00Z",
+    date_label: "Source created",
+    first_verified_at: "",
+    submitted_at: "",
+    certificate_url: undefined,
+    pr: 111,
+  });
+  const data = validateCatalogue({
+    schema_version: 1,
+    records: [record(), accepted],
+  });
+  assert.equal(statusLabel(accepted), "Verified in our framework");
+  assert.equal(verifiedHere(accepted), true);
+  assert.equal(accepted.first_verified_at, "");
+  assert.deepEqual(withSubmissionTimeline(accepted), accepted);
+  const timeline = recordHistory(
+    timelineRecords(data.records.filter(verifiedHere)),
+  );
+  assert.deepEqual(
+    timeline.map((result) => result.is_record),
+    [true, true],
+  );
+  assert.deepEqual(frontierHistory(timeline, []).at(-1).theta, accepted.theta);
+});
+
+test("accepted historical sources require an actual recorded PR date", () => {
+  const accepted = record({
+    status: "accepted",
+    historical: true,
+    timeline_at: "2030-10-08T00:00:00Z",
+    date_label: "Historical source created",
+    first_verified_at: "",
+    submitted_at: "2030-10-10T16:00:00Z",
+    pr: 111,
+  });
+  const check = (changes = {}) =>
+    validateCatalogue({
+      schema_version: 1,
+      records: [{ ...accepted, ...changes }],
+    });
+  assert.doesNotThrow(() => check());
+  assert.throws(
+    () => check({ timeline_at: "2030-10-11T00:00:00Z" }),
+    /cannot be after/,
+  );
+  assert.throws(
+    () => check({ timeline_at: "2030-10-10T00:00:00Z" }),
+    /historical catalogue date/,
+  );
+  assert.throws(
+    () => check({ submitted_at: "" }),
+    /Missing valid PR submission date/,
+  );
+});
+
+test("accepted attributions allow same-day predecessors without inventing a clock order", () => {
+  const parent = record({
+    id: "same-day-parent",
+    timeline_at: "2030-10-08T18:00:00Z",
+  });
+  const child = record({
+    id: "same-day-child",
+    timeline_at: "2030-10-08T00:00:00Z",
+    builds_on: [parent.id],
+  });
+  for (const accepted of [parent, child]) {
+    const entries = [parent, child].map((entry) =>
+      entry === accepted
+        ? {
+            ...entry,
+            status: "accepted",
+            first_verified_at: "",
+            submitted_at: "",
+          }
+        : entry,
+    );
+    assert.doesNotThrow(() =>
+      validateCatalogue({ schema_version: 1, records: entries }),
+    );
+    const withLaterParent = entries.map((entry) =>
+      entry.id === parent.id
+        ? {
+            ...entry,
+            timeline_at: "2030-10-09T00:00:00Z",
+          }
+        : entry,
+    );
+    assert.throws(
+      () => validateCatalogue({ schema_version: 1, records: withLaterParent }),
+      /Unknown or later/,
+    );
+  }
+  for (const clock of ["2030-10-08T00:00:00Z", "2030-10-08T18:00:00Z"])
+    assert.throws(
+      () =>
+        validateCatalogue({
+          schema_version: 1,
+          records: [{ ...parent, timeline_at: clock }, child],
+        }),
+      /Unknown or later/,
+    );
+  assert.doesNotThrow(() =>
+    validateCatalogue({
+      schema_version: 1,
+      records: [
+        { ...parent, timeline_at: "2030-10-09T00:30:00+02:00" },
+        {
+          ...child,
+          status: "accepted",
+          first_verified_at: "",
+          submitted_at: "",
+        },
+      ],
+    }),
+  );
+});
+
+test("accepted same-day attribution graphs reject missing parents and cycles", () => {
+  const accepted = (id, builds_on) =>
+    record({
+      id,
+      status: "accepted",
+      timeline_at: "2030-10-08T00:00:00Z",
+      first_verified_at: "",
+      submitted_at: "",
+      builds_on,
+    });
+  for (const entries of [
+    [accepted("self-cycle", ["self-cycle"])],
+    [
+      accepted("cycle-one", ["cycle-two"]),
+      accepted("cycle-two", ["cycle-one"]),
+    ],
+  ])
+    assert.throws(
+      () => validateCatalogue({ schema_version: 1, records: entries }),
+      /Cyclic catalogue predecessors/,
+    );
+  assert.throws(
+    () =>
+      validateCatalogue({
+        schema_version: 1,
+        records: [accepted("missing-parent", ["not-present"])],
+      }),
+    /Unknown or later/,
+  );
+});

@@ -13,8 +13,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
   readSubmissions,
-  reconcileAdmissions,
-} from "../scripts/reconcile-admissions.mjs";
+  buildSubmissionCatalogue,
+} from "../scripts/submission-catalogue.mjs";
 import { exactBound } from "../core/exact-bound.mjs";
 import { standardChallenge } from "../core/standard-challenge.mjs";
 import {
@@ -37,11 +37,11 @@ function fixture(t) {
   return { root, dir };
 }
 for (const file of ["metadata.json", "src/Candidate/Main.lean"]) {
-  test(`deployment rejects a submission missing ${file}, including offline builds`, async (t) => {
+  test(`deployment rejects a submission missing ${file}, including offline builds`, (t) => {
     const { root, dir } = fixture(t);
     rmSync(join(dir, file));
-    await assert.rejects(
-      reconcileAdmissions({ root }),
+    assert.throws(
+      () => buildSubmissionCatalogue({ root }),
       /Missing (metadata.json|src\/Candidate\/Main.lean)/,
     );
   });
@@ -58,7 +58,7 @@ test("deployment rejects symlinked supporting modules and submission directories
   assert.throws(() => readSubmissions(root), /regular files/);
   rmSync(join(dir, "src/Candidate/Helper.lean"));
   symlinkSync(dir, join(root, "submissions/another-proof"));
-  assert.throws(() => readSubmissions(root), /Invalid submission directory/);
+  assert.throws(() => readSubmissions(root), /regular directories/);
 });
 test("every retained revision has a dated directory, colocated metadata and complete standard source layout", () => {
   const submissions = readSubmissions(process.cwd());

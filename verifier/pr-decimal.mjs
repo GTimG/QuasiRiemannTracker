@@ -1,4 +1,5 @@
 import { cmp, rational } from "../core/rational.mjs";
+import { verifiedHere } from "../core/catalogue.mjs";
 
 export function decimalPrecision(value) {
   if (
@@ -74,12 +75,10 @@ export function validateDecimalApproximation({
 
   if (!Array.isArray(catalogue?.records))
     throw Error("A trusted catalogue is required for decimal comparison");
-  const verified = catalogue.records.filter(
-    (record) => record.status === "framework-verified",
-  );
+  const verified = catalogue.records.filter(verifiedHere);
   if (!verified.length)
     throw Error(
-      "Decimal comparison requires a previously verified catalogue bound",
+      "Decimal comparison requires a previously accepted or verified catalogue bound",
     );
   const previous = verified.reduce((best, record) => {
     checkedRational(record.theta);

@@ -12,5 +12,5 @@ playwright-report/
 /catalogue/results.json
 /public/catalogue.json
 
-# Builds generate public verification records from metadata and admissions.
+# Builds generate public verification records from local provenance.
 /public/certificates/*.json

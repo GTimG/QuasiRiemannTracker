@@ -105,3 +105,20 @@ test("empty and single-result extents retain finite, nonzero ranges", () => {
     }
   }
 });
+
+test("accepted checkout sources set the plotted frontier without verification timestamps", () => {
+  const accepted = {
+    ...record("accepted", "2026-10-11", "4", "5", "accepted"),
+    first_verified_at: "",
+  };
+  const extent = chartExtent(
+    [first, improved, accepted],
+    [],
+    false,
+    [0, 100],
+    Date.parse(accepted.timeline_at),
+  );
+  assert.deepEqual(extent.low, accepted.theta);
+  assert.deepEqual(extent.high, first.theta);
+  assert.ok(extent.end > Date.parse(accepted.timeline_at));
+});
