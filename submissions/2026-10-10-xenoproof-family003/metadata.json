@@ -36,7 +36,5 @@
       "url": "https://api.github.com/repos/TheRealDubb/family-003-extension-xenoproof"
     }
   ],
-  "agent_traces": [],
-  "historical": true,
-  "historical_date": "2026-10-10"
+  "agent_traces": []
 }
