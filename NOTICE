@@ -5,28 +5,6 @@ NanoDa: ammkrn/nanoda_lib, Apache-2.0. Worker fetches pinned source with origina
 Functional inspiration only: Paureel/beyond-n-log-n d8e39034757365b948c8d7e0e18d859a26a98227. No license file found at that revision; no source or assets reused.
 PalomarSubmission: Copyright (c) 2026 Kim Morrison, MIT License. Local proof-checking helpers are imported from pinned commit d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44. License retained in verifier/PALOMAR-LICENSE. These independent checks do not imply Palomar registration or endorsement.
 
-xenoproof-family003 (historical submission, pending admission):
-Troy Winarski (TheRealDubb), TheRealDubb/family-003-extension-xenoproof, commit
-b6c98187528e036b8c60414a6961ef999caf31fb, supplies 189 new proof modules
-under family003-extension/submission/lean/OAI/BelowSevenEighthsTight/.
-The imported modules retain their original declaration namespaces and proof
-terms; only module import paths are mechanically relocated under
-Submissions.xenoproof_family003 and Submissions.openai_baseline. The
-Candidate.bound wrapper is new tracker integration code.
-
-The pinned source repository does not declare a license for its added code.
-This notice does not assign Apache-2.0 to those additions or represent that
-their redistribution terms have been resolved. Its reused OpenAI/math and
-Mathlib components retain their upstream licenses and attribution. The source
-package identifies OpenAI base adc7f1241b42e322a6451854ab7e4b4c146bf78a;
-the tracker adaptation uses its existing fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
-baseline dependency. Full verification of this adaptation is pending.
-
-The author's receipt reports native Windows statement comparison, axiom audit
-and Lean-kernel replay. It explicitly does not cover the Linux production
-sandbox or a second independent kernel. No tracker admission receipt is
-asserted by the source import.
-
 single-prime-29-33-20261010:
 # Source attribution and publication scope
 

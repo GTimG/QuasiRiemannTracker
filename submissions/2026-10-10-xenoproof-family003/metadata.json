@@ -1,0 +1,40 @@
+{
+  "title": "Historical Family 003 retuning to 0.8749570194201",
+  "authors": [
+    {
+      "name": "Troy Winarski (TheRealDubb)",
+      "url": "https://github.com/TheRealDubb"
+    }
+  ],
+  "description": "Historical contribution from TheRealDubb/family-003-extension-xenoproof, pinned at b6c98187528e036b8c60414a6961ef999caf31fb. The proof retunes the OpenAI Family 003 geometry, extends its moment and probe estimates, and concludes nonvanishing for every Dirichlet character to the right of 8749570194201/10000000000000, excluding the principal pole. Its 189 proof modules are imported with mechanical module-path rewrites; declarations and proof terms retain their original namespaces. The authors report native Windows compilation, statement comparison, axiom audit and a fresh Lean-kernel replay. Their receipt expressly does not exercise the Linux production sandbox or an independent kernel. Tracker admission and full replay of this adapted submission are pending. The pinned repository has no declared license for its added code; no Apache license is asserted for that code. The reused OpenAI/math and Mathlib developments retain their upstream licenses and attribution. The repository describes AI-assisted research and formal reconstruction. The original source repository was created at 2026-10-10T03:07:46Z (GitHub repository API created_at); the submission directory uses that historical date rather than the date of this new tracker PR. Repository creation is not asserted to be the discovery or verification date.",
+  "license": "No declared license for TheRealDubb added code at the pinned revision; reused OpenAI/math and Mathlib retain their upstream licenses.",
+  "builds_on": [
+    "openai-baseline"
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "Pinned original source and research archive",
+      "url": "https://github.com/TheRealDubb/family-003-extension-xenoproof/tree/b6c98187528e036b8c60414a6961ef999caf31fb"
+    },
+    {
+      "label": "Original all-Dirichlet public endpoint",
+      "url": "https://github.com/TheRealDubb/family-003-extension-xenoproof/blob/b6c98187528e036b8c60414a6961ef999caf31fb/family003-extension/submission/lean/OAI/BelowSevenEighthsTight/AssemblyExtension/PublicBoundary.lean"
+    },
+    {
+      "label": "Author-side Windows verification receipt and scope",
+      "url": "https://github.com/TheRealDubb/family-003-extension-xenoproof/blob/b6c98187528e036b8c60414a6961ef999caf31fb/family003-extension/CLEAN_VERIFICATION_RECEIPT.json"
+    },
+    {
+      "label": "Original reproduction instructions and OpenAI base pin",
+      "url": "https://github.com/TheRealDubb/family-003-extension-xenoproof/blob/b6c98187528e036b8c60414a6961ef999caf31fb/family003-extension/REPRO.md"
+    },
+    {
+      "label": "Original repository creation timestamp (GitHub API created_at: 2026-10-10T03:07:46Z)",
+      "url": "https://api.github.com/repos/TheRealDubb/family-003-extension-xenoproof"
+    }
+  ],
+  "agent_traces": []
+}
