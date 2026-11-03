@@ -32,5 +32,7 @@
       "url": "https://api.github.com/repos/LW56e2/quasi-riemann-improved"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "historical": true,
+  "historical_date": "2026-10-08"
 }
