@@ -1,0 +1,78 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/HilbertSymbols/GlobalHilbertPairingFiniteSupport.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.HilbertSymbols.GlobalHilbertPairingProperties
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Theorems.HilbertSymbols.HilbertProductFormula
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Finite support of every local Hilbert-pairing family
+
+The norm-residue criterion determines exactly where a local symbol equals
+one, even though it does not determine the symbol's other values.  Hence the
+finite support of one constructed family transfers to every family satisfying
+the local Hilbert-pairing laws.  No product-formula assumption is made about
+the family being studied.
+-/
+
+open scoped NumberField
+open NumberField IsDedekindDomain
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u
+
+/-- The local norm-residue law alone forces finite support of the finite-place
+values on any fixed pair of nonzero global elements. -/
+theorem globalHilbertPairing_hasFiniteSupport_of_isLocallyHilbert
+    (F : Type u) [Field F] [NumberField F]
+    (n : ℕ+) (hmu : (primitiveRoots (n : ℕ) F).Nonempty)
+    (B : GlobalHilbertPairingFamily F n)
+    (hB : GlobalHilbertPairingFamily.IsLocallyHilbert F B) :
+    GlobalHilbertPairingFamily.HasFiniteSupport F B hmu := by
+  obtain ⟨C, hC, hCfinite, _⟩ :=
+    exists_globalHilbertPairingFamily_productFormula F n hmu
+  intro a b
+  apply (hCfinite a b).of_eq_one_iff
+  intro v
+  let : NeZero (n : ℕ) := ⟨n.ne_zero⟩
+  let e : rootsOfUnity (n : ℕ) F ≃* rootsOfUnity (n : ℕ) (v.adicCompletion F) :=
+    rootsOfUnityEquivOfPrimitiveRoots
+      (algebraMap F (v.adicCompletion F)).injective hmu
+  let av : (v.adicCompletion F)ˣ :=
+    Units.map (algebraMap F (v.adicCompletion F)).toMonoidHom a
+  let bv : (v.adicCompletion F)ˣ :=
+    Units.map (algebraMap F (v.adicCompletion F)).toMonoidHom b
+  change e.symm ((C v).symbol av bv) = 1 ↔
+    e.symm ((B v).symbol av bv) = 1
+  simp only [MulEquiv.map_eq_one_iff]
+  exact ((hC v).2.2.2 av bv).trans ((hB v).2.2.2 av bv).symm
+
+end ClassFieldTheory
+
+end

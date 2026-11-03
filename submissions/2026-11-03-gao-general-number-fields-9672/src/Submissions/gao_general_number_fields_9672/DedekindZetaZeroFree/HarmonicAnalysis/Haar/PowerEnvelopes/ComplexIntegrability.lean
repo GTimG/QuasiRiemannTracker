@@ -1,0 +1,45 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/HarmonicAnalysis/Haar/PowerEnvelopes/ComplexIntegrability.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.HarmonicAnalysis.Haar.PowerEnvelopes.Definitions
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.HarmonicAnalysis.Haar.ComplexUnits.MinimumPowerIntegrability
+
+@[expose] public section
+
+namespace DedekindZetaZeroFree.ThetaRawSheetEnvelope.WeightedWhittakerSheets
+noncomputable section
+open MeasureTheory NumberField
+set_option autoImplicit false
+variable {F : Type} [Field F] [NumberField F]
+
+theorem weighted_archPowerMajorant_integrable (ν : Measure ℂˣ) [ν.IsHaarMeasure]
+    (B s : ℝ) (hs : -(1 / 4 : ℝ) < s) (hBs : s < B) :
+    Integrable (fun z : ℂˣ => ((‖z.val‖ ^ 2) ^ s) *
+      archPowerMajorant B (‖z.val‖ ^ 2)) ν := by
+  have hi := SheetPowerMinIntegrability.complex_units_min_powers_integrable
+    (2 * (s + 1 / 4)) (2 * (s - B)) (by linarith) (by linarith) ν
+  convert hi using 1
+  funext z
+  have hz : 0 < ‖z.val‖ := norm_pos_iff.mpr z.ne_zero
+  have hz2 : 0 < ‖z.val‖ ^ 2 := pow_pos hz 2
+  unfold archPowerMajorant
+  rw [mul_min_of_nonneg _ _ (Real.rpow_nonneg hz2.le _)]
+  change min ((‖z.val‖ ^ 2) ^ s * (‖z.val‖ ^ 2) ^ (1 / 4 : ℝ))
+    ((‖z.val‖ ^ 2) ^ s * (‖z.val‖ ^ 2) ^ (-B)) = _
+  rw [← Real.rpow_add hz2 s (1 / 4 : ℝ), ← Real.rpow_add hz2 s (-B)]
+  rw [← Real.rpow_natCast ‖z.val‖ 2, ← Real.rpow_mul hz.le, ← Real.rpow_mul hz.le]
+  congr 2 <;> ring
+
+end
+end DedekindZetaZeroFree.ThetaRawSheetEnvelope.WeightedWhittakerSheets

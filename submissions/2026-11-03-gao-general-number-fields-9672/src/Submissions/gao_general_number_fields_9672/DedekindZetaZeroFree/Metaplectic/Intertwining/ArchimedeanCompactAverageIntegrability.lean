@@ -1,0 +1,62 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Metaplectic/Intertwining/ArchimedeanCompactAverageIntegrability.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.RepresentationTheory.Smooth.Convolution.GaussChartBumps
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.Metaplectic.Torus.PolarizationSubgroupCharacters
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.HarmonicAnalysis.Haar.CompactConjugationInvariance
+
+@[expose] public section
+
+noncomputable section
+namespace DedekindZetaZeroFree.KPSpatialSmoothing.ArchKernel
+open MeasureTheory Set Topology
+open scoped NumberField Classical Topology Matrix.Norms.Elementwise
+
+theorem pgl_t2 : T2Space PGLComplex.Group := by
+  have hc : IsClosed (Subgroup.center (Matrix.GeneralLinearGroup (Fin 2) ℂ) :
+      Set (Matrix.GeneralLinearGroup (Fin 2) ℂ)) := by
+    have he : (Subgroup.center (Matrix.GeneralLinearGroup (Fin 2) ℂ) :
+        Set (Matrix.GeneralLinearGroup (Fin 2) ℂ)) =
+        ⋂ g : Matrix.GeneralLinearGroup (Fin 2) ℂ, {x | x * g = g * x} := by
+      ext x
+      simp [Subgroup.mem_center_iff]
+      exact ⟨fun h g => (h g).symm, fun h g => (h g).symm⟩
+    rw [he]
+    exact isClosed_iInter fun g => isClosed_eq (continuous_mul_const g) (continuous_const_mul g)
+  letI : IsClosed (Subgroup.center (Matrix.GeneralLinearGroup (Fin 2) ℂ) :
+      Set (Matrix.GeneralLinearGroup (Fin 2) ℂ)) := hc
+  change T2Space (Matrix.GeneralLinearGroup (Fin 2) ℂ ⧸ Subgroup.center _)
+  infer_instance
+
+theorem pgl_locallyCompact : LocallyCompactSpace PGLComplex.Group := by
+  letI : LocallyCompactSpace (Matrix (Fin 2) (Fin 2) ℂ) := by
+    change LocallyCompactSpace (Fin 2 → Fin 2 → ℂ)
+    infer_instance
+  change LocallyCompactSpace (Matrix.GeneralLinearGroup (Fin 2) ℂ ⧸ Subgroup.center _)
+  infer_instance
+
+theorem pgl_secondCountable : SecondCountableTopology PGLComplex.Group := by
+  letI : SecondCountableTopology (Matrix (Fin 2) (Fin 2) ℂ) := by
+    change SecondCountableTopology (Fin 2 → Fin 2 → ℂ)
+    infer_instance
+  letI : SecondCountableTopology (Matrix (Fin 2) (Fin 2) ℂ)ᵐᵒᵖ :=
+    MulOpposite.opHomeomorph.symm.secondCountableTopology
+  letI : SecondCountableTopology (Matrix.GeneralLinearGroup (Fin 2) ℂ) :=
+    Units.isEmbedding_embedProduct.secondCountableTopology
+  change SecondCountableTopology (Matrix.GeneralLinearGroup (Fin 2) ℂ ⧸ Subgroup.center _)
+  infer_instance
+
+end DedekindZetaZeroFree.KPSpatialSmoothing.ArchKernel
+
+end

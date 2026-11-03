@@ -1,0 +1,95 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/LocalClassFieldTheory/Finite/Existence/ShrinkLocalClassification.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.MathlibFieldClassification
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkChosenFiniteAbelianNorms
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkOpenSubgroups
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Finite abelian local classification in arbitrary universes
+
+The concrete classification for a small local field transfers to an arbitrary
+nonarchimedean local field. The transfer respects the actual field-norm subgroup.
+-/
+
+noncomputable section
+
+namespace LocalFieldTheory
+
+universe u
+
+variable (K : Type u) [Field K] [ValuativeRel K] [TopologicalSpace K]
+  [IsNonarchimedeanLocalField K]
+
+/-- The finite abelian classification after moving through the small
+representative of `K`. -/
+def shrinkFiniteAbelianFieldNormSubgroupOrderIso :
+    ClassFieldTheory.FiniteAbelianLocalExtension K ≃o
+      (ClassFieldTheory.OpenFiniteIndexSubgroup K)ᵒᵈ := by
+  letI : Small.{0} K := nonarchimedeanLocalField_small K
+  letI : ValuativeRel (Shrink.{0} K) := shrinkLocalFieldValuativeRel K
+  letI : IsNonarchimedeanLocalField (Shrink.{0} K) :=
+    shrinkLocalField_isNonarchimedeanLocalField K
+  exact (shrinkChosenFiniteAbelianOrderIso K).trans
+    ((LocalClassFieldTheory.finiteAbelianFieldNormSubgroupOrderIso (Shrink.{0} K)).trans
+      (shrinkOpenFiniteIndexOrderIso K).dual)
+
+/-- The transported order equivalence sends a finite abelian field to its
+actual field-norm subgroup. -/
+theorem shrinkFiniteAbelianFieldNormSubgroupOrderIso_apply
+    (E : ClassFieldTheory.FiniteAbelianLocalExtension K) :
+    (OrderDual.ofDual (shrinkFiniteAbelianFieldNormSubgroupOrderIso K E)).1 =
+      E.normSubgroup := by
+  let : Small.{0} K := nonarchimedeanLocalField_small K
+  let : ValuativeRel (Shrink.{0} K) := shrinkLocalFieldValuativeRel K
+  let : IsNonarchimedeanLocalField (Shrink.{0} K) :=
+    shrinkLocalField_isNonarchimedeanLocalField K
+  let F := shrinkChosenFiniteAbelianField K E
+  have hsmall := LocalClassFieldTheory.finiteAbelianFieldNormSubgroupOrderIso_apply
+    (Shrink.{0} K) F
+  have hnorm := shrinkChosenFiniteAbelian_normSubgroup_map K E
+  have heq :
+      (Units.mapEquiv (Shrink.ringEquiv K).symm.toMulEquiv).toMonoidHom =
+        (shrinkUnitsContinuousMulEquiv K).symm.toMulEquiv.toMonoidHom := by
+    ext x
+    rfl
+  rw [heq] at hnorm
+  change ((OrderDual.ofDual
+    (LocalClassFieldTheory.finiteAbelianFieldNormSubgroupOrderIso
+      (Shrink.{0} K) F)).1.map
+        (shrinkUnitsContinuousMulEquiv K).toMulEquiv.toMonoidHom) = E.normSubgroup
+  rw [hsmall]
+  change (F.normSubgroup.map
+    (shrinkUnitsContinuousMulEquiv K).toMulEquiv.toMonoidHom) = E.normSubgroup
+  rw [← hnorm]
+  exact (shrinkUnitsContinuousMulEquiv K).toMulEquiv.mapSubgroup.apply_symm_apply
+    E.normSubgroup
+
+end LocalFieldTheory
+
+end

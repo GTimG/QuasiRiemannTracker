@@ -1,0 +1,46 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Adeles/Characters/ComplexTraceCharacter.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.Adeles.Characters.StandardAdditiveCharacter
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.RepresentationTheory.Smooth.ComplexCoverImageAction
+public import Submissions.gao_general_number_fields_9672.DedekindZetaZeroFree.Adeles.Characters.LocalTraceNontriviality
+
+@[expose] public section
+
+noncomputable section
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1200000
+open scoped Classical
+namespace DedekindZetaZeroFree.KPActualReflectionData.StandardLocalSource
+open NumberField KPReferenceChange.StandardComplexImage
+open KPCplxCharacterHaar KPCplxPrincipalSeriesCharts KPCplxActualImage
+open KPInterface.ResidueConstruction.Raw
+variable {F : Type} [Field F] [NumberField F]
+variable (A : SArithmeticData F) (w : InfinitePlace F)
+
+def complexLocalPsi : ContinuousAddChar (KPCompletion F (Sum.inr w)) :=
+  by
+    change ContinuousAddChar (KPHilbert.Completion F (Sum.inl w))
+    exact actualLocalPsi F (PrincipalOfKP.standardCharacter F) (Sum.inl w)
+
+theorem complexLocalPsi_trace (x : KPHilbert.Completion F (Sum.inl w)) :
+    (complexLocalPsi w).toAddChar x = (archTraceCharacter w x : ℂ) := by
+  change (adelicTraceQuotientCharacter F (QuotientAddGroup.mk (Pi.single w x, 0)) : ℂ) = _
+  exact congrArg (fun t : Circle => (t : ℂ))
+    ((adelicTraceQuotientCharacter_mk F (Pi.single w x, 0)).trans
+      (adelicTraceCharacter_arch_single F w x))
+
+end DedekindZetaZeroFree.KPActualReflectionData.StandardLocalSource
+
+end

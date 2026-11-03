@@ -1,0 +1,38 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Theta/Whittaker/NormalizedFiniteTensorProducts.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Mathlib
+
+@[expose] public section
+
+namespace DedekindZetaZeroFree
+
+open scoped Classical
+
+universe u w t r
+
+def localWhittakerSpace (N : Type r) [Group N]
+    (V : Type w) [AddCommGroup V] [Module ℂ V] [TopologicalSpace V]
+    (ρ : Representation ℂ N V) (ψ : N →* ℂ) : Submodule ℂ (V →L[ℂ] ℂ) where
+  carrier := {ℓ | ∀ n x, ℓ (ρ n x) = ψ n * ℓ x}
+  zero_mem' := by simp
+  add_mem' := by
+    intro ℓ m hℓ hm n x
+    simp only [ContinuousLinearMap.add_apply, hℓ n x, hm n x, mul_add]
+  smul_mem' := by
+    intro c ℓ hℓ n x
+    simp only [ContinuousLinearMap.smul_apply, smul_eq_mul, hℓ n x]
+    ring
+
+end DedekindZetaZeroFree

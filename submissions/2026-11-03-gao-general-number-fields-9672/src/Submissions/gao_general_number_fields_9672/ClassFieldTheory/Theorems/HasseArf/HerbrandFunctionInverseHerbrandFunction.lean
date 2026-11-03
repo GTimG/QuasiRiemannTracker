@@ -1,0 +1,85 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/HasseArf/HerbrandFunctionInverseHerbrandFunction.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.HasseArf.HerbrandFunction
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.HasseArf.InverseHerbrandFunction
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.HasseArf
+public import Mathlib.NumberTheory.LocalField.Basic
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-! # The Herbrand function is a right inverse -/
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+open LocalFieldTheory
+open RamificationTheory.LocalField
+open RamificationTheory.HilbertRamification.Higher
+
+/-- The public Herbrand function takes its inverse value back to the given
+upper index. -/
+theorem herbrandFunction_inverseHerbrandFunction
+    (K L : Type) [Field K] [Field L] [Algebra K L]
+    [FiniteDimensional K L] [IsAbelianGalois K L]
+    [ValuativeRel K] [TopologicalSpace K]
+    [IsNonarchimedeanLocalField K]
+    [ValuativeRel L] [TopologicalSpace L]
+    [IsNonarchimedeanLocalField L]
+    [Valuation.HasExtension (ValuativeRel.valuation K) (ValuativeRel.valuation L)]
+    (t : ℝ) :
+    ClassFieldTheory.herbrandFunction K
+      (ValuativeRel.valuation L).valuationSubring
+      (inverseHerbrandFunction K L t) = t := by
+  have hfun :
+      ClassFieldTheory.herbrandFunction K
+          (ValuativeRel.valuation L).valuationSubring =
+        herbrandFunctionOfUniqueExtension
+          (base := (localCompleteDVF K).toDVF)
+          (target := (chosenLocalExtensionCompleteDVF K L).toDVF)
+          (chosenLocalExtensionCompleteDVF_hasUniqueDVFValuationExtension.{0} K L) := by
+    funext s
+    exact HasseArf.canonicalHerbrandFunction_eq_localHerbrandFunction K L s
+  unfold inverseHerbrandFunction
+  rw [hfun]
+  change herbrandFunctionOfUniqueExtension
+    (base := (localCompleteDVF K).toDVF)
+    (target := (chosenLocalExtensionCompleteDVF K L).toDVF)
+    (chosenLocalExtensionCompleteDVF_hasUniqueDVFValuationExtension.{0} K L)
+    (inverseHerbrandFunctionOfUniqueExtension
+      (base := (localCompleteDVF K).toDVF)
+      (target := (chosenLocalExtensionCompleteDVF K L).toDVF)
+      (chosenLocalExtensionCompleteDVF_hasUniqueDVFValuationExtension.{0} K L) t) = t
+  exact herbrandFunctionOfUniqueExtension_psi
+    (base := (localCompleteDVF K).toDVF)
+    (target := (chosenLocalExtensionCompleteDVF K L).toDVF)
+    (chosenLocalExtensionCompleteDVF_hasUniqueDVFValuationExtension.{0} K L) t
+
+end ClassFieldTheory
+
+end

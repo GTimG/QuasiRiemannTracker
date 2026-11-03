@@ -1,0 +1,101 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/HilbertSymbols/FinitePlaceHilbertBadSetFinite.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.HilbertSymbols.FinitePlaceHilbertBadSet
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.KummerTheory.Concrete.SUnitPreparation.FiniteRadicalSupport
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Finiteness of the possible bad finite places
+
+The set is defined by three explicit valuation conditions, independently of
+any choice of local Hilbert symbols or of a larger auxiliary support.
+-/
+
+open scoped NumberField
+open NumberField IsDedekindDomain
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u
+
+/-- Only finitely many places fail to make `a`, `b`, and `n` all units. -/
+theorem finitePlaceHilbertBadSet_finite
+    (F : Type u) [Field F] [NumberField F]
+    (n : ℕ+) (a b : Fˣ) :
+    (finitePlaceHilbertBadSet F n a b).Finite := by
+  classical
+  let hnF : ((n : ℕ) : F) ≠ 0 := by
+    exact_mod_cast n.ne_zero
+  let nUnit : Fˣ := Units.mk0 ((n : ℕ) : F) hnF
+  let T : Finset (HeightOneSpectrum (𝓞 F)) :=
+    (KummerTheory.chosenUnitFiniteSupport (K := F) a ∪
+      KummerTheory.chosenUnitFiniteSupport (K := F) b) ∪
+      KummerTheory.chosenUnitFiniteSupport (K := F) nUnit
+  apply T.finite_toSet.subset
+  intro v hv
+  by_contra hvT
+  have hvaSupport : v ∉ KummerTheory.chosenUnitFiniteSupport (K := F) a := by
+    intro h
+    exact hvT (Finset.mem_union_left _ (Finset.mem_union_left _ h))
+  have hvbSupport : v ∉ KummerTheory.chosenUnitFiniteSupport (K := F) b := by
+    intro h
+    exact hvT (Finset.mem_union_left _ (Finset.mem_union_right _ h))
+  have hvnSupport :
+      v ∉ KummerTheory.chosenUnitFiniteSupport (K := F) nUnit := by
+    intro h
+    exact hvT (Finset.mem_union_right _ h)
+  have hva : v.valuation F (a : F) = 1 :=
+    (mem_SUnitGroup_iff (K := F)
+      (KummerTheory.chosenUnitFiniteSupport (K := F) a) a).mp
+      (KummerTheory.mem_sUnitGroup_chosenUnitFiniteSupport (K := F) a)
+        v hvaSupport
+  have hvb : v.valuation F (b : F) = 1 :=
+    (mem_SUnitGroup_iff (K := F)
+      (KummerTheory.chosenUnitFiniteSupport (K := F) b) b).mp
+      (KummerTheory.mem_sUnitGroup_chosenUnitFiniteSupport (K := F) b)
+        v hvbSupport
+  have hvn : v.valuation F ((n : ℕ) : F) = 1 := by
+    have hnUnitVal : v.valuation F (nUnit : F) = 1 :=
+      (mem_SUnitGroup_iff (K := F)
+        (KummerTheory.chosenUnitFiniteSupport (K := F) nUnit) nUnit).mp
+        (KummerTheory.mem_sUnitGroup_chosenUnitFiniteSupport (K := F) nUnit)
+          v hvnSupport
+    change v.valuation F ((n : ℕ) : F) = 1 at hnUnitVal
+    exact hnUnitVal
+  change v.valuation F (a : F) ≠ 1 ∨
+    v.valuation F (b : F) ≠ 1 ∨
+    v.valuation F ((n : ℕ) : F) ≠ 1 at hv
+  rcases hv with ha | hb | hn
+  · exact ha hva
+  · exact hb hvb
+  · exact hn hvn
+
+end ClassFieldTheory
+
+end

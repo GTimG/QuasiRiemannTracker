@@ -1,0 +1,74 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/LocalClassFieldTheory/ClassFormation/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ArchimedeanHilbert90
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ArchimedeanNormQuotient
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.CohomologyBridge
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.FieldUnitsHerbrand
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.FilteredLiftingSequence
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Hilbert90
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.IntegerUnitsHerbrand
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalBlocks.All
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.All
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Main
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasis
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisCohomology
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisFiniteQuotient
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisGaloisAction
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisGradedLifting
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisInfiniteProduct
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisRecursiveLifting
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.PrincipalUnitGraded
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Valuation
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ValuationHerbrand
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ValueGroupCohomology
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# The local class formation
+
+Public aggregate for the normal-basis, unit-filtration, valuation, and
+cohomology calculations establishing the local class-field axiom.
+-/

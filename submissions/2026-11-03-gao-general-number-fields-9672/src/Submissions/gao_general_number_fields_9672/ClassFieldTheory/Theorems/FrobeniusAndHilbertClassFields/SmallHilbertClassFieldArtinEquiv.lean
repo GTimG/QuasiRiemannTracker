@@ -1,0 +1,94 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/FrobeniusAndHilbertClassFields/SmallHilbertClassFieldArtinEquiv.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.OrdinaryRayClassModulus
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.RayClassGroup
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.RayClassOfFinitePrime
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusAt
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.FrobeniusAndHilbertClassFields.IsSmallHilbertClassField
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.GlobalClassFieldTheory.FiniteAbelianExtension
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.GlobalClassFieldTheory.GlobalClassFields.SmallHilbertClassFieldMathlibArtin
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Artin isomorphism for the small Hilbert class field
+
+The ordinary ideal class group is isomorphic to the Galois group of the
+small Hilbert class field.  The displayed compatibility with arithmetic
+Frobenius fixes the Artin normalization of the isomorphism.
+-/
+
+open scoped NumberField
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+open NumberField IsDedekindDomain
+
+/-- The ordinary class group acts through the Frobenius-normalized Artin
+isomorphism on a small Hilbert class field. -/
+theorem smallHilbertClassField_artinEquiv
+    (K : Type) [Field K] [NumberField K]
+    (E : FiniteAbelianExtension K) (hE : IsSmallHilbertClassField E) :
+    ∃ artin : RayClassGroup (ordinaryRayClassModulus K) ≃*
+        (E ≃ₐ[K] E),
+      ∀ (v : HeightOneSpectrum (𝓞 K))
+        (w : HeightOneSpectrum (𝓞 E)),
+        w.asIdeal.LiesOver v.asIdeal →
+          artin (ordinaryRayClassOfFinitePrime v) =
+            arithmeticFrobeniusAt (K := K) w := by
+  let g :=
+    SmallHilbertClassFieldComparison.arithmeticSmallHilbertClassFieldGaloisEquivClassGroup_of_isSmall E hE
+  let artin : RayClassGroup (ordinaryRayClassModulus K) ≃* (E ≃ₐ[K] E) :=
+    (ordinaryRayClassGroupEquivClassGroup (K := K)).trans g.symm
+  refine ⟨artin, ?_⟩
+  intro v w hw
+  have hunram : Algebra.IsUnramifiedAt (𝓞 K) w.asIdeal :=
+    hE.1.1 v w.asIdeal inferInstance hw
+  apply g.injective
+  calc
+    g (artin (ordinaryRayClassOfFinitePrime v)) =
+        ClassGroup.mk K (finitePrimeFractionalIdeal v) := by
+      rw [show g (artin (ordinaryRayClassOfFinitePrime v)) =
+          ordinaryRayClassGroupEquivClassGroup
+            (ordinaryRayClassOfFinitePrime v) from by
+        simp only [artin, MulEquiv.trans_apply, g.apply_symm_apply]]
+      exact ordinaryRayClassGroupEquivClassGroup_prime v
+    _ = g (arithmeticFrobeniusAt (K := K) w) := by
+      rw [← GlobalClassFieldComparison.arithmeticPrimeArtin_eq_arithmeticFrobeniusAt
+        (K := K) (L := E) v w hw hunram]
+      exact (SmallHilbertClassFieldComparison.arithmeticSmallHilbertClassFieldGaloisEquivClassGroup_prime
+        E hE v).symm
+
+end ClassFieldTheory
+
+end

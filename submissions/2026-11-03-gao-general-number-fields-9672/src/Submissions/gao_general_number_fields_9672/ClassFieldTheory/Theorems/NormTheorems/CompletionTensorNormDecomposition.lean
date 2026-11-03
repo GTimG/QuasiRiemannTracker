@@ -1,0 +1,87 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/NormTheorems/CompletionTensorNormDecomposition.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.Definitions.NormTheorems.ExtendingAbsoluteValue
+public import Submissions.gao_general_number_fields_9672.ClassFieldTheory.AlgebraicNumberTheory.Idele.Extension.LocalNorm
+public import Mathlib.RingTheory.Norm.Basic
+public import Mathlib.RingTheory.TensorProduct.Basic
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Local norm as a product over completions
+
+The tensor algebra `K_v ⊗[K] L` is a product of the completions of `L` at
+the absolute values above `v`.  Its determinant norm is the product of the
+norms of those components.  The theorem exposes the decomposition and norm
+formula using only Mathlib objects and the public extension index type.
+-/
+
+open scoped BigOperators TensorProduct
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u v
+
+/-- A separable finite extension decomposes after completion, and its
+determinant norm is the product of the norms of all completion components. -/
+theorem completionTensorNormDecomposition
+    {K : Type u} {L : Type v}
+    [Field K] [Field L] [Algebra K L]
+    [FiniteDimensional K L] [Algebra.IsSeparable K L]
+    (vK : AbsoluteValue K ℝ) (hvK : vK.IsNontrivial) :
+    ∃ hfin : Fintype (ExtendingAbsoluteValue vK L),
+      letI := hfin
+      ∃ halg : ∀ w : ExtendingAbsoluteValue vK L,
+          Algebra vK.Completion w.1.Completion,
+        letI := halg
+        ∃ hmodule : ∀ w : ExtendingAbsoluteValue vK L,
+            Module.Finite vK.Completion w.1.Completion,
+          letI := hmodule
+          ∃ e : vK.Completion ⊗[K] L ≃ₐ[vK.Completion]
+              ∀ w : ExtendingAbsoluteValue vK L, w.1.Completion,
+            ∀ z : vK.Completion ⊗[K] L,
+              Algebra.norm vK.Completion z =
+                ∏ w : ExtendingAbsoluteValue vK L,
+                  Algebra.norm vK.Completion (e z w) := by
+  classical
+  refine ⟨
+    AlgebraicNumberTheory.Valuations.completionTensorDecomposition_extensionFintype
+      (K := K) (L := L) vK hvK,
+    (fun w => AbsoluteValue.completionAlgebra vK w.1 w.2),
+    (fun w => AlgebraicNumberTheory.Valuations.completionModuleFinite vK hvK w),
+    AlgebraicNumberTheory.Valuations.completionTensorDecomposition_left
+      (K := K) (L := L) vK hvK,
+    ?_⟩
+  intro z
+  exact RelativeIdeleGroup.localNorm_eq_prod vK hvK z
+
+end ClassFieldTheory
+
+end
