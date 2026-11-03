@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/NonfloorClass.lean
 Original SHA-256: 4638724147f4ac1caa45fd973632a1c335e07167222663d4d03055facd064fca
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount
@@ -36,7 +37,7 @@ open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary
 open ProbeRaySlots HeckeDetectorPhysicalSelection HeckeDetectorAmplitudeFirst HeckeDetectorFiberPartition
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_NonfloorClass_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 omit [NeZero M] in

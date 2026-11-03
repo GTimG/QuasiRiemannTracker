@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/SourceBatch.lean
 Original SHA-256: 3230dc54572259a9c413213eed2defcb5aee6d295437ebabb8b92ecf09467ab3
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.lw56e2_parameter_refinement.Transport.PhysicalHigh.SlotGeometry
@@ -31,7 +32,7 @@ open ProbeHighRowFamily
 open HeckeFamily HeckeInverseAmplification HeckeDetectorBatch ProbePhysical
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_SourceBatch_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 theorem slot_widths {N : ℕ} (ell : Fin N → ℝ) (d dmin dmax mesh total : ℝ)

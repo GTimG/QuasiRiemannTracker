@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/NormalizedTransportSaving.lean
 Original SHA-256: 1e0f82b07d5a813f0030b4a16164b24c5761494aec40ffbbab25da6c4c864fd7
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.lw56e2_parameter_refinement.Transport.PhysicalHigh.NormalizedTransport
@@ -25,7 +26,7 @@ open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary Com
 open ProbeRaySlots PrincipalMellinResidues PrincipalSignalComparison ProbePrincipalResidueActual
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_NormalizedTransportSaving_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 omit [NeZero M] in

@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/InverseRaw.lean
 Original SHA-256: 737fcd5adca40309d35ae0726ff1372ba9fe5c005ab8e8985b6feb394d850e57
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField
@@ -33,9 +34,9 @@ private theorem raw_mono (data:RowData)(W:ℝ→ℂ)(c κ A B:ℝ)
   gcongr
 
 variable (M:Ideal O)[NeZero M]
-local instance:Finite (O⧸M):=Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_InverseRaw_instance1:Finite (O⧸M):=Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H:Subgroup (O⧸M)ˣ)(hH:RayOrthogonality.globalUnits M≤H)
-local instance:Fintype (Sum Bool (RayQuotient.Characters M H)):=Fintype.ofFinite _
+local instance lw56e2_Transport_PhysicalHigh_InverseRaw_instance2:Fintype (Sum Bool (RayQuotient.Characters M H)):=Fintype.ofFinite _
 
 theorem source_batch_inverse_raw
     (S:Finset (Ideal O))(hS:∀P∈S,Prime P)

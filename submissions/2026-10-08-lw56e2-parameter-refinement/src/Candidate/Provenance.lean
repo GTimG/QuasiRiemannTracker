@@ -1,4 +1,7 @@
 /-
+Compilation compatibility: anonymous local instances in the imported Transport modules
+receive explicit file-specific names to avoid collisions with the baseline.
+
 Historical submission: LW56e2 parameter refinement.
 
 The original Lean proof is by Leo Wei (LW56e2), imported from

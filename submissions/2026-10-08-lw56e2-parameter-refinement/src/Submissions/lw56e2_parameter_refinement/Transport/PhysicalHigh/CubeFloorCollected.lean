@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/CubeFloorCollected.lean
 Original SHA-256: fc4a7de2076f3b85638aedff40543277474764d1c32b6d026f2cec83002688f8
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.lw56e2_parameter_refinement.Transport.PhysicalHigh.CubeFloorSaving
@@ -25,7 +26,7 @@ open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary
 open ProbeRaySlots HeckeDetectorPhysicalSelection
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_CubeFloorCollected_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 omit [NeZero M] in

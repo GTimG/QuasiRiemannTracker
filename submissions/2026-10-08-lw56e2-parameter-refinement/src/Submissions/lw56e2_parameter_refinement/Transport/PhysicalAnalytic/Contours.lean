@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalAnalytic/Contours.lean
 Original SHA-256: 960e7c70556c7f7b041a5269be39be4f137f920216d162e0e6fa85f765419d05
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.lw56e2_parameter_refinement.Transport.PhysicalAnalytic.FiniteProducts
@@ -28,8 +29,8 @@ open HeckeFamily ProbePhysical ProbeEuler ProbeLocal CompletedGauss
 open ProbeFiniteProductBounds ProbeFiniteProductX PrincipalMellinResidues
 open PrincipalMellinGrowth ProbeMellinBoundary ProbePrincipalContours
 local notation "Id" => Ideal ActualEisensteinCubic.O
-local instance : Countable ActualEisensteinCubic.O := ActualEisensteinCubic.latticeCoordEquiv.injective.countable
-local instance : Countable Id := ConcretePrimeRowBridge.idealGenerator_injective.countable
+local instance lw56e2_Transport_PhysicalAnalytic_Contours_instance1 : Countable ActualEisensteinCubic.O := ActualEisensteinCubic.latticeCoordEquiv.injective.countable
+local instance lw56e2_Transport_PhysicalAnalytic_Contours_instance2 : Countable Id := ConcretePrimeRowBridge.idealGenerator_injective.countable
 abbrev transportBoundary : ℝ := Geometry.boundary TunedCandidate.p
 
 lemma arithmetic_onLines_bound_of_gaps {ι : Type*} (η : Character) (S : Finset Id)

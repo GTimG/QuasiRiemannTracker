@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalHigh/SourceAmplitudeClasses.lean
 Original SHA-256: 95c28095e4f4672247d21e67af07bb6a1dc1c0a146d7e2b7878819956f17ff25
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.lw56e2_parameter_refinement.Transport.PhysicalHigh.SourceBatch
@@ -24,7 +25,7 @@ open ProbeHighRowFamily
 open HeckeFamily HeckeInverseAmplification HeckeDetectorBatch ProbePhysical
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalHigh_SourceAmplitudeClasses_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 theorem actual_source_amplitude_batches (total : ℝ) (htotal : 0 < total) (S : Finset (Ideal O)) (hS : SourceExclusions S)

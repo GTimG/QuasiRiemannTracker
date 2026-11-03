@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalTail/CanonicalRayCube.lean
 Original SHA-256: 4ff2f76ee149b3c15cc1de5a45f2b4cf9c0433b0d2c1cbeee6097aef9bd54360
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube
@@ -26,7 +27,7 @@ open ProbeHighRowFamily
 open HeckeFamily HeckeInverseAmplification ProbePhysical ProbeMellinBoundary CompletedGauss
 local notation "O" => HeckeFamily.O
 variable (M : Ideal O) [NeZero M]
-local instance : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
+local instance lw56e2_Transport_PhysicalTail_CanonicalRayCube_instance1 : Finite (O ⧸ M) := Ring.HasFiniteQuotients.finiteQuotient (NeZero.ne M)
 variable (H : Subgroup (O ⧸ M)ˣ) (hH : RayOrthogonality.globalUnits M≤H)
 
 theorem transport_canonical_probe_exists_ray_cube (K : ℕ) (e δ a b B ζ saving τ : ℝ)

@@ -6,6 +6,7 @@ Original path: lean/Transport/PhysicalLow/LowSelectedBound.lean
 Original SHA-256: 51cf8209e9af990b674e694e7d28bc9a30cd0b76449a368f13a4a18c8a7ab514
 Tracker adaptation: import modules moved under Submissions.lw56e2_parameter_refinement;
 OpenAI imports use the openai-baseline dependency; RH.Transport renamed LW56e2.Transport.
+Anonymous local instances receive file-specific names to avoid collisions with imported modules.
 Original proof bodies and source attribution otherwise retained.
 -/
 import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.LowActualReflectedEnergy
@@ -26,7 +27,7 @@ namespace SevenEighths.ProbePhysical
 open CompletedGauss CanonicalQuadraticSieve CanonicalRowCompletion RayFourExpansion
 local notation "O" => ActualEisensteinCubic.O
 local notation "Id" => Ideal O
-local instance : Fintype Oˣ := @Fintype.ofFinite _ PrimaryIdealUnitReindex.finite_units
+local instance lw56e2_Transport_PhysicalLow_LowSelectedBound_instance1 : Fintype Oˣ := @Fintype.ofFinite _ PrimaryIdealUnitReindex.finite_units
 
 lemma transport_gaussianFixedWindow_support (totalWidth : ℝ) (hE0 : 0≤totalWidth) (hE1 : totalWidth≤1/5) : Function.support gaussianFixedWindow⊆Set.Icc (1/2:ℝ) 2 := by
   intro y hy
