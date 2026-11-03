@@ -40,11 +40,15 @@ propext, Classical.choice and Quot.sound. Strict isolated logarithmic-control,
 gamma, functional-equation and interpolation components also pass. These checks
 do not certify actual full native assembly or the complete endpoint.
 
-Three proof-preserving tracker compatibility adaptations are retained:
+Four proof-preserving tracker compatibility adaptations are retained:
 - NormProperties.lean: `using 1 <;> rfl` closes every convert subgoal.
 - HenselianFinite.lean: SetLike.le_def replaces IsConcreteLE.le_iff.
 - KummerDelta.lean: six unavailable AddMonoidHom.ofClass calls use the existing
   wp.hom.toAddMonoidHom projection.
+- ValuedAdicComplete.lean: valuation and embedding maps use explicit
+  toMonoidWithZeroHom/toMonoidHom projections for the older tracker API.
+  Its whole six-module isolated dependency closure compiles with strict options;
+  the actual theorem/CompleteDVF closures use only the three standard axioms.
 The affected isolated theorems/definitions pass on the tracker pins with the
 three standard axioms. Five Mathlib-only helper modules use the older
 Volume.Measure import; an unused Basify import is omitted. All five complete

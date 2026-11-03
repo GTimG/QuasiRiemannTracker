@@ -1,14 +1,17 @@
 /-
 2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
-relocated to Submissions.gao_general_number_fields_9672; original proof bodies,
+relocated to Submissions.gao_general_number_fields_9672; theorem statements,
 declaration namespaces, licensing and provenance below are retained.
+Tracker Lean 4.34.1 uses explicit valuation and monoid-homomorphism
+projections in the value-group embeddings below.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
 Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
 Original path: vendor/class-field-theory/Lean4/ValuedFieldTheory/Valuation/ValuedAdicComplete.lean
 Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9672.
-Original theorem bodies and declaration namespaces retained.
+Mathematical statements and declaration namespaces retained; explicit valuation
+homomorphism projections provide tracker compatibility.
 -/
 module
 
@@ -116,7 +119,7 @@ theorem rankOneDiscreteValuationSubring_isAdic
       ⟨gamma, _hgamma, hgamma_t⟩
     let gamma' : Gammaˣ :=
       Units.map
-        (MonoidWithZeroHom.ValueGroup₀.embedding (f := (val : K →*₀ Gamma)))
+        (MonoidWithZeroHom.ValueGroup₀.embedding (f := val.toMonoidWithZeroHom)).toMonoidHom
         gamma
     rcases exists_pow_lt
         (Valuation.IsRankOneDiscrete.generator_lt_one val)
@@ -135,12 +138,12 @@ theorem rankOneDiscreteValuationSubring_isAdic
       val (x : K) ≤ val (((pi ^ n : val.valuationSubring) : K)) := hx_le
       _ = ((Valuation.IsRankOneDiscrete.generator val) ^ n : Gamma) := by
             simp [map_pow, hpi.val]
-      _ < MonoidWithZeroHom.ValueGroup₀.embedding (f := (val : K →*₀ Gamma)) gamma.1 := by
+      _ < MonoidWithZeroHom.ValueGroup₀.embedding (f := val.toMonoidWithZeroHom) gamma.1 := by
         have hn_coe := Units.val_lt_val.mp hn
         change
           ((Valuation.IsRankOneDiscrete.generator val : Gammaˣ) : Gamma) ^ n <
             MonoidWithZeroHom.ValueGroup₀.embedding
-              (f := (val : K →*₀ Gamma)) gamma.1 at hn_coe
+              (f := val.toMonoidWithZeroHom) gamma.1 at hn_coe
         exact hn_coe
 
 /-- Completeness of a rank-one discrete valued field produces adic
