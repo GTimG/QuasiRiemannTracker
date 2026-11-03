@@ -5,8 +5,8 @@ import {
   proofRevision,
 } from "../core/catalogue-revisions.mjs";
 import { certificate } from "../verifier/certificate.mjs";
-import { reconcileAdmissions } from "./reconcile-admissions.mjs";
-const data = validateCatalogue(await reconcileAdmissions());
+import { buildSubmissionCatalogue } from "./submission-catalogue.mjs";
+const data = validateCatalogue(buildSubmissionCatalogue());
 for (const record of catalogueProofRecords(data)) {
   if (record.status !== "framework-verified") continue;
   const name = `certificates/${proofRevision(record)}.json`;
@@ -33,5 +33,5 @@ writeFileSync(
   JSON.stringify({ ...config, repository }, null, 2) + "\n",
 );
 console.log(
-  `Catalogue: ${data.records.length} results with matching verification records.`,
+  `Catalogue: ${data.records.length} results from local submission files.`,
 );

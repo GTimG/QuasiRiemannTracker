@@ -79,7 +79,7 @@ export default function CatalogueDetail({
           <dd>
             {r.first_verified_at
               ? timestamp(r.first_verified_at)
-              : historicalBaseline(r)
+              : historicalBaseline(r) || r.status === "accepted"
                 ? "—"
                 : "Pending"}
           </dd>

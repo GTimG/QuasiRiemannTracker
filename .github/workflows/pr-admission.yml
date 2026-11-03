@@ -36,16 +36,16 @@ jobs:
         with:
           ref: ${{ github.workflow_sha }}
           persist-credentials: false
-          fetch-depth: 0
+          fetch-depth: 1
+      - name: Fetch publication branch tip
+        continue-on-error: true
+        run: git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/origin/admission-records
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.17.0
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Build the current admitted catalogue
-        run: node scripts/reconcile-admissions.mjs --online
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          QRH_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      - name: Build the catalogue from the checkout
+        run: node scripts/catalogue.mjs
       - name: Classify the PR and prepare verification
         id: prepare
         run: node verifier/check-pr.mjs

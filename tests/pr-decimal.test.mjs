@@ -322,11 +322,11 @@ test("certifies previous irrational digits through the first difference", () => 
   );
 });
 
-test("requires a previously verified catalogue bound", () => {
+test("requires a previously accepted or verified catalogue bound", () => {
   assert.throws(() => check({ catalogue: {} }), /trusted catalogue/);
   assert.throws(
     () => check({ catalogue: { records: [] } }),
-    /requires a previously verified catalogue bound/,
+    /requires a previously accepted or verified catalogue bound/,
   );
   assert.throws(
     () =>
@@ -335,6 +335,19 @@ test("requires a previously verified catalogue bound", () => {
           records: [{ ...current, status: "verification-pending" }],
         },
       }),
-    /requires a previously verified catalogue bound/,
+    /requires a previously accepted or verified catalogue bound/,
+  );
+});
+
+test("accepted sources supply the previous decimal bound without a verification receipt", () => {
+  const accepted = { ...current, status: "accepted", first_verified_at: "" };
+  assert.deepEqual(check({ catalogue: { records: [accepted] } }), {
+    previous_result_id: "current",
+    previous_decimal: "0.87488664",
+  });
+  assert.throws(
+    () =>
+      check({ theta_decimal: "0.8748866", catalogue: { records: [accepted] } }),
+    /more digits/,
   );
 });

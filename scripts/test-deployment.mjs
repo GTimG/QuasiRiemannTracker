@@ -3,15 +3,14 @@ import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { cmp } from "../core/rational.mjs";
+import { historicalBaseline, verifiedHere } from "../core/catalogue.mjs";
 const records = JSON.parse(
   readFileSync("catalogue/results.json", "utf8"),
 ).records;
-const verified = records.filter((r) =>
-  ["verified", "framework-verified"].includes(r.status),
-);
+const verified = records.filter(verifiedHere);
 const best = [...verified].sort((a, b) => cmp(a.theta, b.theta))[0];
-const plottedCount = records.filter((r) =>
-  ["verified", "framework-verified", "historical-baseline"].includes(r.status),
+const plottedCount = records.filter(
+  (r) => verifiedHere(r) || historicalBaseline(r),
 ).length;
 
 const base = process.env.QRH_BASE_PATH || "/qrh-bounds/";
@@ -77,7 +76,9 @@ try {
   });
   await page.goto(origin + base);
   await page.locator(`[data-dot][data-id="${best.id}"]`).waitFor();
-  await page.getByRole("button", { name: "Fit leaderboard", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Fit leaderboard", exact: true })
+    .click();
   await page.waitForFunction(
     (count) => document.querySelectorAll("[data-dot]").length === count,
     plottedCount,
@@ -86,7 +87,9 @@ try {
     .getByRole("navigation", { name: "Research views" })
     .getByRole("link", { name: /Submissions/ })
     .click();
-  await page.getByRole("list", { name: "Contributions", exact: true }).waitFor();
+  await page
+    .getByRole("list", { name: "Contributions", exact: true })
+    .waitFor();
   assert.equal(
     await page
       .getByRole("list", { name: "Contributions", exact: true })
@@ -98,7 +101,7 @@ try {
     "catalogue.json",
     "site.json",
     "favicon.svg",
-    ...verified.map((r) => r.certificate_url),
+    ...verified.flatMap((r) => (r.certificate_url ? [r.certificate_url] : [])),
   ]) {
     const response = await page.request.get(origin + base + name);
     assert.equal(response.status(), 200, name);
