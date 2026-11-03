@@ -23,7 +23,7 @@ modules. Thirty dependency modules are replaced by the native refinement at
 829193272c1eaf223bb7228fbfb9003f414808e9; all local imports now use
 Submissions.gao_general_number_fields_9686. Original declaration namespaces,
 source attribution, copyright notices and dependency headers are retained.
-One additional tracker-only Lean 4.34.1 tactic-compatibility adaptation changes
+Two tracker-only Lean 4.34.1 compatibility adaptations are included. The first changes
 `using 1; rfl` to `using 1 <;> rfl` in the vendored
 ClassFieldTheory/AlgebraicNumberTheory/Idele/Extension/NormProperties.lean theorem
 fieldNormUnits_eq_prod_conjugates, applying reflexivity to every convert subgoal.
@@ -31,7 +31,12 @@ All thirty native refinement modules remain exact after import relocation. The
 isolated unit-valued norm theorem passed with tracker Lean v4.34.1 and Mathlib
 d13f23b723b8a846827a245b89c10fc7d3f11612 using only propext, Classical.choice
 and Quot.sound. The complete class-field-theory module and its downstream proof
-closure have not been replayed. This is port maintenance, not another refinement.
+closure have not been replayed. The second adaptation in
+ValuedFieldTheory/Valuation/DiscreteValuationField/HenselianFinite.lean replaces
+IsConcreteLE.le_iff with SetLike.le_def. Its complete finite-algebra Jacobson
+theorem passed an isolated check on the same tracker pins, with the same three
+standard axioms; this complete module and downstream closure remain unverified.
+Both changes are port maintenance and preserve the mathematical statements.
 The native change also updates Solution/DedekindZetaSolution.lean, which only
 weakens the stronger endpoints to the original 31/32 Challenge; it is outside
 this dependency closure and remains available at the immutable native source.

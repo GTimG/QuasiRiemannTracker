@@ -1,7 +1,10 @@
 /-
 2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
-relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
-declaration namespaces, licensing and provenance below are retained.
+relocated to Submissions.gao_general_number_fields_9686; original declaration
+namespaces, licensing and provenance below are retained. Tracker Lean 4.34.1
+compatibility replaces the unavailable IsConcreteLE.le_iff with SetLike.le_def
+in ideal_map_le_jacobson_bot_of_le_jacobson_bot_of_moduleFinite. The isolated
+theorem passed on the tracker pins; this complete module has not been replayed.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -91,7 +94,7 @@ theorem ideal_map_le_jacobson_bot_of_le_jacobson_bot_of_moduleFinite
   rw [Ideal.jacobson, le_sInf_iff]
   rintro Q ⟨-, hQmax⟩
   by_contra hle
-  rw [IsConcreteLE.le_iff] at hle
+  rw [SetLike.le_def] at hle
   push Not at hle
   rcases hle with ⟨x, hxI, hxQ⟩
   let : Q.IsMaximal := hQmax
