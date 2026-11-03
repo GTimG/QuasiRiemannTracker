@@ -2,6 +2,10 @@
 2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
 relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
 declaration namespaces, licensing and provenance below are retained.
+Tracker compatibility repair: the six unavailable AddMonoidHom.ofClass calls
+use the representation morphism's existing toAddMonoidHom projection instead.
+The affected definitions and radical fixedness proof were checked in isolation
+with Lean 4.34.1 / Mathlib d13f23b; whole-module replay remains pending.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -78,7 +82,7 @@ def kummerDeltaAddSubgroup
     (A : Rep ℤ G) (wp : A ⟶ A) (K L : ClosedSubgroup G) :
     AddSubgroup A.V :=
   (ambientFixedAddSubgroup A L).map
-      (AddMonoidHom.ofClass wp.hom) ⊓
+      (wp.hom.toAddMonoidHom) ⊓
     ambientFixedAddSubgroup A K
 
 /-- The radical set `wp⁻¹(Delta)` in the additive abstract model. -/
@@ -86,7 +90,7 @@ def kummerRadicalAddSubgroup
     (A : Rep ℤ G) (wp : A ⟶ A) (K L : ClosedSubgroup G) :
     AddSubgroup A.V :=
   (kummerDeltaAddSubgroup A wp K L).comap
-    (AddMonoidHom.ofClass wp.hom)
+    (wp.hom.toAddMonoidHom)
 
 /-- The Kummer radical consists of fixed elements annihilated by the Kummer exponent. -/
 @[simp]
@@ -104,7 +108,7 @@ theorem kummerRadical_fixed_of_ker_le_zmultiples
     (hLK : L.toSubgroup ≤ K.toSubgroup)
     (xi : A.V)
     (hxi_fixed : ∀ k : K.toSubgroup, A.ρ k.1 xi = xi)
-    (hker : AddMonoidHom.ker (AddMonoidHom.ofClass wp.hom) ≤
+    (hker : AddMonoidHom.ker (wp.hom.toAddMonoidHom) ≤
       AddSubgroup.zmultiples xi)
     {a : A.V} (ha : a ∈ kummerRadicalAddSubgroup A wp K L)
     (l : L.toSubgroup) :
@@ -112,12 +116,12 @@ theorem kummerRadical_fixed_of_ker_le_zmultiples
   have haDelta : wp.hom a ∈ kummerDeltaAddSubgroup A wp K L := ha
   have haImage : wp.hom a ∈
       (ambientFixedAddSubgroup A L).map
-        (AddMonoidHom.ofClass wp.hom) :=
+        (wp.hom.toAddMonoidHom) :=
     haDelta.1
   obtain ⟨b, hb_fixed, hba⟩ := haImage
   have hba' : wp.hom b = wp.hom a := hba
   have hd_ker : a - b ∈
-      AddMonoidHom.ker (AddMonoidHom.ofClass wp.hom) := by
+      AddMonoidHom.ker (wp.hom.toAddMonoidHom) := by
     rw [AddMonoidHom.mem_ker]
     change wp.hom (a - b) = 0
     rw [map_sub, ← hba', sub_self]
@@ -152,7 +156,7 @@ theorem finiteAbelian_kummerRadical_fixingSubgroup_eq
     (hxi_order : addOrderOf xi = (n : ℕ))
     (hxi_kernel : wp.hom xi = 0)
     (hxi_fixed : ∀ k : K.toSubgroup, A.ρ k.1 xi = xi)
-    (hker : AddMonoidHom.ker (AddMonoidHom.ofClass wp.hom) ≤
+    (hker : AddMonoidHom.ker (wp.hom.toAddMonoidHom) ≤
       AddSubgroup.zmultiples xi)
     (hexponent :
       ∀ q : K.toSubgroup ⧸ extensionSubgroup (G := G) K L hLK,

@@ -23,7 +23,7 @@ modules and adds five proved arithmetic/analytic Dirichlet bridge modules. Thirt
 829193272c1eaf223bb7228fbfb9003f414808e9; all local imports now use
 Submissions.gao_general_number_fields_9686. Original declaration namespaces,
 source attribution, copyright notices and dependency headers are retained.
-Two tracker-only Lean 4.34.1 compatibility adaptations are included. The first changes
+Three tracker-only Lean 4.34.1 compatibility adaptations are included. The first changes
 `using 1; rfl` to `using 1 <;> rfl` in the vendored
 ClassFieldTheory/AlgebraicNumberTheory/Idele/Extension/NormProperties.lean theorem
 fieldNormUnits_eq_prod_conjugates, applying reflexivity to every convert subgoal.
@@ -36,7 +36,12 @@ ValuedFieldTheory/Valuation/DiscreteValuationField/HenselianFinite.lean replaces
 IsConcreteLE.le_iff with SetLike.le_def. Its complete finite-algebra Jacobson
 theorem passed an isolated check on the same tracker pins, with the same three
 standard axioms; this complete module and downstream closure remain unverified.
-Both changes are port maintenance and preserve the mathematical statements.
+The third adaptation replaces six unavailable AddMonoidHom.ofClass calls in
+GaloisCohomology/Kummer/Abstract/KummerDelta.lean with the existing
+wp.hom.toAddMonoidHom projection. The actual subgroup definitions and radical
+fixedness theorem passed isolated checks on the tracker pins, with the three
+standard axioms. The full Kummer module and downstream proof remain unverified.
+All three changes preserve the mathematical statements.
 The native change also updates Solution/DedekindZetaSolution.lean, which only
 weakens the stronger endpoints to the original 31/32 Challenge; it is outside
 this dependency closure and remains available at the immutable native source.
