@@ -19,7 +19,7 @@ PR #114: https://github.com/GTimG/QuasiRiemannTracker/pull/114
 PR #114 snapshot: 1f36d894a6253d45dd1a6e6ab512a85df2a19c7a
 
 This standalone source package retains PR #114's 5,508 local/vendored proof
-modules. Thirty dependency modules are replaced by the native refinement at
+modules and adds five proved arithmetic/analytic Dirichlet bridge modules. Thirty dependency modules are replaced by the native refinement at
 829193272c1eaf223bb7228fbfb9003f414808e9; all local imports now use
 Submissions.gao_general_number_fields_9686. Original declaration namespaces,
 source attribution, copyright notices and dependency headers are retained.
@@ -55,11 +55,17 @@ theory Apache-2.0 license texts follow verbatim below.
 The native project uses Lean v4.35.0-rc3 and Mathlib
 0493595ecd5da8ef14742febab99728f98e948e8. The tracker pins Lean v4.34.1 and
 Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Toolchain compatibility and
-tracker import-all checking remain pending. The tracker requires a canonical
-all-Dirichlet Candidate.bound; the formal identification of general Hecke
-characters/L-functions over Q with Mathlib's DirichletCharacter.LFunction has
-not been supplied, so Candidate.bound is absent. This draft preserves the
-genuine general-family theorem without asserting that missing specialization.
+tracker import-all checking remain pending. Candidate.bound now specializes
+the genuine native Hecke theorem over Q through the five new Bridge modules:
+rational ideals and norms, the actual ray character, principal detection,
+ideal-series reindexing, and analytic continuation to the Mathlib L-function.
+The bridge covers modulus1, odd and imprimitive characters, every height and
+nonprincipal s=1. These components passed isolated checks on tracker pins,
+using only propext, Classical.choice and Quot.sound. The complete native
+endpoint and final Candidate.Main still await official whole-closure checking.
+Five original Mathlib-only helpers use the older Volume.Measure import instead
+of unavailable Volume.Basic; one unused Basify import is omitted. Each complete
+helper module passed an isolated check, with all theorem bodies unchanged.
 No local full proof replay was run; official GitHub checks own admission.
 
 Full original license text: AxiomMath/DedekindZetaZeroFree/LICENSE

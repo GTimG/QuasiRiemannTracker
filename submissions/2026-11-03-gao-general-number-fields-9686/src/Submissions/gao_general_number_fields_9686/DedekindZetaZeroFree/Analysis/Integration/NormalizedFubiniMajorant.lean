@@ -2,6 +2,8 @@
 2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
 relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
 declaration namespaces, licensing and provenance below are retained.
+Tracker Mathlib compatibility uses Geometry.Euclidean.Volume.Measure;
+all theorem bodies are unchanged.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -25,7 +27,7 @@ public import Mathlib.Combinatorics.Enumerative.DyckWord
 public import Mathlib.Combinatorics.SimpleGraph.Triangle.Removal
 public import Mathlib.Data.NNRat.Floor
 public import Mathlib.Data.Nat.Choose.Multinomial
-public import Mathlib.Geometry.Euclidean.Volume.Basic
+public import Mathlib.Geometry.Euclidean.Volume.Measure
 public import Mathlib.NumberTheory.Chebyshev
 public import Mathlib.NumberTheory.Height.NumberField
 public import Mathlib.NumberTheory.Height.Projectivization
