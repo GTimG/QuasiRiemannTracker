@@ -33,5 +33,7 @@
       "url": "https://api.github.com/repos/AxiomMath/DedekindZetaZeroFree"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "historical": true,
+  "historical_date": "2026-10-12"
 }
