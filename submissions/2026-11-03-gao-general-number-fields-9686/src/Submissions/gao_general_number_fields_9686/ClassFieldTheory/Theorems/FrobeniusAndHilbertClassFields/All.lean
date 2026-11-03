@@ -1,0 +1,85 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/FrobeniusAndHilbertClassFields/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusEqOneIffSplitsCompletely
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusAlgEquivTransport
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusIndependentOfPrime
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusIsArithmetic
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusOrder
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusRestrictTower
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldDegree
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldExists
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldArtinEquiv
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldNarrowRayRealization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldPrimeSplitting
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldPrimeSplittingPositivePrincipal
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.BigHilbertClassFieldUnique
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.NarrowRayRealizationIsBigHilbertClassField
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldDegree
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldEmbedsInBig
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldLeBig
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallBigHilbertClassFieldIffOfNoReal
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldExists
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldArtinEquiv
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldOrdinaryRayRealization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.OrdinaryRayRealizationIsSmallHilbertClassField
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldPrimeSplitting
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldPrincipalization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldUniqueUpToEquiv
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldUnique
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Frobenius and Hilbert class fields
+
+This `All` module collects the Mathlib-native arithmetic Frobenius statements
+and the intrinsic existence, Artin isomorphism, degree, splitting, and
+principalization results for small and big Hilbert class fields.
+-/

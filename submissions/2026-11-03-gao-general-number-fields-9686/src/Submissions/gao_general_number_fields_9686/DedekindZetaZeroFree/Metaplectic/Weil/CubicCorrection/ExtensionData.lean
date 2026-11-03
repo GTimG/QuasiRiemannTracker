@@ -1,0 +1,52 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Metaplectic/Weil/CubicCorrection/ExtensionData.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.DedekindZetaZeroFree.Metaplectic.Weil.CubicCorrection.PhaseCharacters
+public import Submissions.gao_general_number_fields_9686.DedekindZetaZeroFree.Metaplectic.Weil.NormalizedLocalIndicesAndProductFormula
+
+@[expose] public section
+
+open scoped NumberField Classical
+open NumberField IsDedekindDomain
+namespace DedekindZetaZeroFree.SArithmeticData.GaussCorrection
+noncomputable section
+set_option autoImplicit false
+variable {F : Type} [Field F] [NumberField F]
+
+structure CorrectedWeilExtension (A : SArithmeticData F) (H : A.V → A.V → Fˣ)
+    (B : Subgroup A.V) (σ : F →+* ℂ) (hS : A.ContainsTraceBadPlaces) where
+  G : A.ArithmeticIdeleClasses →* Circle
+  continuous : Continuous G
+  finiteOrder : A.IdeleCharacterHasFiniteOrder G
+  unramified : A.IdeleCharacterUnramifiedOutside G
+  infinity : ∀ (w : InfinitePlace F) (z : w.Completionˣ),
+    A.ideleInfiniteComponent G w z = 1
+  stabilized : ∀ (v : {v // v ∈ A.Sf}) (a : (v.val.adicCompletion F)ˣ),
+    A.FiniteQuadraticStabilizes v.val a
+  normalizer_ne_zero : ∀ v : {v // v ∈ A.Sf}, A.finiteGamma v.val 1 ≠ 0
+  structural : A.WeilSStructuralLaws H σ A.complexWeilPhase
+    (fun v => A.finiteWeilPhase v.val)
+  local_recipe : ∀ (y : A.G), QuotientGroup.mk' A.sixthPowers y ∈ B →
+    (A.ideleSInverseProduct G y : ℂ) =
+      (σ (((A.H_S (A.diagonal CubicWeilCorrection.fourS) y : Fˣ) : F)))⁻¹ *
+        A.weilSCorrection A.complexWeilPhase (fun v => A.finiteWeilPhase v.val) y
+  prime : ∀ (I : A.Exterior) (v : HeightOneSpectrum (𝓞 F))
+    (hIv : I.val = v.asIdeal) (p : A.R) (hp : A.Generates I p)
+    (a : Fˣ) (ha : A.IsAllowed B a) (hap : (a : F) = (p : F))
+    (x : NumberField.IdeleGroup (𝓞 F) F), A.RepresentsExteriorIdeal I x →
+      (G (QuotientGroup.mk x) : ℂ) =
+        star (σ (A.sexticResidue I (4 : A.R))) * A.idealGauss σ hS I p hp 3
+
+end
+end DedekindZetaZeroFree.SArithmeticData.GaussCorrection

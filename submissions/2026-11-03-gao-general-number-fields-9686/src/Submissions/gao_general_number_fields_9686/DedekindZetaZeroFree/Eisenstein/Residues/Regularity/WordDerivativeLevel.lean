@@ -1,0 +1,57 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Eisenstein/Residues/Regularity/WordDerivativeLevel.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.DedekindZetaZeroFree.Eisenstein.Residues.ResidualRepresentations.WordDerivativeRange
+
+@[expose] public section
+
+noncomputable section
+open scoped Classical NumberField Topology
+open NumberField MeasureTheory
+namespace DedekindZetaZeroFree.FourierContinuation.LiteralSource
+open KPLiteralRaw KPGlobalTorusFiniteStages ThetaExpansion TensorActionSource
+open KPContActualSphericalRightFieldIdentification KPContActualCutoffPlusClearedGerm
+variable {F : Type} [Field F] [NumberField F]
+variable {S : SArithmeticData F} {η : RayClassCharacter F S.modulus}
+variable (R : PrincipalMellin.ActualRecipe S η)
+variable (P : CompatibleModelData F R.A.zeta12 R.A.primitive_zeta12)
+variable (C : LocalFiberData F R.A.zeta12 R.A.primitive_zeta12 P)
+local notation "ζ" => R.A.zeta12
+local notation "hζ" => R.A.primitive_zeta12
+local notation "V" => RestrictedTensorSimple.Core (Plus R.A P C)
+  (plusReference R.A P C) (bad R.A P C)
+
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1600000
+open scoped BigOperators
+
+theorem actual_word_global_level
+    (U : KPGlobalTorusFunctionData.FiniteLevel F ζ hζ)
+    (f : KPLiteralRaw.G F ζ hζ → ℂ)
+    (hf : ∀g u, u ∈ KPGlobalTorusFunctionData.globalLevel F ζ hζ U → f (g*u)=f g)
+    (w : List (Fin (groupDimension F))) :
+    ∀g u, u ∈ KPGlobalTorusFunctionData.globalLevel F ζ hζ U →
+      actualRightWord F ζ hζ w f (g*u) = actualRightWord F ζ hζ w f g := by
+  intro g u hu
+  rw [EisensteinSmoothGerms.ScalarSource.level_matching F ζ hζ U] at hu
+  obtain ⟨v,hv,rfl⟩ := hu
+  apply ResidueContinuity.ScalarSourceJointContinuity.actual_word_right_level f _ w g ⟨v,hv⟩
+  intro a j
+  apply hf a j.val.val
+  rw [EisensteinSmoothGerms.ScalarSource.level_matching F ζ hζ U]
+  exact Subgroup.mem_map.mpr ⟨j.val,j.property,rfl⟩
+
+end DedekindZetaZeroFree.FourierContinuation.LiteralSource
+
+end

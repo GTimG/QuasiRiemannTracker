@@ -1,0 +1,97 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/HilbertSymbols/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassEqOneIff
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassMul
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassInv
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassPow
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassEqIff
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingSymbolMul
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingSymbolMulRight
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingPerfect
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingExists
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingArtinNormalization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingExponentCompatibility
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.RootQuotientChoiceIndependence
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingInverse
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingNormCriterion
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingPerfectExists
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.HilbertProductFormula
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.GlobalHilbertPairingFiniteSupport
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.FinitePlaceHilbertBadSetFinite
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.GlobalHilbertPairingSupportBound
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFiniteFree
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFiniteEtale
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraProductDecomposition
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraUniformFieldFactors
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraUniformFactorDegree
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraCopiesOfSimpleFactor
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormProduct
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFinrank
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormIffSimpleRadicalNorm
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormIndex
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerRadicalDegreeEqPowerClassOrder
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraOneNormSurjective
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassGroupFinite
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Hilbert symbols
+
+This `All` module collects the power-class quotient theorem, existence and
+the norm-residue criterion for local Hilbert pairings, and existence of a
+coherent family satisfying the global product formula.
+-/

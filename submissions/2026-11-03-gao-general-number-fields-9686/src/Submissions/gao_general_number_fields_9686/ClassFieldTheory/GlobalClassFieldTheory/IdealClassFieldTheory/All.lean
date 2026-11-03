@@ -1,0 +1,78 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/GlobalClassFieldTheory/IdealClassFieldTheory/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.AbstractCapitulation
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.ArithmeticIdealArtin
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.ArithmeticIdealDecompositionLaw
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealArtinMap
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealArtinQuotient
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealDecompositionLaw
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealFrobenius
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealNormArtinExactness
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitation
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitationCore
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitationStatement
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTheorem
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTower
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTransfer
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalAbstractExtensionToOrdinary
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalFiniteNormTransfer.All
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalFixedFieldBaseChange
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertPrincipalization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertSplitting
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerConjugation
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerRealization
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerUnramified
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Ideal class field theory
+
+This public root exports ideal Artin maps and quotients, Frobenius classes,
+splitting in the small Hilbert class field, the genuine idèle-extension
+transfer square, and principalization of every integral and fractional ideal
+in the selected small Hilbert class field.
+-/

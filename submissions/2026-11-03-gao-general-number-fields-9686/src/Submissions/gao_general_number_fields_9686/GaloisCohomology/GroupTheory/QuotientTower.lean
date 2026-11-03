@@ -1,0 +1,82 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/GaloisCohomology/GroupTheory/QuotientTower.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Mathlib.GroupTheory.Index
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+set_option autoImplicit false
+
+/-!
+# Quotients in subgroup towers
+
+This file supplies the type-level equivalences between the quotient of a
+subgroup and the corresponding quotient after viewing that subgroup inside a
+larger group. They complement Mathlib's natural-number relative-index laws
+when cardinal-valued indices must also cover infinite towers.
+-/
+
+noncomputable section
+
+universe u
+
+namespace Subgroup
+
+variable {G : Type u} [Group G]
+
+/-- Viewing `H` inside `K` does not change the quotient of `H` by the
+subgroup induced by `M`. -/
+def quotientSubgroupOfEquiv {H K M : Subgroup G} (hHK : H ≤ K) :
+    (↑(H.subgroupOf K) ⧸ (M.subgroupOf K).subgroupOf (H.subgroupOf K)) ≃
+      (↑H ⧸ M.subgroupOf H) where
+  toFun := Quotient.map' (subgroupOfEquivOfLe hHK) (by
+    intro x y hxy
+    rw [QuotientGroup.leftRel_apply] at hxy ⊢
+    exact hxy)
+  invFun := Quotient.map' (subgroupOfEquivOfLe hHK).symm (by
+    intro x y hxy
+    rw [QuotientGroup.leftRel_apply] at hxy ⊢
+    exact hxy)
+  left_inv q := by
+    refine Quotient.inductionOn' q ?_
+    intro x
+    change Quotient.map' _ _ (Quotient.map' _ _ (Quotient.mk'' x)) = Quotient.mk'' x
+    simpa only [Quotient.map'_mk''] using
+      congrArg Quotient.mk'' ((subgroupOfEquivOfLe hHK).symm_apply_apply x)
+  right_inv q := by
+    refine Quotient.inductionOn' q ?_
+    intro x
+    change Quotient.map' _ _ (Quotient.map' _ _ (Quotient.mk'' x)) = Quotient.mk'' x
+    simpa only [Quotient.map'_mk''] using
+      congrArg Quotient.mk'' ((subgroupOfEquivOfLe hHK).apply_symm_apply x)
+
+/-- A quotient by the bottom of a subgroup tower is equivalent to the product
+of the two successive quotient types. -/
+def quotientTowerEquiv {M L K : Subgroup G} (hML : M ≤ L) (hLK : L ≤ K) :
+    (K ⧸ M.subgroupOf K) ≃
+      (K ⧸ L.subgroupOf K) × (L ⧸ M.subgroupOf L) :=
+  (quotientEquivProdOfLE (subgroupOf_mono K hML)).trans
+    (Equiv.prodCongr (Equiv.refl _) (quotientSubgroupOfEquiv hLK))
+
+end Subgroup
+
+end

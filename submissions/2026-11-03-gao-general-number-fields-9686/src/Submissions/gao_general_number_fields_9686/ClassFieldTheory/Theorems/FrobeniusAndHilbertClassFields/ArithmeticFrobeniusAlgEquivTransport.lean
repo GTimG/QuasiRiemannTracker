@@ -1,0 +1,94 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/FrobeniusAndHilbertClassFields/ArithmeticFrobeniusAlgEquivTransport.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Definitions.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusAt
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusIndependentOfPrime
+public import Mathlib.NumberTheory.NumberField.Basic
+public import Mathlib.NumberTheory.RamificationInertia.Unramified
+public import Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Arithmetic Frobenius under transport of a prime
+
+An automorphism of an abelian extension may move a prime above a fixed base
+prime. At an unramified prime, the arithmetic Frobenius element is unchanged.
+The prime transport is Mathlib's equivalence of height-one spectra induced by
+the automorphism of the ring of integers.
+-/
+
+open scoped NumberField
+open NumberField IsDedekindDomain
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u v
+
+/-- In an abelian extension, transporting an unramified prime by a
+`K`-automorphism does not change its arithmetic Frobenius element. -/
+theorem arithmeticFrobeniusAt_mapAlgEquiv
+    {K : Type u} {L : Type v}
+    [Field K] [NumberField K]
+    [Field L] [NumberField L] [Algebra K L]
+    [IsAbelianGalois K L]
+    (v : HeightOneSpectrum (𝓞 K))
+    (w : HeightOneSpectrum (𝓞 L))
+    (hw : w.asIdeal.LiesOver v.asIdeal)
+    (σ : L ≃ₐ[K] L)
+    (hunram : Algebra.IsUnramifiedAt (𝓞 K) w.asIdeal) :
+    arithmeticFrobeniusAt (K := K)
+        ((HeightOneSpectrum.equivOfRingEquiv
+          (RingOfIntegers.mapAlgEquiv σ).toRingEquiv) w) =
+      arithmeticFrobeniusAt (K := K) w := by
+  let e : (𝓞 L) ≃ₐ[𝓞 K] (𝓞 L) := RingOfIntegers.mapAlgEquiv σ
+  have hwσ :
+      ((HeightOneSpectrum.equivOfRingEquiv e.toRingEquiv) w).asIdeal.LiesOver
+        v.asIdeal := by
+    change (w.asIdeal.comap e.symm.toRingHom).LiesOver v.asIdeal
+    refine ⟨?_⟩
+    change v.asIdeal =
+      (w.asIdeal.comap e.symm.toRingHom).comap
+        (algebraMap (𝓞 K) (𝓞 L))
+    rw [Ideal.comap_comap]
+    have he : e.symm.toRingHom.comp (algebraMap (𝓞 K) (𝓞 L)) =
+        algebraMap (𝓞 K) (𝓞 L) := by
+      apply RingHom.ext
+      intro x
+      exact e.symm.commutes x
+    rw [he]
+    exact hw.over
+  exact (arithmeticFrobeniusAt_eq_of_primesAbove v w
+    ((HeightOneSpectrum.equivOfRingEquiv e.toRingEquiv) w)
+    hw hwσ hunram).symm
+
+end ClassFieldTheory
+
+end

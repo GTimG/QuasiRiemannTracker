@@ -1,0 +1,59 @@
+{
+  "title": "Gao · draft general number-field refinement at 4843/5000 (0.9686)",
+  "authors": [
+    {
+      "name": "Zhongpai Gao",
+      "url": "https://github.com/Gaozhongpai"
+    }
+  ],
+  "description": "2026-11-03 draft parameter refinement of Axiom Math’s general-family proof from 31/32 to 4843/5000 = 0.9686 (an improvement of 3/20000). The native source targets every number field, every height, Dedekind zeta away from its pole, and finite-order Hecke L-functions with s = 1 included for nonprincipal characters. Original research and mathematical judgments: Dean Cureton and Jesse Thorner; original proofs and Lean formalization: AxiomProver at Axiom Math. Zhongpai Gao is the refinement author, with AI assistance. No new arithmetic estimate or independent method is claimed. The actual 5,508-module standalone proof closure from PR #114 is retained, with 30 dependency modules replaced by native commit 829193272c1eaf223bb7228fbfb9003f414808e9 and module imports relocated under Submissions.gao_general_number_fields_9686; original declaration namespaces and provenance remain intact. Candidate.Main exposes the actual strengthened native number_field_bound and hecke_bound. Native CI run 41678339238 was in progress at draft preparation; native compilation, independent replay and tracker admission remain unverified/pending. The native Lean 4.35.0-rc3 / Mathlib 0493595 toolchain differs from the tracker’s Lean 4.34.1 / Mathlib d13f23b. Tracker toolchain and import-all compatibility plus the formal Hecke-over-Q / Dirichlet-character L-function identification remain pending. Candidate.bound is absent because that bridge has not been proved. No accepted result or record is claimed. Adapted material from Mathlib, OpenAI/math, Tau Ceti, LeanPool and vendored class-field theory retains its original attribution and full Apache license texts. The 12 October date belongs only to the original historical source; this refinement is dated 3 November 2026.",
+  "license": "Apache-2.0; full original Axiom Math and vendored class-field-theory license texts and attribution retained in src/Candidate/Provenance.lean",
+  "dependencies": [],
+  "references": [
+    {
+      "label": "Native refinement source at the submitted immutable commit",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/tree/829193272c1eaf223bb7228fbfb9003f414808e9"
+    },
+    {
+      "label": "Native refinement explanation and exact parameter changes",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/REFINEMENT.md"
+    },
+    {
+      "label": "Native GitHub CI run 41678339238 (in progress at draft preparation)",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/actions/runs/41678339238"
+    },
+    {
+      "label": "PR #114: original imported general-number-field proof closure",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/114"
+    },
+    {
+      "label": "Original AxiomMath proof source at the imported revision",
+      "url": "https://github.com/AxiomMath/DedekindZetaZeroFree/tree/09afbb4ce6570c1615d58509dc197fc9f0956b7d"
+    },
+    {
+      "label": "Original research, authorship, dependencies and build instructions",
+      "url": "https://github.com/AxiomMath/DedekindZetaZeroFree/blob/09afbb4ce6570c1615d58509dc197fc9f0956b7d/README.md"
+    },
+    {
+      "label": "A quasi-Riemann hypothesis for Dedekind zeta functions",
+      "url": "https://hexagonmath.org/2610.00200v2"
+    },
+    {
+      "label": "Native pinned build configuration",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/lakefile.toml"
+    },
+    {
+      "label": "Native formal Solution (old Challenge weakening, outside dependency closure)",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/Solution/DedekindZetaSolution.lean"
+    },
+    {
+      "label": "Original Axiom Math Apache-2.0 license",
+      "url": "https://github.com/AxiomMath/DedekindZetaZeroFree/blob/09afbb4ce6570c1615d58509dc197fc9f0956b7d/LICENSE"
+    },
+    {
+      "label": "Original vendored class-field-theory Apache-2.0 license",
+      "url": "https://github.com/AxiomMath/DedekindZetaZeroFree/blob/09afbb4ce6570c1615d58509dc197fc9f0956b7d/vendor/class-field-theory/LICENSE"
+    }
+  ],
+  "agent_traces": []
+}

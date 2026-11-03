@@ -1,0 +1,49 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Arithmetic/RayClasses/Conductors/PrimitiveQuadraticRamification.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.DedekindZetaZeroFree.Arithmetic.RayClasses.Conductors.PrimitiveConductorLowerBound
+public import Submissions.gao_general_number_fields_9686.DedekindZetaZeroFree.Arithmetic.RayClasses.Conductors.ConductorSupportUpperBound
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.ConductorsAndRayClassFields.ExistsAbelianConductor
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.Theorems.ConductorsAndRayClassFields.AbelianConductorFiniteSupport
+
+@[expose] public section
+
+open scoped NumberField Classical
+open IsDedekindDomain
+
+namespace DedekindZetaZeroFree.LargeSieve
+
+theorem quadratic_primitive_ramification
+    (F : Type) [Field F] [NumberField F]
+    (hF : NumberField.IsTotallyComplex F)
+    (f : Ideal (𝓞 F)) (hf : f ≠ ⊥)
+    (η : DedekindZetaZeroFree.RayClassCharacter F f)
+    (hq : ∀ I : Ideal (𝓞 F), η I ^ 3 = η I)
+    (hn : ¬η.IsPrincipal) (hp : η.IsPrimitive)
+    (d : QuadraticRayExtensionData η)
+    (p : HeightOneSpectrum (𝓞 F)) :
+    p.asIdeal ⊔ f ≠ ⊤ ↔
+      ∃ Q : HeightOneSpectrum (𝓞 d.extension),
+        Q.asIdeal.LiesOver p.asIdeal ∧
+          ¬ Algebra.IsUnramifiedAt (𝓞 F) Q.asIdeal := by
+  obtain ⟨c, hc⟩ := ClassFieldTheory.exists_abelianConductor F d.extension
+  constructor
+  · intro hbad
+    exact (hc.mem_finiteSupport_iff_exists_ramified p).mp
+      (RootNumber.primitive_conductor_support_lower F hF f hf η hq hn hp d c hc p hbad)
+  · rintro ⟨Q, hQ, hram⟩
+    exact RootNumber.conductor_support_upper F hF f hf η hq hn d c hc p
+      ((hc.mem_finiteSupport_iff_exists_ramified p).mpr ⟨Q, hQ, hram⟩)
+
+end DedekindZetaZeroFree.LargeSieve

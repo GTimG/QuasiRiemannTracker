@@ -1,0 +1,34 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: DedekindZetaZeroFree/Geometry/Circle/InverseSeparation.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+/-
+Vendored from TauCetiProject/TauCeti at 66f3330c1cbabafd0f5b3ea4a646c43e23105ee2,
+`TauCeti/Topology/Circle/Basic.lean`. Original Apache-2.0 copyright and authors retained.
+-/
+
+@[expose] public section
+
+namespace DedekindZetaZeroFree.TauCeti
+
+theorem circle_sub_inv_ne_zero {z : Circle} (hz : (z : ℂ) ^ 2 ≠ 1) :
+    (z : ℂ) - ((z : ℂ))⁻¹ ≠ 0 := by
+  intro hc
+  refine hz ?_
+  rw [sub_eq_zero] at hc
+  calc (z : ℂ) ^ 2 = (z : ℂ) * ((z : ℂ))⁻¹ := by rw [← hc, sq]
+    _ = 1 := mul_inv_cancel₀ z.coe_ne_zero
+
+end DedekindZetaZeroFree.TauCeti

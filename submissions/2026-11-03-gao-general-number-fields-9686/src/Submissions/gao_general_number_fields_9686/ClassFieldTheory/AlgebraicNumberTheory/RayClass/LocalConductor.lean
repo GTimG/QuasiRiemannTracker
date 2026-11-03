@@ -1,0 +1,95 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/AlgebraicNumberTheory/RayClass/LocalConductor.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.AlgebraicNumberTheory.Idele.SinglePlace
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.AlgebraicNumberTheory.RayClass.FullModulus
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Local conductor subgroups in the idele class group
+
+This file records the one-place higher-unit subgroups used to compare
+ray-class moduli with local conductors.  The constructions are
+idele- and ray-class data and do not depend on the existence of a
+global class field.
+-/
+
+open scoped NumberField
+
+noncomputable section
+
+namespace RayClass
+
+open NumberField IsDedekindDomain
+
+variable {K : Type*} [Field K] [NumberField K]
+
+/-- The image in `C_K` of the `n`-th higher-unit group at `v`. -/
+def localHigherUnitClassSubgroup
+    (v : HeightOneSpectrum (𝓞 K)) (n : ℕ) :
+    Subgroup (IdeleClassGroup K) :=
+  (localHigherUnitGroup v n).map
+    (IdeleGroup.finitePlaceIdeleClass v)
+
+/-- A one-place higher-unit condition is contained in the corresponding
+global ray congruence subgroup. -/
+theorem localHigherUnitClassSubgroup_le_congruenceSubgroup
+    (m : Modulus K)
+    (v : HeightOneSpectrum (𝓞 K)) :
+    localHigherUnitClassSubgroup v (m.finitePart v) ≤
+      m.congruenceSubgroup := by
+  rintro _ ⟨x, hx, rfl⟩
+  change
+    IdeleGroup.finitePlaceIdeleClass v x ∈
+      m.congruenceSubgroup
+  rw [Modulus.congruenceSubgroup]
+  refine ⟨IdeleGroup.finitePlaceIdele v x, ?_, rfl⟩
+  apply Subgroup.mem_sup_left
+  rw [Modulus.mem_ideleCongruenceSubgroup_iff]
+  refine
+    ⟨m.infiniteCongruenceSubgroup.one_mem, ?_⟩
+  rw [mem_finiteCongruenceSubgroup_iff]
+  intro w
+  change
+    IdeleGroup.finiteComponent w
+        (IdeleGroup.finitePlaceIdele v x) ∈
+      localHigherUnitGroup w (m.finitePart w)
+  by_cases hw : w = v
+  · subst w
+    rw [IdeleGroup.finitePlaceIdele_finiteComponent_same]
+    change
+      x ∈
+        (localHigherUnitGroup v (m.finitePart v) :
+          Set (v.adicCompletion K)ˣ)
+    exact hx
+  · rw [
+      IdeleGroup.finitePlaceIdele_finiteComponent_of_ne
+        v w x hw]
+    exact (localHigherUnitGroup w (m.finitePart w)).one_mem
+
+end RayClass
+
+end

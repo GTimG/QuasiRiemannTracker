@@ -1,0 +1,97 @@
+/-
+2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
+relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
+declaration namespaces, licensing and provenance below are retained.
+-/
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/LocalClassFieldTheory/Finite/Existence/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.gao_general_number_fields_9686.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.CharacteristicZero
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.Classification
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.CyclotomicKummerDescent
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.EqualCharacteristic
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.EqualCharacteristicDominatingExtension
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.FiniteUnramifiedField
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.KummerNormOpen
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.LocalAbsoluteData
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.LubinTateUniformizerDiagonal
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.MathlibFieldClassification
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.MaximalKummerNorm
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.NormSubgroupOrderEmbedding
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.NormSubgroupRingEquiv
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.NormSubgroupSurjectivity
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.OrderReversal
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkChosenFiniteAbelianFields
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkChosenFiniteAbelianNorms
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkFiniteAbelianFields
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkFiniteAbelianNorms
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkIntermediateFields
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkLocalClassification
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkOpenSubgroups
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.ShrinkSeparableClosure
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.StandardDominatingExtension
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.StandardLubinTate
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.StandardSubgroupIntersection
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.UnramifiedLubinTateDiagonal
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.UnramifiedNormContainment
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.UnramifiedNormSubgroup
+public import Submissions.gao_general_number_fields_9686.ClassFieldTheory.LocalClassFieldTheory.Finite.Existence.UnshrinkFiniteAbelianFields
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Finite local existence theorem
+
+The ordinary norm-subgroup assignment is an order embedding into the
+opposite poset of native open finite-index subgroups.  Kummer theory in
+characteristic zero and transported Lubin--Tate levels in positive
+characteristic prove the existing characteristic-specific order
+isomorphisms.  The canonical standard Lubin--Tate construction now also
+provides a characteristic-independent finite abelian factor with its exact
+norm subgroup.
+-/
