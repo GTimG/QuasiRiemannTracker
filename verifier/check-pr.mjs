@@ -8,7 +8,8 @@ import {
   evaluatePR,
   parseDeclaration,
 } from "./pr-admission.mjs";
-import { readSubmissionMetadata } from "./submission-metadata.mjs";
+import { readSubmissionSources } from "./submission-metadata.mjs";
+import { classifySubmissionDate } from "../core/historical-submission.mjs";
 import { syncPRLabels } from "./pr-labels.mjs";
 import { validatePRTraces } from "./agent-traces.mjs";
 
@@ -101,14 +102,24 @@ try {
     defaultBranch,
   });
   await validatePRTraces({ request: api, repository: repo, pr, files });
-  await syncPRLabels(repo, number, classification);
   const declaration = parseDeclaration(pr.body);
-  if (declaration)
-    await readSubmissionMetadata(api, {
-      repository: repo,
-      head_sha: pr.head.sha,
-      result_id: declaration.result_id,
-    });
+  const sources = declaration
+    ? await readSubmissionSources(api, {
+        repository: repo,
+        head_sha: pr.head.sha,
+        result_id: declaration.result_id,
+      })
+    : null;
+  const directoryDate = /^submissions\/(\d{4}-\d{2}-\d{2})-/.exec(
+    sources?.source_path ?? "",
+  )?.[1];
+  const historical =
+    directoryDate !== undefined &&
+    classifySubmissionDate(directoryDate, pr.created_at).historical;
+  await syncPRLabels(repo, number, {
+    ...classification,
+    ...(declaration ? { historical } : {}),
+  });
   summary = await evaluatePR({
     pr,
     files,

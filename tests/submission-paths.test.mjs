@@ -80,7 +80,7 @@ test("the directory date matches the original PR creation date in UTC", () => {
       validateSubmissionDirectory(directory, { submittedAt }),
       directory,
     );
-  for (const submittedAt of ["2026-10-26T23:59:59Z", "2026-10-28T00:00:00Z"])
+  for (const submittedAt of ["2026-10-26T23:59:59Z"])
     assert.throws(
       () => validateSubmissionDirectory(directory, { submittedAt }),
       /PR submission date/,
@@ -149,4 +149,34 @@ test("source paths bind the expected ID without accepting traversal or injected 
     "submissions/example-proof/src\0",
   ])
     assert.equal(validSubmissionSourcePath(path, id), false, String(path));
+});
+
+test("earlier directory dates automatically identify historical imports", () => {
+  const directory = "2026-10-08-historical-proof";
+  assert.equal(
+    validateSubmissionDirectory(directory, {
+      submittedAt: "2026-11-03T12:00:00Z",
+    }),
+    directory,
+  );
+  assert.equal(
+    validateSubmissionDirectory(directory, {
+      submittedAt: "2026-10-08T12:00:00Z",
+    }),
+    directory,
+  );
+  assert.throws(
+    () =>
+      validateSubmissionDirectory("2026-11-04-historical-proof", {
+        submittedAt: "2026-11-03T12:00:00Z",
+      }),
+    /cannot be after/,
+  );
+  assert.throws(
+    () =>
+      validateSubmissionDirectory("2026-02-30-historical-proof", {
+        submittedAt: "2026-11-03T12:00:00Z",
+      }),
+    /Invalid submission directory/,
+  );
 });

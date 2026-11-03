@@ -245,3 +245,35 @@ test("historical baselines enforce theta one without local verification claims",
     /start-of-year plotting anchor/,
   );
 });
+
+test("historical imported results keep their original timeline and normal verification status", () => {
+  const original = record({
+    historical: true,
+    timeline_at: "2030-09-01T00:00:00Z",
+    date_label: "Historical source created",
+    submitted_at: "2030-10-03T12:00:00Z",
+  });
+  const published = withSubmissionTimeline(original);
+  assert.equal(published.timeline_at, original.timeline_at);
+  assert.equal(published.submitted_at, original.submitted_at);
+  assert.equal(published.first_verified_at, original.first_verified_at);
+  assert.equal(published.status, original.status);
+  assert.equal(verifiedHere(published), true);
+  validateCatalogue({ schema_version: 1, records: [published] });
+  assert.throws(
+    () =>
+      validateCatalogue({
+        schema_version: 1,
+        records: [{ ...published, timeline_at: original.submitted_at }],
+      }),
+    /historical catalogue date/,
+  );
+  assert.throws(
+    () =>
+      validateCatalogue({
+        schema_version: 1,
+        records: [{ ...published, timeline_at: "2030-10-04T00:00:00Z" }],
+      }),
+    /cannot be after/,
+  );
+});

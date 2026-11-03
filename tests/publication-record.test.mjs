@@ -46,6 +46,7 @@ test("admission uses the same publication record that a later build generates", 
   assert.equal(validated.method, admission.metadata.description);
   assert.deepEqual(validated.builds_on, ["fixture-baseline"]);
   assert.equal(validated.timeline_at, admission.pr.created_at);
+  assert.equal(validated.historical, undefined);
   assert.equal(validated.date_label, "PR submitted");
   assert.equal(validated.first_verified_at, admission.certificate.verified_at);
   assert.equal(
@@ -137,4 +138,19 @@ test("an invalid enclosure for a supported value is rejected before publication"
     () => validatePublication(catalogue, admission),
     /Invalid certified enclosure/,
   );
+});
+
+test("historical publication is inferred from its folder while PR and verification dates stay accurate", () => {
+  const { catalogue, admission } = fixture();
+  admission.metadata.builds_on = [];
+  admission.source_path = "submissions/2030-10-01-candidate-proof/src";
+  const published = validatePublication(catalogue, admission);
+  assert.equal(published.historical, true);
+  assert.equal(Object.hasOwn(published, "historical_date"), false);
+  assert.equal(published.timeline_at, "2030-10-01T00:00:00Z");
+  assert.equal(published.submitted_at, admission.pr.created_at);
+  assert.equal(published.first_verified_at, admission.certificate.verified_at);
+  assert.equal(published.date_label, "Historical source created");
+  admission.source_path = "submissions/2030-10-04-candidate-proof/src";
+  assert.throws(() => publicationRecord(admission), /cannot be after/);
 });

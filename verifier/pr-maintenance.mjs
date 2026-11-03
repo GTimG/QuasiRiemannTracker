@@ -149,7 +149,17 @@ export function maintenancePlan({
         read("head", `submissions/${directory}/${file}`) === null
       )
         throw Error(`Submission ${id} requires ${file}`);
-    if (directory !== directories.base.get(id))
+    if (directory !== directories.base.get(id)) {
+      const originalDate =
+        /^\d{4}-\d{2}-\d{2}(?=-)/.exec(directories.base.get(id) ?? "")?.[0] ||
+        (
+          metadata("base", id)?.submitted_at ||
+          archived.find((record) => proofRevision(record) === id)?.submitted_at
+        )?.slice(0, 10);
+      if (originalDate && directory.slice(0, 10) !== originalDate)
+        throw Error(
+          `Submission directory must retain its original date ${originalDate}: ${directory}`,
+        );
       validateSubmissionDirectory(directory, {
         submittedAt:
           metadata("base", id)?.submitted_at ||
@@ -160,6 +170,7 @@ export function maintenancePlan({
             ? submittedAt || ""
             : undefined),
       });
+    }
   }
   for (const record of catalogueProofRecords(head))
     if (!ids.has(proofRevision(record)))

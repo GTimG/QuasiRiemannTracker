@@ -1,4 +1,8 @@
 import legacyDirectories from "./submission-directories.json" with { type: "json" };
+import {
+  classifySubmissionDate,
+  isCalendarDate,
+} from "../core/historical-submission.mjs";
 
 // Preserve IDs, Lean namespaces and immutable receipts from before the folder
 // migration. Four original imports without a PR use their recorded release date.
@@ -9,9 +13,7 @@ const legacyIds = new Map(
 const idPattern = /^[a-z][a-z0-9-]{2,63}$/;
 const datedPattern = /^(\d{4}-\d{2}-\d{2})-([a-z][a-z0-9-]{2,63})$/;
 const dateToken = /(?:^|-)(\d{4})-?(\d{2})-?(\d{2})(?=-|$)/g;
-const validDate = (date) =>
-  Number.isFinite(Date.parse(`${date}T00:00:00Z`)) &&
-  new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) === date;
+const validDate = isCalendarDate;
 
 export function validateSubmissionDirectory(directory, { submittedAt } = {}) {
   const match = typeof directory === "string" && datedPattern.exec(directory);
@@ -25,15 +27,7 @@ export function validateSubmissionDirectory(directory, { submittedAt } = {}) {
     throw Error(
       `Invalid submission directory: ${directory}; use YYYY-MM-DD-<result-id> with the date only once`,
     );
-  if (submittedAt !== undefined) {
-    if (!Number.isFinite(Date.parse(submittedAt)))
-      throw Error("Missing valid PR submission date");
-    const date = new Date(submittedAt).toISOString().slice(0, 10);
-    if (match[1] !== date)
-      throw Error(
-        `Submission directory must start with the PR submission date ${date}: ${directory}`,
-      );
-  }
+  if (submittedAt !== undefined) classifySubmissionDate(match[1], submittedAt);
   const id = legacyIds.get(directory) ?? match[2];
   if (
     Object.hasOwn(legacyDirectories, id) &&

@@ -701,3 +701,29 @@ for (const change of [
     );
     assert.equal(input.validateEvidence.mock.callCount(), 0);
   });
+
+test("historical folder dates are accepted without metadata flags and still require proof evidence", async () => {
+  const input = options(newBound, [
+    file("submissions/2026-10-08-candidate-proof/src/Candidate/Main.lean"),
+  ]);
+  input.validateEvidence = mock.fn(() => ({ theta_exact: bound }));
+  assert.match(await run(input), /Proof verification accepts/);
+  assert.equal(input.validateEvidence.mock.callCount(), 1);
+  input.validateEvidence.mock.resetCalls();
+  input.files[0].filename =
+    "submissions/2026-10-12-candidate-proof/src/Candidate/Main.lean";
+  await assert.rejects(run(input), /cannot be after/);
+  assert.equal(input.validateEvidence.mock.callCount(), 0);
+});
+
+test("a result update cannot change an already dated original directory", async () => {
+  const input = options(newBound, [
+    file("submissions/2026-10-08-candidate-proof/src/Candidate/Main.lean", {
+      status: "renamed",
+      previous_filename:
+        "submissions/2026-10-09-candidate-proof/src/Candidate/Main.lean",
+    }),
+  ]);
+  await assert.rejects(run(input), /Keep the original submission directory/);
+  assert.equal(input.validateEvidence.mock.callCount(), 0);
+});

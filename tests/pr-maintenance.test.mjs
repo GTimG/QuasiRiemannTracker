@@ -415,7 +415,7 @@ test("renaming a submission must retain its recorded submission date", () => {
   renameSubmission(data, "fixture-baseline", "2030-10-03-fixture-baseline");
   assert.throws(
     () => maintenancePlan(data),
-    /must start with the PR submission date 2030-10-02/,
+    /must retain its original date 2030-10-02/,
   );
 });
 
@@ -441,7 +441,7 @@ test("an already dated directory keeps its date even without a metadata timestam
   }
   assert.throws(
     () => maintenancePlan(data),
-    /must start with the PR submission date 2030-10-02/,
+    /must retain its original date 2030-10-02/,
   );
 });
 
@@ -478,35 +478,35 @@ test("new submissions cannot introduce an undated directory", () => {
   assert.throws(() => maintenancePlan(data), /Invalid submission directory/);
 });
 
-test("new proof metadata cannot choose a folder date different from the trusted PR date", () => {
-  for (const submittedAt of [undefined, "2030-10-03T14:00:00Z"]) {
-    const data = fixture();
-    const id = "fixture-added";
-    const directory = `2030-10-02-${id}`;
-    data.head[`submissions/${directory}/metadata.json`] = {
-      ...data.base["submissions/fixture-baseline/metadata.json"],
-      id,
-      theta: { numerator: "3", denominator: "4" },
-      status: "verification-pending",
-      first_verified_at: "",
-      certificate_url: undefined,
-    };
-    data.head[`submissions/${directory}/src/Candidate/Main.lean`] = "new proof";
-    data.files.push({
-      filename: `submissions/${directory}/metadata.json`,
-      status: "added",
-    });
-    assert.throws(
-      () => maintenancePlan({ ...data, submittedAt }),
-      submittedAt
-        ? /must start with the PR submission date 2030-10-03/
-        : /Missing valid PR submission date/,
-    );
-    assert.deepEqual(
-      maintenancePlan({ ...data, submittedAt: "2030-10-02T14:00:00Z" }),
-      [{ result_id: id, theta_exact: "3/4" }],
-    );
-  }
+test("new historical imports allow earlier folders but reject missing or future PR dates", () => {
+  const data = fixture();
+  const id = "fixture-added";
+  const directory = `2030-10-02-${id}`;
+  data.head[`submissions/${directory}/metadata.json`] = {
+    ...data.base["submissions/fixture-baseline/metadata.json"],
+    id,
+    theta: { numerator: "3", denominator: "4" },
+    status: "verification-pending",
+    first_verified_at: "",
+    certificate_url: undefined,
+  };
+  data.head[`submissions/${directory}/src/Candidate/Main.lean`] = "new proof";
+  data.files.push({
+    filename: `submissions/${directory}/metadata.json`,
+    status: "added",
+  });
+  assert.throws(
+    () => maintenancePlan(data),
+    /Missing valid PR submission date/,
+  );
+  assert.throws(
+    () => maintenancePlan({ ...data, submittedAt: "2030-10-01T14:00:00Z" }),
+    /cannot be after/,
+  );
+  for (const submittedAt of ["2030-10-02T14:00:00Z", "2030-10-03T14:00:00Z"])
+    assert.deepEqual(maintenancePlan({ ...data, submittedAt }), [
+      { result_id: id, theta_exact: "3/4" },
+    ]);
 });
 
 test("removing a module from a dated submission replays its stable proof ID", () => {
@@ -527,4 +527,19 @@ test("removing a module from a dated submission replays its stable proof ID", ()
   assert.deepEqual(maintenancePlan(data), [
     { result_id: "fixture-improvement", theta_exact: "8749/10000" },
   ]);
+});
+
+test("dated historical imports cannot be silently backdated by a maintenance rename", () => {
+  const data = fixture();
+  const id = "fixture-baseline";
+  renameSubmission(data, id, `2030-10-01-${id}`);
+  for (const path of Object.keys(data.base).filter((p) =>
+    p.startsWith(`submissions/${id}/`),
+  )) {
+    data.base[
+      `submissions/2030-10-02-${id}/${path.slice(`submissions/${id}/`.length)}`
+    ] = data.base[path];
+    delete data.base[path];
+  }
+  assert.throws(() => maintenancePlan(data), /retain its original date/);
 });

@@ -334,3 +334,15 @@ test("duplicate metadata fields cannot hide traces, including escaped keys", () 
   };
   assert.deepEqual(parseSubmissionMetadataJSON(JSON.stringify(value)), value);
 });
+
+test("historical classification cannot be supplied through explicit publication metadata fields", () => {
+  for (const changes of [
+    { historical: true },
+    { historical: false },
+    { historical_date: "2026-10-08" },
+  ])
+    assert.throws(
+      () => validateSubmissionMetadata({ ...metadata(), ...changes }),
+      /Invalid publication metadata/,
+    );
+});
