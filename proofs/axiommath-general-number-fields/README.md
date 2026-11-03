@@ -14,7 +14,7 @@ Apache-2.0 licenses are preserved under `licenses/`.
 
 ## Actual theorem and scope
 
-`Candidate.bound` states the Dedekind-zeta result for every number field
+`Candidate.number_field_bound` states the Dedekind-zeta result for every number field
 at boundary `31/32`: there exists a function holomorphic away from `1`,
 agreeing with Mathlib's Dedekind zeta function on `Re(s) > 1`, and nonzero
 on `Re(s) > 31/32` away from `1`.
@@ -24,10 +24,25 @@ characters represented as ray class characters over every number field.
 Nonprincipal characters include `s = 1`.
 
 These are the genuine general-family statements from the imported source.
-The current tracker's canonical target instead concerns Mathlib's Dirichlet
-L-functions over all positive integer moduli. No theorem bridging these
-representations is supplied in this draft, and the baseline's Dirichlet
-result is not used as a substitute for Axiom Math's proof.
+The intended tracker target is the all-Dirichlet specialization at `31/32`.
+Mathematically, take the Hecke corollary over the number field ℚ. Finite-order
+ray class characters over ℚ include all Dirichlet characters, with the real
+place accounting for odd characters. The corresponding L-functions agree,
+so the general theorem implies the canonical result, excluding the principal
+pole. This is a specialization, not an additional conjecture.
+
+The formal identification is still needed in this draft. `Candidate.bound`
+is reserved for that canonical specialization and is not yet declared;
+`Candidate.number_field_bound` and `Candidate.hecke_bound` preserve the genuine
+upstream results. The baseline's Dirichlet result is not used as a substitute
+for Axiom Math's proof.
+
+A direct Lean bridge can identify ideals of the ring of integers of ℚ with
+nonnegative integers, define the ray character by
+`η I := if I = ⊥ then 0 else χ (Ideal.absNorm I)`, reindex the ideal series,
+and identify the analytic continuations on `ℂ \ {1}`. The zero-ideal branch
+is necessary for modulus 1. Mathlib's classical nonvanishing at 1 handles
+that point for nonprincipal characters.
 
 ## Native proof package
 
@@ -69,8 +84,7 @@ The usual tracker verifier pins Lean `4.34.1` and Mathlib `d13f23b...`.
 Its canonical challenge has a different statement, and its existing import
 scanner does not account for native `import all` dependencies. As a result,
 this submission is not ready for ordinary tracker admission. Native
-source compatibility, dependency scanning, a general-family verification
-profile or a faithful all-Dirichlet bridge, and independent Comparator/
+source compatibility, dependency scanning, the faithful all-Dirichlet specialization, and independent Comparator/
 kernel replay remain required before it can be represented as verified.
 
 The value `31/32` expands the covered family; it does not improve the current

@@ -7,9 +7,9 @@ public import Submissions.axiommath_general_number_fields.DedekindZetaZeroFree.H
 
 namespace Candidate
 
-/-- AxiomMath’s general number-field theorem. This is deliberately the actual
-native target, rather than the tracker’s different all-Dirichlet target. -/
-theorem bound (K : Type) [Field K] [NumberField K] :
+/-- AxiomMath’s general number-field theorem, retained as the source of the
+intended all-Dirichlet specialization. -/
+theorem number_field_bound (K : Type) [Field K] [NumberField K] :
     ∃ f : ℂ → ℂ, DifferentiableOn ℂ f ({1}ᶜ : Set ℂ) ∧
       (∀ s : ℂ, 1 < s.re → f s = NumberField.dedekindZeta K s) ∧
       ∀ s : ℂ, 31 / 32 < s.re → s ≠ 1 → f s ≠ 0 := by
