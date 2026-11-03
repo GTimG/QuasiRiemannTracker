@@ -1,7 +1,11 @@
 /-
 2026-11-03 tracker adaptation by Zhongpai Gao: the PR #114 support prefix is
-relocated to Submissions.gao_general_number_fields_9686; original proof bodies,
-declaration namespaces, licensing and provenance below are retained.
+relocated to Submissions.gao_general_number_fields_9686; original declaration
+namespaces, licensing and provenance below are retained. One additional tracker
+Lean 4.34.1 tactic-compatibility edit changes `using 1; rfl` to `using 1 <;> rfl`
+in fieldNormUnits_eq_prod_conjugates, applying reflexivity to every convert
+subgoal. The isolated theorem passed on the tracker pins; this complete module
+and its downstream proof closure have not been replayed.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -65,7 +69,7 @@ theorem fieldNormUnits_eq_prod_conjugates
   simp only [Units.coe_map, Units.coe_prod]
   convert
     (_root_.Algebra.norm_eq_prod_automorphisms K (x : L))
-    using 1; rfl
+    using 1 <;> rfl
 
 omit [NumberField L] in
 /-- On the diagonal copy of `Lˣ`, after extending the norm
