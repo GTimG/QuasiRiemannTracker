@@ -36,11 +36,13 @@ export const formatContributionDate = (r) =>
   });
 export const boundLabel = (r) => r.exact_bound || fraction(r.theta);
 export const verifiedHere = (r) =>
-  r.status === "framework-verified" || r.status === "verified";
+  r.status === "accepted" ||
+  r.status === "framework-verified" ||
+  r.status === "verified";
 export const statusLabel = (r) =>
   historicalBaseline(r)
     ? "Historical baseline"
-    : r.status === "framework-verified"
+    : r.status === "accepted" || r.status === "framework-verified"
       ? "Verified in our framework"
       : r.status === "verification-pending"
         ? "Verification pending"
@@ -78,6 +80,7 @@ export function validateCatalogue(data) {
     rational(r.theta.numerator, r.theta.denominator);
     if (
       ![
+        "accepted",
         "framework-verified",
         "verification-pending",
         "historical-baseline",
@@ -151,12 +154,36 @@ export function validateCatalogue(data) {
         throw Error("Invalid certified enclosure for Liu's bound");
     }
   }
+  const currentById = new Map(
+    data.records.map((record) => [record.id, record]),
+  );
+  const utcDay = (at) => new Date(at).toISOString().slice(0, 10);
   for (const r of proofRecords)
     for (const p of r.builds_on) {
-      const parent = data.records.find((x) => x.id === p);
-      if (!parent || parent.timeline_at >= r.timeline_at)
+      const parent = currentById.get(p);
+      if (!parent) throw Error("Unknown or later catalogue predecessor");
+      // Accepted imports can record only a calendar day. Do not invent an
+      // order within that day when crediting a predecessor.
+      const dayPrecision =
+        r.status === "accepted" || parent.status === "accepted";
+      if (
+        dayPrecision
+          ? utcDay(parent.timeline_at) > utcDay(r.timeline_at)
+          : Date.parse(parent.timeline_at) >= Date.parse(r.timeline_at)
+      )
         throw Error("Unknown or later catalogue predecessor");
     }
+  const visiting = new Set(),
+    checked = new Set();
+  const checkCycles = (record) => {
+    if (visiting.has(record)) throw Error("Cyclic catalogue predecessors");
+    if (checked.has(record)) return;
+    visiting.add(record);
+    for (const id of record.builds_on) checkCycles(currentById.get(id));
+    visiting.delete(record);
+    checked.add(record);
+  };
+  for (const record of proofRecords) checkCycles(record);
   // Every displayed comparison must be decided exactly, even for algebraic entries.
   for (const a of data.records)
     for (const b of data.records) {

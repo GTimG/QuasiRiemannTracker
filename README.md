@@ -23,27 +23,44 @@ tests and production build.
 ## Data
 
 Each `submissions/YYYY-MM-DD-<slug>/` directory contains `metadata.json` and its Lean
-source in `src/`. Website deployment combines this metadata with
-merged admission records to generate the catalogue. Generated catalogue JSON is
-ignored by Git. Local development and preview builds generate the same files.
-Builds generate small verification records in `public/certificates/` that link
-each checked bound to its source commit and verification report. These files are
-ignored by Git. Historical report URLs and hashes live in the corresponding
-submission's `metadata.json`; new submissions use their admission records.
+source in `src/`. Catalogue builds use the current checkout and, when available,
+the current tree of the local `admission-records` branch. No commit history,
+GitHub API requests, credentials or ignored cache are needed. The
+canonical `Candidate.bound` statement supplies the exact bound for modern
+submissions; older entries retain their recorded algebraic bounds and revisions.
+Builds include submissions present in the checkout. Deployment runs from main,
+where merging a submission means it has been accepted after PR verification or
+a local maintainer run. Catalogue generation does not repeat that admission check.
+
+Generated catalogue JSON and `public/certificates/` are ignored by Git. Existing
+verification dates and reports come from submission metadata or the existing
+`admission-records` branch. These are publication facts, not inclusion checks;
+submissions without a record still appear. There is no new publication registry.
+Merged submissions retain the existing verification label and link to their
+committed Lean source. Dates are displayed only where recorded.
+
+A shallow clone is sufficient. To include the recorded publication dates and
+reports, clone the branch tips with `git clone --depth=1 --no-single-branch URL`,
+or fetch just the archive tip into an existing shallow clone:
+
+```sh
+git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/origin/admission-records
+```
+
+Catalogue generation itself never fetches. A main-only shallow clone also
+includes every submission, using directory dates where PR dates are unavailable.
 
 Verified PR contributions are plotted at their PR submission time. A submission
 directory dated earlier than the PR creation date is automatically treated as a
 historical import and plotted at its original directory date. It receives an
 additional Historical tag while retaining its normal verification status.
-The actual PR, verification and merge dates remain separate provenance.
-Older entries without a recorded PR submission date retain their documented date
-and label; a submission date is not a mathematical discovery date. Verification
-and merge dates are shown separately in the details. Metadata comes from the
-latest admitted version before merge, while the first verification date and
-linked certificate come from the earliest authenticated success for the same
-PR head, bound and source tree. Metadata edits and reruns cannot reset that date.
-The offline admission cache retains all eligible receipts; refresh it through
-the normal online main-branch build to recover older receipts from the archive.
+Recorded PR and verification dates remain separate provenance. When no PR creation
+time is recorded locally, the catalogue uses the directory date and labels it
+Source created; it does not guess a historical tag or verification timestamp.
+Older entries retain their documented dates and labels; these dates are not
+claims about when the mathematics was discovered. Current metadata supplies
+attribution and descriptions, while recorded verification dates and reports
+remain fixed.
 
 ## Submit
 
