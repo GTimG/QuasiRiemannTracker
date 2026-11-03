@@ -31,8 +31,12 @@ each checked bound to its source commit and verification report. These files are
 ignored by Git. Historical report URLs and hashes live in the corresponding
 submission's `metadata.json`; new submissions use their admission records.
 
-Verified PR contributions are plotted at their PR submission time. Older
-entries without a recorded PR submission date retain their documented date
+Verified PR contributions are plotted at their PR submission time. A submission
+directory dated earlier than the PR creation date is automatically treated as a
+historical import and plotted at its original directory date. It receives an
+additional Historical tag while retaining its normal verification status.
+The actual PR, verification and merge dates remain separate provenance.
+Older entries without a recorded PR submission date retain their documented date
 and label; a submission date is not a mathematical discovery date. Verification
 and merge dates are shown separately in the details. Metadata comes from the
 latest admitted version before merge, while the first verification date and
@@ -53,6 +57,17 @@ the normal online main-branch build to recover older receipts from the archive.
    appears only once: choose a lowercase slug without another date, such as
    `example-bound`. Admission checks the prefix against the PR creation time.
    Keep that original directory name when updating the proof on later days.
+
+   For an imported historical result, use its documented original source
+   creation date instead of the new PR date, for example
+   `submissions/2026-10-08-example-bound/` for an October 8 source imported in
+   a later PR. The earlier directory date automatically marks the submission
+   and PR as Historical; no extra metadata fields are needed.
+
+   The directory date must be a real `YYYY-MM-DD` date and cannot be later
+   than the PR creation date. Include the original source and date evidence
+   in the description and references. Historical imports follow the same
+   proof and license requirements as other submissions.
 
 2. **Commit `submissions/YYYY-MM-DD-<slug>/metadata.json` alongside the Lean source.**
    Admission reads this required file from the exact PR head. The submission

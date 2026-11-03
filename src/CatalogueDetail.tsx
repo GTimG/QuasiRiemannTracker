@@ -43,6 +43,11 @@ export default function CatalogueDetail({
         >
           {statusLabel(r)}
         </span>
+        {r.historical && (
+          <span className="historical-submission-tag detail-historical-tag">
+            Historical
+          </span>
+        )}
         <div className="exact-result">
           <span>EXACT θ</span>
           <strong>{boundLabel(r)}</strong>
@@ -64,6 +69,12 @@ export default function CatalogueDetail({
               ? timestamp(r.submitted_at)
               : `${formatContributionDate(r)}${r.date_precision === "year" ? " (year only)" : " (UTC)"}`}
           </dd>
+          {r.historical && r.submitted_at && (
+            <>
+              <dt>PR submitted</dt>
+              <dd>{timestamp(r.submitted_at)}</dd>
+            </>
+          )}
           <dt>First verified here</dt>
           <dd>
             {r.first_verified_at
