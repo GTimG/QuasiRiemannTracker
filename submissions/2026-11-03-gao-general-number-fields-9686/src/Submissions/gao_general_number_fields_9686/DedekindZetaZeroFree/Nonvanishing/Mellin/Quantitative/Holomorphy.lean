@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -41,7 +40,7 @@ private lemma g_eq_flat_on :
   norm_num
 
 private lemma g_top (ε : ℝ) (hε : 0 < ε) :
-    ∃ C : ℝ, ∀ᶠ Z in atTop, ‖MellinTransform.g D Z‖ ≤ C * Z ^ (4843 / 5000 + ε) := by
+    ∃ C : ℝ, ∀ᶠ Z in atTop, ‖MellinTransform.g D Z‖ ≤ C * Z ^ (31 / 32 + ε) := by
   obtain ⟨C, _, h⟩ := Spectral.g_growth D ε hε
   refine ⟨C, eventually_atTop.2 ⟨2, fun Z hZ => ?_⟩⟩
   have hZ0 : (0 : ℝ) < Z := by linarith
@@ -51,12 +50,12 @@ private lemma g_top (ε : ℝ) (hε : 0 < ε) :
   rw [e]
   exact h Z hZ
 
-private lemma mellin_props (z : ℂ) (hz : z.re < -(4843 / 5000)) :
+private lemma mellin_props (z : ℂ) (hz : z.re < -(31 / 32)) :
     MellinConvergent (MellinTransform.g D) z ∧
       DifferentiableAt ℂ (mellin (MellinTransform.g D)) z := by
-  set ε : ℝ := (-(4843 / 5000) - z.re) / 4 with hεdef
+  set ε : ℝ := (-(31 / 32) - z.re) / 4 with hεdef
   have hε : 0 < ε := by rw [hεdef]; linarith
-  set a : ℝ := -(4843 / 5000 + ε) with ha
+  set a : ℝ := -(31 / 32 + ε) with ha
   set b : ℝ := z.re - 1 with hb
   have hza : z.re < a := by rw [ha, hεdef]; linarith
   have hbz : b < z.re := by rw [hb]; linarith
@@ -66,11 +65,11 @@ private lemma mellin_props (z : ℂ) (hz : z.re < -(4843 / 5000)) :
       (Eventually.of_forall fun Z hZ => (g_eq_flat_on D hZ).symm)
   have htop : MellinTransform.g D =O[atTop] (fun x : ℝ => x ^ (-a)) := by
     obtain ⟨C, hC⟩ := g_top D ε hε
-    have hneg : -a = 4843 / 5000 + ε := by rw [ha]; ring
+    have hneg : -a = 31 / 32 + ε := by rw [ha]; ring
     rw [hneg]
     refine Asymptotics.IsBigO.of_bound C ?_
     filter_upwards [hC, eventually_gt_atTop 0] with Z hZ hZ0
-    have hp : 0 ≤ Z ^ (4843 / 5000 + ε) := Real.rpow_nonneg hZ0.le _
+    have hp : 0 ≤ Z ^ (31 / 32 + ε) := Real.rpow_nonneg hZ0.le _
     rw [Real.norm_of_nonneg hp]
     exact hZ
   have hbot : MellinTransform.g D =O[𝓝[>] (0 : ℝ)] (fun x : ℝ => x ^ (-b)) := by
@@ -80,7 +79,7 @@ private lemma mellin_props (z : ℂ) (hz : z.re < -(4843 / 5000)) :
   exact ⟨mellinConvergent_of_isBigO_rpow hloc htop hza hbot hbz,
     mellin_differentiableAt_of_isBigO_rpow hloc htop hza hbot hbz⟩
 
-theorem T_integrable (s : ℂ) (hs : 4843 / 5000 < s.re) :
+theorem T_integrable (s : ℂ) (hs : 31 / 32 < s.re) :
     IntegrableOn (fun Z : ℝ =>
       Spectral.f D Z * (Z : ℂ) ^ (-s + 61 / 100) / (Z : ℂ)) (Set.Ioi 0) := by
   have hc : IntegrableOn (fun t : ℝ => (t : ℂ) ^ (-s - 1) • MellinTransform.g D t) (Ioi 0) :=
@@ -96,14 +95,14 @@ theorem T_integrable (s : ℂ) (hs : 4843 / 5000 < s.re) :
   rw [h1, h2]
   ring
 
-theorem T_mellinConvergent (s : ℂ) (hs : 4843 / 5000 < s.re) :
+theorem T_mellinConvergent (s : ℂ) (hs : 31 / 32 < s.re) :
     MellinConvergent (MellinTransform.g D) (-s) :=
   (mellin_props D (-s) (by rw [Complex.neg_re]; linarith)).1
 
 theorem T_differentiableOn :
-    DifferentiableOn ℂ (MellinTransform.T D) {s : ℂ | 4843 / 5000 < s.re} := by
+    DifferentiableOn ℂ (MellinTransform.T D) {s : ℂ | 31 / 32 < s.re} := by
   intro s hs
-  have hs' : 4843 / 5000 < s.re := hs
+  have hs' : 31 / 32 < s.re := hs
   have h := (mellin_props D (-s) (by rw [Complex.neg_re]; linarith)).2
   have hneg : DifferentiableAt ℂ (fun s : ℂ => -s) s := by fun_prop
   have h2 : DifferentiableAt ℂ (fun s : ℂ => mellin (MellinTransform.g D) (-s)) s :=

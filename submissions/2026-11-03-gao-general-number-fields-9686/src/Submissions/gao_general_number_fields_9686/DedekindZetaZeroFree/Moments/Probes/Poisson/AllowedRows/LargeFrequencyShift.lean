@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -535,7 +534,7 @@ theorem large_row_triple_bound (ε : ℝ) (hε : 0 < ε) :
       (fun y : ℝ × ℝ => ((1 + |y.1|) ^ 2)⁻¹ * ((1 + |y.2|) ^ 2)⁻¹)
     rw [e2, ← hI0] at this
     exact this
-  have hE : Scales.kernelExponent 4 4 Scales.tailShift ≤ (44675 / 10000 : ℝ) + 33 / 100 * Scales.tailShift := by
+  have hE : Scales.kernelExponent 4 4 Scales.tailShift = (44675 / 10000 : ℝ) + 33 / 100 * Scales.tailShift := by
     norm_num [Scales.kernelExponent, Scales.xExponent, Scales.yExponent, Scales.smoothingExponent, Scales.tailShift]
   calc ∫ t : ℝ × ℝ × ℝ, ‖K D u ((4 : ℂ) + (t.1 : ℂ) * I) ((4 : ℂ) + (t.2.1 : ℂ) * I)
           (((Scales.tailShift : ℝ) : ℂ) + (t.2.2 : ℂ) * I) Z‖
@@ -546,11 +545,8 @@ theorem large_row_triple_bound (ε : ℝ) (hε : 0 < ε) :
         rw [integral_const_mul, integral_const_mul, e3]; ring
     _ ≤ (Z ^ ((44675 / 10000 : ℝ) + 33 / 100 * Scales.tailShift) * D.q u ^ (-Scales.tailShift + ε)) *
           (c * I0 ^ 3 + 1) := by
-        rw [hBd]
-        have hpow := Real.rpow_le_rpow_of_exponent_le (by linarith : (1 : ℝ) ≤ Z) hE
-        have hprod := mul_le_mul_of_nonneg_right hpow
-          (Real.rpow_nonneg hq0.le (-Scales.tailShift + ε))
-        exact mul_le_mul hprod (by linarith) (by positivity) (by positivity)
+        rw [hBd, hE]
+        exact mul_le_mul_of_nonneg_left (by linarith) (by positivity)
     _ = _ := by ring
 
 end

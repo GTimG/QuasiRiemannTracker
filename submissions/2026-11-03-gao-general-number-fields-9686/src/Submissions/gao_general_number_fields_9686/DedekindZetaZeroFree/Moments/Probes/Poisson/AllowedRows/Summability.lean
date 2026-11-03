@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -77,7 +76,7 @@ private theorem dyadIntegral_eq (k : ℕ) (Z : ℝ) :
 
 theorem nonprincipalSum_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ Z : ℝ, 2 ≤ Z →
-      ‖nonprincipalSum D Z‖ ≤ C * Z ^ (35859 / 100000 : ℝ) := by
+      ‖nonprincipalSum D Z‖ ≤ C * Z ^ (717 / 2000 : ℝ) := by
   obtain ⟨A_F, ρ, hA, hconv, hρ⟩ := DetectorHeight.detector_height_exists D
   have hρpos : 0 < ρ := hρ.1
   obtain ⟨Cs, hCs, hS⟩ := RowsSmall.rows_small D (1 / 10000) (by norm_num)
@@ -96,7 +95,7 @@ theorem nonprincipalSum_bound :
   refine ⟨max (Cs + Ce + Cg + Ch + Cl) (max Cc 1), lt_of_lt_of_le one_pos hC1, fun Z hZ => ?_⟩
   have hZ1 : 1 ≤ Z := by linarith
   have hZpos : 0 < Z := by linarith
-  have hpow1 : 1 ≤ Z ^ (35859 / 100000 : ℝ) := Real.one_le_rpow hZ1 (by norm_num)
+  have hpow1 : 1 ≤ Z ^ (717 / 2000 : ℝ) := Real.one_le_rpow hZ1 (by norm_num)
   have hCpos : 0 < max (Cs + Ce + Cg + Ch + Cl) (max Cc 1) := lt_of_lt_of_le one_pos hC1
   by_cases hbig : Z₀ ≤ Z
   ·
@@ -143,20 +142,20 @@ theorem nonprincipalSum_bound :
     have bg := hG Z hZg'
     have bh := hH Z hZh'
     have bl := (hL Z hZ).2
-    have hp : ∀ e : ℝ, e ≤ 35859 / 100000 → Z ^ e ≤ Z ^ (35859 / 100000 : ℝ) :=
+    have hp : ∀ e : ℝ, e ≤ 717 / 2000 → Z ^ e ≤ Z ^ (717 / 2000 : ℝ) :=
       fun e he => Real.rpow_le_rpow_of_exponent_le hZ1 he
     have e1 := mul_le_mul_of_nonneg_left
-      (hp (Scales.mainExponent - 469359 / 10000000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCs.le
+      (hp (Scales.mainExponent - 471999 / 10000000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCs.le
     have e2 := mul_le_mul_of_nonneg_left
-      (hp (Scales.mainExponent - 64897 / 2000000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCe.le
+      (hp (Scales.mainExponent - 2617 / 80000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCe.le
     have e3 := mul_le_mul_of_nonneg_left
-      (hp (Scales.mainExponent - 7883 / 250000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCg.le
+      (hp (Scales.mainExponent - 7949 / 250000 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCg.le
     have e4 := mul_le_mul_of_nonneg_left
       (hp (Scales.mainExponent - 1) (by unfold Scales.mainExponent; norm_num)) hCh.le
     have e5 := mul_le_mul_of_nonneg_left
       (hp (Scales.mainExponent - 1481 / 2500 + 1 / 10000) (by unfold Scales.mainExponent; norm_num)) hCl.le
-    have hfin : (Cs + Ce + Cg + Ch + Cl) * Z ^ (35859 / 100000 : ℝ) ≤
-        max (Cs + Ce + Cg + Ch + Cl) (max Cc 1) * Z ^ (35859 / 100000 : ℝ) :=
+    have hfin : (Cs + Ce + Cg + Ch + Cl) * Z ^ (717 / 2000 : ℝ) ≤
+        max (Cs + Ce + Cg + Ch + Cl) (max Cc 1) * Z ^ (717 / 2000 : ℝ) :=
       mul_le_mul_of_nonneg_right (le_max_left _ _) (by positivity)
     refine (key _ _ _ _ _).trans ?_
     linarith

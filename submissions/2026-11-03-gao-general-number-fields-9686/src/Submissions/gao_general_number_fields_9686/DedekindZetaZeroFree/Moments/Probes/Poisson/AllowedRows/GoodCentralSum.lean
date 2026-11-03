@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -148,7 +147,7 @@ theorem rows_good_central_dyad (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : Convexit
 
 theorem exponent_sum :
     Scales.kernelExponent Scales.goodLine Scales.wLine Scales.zLine + Scales.largeCutoffExponent * (26 / 25) =
-      Scales.mainExponent - 7883 / 250000 := by
+      Scales.mainExponent - 7949 / 250000 := by
   unfold Scales.kernelExponent Scales.goodLine Scales.wLine Scales.zLine Scales.xExponent Scales.smoothingExponent Scales.yExponent Scales.largeCutoffExponent Scales.mainExponent
   norm_num
 
@@ -199,7 +198,7 @@ theorem rows_good_central (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpo
       ‖∑ k ∈ intermediateDyads Z,
           Jcentral D (goodRows D ρ ((2 : ℝ) ^ k)) Scales.goodLine Scales.wLine Scales.zLine
             (((2 : ℝ) ^ k) ^ ρ) Z‖ ≤
-        C * Z ^ (Scales.mainExponent - 7883 / 250000 + ε) := by
+        C * Z ^ (Scales.mainExponent - 7949 / 250000 + ε) := by
   obtain ⟨C, hC, U₀, hU₀, hdy⟩ :=
     rows_good_central_dyad D A_F ρ hA hconv hρ (ε / 2) (by positivity)
   have hκl : Scales.largeCutoffExponent ≤ 1 := by unfold Scales.largeCutoffExponent; norm_num
@@ -217,7 +216,7 @@ theorem rows_good_central (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpo
 
   have hterm : ∀ k ∈ intermediateDyads Z,
       ‖Jcentral D (goodRows D ρ ((2 : ℝ) ^ k)) Scales.goodLine Scales.wLine Scales.zLine
-            (((2 : ℝ) ^ k) ^ ρ) Z‖ ≤ C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent) := by
+            (((2 : ℝ) ^ k) ^ ρ) Z‖ ≤ C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent) := by
     intro k hk
     obtain ⟨h1, h2⟩ := mem_intermediateDyads hZ1 hk
     have hU : U₀ ≤ (2 : ℝ) ^ k := by
@@ -234,7 +233,7 @@ theorem rows_good_central (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpo
     have hUpow : ((2 : ℝ) ^ k) ^ (26 / 25 + ε / 2) ≤ Z ^ (Scales.largeCutoffExponent * (26 / 25 + ε / 2)) := by
       rw [Real.rpow_mul hZpos.le]
       exact Real.rpow_le_rpow (by positivity) h2 (by positivity)
-    have hexp : (Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent = Scales.kernelExponent Scales.goodLine Scales.wLine Scales.zLine + Scales.largeCutoffExponent * (26 / 25 + ε / 2) := by
+    have hexp : (Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent = Scales.kernelExponent Scales.goodLine Scales.wLine Scales.zLine + Scales.largeCutoffExponent * (26 / 25 + ε / 2) := by
       rw [← exponent_sum]; ring
     rw [hexp, Real.rpow_add hZpos, mul_assoc]
     exact mul_le_mul_of_nonneg_left
@@ -244,13 +243,13 @@ theorem rows_good_central (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpo
             (((2 : ℝ) ^ k) ^ ρ) Z‖
       ≤ ∑ k ∈ intermediateDyads Z, ‖Jcentral D (goodRows D ρ ((2 : ℝ) ^ k)) Scales.goodLine
           Scales.wLine Scales.zLine (((2 : ℝ) ^ k) ^ ρ) Z‖ := norm_sum_le _ _
-    _ ≤ ∑ k ∈ intermediateDyads Z, C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent) :=
+    _ ≤ ∑ k ∈ intermediateDyads Z, C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent) :=
         Finset.sum_le_sum hterm
-    _ = ((intermediateDyads Z).card : ℝ) * (C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by
+    _ = ((intermediateDyads Z).card : ℝ) * (C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by
         rw [Finset.sum_const, nsmul_eq_mul]
-    _ ≤ (Real.log Z / Real.log 2 + 1) * (C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent)) :=
+    _ ≤ (Real.log Z / Real.log 2 + 1) * (C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent)) :=
         mul_le_mul_of_nonneg_right (card_intermediateDyads_le hZ1) (by positivity)
-    _ ≤ ((2 / (ε * Real.log 2) + 1) * Z ^ (ε / 2)) * (C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by
+    _ ≤ ((2 / (ε * Real.log 2) + 1) * Z ^ (ε / 2)) * (C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by
         refine mul_le_mul_of_nonneg_right ?_ (by positivity)
         have hl : Real.log Z ≤ Z ^ (ε / 2) / (ε / 2) := Real.log_le_rpow_div hZpos.le (by positivity)
         have h1 : 1 ≤ Z ^ (ε / 2) := Real.one_le_rpow hZ1 (by positivity)
@@ -261,14 +260,14 @@ theorem rows_good_central (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpo
               have : ε ≠ 0 := hε.ne'
               field_simp
         nlinarith
-    _ ≤ (C * (2 / (ε * Real.log 2) + 1)) * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε) := by
-        have h3 : Z ^ (ε / 2) * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent) ≤ Z ^ ((Scales.mainExponent - 7883 / 250000) + ε) := by
+    _ ≤ (C * (2 / (ε * Real.log 2) + 1)) * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε) := by
+        have h3 : Z ^ (ε / 2) * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent) ≤ Z ^ ((Scales.mainExponent - 7949 / 250000) + ε) := by
           rw [← Real.rpow_add hZpos]
           exact Real.rpow_le_rpow_of_exponent_le hZ1 (by nlinarith [mul_nonneg hε.le (sub_nonneg.mpr hκl)])
         have hc : 0 ≤ C * (2 / (ε * Real.log 2) + 1) := by positivity
-        calc ((2 / (ε * Real.log 2) + 1) * Z ^ (ε / 2)) * (C * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent))
+        calc ((2 / (ε * Real.log 2) + 1) * Z ^ (ε / 2)) * (C * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent))
             = (C * (2 / (ε * Real.log 2) + 1)) *
-              (Z ^ (ε / 2) * Z ^ ((Scales.mainExponent - 7883 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by ring
+              (Z ^ (ε / 2) * Z ^ ((Scales.mainExponent - 7949 / 250000) + ε / 2 * Scales.largeCutoffExponent)) := by ring
           _ ≤ _ := mul_le_mul_of_nonneg_left h3 hc
 
 end

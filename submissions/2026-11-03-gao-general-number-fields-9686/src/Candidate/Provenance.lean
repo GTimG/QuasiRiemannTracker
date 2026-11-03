@@ -1,12 +1,12 @@
 /-
-2026-11-03 general-number-field 4843/5000 draft: provenance and notices
+2026-11-03 general-number-field 1209/1250 draft: provenance and notices
 
 Refinement author: Zhongpai Gao with AI assistance, https://github.com/Gaozhongpai
-Native refinement commit: 829193272c1eaf223bb7228fbfb9003f414808e9
-Native source: https://github.com/Gaozhongpai/DedekindZetaZeroFree/tree/829193272c1eaf223bb7228fbfb9003f414808e9
-Native CI: https://github.com/Gaozhongpai/DedekindZetaZeroFree/actions/runs/41678339238
-CI was in progress at draft preparation. Native compilation, independent replay,
-and tracker admission are unverified/pending. No admitted record is claimed.
+Native extension commit: 1823f8b90a601a29eda3cded57796e7200f2af9f
+Native source: https://github.com/Gaozhongpai/DedekindZetaZeroFree/tree/1823f8b90a601a29eda3cded57796e7200f2af9f
+Native CI: https://github.com/Gaozhongpai/DedekindZetaZeroFree/actions/runs/41707610922
+Full native compilation, actual tracker closure, exact target comparison and
+independent-kernel admission remain pending. No verified new record is claimed.
 
 Original research and proof source: Dean Cureton and Jesse Thorner directed the
 research and made the mathematical judgments; AxiomProver generated the proofs
@@ -18,59 +18,46 @@ This refinement and its submission date are 2026-11-03.
 PR #114: https://github.com/GTimG/QuasiRiemannTracker/pull/114
 PR #114 snapshot: 1f36d894a6253d45dd1a6e6ab512a85df2a19c7a
 
-This standalone source package retains PR #114's 5,508 local/vendored proof
-modules and adds five proved arithmetic/analytic Dirichlet bridge modules. Thirty dependency modules are replaced by the native refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; all local imports now use
-Submissions.gao_general_number_fields_9686. Original declaration namespaces,
-source attribution, copyright notices and dependency headers are retained.
-Three tracker-only Lean 4.34.1 compatibility adaptations are included. The first changes
-`using 1; rfl` to `using 1 <;> rfl` in the vendored
-ClassFieldTheory/AlgebraicNumberTheory/Idele/Extension/NormProperties.lean theorem
-fieldNormUnits_eq_prod_conjugates, applying reflexivity to every convert subgoal.
-All thirty native refinement modules remain exact after import relocation. The
-isolated unit-valued norm theorem passed with tracker Lean v4.34.1 and Mathlib
-d13f23b723b8a846827a245b89c10fc7d3f11612 using only propext, Classical.choice
-and Quot.sound. The complete class-field-theory module and its downstream proof
-closure have not been replayed. The second adaptation in
-ValuedFieldTheory/Valuation/DiscreteValuationField/HenselianFinite.lean replaces
-IsConcreteLE.le_iff with SetLike.le_def. Its complete finite-algebra Jacobson
-theorem passed an isolated check on the same tracker pins, with the same three
-standard axioms; this complete module and downstream closure remain unverified.
-The third adaptation replaces six unavailable AddMonoidHom.ofClass calls in
-GaloisCohomology/Kummer/Abstract/KummerDelta.lean with the existing
-wp.hom.toAddMonoidHom projection. The actual subgroup definitions and radical
-fixedness theorem passed isolated checks on the tracker pins, with the three
-standard axioms. The full Kummer module and downstream proof remain unverified.
-All three changes preserve the mathematical statements.
-The native change also updates Solution/DedekindZetaSolution.lean, which only
-weakens the stronger endpoints to the original 31/32 Challenge; it is outside
-this dependency closure and remains available at the immutable native source.
-The original Challenge placeholders are excluded from this source package.
-Candidate.Main exposes the actual strengthened native Dedekind and finite-order
-Hecke theorems at 4843/5000 = 0.9686, with the original pole exclusions, over
-every number field and at every height. This is a parameter refinement of the
-original argument; no new arithmetic estimate or independent method is claimed.
+The 5,508 original local/vendored modules are retained. The thirty earlier
+0.9686 parameter replacements are restored to the original 31/32 proof, after
+import relocation. The new 171-module extension independently imports this
+old endpoint; its scale-dependent declarations use namespace Refinement9672.
+It derives uniform primitive conductor growth from the old strip by logarithmic
+control, the functional equation and interpolation. The input at Re(s)=0.12 has
+conductor exponent 17/40. Both actual masked numerator branches then have net
+cost 1/40. With b=234/625, reflected growth 893/2500 and spectral shift 61/100,
+Candidate.Main exposes the proposed Dedekind and Hecke boundary 1209/1250.
+All original pole exclusions, number fields and heights are retained.
+No baseline module imports the successor, and no challenge placeholder occurs
+in this package. The directory identifier ending in 9686 is historical.
+
+The five Bridge modules construct the actual rational ray character, identify
+its ideal series with Mathlib's Dirichlet L-function and prove analytic
+continuation. Candidate.bound applies the new native Hecke theorem over Q.
+The bridge covers modulus 1, odd/imprimitive characters, all heights and
+nonprincipal s=1. All five components passed isolated tracker checks with only
+propext, Classical.choice and Quot.sound. Strict isolated logarithmic-control,
+gamma, functional-equation and interpolation components also pass. These checks
+do not certify actual full native assembly or the complete endpoint.
+
+Three proof-preserving tracker compatibility adaptations are retained:
+- NormProperties.lean: `using 1 <;> rfl` closes every convert subgoal.
+- HenselianFinite.lean: SetLike.le_def replaces IsConcreteLE.le_iff.
+- KummerDelta.lean: six unavailable AddMonoidHom.ofClass calls use the existing
+  wp.hom.toAddMonoidHom projection.
+The affected isolated theorems/definitions pass on the tracker pins with the
+three standard axioms. Five Mathlib-only helper modules use the older
+Volume.Measure import; an unused Basify import is omitted. All five complete
+helper modules passed isolated checks with their theorem bodies unchanged.
+Full vendored modules and downstream proof closure remain under verification.
 
 Upstream dependencies and adapted material include Mathlib, Tau Ceti,
 LeanPool/lean-pool, OpenAI/math and the vendored class-field-theory development
-FiniteAbelianGlobalReciprocityv2. Their original attribution is retained in the
-individual source files. The full original Axiom Math and vendored class-field-
-theory Apache-2.0 license texts follow verbatim below.
+FiniteAbelianGlobalReciprocityv2. Individual source notices are retained.
+The full original Axiom Math and class-field-theory license texts follow below.
 
-The native project uses Lean v4.35.0-rc3 and Mathlib
-0493595ecd5da8ef14742febab99728f98e948e8. The tracker pins Lean v4.34.1 and
-Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Toolchain compatibility and
-tracker import-all checking remain pending. Candidate.bound now specializes
-the genuine native Hecke theorem over Q through the five new Bridge modules:
-rational ideals and norms, the actual ray character, principal detection,
-ideal-series reindexing, and analytic continuation to the Mathlib L-function.
-The bridge covers modulus1, odd and imprimitive characters, every height and
-nonprincipal s=1. These components passed isolated checks on tracker pins,
-using only propext, Classical.choice and Quot.sound. The complete native
-endpoint and final Candidate.Main still await official whole-closure checking.
-Five original Mathlib-only helpers use the older Volume.Measure import instead
-of unavailable Volume.Basic; one unused Basify import is omitted. Each complete
-helper module passed an isolated check, with all theorem bodies unchanged.
+Native pins: Lean v4.35.0-rc3, Mathlib 0493595ecd5da8ef14742febab99728f98e948e8.
+Tracker pins: Lean v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612.
 No local full proof replay was run; official GitHub checks own admission.
 
 Full original license text: AxiomMath/DedekindZetaZeroFree/LICENSE

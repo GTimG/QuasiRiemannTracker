@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -94,7 +93,7 @@ theorem raw_good_rows_sum_abs (A ρ : ℝ) (hA : 0 ≤ A) (hconv : RawConvexityE
     (hρ : HeightSpec D A ρ) :
     ∃ C : ℝ, 0 < C ∧ ∃ Z₀ : ℝ, 2 ≤ Z₀ ∧ ∀ Z : ℝ, Z₀ ≤ Z →
       Summable (fun u : ↥(goodMedium D ρ Z) => ‖initialRowIntegral D u.1 Z‖) ∧
-      ∑' u : ↥(goodMedium D ρ Z), ‖initialRowIntegral D u.1 Z‖ ≤ C * Z ^ (35859 / 100000 : ℝ) := by
+      ∑' u : ↥(goodMedium D ρ Z), ‖initialRowIntegral D u.1 Z‖ ≤ C * Z ^ (717 / 2000 : ℝ) := by
   obtain ⟨C, hC, U₀, hU₀, hrow⟩ :=
     good_row_bound D A ρ hA hconv hρ (1 / 10000 : ℝ) (by norm_num)
   obtain ⟨K, hK, hKcard⟩ := rawDyad_finite_card D
@@ -227,19 +226,19 @@ theorem raw_good_rows_sum_abs (A ρ : ℝ) (hA : 0 ≤ A) (hconv : RawConvexityE
     · rw [e1, e2]; ring
     · ring
   have hA1 : Z ^ (Scales.kernelExponent Scales.goodLine Scales.wLine Scales.zLine) *
-      (Z ^ Scales.largeCutoffExponent) ^ ((1 : ℝ) + (1 / 25 + 1 / 10000)) ≤ Z ^ (35859 / 100000 : ℝ) := by
+      (Z ^ Scales.largeCutoffExponent) ^ ((1 : ℝ) + (1 / 25 + 1 / 10000)) ≤ Z ^ (717 / 2000 : ℝ) := by
     rw [← Real.rpow_mul hZ0.le, ← Real.rpow_add hZ0]
     refine Real.rpow_le_rpow_of_exponent_le hZ1 ?_
     norm_num [Scales.kernelExponent, Scales.xExponent, Scales.goodLine, Scales.wLine, Scales.zLine, Scales.smoothingExponent, Scales.yExponent,
       Scales.largeCutoffExponent]
-  have hZ1W : Z ^ (Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine) ≤ Z ^ (35859 / 100000 : ℝ) := by
+  have hZ1W : Z ^ (Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine) ≤ Z ^ (717 / 2000 : ℝ) := by
     refine Real.rpow_le_rpow_of_exponent_le hZ1 ?_
     norm_num [Scales.kernelExponent, Scales.xExponent, Scales.rightLine, Scales.contourOffset, Scales.wLine, Scales.zLine, Scales.smoothingExponent,
       Scales.yExponent]
   have hXp : (Z ^ Scales.smallCutoffExponent / 2) ^ ((1 : ℝ) + -10) ≤ 1 :=
     Real.rpow_le_one_of_one_le_of_nonpos hX1 (by norm_num)
   have hB1 : Z ^ (Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine) *
-      (Z ^ Scales.smallCutoffExponent / 2) ^ ((1 : ℝ) + -10) ≤ Z ^ (35859 / 100000 : ℝ) := by
+      (Z ^ Scales.smallCutoffExponent / 2) ^ ((1 : ℝ) + -10) ≤ Z ^ (717 / 2000 : ℝ) := by
     have := mul_le_mul hZ1W hXp (Real.rpow_nonneg (by linarith) _) (Real.rpow_nonneg hZ0.le _)
     linarith
   have t1 := mul_le_mul_of_nonneg_left hA1 (by positivity : 0 ≤ K * C * Ca)
@@ -253,7 +252,7 @@ theorem raw_good_rows_sum_abs (A ρ : ℝ) (hA : 0 ≤ A) (hconv : RawConvexityE
           (Cn * (Z ^ Scales.smallCutoffExponent / 2) ^ ((1 : ℝ) + -10)) :=
         add_le_add (mul_le_mul_of_nonneg_left h1 (by positivity))
           (mul_le_mul_of_nonneg_left h2 (by positivity))
-    _ ≤ (K * C * Ca + K * C * Cn) * Z ^ (35859 / 100000 : ℝ) := by nlinarith [t1, t2]
+    _ ≤ (K * C * Ca + K * C * Cn) * Z ^ (717 / 2000 : ℝ) := by nlinarith [t1, t2]
 
 end
 

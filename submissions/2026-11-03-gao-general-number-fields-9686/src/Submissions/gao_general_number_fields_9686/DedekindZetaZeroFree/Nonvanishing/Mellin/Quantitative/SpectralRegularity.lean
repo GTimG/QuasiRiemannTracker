@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -129,18 +128,18 @@ theorem rpow_mul_f (Z : ℝ) (hZ : 0 < Z) :
 
 theorem numerator_differentiableOn :
     DifferentiableOn ℂ (fun s : ℂ => Complex.exp ((s - 5 / 6) ^ 2) * H D s)
-      {s : ℂ | 4843 / 5000 < s.re} := by
+      {s : ℂ | 31 / 32 < s.re} := by
   have hH : DifferentiableOn ℂ (fun s : ℂ => D.recipe.H s) {s : ℂ | (2 / 3 : ℝ) < s.re} :=
     PrincipalMellin.actual_principal_H_differentiable D.recipe
-  have hsub : {s : ℂ | 4843 / 5000 < s.re} ⊆ {s : ℂ | (2 / 3 : ℝ) < s.re} := fun s hs => by
+  have hsub : {s : ℂ | 31 / 32 < s.re} ⊆ {s : ℂ | (2 / 3 : ℝ) < s.re} := fun s hs => by
     simp only [Set.mem_setOf_eq] at hs ⊢
     linarith
   have hexp : DifferentiableOn ℂ (fun s : ℂ => Complex.exp ((s - 5 / 6) ^ 2))
-      {s : ℂ | 4843 / 5000 < s.re} :=
+      {s : ℂ | 31 / 32 < s.re} :=
     (by fun_prop : Differentiable ℂ (fun s : ℂ => Complex.exp ((s - 5 / 6) ^ 2))).differentiableOn
   exact hexp.mul (hH.mono hsub)
 
-theorem numerator_ne_zero (s : ℂ) (hs : 4843 / 5000 < s.re) :
+theorem numerator_ne_zero (s : ℂ) (hs : 31 / 32 < s.re) :
     Complex.exp ((s - 5 / 6) ^ 2) * H D s ≠ 0 := by
   have h : D.recipe.H s ≠ 0 :=
     PrincipalMellin.actual_principal_H_ne_zero D.recipe s (by linarith)

@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -38,11 +37,11 @@ variable (D : DedekindZetaZeroFree.Quantitative.FixedData S η)
 theorem finset_norm_sum_le :
     ∃ C : ℝ, 0 < C ∧ ∀ Z : ℝ, 2 ≤ Z → ∀ G : Finset (Frequency D.recipe),
       (↑G : Set (Frequency D.recipe)) ⊆ smallSet D Z →
-        ∑ u ∈ G, ‖initialRowIntegral D u Z‖ ≤ C * Z ^ ((35859 : ℝ) / 100000) := by
+        ∑ u ∈ G, ‖initialRowIntegral D u Z‖ ≤ C * Z ^ ((717 : ℝ) / 2000) := by
   classical
   have hEnum : DedekindZetaZeroFree.Quantitative.Scales.kernelExponent DedekindZetaZeroFree.Quantitative.Scales.rightLine DedekindZetaZeroFree.Quantitative.Scales.wLine
       DedekindZetaZeroFree.Quantitative.Scales.zLine + DedekindZetaZeroFree.Quantitative.Scales.smallCutoffExponent * (1 + ((1:ℝ)/25 + 1/4000))
-      ≤ (35859:ℝ)/100000 := by
+      ≤ (717:ℝ)/2000 := by
     simp only [DedekindZetaZeroFree.Quantitative.Scales.kernelExponent, DedekindZetaZeroFree.Quantitative.Scales.smallCutoffExponent, DedekindZetaZeroFree.Quantitative.Scales.xExponent,
       DedekindZetaZeroFree.Quantitative.Scales.yExponent, DedekindZetaZeroFree.Quantitative.Scales.smoothingExponent, DedekindZetaZeroFree.Quantitative.Scales.rightLine,
       DedekindZetaZeroFree.Quantitative.Scales.contourOffset, DedekindZetaZeroFree.Quantitative.Scales.wLine, DedekindZetaZeroFree.Quantitative.Scales.zLine]
@@ -79,14 +78,14 @@ theorem finset_norm_sum_le :
   have hZE : 0 < Z ^ DedekindZetaZeroFree.Quantitative.Scales.kernelExponent DedekindZetaZeroFree.Quantitative.Scales.rightLine DedekindZetaZeroFree.Quantitative.Scales.wLine
       DedekindZetaZeroFree.Quantitative.Scales.zLine := Real.rpow_pos_of_pos hZ0 _
   have hEle : DedekindZetaZeroFree.Quantitative.Scales.kernelExponent DedekindZetaZeroFree.Quantitative.Scales.rightLine DedekindZetaZeroFree.Quantitative.Scales.wLine
-      DedekindZetaZeroFree.Quantitative.Scales.zLine ≤ (35859:ℝ)/100000 := by linarith
+      DedekindZetaZeroFree.Quantitative.Scales.zLine ≤ (717:ℝ)/2000 := by linarith
   have hZEle : Z ^ DedekindZetaZeroFree.Quantitative.Scales.kernelExponent DedekindZetaZeroFree.Quantitative.Scales.rightLine DedekindZetaZeroFree.Quantitative.Scales.wLine
-      DedekindZetaZeroFree.Quantitative.Scales.zLine ≤ Z ^ ((35859:ℝ)/100000) :=
+      DedekindZetaZeroFree.Quantitative.Scales.zLine ≤ Z ^ ((717:ℝ)/2000) :=
     Real.rpow_le_rpow_of_exponent_le hZ1 hEle
   rw [← Finset.sum_filter_add_sum_filter_not G (fun u => (2:ℝ) ≤ q D u)]
 
   have hlow : ∑ u ∈ G.filter (fun u => ¬ (2:ℝ) ≤ q D u), ‖initialRowIntegral D u Z‖ ≤
-      (∑ u ∈ hF0.toFinset, c u) * Z ^ ((35859:ℝ)/100000) := by
+      (∑ u ∈ hF0.toFinset, c u) * Z ^ ((717:ℝ)/2000) := by
     calc ∑ u ∈ G.filter (fun u => ¬ (2:ℝ) ≤ q D u), ‖initialRowIntegral D u Z‖
         ≤ ∑ u ∈ G.filter (fun u => ¬ (2:ℝ) ≤ q D u), c u * Z ^
             (DedekindZetaZeroFree.Quantitative.Scales.kernelExponent DedekindZetaZeroFree.Quantitative.Scales.rightLine DedekindZetaZeroFree.Quantitative.Scales.wLine
@@ -108,7 +107,7 @@ theorem finset_norm_sum_le :
             exact lt_of_not_ge hnot
           · intro u _ _
             exact hc0 u
-      _ ≤ (∑ u ∈ hF0.toFinset, c u) * Z ^ ((35859:ℝ)/100000) :=
+      _ ≤ (∑ u ∈ hF0.toFinset, c u) * Z ^ ((717:ℝ)/2000) :=
           mul_le_mul_of_nonneg_left hZEle hM0
 
   set T := Finset.range (Nat.log 2 ⌊Z ^ DedekindZetaZeroFree.Quantitative.Scales.smallCutoffExponent⌋₊ + 1) with hTdef
@@ -198,7 +197,7 @@ theorem finset_norm_sum_le :
             DedekindZetaZeroFree.Quantitative.Scales.smallCutoffExponent * (1 + ((1:ℝ)/25 + 1/4000))) := by
           rw [Real.rpow_add hZ0, ← Real.rpow_mul hZ0.le]; ring
   have hhigh' : ∑ u ∈ G1, ‖initialRowIntegral D u Z‖ ≤
-      C1 * K * C2 * Z ^ ((35859:ℝ)/100000) := by
+      C1 * K * C2 * Z ^ ((717:ℝ)/2000) := by
     refine le_trans hhigh (mul_le_mul_of_nonneg_left ?_ (mul_pos (mul_pos hC1 hK) hC2).le)
     exact Real.rpow_le_rpow_of_exponent_le hZ1 hEnum
   rw [add_mul]
@@ -207,7 +206,7 @@ theorem finset_norm_sum_le :
 theorem smallRows_norm_tsum_le :
     ∃ C : ℝ, 0 < C ∧ ∀ Z : ℝ, 2 ≤ Z →
       Summable (fun u : smallSet D Z => ‖initialRowIntegral D u.1 Z‖) ∧
-        ∑' u : smallSet D Z, ‖initialRowIntegral D u.1 Z‖ ≤ C * Z ^ ((35859 : ℝ) / 100000) := by
+        ∑' u : smallSet D Z, ‖initialRowIntegral D u.1 Z‖ ≤ C * Z ^ ((717 : ℝ) / 2000) := by
   obtain ⟨C, hC, h⟩ := finset_norm_sum_le D
   refine ⟨C, hC, fun Z hZ => ?_⟩
   have hfin : (smallSet D Z).Finite := smallSet_finite D Z

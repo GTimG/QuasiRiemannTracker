@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -37,7 +36,7 @@ theorem large_norm_le (D : DedekindZetaZeroFree.Quantitative.FixedData S η) :
       Summable (fun u : ↥(largeSet D Z) =>
         ‖RawFixed.FixedData.initialRowIntegral D u.1 Z‖) ∧
       ∑' u : ↥(largeSet D Z), ‖RawFixed.FixedData.initialRowIntegral D u.1 Z‖ ≤
-        C * Z ^ ((35859 : ℝ) / 100000) := by
+        C * Z ^ ((717 : ℝ) / 2000) := by
   obtain ⟨C0, hC0, H⟩ := RawLargeRowShift31.raw_large_row_bound D 1 one_pos
   obtain ⟨K, hK0, hK⟩ := RawFrequencyCount.frequency_count_lt D.recipe
   have hcount : ∀ Y : ℝ, 1 ≤ Y →
@@ -93,7 +92,7 @@ theorem large_norm_le (D : DedekindZetaZeroFree.Quantitative.FixedData S η) :
     rw [e1, e2]
     ring
   have hfin : Z ^ ((44675 / 10000 : ℝ) + 33 / 100 * Scales.tailShift +
-      Scales.largeCutoffExponent * (1 - (Scales.tailShift - 1))) ≤ Z ^ ((35859 : ℝ) / 100000) :=
+      Scales.largeCutoffExponent * (1 - (Scales.tailShift - 1))) ≤ Z ^ ((717 : ℝ) / 2000) :=
     Real.rpow_le_rpow_of_exponent_le hZ1 (by unfold Scales.tailShift Scales.largeCutoffExponent; norm_num)
   refine ⟨hsum, ?_⟩
   calc ∑' u : ↥(largeSet D Z), ‖RawFixed.FixedData.initialRowIntegral D u.1 Z‖
@@ -101,12 +100,12 @@ theorem large_norm_le (D : DedekindZetaZeroFree.Quantitative.FixedData S η) :
           (Z ^ Scales.largeCutoffExponent) ^ (1 - (Scales.tailShift - 1)) := hle
     _ = (C0 * Ct) * Z ^ ((44675 / 10000 : ℝ) + 33 / 100 * Scales.tailShift +
         Scales.largeCutoffExponent * (1 - (Scales.tailShift - 1))) := hcomb
-    _ ≤ (C0 * Ct) * Z ^ ((35859 : ℝ) / 100000) :=
+    _ ≤ (C0 * Ct) * Z ^ ((717 : ℝ) / 2000) :=
         mul_le_mul_of_nonneg_left hfin (by positivity)
 
 theorem rawOmittedSum_bound (D : DedekindZetaZeroFree.Quantitative.FixedData S η) :
     ∃ C : ℝ, 0 < C ∧ ∀ Z : ℝ, 2 ≤ Z →
-      ‖PoissonFrequencyDecomposition.omittedSum D Z‖ ≤ C * Z ^ (35859 / 100000 : ℝ) := by
+      ‖PoissonFrequencyDecomposition.omittedSum D Z‖ ≤ C * Z ^ (717 / 2000 : ℝ) := by
   obtain ⟨A, ρ, hA, hconv, hρ, -⟩ := RawDetector31.detector_exists D
   obtain ⟨Cs, hCs, hs⟩ := RawSmallRowsSum31.smallRows_norm_tsum_le D
   obtain ⟨Ce, hCe, Ze, hZe, he⟩ :=
@@ -115,7 +114,7 @@ theorem rawOmittedSum_bound (D : DedekindZetaZeroFree.Quantitative.FixedData S �
   obtain ⟨Cl, hCl, hl⟩ := large_norm_le D
   have hbd : ∀ Z : ℝ, max Ze Zg ≤ Z →
       ‖PoissonFrequencyDecomposition.omittedSum D Z‖ ≤
-        (Cs + Ce + Cg + Cl) * Z ^ ((35859 : ℝ) / 100000) := by
+        (Cs + Ce + Cg + Cl) * Z ^ ((717 : ℝ) / 2000) := by
     intro Z hZ
     have hZ2 : 2 ≤ Z := le_trans hZe (le_trans (le_max_left _ _) hZ)
     have hZe' : Ze ≤ Z := le_trans (le_max_left _ _) hZ
@@ -190,10 +189,10 @@ theorem rawOmittedSum_bound (D : DedekindZetaZeroFree.Quantitative.FixedData S �
           show G f.val ≤ T.indicator G f.val
           rw [Set.indicator_of_mem hmem])
         hVS hTS
-    have hS' : ∑' u : ↥sm, G u ≤ Cs * Z ^ ((35859 : ℝ) / 100000) := hS
-    have hE' : ∑' u : ↥ex, G u ≤ Ce * Z ^ ((35859 : ℝ) / 100000) := hE
-    have hG' : ∑' u : ↥gd, G u ≤ Cg * Z ^ ((35859 : ℝ) / 100000) := hG
-    have hL' : ∑' u : ↥lg, G u ≤ Cl * Z ^ ((35859 : ℝ) / 100000) := hL
+    have hS' : ∑' u : ↥sm, G u ≤ Cs * Z ^ ((717 : ℝ) / 2000) := hS
+    have hE' : ∑' u : ↥ex, G u ≤ Ce * Z ^ ((717 : ℝ) / 2000) := hE
+    have hG' : ∑' u : ↥gd, G u ≤ Cg * Z ^ ((717 : ℝ) / 2000) := hG
+    have hL' : ∑' u : ↥lg, G u ≤ Cl * Z ^ ((717 : ℝ) / 2000) := hL
     have hT1 : ∑' u : ↥sm, G u = ∑' u, sm.indicator G u := tsum_subtype sm G
     have hT2 : ∑' u : ↥ex, G u = ∑' u, ex.indicator G u := tsum_subtype ex G
     have hT3 : ∑' u : ↥gd, G u = ∑' u, gd.indicator G u := tsum_subtype gd G
@@ -213,16 +212,16 @@ theorem rawOmittedSum_bound (D : DedekindZetaZeroFree.Quantitative.FixedData S �
         RawFixed.FixedData.initialRowIntegral D f.val Z) hVS
     have hfin : ∑' u, sm.indicator G u + ∑' u, ex.indicator G u +
         ∑' u, gd.indicator G u + ∑' u, lg.indicator G u ≤
-        (Cs + Ce + Cg + Cl) * Z ^ ((35859 : ℝ) / 100000) := by
+        (Cs + Ce + Cg + Cl) * Z ^ ((717 : ℝ) / 2000) := by
       rw [← hT1, ← hT2, ← hT3, ← hT4]
-      have : (Cs + Ce + Cg + Cl) * Z ^ ((35859 : ℝ) / 100000) =
-          Cs * Z ^ ((35859 : ℝ) / 100000) + Ce * Z ^ ((35859 : ℝ) / 100000) +
-          Cg * Z ^ ((35859 : ℝ) / 100000) + Cl * Z ^ ((35859 : ℝ) / 100000) := by ring
+      have : (Cs + Ce + Cg + Cl) * Z ^ ((717 : ℝ) / 2000) =
+          Cs * Z ^ ((717 : ℝ) / 2000) + Ce * Z ^ ((717 : ℝ) / 2000) +
+          Cg * Z ^ ((717 : ℝ) / 2000) + Cl * Z ^ ((717 : ℝ) / 2000) := by ring
       rw [this]
       linarith
     linarith
   obtain ⟨C', hC', h'⟩ := RawCompactScale31.omittedSum_bound_all_of_bound_ge D
-    (by norm_num : (0 : ℝ) < 35859 / 100000) (le_max_of_le_left hZe) hbd
+    (by norm_num : (0 : ℝ) < 717 / 2000) (le_max_of_le_left hZe) hbd
   exact ⟨C', hC', h'⟩
 
 end DedekindZetaZeroFree.Quantitative.RawOmittedRowsAssembly31

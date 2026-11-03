@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -87,18 +86,18 @@ private lemma card_intermediateDyads_le (δ : ℝ) (hδ : 0 < δ) (Z : ℝ) (hZ 
 theorem rows_exceptional (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExponent D A_F)
     (hρ : HeightSpec D A_F ρ) (ε : ℝ) (hε : 0 < ε) :
     ∃ C : ℝ, 0 < C ∧ ∃ Z₀ : ℝ, 2 ≤ Z₀ ∧ ∀ Z : ℝ, Z₀ ≤ Z →
-      ‖exceptionalDyadSum D ρ Z‖ ≤ C * Z ^ (Scales.mainExponent - 64897 / 2000000 + ε) := by
+      ‖exceptionalDyadSum D ρ Z‖ ≤ C * Z ^ (Scales.mainExponent - 2617 / 80000 + ε) := by
   obtain ⟨Cc, hCc, U₀, hU₀, hcard⟩ := Detect.exceptionalSet_card D A_F ρ hA hconv hρ
   have hε4 : (0 : ℝ) < ε / 4 := by linarith
   have hJb := RowLowContour.JCont_bound D Cc (317 / 500) hCc (ε / 4) hε4
   obtain ⟨Cj, hCj, hJ⟩ := hJb
   have hδ : (0 : ℝ) < ε / 4 := by linarith
   have hE : Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine + Scales.largeCutoffExponent * (337 / 500) =
-      Scales.mainExponent - 64897 / 2000000 := by
+      Scales.mainExponent - 2617 / 80000 := by
     unfold Scales.kernelExponent Scales.rightLine Scales.contourOffset Scales.xExponent Scales.smoothingExponent Scales.yExponent Scales.mainExponent Scales.wLine
       Scales.zLine Scales.largeCutoffExponent
     norm_num
-  set T : ℝ := Scales.mainExponent - 64897 / 2000000 + ε / 4 with hT
+  set T : ℝ := Scales.mainExponent - 2617 / 80000 + ε / 4 with hT
   have hκs : Scales.smallCutoffExponent = 1 / 5 := by unfold Scales.smallCutoffExponent; norm_num
   have hκ1 : Scales.largeCutoffExponent ≤ 1 := by unfold Scales.largeCutoffExponent; norm_num
   have hκ0 : (0 : ℝ) ≤ Scales.largeCutoffExponent := by unfold Scales.largeCutoffExponent; norm_num
@@ -172,16 +171,16 @@ theorem rows_exceptional (A_F ρ : ℝ) (hA : 0 ≤ A_F) (hconv : ConvexityExpon
   have hfin2 : ((intermediateDyads Z).card : ℝ) * (Cj * Z ^ T) ≤
       ((1 / (ε / 4 * Real.log 2) + 1) * Z ^ (ε / 4)) * (Cj * Z ^ T) :=
     mul_le_mul_of_nonneg_right hcnt hTpos
-  have hsum : Z ^ (ε / 4) * Z ^ T = Z ^ (Scales.mainExponent - 64897 / 2000000 + ε / 2) := by
+  have hsum : Z ^ (ε / 4) * Z ^ T = Z ^ (Scales.mainExponent - 2617 / 80000 + ε / 2) := by
     rw [← Real.rpow_add hZpos, hT]; congr 1; ring
-  have hfinal : Z ^ (Scales.mainExponent - 64897 / 2000000 + ε / 2) ≤ Z ^ (Scales.mainExponent - 64897 / 2000000 + ε) :=
+  have hfinal : Z ^ (Scales.mainExponent - 2617 / 80000 + ε / 2) ≤ Z ^ (Scales.mainExponent - 2617 / 80000 + ε) :=
     Real.rpow_le_rpow_of_exponent_le (by linarith) (by linarith)
   calc ‖exceptionalDyadSum D ρ Z‖ ≤ _ := hsum_le
     _ ≤ _ := hfin2
     _ = (1 / (ε / 4 * Real.log 2) + 1) * Cj * (Z ^ (ε / 4) * Z ^ T) := by ring
-    _ = (1 / (ε / 4 * Real.log 2) + 1) * Cj * Z ^ (Scales.mainExponent - 64897 / 2000000 + ε / 2) := by
+    _ = (1 / (ε / 4 * Real.log 2) + 1) * Cj * Z ^ (Scales.mainExponent - 2617 / 80000 + ε / 2) := by
         rw [hsum]
-    _ ≤ (1 / (ε / 4 * Real.log 2) + 1) * Cj * Z ^ (Scales.mainExponent - 64897 / 2000000 + ε) := by
+    _ ≤ (1 / (ε / 4 * Real.log 2) + 1) * Cj * Z ^ (Scales.mainExponent - 2617 / 80000 + ε) := by
         apply mul_le_mul_of_nonneg_left hfinal
         positivity
 

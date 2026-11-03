@@ -1,26 +1,38 @@
 {
-  "title": "Gao · draft general number-field refinement at 4843/5000 (0.9686)",
+  "title": "Gao · general number-field refinement at 1209/1250 (0.9672)",
   "authors": [
     {
       "name": "Zhongpai Gao",
       "url": "https://github.com/Gaozhongpai"
     }
   ],
-  "description": "Refinement of Axiom Math's all-number-field proof from 31/32 to 4843/5000 = 0.9686, a potential improvement of 3/20000. The scope is Dedekind zeta and finite-order Hecke L-functions over every number field, at every height, with the original pole exclusions. The refinement changes the y scale from 151/400 to 943/2500 while retaining the contours, detector and frequency cutoffs; no new arithmetic estimate is claimed. Original research and mathematical judgments: Dean Cureton and Jesse Thorner; original proof generation and Lean formalization: AxiomProver at Axiom Math. Zhongpai Gao supplies the refinement, Dirichlet bridge and tracker port, with AI assistance. The original 5,508 support modules, thirty native refinement replacements and all dependency notices and full licenses are retained. Five new bridge modules construct the rational ray character, identify its ideal series with Mathlib's Dirichlet L-function, and transfer the genuine native Hecke endpoint to Candidate.bound. They cover modulus 1, odd and imprimitive characters and nonprincipal s = 1. These bridge modules passed isolated checks on tracker Lean 4.34.1 / Mathlib d13f23b using the three standard axioms. Three proof-preserving compatibility repairs affect the idele norm theorem, finite-algebra Jacobson theorem and Kummer additive-homomorphism projections. The Kummer subgroup definitions and radical fixedness theorem passed isolated checks on the tracker pins; its whole module and downstream proof remain unverified. Five Mathlib-only helper modules use compatible imports and passed complete isolated checks. All thirty native refinement modules remain exact after import relocation. Native whole-library compilation, whole-closure tracker replay, Comparator and independent-kernel admission remain pending; isolated checks do not certify the complete endpoint. This draft claims no independently verified record or improvement to the current Dirichlet numerical record. Mathlib, OpenAI/math, Tau Ceti, LeanPool and vendored class-field-theory attribution is retained. The original source date is 12 October; this refinement and bridge are dated 3 November 2026.",
+  "description": "Refinement of the independently registered Axiom Math all-number-field proof from 31/32 to the proposed 1209/1250 = 0.9672, a potential gain of 31/20000 = 0.00155. The scope is Dedekind zeta and finite-order Hecke L-functions over every number field, at every height, with the original pole exclusions; nonprincipal characters include s = 1. The new source uses the original zero-free theorem and OpenAI-derived logarithmic control to obtain uniform primitive growth at Re(s)=0.97. The functional equation and interpolation give conductor exponent 17/40 at Re(s)=0.12. Paying the actual Euler masks in both allowed and raw/omitted row branches gives net cost 1/40 instead of 1/25. New scale-dependent declarations lie in a separate namespace, and the old proof does not import them. With y exponent 234/625, reflected exponent 893/2500 and comparison exponent 35719/100000, the spectral shift 61/100 gives the proposed boundary. Original research and mathematical judgments: Dean Cureton and Jesse Thorner; original proof generation and Lean formalization: AxiomProver at Axiom Math. Zhongpai Gao supplies the analytic refinement, Dirichlet bridge and tracker port, with AI assistance. The original source closure is retained with proof-preserving tracker compatibility adaptations, together with 171 new refinement source modules and five proved rational-Hecke/Dirichlet bridge modules. The bridge covers modulus 1, odd and imprimitive characters and nonprincipal s = 1; its isolated checks use only the three standard axioms. Strict isolated logarithmic-control, gamma, functional-equation and interpolation checks and independent source review pass. Whole-endpoint native compilation, actual tracker import closure, Comparator and independent-kernel admission remain pending. This draft claims no independently verified new record or improvement to the current Dirichlet numerical record. Original license texts, attribution and all dependency notices are retained, including Mathlib, OpenAI/math, Tau Ceti, LeanPool and vendored class-field-theory. The package identifier ending in 9686 is historical; the current candidate bound is 1209/1250.",
   "license": "Apache-2.0; full original Axiom Math and vendored class-field-theory license texts and attribution retained in src/Candidate/Provenance.lean",
   "dependencies": [],
   "references": [
     {
-      "label": "Native refinement source at the submitted immutable commit",
-      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/tree/829193272c1eaf223bb7228fbfb9003f414808e9"
+      "label": "Complete native 0.9672 extension at the submitted immutable commit",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/tree/1823f8b90a601a29eda3cded57796e7200f2af9f"
     },
     {
       "label": "Native refinement explanation and exact parameter changes",
-      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/REFINEMENT.md"
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/1823f8b90a601a29eda3cded57796e7200f2af9f/REFINEMENT.md"
     },
     {
-      "label": "Native GitHub CI run 41678339238 (in progress at draft preparation)",
-      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/actions/runs/41678339238"
+      "label": "Native full-source verification (in progress at submission update)",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/actions/runs/41707610922"
+    },
+    {
+      "label": "Exact 1209/1250 solution entry points",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/1823f8b90a601a29eda3cded57796e7200f2af9f/Gao9672Solution.lean"
+    },
+    {
+      "label": "Exact new Dedekind and Hecke comparison configuration",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/1823f8b90a601a29eda3cded57796e7200f2af9f/comparator-9672.json"
+    },
+    {
+      "label": "Native pinned build configuration",
+      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/1823f8b90a601a29eda3cded57796e7200f2af9f/lakefile.toml"
     },
     {
       "label": "PR #114: original imported general-number-field proof closure",
@@ -37,14 +49,6 @@
     {
       "label": "A quasi-Riemann hypothesis for Dedekind zeta functions",
       "url": "https://hexagonmath.org/2610.00200v2"
-    },
-    {
-      "label": "Native pinned build configuration",
-      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/lakefile.toml"
-    },
-    {
-      "label": "Native formal Solution (old Challenge weakening, outside dependency closure)",
-      "url": "https://github.com/Gaozhongpai/DedekindZetaZeroFree/blob/829193272c1eaf223bb7228fbfb9003f414808e9/Solution/DedekindZetaSolution.lean"
     },
     {
       "label": "Original Axiom Math Apache-2.0 license",

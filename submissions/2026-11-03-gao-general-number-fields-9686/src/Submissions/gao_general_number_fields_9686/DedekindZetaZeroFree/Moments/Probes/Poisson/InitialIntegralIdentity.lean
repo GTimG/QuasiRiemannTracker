@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -33,7 +32,7 @@ variable (D : FixedData S η)
 theorem X_eq (Z : ℝ) : Scales.xScale Z = Z ^ (67 / 100 : ℝ) := by
   unfold Scales.xScale Scales.xExponent; norm_num
 
-theorem Y_eq (Z : ℝ) : Scales.yScale Z = Z ^ (943 / 2500 : ℝ) := by
+theorem Y_eq (Z : ℝ) : Scales.yScale Z = Z ^ (151 / 400 : ℝ) := by
   unfold Scales.yScale Scales.yExponent; norm_num
 
 def initialRowIntegrand (u : D.Row) (Z : ℝ) (t : ℝ × ℝ × ℝ) : ℂ :=

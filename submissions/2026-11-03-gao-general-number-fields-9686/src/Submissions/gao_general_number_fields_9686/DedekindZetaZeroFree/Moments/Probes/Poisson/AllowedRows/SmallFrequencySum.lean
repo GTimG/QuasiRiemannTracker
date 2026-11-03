@@ -1,10 +1,9 @@
 /-
-2026-11-03 refinement by Zhongpai Gao (https://github.com/Gaozhongpai).
-The following header records the PR #114 source provenance at 09afbb4ce6570c1615d58509dc197fc9f0956b7d.
-This file now contains the native parameter refinement at
-829193272c1eaf223bb7228fbfb9003f414808e9; local imports are relocated under Submissions.gao_general_number_fields_9686.
-Original declaration namespaces and all source attribution are retained.
-Native compilation and tracker admission remain pending; see Candidate.Provenance.
+2026-11-03 frozen baseline packaging by Zhongpai Gao (https://github.com/Gaozhongpai).
+This support module retains the registered PR #114 native source at 09afbb4ce6570c1615d58509dc197fc9f0956b7d,
+whose endpoint is 31/32. The separate Refinement9672 namespace supplies the new candidate.
+Only local module import paths are relocated under Submissions.gao_general_number_fields_9686.
+Original declaration namespaces and source attribution are retained.
 -/
 /-
 AxiomMath/DedekindZetaZeroFree, Apache-2.0.
@@ -75,7 +74,7 @@ private lemma count_bound (ε : ℝ) (hε : 0 < ε) (Z : ℝ) (hZ : 2 ≤ Z) :
 
 theorem rows_small (ε : ℝ) (hε : 0 < ε) :
     ∃ C : ℝ, 0 < C ∧ ∀ Z : ℝ, 2 ≤ Z →
-      ‖smallDyadSum D Z‖ ≤ C * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε) := by
+      ‖smallDyadSum D Z‖ ≤ C * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε) := by
   obtain ⟨A0, hA0, hk0⟩ := LowNormRowBound.lowNorm_rows_small_k0 D (ε / 2) (by linarith)
   obtain ⟨Cc, hCc, hcount⟩ := ActualRowCount.dyadRows_count D
   obtain ⟨Cε, hCε, hJ⟩ := RowLowContour.JCont_bound D Cc 1 hCc (ε / 2) (by linarith)
@@ -98,12 +97,12 @@ theorem rows_small (ε : ℝ) (hε : 0 < ε) :
     exact Real.one_le_rpow hZ1 (by unfold Scales.smallCutoffExponent; norm_num)
   have hfl : ((⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ : ℕ) : ℝ) ≤ Real.logb 2 (Z ^ Scales.smallCutoffExponent) :=
     Nat.floor_le hL0
-  have hZθ : 0 ≤ Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) := Real.rpow_nonneg hZ0.le _
-  have hB0 : 0 ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) :=
+  have hZθ : 0 ≤ Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) := Real.rpow_nonneg hZ0.le _
+  have hB0 : 0 ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) :=
     mul_nonneg (by linarith) hZθ
   have hterm : ∀ k ∈ Finset.range (⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ + 1),
       ‖J D (dyadRows D ((2 : ℝ) ^ k) \ principalRows D) 4 4 2 Z‖
-        ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) := by
+        ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) := by
     intro k hk
     have hkN : k ≤ ⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
     rcases Nat.eq_zero_or_pos k with rfl | hkpos
@@ -125,7 +124,7 @@ theorem rows_small (ε : ℝ) (hε : 0 < ε) :
           = Z ^ (Scales.smallCutoffExponent * (1 + 1 / 25 + ε / 2)) :=
         (Real.rpow_mul hZ0.le _ _).symm
       have hexp : Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine + Scales.smallCutoffExponent * (1 + 1 / 25 + ε / 2)
-          ≤ Scales.mainExponent - 469359 / 10000000 + ε / 2 := by
+          ≤ Scales.mainExponent - 471999 / 10000000 + ε / 2 := by
         unfold Scales.smallCutoffExponent
         linarith
       have hCsub : (dyadRows D ((2 : ℝ) ^ k) \ principalRows D)
@@ -154,9 +153,9 @@ theorem rows_small (ε : ℝ) (hε : 0 < ε) :
             mul_le_mul_of_nonneg_left hUs hEnn
         _ = Cε * Z ^ (Scales.kernelExponent Scales.rightLine Scales.wLine Scales.zLine + Scales.smallCutoffExponent * (1 + 1 / 25 + ε / 2)) := by
             rw [hZs, Real.rpow_add hZ0, mul_assoc]
-        _ ≤ Cε * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) :=
+        _ ≤ Cε * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) :=
             mul_le_mul_of_nonneg_left (Real.rpow_le_rpow_of_exponent_le hZ1 hexp) hCε.le
-        _ ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) :=
+        _ ≤ (A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) :=
             mul_le_mul_of_nonneg_right (by linarith) hZθ
   unfold smallDyadSum
   calc ‖∑ k ∈ Finset.range (⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ + 1),
@@ -164,19 +163,19 @@ theorem rows_small (ε : ℝ) (hε : 0 < ε) :
       ≤ ∑ k ∈ Finset.range (⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ + 1),
           ‖J D (dyadRows D ((2 : ℝ) ^ k) \ principalRows D) 4 4 2 Z‖ := norm_sum_le _ _
     _ ≤ ∑ k ∈ Finset.range (⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ + 1),
-          (A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2) :=
+          (A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2) :=
         Finset.sum_le_sum hterm
     _ = ((⌊Real.logb 2 (Z ^ Scales.smallCutoffExponent)⌋₊ + 1 : ℕ) : ℝ)
-          * ((A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2)) := by
+          * ((A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2)) := by
         rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
     _ ≤ ((Scales.smallCutoffExponent / (Real.log 2 * (ε / 2)) + 1) * Z ^ (ε / 2))
-          * ((A0 + Cε) * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε / 2)) :=
+          * ((A0 + Cε) * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε / 2)) :=
         mul_le_mul_of_nonneg_right (count_bound ε hε Z hZ) hB0
     _ = ((A0 + Cε) * (Scales.smallCutoffExponent / (Real.log 2 * (ε / 2)) + 1))
-          * Z ^ (Scales.mainExponent - 469359 / 10000000 + ε) := by
-        have hsum : ε / 2 + (Scales.mainExponent - 469359 / 10000000 + ε / 2)
-            = Scales.mainExponent - 469359 / 10000000 + ε := by ring
-        rw [← hsum, Real.rpow_add hZ0 (ε / 2) (Scales.mainExponent - 469359 / 10000000 + ε / 2)]
+          * Z ^ (Scales.mainExponent - 471999 / 10000000 + ε) := by
+        have hsum : ε / 2 + (Scales.mainExponent - 471999 / 10000000 + ε / 2)
+            = Scales.mainExponent - 471999 / 10000000 + ε := by ring
+        rw [← hsum, Real.rpow_add hZ0 (ε / 2) (Scales.mainExponent - 471999 / 10000000 + ε / 2)]
         ring
 
 end DedekindZetaZeroFree.Quantitative.RowsSmall
