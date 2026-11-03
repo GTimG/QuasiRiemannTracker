@@ -13,6 +13,12 @@ const managed = [
     description: "Contains website, documentation, or infrastructure changes",
     kind: "maintenance",
   },
+  {
+    name: "historical",
+    color: "bfb5a0",
+    description: "Imports a historical result using its recorded original date",
+    kind: "historical",
+  },
 ];
 
 export async function syncPRLabels(repository, number, classification) {
@@ -29,9 +35,13 @@ export async function syncPRLabels(repository, number, classification) {
     !classification ||
     typeof classification !== "object" ||
     Array.isArray(classification) ||
-    Object.keys(classification).sort().join(",") !== "maintenance,proof" ||
+    !["maintenance,proof", "historical,maintenance,proof"].includes(
+      Object.keys(classification).sort().join(","),
+    ) ||
     typeof classification.proof !== "boolean" ||
-    typeof classification.maintenance !== "boolean"
+    typeof classification.maintenance !== "boolean" ||
+    (classification.historical !== undefined &&
+      typeof classification.historical !== "boolean")
   )
     throw Error("Invalid PR change classification for managed labels");
   const token = process.env.GITHUB_TOKEN;
@@ -95,7 +105,17 @@ export async function syncPRLabels(repository, number, classification) {
       issueRoute,
     );
   const wanted = new Set(desired.map((label) => label.name));
-  const owned = new Set(managed.map((label) => label.name));
+  // Without a result declaration this run has no historical date to classify.
+  // Preserve that tag rather than stripping it during unrelated maintenance.
+  const owned = new Set(
+    managed
+      .filter(
+        (label) =>
+          label.kind !== "historical" ||
+          classification.historical !== undefined,
+      )
+      .map((label) => label.name),
+  );
   for (const label of current) {
     const name = label.name.toLowerCase();
     if (!owned.has(name) || wanted.has(name)) continue;

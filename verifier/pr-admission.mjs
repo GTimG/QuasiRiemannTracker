@@ -163,6 +163,13 @@ export async function evaluatePR({
     );
   if (!Number.isFinite(Date.parse(pr.created_at)))
     throw Error("Missing valid PR submission date");
+  for (const file of files) {
+    const original = /^submissions\/(\d{4}-\d{2}-\d{2}-[^/]+)\//.exec(
+      file.previous_filename ?? "",
+    )?.[1];
+    if (original && original !== directory)
+      throw Error(`Keep the original submission directory ${original}`);
+  }
   validateSubmissionDirectory(directory, { submittedAt: pr.created_at });
   const evidence = await validateEvidence(root, {
     repository,

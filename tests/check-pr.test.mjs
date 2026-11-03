@@ -792,3 +792,25 @@ for (const draft of [false, true]) {
     assert.match(result.outputs, /matrix=\["candidate"\]/);
   });
 }
+
+test("a predated submission queues the usual proof verification and gets an additional historical label", (t) => {
+  const data = fixture([
+    {
+      filename: "submissions/2026-10-08-candidate/src/Candidate/Main.lean",
+      status: "added",
+    },
+  ]);
+  data.pr.body = "QRH-Result: candidate\nQRH-Bound: 7/8\nQRH-Decimal: 0.875";
+  withMetadata(data, {
+    directory: "2026-10-08-candidate",
+    metadata: publicationMetadata,
+  });
+  const result = run(t, data, { QRH_PHASE: "prepare" });
+  assert.equal(result.status, 0);
+  assert.equal(result.context.expected.result_id, "candidate");
+  assert.ok(
+    result.labelWrites.some((request) =>
+      request.body?.labels?.includes("historical"),
+    ),
+  );
+});

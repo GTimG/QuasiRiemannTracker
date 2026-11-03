@@ -276,3 +276,29 @@ test("rejects malformed label responses", async (t) => {
     /Unexpected GitHub PR labels/,
   );
 });
+
+test("historical imports retain their proof label and add a separate historical tag", async (t) => {
+  const state = setup(t, { current: ["help wanted"] });
+  assert.deepEqual(
+    await syncPRLabels(repository, number, {
+      ...classification,
+      historical: true,
+    }),
+    ["new-bound", "historical"],
+  );
+  assert.deepEqual(
+    [...state.current],
+    ["help wanted", "new-bound", "historical"],
+  );
+  await syncPRLabels(repository, number, {
+    ...classification,
+    historical: false,
+  });
+  assert.deepEqual([...state.current], ["help wanted", "new-bound"]);
+});
+
+test("maintenance without a result date preserves a previously applied historical label", async (t) => {
+  const state = setup(t, { current: ["historical", "new-bound"] });
+  await syncPRLabels(repository, number, { proof: false, maintenance: true });
+  assert.deepEqual([...state.current], ["historical", "maintenance"]);
+});

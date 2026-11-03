@@ -7,6 +7,7 @@ import { verificationResult } from "./actions/result.mjs";
 import {
   submissionDirectory,
   validSubmissionSourcePath,
+  validateSubmissionDirectory,
 } from "./submission-paths.mjs";
 import {
   parseSubmissionMetadata,
@@ -82,6 +83,9 @@ export function validateAdmissionRecord(value) {
     !Number.isFinite(Date.parse(a.archived_at))
   )
     throw Error("Invalid admission archive record");
+  const directory = /^submissions\/([^/]+)\/src$/.exec(value.source_path)?.[1];
+  if (/^\d{4}-\d{2}-\d{2}-/.test(directory ?? ""))
+    validateSubmissionDirectory(directory, { submittedAt: p.created_at });
   const declaration = parseDeclaration(p.body);
   if (
     declaration?.result_id !== value.result_id ||

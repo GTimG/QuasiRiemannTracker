@@ -3,11 +3,17 @@ import {
   catalogueProofRecords,
   proofRevision,
 } from "./catalogue-revisions.mjs";
+import {
+  classifySubmissionDate,
+  isCalendarDate,
+} from "./historical-submission.mjs";
 
 export const contributionDate = (r) => r.timeline_at || r.first_verified_at;
-// Only use an explicitly recorded PR submission date. Older imported results
-// keep their documented publication/announcement date when that fact is absent.
+// Retain the original directory date for derived historical imports. Other
+// contributions use an explicitly recorded PR submission date when available;
+// older records without one keep their documented publication/announcement date.
 export function withSubmissionTimeline(record) {
+  if (record.historical === true) return record;
   if (
     !Number.isSafeInteger(record.pr) ||
     record.pr <= 0 ||
@@ -54,6 +60,18 @@ export function validateCatalogue(data) {
   )
     throw Error("Invalid or duplicate catalogue ID");
   for (const r of proofRecords) {
+    if (r.historical !== undefined && typeof r.historical !== "boolean")
+      throw Error("Invalid historical submission tag");
+    if (r.historical === true) {
+      const date = r.timeline_at?.slice(0, 10);
+      if (
+        !isCalendarDate(date) ||
+        r.timeline_at !== `${date}T00:00:00Z` ||
+        r.date_precision === "year" ||
+        !classifySubmissionDate(date, r.submitted_at).historical
+      )
+        throw Error("Invalid historical catalogue date");
+    }
     if (!/^[a-z0-9][a-z0-9-]+$/.test(r.id) || ids.has(proofRevision(r)))
       throw Error("Invalid or duplicate catalogue ID");
     ids.add(proofRevision(r));

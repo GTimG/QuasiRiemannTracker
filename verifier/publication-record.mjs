@@ -8,10 +8,27 @@ import {
 import { rational } from "../core/rational.mjs";
 import { certificate } from "./certificate.mjs";
 import { validateSubmissionMetadata } from "./submission-metadata.mjs";
-import { validSubmissionSourcePath } from "./submission-paths.mjs";
+import {
+  validSubmissionSourcePath,
+  validateSubmissionDirectory,
+} from "./submission-paths.mjs";
+import { classifySubmissionDate } from "../core/historical-submission.mjs";
 
 export function publicationRecord(admission, verification = admission) {
   const metadata = validateSubmissionMetadata(admission.metadata);
+  const directory = /^submissions\/([^/]+)\/src$/.exec(
+    admission.source_path ?? "",
+  )?.[1];
+  const directoryDate = /^(\d{4}-\d{2}-\d{2})-/.exec(directory ?? "")?.[1];
+  if (directoryDate !== undefined)
+    validateSubmissionDirectory(directory, {
+      submittedAt: admission.pr.created_at,
+    });
+  const historicalDate =
+    directoryDate !== undefined &&
+    classifySubmissionDate(directoryDate, admission.pr.created_at).historical
+      ? directoryDate
+      : undefined;
   // Metadata can be corrected in a later admitted rerun. Proof provenance is
   // taken from the earliest authenticated success for this identical revision.
   const evidence = certificate(verification.certificate);
@@ -45,6 +62,7 @@ export function publicationRecord(admission, verification = admission) {
     license: metadata.license || "See submitted source notices",
     builds_on: metadata.builds_on || [],
     status: "framework-verified",
+    ...(historicalDate !== undefined ? { historical: true } : {}),
     submitted_at: admission.pr.created_at,
     published_at: "",
     merged_at: admission.merged_at || "",
@@ -52,8 +70,14 @@ export function publicationRecord(admission, verification = admission) {
     repository: admission.repository,
     source_commit: admission.head_sha,
     first_verified_at: evidence.verified_at,
-    timeline_at: admission.pr.created_at,
-    date_label: "PR submitted",
+    timeline_at:
+      historicalDate !== undefined
+        ? `${historicalDate}T00:00:00Z`
+        : admission.pr.created_at,
+    date_label:
+      historicalDate !== undefined
+        ? "Historical source created"
+        : "PR submitted",
     entrypoint: { module: "Candidate.Main", declaration: "Candidate.bound" },
     verification_note: `Comparator checked the canonical all-Dirichlet statement at ${admission.theta_exact} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`,
     certificate_url: certificateUrl,
