@@ -1,0 +1,32 @@
+{
+  "title": "CrossNox · historical asymmetric-geometry refinement",
+  "authors": [
+    {
+      "name": "Javier Mermet (CrossNox)",
+      "url": "https://github.com/CrossNox"
+    }
+  ],
+  "description": "Historical parameter refinement of OpenAI’s seven-eighths proof to 4374785349/5000000000 = 0.8749570698 for all Dirichlet L-functions, excluding the principal pole. The original development also covers zeta and finite-order Eisenstein Hecke L-functions. A larger slot mass and asymmetric physical lengths are carried through low and high estimates, source moments, Euler corrections and continuation. Source imported from CrossNox/quasi-riemann-hypothesis-extension at 3dddb77a62182f8d530c368ed5e9220079fbd1b9; the upstream README states that the paper, Lean proofs and scripts were entirely AI-generated. This tracker adaptation relocates module imports, renames one local pool helper to avoid a duplicate baseline declaration, and adds the canonical entrypoint, preserving the proof logic and attribution to OpenAI/math. The published numerical refinement is historical; this PR does not claim a new frontier or a completed tracker verification.",
+  "license": "Apache-2.0",
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "builds_on": [
+    "openai-baseline"
+  ],
+  "references": [
+    {
+      "label": "Pinned original source and scope",
+      "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/tree/3dddb77a62182f8d530c368ed5e9220079fbd1b9"
+    },
+    {
+      "label": "Original manuscript",
+      "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/blob/3dddb77a62182f8d530c368ed5e9220079fbd1b9/paper.pdf"
+    },
+    {
+      "label": "Original formalization documentation",
+      "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/blob/3dddb77a62182f8d530c368ed5e9220079fbd1b9/docs/FORMALIZATION.md"
+    }
+  ],
+  "agent_traces": []
+}
