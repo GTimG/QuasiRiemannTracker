@@ -1,0 +1,103 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/LocalClassFieldTheory/ClassFormation/LocalBlocks/Family/H0.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalBlocks.Family.Instances
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+set_option autoImplicit false
+
+/-!
+# Degree-zero cohomology of finite local-block families
+-/
+
+noncomputable section
+
+namespace LocalClassFieldTheory
+
+open AlgebraicNumberTheory.Valuations
+open HilbertRamification
+open CyclicCohomology.ProfiniteCohomology.Herbrand
+open CyclicCohomology
+
+universe u v w
+
+variable {K : Type u} {L : Type v}
+    [Field K] [Field L] [Algebra K L]
+    [FiniteDimensional K L] [IsGalois K L]
+
+/-- Degree-zero cohomology for a finite family of local blocks. -/
+noncomputable def localBlockFamilyHerbrandH0Equiv
+    {ι : Type w} [Fintype ι]
+    (d : ι → LocalPlaceDatum K L)
+    (σ : L ≃ₐ[K] L)
+    (hgen : ∀ τ : L ≃ₐ[K] L,
+      τ ∈ Subgroup.zpowers σ) :
+    letI _localAction : ∀ i,
+        MulDistribMulAction
+          (absoluteValueDecompositionGroup K (d i).extension.1)
+          (LocalizedCompletion
+            (d i).base (d i).extension)ˣ :=
+      fun i ↦ decompositionGroupLocalUnitsAction
+        (d i).base (d i).base_isNontrivial
+        (d i).extension
+    letI _blockAction : ∀ i,
+        MulDistribMulAction (L ≃ₐ[K] L)
+          (LocalPlaceBlock
+            (d i).base (d i).base_isNontrivial
+            (d i).extension) :=
+      fun i ↦ inducedMulDistribMulAction
+        (absoluteValueDecompositionGroup K (d i).extension.1)
+    letI _familyAction :
+        MulDistribMulAction (L ≃ₐ[K] L)
+          (LocalBlockFamily d) :=
+      piMulDistribMulAction (L ≃ₐ[K] L)
+        (fun i ↦ LocalPlaceBlock
+          (d i).base (d i).base_isNontrivial
+          (d i).extension)
+    letI _decompositionFintype : ∀ i,
+        Fintype
+          (absoluteValueDecompositionGroup K
+            (d i).extension.1) :=
+      fun _ ↦ Fintype.ofFinite _
+    HerbrandH0 (L ≃ₐ[K] L)
+        (LocalBlockFamily d) ≃*
+      ∀ i,
+        HerbrandH0
+          (absoluteValueDecompositionGroup K
+            (d i).extension.1)
+          (LocalizedCompletion
+            (d i).base (d i).extension)ˣ := by
+  letI localAction := localBlockFamilyLocalAction d
+  letI blockAction := localBlockFamilyBlockAction d
+  letI familyAction := localBlockFamilyCohomologyAction d
+  letI decompositionFintype :=
+    localBlockFamilyDecompositionFintype d
+  exact
+    (herbrandH0PiEquiv
+      (G := L ≃ₐ[K] L)
+      (fun i ↦ LocalPlaceBlock
+        (d i).base (d i).base_isNontrivial
+        (d i).extension)).trans
+      (MulEquiv.piCongrRight fun i ↦
+        localPlaceBlockHerbrandH0Equiv
+          (d i).base (d i).base_isNontrivial
+          (d i).extension σ hgen)
+
+end LocalClassFieldTheory
+
+end

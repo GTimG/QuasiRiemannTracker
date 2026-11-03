@@ -1,0 +1,43 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Definitions/LocalClassFieldTheory/FieldNormHom.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Mathlib.RingTheory.Norm.Basic
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+set_option autoImplicit false
+
+/-!
+# The field norm on multiplicative groups
+-/
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u v
+
+/-- The field norm as a homomorphism on multiplicative groups. -/
+def fieldNormHom
+    (K : Type u) (L : Type v)
+    [Field K] [Field L] [Algebra K L] [FiniteDimensional K L] :
+    Lˣ →* Kˣ :=
+  Units.map (Algebra.norm K)
+
+end ClassFieldTheory
+
+end
