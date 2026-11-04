@@ -6,7 +6,7 @@
       "url": "https://github.com/LW56e2"
     }
   ],
-  "description": "Historical parameter refinement of OpenAI’s family-003 argument to 4374785349/5000000000 = 0.8749570698. The supplied proof derives nonvanishing for all Dirichlet characters of every positive modulus, excluding the principal pole; the original development also supplies Riemann zeta and finite-order Eisenstein Hecke statements. Original author Leo Wei (LW56e2). Imported from LW56e2/quasi-riemann-improved at b83dbbd914c5751acf9bc3389cde58970437278f (8 October 2026), preserving the analytic proof and exact parameter certificates. The tracker adaptation relocates module imports, renames RH.Transport to LW56e2.Transport, and imports the pinned OpenAI sources through openai-baseline. Anonymous local instances receive file-specific names to avoid declaration collisions when imported alongside the baseline. The author reports AI-assisted development. This submission seeks tracker verification of the adapted source; it does not claim a new record or new proof discovery. Attribution and Apache-2.0 licensing are retained. The original source repository was created on 8 October 2026 at 18:47:27 UTC; that date is retained for this historical import.",
+  "description": "Historical parameter refinement of OpenAI’s family-003 argument to 4374785349/5000000000 = 0.8749570698. The supplied proof derives nonvanishing for all Dirichlet characters of every positive modulus, excluding the principal pole; the original development also supplies Riemann zeta and finite-order Eisenstein Hecke statements. Original author Leo Wei (LW56e2). Imported from LW56e2/quasi-riemann-improved at b83dbbd914c5751acf9bc3389cde58970437278f (8 October 2026), preserving the analytic proof and exact parameter certificates. The tracker adaptation relocates module imports, renames RH.Transport to LW56e2.Transport, and imports the pinned OpenAI sources through openai-baseline. Anonymous local instances receive file-specific names to avoid declaration collisions when imported alongside the baseline. The author reports AI-assisted development. This submission seeks tracker verification of the adapted source; it does not claim a new record or new proof discovery. Attribution and Apache-2.0 licensing are retained. Public announcement is dated by the first source-history commit carrying this exact bound: 990acfb94cc44c033f29c7661bd7578e3f529b4b, committed at 2026-10-08T18:48:49Z (author and committer timestamps agree). This records the source commit time, not a separately observed public push time. The historical directory retains the same UTC calendar date.",
   "license": "Apache-2.0; retained LW56e2 and OpenAI/math attribution",
   "dependencies": [
     "openai-baseline"
@@ -28,9 +28,10 @@
       "url": "https://github.com/LW56e2/quasi-riemann-improved/blob/b83dbbd914c5751acf9bc3389cde58970437278f/LICENSE"
     },
     {
-      "label": "Original source repository and creation timestamp",
-      "url": "https://api.github.com/repos/LW56e2/quasi-riemann-improved"
+      "label": "Public announcement source commit (2026-10-08T18:48:49Z)",
+      "url": "https://github.com/LW56e2/quasi-riemann-improved/commit/990acfb94cc44c033f29c7661bd7578e3f529b4b"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "published_at": "2026-10-08T18:48:49Z"
 }
