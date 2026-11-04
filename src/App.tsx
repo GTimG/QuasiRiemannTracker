@@ -429,13 +429,13 @@ function Protocol() {
       <article className="panel">
         <h2>Dates</h2>
         <p>
-          The timeline orders verified PR contributions by submission time, not
-          by when a checker finishes. Historical imports retain their original
-          source date and an additional Historical tag. Entries without a
-          recorded PR date use their source directory or documented date, as
-          labelled in the table. Dates are in UTC; hover for the full timestamp.
-          Recorded verification dates appear separately in the result details.
-          Submission time is not a discovery date.
+          The timeline uses a documented public announcement date when
+          available, otherwise the PR submission time or source directory date,
+          as labelled in the table. Dates are in UTC; hover for the full
+          timestamp. PR submission and verification dates appear separately in
+          the result details. Commit timestamps document the source history;
+          they do not establish when a commit was first pushed publicly or
+          mathematical priority.
         </p>
       </article>
     </section>

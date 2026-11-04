@@ -3,17 +3,19 @@ import {
   catalogueProofRecords,
   proofRevision,
 } from "./catalogue-revisions.mjs";
-import {
-  classifySubmissionDate,
-  isCalendarDate,
-} from "./historical-submission.mjs";
 
 export const contributionDate = (r) => r.timeline_at || r.first_verified_at;
-// Retain the original directory date for derived historical imports. Other
-// contributions use an explicitly recorded PR submission date when available;
-// older records without one keep their documented publication/announcement date.
+// A documented public announcement takes precedence; otherwise use the PR date.
+// Publication and verification dates are independent for every contribution.
 export function withSubmissionTimeline(record) {
-  if (record.historical === true) return record;
+  if (record.published_at) {
+    const { date_precision, ...rest } = record;
+    return {
+      ...rest,
+      timeline_at: record.published_at,
+      date_label: "Public announcement",
+    };
+  }
   if (
     !Number.isSafeInteger(record.pr) ||
     record.pr <= 0 ||
@@ -62,18 +64,8 @@ export function validateCatalogue(data) {
   )
     throw Error("Invalid or duplicate catalogue ID");
   for (const r of proofRecords) {
-    if (r.historical !== undefined && typeof r.historical !== "boolean")
-      throw Error("Invalid historical submission tag");
-    if (r.historical === true) {
-      const date = r.timeline_at?.slice(0, 10);
-      if (
-        !isCalendarDate(date) ||
-        r.timeline_at !== `${date}T00:00:00Z` ||
-        r.date_precision === "year" ||
-        !classifySubmissionDate(date, r.submitted_at).historical
-      )
-        throw Error("Invalid historical catalogue date");
-    }
+    if (r.published_at && !Number.isFinite(Date.parse(r.published_at)))
+      throw Error("Invalid public announcement date");
     if (!/^[a-z0-9][a-z0-9-]+$/.test(r.id) || ids.has(proofRevision(r)))
       throw Error("Invalid or duplicate catalogue ID");
     ids.add(proofRevision(r));

@@ -384,3 +384,29 @@ test("legacy metadata remains authoritative and generates its original certifica
   assert.equal(saved.verified_at, legacy.first_verified_at);
   assert.equal(saved.source_commit, legacy.source_commit);
 });
+
+test("a documented announcement is precise in shallow checkouts and independent of verification", (t) => {
+  const data = fixture(t);
+  data.submission("2026-10-08-candidate-proof", {
+    metadata: {
+      ...metadata,
+      published_at: "2026-10-08T18:48:49Z",
+      references: [
+        {
+          label: "Result commit",
+          url: "https://github.com/example/proof/commit/" + "a".repeat(40),
+        },
+      ],
+    },
+  });
+  data.commit("2026-11-04T12:00:00Z");
+  data.write(".git/shallow", data.git("rev-parse", "HEAD") + "\n");
+  const [record] = buildSubmissionCatalogue({ root: data.root }).records;
+  assert.equal(record.published_at, "2026-10-08T18:48:49Z");
+  assert.equal(record.timeline_at, record.published_at);
+  assert.equal(record.date_label, "Public announcement");
+  assert.equal(record.historical, undefined);
+  assert.equal(record.status, "accepted");
+  assert.equal(record.first_verified_at, "");
+  assert.equal(record.submitted_at, "");
+});

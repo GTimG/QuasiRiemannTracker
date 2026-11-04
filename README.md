@@ -50,17 +50,20 @@ git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/
 Catalogue generation itself never fetches. A main-only shallow clone also
 includes every submission, using directory dates where PR dates are unavailable.
 
-Verified PR contributions are plotted at their PR submission time. A submission
-directory dated earlier than the PR creation date is automatically treated as a
-historical import and plotted at its original directory date. It receives an
-additional Historical tag while retaining its normal verification status.
-Recorded PR and verification dates remain separate provenance. When no PR creation
-time is recorded locally, the catalogue uses the directory date and labels it
-Source created; it does not guess a historical tag or verification timestamp.
-Older entries retain their documented dates and labels; these dates are not
-claims about when the mathematics was discovered. Current metadata supplies
-attribution and descriptions, while recorded verification dates and reports
-remain fixed.
+A documented public announcement timestamp determines the contribution date
+when available. Otherwise contributions use their recorded PR submission time,
+or the source directory date when no PR time is recorded locally. PR submission
+and verification timestamps remain separate provenance. Imported results use
+the same presentation and verification status as other submissions. An earlier
+directory date adds the Historical label to the PR only.
+
+The optional `published_at` metadata field records a public announcement as an
+ISO 8601 UTC timestamp, with a supporting source link in `references`. Commit
+history can establish when the result entered the source history; its timestamp
+does not establish when it was first pushed publicly or mathematical priority.
+Catalogue generation reads the recorded timestamp from the current checkout;
+it never queries upstream history or GitHub. Recorded verification dates and
+reports remain fixed.
 
 ## Submit
 
@@ -76,10 +79,10 @@ remain fixed.
    Keep that original directory name when updating the proof on later days.
 
    For an imported historical result, use its documented original source
-   creation date instead of the new PR date, for example
+   date instead of the new PR date, for example
    `submissions/2026-10-08-example-bound/` for an October 8 source imported in
-   a later PR. The earlier directory date automatically marks the submission
-   and PR as Historical; no extra metadata fields are needed.
+   a later PR. The earlier directory date automatically labels the PR as
+   Historical; no explicit historical flag or date field is needed.
 
    The directory date must be a real `YYYY-MM-DD` date and cannot be later
    than the PR creation date. Include the original source and date evidence
@@ -118,6 +121,10 @@ remain fixed.
    empty list.
    `builds_on` records attribution to existing result IDs; `dependencies`
    supplies the source modules available to imports.
+
+   Use `published_at` for a documented public announcement timestamp, such as
+   `2026-10-08T18:48:49Z`, and cite its evidence in `references`. This applies
+   equally to new and imported results; it makes no verification claim.
 
    The other supported fields are `license` and `references` (an array of
    objects with `label` and HTTPS `url`), and `agent_traces` (an optional array

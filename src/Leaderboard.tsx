@@ -115,11 +115,6 @@ export default function Leaderboard({
                     <span className="entry-decimal">
                       {decimal(r.theta, 14)}
                     </span>
-                    {r.historical && (
-                      <span className="historical-submission-tag">
-                        Historical
-                      </span>
-                    )}
                     <ChevronDown
                       size={16}
                       className="entry-chevron"

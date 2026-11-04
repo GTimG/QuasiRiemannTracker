@@ -100,6 +100,7 @@ export function validateSubmissionMetadata(value) {
     "title",
     "authors",
     "description",
+    "published_at",
     "license",
     "builds_on",
     "references",
@@ -125,6 +126,16 @@ export function validateSubmissionMetadata(value) {
         !text(author.name, 240) ||
         (author.url !== undefined && !url(author.url)),
     ) ||
+    (value.published_at !== undefined &&
+      (typeof value.published_at !== "string" ||
+        !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(
+          value.published_at,
+        ) ||
+        !Number.isFinite(Date.parse(value.published_at)) ||
+        ![
+          value.published_at,
+          value.published_at.replace(/Z$/, ".000Z"),
+        ].includes(new Date(value.published_at).toISOString()))) ||
     (value.license !== undefined && !text(value.license, 1000)) ||
     (value.builds_on !== undefined &&
       (!Array.isArray(value.builds_on) ||
