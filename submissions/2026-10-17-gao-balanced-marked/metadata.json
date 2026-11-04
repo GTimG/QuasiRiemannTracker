@@ -8,9 +8,7 @@
   ],
   "description": "All-moduli Dirichlet zero-free boundary 87483/100000 (0.874830), combining balanced common-geometry normalization, density-adaptive marked caps, a finite two-plane affine source/count family, and the independently proved 0.874836 incumbent for LOW and ERROR. Builds on OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; all inherited source notices retained. Zhongpai Gao, with AI assistance.",
   "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "builds_on": [
     "gao-directional-affine-20261016",
     "openai-baseline",
@@ -54,6 +52,11 @@
     {
       "label": "Accepted all-moduli affine boundary 0.874840 (Zhongpai Gao)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/60"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-17T02:59:24Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/63"
     }
-  ]
+  ],
+  "published_at": "2026-10-17T02:59:24Z"
 }

@@ -13,10 +13,7 @@
     "two-level-affine-20261019",
     "openai-baseline"
   ],
-  "dependencies": [
-    "hailey-collet-1252270103",
-    "openai-baseline"
-  ],
+  "dependencies": ["hailey-collet-1252270103", "openai-baseline"],
   "references": [
     {
       "label": "Research notes and exact certificates",
@@ -25,6 +22,11 @@
     {
       "label": "The face family and its continuum flow",
       "url": "https://github.com/ArviFoxy/QuasiRiemannTracker/tree/ccr-48c53b87-r20g37/research/faceless-chain"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-25T02:36:31Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/73"
     }
-  ]
+  ],
+  "published_at": "2026-10-25T02:36:31Z"
 }

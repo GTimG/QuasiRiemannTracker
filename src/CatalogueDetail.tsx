@@ -5,6 +5,7 @@ import {
   statusLabel,
   historicalBaseline,
   formatContributionDate,
+  contributionDate,
 } from "../core/catalogue.mjs";
 import { decimal } from "../core/rational.mjs";
 import type { Contribution } from "./types";
@@ -60,12 +61,11 @@ export default function CatalogueDetail({
         <dl>
           <dt>{r.date_label}</dt>
           <dd>
-            {r.date_label === "PR submitted" ||
-            r.date_label === "Public announcement"
-              ? timestamp(r.timeline_at || r.submitted_at)
-              : `${formatContributionDate(r)}${r.date_precision === "year" ? " (year only)" : " (UTC)"}`}
+            {r.date_precision
+              ? `${formatContributionDate(r)} (${r.date_precision} only)`
+              : timestamp(contributionDate(r))}
           </dd>
-          {r.submitted_at && r.timeline_at !== r.submitted_at && (
+          {r.submitted_at && (
             <>
               <dt>PR submitted</dt>
               <dd>{timestamp(r.submitted_at)}</dd>

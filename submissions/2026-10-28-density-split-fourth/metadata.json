@@ -47,6 +47,11 @@
     {
       "label": "Fourth density-step scalar proposal and exact replay (research PR 30)",
       "url": "https://github.com/rohanarun/quasi-rh-hillclimb/pull/30"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-28T02:32:08Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/85"
     }
-  ]
+  ],
+  "published_at": "2026-10-28T02:32:08Z"
 }

@@ -1,6 +1,6 @@
 {
   "submitted_at": "",
-  "published_at": "",
+  "published_at": "1922-01-01T00:00:00Z",
   "merged_at": "",
   "pr": 5,
   "repository": "nielstron/QuasiRiemannTracker",
@@ -53,7 +53,7 @@
   "status": "framework-verified",
   "timeline_at": "1922-01-01T00:00:00Z",
   "date_precision": "year",
-  "date_label": "Early QRH-era formulation",
+  "date_label": "Public announcement",
   "verification_note": "Comparator verified the canonical all-Dirichlet statement at θ = 1. Lean, NanoDa and con-ron accepted the proof in the standard sandbox. The timeline uses the historical 1922 anchor; the verification date records the completed check.",
   "attribution_note": "The point uses 1922, the printing year shown in Hardy and Littlewood’s Partitio numerorum III; the publisher catalogues the volume in 1923. The paper supplies an early fixed-half-plane formulation and the timeline anchor. The Euler-product bound was already classical.",
   "certificate_url": "certificates/classical-euler-product.json",

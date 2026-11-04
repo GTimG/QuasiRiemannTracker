@@ -22,9 +22,12 @@
     {
       "label": "Gao local-refinement source",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/15"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-13T16:56:38Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ]
+  "dependencies": ["openai-baseline"],
+  "published_at": "2026-10-13T16:56:38Z"
 }

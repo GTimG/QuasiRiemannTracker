@@ -37,9 +37,12 @@
     {
       "label": "Related affine detector arithmetic proposal (liqsweep; incomplete integration)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/52"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-15T03:51:26Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/60"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ]
+  "dependencies": ["openai-baseline"],
+  "published_at": "2026-10-15T03:51:26Z"
 }

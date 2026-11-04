@@ -33,9 +33,12 @@
     {
       "label": "Directional marked affine source (PR 62)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-17T11:06:24Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/64"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ]
+  "dependencies": ["openai-baseline"],
+  "published_at": "2026-10-17T11:06:24Z"
 }

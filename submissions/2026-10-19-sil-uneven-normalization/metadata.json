@@ -8,9 +8,7 @@
   ],
   "description": "Proves the all-moduli Dirichlet nonvanishing boundary 874828524351/1000000000000, with the principal pole excluded. Refines Gao PR63 using saturated marked capacities, retained sixth-root weights, a short-width moment bootstrap, and clipped uneven normalization with common-factor cost 2/5. The proof first improves the incumbent 0.87483 to 0.8748286 and then proves the stated exact boundary. Sil, with OpenAI Codex assistance. Builds on Zhongpai Gao, OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; inherited source notices are retained. Official admission is determined by the repository checks.",
   "license": "Apache-2.0; inherited source and dependency notices retained.",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "builds_on": [
     "gao-balanced-marked-20261017",
     "gao-directional-affine-20261016",
@@ -31,6 +29,11 @@
     {
       "label": "Zhongpai Gao: PR63 predecessor paper (TeX source)",
       "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/ee7be4e7f4aae2835610fe3a5d620dbe3a1b6791/papers/gao-balanced-marked-20261017/paper.tex"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-19T06:46:39Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/66"
     }
-  ]
+  ],
+  "published_at": "2026-10-19T06:46:39Z"
 }

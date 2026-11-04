@@ -22,9 +22,12 @@
     {
       "label": "Verified comparison bound 0.8748598",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-14T16:56:17Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/48"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ]
+  "dependencies": ["openai-baseline"],
+  "published_at": "2026-10-14T16:56:17Z"
 }

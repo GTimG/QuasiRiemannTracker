@@ -9,7 +9,8 @@ import {
 import { decimal } from "../core/rational.mjs";
 import {
   boundLabel,
-  contributionDate,
+  contributionDateValue,
+  contributionDateTitle,
   formatContributionDate,
   historicalBaseline,
   statusLabel,
@@ -129,12 +130,8 @@ export default function Leaderboard({
                       {boundLabel(r)}
                     </span>
                     <time
-                      dateTime={
-                        r.date_precision === "year"
-                          ? contributionDate(r).slice(0, 4)
-                          : contributionDate(r)
-                      }
-                      title={`${r.date_label || "First verified"}: ${contributionDate(r)}`}
+                      dateTime={contributionDateValue(r)}
+                      title={contributionDateTitle(r)}
                     >
                       {formatContributionDate(r)}
                     </time>

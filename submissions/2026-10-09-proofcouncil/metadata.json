@@ -1,6 +1,6 @@
 {
   "submitted_at": "",
-  "published_at": "",
+  "published_at": "2026-10-09T14:06:47Z",
   "merged_at": "",
   "pr": null,
   "repository": "",
@@ -11,9 +11,7 @@
     "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_theta_lt_re"
   },
   "license": "Apache-2.0 (Lean development; retained upstream notices)",
-  "builds_on": [
-    "openai-baseline"
-  ],
+  "builds_on": ["openai-baseline"],
   "id": "proofcouncil-20261009",
   "title": "Certified uniform descent",
   "theta": {
@@ -46,18 +44,20 @@
     {
       "label": "Accepted manuscript (TeX)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/qrh-20261009/accepted-answer.tex"
+    },
+    {
+      "label": "Public announcement: Initial ProofCouncil source commit (committer time) (2026-10-09T14:06:47Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/commit/290d9c5463344c3e2fab93b878f3281e77e3fd6f"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-09T11:37:19Z",
-  "date_label": "Lean verification",
+  "timeline_at": "2026-10-09T14:06:47Z",
+  "date_label": "Public announcement",
   "verification_note": "Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and their definitions. Lean, NanoDa and con-ron accepted the exported proofs.",
   "attribution_note": "Tim Gehrunger is the maintainer; ProofCouncil is the project credit. AI-assisted research and formalization, reusing the Apache-2.0 OpenAI/math and Mathlib developments. This display credit does not amend the supplied manuscript’s blank author field.",
   "certificate_url": "certificates/proofcouncil-20261009.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/qrh/src/Solution.lean",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "verification": {
     "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/qrh/result.json",
     "report_sha256": "7c25b8df68deec815b59ff8553bb3db5570cbd01af9142e5ed42719557643118",

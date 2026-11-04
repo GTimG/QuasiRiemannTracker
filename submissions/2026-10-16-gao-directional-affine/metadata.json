@@ -8,9 +8,7 @@
   ],
   "description": "All-moduli Dirichlet zero-free boundary 218709/250000 (0.874836), using the independently proved 0.874840 Hecke bound for LOW, moving marked HIGH width and valuation coupling, and separately paid ERROR estimates. Builds on OpenAI, Hailey Collet, Akash Levy, timbalud and DaysSky; inherited source notices retained. Zhongpai Gao, with AI assistance.",
   "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "builds_on": [
     "openai-baseline",
     "akashlevy-20261009-weighted-numerator",
@@ -49,6 +47,11 @@
     {
       "label": "Paper",
       "url": "https://github.com/Gaozhongpai/QuasiRiemannTracker/blob/gao-directional-affine-paper-20261016/papers/gao-directional-affine-20261016/paper.pdf"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-16T13:08:46Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/62"
     }
-  ]
+  ],
+  "published_at": "2026-10-16T13:08:46Z"
 }

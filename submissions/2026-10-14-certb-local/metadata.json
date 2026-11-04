@@ -25,11 +25,16 @@
     {
       "label": "Local 22/5 predecessor",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/26"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-14T20:34:45Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/53"
     }
   ],
   "dependencies": [
     "reserve-local-20261013",
     "local44-20261013",
     "openai-baseline"
-  ]
+  ],
+  "published_at": "2026-10-14T20:34:45Z"
 }

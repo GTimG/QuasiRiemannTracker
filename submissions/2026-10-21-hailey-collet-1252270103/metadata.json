@@ -20,9 +20,7 @@
     "no-hardcoding-20261017",
     "two-level-affine-20261019"
   ],
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "references": [
     {
       "label": "QRH-Catalogue",
@@ -39,6 +37,11 @@
     {
       "label": "Standalone paper and formalization",
       "url": "https://haileystorm.github.io/research/finite-ordinary-source-moments/"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-21T19:58:25Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/69"
     }
-  ]
+  ],
+  "published_at": "2026-10-21T19:58:25Z"
 }

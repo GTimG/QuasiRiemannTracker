@@ -38,7 +38,7 @@ test("historical catalogue entries display their status and year precision", asy
   await expect(date).toHaveAttribute("datetime", "1922");
   await expect(date).toHaveAttribute(
     "title",
-    `${baseline.date_label}: ${baseline.timeline_at}`,
+    `${baseline.date_label}: 1922 (year only)`,
   );
   await page.getByRole("button", { name: baseline.title, exact: true }).click();
   const detail = page.locator(".proof-detail");

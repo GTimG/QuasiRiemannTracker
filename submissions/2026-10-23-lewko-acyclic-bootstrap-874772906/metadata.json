@@ -7,9 +7,7 @@
   ],
   "description": "We prove that, for every positive modulus and every complex Dirichlet character χ, the Dirichlet L-function L(s,χ) is nonzero whenever Re(s) > 0.874772906, excluding the principal pole at χ = 1 and s = 1. The proof refines Hailey Collet’s construction in the OpenAI quasi-Riemann-hypothesis framework by optimizing admissible parameters in two successive, acyclic steps. The theorem is formalized in Lean. This is a parameter improvement of existing machinery, not a new analytic method.\n\nThe Lean theorem has passed local compilation and independent scope, hash and axiom audits using only propext, Classical.choice and Quot.sound. Official Comparator/Lean/NanoDa/con-ron admission remains pending.\n\nResearch, parameter optimization, drafting and Lean development were AI-assisted. We credit Hailey Collet’s finite ordinary-source construction and earlier work; OpenAI’s framework; Akash Levy’s weighted numerator; Zhongpai Gao’s refinements and physical-source machinery; timbalud’s marked asymmetric counting and coupled radical allocation; DaysSky’s affine detector; related arithmetic prepared for liqsweep; and ArviFoxy’s computed ledger and two-level affine bootstrap. The sole directly imported tracker submission is openai-baseline; reached Collet sources are vendored with pinned provenance. Lean, mathlib, the PrimeNumberTheoremAnd package by Alex Kontorovich and contributors, and Adam Benenson’s Rellich–Kondrachov package retain their original authorship, licenses and notices.",
   "license": "Apache-2.0; inherited notices and dependency licenses retained.",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "builds_on": [
     "openai-baseline",
     "akashlevy-20261009-weighted-numerator",
@@ -35,6 +33,11 @@
     {
       "label": "OpenAI mathematics, tracker-pinned framework",
       "url": "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-23T01:21:44Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/70"
     }
-  ]
+  ],
+  "published_at": "2026-10-23T01:21:44Z"
 }

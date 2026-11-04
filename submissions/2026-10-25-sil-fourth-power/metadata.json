@@ -13,10 +13,7 @@
     "hailey-collet-1252270103",
     "two-level-affine-20261019"
   ],
-  "dependencies": [
-    "openai-baseline",
-    "hailey-collet-1252270103"
-  ],
+  "dependencies": ["openai-baseline", "hailey-collet-1252270103"],
   "references": [
     {
       "label": "Original OpenAI framework and scope",
@@ -29,6 +26,11 @@
     {
       "label": "Two-level affine bootstrap (PR67)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-25T17:42:55Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/74"
     }
-  ]
+  ],
+  "published_at": "2026-10-25T17:42:55Z"
 }

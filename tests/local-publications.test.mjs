@@ -187,6 +187,7 @@ test("a shallow clone retains first publication facts from the current archive t
   assert.equal(ordinary.pr, source.early.number);
   assert.equal(ordinary.submitted_at, source.early.pr.created_at);
   assert.equal(ordinary.timeline_at, source.early.pr.created_at);
+  assert.equal(ordinary.published_at, source.early.pr.created_at);
   assert.equal(ordinary.historical, undefined);
   assert.equal(
     ordinary.first_verified_at,
@@ -206,7 +207,7 @@ test("a shallow clone retains first publication facts from the current archive t
   const historical = shallow.records.find((record) => record.id === ids[1]);
   assert.equal(historical.historical, undefined);
   assert.equal(historical.timeline_at, source.historical.pr.created_at);
-  assert.equal(historical.date_label, "PR submitted");
+  assert.equal(historical.date_label, "Public announcement");
   assert.equal(historical.submitted_at, source.historical.pr.created_at);
   assert.equal(
     historical.first_verified_at,
@@ -234,7 +235,9 @@ test("a main-only shallow clone includes every submission without archive facts"
     assert.equal(record.certificate_url, undefined);
     assert.equal(record.historical, undefined);
     assert.equal(record.pr, null);
-    assert.equal(record.date_label, "Source created");
+    assert.equal(record.date_label, "Public announcement");
+    assert.equal(record.published_at, record.timeline_at);
+    assert.equal(record.date_precision, "day");
     assert.equal(record.source_commit, source.mainTip);
   }
   assert.equal(
