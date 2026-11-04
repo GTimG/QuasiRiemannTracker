@@ -11,9 +11,7 @@
     "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_perturbed_boundary_lt_re"
   },
   "license": "Apache-2.0",
-  "builds_on": [
-    "openai-baseline"
-  ],
+  "builds_on": ["openai-baseline"],
   "id": "argonaut-20261008",
   "title": "Perturbed boundary",
   "theta": {
@@ -54,9 +52,7 @@
   "verification_note": "The pinned v0.1.8 proof was rebuilt in an offline Linux sandbox. Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements at exactly 3499999/4000000; Lean, NanoDa and con-ron accepted the proofs.",
   "certificate_url": "certificates/argonaut-20261008.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/argonaut-20261010-safe-replay/solution-src/Solution.lean",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "verification": {
     "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/argonaut-20261010-safe-replay/result.json",
     "report_sha256": "fd16f2d56c4d17a0086a13ec4e848ea707f135237f2cc54ab52fe26ae57e9192"

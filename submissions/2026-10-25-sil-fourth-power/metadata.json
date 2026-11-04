@@ -13,10 +13,7 @@
     "hailey-collet-1252270103",
     "two-level-affine-20261019"
   ],
-  "dependencies": [
-    "openai-baseline",
-    "hailey-collet-1252270103"
-  ],
+  "dependencies": ["openai-baseline", "hailey-collet-1252270103"],
   "references": [
     {
       "label": "Original OpenAI framework and scope",

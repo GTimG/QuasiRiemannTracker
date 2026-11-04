@@ -43,8 +43,6 @@
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/60"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "published_at": "2026-10-15T03:51:26Z"
 }

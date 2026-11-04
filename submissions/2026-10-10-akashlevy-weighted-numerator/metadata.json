@@ -11,9 +11,7 @@
     "declaration": "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re"
   },
   "license": "Apache-2.0 (retained upstream notices)",
-  "builds_on": [
-    "openai-baseline"
-  ],
+  "builds_on": ["openai-baseline"],
   "id": "akashlevy-20261009-weighted-numerator",
   "title": "Weighted numerator",
   "theta": {
@@ -68,9 +66,7 @@
   "attribution_note": "Akash Levy (akashlevy) is the human contributor. GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the formalization and submit the result. Builds on the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained.",
   "certificate_url": "certificates/akashlevy-20261009-weighted-numerator.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/akashlevy-20261009-weighted-numerator/Solution.lean",
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "verification": {
     "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/akashlevy-20261010-safe-replay/result.json",
     "report_sha256": "487e7118c8b7479d8711e03e039e4446abceadfa84f520525b515bd271a9ff82"

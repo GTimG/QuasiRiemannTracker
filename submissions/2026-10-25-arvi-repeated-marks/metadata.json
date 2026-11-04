@@ -13,10 +13,7 @@
     "two-level-affine-20261019",
     "openai-baseline"
   ],
-  "dependencies": [
-    "hailey-collet-1252270103",
-    "openai-baseline"
-  ],
+  "dependencies": ["hailey-collet-1252270103", "openai-baseline"],
   "references": [
     {
       "label": "Research notes and exact certificates",

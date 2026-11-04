@@ -62,9 +62,7 @@
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/26"
     }
   ],
-  "dependencies": [
-    "openai-baseline"
-  ],
+  "dependencies": ["openai-baseline"],
   "verification": {
     "report_url": "https://github.com/GTimG/QuasiRiemannTracker/actions/runs/38342781752/attempts/1",
     "report_sha256": "d3261f0251c7d9b115787c15a25ac715dd4b2f75d6bb9c1236d393e26d15aa3f"

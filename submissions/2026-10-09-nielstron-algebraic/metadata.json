@@ -11,10 +11,7 @@
     "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
   },
   "license": "Apache-2.0 (retained upstream notices)",
-  "builds_on": [
-    "proofcouncil-20261009",
-    "openai-baseline"
-  ],
+  "builds_on": ["proofcouncil-20261009", "openai-baseline"],
   "id": "nielstron-20261009-tightening",
   "title": "Exact algebraic endpoint",
   "theta": {

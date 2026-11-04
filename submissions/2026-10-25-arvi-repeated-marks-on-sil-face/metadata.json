@@ -14,10 +14,7 @@
     "hailey-collet-1252270103",
     "openai-baseline"
   ],
-  "dependencies": [
-    "hailey-collet-1252270103",
-    "openai-baseline"
-  ],
+  "dependencies": ["hailey-collet-1252270103", "openai-baseline"],
   "references": [
     {
       "label": "Research notes: the combined proof",

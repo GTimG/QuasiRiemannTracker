@@ -53,9 +53,6 @@
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/67"
     }
   ],
-  "dependencies": [
-    "openai-baseline",
-    "akashlevy-20261009-weighted-numerator"
-  ],
+  "dependencies": ["openai-baseline", "akashlevy-20261009-weighted-numerator"],
   "published_at": "2026-10-20T00:35:12Z"
 }

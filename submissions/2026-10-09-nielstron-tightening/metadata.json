@@ -11,10 +11,7 @@
     "declaration": "QRH.DirichletCharacter.LFunction_ne_zero_of_tightTheta_lt_re"
   },
   "license": "Apache-2.0 (retained upstream notices)",
-  "builds_on": [
-    "proofcouncil-20261009",
-    "openai-baseline"
-  ],
+  "builds_on": ["proofcouncil-20261009", "openai-baseline"],
   "id": "nielstron-20261009-tightening",
   "title": "Compressed rational refinement",
   "theta": {
@@ -58,10 +55,7 @@
   "certificate_url": "certificates/nielstron-20261009-tightening.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/nielstron-20261009-kernels/src/Solution.lean",
   "historical": true,
-  "dependencies": [
-    "openai-baseline",
-    "proofcouncil-20261009"
-  ],
+  "dependencies": ["openai-baseline", "proofcouncil-20261009"],
   "verification": {
     "report_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/nielstron-20261009-kernels/result.json",
     "report_sha256": "1ecac920cce8be7c69689731d3e3494a78ba5e185e494dfc84bd6d5f5510dd00"

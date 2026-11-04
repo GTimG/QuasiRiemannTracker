@@ -7,10 +7,7 @@
     }
   ],
   "description": "Proves all-moduli Dirichlet nonvanishing for Re(s) > 8748087/10000000 = 0.8748087, excluding the principal pole. The finite-depth affine argument retains residual reduction and reciprocal source weights, follows LOW continuations through five affine stages, and counts returned HIGH histories jointly with one final density payment. Both the detector and weighted numerator use an actual uniformly constructed root moment; the finite backward induction, all-height split, source thresholds and canonical endpoint are supplied as Lean proofs. Builds on ArviFoxy’s two-level affine source construction, Zhongpai Gao’s balanced marked ledger, Hailey Collet’s affine moment and quartic framework, Akash Levy’s weighted numerator, and the OpenAI baseline; inherited contributions and license notices are retained. Developed with AI assistance.",
-  "dependencies": [
-    "openai-baseline",
-    "akashlevy-20261009-weighted-numerator"
-  ],
+  "dependencies": ["openai-baseline", "akashlevy-20261009-weighted-numerator"],
   "builds_on": [
     "openai-baseline",
     "akashlevy-20261009-weighted-numerator",
