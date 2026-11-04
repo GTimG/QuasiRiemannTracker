@@ -1,6 +1,6 @@
 {
   "submitted_at": "2026-10-10T03:22:55Z",
-  "published_at": "",
+  "published_at": "2026-10-10T03:22:55Z",
   "merged_at": "",
   "pr": 6,
   "repository": "akashlevy/QuasiRiemannTracker",
@@ -55,11 +55,15 @@
     {
       "label": "Lean base: akashlevy/math fork of OpenAI/math",
       "url": "https://github.com/akashlevy/math/tree/c388e88e6519d139ad2ca5571ef0c7fbf0e245b5"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-10T03:22:55Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/6"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-10T13:35:18.422104+00:00",
-  "date_label": "Independent sandboxed verification",
+  "timeline_at": "2026-10-10T03:22:55Z",
+  "date_label": "Public announcement",
   "verification_note": "The 228 submitted modules and 2,670 dependency modules were rebuilt in an offline Linux sandbox. Comparator verified the all-Dirichlet, zeta and Eisenstein Hecke statements at 10499/12000; Lean, NanoDa and con-ron accepted the proofs. The timeline records this first independent acceptance.",
   "attribution_note": "Akash Levy (akashlevy) is the human contributor. GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the formalization and submit the result. Builds on the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained.",
   "certificate_url": "certificates/akashlevy-20261009-weighted-numerator.json",

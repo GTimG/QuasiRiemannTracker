@@ -47,7 +47,7 @@ test("admission uses the same publication record that a later build generates", 
   assert.deepEqual(validated.builds_on, ["fixture-baseline"]);
   assert.equal(validated.timeline_at, admission.pr.created_at);
   assert.equal(validated.historical, undefined);
-  assert.equal(validated.date_label, "PR submitted");
+  assert.equal(validated.date_label, "Public announcement");
   assert.equal(validated.first_verified_at, admission.certificate.verified_at);
   assert.equal(
     catalogue.records.length,
@@ -140,17 +140,23 @@ test("an invalid enclosure for a supported value is rejected before publication"
   );
 });
 
-test("historical publication is inferred from its folder while PR and verification dates stay accurate", () => {
+test("admission normalizes documented announcements without historical website flags", () => {
   const { catalogue, admission } = fixture();
   admission.metadata.builds_on = [];
+  admission.metadata.published_at = "2030-10-01T18:48:49Z";
   admission.source_path = "submissions/2030-10-01-candidate-proof/src";
   const published = validatePublication(catalogue, admission);
-  assert.equal(published.historical, true);
-  assert.equal(Object.hasOwn(published, "historical_date"), false);
-  assert.equal(published.timeline_at, "2030-10-01T00:00:00Z");
+  assert.equal(published.historical, undefined);
+  assert.equal(published.published_at, admission.metadata.published_at);
+  assert.equal(published.timeline_at, admission.metadata.published_at);
+  assert.equal(published.date_label, "Public announcement");
   assert.equal(published.submitted_at, admission.pr.created_at);
   assert.equal(published.first_verified_at, admission.certificate.verified_at);
-  assert.equal(published.date_label, "Historical source created");
+  delete admission.metadata.published_at;
+  assert.equal(
+    publicationRecord(admission).published_at,
+    admission.pr.created_at,
+  );
   admission.source_path = "submissions/2030-10-04-candidate-proof/src";
   assert.throws(() => publicationRecord(admission), /cannot be after/);
 });

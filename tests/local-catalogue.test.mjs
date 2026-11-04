@@ -108,7 +108,7 @@ test("local generation reads the checkout without admission data or network", (t
   assert.equal(record.status, "accepted");
   assert.deepEqual(record.theta, { numerator: "7", denominator: "8" });
   assert.equal(record.timeline_at, "2026-10-12T00:00:00Z");
-  assert.equal(record.date_label, "Source created");
+  assert.equal(record.date_label, "Public announcement");
   assert.equal(record.source_introduced_at, undefined);
   assert.equal(record.submitted_at, "");
   assert.equal(record.first_verified_at, "");
@@ -338,7 +338,7 @@ test("missing publication dates preserve the directory date without guessing his
   const [record] = buildSubmissionCatalogue({ root: data.root }).records;
   assert.equal(record.historical, undefined);
   assert.equal(record.timeline_at, "2026-10-08T00:00:00Z");
-  assert.equal(record.date_label, "Source created");
+  assert.equal(record.date_label, "Public announcement");
   assert.equal(record.submitted_at, "");
   assert.equal(record.first_verified_at, "");
 });

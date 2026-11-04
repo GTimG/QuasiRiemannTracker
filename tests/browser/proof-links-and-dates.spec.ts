@@ -42,7 +42,9 @@ test("verified proof badges open solution sources and contribution dates retain 
     );
     await expect(dateCell.locator("time")).toHaveAttribute(
       "title",
-      `${record.date_label}: ${record.timeline_at}`,
+      record.date_precision === "year"
+        ? `${record.date_label}: ${record.timeline_at.slice(0, 4)} (year only)`
+        : `${record.date_label}: ${record.timeline_at}`,
     );
   }
 });

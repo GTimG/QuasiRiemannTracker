@@ -38,7 +38,14 @@
     {
       "label": "Independent maintainer verification and logs (14 October 2026)",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/e238cab21d1ab48cfa17cff8f06ea11f0aaf3f7e/verifier/standard/receipts/pr43-9e000869-20261014/README.md"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-13T21:06:27Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
     }
   ],
-  "dependencies": ["openai-baseline"]
+  "dependencies": [
+    "openai-baseline"
+  ],
+  "published_at": "2026-10-13T21:06:27Z"
 }

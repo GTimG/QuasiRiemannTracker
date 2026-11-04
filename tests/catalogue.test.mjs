@@ -7,6 +7,8 @@ import {
   historicalBaseline,
   statusLabel,
   formatContributionDate,
+  contributionDateValue,
+  contributionDateTitle,
   withSubmissionTimeline,
 } from "../core/catalogue.mjs";
 import {
@@ -41,15 +43,20 @@ test("recorded PR dates determine the timeline when no public announcement is re
   const original = record({ pr: 41, published_at: "" });
   const updated = withSubmissionTimeline(original);
   assert.equal(updated.timeline_at, original.submitted_at);
-  assert.equal(updated.date_label, "PR submitted");
+  assert.equal(updated.date_label, "Public announcement");
   assert.equal(updated.first_verified_at, original.first_verified_at);
   assert.equal(original.timeline_at, "2030-10-02T00:00:00Z");
   for (const value of [
     record({ pr: null, published_at: "" }),
     record({ pr: 8, submitted_at: "", published_at: "" }),
     historicalRecord({ pr: 5, submitted_at: "", published_at: "" }),
-  ])
-    assert.deepEqual(withSubmissionTimeline(value), value);
+  ]) {
+    const normalized = withSubmissionTimeline(value);
+    assert.equal(normalized.timeline_at, value.timeline_at);
+    assert.equal(normalized.published_at, value.timeline_at);
+    assert.equal(normalized.date_label, "Public announcement");
+    assert.equal(normalized.first_verified_at, value.first_verified_at);
+  }
 });
 
 test("a contribution displays its current revision and keeps the original proof metadata", () => {
@@ -284,7 +291,10 @@ test("accepted checkout sources join the frontier without a fabricated verificat
   assert.equal(statusLabel(accepted), "Verified in our framework");
   assert.equal(verifiedHere(accepted), true);
   assert.equal(accepted.first_verified_at, "");
-  assert.deepEqual(withSubmissionTimeline(accepted), accepted);
+  const normalized = withSubmissionTimeline(accepted);
+  assert.equal(normalized.timeline_at, accepted.timeline_at);
+  assert.equal(normalized.published_at, accepted.timeline_at);
+  assert.equal(normalized.first_verified_at, "");
   const timeline = recordHistory(
     timelineRecords(data.records.filter(verifiedHere)),
   );
@@ -397,4 +407,34 @@ test("accepted same-day attribution graphs reject missing parents and cycles", (
       }),
     /Unknown or later/,
   );
+});
+
+test("calendar precision is retained without fabricating midnight announcement times", () => {
+  for (const [date_precision, published_at, value, text] of [
+    [
+      "year",
+      "1922-01-01T00:00:00Z",
+      "1922",
+      "Public announcement: 1922 (year only)",
+    ],
+    [
+      "day",
+      "2030-10-08T00:00:00Z",
+      "2030-10-08",
+      "Public announcement: 2030-10-08 (day only)",
+    ],
+    [
+      undefined,
+      "2030-10-08T00:00:00Z",
+      "2030-10-08T00:00:00Z",
+      "Public announcement: 2030-10-08T00:00:00Z",
+    ],
+  ]) {
+    const normalized = withSubmissionTimeline(
+      record({ published_at, date_precision }),
+    );
+    assert.equal(normalized.date_precision, date_precision);
+    assert.equal(contributionDateValue(normalized), value);
+    assert.equal(contributionDateTitle(normalized), text);
+  }
 });

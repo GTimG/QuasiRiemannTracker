@@ -48,12 +48,15 @@ git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/
 ```
 
 Catalogue generation itself never fetches. A main-only shallow clone also
-includes every submission, using directory dates where PR dates are unavailable.
+includes every submission and its recorded announcement date, including its precision.
 
-A documented public announcement timestamp determines the contribution date
-when available. Otherwise contributions use their recorded PR submission time,
-or the source directory date when no PR time is recorded locally. PR submission
-and verification timestamps remain separate provenance. Imported results use
+Every catalogue entry has a public announcement date. Checked-in submissions
+record it in `published_at`, with a source citation in `references`. For a new
+submission without an earlier documented announcement, opening its public PR is
+the announcement. Preview checkouts without either timestamp use the directory
+date with day-only precision. A calendar day or year is never displayed as an
+observed midnight timestamp. PR submission and verification timestamps remain
+separate provenance. Imported results use
 the same presentation and verification status as other submissions. An earlier
 directory date adds the Historical label to the PR only.
 

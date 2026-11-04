@@ -41,7 +41,12 @@
     {
       "label": "PR93: selected sextic norm",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/93"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-31T02:16:30Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/100"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "published_at": "2026-10-31T02:16:30Z"
 }

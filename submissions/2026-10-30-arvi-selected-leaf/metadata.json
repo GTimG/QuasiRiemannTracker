@@ -45,7 +45,12 @@
     {
       "label": "ArviFoxy: repeated-mark face family on Sil's fourth-power face",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/76"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-30T02:37:45Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/97"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "published_at": "2026-10-30T02:37:45Z"
 }

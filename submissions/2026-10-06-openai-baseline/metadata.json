@@ -1,6 +1,6 @@
 {
   "submitted_at": "",
-  "published_at": "",
+  "published_at": "2026-10-06T21:58:50Z",
   "merged_at": "",
   "pr": null,
   "repository": "openai/math",
@@ -36,11 +36,15 @@
     {
       "label": "Original source and scope",
       "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+    },
+    {
+      "label": "Public announcement: Initial seven-eighths source commit (2026-10-06T21:58:50Z)",
+      "url": "https://github.com/openai/math/commit/adc7f1241b42e322a6451854ab7e4b4c146bf78a"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-06T00:00:00Z",
-  "date_label": "Public release",
+  "timeline_at": "2026-10-06T21:58:50Z",
+  "date_label": "Public announcement",
   "verification_note": "Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements and their definitions. Lean, NanoDa and con-ron accepted the exported proofs.",
   "certificate_url": "certificates/openai-baseline.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/palomar-20261009/openai/src/Solution.lean",

@@ -1,6 +1,6 @@
 {
   "submitted_at": "",
-  "published_at": "",
+  "published_at": "2026-10-08T08:19:28Z",
   "merged_at": "",
   "pr": null,
   "repository": "Argonaut-Math/argonaut-math-quasi-riemann-boundary",
@@ -42,10 +42,14 @@
     {
       "label": "Argonaut source and release",
       "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
+    },
+    {
+      "label": "Public announcement: Original Argonaut announcement commit (2026-10-08T08:19:28Z)",
+      "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary/commit/c6e7b0c6fc72a18c783cef52f2ef89ea5aa9774f"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-08T00:00:00Z",
+  "timeline_at": "2026-10-08T08:19:28Z",
   "date_label": "Public announcement",
   "verification_note": "The pinned v0.1.8 proof was rebuilt in an offline Linux sandbox. Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements at exactly 3499999/4000000; Lean, NanoDa and con-ron accepted the proofs.",
   "certificate_url": "certificates/argonaut-20261008.json",

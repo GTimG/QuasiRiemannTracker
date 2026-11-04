@@ -18,6 +18,11 @@
     {
       "label": "Original manuscript, provenance, licenses and supporting verification material",
       "url": "https://github.com/DaysSky/QuasiRiemannTracker/tree/a0efd9ee546b417de650f36bc8403f781706a94e/proofs/detector-affine-c0125154"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-14T23:49:00Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/56"
     }
-  ]
+  ],
+  "published_at": "2026-10-14T23:49:00Z"
 }

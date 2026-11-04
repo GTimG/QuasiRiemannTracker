@@ -35,6 +35,11 @@
     {
       "label": "OpenAI mathematics, tracker-pinned framework",
       "url": "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-23T01:21:44Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/70"
     }
-  ]
+  ],
+  "published_at": "2026-10-23T01:21:44Z"
 }

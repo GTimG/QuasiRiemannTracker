@@ -1,6 +1,6 @@
 {
   "submitted_at": "2026-10-09T17:29:56Z",
-  "published_at": "",
+  "published_at": "2026-10-09T17:29:56Z",
   "merged_at": "",
   "pr": 1,
   "repository": "nielstron/QuasiRiemannTracker",
@@ -44,11 +44,15 @@
     {
       "label": "Complete reproducible source and evidence",
       "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/public/proofs/nielstron-20261009-tightening/source-public.tar.gz"
+    },
+    {
+      "label": "Public announcement: submission PR opened (2026-10-09T17:29:56Z)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/1"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-09T17:21:30.103097+00:00",
-  "date_label": "Author-side Lean check",
+  "timeline_at": "2026-10-09T17:29:56Z",
+  "date_label": "Public announcement",
   "verification_note": "Comparator verified the all-Dirichlet, zeta and finite-order Eisenstein Hecke statements. Lean, NanoDa and con-ron accepted the proofs.",
   "attribution_note": "nielstron is the human contributor; this research and formalization were AI-assisted. The result derives from Tim Gehrunger / ProofCouncil and the Apache-2.0 OpenAI/math and Mathlib developments; upstream notices are retained.",
   "certificate_url": "certificates/nielstron-20261009-tightening.json",

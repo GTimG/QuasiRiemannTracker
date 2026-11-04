@@ -429,13 +429,14 @@ function Protocol() {
       <article className="panel">
         <h2>Dates</h2>
         <p>
-          The timeline uses a documented public announcement date when
-          available, otherwise the PR submission time or source directory date,
-          as labelled in the table. Dates are in UTC; hover for the full
-          timestamp. PR submission and verification dates appear separately in
-          the result details. Commit timestamps document the source history;
-          they do not establish when a commit was first pushed publicly or
-          mathematical priority.
+          Every result has a public announcement date with source evidence.
+          Opening a public submission PR supplies that date when no earlier
+          announcement is documented. Dates are in UTC; hover for the recorded
+          timestamp. When only a day or year is known, the precision is stated
+          without implying an exact time. PR submission and verification dates
+          appear separately in the result details. Commit timestamps document
+          the source history; they do not establish when a commit was first
+          pushed publicly or mathematical priority.
         </p>
       </article>
     </section>

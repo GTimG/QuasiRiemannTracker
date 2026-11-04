@@ -5,28 +5,30 @@ import {
 } from "./catalogue-revisions.mjs";
 
 export const contributionDate = (r) => r.timeline_at || r.first_verified_at;
-// A documented public announcement takes precedence; otherwise use the PR date.
-// Publication and verification dates are independent for every contribution.
+// Normalize publication dates independently of submission and verification.
+// A public PR is the default announcement when no earlier source is documented.
 export function withSubmissionTimeline(record) {
-  if (record.published_at) {
-    const { date_precision, ...rest } = record;
-    return {
-      ...rest,
-      timeline_at: record.published_at,
-      date_label: "Public announcement",
-    };
-  }
-  if (
-    !Number.isSafeInteger(record.pr) ||
-    record.pr <= 0 ||
-    !Number.isFinite(Date.parse(record.submitted_at))
-  )
-    return record;
+  const hasPRDate =
+    Number.isSafeInteger(record.pr) &&
+    record.pr > 0 &&
+    Number.isFinite(Date.parse(record.submitted_at));
+  const publication =
+    record.published_at ||
+    (hasPRDate ? record.submitted_at : record.timeline_at);
+  if (!Number.isFinite(Date.parse(publication)))
+    throw Error("Missing valid public announcement date");
+  const published_at = new Date(publication)
+    .toISOString()
+    .replace(/\.000Z$/, "Z");
   const { date_precision, ...rest } = record;
   return {
     ...rest,
-    timeline_at: record.submitted_at,
-    date_label: "PR submitted",
+    published_at,
+    timeline_at: published_at,
+    date_label: "Public announcement",
+    ...((record.published_at || !hasPRDate) && date_precision
+      ? { date_precision }
+      : {}),
   };
 }
 export const historicalBaseline = (r) => r.status === "historical-baseline";
@@ -36,6 +38,15 @@ export const formatContributionDate = (r) =>
     year: "numeric",
     timeZone: "UTC",
   });
+// Calendar anchors are plotting coordinates, not observed midnight timestamps.
+export const contributionDateValue = (r) =>
+  r.date_precision === "year"
+    ? contributionDate(r).slice(0, 4)
+    : r.date_precision === "day"
+      ? contributionDate(r).slice(0, 10)
+      : contributionDate(r);
+export const contributionDateTitle = (r) =>
+  `${r.date_label || "Public announcement"}: ${contributionDateValue(r)}${r.date_precision ? ` (${r.date_precision} only)` : ""}`;
 export const boundLabel = (r) => r.exact_bound || fraction(r.theta);
 export const verifiedHere = (r) =>
   r.status === "accepted" ||

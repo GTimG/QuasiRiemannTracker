@@ -271,19 +271,23 @@ export function buildSubmissionCatalogue({
         : undefined;
     const certificateUrl = evidence ? `certificates/${id}.json` : undefined;
     const references = [
-      ...(certificateUrl
-        ? [{ label: "Verification record", url: certificateUrl }]
-        : []),
-      ...(solution ? [{ label: "Lean source", url: solution }] : []),
-      ...(repository && pr
-        ? [
-            {
-              label: "Submission PR",
-              url: `https://github.com/${repository}/pull/${pr}`,
-            },
-          ]
-        : []),
-      ...(metadata.references || []),
+      ...new Map(
+        [
+          ...(certificateUrl
+            ? [{ label: "Verification record", url: certificateUrl }]
+            : []),
+          ...(solution ? [{ label: "Lean source", url: solution }] : []),
+          ...(repository && pr
+            ? [
+                {
+                  label: "Submission PR",
+                  url: `https://github.com/${repository}/pull/${pr}`,
+                },
+              ]
+            : []),
+          ...(metadata.references || []),
+        ].map((reference) => [reference.url, reference]),
+      ).values(),
     ];
     if (!references.length && sourceRepository)
       references.push({
@@ -310,7 +314,10 @@ export function buildSubmissionCatalogue({
         source_commit: isSha(pinnedCommit) ? pinnedCommit : "",
         first_verified_at: evidence?.verified_at || "",
         timeline_at: `${date}T00:00:00Z`,
-        date_label: "Source created",
+        date_label: "Public announcement",
+        ...(!metadata.published_at && !evidence
+          ? { date_precision: "day" }
+          : {}),
         entrypoint: {
           module: "Candidate.Main",
           declaration: "Candidate.bound",

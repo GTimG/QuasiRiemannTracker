@@ -1,6 +1,9 @@
 // One pure record builder is shared by admission and catalogue generation, so
 // successful proof admission cannot leave an entry that the website cannot use.
-import { validateCatalogue } from "../core/catalogue.mjs";
+import {
+  validateCatalogue,
+  withSubmissionTimeline,
+} from "../core/catalogue.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -12,7 +15,6 @@ import {
   validSubmissionSourcePath,
   validateSubmissionDirectory,
 } from "./submission-paths.mjs";
-import { classifySubmissionDate } from "../core/historical-submission.mjs";
 
 export function publicationRecord(admission, verification = admission) {
   const metadata = validateSubmissionMetadata(admission.metadata);
@@ -24,11 +26,6 @@ export function publicationRecord(admission, verification = admission) {
     validateSubmissionDirectory(directory, {
       submittedAt: admission.pr.created_at,
     });
-  const historicalDate =
-    directoryDate !== undefined &&
-    classifySubmissionDate(directoryDate, admission.pr.created_at).historical
-      ? directoryDate
-      : undefined;
   // Metadata can be corrected in a later admitted rerun. Proof provenance is
   // taken from the earliest authenticated success for this identical revision.
   const evidence = certificate(verification.certificate);
@@ -49,7 +46,7 @@ export function publicationRecord(admission, verification = admission) {
     throw Error(`Missing exact bound enclosure: ${admission.result_id}`);
   const solution = `https://github.com/${admission.repository}/blob/${admission.head_sha}/${admission.source_path}/Candidate/Main.lean`;
   const certificateUrl = `certificates/${admission.result_id}.json`;
-  return {
+  return withSubmissionTimeline({
     id: admission.result_id,
     title: metadata.title,
     theta,
@@ -62,36 +59,33 @@ export function publicationRecord(admission, verification = admission) {
     license: metadata.license || "See submitted source notices",
     builds_on: metadata.builds_on || [],
     status: "framework-verified",
-    ...(historicalDate !== undefined ? { historical: true } : {}),
     submitted_at: admission.pr.created_at,
-    published_at: "",
+    published_at: metadata.published_at || admission.pr.created_at,
     merged_at: admission.merged_at || "",
     pr: admission.number,
     repository: admission.repository,
     source_commit: admission.head_sha,
     first_verified_at: evidence.verified_at,
-    timeline_at:
-      historicalDate !== undefined
-        ? `${historicalDate}T00:00:00Z`
-        : admission.pr.created_at,
-    date_label:
-      historicalDate !== undefined
-        ? "Historical source created"
-        : "PR submitted",
+    timeline_at: metadata.published_at || admission.pr.created_at,
+    date_label: "Public announcement",
     entrypoint: { module: "Candidate.Main", declaration: "Candidate.bound" },
     verification_note: `Comparator checked the canonical all-Dirichlet statement at ${admission.theta_exact} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`,
     certificate_url: certificateUrl,
     solution_url: solution,
     references: [
-      { label: "Verification record", url: certificateUrl },
-      { label: "Checked Lean solution", url: solution },
-      {
-        label: "Reviewed submission",
-        url: `https://github.com/${admission.repository}/pull/${admission.number}`,
-      },
-      ...(metadata.references || []),
+      ...new Map(
+        [
+          { label: "Verification record", url: certificateUrl },
+          { label: "Checked Lean solution", url: solution },
+          {
+            label: "Reviewed submission",
+            url: `https://github.com/${admission.repository}/pull/${admission.number}`,
+          },
+          ...(metadata.references || []),
+        ].map((reference) => [reference.url, reference]),
+      ).values(),
     ],
-  };
+  });
 }
 
 // The protected prepare job's catalogue snapshot includes both displayed
