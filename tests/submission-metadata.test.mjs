@@ -346,3 +346,21 @@ test("historical classification cannot be supplied through explicit publication 
       /Invalid publication metadata/,
     );
 });
+
+test("public announcement dates use precise UTC timestamps without historical flags", () => {
+  const value = { ...metadata(), published_at: "2026-10-08T18:48:49Z" };
+  assert.deepEqual(validateSubmissionMetadata(value), value);
+  for (const published_at of [
+    "",
+    "2026-10-08",
+    "2026-02-30T18:48:49Z",
+    "2026-10-08T25:00:00Z",
+    "2026-10-08T18:48:49+00:00",
+    123,
+  ]) {
+    assert.throws(
+      () => validateSubmissionMetadata({ ...metadata(), published_at }),
+      /Invalid publication metadata/,
+    );
+  }
+});

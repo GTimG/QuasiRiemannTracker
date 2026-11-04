@@ -368,7 +368,13 @@ export async function maintenanceVerification(root, { pr, files, repository }) {
   const regularBlob = (ref, path) => {
     const entry = tree(ref).get(path);
     if (!entry) return null;
-    if (!/^100644 blob [a-f0-9]{40}$/.test(entry))
+    // Permit reading an old executable blob only when the candidate repairs
+    // its mode without changing the bytes. Candidate data stays non-executable.
+    const repairedBase =
+      ref === "base" &&
+      /^100755 blob [a-f0-9]{40}$/.test(entry) &&
+      tree("head").get(path) === entry.replace(/^100755/, "100644");
+    if (!/^100644 blob [a-f0-9]{40}$/.test(entry) && !repairedBase)
       throw Error(`Expected a regular data file: ${path}`);
     return entry;
   };

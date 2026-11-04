@@ -37,17 +37,17 @@ const revisionCatalogue = () => {
   };
 };
 
-test("recorded PR dates determine the timeline without changing verification history or historical dates", () => {
-  const original = record({ pr: 41 });
+test("recorded PR dates determine the timeline when no public announcement is recorded", () => {
+  const original = record({ pr: 41, published_at: "" });
   const updated = withSubmissionTimeline(original);
   assert.equal(updated.timeline_at, original.submitted_at);
   assert.equal(updated.date_label, "PR submitted");
   assert.equal(updated.first_verified_at, original.first_verified_at);
   assert.equal(original.timeline_at, "2030-10-02T00:00:00Z");
   for (const value of [
-    record({ pr: null }),
-    record({ pr: 8, submitted_at: "" }),
-    historicalRecord({ pr: 5, submitted_at: "" }),
+    record({ pr: null, published_at: "" }),
+    record({ pr: 8, submitted_at: "", published_at: "" }),
+    historicalRecord({ pr: 5, submitted_at: "", published_at: "" }),
   ])
     assert.deepEqual(withSubmissionTimeline(value), value);
 });
@@ -246,36 +246,22 @@ test("historical baselines enforce theta one without local verification claims",
   );
 });
 
-test("historical imported results keep their original timeline and normal verification status", () => {
-  const original = record({
-    historical: true,
-    timeline_at: "2030-09-01T00:00:00Z",
-    date_label: "Historical source created",
-    submitted_at: "2030-10-03T12:00:00Z",
-  });
-  const published = withSubmissionTimeline(original);
-  assert.equal(published.timeline_at, original.timeline_at);
-  assert.equal(published.submitted_at, original.submitted_at);
-  assert.equal(published.first_verified_at, original.first_verified_at);
-  assert.equal(published.status, original.status);
-  assert.equal(verifiedHere(published), true);
-  validateCatalogue({ schema_version: 1, records: [published] });
-  assert.throws(
-    () =>
-      validateCatalogue({
-        schema_version: 1,
-        records: [{ ...published, timeline_at: original.submitted_at }],
-      }),
-    /historical catalogue date/,
-  );
-  assert.throws(
-    () =>
-      validateCatalogue({
-        schema_version: 1,
-        records: [{ ...published, timeline_at: "2030-10-04T00:00:00Z" }],
-      }),
-    /cannot be after/,
-  );
+test("public announcement timestamps apply equally to any contribution", () => {
+  for (const pr of [null, 123]) {
+    const original = record({
+      pr,
+      published_at: "2030-09-01T18:48:49Z",
+      submitted_at: "2030-10-03T12:00:00Z",
+    });
+    const published = withSubmissionTimeline(original);
+    assert.equal(published.timeline_at, original.published_at);
+    assert.equal(published.date_label, "Public announcement");
+    assert.equal(published.submitted_at, original.submitted_at);
+    assert.equal(published.first_verified_at, original.first_verified_at);
+    assert.equal(published.status, original.status);
+    assert.equal(published.historical, undefined);
+    validateCatalogue({ schema_version: 1, records: [published] });
+  }
 });
 
 test("accepted checkout sources join the frontier without a fabricated verification date", () => {
@@ -285,6 +271,7 @@ test("accepted checkout sources join the frontier without a fabricated verificat
     theta: { numerator: "4", denominator: "5" },
     timeline_at: "2030-10-08T00:00:00Z",
     date_label: "Source created",
+    published_at: "",
     first_verified_at: "",
     submitted_at: "",
     certificate_url: undefined,
@@ -308,33 +295,14 @@ test("accepted checkout sources join the frontier without a fabricated verificat
   assert.deepEqual(frontierHistory(timeline, []).at(-1).theta, accepted.theta);
 });
 
-test("accepted historical sources require an actual recorded PR date", () => {
-  const accepted = record({
-    status: "accepted",
-    historical: true,
-    timeline_at: "2030-10-08T00:00:00Z",
-    date_label: "Historical source created",
-    first_verified_at: "",
-    submitted_at: "2030-10-10T16:00:00Z",
-    pr: 111,
-  });
-  const check = (changes = {}) =>
-    validateCatalogue({
-      schema_version: 1,
-      records: [{ ...accepted, ...changes }],
-    });
-  assert.doesNotThrow(() => check());
+test("invalid public announcement dates are rejected", () => {
   assert.throws(
-    () => check({ timeline_at: "2030-10-11T00:00:00Z" }),
-    /cannot be after/,
-  );
-  assert.throws(
-    () => check({ timeline_at: "2030-10-10T00:00:00Z" }),
-    /historical catalogue date/,
-  );
-  assert.throws(
-    () => check({ submitted_at: "" }),
-    /Missing valid PR submission date/,
+    () =>
+      validateCatalogue({
+        schema_version: 1,
+        records: [record({ published_at: "not a date" })],
+      }),
+    /public announcement date/,
   );
 });
 

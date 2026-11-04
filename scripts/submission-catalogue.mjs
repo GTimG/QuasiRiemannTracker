@@ -292,40 +292,37 @@ export function buildSubmissionCatalogue({
       });
     if (!references.length)
       throw Error(`Submission needs a repository or source reference: ${id}`);
-    const historicalDate = evidence && facts.submitted_at.slice(0, 10) > date;
-    records.push({
-      id,
-      title: metadata.title,
-      theta,
-      authors: metadata.authors,
-      method: metadata.description,
-      license: metadata.license || "See submitted source notices",
-      builds_on: metadata.builds_on || [],
-      status: evidence ? "framework-verified" : "accepted",
-      ...(historicalDate ? { historical: true } : {}),
-      submitted_at: evidence ? facts.submitted_at : "",
-      published_at: "",
-      merged_at: "",
-      pr: pr || null,
-      repository: sourceRepository,
-      source_commit: isSha(pinnedCommit) ? pinnedCommit : "",
-      first_verified_at: evidence?.verified_at || "",
-      timeline_at:
-        evidence && !historicalDate ? facts.submitted_at : `${date}T00:00:00Z`,
-      date_label:
-        evidence && !historicalDate
-          ? "PR submitted"
-          : historicalDate
-            ? "Historical source created"
-            : "Source created",
-      entrypoint: { module: "Candidate.Main", declaration: "Candidate.bound" },
-      verification_note: evidence
-        ? `Comparator checked the canonical all-Dirichlet statement at ${evidence.theta_exact} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`
-        : "Proof verification is required before merge. A verification timestamp is not recorded for this entry.",
-      ...(certificateUrl ? { certificate_url: certificateUrl } : {}),
-      ...(solution ? { solution_url: solution } : {}),
-      references,
-    });
+    records.push(
+      withSubmissionTimeline({
+        id,
+        title: metadata.title,
+        theta,
+        authors: metadata.authors,
+        method: metadata.description,
+        license: metadata.license || "See submitted source notices",
+        builds_on: metadata.builds_on || [],
+        status: evidence ? "framework-verified" : "accepted",
+        submitted_at: evidence ? facts.submitted_at : "",
+        published_at: metadata.published_at || "",
+        merged_at: "",
+        pr: pr || null,
+        repository: sourceRepository,
+        source_commit: isSha(pinnedCommit) ? pinnedCommit : "",
+        first_verified_at: evidence?.verified_at || "",
+        timeline_at: `${date}T00:00:00Z`,
+        date_label: "Source created",
+        entrypoint: {
+          module: "Candidate.Main",
+          declaration: "Candidate.bound",
+        },
+        verification_note: evidence
+          ? `Comparator checked the canonical all-Dirichlet statement at ${evidence.theta_exact} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`
+          : "Proof verification is required before merge. A verification timestamp is not recorded for this entry.",
+        ...(certificateUrl ? { certificate_url: certificateUrl } : {}),
+        ...(solution ? { solution_url: solution } : {}),
+        references,
+      }),
+    );
     if (evidence) certificates.set(id, evidence);
   }
   const byDate = (a, b) =>

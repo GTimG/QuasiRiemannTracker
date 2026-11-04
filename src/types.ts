@@ -23,7 +23,6 @@ export type Contribution = {
   log_url?: string;
   is_record?: boolean;
   status: string;
-  historical?: boolean;
   timeline_at?: string;
   date_label?: string;
   date_precision?: "day" | "year";
