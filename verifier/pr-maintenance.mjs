@@ -368,9 +368,13 @@ export async function maintenanceVerification(root, { pr, files, repository }) {
   const regularBlob = (ref, path) => {
     const entry = tree(ref).get(path);
     if (!entry) return null;
-    // Git's executable bit does not make a blob non-regular data. Imported
-    // submission metadata may be 100755; it is still read as JSON, never run.
-    if (!/^100(?:644|755) blob [a-f0-9]{40}$/.test(entry))
+    // Read legacy executable blobs from the base so their mode can be repaired.
+    // Candidate files must remain regular, non-executable data.
+    const allowed =
+      ref === "base"
+        ? /^100(?:644|755) blob [a-f0-9]{40}$/
+        : /^100644 blob [a-f0-9]{40}$/;
+    if (!allowed.test(entry))
       throw Error(`Expected a regular data file: ${path}`);
     return entry;
   };
