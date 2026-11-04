@@ -204,9 +204,9 @@ test("a shallow clone retains first publication facts from the current archive t
     source.early.certificate,
   );
   const historical = shallow.records.find((record) => record.id === ids[1]);
-  assert.equal(historical.historical, true);
-  assert.equal(historical.timeline_at, "2026-10-08T00:00:00Z");
-  assert.equal(historical.date_label, "Historical source created");
+  assert.equal(historical.historical, undefined);
+  assert.equal(historical.timeline_at, source.historical.pr.created_at);
+  assert.equal(historical.date_label, "PR submitted");
   assert.equal(historical.submitted_at, source.historical.pr.created_at);
   assert.equal(
     historical.first_verified_at,
