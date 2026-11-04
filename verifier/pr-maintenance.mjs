@@ -368,13 +368,7 @@ export async function maintenanceVerification(root, { pr, files, repository }) {
   const regularBlob = (ref, path) => {
     const entry = tree(ref).get(path);
     if (!entry) return null;
-    // Read legacy executable blobs from the base so their mode can be repaired.
-    // Candidate files must remain regular, non-executable data.
-    const allowed =
-      ref === "base"
-        ? /^100(?:644|755) blob [a-f0-9]{40}$/
-        : /^100644 blob [a-f0-9]{40}$/;
-    if (!allowed.test(entry))
+    if (!/^100644 blob [a-f0-9]{40}$/.test(entry))
       throw Error(`Expected a regular data file: ${path}`);
     return entry;
   };

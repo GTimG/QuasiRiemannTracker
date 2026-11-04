@@ -5,17 +5,6 @@ NanoDa: ammkrn/nanoda_lib, Apache-2.0. Worker fetches pinned source with origina
 Functional inspiration only: Paureel/beyond-n-log-n d8e39034757365b948c8d7e0e18d859a26a98227. No license file found at that revision; no source or assets reused.
 PalomarSubmission: Copyright (c) 2026 Kim Morrison, MIT License. Local proof-checking helpers are imported from pinned commit d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44. License retained in verifier/PALOMAR-LICENSE. These independent checks do not imply Palomar registration or endorsement.
 
-TheRealDubb's historical Family 003 contribution: Troy Winarski authorized
-Apache-2.0 licensing for his additions and modifications in the 189 imported
-modules, to the extent of rights he holds, in a comment on tracker PR #113.
-Those modules come from TheRealDubb/family-003-extension-xenoproof at
-b6c98187528e036b8c60414a6961ef999caf31fb, under
-submissions/2026-10-10-xenoproof-family003/src/Submissions/xenoproof_family003/OAI/BelowSevenEighthsTight/.
-Only their import paths were relocated; original namespaces and proof terms
-are retained. Candidate.Main and Candidate.Provenance.lean are new tracker
-integration files. OpenAI/math and Mathlib components retain their existing
-notices and licenses. Permission: https://github.com/GTimG/QuasiRiemannTracker/pull/113#issuecomment-6608491713.
-
 single-prime-29-33-20261010:
 # Source attribution and publication scope
 
