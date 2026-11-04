@@ -6,7 +6,7 @@
       "url": "https://github.com/CrossNox"
     }
   ],
-  "description": "Historical parameter refinement of OpenAI’s seven-eighths proof to 4374785349/5000000000 = 0.8749570698 for all Dirichlet L-functions, excluding the principal pole. The original development also covers zeta and finite-order Eisenstein Hecke L-functions. A larger slot mass and asymmetric physical lengths are carried through low and high estimates, source moments, Euler corrections and continuation. Source imported from CrossNox/quasi-riemann-hypothesis-extension at 3dddb77a62182f8d530c368ed5e9220079fbd1b9; the upstream README states that the paper, Lean proofs and scripts were entirely AI-generated. This tracker adaptation relocates module imports, renames one local pool helper to avoid a duplicate baseline declaration, and adds the canonical entrypoint, preserving the proof logic and attribution to OpenAI/math. The published numerical refinement is historical; this PR does not claim a new frontier or a completed tracker verification. Historical source date: 2026-10-08, from the original public repository creation timestamp 2026-10-08T15:32:16Z; this dates the source repository, not a later tracker PR or a claimed mathematical discovery.",
+  "description": "Historical parameter refinement of OpenAI’s seven-eighths proof to 4374785349/5000000000 = 0.8749570698 for all Dirichlet L-functions, excluding the principal pole. The original development also covers zeta and finite-order Eisenstein Hecke L-functions. A larger slot mass and asymmetric physical lengths are carried through low and high estimates, source moments, Euler corrections and continuation. Source imported from CrossNox/quasi-riemann-hypothesis-extension at 3dddb77a62182f8d530c368ed5e9220079fbd1b9; the upstream README states that the paper, Lean proofs and scripts were entirely AI-generated. This tracker adaptation relocates module imports, renames one local pool helper to avoid a duplicate baseline declaration, and adds the canonical entrypoint, preserving the proof logic and attribution to OpenAI/math. The published numerical refinement is historical; this PR does not claim a new frontier or a completed tracker verification. Public announcement is dated by the first source-history commit carrying this exact bound: f677cc0a820bb2aff86bb4cbe783d076f5c097db, committed at 2026-10-08T23:33:38Z (author and committer timestamps agree). This records the source commit time, not a separately observed public push time. The historical directory retains the same UTC calendar date.",
   "license": "Apache-2.0",
   "dependencies": [
     "openai-baseline"
@@ -28,9 +28,10 @@
       "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/blob/3dddb77a62182f8d530c368ed5e9220079fbd1b9/docs/FORMALIZATION.md"
     },
     {
-      "label": "Original public repository metadata (created_at: 2026-10-08T15:32:16Z)",
-      "url": "https://api.github.com/repos/CrossNox/quasi-riemann-hypothesis-extension"
+      "label": "Public announcement source commit (2026-10-08T23:33:38Z)",
+      "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/commit/f677cc0a820bb2aff86bb4cbe783d076f5c097db"
     }
   ],
-  "agent_traces": []
+  "agent_traces": [],
+  "published_at": "2026-10-08T23:33:38Z"
 }

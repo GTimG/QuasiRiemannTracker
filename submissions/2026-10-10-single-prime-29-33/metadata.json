@@ -1,6 +1,6 @@
 {
   "submitted_at": "",
-  "published_at": "",
+  "published_at": "2026-10-10T08:06:34Z",
   "merged_at": "",
   "pr": 8,
   "repository": "HaileyStorm/QuasiRiemannTracker",
@@ -46,12 +46,16 @@
     {
       "label": "Pinned standard submission",
       "url": "https://github.com/HaileyStorm/QuasiRiemannTracker/tree/eecd4131f1cac4f31f71e84b301a4e4619aa18d9/submissions/single-prime-29-33-20261010"
+    },
+    {
+      "label": "Public announcement source commit (2026-10-10T08:06:34Z)",
+      "url": "https://github.com/HaileyStorm/QuasiRiemannTracker/commit/94fbacd5db79f62ef9bd316a6a41ac51627154b5"
     }
   ],
   "status": "framework-verified",
-  "timeline_at": "2026-10-10T07:47:35.881822+00:00",
-  "date_label": "Contributor three-kernel verification",
-  "verification_note": "Comparator verified the canonical all-Dirichlet statement at 29/33. Lean, NanoDa and con-ron accepted the proof in the standard sandbox. The timeline records contributor verification; the verification date records the independent standard check.",
+  "timeline_at": "2026-10-10T08:06:34Z",
+  "date_label": "Public announcement",
+  "verification_note": "Comparator verified the canonical all-Dirichlet statement at 29/33. Lean, NanoDa and con-ron accepted the proof in the standard sandbox. The public announcement is dated by the source commit that adds the proof package; the independent standard check is recorded separately.",
   "attribution_note": "Manuscript by Hailey Collet, developed with assistance from OpenAI's GPT-6 Pro. Formalization submitted as HaileyStorm with substantial OpenAI Codex assistance, adapting pinned OpenAI/math foundations. See NOTICE.md for attribution and licensing.",
   "certificate_url": "certificates/single-prime-29-33-20261010.json",
   "solution_url": "https://github.com/GTimG/QuasiRiemannTracker/blob/d716ecaae80f7823a5b8314916364fdfa0d133fb/verifier/standard/receipts/single-prime-first-20261012/solution-src/Solution.lean",
