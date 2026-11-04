@@ -96,6 +96,7 @@ test("the default view focuses verified improvements and reset restores it", asy
   }
   const initialDates = await dateTicks.allTextContents();
   expect(initialDates.every((date) => date.includes("Oct"))).toBe(true);
+  await expect(summary.locator("mjx-container")).toBeVisible();
   const summaryText = await summary.innerText();
   expect(summaryText).toContain(decimal(best.theta, 8).replace("…", ""));
   await page.getByRole("link", { name: /Submissions/ }).click();
