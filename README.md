@@ -7,6 +7,10 @@ L-functions. The timeline and leaderboard show exact bounds, authors, sources,
 and verification status. Smaller bounds are stronger; the generalized Riemann
 hypothesis corresponds to a bound of $1/2$.
 
+Every result on the website is verified. Verification runs through the project’s
+GitHub Actions CI. If CI resources run out, maintainers may run the same
+verification checks on maintainer infrastructure.
+
 ## Run locally
 
 Use Node.js 22.17 or later. Repository checks also require Python 3.
@@ -29,8 +33,9 @@ GitHub API requests, credentials or ignored cache are needed. The
 canonical `Candidate.bound` statement supplies the exact bound for modern
 submissions; older entries retain their recorded algebraic bounds and revisions.
 Builds include submissions present in the checkout. Deployment runs from main,
-where merging a submission means it has been accepted after PR verification or
-a local maintainer run. Catalogue generation does not repeat that admission check.
+where merging a submission means it has passed verification through CI or,
+when CI resources run out, a maintainer run. Catalogue generation does not repeat
+that admission check.
 
 Generated catalogue JSON and `public/certificates/` are ignored by Git. Existing
 verification dates and reports come from submission metadata or the existing
@@ -214,10 +219,11 @@ imported submission modules, compiler and library contents. Changed modules and
 their importers compile again. A proof replay still runs Comparator and all three
 kernels. An unavailable or incompatible cache triggers a source build.
 
-### Reuse an independently verified receipt
+### Reuse a maintainer verification receipt
 
-A maintainer can approve an already completed independent verification for reuse
-without another proof replay. The protected workflow first reconstructs the exact
+When CI resources run out, maintainers may complete the same verification checks
+on maintainer infrastructure. A maintainer can approve the resulting receipt for
+reuse in PR admission. The protected workflow first reconstructs the exact
 PR source and dependency contract from immutable Git objects. It then validates
 the protected registration and full receipt before restoring caches, provisioning
 Lean or executing candidate code. The publishing job independently repeats the
