@@ -343,8 +343,8 @@ export default function App() {
               ) : (
                 "The repository link will appear here once it is connected."
               )}{" "}
-              Results awaiting independent checks are marked “Verification
-              pending”.
+              Every result on the website has passed the project’s verification
+              checks.
             </p>
           </>
         ) : modal === "policy" ? (
@@ -394,7 +394,7 @@ function Protocol() {
         <h2>Verification</h2>
         <h3>Requirements</h3>
         <p>
-          Every result marked verified must pass Comparator’s statement,
+          Every result on the website has passed Comparator’s statement,
           definition and axiom checks, followed by proof replay in Lean, NanoDa
           and con-ron. We use{" "}
           <a
@@ -407,9 +407,11 @@ function Protocol() {
           .
         </p>
         <p>
-          GitHub Actions or a local maintainer run checks a proof before it is
-          merged. Accepted results link to their committed source and any
-          recorded verification report.
+          Verification runs through the project’s GitHub Actions CI. If CI
+          resources run out, maintainers may run the same verification checks
+          on maintainer infrastructure. Results are verified before merging
+          and link to their committed source and any recorded verification
+          report.
         </p>
         <p>
           The permitted axioms are propext, Classical.choice and Quot.sound.
@@ -418,11 +420,6 @@ function Protocol() {
         <p>
           <strong>Verified in our framework:</strong> the result has passed all
           requirements above.
-        </p>
-        <p>
-          <strong>Verification pending:</strong> the authors report a
-          formalization that we have not independently reproduced. These results
-          appear in the table, outside the verified chart.
         </p>
         <p>Verification records link to the checker run or archived report.</p>
       </article>
