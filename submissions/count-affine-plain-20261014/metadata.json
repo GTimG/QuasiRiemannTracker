@@ -1,0 +1,35 @@
+{
+  "title": "WIP: Collet's interior affine moment in the detector count gives 0.8748436 (Lean proof incomplete)",
+  "authors": [
+    {
+      "name": "liqsweep",
+      "url": "https://x.com/liqsweep"
+    }
+  ],
+  "description": "Work in progress; the Lean proof is incomplete and contains explicit sorry. Mechanism: Hailey Collet's interior affine moment (cycle61 manuscript, Theorem 2.2, PR #42) is used on the tracker only for the numerator; it also covers the detector count's critical plain witness (plain length about 0.418, slot width 0.036-0.040, inside the theorem's window), giving slot capacity min(1/25, (B-2m)/lambda) for plain lengths m in [41/100, 264/625] instead of (1-2m)/(6 kappa). With Zhongpai Gao's constants (PR #43, q0 = 67/100) and h = 497/625 this certifies theta = 2187109/2500000 exactly (top row 199 + 8 Bernstein boxes, old rows 6 + 1). The arithmetic layer (closed-form count, region gates, four-branch count lemma, record-point gates) is formalized; the integration into the cycle61 source is not yet. Prepared with AI assistance (Claude) for liqsweep; Collet's, Gao's and OpenAI's attribution and Apache-2.0 notices retained.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "openai-baseline",
+    "akashlevy-20261009-weighted-numerator",
+    "cycle25-quartic-20261010",
+    "cycle61-c0125139",
+    "gao-cycle61-plane-20261013"
+  ],
+  "references": [
+    {
+      "label": "Cycle61 proof and Theorem 2.2 (PR #42)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/42"
+    },
+    {
+      "label": "Gao refinement 0.8748598 (PR #43)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/43"
+    },
+    {
+      "label": "Related: marked high-zero counting (PR #48)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/48"
+    }
+  ],
+  "dependencies": [
+    "openai-baseline"
+  ]
+}
