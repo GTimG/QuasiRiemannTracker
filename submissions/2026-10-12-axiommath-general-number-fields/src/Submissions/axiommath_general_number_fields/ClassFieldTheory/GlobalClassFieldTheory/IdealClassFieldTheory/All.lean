@@ -1,0 +1,73 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/GlobalClassFieldTheory/IdealClassFieldTheory/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.AbstractCapitulation
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.ArithmeticIdealArtin
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.ArithmeticIdealDecompositionLaw
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealArtinMap
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealArtinQuotient
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealDecompositionLaw
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealFrobenius
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.IdealNormArtinExactness
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitation
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitationCore
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.NormLimitationStatement
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTheorem
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTower
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.PrincipalIdealTransfer
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalAbstractExtensionToOrdinary
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalFiniteNormTransfer.All
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.RationalFixedFieldBaseChange
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertPrincipalization
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertSplitting
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerConjugation
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerRealization
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.IdealClassFieldTheory.SmallHilbertTowerUnramified
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Ideal class field theory
+
+This public root exports ideal Artin maps and quotients, Frobenius classes,
+splitting in the small Hilbert class field, the genuine idèle-extension
+transfer square, and principalization of every integral and fractional ideal
+in the selected small Hilbert class field.
+-/
