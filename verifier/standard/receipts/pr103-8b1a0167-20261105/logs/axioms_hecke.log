@@ -1,0 +1,14 @@
+warning: PrimeNumberTheoremAnd: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: rellich-kondrachov: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov' has local changes
+'OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.HeckeFamily.LFunction_ofResidue_ne_zero_of_seven_eighths_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.HeckeRayFamily.LFunction_ne_zero_of_seven_eighths_lt_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_certified_bands' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

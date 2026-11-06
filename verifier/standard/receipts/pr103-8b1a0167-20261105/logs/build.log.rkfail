@@ -1,0 +1,242 @@
+=== CHALLENGE START 2026-11-04T19:12:47Z lake=Lake version 5.0.0-src+5045d00 (Lean version 4.34.1) ===
+info: PrimeNumberTheoremAnd: cloning https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git
+info: PrimeNumberTheoremAnd: checking out revision 'c39a751132c88b6e8080b74c74023fd95b3d8be0'
+info: rellich-kondrachov: cloning https://github.com/abenenson/rellich-kondrachov.git
+info: rellich-kondrachov: checking out revision '70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23'
+info: PrimeCert: cloning https://github.com/b-mehta/PrimeCert.git
+info: PrimeCert: checking out revision '0803c2f6bd289c09704c7d352bb8fcf770cbb9b2'
+info: leancert: cloning https://github.com/alerad/leancert.git
+info: leancert: checking out revision '7f91b6eb3567437f6cfac03ed279706603ee22f4'
+info: checkdecls: cloning https://github.com/PatrickMassot/checkdecls.git
+info: checkdecls: checking out revision '3d425859e73fcfbef85b9638c2a91708ef4a22d4'
+info: LeanArchitect: cloning https://github.com/hanwenzhu/LeanArchitect.git
+info: LeanArchitect: checking out revision '468e8f58fb4ad6e6ad672a08da6d0d0531e95a97'
+⚠ [8924/8925] Built Challenge (59s)
+warning: Challenge.lean:6:8: declaration uses `sorry`
+Build completed successfully (8925 jobs).
+=== CHALLENGE EXIT 0 2026-11-04T19:15:29Z ===
+=== SOLUTION START 2026-11-04T19:15:29Z ===
+✖ [4071/4317] Building RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Kernels (11s)
+trace: .> LEAN_PATH=/private/tmp/qr_rebuild/workspace/.lake/packages/Cli/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/leancert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/build/lib/lean /Users/dmitri.arkhipov/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean -o /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.olean -i /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.ilean -c /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.c --setup /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.setup.json --json
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean:80:4: Type mismatch: After simplification, term
+  Continuous.mul continuous_const hf_cont
+ has type
+  @Continuous E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ((fun x => I⁻¹) * f)
+but is expected to have type
+  @Continuous E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace fun x => I⁻¹ * f x
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean:82:4: Type mismatch: After simplification, term
+  HasCompactSupport.smul_left hf_cs
+ has type
+  @HasCompactSupport E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace Real.instZero ((fun _x => I⁻¹) * f)
+but is expected to have type
+  @HasCompactSupport E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace Real.instZero fun x => I⁻¹ * f x
+✖ [4072/4383] Building RellichKondrachov.MeasureTheory.Function.LpSpace.Restrict (13s)
+trace: .> LEAN_PATH=/private/tmp/qr_rebuild/workspace/.lake/packages/Cli/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/leancert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/build/lib/lean /Users/dmitri.arkhipov/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean -o /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.olean -i /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.ilean -c /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.c --setup /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.setup.json --json
+error: RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean:66:6: Type mismatch: After simplification, term
+  coeFn_add f g
+ has type
+  @Filter.EventuallyEq α E (ae (μ.restrict s)) (↑(↑f + ↑g)) (↑↑f + ↑↑g)
+but is expected to have type
+  @Filter.EventuallyEq α E (ae (μ.restrict s)) (fun x => ↑(↑f + ↑g) x) fun x => ↑↑f x + ↑↑g x
+error: RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean:120:6: Type mismatch: After simplification, term
+  coeFn_smul c f
+ has type
+  @Filter.EventuallyEq α E (ae (μ.restrict s)) (↑↑(c • f)) (c • ↑↑f)
+but is expected to have type
+  @Filter.EventuallyEq α E (ae (μ.restrict s)) (fun x => ↑↑(c • f) x) fun x => c • ↑↑f x
+warning: RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean:195:25: declaration uses `sorry`
+✖ [4077/4387] Building RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.H1 (13s)
+trace: .> LEAN_PATH=/private/tmp/qr_rebuild/workspace/.lake/packages/Cli/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanArchitect/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/checkdecls/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/leancert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeCert/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/qr_rebuild/workspace/.lake/build/lib/lean /Users/dmitri.arkhipov/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean -o /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.olean -i /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/lib/lean/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.ilean -c /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.c --setup /private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov/.lake/build/ir/RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.setup.json --json
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean:81:4: Type mismatch: After simplification, term
+  HasCompactSupport.smul_left hf.right
+ has type
+  @HasCompactSupport E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace Real.instZero ((fun x => c) * f)
+but is expected to have type
+  @HasCompactSupport E ℝ PseudoMetricSpace.toUniformSpace.toTopologicalSpace Real.instZero (c • f)
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean:91:2: Type mismatch: After simplification, term
+  this
+ has type
+  @Continuous E E PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace fun x => (InnerProductSpace.toDual ℝ E).symm (fderiv ℝ f x)
+but is expected to have type
+  @Continuous E E PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (grad f)
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean:98:2: Type mismatch: After simplification, term
+  HasCompactSupport.comp_left hf'
+    (of_eq_true (Eq.trans (congrFun' (congrArg Eq (map_zero (InnerProductSpace.toDual ℝ E).symm)) 0) (eq_self 0)))
+ has type
+  @HasCompactSupport E E PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    SubtractionMonoid.toSubNegZeroMonoid.toNegZeroClass.toZero (⇑(InnerProductSpace.toDual ℝ E).symm ∘ fderiv ℝ f)
+but is expected to have type
+  @HasCompactSupport E E PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+    SubtractionMonoid.toSubNegZeroMonoid.toNegZeroClass.toZero (grad f)
+error: RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean:105:4: Type mismatch: After simplification, term
+  tsupport_comp_subset
+    (of_eq_true (Eq.trans (congrFun' (congrArg Eq (map_zero (InnerProductSpace.toDual ℝ E).symm)) 0) (eq_self 0)))
+    (fderiv ℝ f)
+ has type
+  @LE.le (Set E) Set.instLE (tsupport (⇑(InnerProductSpace.toDual ℝ E).symm ∘ fderiv ℝ f)) (tsupport (fderiv ℝ f))
+but is expected to have type
+  @LE.le (Set E) Set.instLE (tsupport (grad f)) (tsupport (fderiv ℝ f))
+✔ [4086/4390] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.Correlation (5.2s)
+✔ [4087/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.EisensteinCoordinates (17s)
+✔ [4088/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.Basic (4.8s)
+✔ [4089/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.FullCorrelation (3.0s)
+✔ [4090/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.CRT (2.7s)
+✔ [4091/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Moments.PrimePower (2.8s)
+✔ [4092/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ThetaProduct (7.4s)
+✔ [4093/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Compensation (2.1s)
+✔ [4094/4396] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.ExponentialSmoothing (4.3s)
+✔ [4095/4411] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.EisensteinIdeals (4.6s)
+✔ [4096/4427] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.ChineseRemainder (5.4s)
+✔ [4106/4429] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.EisensteinTheta (3.5s)
+✔ [4109/4429] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Supremum (2.7s)
+✔ [4110/4434] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.FiniteFourier (4.3s)
+✔ [4111/4434] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Continuation (2.0s)
+✔ [4112/4435] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Theta (5.9s)
+✔ [4113/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.LatticeSummability (2.8s)
+✔ [4114/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.FiniteConductor (3.7s)
+✔ [4115/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Family (3.8s)
+✔ [4116/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.LogProfiles (10s)
+✔ [4117/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.ThetaSeries (3.3s)
+✔ [4118/4443] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CharacterTransport (2.6s)
+✔ [4119/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ConductorBounds (3.3s)
+✔ [4120/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Coordinates (3.7s)
+✔ [4121/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.FiniteFourier (5.5s)
+✔ [4122/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.FamilySeries (3.8s)
+✔ [4123/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ChineseRemainder.AdditiveCharacters (5.1s)
+✔ [4124/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ConductorPresentation (3.3s)
+✔ [4125/4444] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.CharacterAnalytic (5.6s)
+✔ [4126/4446] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ResidueCharacter (4.2s)
+✔ [4127/4446] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.EisensteinEmbedding (5.4s)
+✔ [4128/4446] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Fourier.PositiveLogProfiles (7.0s)
+✔ [4129/4458] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Operations (2.9s)
+✔ [4130/4470] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.IdealCharacter (3.6s)
+✔ [4131/4547] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Gauss (3.3s)
+✔ [4132/4551] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Cusp.MatrixPhases (6.9s)
+✔ [4133/4557] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.EulerFactors (2.1s)
+✔ [4136/4558] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.CubicNormalization (5.3s)
+✔ [4137/4558] Built Architect.Command (1.0s)
+✔ [4138/4558] Built Architect.Basic (2.0s)
+✔ [4139/4558] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.RayOrthogonality (2.9s)
+✔ [4140/4562] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.MellinIdentity (2.5s)
+✔ [4141/4566] Built Architect.CollectUsed (912ms)
+✔ [4145/4567] Built Architect.Content (997ms)
+✔ [4146/4569] Built Architect.Tactic (1.2s)
+✔ [4148/4569] Built Architect.Attribute (1.1s)
+✔ [4149/4577] Built Architect.Output (1.2s)
+✔ [4150/4577] Built PrimeNumberTheoremAnd.Mathlib.Analysis.Asymptotics.Asymptotics (1.8s)
+✔ [4152/4579] Built Architect.Load (825ms)
+✔ [4153/4579] Built PrimeNumberTheoremAnd.Mathlib.Algebra.Notation.Support (990ms)
+✔ [4154/4583] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.SexticNormalization (4.6s)
+✔ [4155/4585] Built Architect (885ms)
+✔ [4156/4603] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.RayQuotient (3.0s)
+✔ [4157/4603] Built PrimeNumberTheoremAnd.Sobolev (4.8s)
+✔ [4158/4606] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.LocalProductAssembly (5.6s)
+✔ [4159/4606] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.Algebra (3.8s)
+✔ [4160/4606] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.Factorization (3.2s)
+✔ [4161/4619] Built PrimeNumberTheoremAnd.SmoothExistence (6.5s)
+✔ [4162/4621] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.Marks (2.8s)
+✔ [4163/4623] Built PrimeNumberTheoremAnd.Fourier (4.1s)
+✔ [4164/4634] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.Operator (4.1s)
+✔ [4165/4634] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.RamifiedTracePhase (4.8s)
+✔ [4166/4646] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.Overlap (1.0s)
+✔ [4167/4800] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.Blocks (2.4s)
+✔ [4199/4839] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PeriodicThetaRegularity (3.8s)
+✔ [4200/4850] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.LatticeCount (6.0s)
+✔ [4201/5040] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.LogarithmicControl (7.2s)
+✔ [4202/5169] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector (5.2s)
+✔ [4203/5229] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Euler (3.1s)
+✔ [4204/5239] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.QuadraticTrace (5.4s)
+✔ [4205/5239] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Local (2.6s)
+✔ [4206/5239] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ContinuationInversion (3.4s)
+✔ [4207/5276] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.CorrectionBounds (3.8s)
+⚠ [4208/5278] Built PrimeNumberTheoremAnd.Wiener (17s)
+warning: PrimeNumberTheoremAnd/Wiener.lean:325:8: declaration uses `sorry`
+warning: PrimeNumberTheoremAnd/Wiener.lean:344:8: declaration uses `sorry`
+✔ [4209/5278] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ContinuationContour (2.8s)
+✔ [4210/5397] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.NormalProduct (2.5s)
+✔ [4211/5451] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeCounting.Progressions (3.2s)
+✔ [4212/5480] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.Basic (2.4s)
+✔ [4213/5480] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ContinuationPolynomialContour (2.0s)
+✔ [4214/5480] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.QuadraticNormalization (9.6s)
+✔ [4215/5480] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Parameters (2.4s)
+✔ [4216/5520] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeCounting.PrimeMass (3.5s)
+✔ [4218/5545] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ContinuationShiftedGaussian (3.1s)
+✔ [4219/5562] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.LocalReflection (2.7s)
+✔ [4220/5628] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersSlotLengths (3.2s)
+✔ [4221/5628] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.Fibers (2.4s)
+✔ [4222/5628] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.HeathBrownIteration (2.2s)
+✔ [4223/5628] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.SieveComposition (4.1s)
+✔ [4224/5662] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.BinaryGaussian (11s)
+✔ [4225/5751] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicDyadicDecay (7.7s)
+✔ [4226/5855] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersDetectorScales (8.7s)
+✔ [4227/5963] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.Basic (3.3s)
+✔ [4228/5963] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.GramCommonParam (2.0s)
+✔ [4229/5965] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Endpoint (2.1s)
+✔ [4230/5965] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersCentralBudget (3.5s)
+✔ [4231/6111] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.GramCommonSum (2.2s)
+✔ [4232/6694] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Detector.GramCommonLinear (2.9s)
+✔ [4233/6824] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.GaussianDualLimit (8.3s)
+✔ [4234/7058] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Descent.SlotAssignments (2.3s)
+✔ [4236/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersHighData (3.7s)
+✔ [4237/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Inversion.InitialMarkedReserve (2.6s)
+✔ [4238/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.ParametersHighDataFine (3.8s)
+✔ [4239/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.GaussianFiberMass (18s)
+✔ [4240/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.GaussianMoments (4.9s)
+✔ [4241/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.OscillatoryGaussian (8.4s)
+✔ [4242/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.RationalApproximation (6.5s)
+✔ [4243/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.AbelPhaseLimit (11s)
+✔ [4244/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.ThetaLocalRows (12s)
+✔ [4245/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.LocalNonvanishing (4.2s)
+✔ [4246/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.NormFiberMellin (3.1s)
+✔ [4247/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.NormFiberCharacters (10s)
+✔ [4248/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.LocalEulerIdentities (4.7s)
+✔ [4249/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.PrimeExtraction (5.1s)
+✔ [4250/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.FiniteEulerRestoration (5.7s)
+✔ [4251/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.NormFiberExtraction (5.7s)
+✔ [4252/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.FiniteEulerFactors (6.8s)
+✔ [4253/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.SecondPoissonScale (9.1s)
+✔ [4254/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.CompactScale (6.1s)
+✔ [4255/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.EisensteinLattice (4.9s)
+✔ [4256/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.CompactWeights (6.1s)
+✔ [4257/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.SexticRadialPoisson (5.9s)
+✔ [4258/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.IdealGenerators (4.7s)
+✔ [4259/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.RadialFourier (6.1s)
+✔ [4260/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.PrimeRows.ActiveGaussFactorization (6.1s)
+✔ [4261/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.ActiveConductor (4.9s)
+✔ [4262/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.CubicTrace (8.1s)
+✔ [4263/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.SquarePhaseFactorization (7.2s)
+✔ [4264/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.MixedConversion (9.9s)
+✔ [4265/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.CrossSeparation (6.5s)
+✔ [4266/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.IdealMobius (7.2s)
+✔ [4267/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reciprocity.CubicJacobi (9.3s)
+✔ [4268/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.CompletedExpansion (11s)
+✔ [4269/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.RayCharacters (10s)
+✔ [4270/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.CoefficientCancellation (18s)
+✔ [4271/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.InitialBound (9.7s)
+✔ [4272/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.ReflectedKernel (5.8s)
+✔ [4273/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Arithmetic.SquarefreeDivisors (27s)
+✔ [4274/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.FiniteOperator (8.6s)
+✔ [4275/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.CubeLabels (9.5s)
+✔ [4276/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.MainTermDifference (7.8s)
+✔ [4277/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.InverseContour (7.7s)
+✔ [4278/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Mellin.UniformKernelBounds (18s)
+✔ [4279/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.CrossFactorization (22s)
+✔ [4280/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.CoprimeBilinearBound (27s)
+✔ [4281/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.LocalBrackets (27s)
+✔ [4282/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.RayExpansion (9.6s)
+✔ [4283/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.GaussSum.ReflectionBrackets (13s)
+✔ [4284/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.IdealQuotients (7.4s)
+✔ [4285/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Reciprocity.RamifiedSymbol (14s)
+✔ [4286/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.KernelEnergy (8.2s)
+✔ [4287/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.QuadraticSieve.DivisorBlocks (8.6s)
+✔ [4288/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Poisson.QuadraticProfiles (8.7s)
+✔ [4289/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.FirstPassage (9.6s)
+✔ [4290/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.RayCoefficients (10s)
+✔ [4291/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.CubicSieve.SecondPoisson (7.9s)
+✔ [4292/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Eisenstein.Rows (14s)
+✔ [4293/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Eisenstein.HyperbolicSpace (20s)
+✔ [4294/7079] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Eisenstein.PrimitiveRows (21s)

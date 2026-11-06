@@ -1,0 +1,32 @@
+{
+  "root_package_oleans": 2930,
+  "submission_oleans": 2927,
+  "candidate_olean": true,
+  "solution_olean": true,
+  "challenge_olean": true,
+  "build_jobs_by_phase": [
+    "8925",
+    "7065"
+  ],
+  "error_lines_final_log": 0,
+  "phase_exits": [
+    [
+      "CHALLENGE",
+      "0",
+      "2026-11-04T19:31:52Z"
+    ],
+    [
+      "SOLUTION",
+      "0",
+      "2026-11-04T22:32:30Z"
+    ]
+  ],
+  "timing": {
+    "modules_timed": 2805,
+    "min_s": 2.0,
+    "median_s": 8.3,
+    "p90_s": 23.0,
+    "max_s": 85.0,
+    "sum_compiler_minutes": 531.2
+  }
+}

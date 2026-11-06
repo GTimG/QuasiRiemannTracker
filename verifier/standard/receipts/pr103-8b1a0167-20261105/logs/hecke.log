@@ -1,0 +1,8 @@
+warning: PrimeNumberTheoremAnd: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: rellich-kondrachov: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov' has local changes
+✔ [7063/7065] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.ConditionalNonvanishing (25s)
+✔ [7064/7065] Built Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Nonvanishing (6.7s)
+Build completed successfully (7065 jobs).
+warning: PrimeNumberTheoremAnd: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: rellich-kondrachov: repository '/private/tmp/qr_rebuild/workspace/.lake/packages/rellich-kondrachov' has local changes
+AxiomsHecke.lean:4:14: error(lean.unknownIdentifier): Unknown constant `OAI.HeckeCharacter.LFunction_ne_zero_of_seven_eighths_lt_re`

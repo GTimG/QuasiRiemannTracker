@@ -1,0 +1,7 @@
+import Solution
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Nonvanishing
+
+#print axioms QRH.canonical_bound
+#print axioms Submissions.openai_baseline.bound
+#print axioms OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re
+#print axioms OAI.DirichletCharacter.riemannZeta_ne_zero_of_seven_eighths_lt_re

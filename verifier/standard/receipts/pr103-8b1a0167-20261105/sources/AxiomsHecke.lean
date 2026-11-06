@@ -1,0 +1,7 @@
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.Nonvanishing
+import Submissions.openai_baseline.OAI.NumberTheory.DirichletL.Hecke.ConditionalNonvanishing
+
+#print axioms OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re
+#print axioms OAI.SevenEighths.HeckeFamily.LFunction_ofResidue_ne_zero_of_seven_eighths_lt_re
+#print axioms OAI.SevenEighths.HeckeRayFamily.LFunction_ne_zero_of_seven_eighths_lt_re
+#print axioms OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_certified_bands

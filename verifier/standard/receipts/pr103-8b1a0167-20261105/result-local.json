@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "mode": "local-rebuild-receipt (not a hosted verification; no triple-kernel export)",
+  "verified_at": "2026-11-04T23:39:00Z",
+  "source_repository": "GTimG/QuasiRiemannTracker",
+  "source_commit": "47134867e2ce4d4a311d2da93783c2ae721d9bb9",
+  "baseline_tree_sha": "e2278f8d3de178f616b8a03c972caabbf2d874501",
+  "upstream_repository": "openai/math",
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "upstream_blob_verification": {
+    "modules_checked": 2926,
+    "missing": 0,
+    "content_mismatch": 0,
+    "transforms": ["CRLF->LF", "import OAI. -> import Submissions.openai_baseline.OAI."]
+  },
+  "result_id": "openai-baseline",
+  "theta_exact": "7/8",
+  "targets": ["QRH.canonical_bound"],
+  "allowed_axioms_observed": ["propext", "Classical.choice", "Quot.sound"],
+  "axioms_printed": {
+    "QRH.canonical_bound": ["propext", "Classical.choice", "Quot.sound"],
+    "Submissions.openai_baseline.bound": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.SevenEighths.HeckeFamily.LFunction_ofResidue_ne_zero_of_seven_eighths_lt_re": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.SevenEighths.HeckeRayFamily.LFunction_ne_zero_of_seven_eighths_lt_re": ["propext", "Classical.choice", "Quot.sound"],
+    "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_certified_bands": ["propext", "Classical.choice", "Quot.sound"]
+  },
+  "kernels": ["Lean default kernel v4.34.1 (local oleans, #print axioms)"],
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.34.1",
+    "lake": "5.0.0-src+5045d00",
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612 (warm exact-pin APFS clone, zero recompiles)",
+    "PrimeNumberTheoremAnd": "c39a751132c88b6e8080b74c74023fd95b3d8be0 + lean4341 patch sha256 0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "rellich-kondrachov": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23 + lean4341 patch sha256 0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "parallelism": "LEAN_NUM_THREADS=4 (Lake 5 has no -j; worker's own mechanism)"
+  },
+  "build": {
+    "phases": [
+      {"name": "Challenge", "exit": 0, "jobs": 8925, "wall": "2m42s first pass; 13s revalidation"},
+      {"name": "Solution", "exit": 0, "jobs": 7065, "wall": "3h00m51s (19:31:39Z->22:32:30Z)"},
+      {"name": "Submissions supplement (Hecke statements)", "exit": 0, "wall": "~2m"}
+    ],
+    "error_lines": 0,
+    "root_package_oleans": 2930,
+    "submission_modules_built": "2927/2927",
+    "module_timing": {"n": 2805, "median_s": 8.3, "p90_s": 23.0, "max_s": 85.0, "sum_compiler_minutes": 531.2}
+  },
+  "host": {
+    "platform": "darwin arm64 (Apple M4 Max 128GB), chronically loaded (foreign lanes active)",
+    "load1m_range": "54-435 (peaks foreign-inflated)",
+    "swap_free_min_mb": 592,
+    "oom_or_abort": false,
+    "samples": 130
+  },
+  "key_hashes": {
+    "verifier/upstream-challenge.lean": "8fb13ad977bca104591fcbc6ef01a58496e7385053c9b1445f95749afc0eff54",
+    "Challenge.lean (rendered, == pr69 BaselineChallenge.lean)": "a9d290c74920624ba06f66da0a56b633876e2a0ac230613add78b61370fbfe12",
+    "Solution.lean (rendered)": "704bccefad1dfc92056eefec4b5cbe1a22c0f9a7dc1ea72e803402fe48cde476",
+    "Candidate/Main.lean": "5f66b7a2b97194d63ee10da833d5c42a36c7c9656bab83e5f79e9b1dac9aa5ab",
+    "Submissions/openai_baseline/Main.lean": "a8d7cf4dbf1ee1eafda295a78f03a926975f52236997bc2f64c4ccb2f86b6bbc",
+    "vendored Nonvanishing.lean": "357e3a752ef6311d0be98dd45ac0ab6d38614d442732511e78b815c036f3a48e",
+    "vendored Detector/FinalAssemblyUnconditional.lean": "160ac51d898d8cce6aec7d2d4226cc8ff1b03dec51e4c57bce12b3183f19c0dc",
+    "vendored Foundation.lean": "32d208a7dc588ee87127a75e81ee4f33aedb744e9fa63b7b49f7612c06e2456a",
+    "lakefile.lean (blob)": "624ba9e3846629c55b032b7bcfe44b91806ab759f0d053774d4651d77d08a7c7",
+    "lake-manifest.json (blob)": "5c6d8777513f3fa9eee95a8475ea8d2109e7efaff4b315d8c22d4d2714ec9c79"
+  },
+  "arithmetic": {
+    "seven_eighths": "0.875 exact",
+    "bebel_top": "(777-sqrt(1081))/852 = 0.87338196661320751992902677864237186940501558853491",
+    "gap": "0.00161803338679248007097322135762813059498441146509 (~1.618e-3)"
+  }
+}
