@@ -179,6 +179,24 @@ const algebraic = {
   },
 };
 
+test("a smaller bound sharing all 200 digits is compared exactly", () => {
+  const n = 10n ** 110n;
+  const smaller = {
+    theta_exact: `${n - 1n}/${3n * n - 2n}`,
+    theta_decimal: `0.${((n - 1n) * 10n ** 200n) / (3n * n - 2n)}`,
+    catalogue: { records: [record("previous", q(`${n}`, `${3n * n + 1n}`))] },
+  };
+  assert.deepEqual(check(smaller), {
+    previous_result_id: "previous",
+    previous_decimal: smaller.theta_decimal,
+  });
+  const shorter = smaller.theta_decimal.slice(0, -1);
+  assert.throws(
+    () => check({ ...smaller, theta_decimal: shorter }),
+    /more digits/,
+  );
+});
+
 test("an irrational uses the enclosure in the trusted receipt", () => {
   assert.doesNotThrow(() => check(algebraic));
   assert.throws(

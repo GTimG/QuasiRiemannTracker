@@ -115,6 +115,9 @@ export function validateDecimalApproximation({
         previous_decimal: previousDecimal,
       };
   }
+  // No decimal can separate bounds that share all 200 digits; compare exactly.
+  if (digits === 200 && cmp(candidate.upper, previousBounds.lower) < 0)
+    return { previous_result_id: previous.id, previous_decimal: actual };
   throw Error(
     `QRH-Decimal needs more digits to differ from the previous bound (${previous.id}: ${actual})`,
   );
