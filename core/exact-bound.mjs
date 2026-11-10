@@ -3,8 +3,10 @@ import { rational } from "./rational.mjs";
 // Canonical algebraic expressions are fixed verifier profiles. Submitted text
 // is matched exactly; it is never interpolated into Lean code.
 const liu = {
-  label: "(1507 − 2√921) / 1653",
-  lean: "(1507 - 2 * Real.sqrt 921) / 1653",
+  a: 1507,
+  b: -2,
+  c: 921,
+  d: 1653,
   interval: {
     lower: {
       numerator: "437478534899584370009170003479",
@@ -16,6 +18,48 @@ const liu = {
     },
   },
 };
+
+const liu_b2 = {
+  a: 777,
+  b: -1,
+  c: 1081,
+  d: 852,
+  interval: {
+    lower: {
+      numerator:
+        "24688254145074084030172790155815084825965998942550936221513452062089675469831194293805185151144250024225192359013041730108629663",
+      denominator:
+        "28267419169198061992769170562799551248696516910546746098830919495493448867291560772223652902664903495976081554351489835815165175",
+    },
+    upper: {
+      numerator:
+        "63123118504693955254447460018494773970235238755621464746402012449092091902425088889000654796282104118233737075161076112087901328",
+      denominator:
+        "72274355227956214899270016096943249636058769070465791728289056882829577892844484301278423569693839288110933352950546632116849073",
+    },
+  },
+};
+
+// Each profile is x = (a + b*sqrt(c)) / d with b < 0, keyed by its label.
+export const algebraicProfiles = new Map(
+  [liu, liu_b2].map((p) => {
+    const k = p.b === -1 ? "" : -p.b;
+    const label = `(${p.a} − ${k}√${p.c}) / ${p.d}`;
+    const lean = `(${p.a} - ${k}${k && " * "}Real.sqrt ${p.c}) / ${p.d}`;
+    return [label, { ...p, label, lean }];
+  }),
+);
+
+// For r = p/q, x > r iff a*q - d*p > 0 and (a*q - d*p)^2 > b^2*c*q^2.
+// The result has the sign of x - r.
+export function algebraicDelta({ a, b, c, d }, r) {
+  const p = BigInt(r.numerator),
+    q = BigInt(r.denominator),
+    lhs = BigInt(a) * q - BigInt(d) * p;
+  if (lhs <= 0n) throw Error("Algebraic interval outside positive branch");
+  return lhs * lhs - BigInt(b * b * c) * q * q;
+}
+
 export function exactBound(label) {
   const fraction = /^(\d+)\/(\d+)$/.exec(label ?? "");
   if (fraction) {
@@ -23,23 +67,18 @@ export function exactBound(label) {
     if (BigInt(theta.numerator) <= 0n) throw Error("Bound must be positive");
     return { theta, lean: `${theta.numerator} / ${theta.denominator}` };
   }
-  if (label === liu.label) {
-    // Certify the decimal enclosure by integer inequalities for sqrt(921).
-    // For r = n/d, x > r iff (1507d - 1653n)^2 > 4*921*d^2,
-    // with 1507d - 1653n positive. The reverse inequality certifies x < r.
-    for (const [side, r] of Object.entries(liu.interval)) {
-      const n = BigInt(r.numerator),
-        d = BigInt(r.denominator);
-      const a = 1507n * d - 1653n * n;
-      const delta = a * a - 4n * 921n * d * d;
-      if (a <= 0n || (side === "lower" ? delta <= 0n : delta >= 0n))
-        throw Error("Invalid algebraic profile enclosure");
-    }
+  const profile = algebraicProfiles.get(label);
+  if (profile) {
+    if (
+      algebraicDelta(profile, profile.interval.lower) <= 0n ||
+      algebraicDelta(profile, profile.interval.upper) >= 0n
+    )
+      throw Error("Invalid algebraic profile enclosure");
     return {
-      theta: structuredClone(liu.interval.upper),
-      exact_bound: liu.label,
-      bound_interval: structuredClone(liu.interval),
-      lean: liu.lean,
+      theta: structuredClone(profile.interval.upper),
+      exact_bound: profile.label,
+      bound_interval: structuredClone(profile.interval),
+      lean: profile.lean,
     };
   }
   throw Error("This exact expression requires an algebraic checking profile");

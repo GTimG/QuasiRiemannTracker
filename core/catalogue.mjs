@@ -1,4 +1,5 @@
 import { cmp, fraction, rational, sub } from "./rational.mjs";
+import { algebraicDelta, algebraicProfiles } from "./exact-bound.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -131,22 +132,16 @@ export function validateCatalogue(data) {
       if (ref.url.split("/").includes("..")) throw Error("Unsafe path");
     }
     if (r.exact_bound) {
-      if (r.exact_bound !== "(1507 − 2√921) / 1653")
+      const profile = algebraicProfiles.get(r.exact_bound);
+      if (!profile)
         throw Error(
           "Unsupported algebraic expression: provide exact interval validation",
         );
       const { lower, upper } = r.bound_interval || {};
       for (const q of [lower, upper]) rational(q.numerator, q.denominator);
-      const delta = (q) => {
-        const n = BigInt(q.numerator),
-          d = BigInt(q.denominator),
-          a = 1507n * d - 1653n * n;
-        if (a <= 0n) throw Error("Algebraic interval outside positive branch");
-        return a * a - 3684n * d * d;
-      };
       if (
-        delta(lower) < 0n ||
-        delta(upper) > 0n ||
+        algebraicDelta(profile, lower) < 0n ||
+        algebraicDelta(profile, upper) > 0n ||
         cmp(lower, upper) >= 0 ||
         cmp(r.theta, upper) !== 0 ||
         cmp(sub(upper, lower), {

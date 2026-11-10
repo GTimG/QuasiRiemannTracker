@@ -17,7 +17,7 @@ import {
   withSubmissionTimeline,
 } from "../core/catalogue.mjs";
 import { proofRevision } from "../core/catalogue-revisions.mjs";
-import { exactBound } from "../core/exact-bound.mjs";
+import { algebraicProfiles, exactBound } from "../core/exact-bound.mjs";
 import { reduced } from "../core/rational.mjs";
 import { historicalCertificate } from "../verifier/certificate.mjs";
 import { submissionFiles } from "../verifier/manifest.mjs";
@@ -111,15 +111,21 @@ export function submissionBound(sourceRoot) {
         .split(":=", 1)[0];
       const matches = [
         ...signature.matchAll(
-          /\(\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\s*:\s*\(\s*(\d+)\s*\/\s*(\d+)\s*:\s*ℝ\s*\)\s*<\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\.re\s*\)/gu,
+          /\(\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\s*:\s*\(\s*(?:(\d+)\s*\/\s*(\d+)|([^:]+?))\s*:\s*ℝ\s*\)\s*<\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\.re\s*\)/gu,
         ),
       ];
       if (matches.length !== 1)
         throw Error(`Cannot read the canonical exact bound in ${module}`);
+      const profile = [...algebraicProfiles.values()].find(
+        (p) => p.lean === matches[0][3],
+      );
+      if (profile) return exactBound(profile.label);
+      if (matches[0][3])
+        throw Error(`Cannot read the canonical exact bound in ${module}`);
       if (matches[0][1].length > 200 || matches[0][2].length > 200)
         throw Error("Exact bound integers exceed the catalogue limit");
       const theta = reduced(BigInt(matches[0][1]), BigInt(matches[0][2]));
-      return exactBound(`${theta.numerator}/${theta.denominator}`).theta;
+      return exactBound(`${theta.numerator}/${theta.denominator}`);
     }
     const exports = [
       ...source.matchAll(
@@ -234,11 +240,11 @@ export function buildSubmissionCatalogue({
     const date = /^(\d{4}-\d{2}-\d{2})-/.exec(name)?.[1];
     if (!date)
       throw Error(`Modern submission requires a dated directory: ${name}`);
-    const theta = submissionBound(join(base, "src"));
+    const { lean: _, ...bound } = submissionBound(join(base, "src"));
     const facts = Object.hasOwn(publications, id)
       ? publications[id].find(
           (publication) =>
-            publication.certificate.theta_exact === boundLabel({ theta }),
+            publication.certificate.theta_exact === boundLabel(bound),
         )
       : undefined;
     const evidence = facts?.certificate;
@@ -300,7 +306,7 @@ export function buildSubmissionCatalogue({
       withSubmissionTimeline({
         id,
         title: metadata.title,
-        theta,
+        ...bound,
         authors: metadata.authors,
         method: metadata.description,
         license: metadata.license || "See submitted source notices",

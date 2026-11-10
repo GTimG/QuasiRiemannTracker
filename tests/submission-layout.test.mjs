@@ -91,10 +91,16 @@ test("the algebraic profile generates a fixed exact statement and rejects Lean i
     standardChallenge(bound.theta, bound.exact_bound),
     /1507 - 2 \* Real.sqrt 921/,
   );
+  const liu_b2 = exactBound("(777 − √1081) / 852");
+  assert.match(
+    standardChallenge(liu_b2.theta, liu_b2.exact_bound),
+    /\(777 - Real\.sqrt 1081\) \/ 852/,
+  );
   for (const invalid of [
     "Real.sqrt 921",
     "1/1) := by trivial",
     "(1507 − 2√922) / 1653",
+    "(777 − √1082) / 852",
   ]) {
     assert.throws(() => exactBound(invalid), /checking profile/);
   }
