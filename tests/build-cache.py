@@ -4,10 +4,13 @@ import copy, importlib.util, io, json, os, subprocess, sys, tarfile, tempfile, u
 from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'verifier'))
-from standard.build_cache import build_inputs, pack_cache, restore_cache, digest, compatibility_error
+from standard.build_cache import build_inputs, pack_cache, restore_cache, restore_shards, shard_of, digest, compatibility_error
 spec = importlib.util.spec_from_file_location('restore_build', ROOT/'verifier/actions/restore-build.py')
 restore = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(restore)
+spec = importlib.util.spec_from_file_location('plan_cache', ROOT/'verifier/actions/plan-cache.py')
+plan_cache = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(plan_cache)
 
 
 class CacheTests(unittest.TestCase):
@@ -139,7 +142,7 @@ class CacheTests(unittest.TestCase):
         try:
             os.chdir(self.root)
             with patch.object(restore, 'download') as download, patch.object(restore, 'authenticate',
-                    return_value={'environment':'different','modules':{}}):
+                    return_value={'environment':'different','shards':{}}):
                 restore.main()
                 self.assertEqual(download.call_count, 2)
             self.assertNotIn('candidate_cache',json.loads((out/'profile.json').read_text()))
@@ -156,14 +159,56 @@ class CacheTests(unittest.TestCase):
         subprocess.run(['openssl','pkey','-in',str(key),'-pubout','-out',str(public)],check=True)
         sha=digest(self.archive)
         index=self.root/'cache.json';signature=self.root/'cache.sig'
-        index.write_text(json.dumps({'schema_version':1,'archive':sha+'.tar.gz','sha256':sha,'size':self.archive.stat().st_size}))
+        shard={'archive':sha+'.tar.gz','sha256':sha,'size':self.archive.stat().st_size,
+               'modules':{'Submissions.base.Main':self.inputs['modules']['Submissions.base.Main']}}
+        index.write_text(json.dumps({'schema_version':2,'shards':{'Submissions.base':shard}}))
         subprocess.run(['openssl','pkeyutl','-sign','-inkey',str(key),'-rawin','-in',str(index),'-out',str(signature)],check=True)
-        self.assertEqual(restore.authenticate(index,signature,public)['sha256'],sha)
+        self.assertEqual(restore.authenticate(index,signature,public)['shards']['Submissions.base']['sha256'],sha)
         with self.assertRaises(subprocess.CalledProcessError):
             restore.authenticate(index,signature)  # Production key cannot accept a test signature.
         index.write_text(index.read_text()+' ')
         with self.assertRaises(subprocess.CalledProcessError):
             restore.authenticate(index,signature,public)
+
+
+    def test_shards_restore_together_and_reject_misfiled_modules(self):
+        shared = {'Submissions.base.Main': self.inputs['modules']['Submissions.base.Main']}
+        shard = self.root/'shard.tar.gz'
+        staged = self.root/'staged'
+        for suffix in ['.olean', '.olean.private', '.olean.server']:
+            (staged/'Submissions/base').mkdir(parents=True, exist_ok=True)
+            (staged/('Submissions/base/Main'+suffix)).write_bytes((self.library/('Submissions/base/Main'+suffix)).read_bytes())
+        pack_cache(staged, shard, {**self.inputs, 'modules': shared})
+        cache = {'shards': [{'path': str(shard), 'sha256': digest(shard)}]}
+        self.assertEqual(restore_shards(cache, self.root/'restored', self.inputs), {'Submissions.base.Main'})
+        cache['shards'][0]['sha256'] = '0'*64
+        with self.assertRaisesRegex(ValueError, 'changed'):
+            restore_shards(cache, self.root/'again', self.inputs)
+        self.assertEqual(shard_of('Submissions.base.Deep.Main'), 'Submissions.base')
+        for module in ['Candidate.Main', 'Submissions.base']:
+            with self.assertRaises(ValueError):
+                shard_of(module)
+
+    def test_plan_rebuilds_only_changed_shards(self):
+        contract = {'build_order':['Submissions.a.X','Submissions.b.Y'],
+            'module_dependencies':{'Submissions.a.X':[], 'Submissions.b.Y':['Submissions.a.X']},
+            'source_files':{'src/Submissions/a/X.lean':'x', 'src/Submissions/b/Y.lean':'y'}}
+        keys = self.inputs_for(contract)
+        shards = {name: {'modules': modules} for name, modules in
+                  [('Submissions.a', {'Submissions.a.X': keys['modules']['Submissions.a.X']}),
+                   ('Submissions.b', {'Submissions.b.Y': keys['modules']['Submissions.b.Y']}),
+                   ('Submissions.gone', {'Submissions.gone.Z': '0'*64})]}
+        index = {'environment': keys['environment'], 'shards': shards}
+        _, _, changed, removed = plan_cache.plan(keys, index)
+        self.assertEqual((changed, removed), ([], ['Submissions.gone']))
+        contract['source_files']['src/Submissions/a/X.lean'] = 'changed'
+        # A changed import changes its importers' keys, so both shards rebuild.
+        _, _, changed, _ = plan_cache.plan(self.inputs_for(contract), index)
+        self.assertEqual(changed, ['Submissions.a', 'Submissions.b'])
+        _, previous, changed, _ = plan_cache.plan(keys, {**index, 'environment': 'other'})
+        self.assertEqual((previous, changed), ({}, ['Submissions.a', 'Submissions.b']))
+        self.assertEqual(plan_cache.closure(['Submissions.b.Y'], contract['module_dependencies']),
+                         {'Submissions.a.X', 'Submissions.b.Y'})
 
 
 unittest.main()

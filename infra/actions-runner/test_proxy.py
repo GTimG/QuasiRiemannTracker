@@ -11,7 +11,7 @@ import proxy
 class DestinationPolicyTests(unittest.TestCase):
     def test_expected_ci_hosts(self):
         for host in (
-            "github.com", "api.github.com", "codeload.github.com",
+            "github.com", "api.github.com", "codeload.github.com", "uploads.github.com",
             "release-assets.githubusercontent.com", "raw.githubusercontent.com",
             "pipelines.actions.githubusercontent.com",
             "productionresultssa0.blob.core.windows.net",

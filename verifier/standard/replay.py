@@ -5,7 +5,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from worker_resources import replay_budget_seconds, worker_capacity
 from standard.judge import judge_exports
 from standard.compile import compile_modules, publish_module
-from standard.build_cache import build_inputs, restore_cache
+from standard.build_cache import build_inputs, restore_shards
 
 if sys.flags.optimize or os.getuid() == 0:
     raise SystemExit('Use unoptimized Python as an unprivileged worker user')
@@ -114,10 +114,7 @@ cached_modules = set()
 cache = profile.get('candidate_cache')
 if cache:
     try:
-        archive = Path(cache['path'])
-        if sha(archive) != cache['sha256']:
-            raise ValueError('Authenticated build cache changed')
-        cached_modules = restore_cache(archive, work/'candidate-lib',
+        cached_modules = restore_shards(cache, work/'candidate-lib',
             build_inputs(contract, profile, library_inventory, approved_tools))
         print(f'Reused {len(cached_modules)} authenticated compiled modules', flush=True)
     except (ValueError, KeyError, TypeError, OSError, tarfile.TarError) as error:
@@ -187,6 +184,6 @@ check_libraries()
 stage('accepted')
 report={'status':'PASS','verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_pr_head':contract['head_sha'],'source_commit':contract['source_commit'],'source_repository':contract['repository'],'result_id':manifest['id'],'theta_exact':manifest.get('theta_exact',manifest.get('exact_bound',manifest['theta']['numerator']+'/'+manifest['theta']['denominator'])),'targets':config['theorem_names'],'allowed_axioms':config['permitted_axioms'],'kernels':['Lean default','nanoda','con-ron'],'judge_exit_code':result.returncode,'sandbox_preflight':'PASS','candidate_mount_preflight':'PASS','challenge_exported_before_candidate_execution':True,'receipt_outside_candidate':True,'source_files':inputs,'submission_trees':contract.get('submission_trees', {}),'library_inventory_sha256':contract['library_inventory_sha256'],'driver_sha256':sha(Path(__file__)),'palomar_sha256':sha(ref/'scripts/verify_submission.py'),'tool_pins':approved_tools,'artifacts':{str(p.relative_to(work)):sha(p) for p in work.rglob('*') if p.is_file() and p.suffix in ['.log','.json','.lean','.export']}}
 if cached_modules:
-    report['build_cache'] = {**{k:cache[k] for k in ['url','sha256','signer']}, 'modules_reused':len(cached_modules)}
+    report['build_cache'] = {'signer':cache['signer'], 'shards':[{k:shard[k] for k in ['url','sha256']} for shard in cache['shards']], 'modules_reused':len(cached_modules)}
 (work/'result.json').write_text(json.dumps(report,indent=2)+'\n')
 print('Accepted '+manifest['id']+' at '+contract['head_sha'],flush=True)

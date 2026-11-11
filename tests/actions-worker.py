@@ -36,7 +36,7 @@ else:
         json.loads((out/'prepared/libraries.json').read_text()), accepted['report']['tool_pins'])
     archive = out/'integration-build.tar.gz'
     pack_cache(out/'run/candidate-lib', archive, inputs)
-    profile['candidate_cache'] = dict(path=str(archive), sha256=digest(archive), url='integration-test', signer='test-fixture')
+    profile['candidate_cache'] = dict(shards=[dict(path=str(archive), sha256=digest(archive), url='integration-test')], signer='test-fixture')
     profile_path.write_text(json.dumps(profile))
     shutil.move(out/'run',out/'source-build-run')
     subprocess.run(['python3','verifier/actions/run.py'],check=True)
