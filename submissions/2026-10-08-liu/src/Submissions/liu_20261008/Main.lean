@@ -29,7 +29,8 @@ theorem bound {q : ℕ} [NeZero q] (χ : _root_.DirichletCharacter ℂ q) {s : �
     (hpole : ¬ (χ = 1 ∧ s = 1)) : _root_.DirichletCharacter.LFunction χ s ≠ 0 := by
   exact CombinedPaper.algebraic_dirichlet_nonzero q (NeZero.ne q) χ s hs hpole
 
-/-- The ranked rational upper bound for the exact algebraic bound. -/
+/-- The rational upper bound ranked for Liu's exact algebraic bound:
+(1507 − 2√921) / 1653 is less than 10⁻³⁰ below it. -/
 theorem bound_le :
     ((1507 - 2 * Real.sqrt 921) / 1653 : ℝ) ≤
       (874957069799168740018340006959 / 1000000000000000000000000000000 : ℝ) := by
