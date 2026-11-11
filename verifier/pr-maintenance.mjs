@@ -8,7 +8,7 @@ import { existsSync, readFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { isDeepStrictEqual } from "node:util";
-import { validateCatalogue, boundLabel } from "../core/catalogue.mjs";
+import { validateCatalogue, boundKey } from "../core/catalogue.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -190,12 +190,11 @@ export function maintenancePlan({
       throw Error(
         `Cannot determine the exact bound for ${id}; provide its proof metadata or a QRH result declaration`,
       );
-    required.set(id, { result_id: id, theta_exact: boundLabel(record) });
+    required.set(id, { result_id: id, theta_exact: boundKey(record) });
   };
   const identity = (r) => [
-    boundLabel(r),
+    boundKey(r),
     r.theta,
-    r.bound_interval,
     r.status,
     r.repository?.toLowerCase(),
     r.source_commit,
@@ -225,13 +224,11 @@ export function maintenancePlan({
     const c = certificate(JSON.parse(certificateData("head")));
     if (
       c.result_id !== id ||
-      c.theta_exact !== boundLabel(record) ||
+      c.theta_exact !== boundKey(record) ||
       c.verified_at !== record.first_verified_at ||
       (record.source_commit && c.source_commit !== record.source_commit) ||
       (record.repository &&
-        c.source_repository.toLowerCase() !==
-          record.repository.toLowerCase()) ||
-      !isDeepStrictEqual(c.bound_interval, record.bound_interval)
+        c.source_repository.toLowerCase() !== record.repository.toLowerCase())
     )
       throw Error(`Verification record differs from catalogue: ${id}`);
     const previous = certificateData("base");

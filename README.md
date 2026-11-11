@@ -31,7 +31,8 @@ source in `src/`. Catalogue builds use the current checkout and, when available,
 the current tree of the local `admission-records` branch. No commit history,
 GitHub API requests, credentials or ignored cache are needed. The
 canonical `Candidate.bound` statement supplies the exact bound for modern
-submissions; older entries retain their recorded algebraic bounds and revisions.
+submissions, together with `Candidate.bound_le` for an exact algebraic bound;
+older entries retain their recorded bounds and revisions.
 Builds include submissions present in the checkout. Deployment runs from main,
 where merging a submission means it has passed verification through CI or,
 when CI resources run out, a maintainer run. Catalogue generation does not repeat
@@ -167,11 +168,35 @@ reports remain fixed.
    QRH-Decimal: 0.875
    ```
 
-   Use a reduced fraction or supported exact algebraic expression for
-   `QRH-Bound`. Give an accurate truncated `QRH-Decimal` with enough digits
-   to differ from the current best verified bound.
-   Equal bounds accept any supported decimal precision. These PR fields declare
+   `QRH-Bound` is a reduced fraction; it is the value that is ranked. Give an
+   accurate truncated `QRH-Decimal` of it, with at most 200 fractional digits.
+   A bound below the current best verified bound must be lower within those
+   digits; equal or larger bounds accept any precision. These PR fields declare
    the bound; the committed `metadata.json` supplies its publication metadata.
+
+   Exact algebraic bounds are encouraged when they are the natural statement.
+   Add `QRH-Exact` with the expression, and keep a rational `QRH-Bound` above
+   it, close enough to rank as intended:
+
+   ```text
+   QRH-Result: example-exact
+   QRH-Exact: (777 − √1081) / 852
+   QRH-Bound: 7/8
+   QRH-Decimal: 0.875
+   ```
+
+   Expressions use integers, `+`, `−`, `*`, `/`, and `√`. `√` applies to a
+   positive integer and `/` divides by a positive integer; `k√n` means
+   $k \cdot \sqrt{n}$. Write the expression canonically; the check reports
+   the canonical spelling. `Candidate/Main.lean` then proves both theorems,
+   stated with `Real.sqrt`:
+
+   ```lean
+   theorem bound {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
+       (hs : ((777 - Real.sqrt 1081) / 852 : ℝ) < s.re)
+       (hpole : ¬ (χ = 1 ∧ s = 1)) : DirichletCharacter.LFunction χ s ≠ 0
+   theorem bound_le : ((777 - Real.sqrt 1081) / 852 : ℝ) ≤ (7 / 8 : ℝ)
+   ```
 
    Existing submissions retain their stable result IDs and Lean namespaces when
    their folders are renamed, even if an older ID includes a date. Use those
@@ -180,7 +205,8 @@ reports remain fixed.
 4. GitHub Actions checks the exact PR head, including drafts. Comparator checks
    the statement and allowed axioms against the
    [canonical target](verifier/upstream-challenge.lean), with the submitted bound
-   substituted for $7/8$. Lean, NanoDa, and con-ron must all accept the proof.
+   substituted for $7/8$, and for an exact bound also `bound_le`. Lean, NanoDa,
+   and con-ron must all accept the proof.
    After review and merge, the website adds the result automatically.
 
 Reusable modules live in `src/Submissions/<result_id>/`, with hyphens in the

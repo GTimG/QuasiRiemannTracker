@@ -255,7 +255,7 @@ ${theorem("14 / 16")}`,
   assert.deepEqual(
     submissionBound(
       join(data.root, "submissions/2026-10-12-candidate-proof/src"),
-    ),
+    ).theta,
     { numerator: "7", denominator: "8" },
   );
 });
@@ -272,11 +272,8 @@ test("canonical bound reading follows an explicit imported local export", (t) =>
     theorem("123456789123456789 / 246913578246913578"),
   );
   assert.deepEqual(
-    submissionBound(join(data.root, `submissions/${directory}/src`)),
-    {
-      numerator: "1",
-      denominator: "2",
-    },
+    submissionBound(join(data.root, `submissions/${directory}/src`)).theta,
+    { numerator: "1", denominator: "2" },
   );
   data.write(
     `submissions/${directory}/src/Candidate/Main.lean`,
@@ -298,9 +295,26 @@ test("canonical bound reading permits renamed Unicode hypothesis and complex bin
   assert.deepEqual(
     submissionBound(
       join(data.root, "submissions/2026-10-12-candidate-proof/src"),
-    ),
+    ).theta,
     { numerator: "7", denominator: "8" },
   );
+});
+
+test("an exact algebraic bound is read with its proved rational upper bound", (t) => {
+  const data = fixture(t);
+  const directory = "2026-10-12-candidate-proof";
+  const witness = `
+theorem bound_le : ((777 - Real.sqrt 1081) / 852 : ℝ) ≤ (7 / 8 : ℝ) := by
+  exact existing_le`;
+  data.submission(directory, {
+    source: theorem("(777 - Real.sqrt 1081) / 852") + witness,
+  });
+  const src = join(data.root, `submissions/${directory}/src`);
+  assert.equal(submissionBound(src).theta_exact, "(777 − √1081) / 852 ≤ 7/8");
+  data.submission(directory, {
+    source: theorem("(777 - Real.sqrt 1081) / 852"),
+  });
+  assert.throws(() => submissionBound(src), /bound_le/);
 });
 
 test("directory migrations use the current path without inspecting old commits", (t) => {

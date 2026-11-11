@@ -29,7 +29,6 @@ export function contributorLeaderboard(records) {
           best: record,
           count: 0,
           submissions: [],
-          approximate: false,
         };
         people.set(key, person);
       }
@@ -38,16 +37,7 @@ export function contributorLeaderboard(records) {
         sub({ numerator: "0", denominator: "1" }, delta),
       );
       person.count++;
-      person.submissions.push({
-        record,
-        delta,
-        approximate: Boolean(
-          index && (record.exact_bound || chronological[index - 1].exact_bound),
-        ),
-      });
-      person.approximate ||= Boolean(
-        index && (record.exact_bound || chronological[index - 1].exact_bound),
-      );
+      person.submissions.push({ record, delta });
       if (cmp(record.theta, person.best.theta) < 0) person.best = record;
     }
   });

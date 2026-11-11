@@ -11,6 +11,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
 import { standardChallenge } from "../core/standard-challenge.mjs";
+import { fraction } from "../core/rational.mjs";
 import { challenge } from "../verifier/challenge.mjs";
 const template = { id: "openai-baseline" };
 test("dependency-free gate and submission verifier generate the same canonical challenge", () => {
@@ -19,9 +20,10 @@ test("dependency-free gate and submission verifier generate the same canonical c
     { numerator: "29", denominator: "33" },
     { numerator: "1", denominator: "1" },
   ]) {
-    assert.equal(standardChallenge(theta), challenge({ ...template, theta }));
-    assert.match(standardChallenge(theta), /\{q : ℕ\} \[NeZero q\]/);
-    assert.match(standardChallenge(theta), /¬ \(χ = 1 ∧ s = 1\)/);
+    const text = standardChallenge(fraction(theta));
+    assert.equal(text, challenge({ ...template, theta }));
+    assert.match(text, /\{q : ℕ\} \[NeZero q\]/);
+    assert.match(text, /¬ \(χ = 1 ∧ s = 1\)/);
   }
 });
 

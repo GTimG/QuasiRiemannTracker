@@ -1,6 +1,10 @@
 QRH-Result: stable-result-id
-QRH-Bound: exact-bound
+QRH-Bound: reduced-fraction
 QRH-Decimal: decimal-approximation
+
+<!-- Optional, for an exact algebraic bound such as (777 − √1081) / 852:
+add "QRH-Exact: <expression>" and prove Candidate.bound_le, the expression
+being at most QRH-Bound. See the README. -->
 
 <!-- Save the metadata below as submissions/YYYY-MM-DD-<slug>/metadata.json.
 Use the original PR creation date in UTC, once, at the start of the directory.

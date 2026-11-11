@@ -146,14 +146,6 @@ test("changing report provenance in metadata requires proof verification", () =>
     { result_id: "fixture-baseline", theta_exact: "7/8" },
   ]);
 });
-test("an invalid algebraic enclosure fails exact interval validation", () => {
-  const data = fixture([
-    modified("submissions/fixture-algebraic/metadata.json"),
-  ]);
-  const r = data.head["submissions/fixture-algebraic/metadata.json"];
-  r.bound_interval.lower = r.bound_interval.upper;
-  assert.throws(() => maintenancePlan(data), /Invalid certified enclosure/);
-});
 test("a malformed rational fails normalization", () => {
   const data = fixture([
     modified("submissions/fixture-baseline/metadata.json"),

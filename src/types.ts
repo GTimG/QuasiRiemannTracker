@@ -29,7 +29,6 @@ export type Contribution = {
   exact_bound?: string;
   verification_note?: string;
   attribution_note?: string;
-  bound_interval?: { lower: Rational; upper: Rational };
 };
 export type Event = {
   type: "withdraw" | "supersede";

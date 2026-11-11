@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "node:fs";
-import { validateCatalogue, boundLabel } from "../core/catalogue.mjs";
+import { validateCatalogue, boundKey } from "../core/catalogue.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -15,11 +15,10 @@ for (const record of catalogueProofRecords(data)) {
   const c = certificate(JSON.parse(readFileSync("public/" + name, "utf8")));
   if (
     c.result_id !== proofRevision(record) ||
-    c.theta_exact !== boundLabel(record) ||
+    c.theta_exact !== boundKey(record) ||
     c.verified_at !== record.first_verified_at ||
     (record.source_commit && c.source_commit !== record.source_commit) ||
-    (record.repository && c.source_repository !== record.repository) ||
-    JSON.stringify(c.bound_interval) !== JSON.stringify(record.bound_interval)
+    (record.repository && c.source_repository !== record.repository)
   )
     throw Error(`Verification record differs from catalogue: ${record.id}`);
 }

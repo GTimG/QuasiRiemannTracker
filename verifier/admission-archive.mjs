@@ -135,11 +135,7 @@ export function validateAdmissionRecord(value) {
       status: "accepted",
       report,
     });
-    if (
-      report.verified_at !== c.verified_at ||
-      canonical(report.bound_interval ?? null) !==
-        canonical(c.bound_interval ?? null)
-    )
+    if (report.verified_at !== c.verified_at)
       throw Error("Archived report metadata differs from its certificate");
   }
   if (Buffer.byteLength(recordContent(value)) > maxRecordBytes)
