@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "builds_on": [],
   "id": "classical-euler-product",
-  "title": "Classical baseline · θ = 1",
+  "title": "Absolutely convergent Euler products",
   "theta": {
     "numerator": "1",
     "denominator": "1"

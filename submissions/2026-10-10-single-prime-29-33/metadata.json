@@ -15,7 +15,7 @@
     "openai-baseline"
   ],
   "id": "single-prime-29-33-20261010",
-  "title": "Single compensating prime · 29/33",
+  "title": "Single compensating prime with finite descent",
   "theta": {
     "numerator": "29",
     "denominator": "33"

@@ -1,5 +1,5 @@
 {
-  "title": "Lean-computed constants replace the marked ledger's hardcoded ones; bin split proved optimal",
+  "title": "Lean-computed constants replace hardcoded ones",
   "authors": [
     {
       "name": "ArviFoxy",
