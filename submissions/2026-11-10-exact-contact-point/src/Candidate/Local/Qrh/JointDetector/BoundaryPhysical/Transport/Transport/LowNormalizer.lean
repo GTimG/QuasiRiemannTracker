@@ -1,0 +1,3 @@
+import Candidate.Local.Qrh.JointDetector.BoundaryPhysical.TransportGeometry
+import Submissions.hailey_collet_1252270103.Record1252270103Return.Low.Normalizer
+set_option autoImplicit false
