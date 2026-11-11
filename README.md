@@ -290,16 +290,29 @@ and `qrh/pr-admission`, with verifier and registration updates reviewed by maint
 Admission restores previously compiled submission modules from a signed build
 cache, so a PR compiles only its own new modules. The **Build cache** workflow
 maintains it after every push to `main` that changes `submissions/` or the
-verifier. On the proof runner it compiles the shared `Submissions.<id>.*`
+verifier, and rebuilds all shards every Monday at 04:47 UTC. On the proof runner it compiles the shared `Submissions.<id>.*`
 modules of every merged submission in the same sandbox as admission, and
 publishes one archive per submission (a shard) to the
 `submission-build-cache-v2` release, listed in a signed `cache.json`. Only
-shards whose modules changed are rebuilt; admission downloads only the shards
+shards whose modules changed are rebuilt on pushes; admission downloads only the shards
 its PR imports. Each PR's `Candidate.*` modules are never cached.
 
 The signing key is the `QRH_BUILD_CACHE_KEY` secret of the `build-cache`
 environment, restricted to `main`; its public key is pinned in
-`verifier/standard/build-cache-public.pem`. Only the final publish step receives
-the key, after submitted code has run in the sandbox. A cached module cannot make
+`verifier/standard/build-cache-public.pem`. A short hosted preflight checks the key
+against that pin before starting the expensive build. The proof-runner job has
+read-only repository access and no environment secrets. It passes compressed
+shards as data to a separate hosted publication job, which checks the commit,
+build inputs, module keys, archive paths and hashes before signing. The publisher
+also downloads and authenticates its published index and changed archives. A cached module cannot make
 a proof pass: Comparator and all three kernels re-check every exported
 declaration. Key rotation requires updating the pin.
+
+For a manual refresh, open **Actions → Build cache → Run workflow**, choose
+`main`, and optionally select **Rebuild every shard**. Without that option,
+unchanged authenticated shards are reused. The weekly rebuild does not reuse
+compiled submission shards, but still restores the pinned upstream dependency
+cache. Only `main` can run the signing preflight and publication jobs. Keep the
+environment's deployment branch rule limited to `main`, and keep Actions enabled
+for scheduled runs. A successful run ends with both signature verification and
+the public-download check; a successful compile alone is not publication.

@@ -6,38 +6,53 @@ on:
       - "submissions/**"
       - "verifier/**"
       - ".github/workflows/build-cache.yml"
+  schedule:
+    - cron: "47 4 * * 1"
   workflow_dispatch:
+    inputs:
+      rebuild_all:
+        description: Rebuild every shard, including unchanged modules
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
   group: build-cache
   cancel-in-progress: false
 jobs:
-  # Compiles the shared Submissions.* modules of every merged submission and
-  # publishes them as signed per-submission shards that admission restores.
-  # Only shards whose modules changed are rebuilt and re-uploaded.
-  build:
-    runs-on: [self-hosted, Linux, X64, qrh-proof]
-    timeout-minutes: 870
-    # The signing key is an environment secret that only main can use.
+  signing-key:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     environment: build-cache
-    permissions:
-      contents: write
-    env:
-      QRH_REPLAY_BUDGET_SECONDS: "43200"
-      QRH_WORKER_THREADS: "6"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-      # Fail in seconds, before any submission is prepared or compiled, if the
-      # result could not be signed or uploaded.
       - name: Check the signing key, release access and upload route
         env:
           QRH_BUILD_CACHE_KEY: ${{ secrets.QRH_BUILD_CACHE_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: python3 verifier/actions/check-cache-publish.py
+  # Compiles the shared Submissions.* modules of every merged submission and
+  # packages outputs as data. No signing secret or write token reaches this job.
+  # Pushes are incremental; the weekly run rebuilds all shards from source.
+  build:
+    needs: signing-key
+    runs-on: [self-hosted, Linux, X64, qrh-proof]
+    timeout-minutes: 870
+    outputs:
+      publish: ${{ steps.plan.outputs.publish }}
+    env:
+      QRH_REPLAY_BUDGET_SECONDS: "43200"
+      QRH_WORKER_THREADS: "6"
+      QRH_CACHE_REBUILD_ALL: ${{ github.event_name == 'schedule' || inputs.rebuild_all == true }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.22.1
@@ -66,14 +81,17 @@ jobs:
           python3 verifier/standard/build.py --profile verification/profile.json
           --prepared verification/prepared --work verification/run
           --tool-pins verification/tool-pins.json
-      # Submitted code ran only in the sandboxed compile step above. After the
-      # preflight check, the key and the release token reach this step alone.
-      - name: Sign and publish the cache
+      - name: Package the cache for the separate publisher
         if: steps.plan.outputs.publish == 'true'
-        env:
-          QRH_BUILD_CACHE_KEY: ${{ secrets.QRH_BUILD_CACHE_KEY }}
-          GH_TOKEN: ${{ github.token }}
-        run: python3 verifier/actions/publish-cache.py
+        run: python3 verifier/actions/publish-cache.py --prepare
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.plan.outputs.publish == 'true'
+        with:
+          name: cache-publication-${{ github.run_attempt }}
+          path: verification/cache-publication/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 3
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -84,3 +102,26 @@ jobs:
             verification/run/logs/
           if-no-files-found: warn
           retention-days: 14
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/main' && needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: build-cache
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      # No cross-run artifacts and no code from the build artifact is executed.
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: cache-publication-${{ github.run_attempt }}
+          path: verification/cache-publication/
+      - name: Validate, sign and publish the cache
+        env:
+          QRH_BUILD_CACHE_KEY: ${{ secrets.QRH_BUILD_CACHE_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 verifier/actions/publish-cache.py

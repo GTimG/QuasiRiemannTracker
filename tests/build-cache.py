@@ -1,6 +1,6 @@
 """Regression and archive authentication tests adapted from PR #35."""
 from pathlib import Path
-import copy, importlib.util, io, json, os, subprocess, sys, tarfile, tempfile, unittest
+import copy, importlib.util, io, json, os, shutil, subprocess, sys, tarfile, tempfile, unittest
 from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'verifier'))
@@ -11,6 +11,9 @@ spec.loader.exec_module(restore)
 spec = importlib.util.spec_from_file_location('plan_cache', ROOT/'verifier/actions/plan-cache.py')
 plan_cache = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(plan_cache)
+spec = importlib.util.spec_from_file_location('publish_cache', ROOT/'verifier/actions/publish-cache.py')
+publish_cache = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(publish_cache)
 
 
 class CacheTests(unittest.TestCase):
@@ -201,6 +204,14 @@ class CacheTests(unittest.TestCase):
         index = {'environment': keys['environment'], 'shards': shards}
         _, _, changed, removed = plan_cache.plan(keys, index)
         self.assertEqual((changed, removed), ([], ['Submissions.gone']))
+        # A scheduled/manual full rebuild keeps previous archives for active readers,
+        # but cannot restore any current shard from the previous compilation.
+        _, previous, changed, removed = plan_cache.plan(keys, index, rebuild_all=True)
+        self.assertEqual(previous, shards)
+        self.assertEqual(changed, ['Submissions.a', 'Submissions.b'])
+        self.assertEqual(removed, ['Submissions.gone'])
+        _, _, changed, _ = plan_cache.plan(keys, None)
+        self.assertEqual(changed, ['Submissions.a', 'Submissions.b'])
         contract['source_files']['src/Submissions/a/X.lean'] = 'changed'
         # A changed import changes its importers' keys, so both shards rebuild.
         _, _, changed, _ = plan_cache.plan(self.inputs_for(contract), index)
@@ -209,6 +220,103 @@ class CacheTests(unittest.TestCase):
         self.assertEqual((previous, changed), ({}, ['Submissions.a', 'Submissions.b']))
         self.assertEqual(plan_cache.closure(['Submissions.b.Y'], contract['module_dependencies']),
                          {'Submissions.a.X', 'Submissions.b.Y'})
+
+    def publication(self):
+        out = self.root/'verification'
+        (out/'run').mkdir(parents=True)
+        shutil.copytree(self.library, out/'run/candidate-lib')
+        keys = {**self.inputs, 'modules': {m:k for m,k in self.inputs['modules'].items()
+                                         if m.startswith('Submissions.')}}
+        head = 'a'*40
+        plan = {'head_sha':head, 'keys':keys, 'previous':{}, 'changed':['Submissions.base'], 'removed':[]}
+        (out/'cache-plan.json').write_text(json.dumps(plan))
+        inputs = out/'run/build-inputs.json'
+        inputs.write_text(json.dumps(keys))
+        (out/'run/build-result.json').write_text(json.dumps({'status':'BUILT', 'head_sha':head,
+            'build_inputs_sha256':digest(inputs)}))
+        self.addCleanup(patch.stopall)
+        patch.object(publish_cache, 'OUT', out).start()
+        patch.dict(os.environ, {'GITHUB_SHA':head}).start()
+        return out, keys
+
+    def test_publication_round_trip_without_secrets_in_builder(self):
+        out, keys = self.publication()
+        with patch.dict(os.environ, {}, clear=True):
+            os.environ['GITHUB_SHA'] = 'a'*40
+            publish_cache.prepare()
+        plan, index, archives = publish_cache.validate_bundle(out/'cache-publication')
+        self.assertEqual(plan['keys'], keys)
+        self.assertEqual(set(index['shards']), {'Submissions.base'})
+        self.assertEqual(len(archives), 1)
+        self.assertEqual(restore_cache(archives[0], self.root/'published-lib', keys), set(keys['modules']))
+        self.assertFalse((self.root/'published-lib/Candidate').exists())
+
+    def test_publication_rejects_stale_commit_and_inputs(self):
+        out, _ = self.publication()
+        with patch.dict(os.environ, {'GITHUB_SHA':'b'*40}), self.assertRaisesRegex(ValueError, 'another commit'):
+            publish_cache.prepare()
+        (out/'run/build-inputs.json').write_text((out/'run/build-inputs.json').read_text()+' ')
+        with self.assertRaisesRegex(ValueError, 'does not match'):
+            publish_cache.prepare()
+
+    def test_publication_rejects_missing_build_module(self):
+        out, _ = self.publication()
+        inputs = out/'run/build-inputs.json'
+        value = json.loads(inputs.read_text())
+        value['modules'] = {}
+        inputs.write_text(json.dumps(value))
+        result = out/'run/build-result.json'
+        value = json.loads(result.read_text())
+        value['build_inputs_sha256'] = digest(inputs)
+        result.write_text(json.dumps(value))
+        with self.assertRaisesRegex(ValueError, 'does not match'):
+            publish_cache.prepare()
+
+    def test_publication_rejects_symlinked_compiler_output(self):
+        out, _ = self.publication()
+        product = out/'run/candidate-lib/Submissions/base/Main.olean'
+        product.unlink()
+        product.symlink_to(self.library/'Submissions/base/Main.olean')
+        with self.assertRaisesRegex(ValueError, 'Symlink'):
+            publish_cache.prepare()
+
+    def test_publisher_rejects_tampered_archive_before_remote_write(self):
+        out, _ = self.publication()
+        publish_cache.prepare()
+        archive = next((out/'cache-publication').glob('*.tar.gz'))
+        archive.write_bytes(b'tampered')
+        with patch.object(publish_cache, 'api') as remote, self.assertRaisesRegex(ValueError, 'checksum'):
+            publish_cache.main()
+        remote.assert_not_called()
+
+    def test_publisher_signs_with_matching_key_and_downloads_published_outputs(self):
+        out, _ = self.publication()
+        publish_cache.prepare()
+        key, public = self.root/'key.pem', self.root/'public.pem'
+        subprocess.run(['openssl','genpkey','-algorithm','ED25519','-out',str(key)],check=True)
+        subprocess.run(['openssl','pkey','-in',str(key),'-pubout','-out',str(public)],check=True)
+        with patch.dict(os.environ, {'QRH_BUILD_CACHE_KEY':key.read_text(),'GH_TOKEN':'test-token'}), \
+                patch.object(publish_cache, 'api') as remote, self.assertRaises(subprocess.CalledProcessError):
+            publish_cache.main()  # Test key does not match the production pin.
+        remote.assert_not_called()
+        uploaded = {}
+        def upload(_release, path, _token):
+            uploaded[path.name] = path.read_bytes()
+        def download(url, destination, limit):
+            data = uploaded[url.rsplit('/', 1)[1]]
+            self.assertLessEqual(len(data), limit)
+            destination.write_bytes(data)
+        import cache_release
+        with patch.dict(os.environ, {'QRH_BUILD_CACHE_KEY':key.read_text(),'GH_TOKEN':'test-token'}), \
+                patch.object(publish_cache, 'KEY', public), \
+                patch.object(publish_cache, 'release', return_value={'assets':[]}), \
+                patch.object(publish_cache, 'api', return_value={'assets':[]}), \
+                patch.object(publish_cache, 'upload', side_effect=upload), \
+                patch.object(publish_cache, 'download', side_effect=download), \
+                patch.object(publish_cache, 'fetch_shards', side_effect=lambda i,n,d:cache_release.fetch_shards(i,n,d,download)):
+            publish_cache.main()
+        self.assertEqual(list(uploaded)[-2:], ['cache.json', 'cache.sig'])
+        self.assertEqual(len(uploaded), 3)
 
 
 unittest.main()

@@ -16,14 +16,14 @@ from standard.build_cache import build_inputs, compatibility_error, digest, shar
 OUT = Path('verification').resolve()
 
 
-def plan(keys, index):
+def plan(keys, index, rebuild_all=False):
     """Return the changed and removed shards and the modules to build."""
     shards = {}
     for module, key in keys['modules'].items():
         shards.setdefault(shard_of(module), {})[module] = key
     previous = {} if index is None or compatibility_error(index, keys) else index['shards']
     changed = sorted(name for name, modules in shards.items()
-                     if previous.get(name, {}).get('modules') != modules)
+                     if rebuild_all or previous.get(name, {}).get('modules') != modules)
     removed = sorted(set(previous) - set(shards))
     return shards, previous, changed, removed
 
@@ -47,7 +47,10 @@ def main():
                         json.loads((OUT/'tool-pins.json').read_text()))
     with tempfile.TemporaryDirectory(dir=OUT, prefix='build-index-') as tmp:
         index = fetch_index(Path(tmp))
-    shards, previous, changed, removed = plan(keys, index)
+    rebuild_all = os.environ.get('QRH_CACHE_REBUILD_ALL', 'false')
+    if rebuild_all not in ('true', 'false'):
+        raise ValueError('QRH_CACHE_REBUILD_ALL must be true or false')
+    shards, previous, changed, removed = plan(keys, index, rebuild_all == 'true')
     needed = closure([m for name in changed for m in shards[name]], contract['module_dependencies'])
     # Every changed shard is rebuilt whole; unchanged imports come from their shards.
     reuse = {shard_of(m) for m in needed} - set(changed)
