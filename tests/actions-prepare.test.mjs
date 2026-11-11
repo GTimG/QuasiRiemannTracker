@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 const entrypoint = fileURLToPath(
   new URL("../verifier/actions/prepare.mjs", import.meta.url),
 );
-test("algebraic bounds retain their local verification profile", (t) => {
+test("unsupported exact bounds are rejected before preparation", (t) => {
   const cwd = mkdtempSync(join(tmpdir(), "qrh-prepare-"));
   t.after(() => rmSync(cwd, { recursive: true, force: true }));
   mkdirSync(join(cwd, "verification-context"));
@@ -42,7 +42,7 @@ test("algebraic bounds retain their local verification profile", (t) => {
   );
   assert.equal(attempt.status, "infrastructure-blocked");
   assert.equal(attempt.theta_exact, expected.theta_exact);
-  assert.match(attempt.reason, /requires an algebraic checking profile/);
+  assert.match(attempt.reason, /Use a reduced fraction/);
 });
 
 test("a worker selects its own result from a maintenance batch before preparation", (t) => {

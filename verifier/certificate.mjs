@@ -1,5 +1,5 @@
 import { sha256 } from "./common.mjs";
-import { boundLabel } from "../core/catalogue.mjs";
+import { boundKey } from "../core/catalogue.mjs";
 import { proofRevision } from "../core/catalogue-revisions.mjs";
 export const KERNELS = ["Lean default", "nanoda", "con-ron"];
 export function certificate(value) {
@@ -8,7 +8,7 @@ export function certificate(value) {
     !/^[a-z][a-z0-9-]{2,63}$/.test(value.result_id ?? "") ||
     typeof value.theta_exact !== "string" ||
     !value.theta_exact.trim() ||
-    value.theta_exact.length > 256 ||
+    value.theta_exact.length > 1024 ||
     !Number.isFinite(Date.parse(value.verified_at)) ||
     !/^[\w.-]+\/[\w.-]+$/.test(value.source_repository ?? "") ||
     !/^[a-f0-9]{40}$/.test(value.source_commit ?? "") ||
@@ -26,7 +26,7 @@ export function historicalCertificate(metadata) {
   return certificate({
     schema_version: 1,
     result_id: proofRevision(metadata),
-    theta_exact: boundLabel(metadata),
+    theta_exact: boundKey(metadata),
     verified_at: metadata.first_verified_at,
     source_repository:
       metadata.repository || metadata.verification?.source_repository,
@@ -35,9 +35,6 @@ export function historicalCertificate(metadata) {
     kernels: KERNELS,
     report_url: metadata.verification?.report_url,
     report_sha256: metadata.verification?.report_sha256,
-    ...(metadata.bound_interval
-      ? { bound_interval: metadata.bound_interval }
-      : {}),
   });
 }
 // Call after verificationResult has authenticated a successful worker report.
@@ -54,6 +51,5 @@ export function workerCertificate(expected, report, reportUrl, reportBytes) {
     kernels: KERNELS,
     report_url: reportUrl,
     report_sha256: sha256(reportBytes),
-    ...(report.bound_interval ? { bound_interval: report.bound_interval } : {}),
   });
 }

@@ -15,7 +15,7 @@ import {
   readSubmissions,
   buildSubmissionCatalogue,
 } from "../scripts/submission-catalogue.mjs";
-import { exactBound } from "../core/exact-bound.mjs";
+import { solutionWrapper } from "../verifier/challenge.mjs";
 import { standardChallenge } from "../core/standard-challenge.mjs";
 import {
   submissionDirectory,
@@ -85,19 +85,25 @@ test("every retained revision has a dated directory, colocated metadata and comp
   }
   assert.ok(!readdirSync(process.cwd()).includes("proofs"));
 });
-test("the algebraic profile generates a fixed exact statement and rejects Lean injection", () => {
-  const bound = exactBound("(1507 − 2√921) / 1653");
+test("an exact bound adds its rational upper bound to the challenge and rejects Lean injection", () => {
+  const theta_exact = "(1507 − 2√921) / 1653 ≤ 7/8";
+  const text = standardChallenge(theta_exact);
+  assert.match(text, /\(\(1507 - 2 \* Real.sqrt 921\) \/ 1653 : ℝ\) < s.re/);
   assert.match(
-    standardChallenge(bound.theta, bound.exact_bound),
-    /1507 - 2 \* Real.sqrt 921/,
+    text,
+    /theorem canonical_bound_le :\n {4}\(\(\(1507 - 2 \* Real.sqrt 921\) \/ 1653\) : ℝ\) ≤ \(7 \/ 8 : ℝ\)/,
   );
+  const wrapper = solutionWrapper({ id: "candidate-proof", theta_exact });
+  assert.match(wrapper, /exact Candidate.bound χ hs hpole/);
+  assert.match(wrapper, /exact Candidate.bound_le/);
   for (const invalid of [
-    "Real.sqrt 921",
+    "(1507 − 2√921) / 1653",
+    "Real.sqrt 921 ≤ 7/8",
     "1/1) := by trivial",
-    "(1507 − 2√922) / 1653",
-  ]) {
-    assert.throws(() => exactBound(invalid), /checking profile/);
-  }
+    "√921 := by trivial ≤ 7/8",
+    "√(921) / x ≤ 7/8",
+  ])
+    assert.throws(() => standardChallenge(invalid));
 });
 
 test("metadata changes are included in the authenticated submission inventory", async (t) => {

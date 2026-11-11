@@ -1,3 +1,4 @@
+import { boundTargets } from "../core/exact-bound.mjs";
 // Shared acceptance contract for fresh workers and authenticated registered receipts.
 export function acceptedWorkerReport(expected, r) {
   if (
@@ -7,7 +8,8 @@ export function acceptedWorkerReport(expected, r) {
     r.result_id !== expected.result_id ||
     r.theta_exact !== expected.theta_exact ||
     r.judge_exit_code !== 0 ||
-    JSON.stringify(r.targets) !== JSON.stringify(["QRH.canonical_bound"]) ||
+    JSON.stringify(r.targets) !==
+      JSON.stringify(boundTargets(expected.theta_exact)) ||
     JSON.stringify(r.kernels) !==
       JSON.stringify(["Lean default", "nanoda", "con-ron"]) ||
     JSON.stringify([...(r.allowed_axioms ?? [])].sort()) !==

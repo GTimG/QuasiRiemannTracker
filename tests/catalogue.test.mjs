@@ -152,28 +152,15 @@ test("the frontier uses contribution dates, keeps stronger bounds, and excludes 
   assert.ok(cmp(frontier.at(-1).theta, data.records.at(-1).theta) > 0);
 });
 
-test("algebraic enclosures accept certified endpoints and reject truncated decimals", () => {
-  const entry = algebraicRecord();
-  validateCatalogue({ schema_version: 1, records: [entry] });
-  entry.theta = { numerator: "874957069799", denominator: "1000000000000" };
-  entry.bound_interval.upper = entry.theta;
-  assert.throws(
-    () => validateCatalogue({ schema_version: 1, records: [entry] }),
-    /enclosure/,
-  );
-});
-
-test("ambiguous comparisons require refined algebraic intervals", () => {
-  const algebraic = algebraicRecord();
-  const overlapping = record({ id: "fixture-overlap", theta: algebraic.theta });
-  assert.throws(
-    () =>
+test("exact expressions are canonical and ranked by their rational bound", () => {
+  validateCatalogue({ schema_version: 1, records: [algebraicRecord()] });
+  for (const exact_bound of ["(1507 - 2√921) / 1653", "√921 / (1 + √2)"])
+    assert.throws(() =>
       validateCatalogue({
         schema_version: 1,
-        records: [algebraic, overlapping],
+        records: [algebraicRecord({ exact_bound })],
       }),
-    /Overlapping bound intervals/,
-  );
+    );
 });
 
 test("validation rejects unsupported statuses and fabricated pending verification dates", () => {

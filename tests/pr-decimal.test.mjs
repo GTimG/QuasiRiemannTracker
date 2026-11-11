@@ -170,90 +170,21 @@ test("integer parts and fractional precision are compared exactly", () => {
   });
 });
 
-const algebraic = {
-  theta_exact: "sqrt(3)/2",
-  theta_decimal: "0.866",
-  bound_interval: {
-    lower: q("433", "500"),
-    upper: q("8661", "10000"),
-  },
-};
-
-test("an irrational uses the enclosure in the trusted receipt", () => {
-  assert.doesNotThrow(() => check(algebraic));
-  assert.throws(
-    () => check({ ...algebraic, theta_decimal: "0.8660" }),
-    /bound_interval needs refinement/,
-  );
-});
-
-test("an irrational above one uses its certified enclosure", () => {
+test("an exact expression is ranked by its proved rational bound", () => {
   assert.deepEqual(
     check({
-      theta_exact: "sqrt(2)",
-      theta_decimal: "1.4142",
-      bound_interval: {
-        lower: q("141421", "100000"),
-        upper: q("70711", "50000"),
-      },
+      theta_exact: "(777 − √1081) / 852 ≤ 7/8",
+      theta_decimal: "0.875",
     }),
-    { previous_result_id: "current", previous_decimal: "0" },
+    { previous_result_id: "current", previous_decimal: "0.874" },
   );
 });
 
-test("a certified integer difference establishes distinct bounds", () => {
-  assert.deepEqual(
-    check({
-      theta_exact: "1/1",
-      theta_decimal: "1.0",
-      catalogue: {
-        records: [
-          record("algebraic", q("99", "100"), {
-            exact_bound: "sqrt(3)/2",
-            bound_interval: { lower: q("81", "100"), upper: q("99", "100") },
-          }),
-        ],
-      },
-    }),
-    { previous_result_id: "algebraic", previous_decimal: "0" },
-  );
-});
-
-test("a nonpositive rational fails positivity even when an enclosure is supplied", () => {
+test("a nonpositive rational fails positivity", () => {
   for (const theta_exact of ["0/1", "-1/1"])
-    assert.throws(
-      () =>
-        check({
-          theta_exact,
-          theta_decimal: "0.8",
-          bound_interval: { lower: q("4", "5"), upper: q("4", "5") },
-        }),
-      { message: "Decimal comparison bounds must be positive" },
-    );
-});
-
-test("rejects missing, reversed or nonpositive irrational enclosures", () => {
-  for (const bound_interval of [undefined, {}, { lower: q("1", "2") }])
-    assert.throws(
-      () => check({ ...algebraic, bound_interval }),
-      /bound_interval/,
-    );
-  assert.throws(
-    () =>
-      check({
-        ...algebraic,
-        bound_interval: {
-          lower: algebraic.bound_interval.upper,
-          upper: algebraic.bound_interval.lower,
-        },
-      }),
-    /reversed/,
-  );
-  for (const lower of [q("0", "1"), q("-1", "2")])
-    assert.throws(
-      () => check({ ...algebraic, bound_interval: { lower, upper: lower } }),
-      { message: "Decimal comparison bounds must be positive" },
-    );
+    assert.throws(() => check({ theta_exact, theta_decimal: "0.8" }), {
+      message: "Bound must be positive",
+    });
 });
 
 test("rational syntax and normalization stay exact", () => {
@@ -276,49 +207,6 @@ test("the comparison uses the best currently verified catalogue bound", () => {
       },
     }),
     { previous_result_id: "current", previous_decimal: "0.87488664" },
-  );
-});
-
-test("certifies previous irrational digits through the first difference", () => {
-  const catalogue = {
-    records: [
-      record("algebraic", algebraic.bound_interval.upper, {
-        exact_bound: algebraic.theta_exact,
-        bound_interval: algebraic.bound_interval,
-      }),
-    ],
-  };
-  assert.doesNotThrow(() =>
-    check({ theta_exact: "4/5", theta_decimal: "0.800", catalogue }),
-  );
-  assert.deepEqual(
-    check({ theta_exact: "4/5", theta_decimal: "0.8000", catalogue }),
-    { previous_result_id: "algebraic", previous_decimal: "0.86" },
-  );
-  assert.throws(
-    () =>
-      check({
-        theta_exact: "17321/20000",
-        theta_decimal: "0.86605",
-        catalogue,
-      }),
-    /previous bound.*bound_interval needs refinement/,
-  );
-  assert.deepEqual(check({ ...algebraic, catalogue }), {
-    previous_result_id: "algebraic",
-    previous_decimal: "0.866",
-  });
-  assert.deepEqual(
-    check({
-      ...algebraic,
-      theta_decimal: "0.86602",
-      bound_interval: {
-        lower: q("4330127", "5000000"),
-        upper: q("34641017", "40000000"),
-      },
-      catalogue,
-    }),
-    { previous_result_id: "algebraic", previous_decimal: "0.86602" },
   );
 });
 

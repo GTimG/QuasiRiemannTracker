@@ -7,7 +7,7 @@ import {
   formatContributionDate,
   contributionDate,
 } from "../core/catalogue.mjs";
-import { decimal } from "../core/rational.mjs";
+import { decimal, fraction } from "../core/rational.mjs";
 import type { Contribution } from "./types";
 import { publicUrl } from "./urls";
 
@@ -48,6 +48,11 @@ export default function CatalogueDetail({
           <span>EXACT θ</span>
           <strong>{boundLabel(r)}</strong>
           <code>≈ {decimal(r.theta, 18)}</code>
+          {r.exact_bound && (
+            <code title="Proved in Lean; this rational is ranked">
+              ≤ {fraction(r.theta)}
+            </code>
+          )}
         </div>
         <h3>Method</h3>
         <p>{r.method}</p>

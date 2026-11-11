@@ -200,7 +200,7 @@ for (const [description, body, message] of [
   [
     "a missing bound",
     newBound.replace(`QRH-Bound: ${bound}\n`, ""),
-    "New bounds require QRH-Bound: <exact checked value>",
+    "New bounds require QRH-Bound: <reduced fraction p/q>; give an exact algebraic expression in QRH-Exact",
   ],
   [
     "a duplicate result",
@@ -238,9 +238,14 @@ for (const [description, body, message] of [
     "Malformed or unknown QRH declaration field",
   ],
   [
-    "an oversized bound",
-    newBound.replace(bound, "1".repeat(257)),
-    "New bounds require QRH-Bound: <exact checked value>",
+    "an algebraic QRH-Bound",
+    newBound.replace(bound, "(777 − √1081) / 852"),
+    "New bounds require QRH-Bound: <reduced fraction p/q>; give an exact algebraic expression in QRH-Exact",
+  ],
+  [
+    "a noncanonical exact expression",
+    `${newBound}\nQRH-Exact: (777 - √1081) / 852`,
+    "Write the exact bound canonically as (777 − √1081) / 852",
   ],
 ]) {
   test(`declaration rejects ${description}`, () => {
@@ -525,27 +530,16 @@ test("requires accurate and distinguishing decimal digits with accepted evidence
   }
 });
 
-test("irrational decimal digits require an enclosure from authenticated evidence", async () => {
-  const body = newBound
-    .replace(bound, "sqrt(3)/2")
-    .replace(approximation, "0.866025");
-  const input = options(body, [
+test("an exact expression is verified together with its ranked rational bound", async () => {
+  const input = options(`${newBound}\nQRH-Exact: (777 − √1081) / 852`, [
     file("submissions/2026-10-11-candidate-proof/src/Candidate/Main.lean"),
   ]);
-  input.validateEvidence = mock.fn(() => ({ theta_exact: "sqrt(3)/2" }));
-  await assert.rejects(run(input), {
-    message:
-      "The exact algebraic bound needs a trusted certified bound_interval",
-  });
-  assert.equal(input.validateEvidence.mock.callCount(), 1);
-  input.validateEvidence = () => ({
-    theta_exact: "sqrt(3)/2",
-    bound_interval: {
-      lower: { numerator: "4330127", denominator: "5000000" },
-      upper: { numerator: "17320509", denominator: "20000000" },
-    },
-  });
-  assert.match(await run(input), /0\.866025/);
+  input.validateEvidence = mock.fn(() => ({}));
+  assert.match(await run(input), /0\.87488660/);
+  assert.equal(
+    input.validateEvidence.mock.calls[0].arguments[1].theta_exact,
+    `(777 − √1081) / 852 ≤ ${bound}`,
+  );
 });
 
 test("requires a matching receipt after the PR head changes", async () => {

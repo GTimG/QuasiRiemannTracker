@@ -4,19 +4,22 @@ import { rational } from "../core/rational.mjs";
 import { sha256 } from "./common.mjs";
 
 import { submissionDependencies } from "./submission-dependencies.mjs";
-import { exactBound } from "../core/exact-bound.mjs";
+import { boundTargets, exactBound } from "../core/exact-bound.mjs";
 import { parseSubmissionMetadataJSON } from "./submission-metadata.mjs";
-export function manifest({ id, theta, exact_bound }) {
+// A manifest is derived from its canonical bound key alone. Callers may pass
+// either theta_exact or the fields that exactBound derives from it.
+export function manifest({ id, theta_exact, theta, exact_bound }) {
   if (!/^[a-z][a-z0-9-]{2,63}$/.test(id ?? ""))
     throw Error("Invalid submission ID");
-  rational(theta.numerator, theta.denominator);
-  if (BigInt(theta.numerator) <= 0n) throw Error("Bound must be positive");
-  const { lean, ...bound } = exactBound(
-    exact_bound ?? `${theta.numerator}/${theta.denominator}`,
-  );
+  const key =
+    theta_exact ??
+    exact_bound ??
+    `${rational(theta.numerator, theta.denominator).numerator}/${theta.denominator}`;
+  const { lean, rational_lean, ...bound } = exactBound(key);
   return {
     id,
     ...bound,
+    targets: boundTargets(key),
     entrypoint: { module: "Candidate.Main", declaration: "Candidate.bound" },
   };
 }

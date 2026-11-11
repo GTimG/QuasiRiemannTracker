@@ -103,41 +103,15 @@ test("duplicate IDs include immutable historical proof revisions", () => {
   );
 });
 
-test("unsupported algebraic values fail before they can be archived", () => {
+test("an exact expression is published with its proved rational bound", () => {
   const { catalogue, admission } = fixture();
+  admission.theta_exact = admission.certificate.theta_exact =
+    "(777 − √1081) / 852 ≤ 7/8";
+  const record = validatePublication(catalogue, admission);
+  assert.equal(record.exact_bound, "(777 − √1081) / 852");
+  assert.deepEqual(record.theta, { numerator: "7", denominator: "8" });
   admission.theta_exact = admission.certificate.theta_exact = "sqrt(2)/2";
-  admission.certificate.bound_interval = {
-    lower: { numerator: "7", denominator: "10" },
-    upper: { numerator: "71", denominator: "100" },
-  };
-  assert.throws(
-    () => validatePublication(catalogue, admission),
-    /Unsupported algebraic expression/,
-  );
-});
-
-test("an algebraic value without a certified enclosure cannot be published", () => {
-  const { catalogue, admission } = fixture();
-  admission.theta_exact = admission.certificate.theta_exact =
-    "(1507 − 2√921) / 1653";
-  assert.throws(
-    () => validatePublication(catalogue, admission),
-    /Missing exact bound enclosure/,
-  );
-});
-
-test("an invalid enclosure for a supported value is rejected before publication", () => {
-  const { catalogue, admission } = fixture();
-  admission.theta_exact = admission.certificate.theta_exact =
-    "(1507 − 2√921) / 1653";
-  admission.certificate.bound_interval = {
-    lower: { numerator: "7", denominator: "10" },
-    upper: { numerator: "71", denominator: "100" },
-  };
-  assert.throws(
-    () => validatePublication(catalogue, admission),
-    /Invalid certified enclosure/,
-  );
+  assert.throws(() => validatePublication(catalogue, admission));
 });
 
 test("admission normalizes documented announcements without historical website flags", () => {

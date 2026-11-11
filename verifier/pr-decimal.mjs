@@ -1,5 +1,6 @@
 import { cmp, rational } from "../core/rational.mjs";
 import { verifiedHere } from "../core/catalogue.mjs";
+import { exactBound } from "../core/exact-bound.mjs";
 
 export function decimalPrecision(value) {
   if (
@@ -20,40 +21,21 @@ function checkedRational(value) {
   return result;
 }
 
-function interval(value, label) {
-  if (!value || typeof value !== "object" || !value.lower || !value.upper)
-    throw Error(`${label} needs a trusted certified bound_interval`);
-  const lower = checkedRational(value.lower),
-    upper = checkedRational(value.upper);
-  if (cmp(lower, upper) > 0) throw Error(`${label} bound_interval is reversed`);
-  return { lower, upper };
-}
-
-function singleton(value) {
-  const exact = checkedRational(value);
-  return { lower: exact, upper: exact };
-}
-
-function prefix(bounds, digits, label) {
+// Truncated decimal digits of a positive rational.
+function prefix(q, digits) {
   const scale = 10n ** BigInt(digits);
-  const scaled = (q) => (BigInt(q.numerator) * scale) / BigInt(q.denominator);
-  const lower = scaled(bounds.lower),
-    upper = scaled(bounds.upper);
-  if (lower !== upper)
-    throw Error(
-      `${label} bound_interval needs refinement to certify these decimal digits`,
-    );
+  const scaled = (BigInt(q.numerator) * scale) / BigInt(q.denominator);
   return digits === 0
-    ? String(lower)
-    : `${lower / scale}.${String(lower % scale).padStart(digits, "0")}`;
+    ? String(scaled)
+    : `${scaled / scale}.${String(scaled % scale).padStart(digits, "0")}`;
 }
 
-// Compare rational bounds and certified algebraic enclosures from the trusted
-// base checkout's verification records and catalogue.
+// Every ranked bound is rational (an exact expression is ranked by its proved
+// rational upper bound), so decimals are compared against the trusted base
+// checkout's catalogue exactly.
 export function validateDecimalApproximation({
   theta_exact,
   theta_decimal,
-  bound_interval,
   catalogue,
 }) {
   const digits = decimalPrecision(theta_decimal);
@@ -63,11 +45,8 @@ export function validateDecimalApproximation({
     theta_exact !== theta_exact.trim()
   )
     throw Error("A decimal approximation needs an exact bound");
-  const match = /^(-?\d+)\/(\d+)$/.exec(theta_exact);
-  const candidate = match
-    ? singleton(rational(match[1], match[2]))
-    : interval(bound_interval, "The exact algebraic bound");
-  const actual = prefix(candidate, digits, "The submitted bound");
+  const candidate = checkedRational(exactBound(theta_exact).theta);
+  const actual = prefix(candidate, digits);
   if (actual !== theta_decimal)
     throw Error(
       `QRH-Decimal must give the exact bound's truncated digits: ${actual}`,
@@ -84,27 +63,12 @@ export function validateDecimalApproximation({
     checkedRational(record.theta);
     return !best || cmp(record.theta, best.theta) < 0 ? record : best;
   }, null);
-  const previousBounds = previous.exact_bound
-    ? interval(previous.bound_interval, "The previous bound")
-    : singleton(previous.theta);
-  if (
-    theta_exact === previous.exact_bound ||
-    (cmp(candidate.lower, candidate.upper) === 0 &&
-      cmp(previousBounds.lower, previousBounds.upper) === 0 &&
-      cmp(candidate.lower, previousBounds.lower) === 0)
-  )
-    return {
-      previous_result_id: previous.id,
-      previous_decimal: actual,
-    };
-  // The previous bound needs certified digits through the first difference.
+  if (cmp(candidate, previous.theta) === 0)
+    return { previous_result_id: previous.id, previous_decimal: actual };
+  // Report the previous bound through the first differing digit.
   const fractionalStart = actual.indexOf(".") + 1;
   for (let places = 0; places <= digits; places++) {
-    const previousDecimal = prefix(
-      previousBounds,
-      places,
-      "The previous bound",
-    );
+    const previousDecimal = prefix(previous.theta, places);
     const candidateDecimal = actual.slice(
       0,
       places === 0 ? fractionalStart - 1 : fractionalStart + places,
