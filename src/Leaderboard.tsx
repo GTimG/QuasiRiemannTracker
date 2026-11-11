@@ -42,6 +42,7 @@ export default function Leaderboard({
   onNavigate,
   sort,
   onSort,
+  toolbar,
 }: {
   records: Contribution[];
   selected: string | null;
@@ -49,6 +50,7 @@ export default function Leaderboard({
   onNavigate: (id: string) => void;
   sort: Sort;
   onSort: (sort: Sort) => void;
+  toolbar?: React.ReactNode;
 }) {
   return (
     <section className="panel contribution-list" aria-label="Submissions">
@@ -90,6 +92,7 @@ export default function Leaderboard({
             )}
           </button>
         ))}
+        {toolbar}
       </div>
       <ol className="leaderboard" aria-label="Contributions">
         {records.map((r) => {

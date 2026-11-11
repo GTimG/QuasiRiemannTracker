@@ -15,6 +15,8 @@ import Leaderboard, { type SortKey } from "./Leaderboard";
 import Contributors from "./Contributors";
 import { contributorLeaderboard } from "../core/contributors.mjs";
 import Milestones from "./Milestones";
+import DependencyGraph from "./DependencyGraph";
+import CatalogueDetail from "./CatalogueDetail";
 import LeanCode from "./LeanCode";
 import { tabs, useNavigation, type Tab } from "./navigation";
 const upstream =
@@ -50,7 +52,12 @@ export default function App() {
         : null,
     ),
     [error, setError] = useState(""),
-    [modal, setModal] = useState<"submit" | "policy" | null>(null);
+    [modal, setModal] = useState<"submit" | "policy" | null>(null),
+    [mode, setMode] = useState<"list" | "graph">(() =>
+      new URL(window.location.href).searchParams.get("mode") === "graph"
+        ? "graph"
+        : "list",
+    );
   const dialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const read = (name: string) =>
@@ -156,6 +163,15 @@ export default function App() {
     ).catch(() => {});
     return () => controller.abort();
   }, [all]);
+  const modeSwitch = (
+    <div className="mode-switch" role="group" aria-label="Submission view">
+      {(["list", "graph"] as const).map((m) => (
+        <button key={m} aria-pressed={mode === m} onClick={() => setMode(m)}>
+          {m === "list" ? "List" : "Graph"}
+        </button>
+      ))}
+    </div>
+  );
   return (
     <div className="shell">
       <main id="main">
@@ -274,14 +290,37 @@ export default function App() {
                       submissionsHref={tabHref("Submissions")}
                     />
                   ) : (
-                    <Leaderboard
-                      records={records}
-                      selected={selected}
-                      onSelect={setSelected}
-                      onNavigate={revealRecord}
-                      sort={sort}
-                      onSort={setSort}
-                    />
+                    <>
+                      {mode === "graph" ? (
+                        <>
+                          <DependencyGraph
+                            records={all}
+                            selected={selected}
+                            onSelect={setSelected}
+                            toolbar={modeSwitch}
+                          />
+                          {selected && all.some((r) => r.id === selected) && (
+                            <div className="panel graph-detail">
+                              <CatalogueDetail
+                                record={all.find((r) => r.id === selected)!}
+                                onClose={() => setSelected(null)}
+                                onSelect={setSelected}
+                              />
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <Leaderboard
+                          records={records}
+                          selected={selected}
+                          onSelect={setSelected}
+                          onNavigate={revealRecord}
+                          sort={sort}
+                          onSort={setSort}
+                          toolbar={modeSwitch}
+                        />
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -408,10 +447,9 @@ function Protocol() {
         </p>
         <p>
           Verification runs through the project’s GitHub Actions CI. If CI
-          resources run out, maintainers may run the same verification checks
-          on maintainer infrastructure. Results are verified before merging
-          and link to their committed source and any recorded verification
-          report.
+          resources run out, maintainers may run the same verification checks on
+          maintainer infrastructure. Results are verified before merging and
+          link to their committed source and any recorded verification report.
         </p>
         <p>
           The permitted axioms are propext, Classical.choice and Quot.sound.
