@@ -51,16 +51,6 @@ export function algebraicRecord(overrides = {}) {
       denominator: "100000000000000000000000000000000000",
     },
     exact_bound: "(1507 − 2√921) / 1653",
-    bound_interval: {
-      lower: {
-        numerator: "87495706979916874001834000695887921",
-        denominator: "100000000000000000000000000000000000",
-      },
-      upper: {
-        numerator: "87495706979916874001834000695887923",
-        denominator: "100000000000000000000000000000000000",
-      },
-    },
     timeline_at: "2030-10-06T00:00:00Z",
     date_label: "Submitted",
     first_verified_at: "",

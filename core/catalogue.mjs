@@ -1,4 +1,5 @@
-import { cmp, fraction, rational, sub } from "./rational.mjs";
+import { cmp, fraction, rational } from "./rational.mjs";
+import { exactBound, witnessedBound } from "./exact-bound.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -47,7 +48,12 @@ export const contributionDateValue = (r) =>
       : contributionDate(r);
 export const contributionDateTitle = (r) =>
   `${r.date_label || "Public announcement"}: ${contributionDateValue(r)}${r.date_precision ? ` (${r.date_precision} only)` : ""}`;
+// Display label: the exact expression when there is one.
 export const boundLabel = (r) => r.exact_bound || fraction(r.theta);
+// Verification identity (theta_exact): an exact expression is keyed together
+// with the proved rational upper bound that is ranked.
+export const boundKey = (r) =>
+  r.exact_bound ? witnessedBound(r.exact_bound, r.theta) : fraction(r.theta);
 export const verifiedHere = (r) =>
   r.status === "accepted" ||
   r.status === "framework-verified" ||
@@ -130,32 +136,8 @@ export function validateCatalogue(data) {
         throw Error("Unsafe reference");
       if (ref.url.split("/").includes("..")) throw Error("Unsafe path");
     }
-    if (r.exact_bound) {
-      if (r.exact_bound !== "(1507 − 2√921) / 1653")
-        throw Error(
-          "Unsupported algebraic expression: provide exact interval validation",
-        );
-      const { lower, upper } = r.bound_interval || {};
-      for (const q of [lower, upper]) rational(q.numerator, q.denominator);
-      const delta = (q) => {
-        const n = BigInt(q.numerator),
-          d = BigInt(q.denominator),
-          a = 1507n * d - 1653n * n;
-        if (a <= 0n) throw Error("Algebraic interval outside positive branch");
-        return a * a - 3684n * d * d;
-      };
-      if (
-        delta(lower) < 0n ||
-        delta(upper) > 0n ||
-        cmp(lower, upper) >= 0 ||
-        cmp(r.theta, upper) !== 0 ||
-        cmp(sub(upper, lower), {
-          numerator: "1",
-          denominator: "1000000000000000000000000000000",
-        }) > 0
-      )
-        throw Error("Invalid certified enclosure for Liu's bound");
-    }
+    // An exact expression must be canonical; theta is its proved upper bound.
+    if (r.exact_bound) exactBound(boundKey(r));
   }
   const currentById = new Map(
     data.records.map((record) => [record.id, record]),
@@ -187,16 +169,5 @@ export function validateCatalogue(data) {
     checked.add(record);
   };
   for (const record of proofRecords) checkCycles(record);
-  // Every displayed comparison must be decided exactly, even for algebraic entries.
-  for (const a of data.records)
-    for (const b of data.records) {
-      if (a.id === b.id || (!a.bound_interval && !b.bound_interval)) continue;
-      const alo = a.bound_interval?.lower || a.theta,
-        ahi = a.bound_interval?.upper || a.theta;
-      const blo = b.bound_interval?.lower || b.theta,
-        bhi = b.bound_interval?.upper || b.theta;
-      if (cmp(ahi, blo) >= 0 && cmp(bhi, alo) >= 0)
-        throw Error("Overlapping bound intervals: refine before ranking");
-    }
   return data;
 }

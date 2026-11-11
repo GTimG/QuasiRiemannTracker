@@ -76,7 +76,6 @@ try {
     if (declaration)
       validateDecimalApproximation({
         ...declaration,
-        bound_interval: report.bound_interval,
         catalogue,
       });
     const record =

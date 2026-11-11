@@ -8,11 +8,9 @@ import type { Contribution, Rational } from "./types";
 
 function DeltaMath({
   value,
-  approximate = false,
   prefix = false,
 }: {
   value: Rational;
-  approximate?: boolean;
   prefix?: boolean;
 }) {
   const formatted = scientific(value).replace(
@@ -23,7 +21,7 @@ function DeltaMath({
     <MathJax
       inline
       dynamic
-    >{`\\(${prefix ? "\\Delta " : ""}${approximate ? "\\approx " : ""}${formatted}\\)`}</MathJax>
+    >{`\\(${prefix ? "\\Delta " : ""}${formatted}\\)`}</MathJax>
   );
 }
 
@@ -91,10 +89,7 @@ export default function Contributors({
                   title={fraction(person.improvement)}
                 >
                   <span className="entry-decimal">
-                    <DeltaMath
-                      value={person.improvement}
-                      approximate={person.approximate}
-                    />
+                    <DeltaMath value={person.improvement} />
                   </span>
                 </span>
                 <ChevronDown
@@ -110,11 +105,9 @@ export default function Contributors({
                   ({
                     record,
                     delta,
-                    approximate,
                   }: {
                     record: Contribution;
                     delta: Rational;
-                    approximate: boolean;
                   }) => (
                     <li className="contributor-submission" key={record.id}>
                       <span className="contributor-submission-title">
@@ -122,11 +115,7 @@ export default function Contributors({
                       </span>
                       <span className="contributor-scores">
                         <span title={fraction(delta)}>
-                          <DeltaMath
-                            value={delta}
-                            approximate={approximate}
-                            prefix
-                          />
+                          <DeltaMath value={delta} prefix />
                         </span>
                         <span title={boundLabel(record)}>
                           {submissionLink(record, decimal(record.theta, 14))}

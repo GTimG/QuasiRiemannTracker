@@ -12,12 +12,15 @@ import {
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import {
-  boundLabel,
   validateCatalogue,
   withSubmissionTimeline,
 } from "../core/catalogue.mjs";
 import { proofRevision } from "../core/catalogue-revisions.mjs";
-import { exactBound } from "../core/exact-bound.mjs";
+import {
+  algebraicFromLean,
+  exactBound,
+  witnessedBound,
+} from "../core/exact-bound.mjs";
 import { reduced } from "../core/rational.mjs";
 import { historicalCertificate } from "../verifier/certificate.mjs";
 import { submissionFiles } from "../verifier/manifest.mjs";
@@ -109,21 +112,52 @@ export function submissionBound(sourceRoot) {
       const signature = source
         .slice(declarations[0].index + declarations[0][0].length)
         .split(":=", 1)[0];
+      const name = String.raw`(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)`;
       const matches = [
         ...signature.matchAll(
-          /\(\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\s*:\s*\(\s*(\d+)\s*\/\s*(\d+)\s*:\s*ℝ\s*\)\s*<\s*(?:[\p{L}_][\p{L}\p{M}\p{N}_']*|«[^»\n]+»)\.re\s*\)/gu,
+          new RegExp(
+            String.raw`\(\s*${name}\s*:\s*\(\s*([^:]+?)\s*:\s*ℝ\s*\)\s*<\s*${name}\.re\s*\)`,
+            "gu",
+          ),
         ),
       ];
       if (matches.length !== 1)
         throw Error(`Cannot read the canonical exact bound in ${module}`);
-      if (matches[0][1].length > 200 || matches[0][2].length > 200)
-        throw Error("Exact bound integers exceed the catalogue limit");
-      const theta = reduced(BigInt(matches[0][1]), BigInt(matches[0][2]));
-      return exactBound(`${theta.numerator}/${theta.denominator}`).theta;
+      const fractionMatch = /^(\d+)\s*\/\s*(\d+)$/.exec(matches[0][1]);
+      if (fractionMatch) {
+        if (fractionMatch[1].length > 200 || fractionMatch[2].length > 200)
+          throw Error("Exact bound integers exceed the catalogue limit");
+        const theta = reduced(
+          BigInt(fractionMatch[1]),
+          BigInt(fractionMatch[2]),
+        );
+        return exactBound(`${theta.numerator}/${theta.denominator}`);
+      }
+      // An exact algebraic bound is ranked by its proved rational upper bound,
+      // stated next to it as `theorem bound_le : (EXPR : ℝ) ≤ (p / q : ℝ)`.
+      const exact = algebraicFromLean(matches[0][1]);
+      const witnesses = [...source.matchAll(/\btheorem\s+bound_le\b/g)];
+      if (witnesses.length !== 1)
+        throw Error(
+          `An exact algebraic bound needs one bound_le theorem in ${module}`,
+        );
+      const statement = source
+        .slice(witnesses[0].index + witnesses[0][0].length)
+        .split(":=", 1)[0];
+      const witness =
+        /^\s*:\s*\(([^:]+?)\s*:\s*ℝ\s*\)\s*≤\s*\(\s*(\d{1,200})\s*\/\s*(\d{1,200})\s*:\s*ℝ\s*\)\s*$/u.exec(
+          statement,
+        );
+      if (!witness || algebraicFromLean(witness[1]).label !== exact.label)
+        throw Error(
+          `bound_le in ${module} must state (${exact.lean} : ℝ) ≤ (p / q : ℝ)`,
+        );
+      const theta = reduced(BigInt(witness[2]), BigInt(witness[3]));
+      return exactBound(witnessedBound(exact.label, theta));
     }
     const exports = [
       ...source.matchAll(
-        /\bexport\s+((?:Candidate|Submissions)(?:\.[A-Za-z_][A-Za-z0-9_]*)+)\s*\(\s*bound\s*\)/g,
+        /\bexport\s+((?:Candidate|Submissions)(?:\.[A-Za-z_][A-Za-z0-9_]*)+)\s*\(\s*bound(?:\s+bound_le)?\s*\)/g,
       ),
     ];
     if (exports.length !== 1)
@@ -234,11 +268,15 @@ export function buildSubmissionCatalogue({
     const date = /^(\d{4}-\d{2}-\d{2})-/.exec(name)?.[1];
     if (!date)
       throw Error(`Modern submission requires a dated directory: ${name}`);
-    const theta = submissionBound(join(base, "src"));
+    const {
+      theta_exact,
+      lean: _,
+      rational_lean: __,
+      ...bound
+    } = submissionBound(join(base, "src"));
     const facts = Object.hasOwn(publications, id)
       ? publications[id].find(
-          (publication) =>
-            publication.certificate.theta_exact === boundLabel({ theta }),
+          (publication) => publication.certificate.theta_exact === theta_exact,
         )
       : undefined;
     const evidence = facts?.certificate;
@@ -300,7 +338,7 @@ export function buildSubmissionCatalogue({
       withSubmissionTimeline({
         id,
         title: metadata.title,
-        theta,
+        ...bound,
         authors: metadata.authors,
         method: metadata.description,
         license: metadata.license || "See submitted source notices",

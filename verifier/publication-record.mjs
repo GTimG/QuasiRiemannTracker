@@ -8,7 +8,8 @@ import {
   catalogueProofRecords,
   proofRevision,
 } from "../core/catalogue-revisions.mjs";
-import { rational } from "../core/rational.mjs";
+import { fraction } from "../core/rational.mjs";
+import { exactBound } from "../core/exact-bound.mjs";
 import { certificate } from "./certificate.mjs";
 import { validateSubmissionMetadata } from "./submission-metadata.mjs";
 import {
@@ -38,22 +39,14 @@ export function publicationRecord(admission, verification = admission) {
     verification.source_tree !== admission.source_tree
   )
     throw Error("Publication record differs from its verified source");
-  const fraction = /^(\d+)\/(\d+)$/.exec(admission.theta_exact);
-  const theta = fraction
-    ? rational(fraction[1], fraction[2])
-    : evidence.bound_interval?.upper;
-  if (!theta)
-    throw Error(`Missing exact bound enclosure: ${admission.result_id}`);
+  const bound = exactBound(admission.theta_exact);
   const solution = `https://github.com/${admission.repository}/blob/${admission.head_sha}/${admission.source_path}/Candidate/Main.lean`;
   const certificateUrl = `certificates/${admission.result_id}.json`;
   return withSubmissionTimeline({
     id: admission.result_id,
     title: metadata.title,
-    theta,
-    ...(!fraction ? { exact_bound: admission.theta_exact } : {}),
-    ...(evidence.bound_interval
-      ? { bound_interval: evidence.bound_interval }
-      : {}),
+    theta: bound.theta,
+    ...(bound.exact_bound ? { exact_bound: bound.exact_bound } : {}),
     authors: metadata.authors,
     method: metadata.description,
     license: metadata.license || "See submitted source notices",
@@ -69,7 +62,7 @@ export function publicationRecord(admission, verification = admission) {
     timeline_at: metadata.published_at || admission.pr.created_at,
     date_label: "Public announcement",
     entrypoint: { module: "Candidate.Main", declaration: "Candidate.bound" },
-    verification_note: `Comparator checked the canonical all-Dirichlet statement at ${admission.theta_exact} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`,
+    verification_note: `Comparator checked the canonical all-Dirichlet statement at ${bound.exact_bound ?? admission.theta_exact}${bound.exact_bound ? `, and that this bound is at most ${fraction(bound.theta)},` : ""} for the submitted commit. Lean, NanoDa and con-ron accepted the proof in the standard sandbox.`,
     certificate_url: certificateUrl,
     solution_url: solution,
     references: [

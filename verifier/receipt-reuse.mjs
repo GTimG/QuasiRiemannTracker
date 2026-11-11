@@ -109,11 +109,8 @@ export function reusableReceipt(
     registration.report_sha256, "receipt bytes differ from protected registration");
   const report = acceptedWorkerReport(expected, JSON.parse(bytes));
   require(report.source_commit === expected.head_sha &&
-    report.verified_at === registration.verified_at &&
-    canonical(report.bound_interval ?? null) ===
-      canonical(
-        registration.bound_interval ?? null,
-      ), "certificate differs from accepted proof provenance");
+    report.verified_at ===
+      registration.verified_at, "certificate differs from accepted proof provenance");
   const toolNames = [
     "source_lean",
     "exporter",
@@ -144,7 +141,8 @@ export function reusableReceipt(
     contract.head_sha === expected.head_sha &&
     contract.source_commit === expected.head_sha &&
     contract.manifest?.id === expected.result_id, "contract identity mismatch");
-  require((contract.manifest.exact_bound ??
+  require((contract.manifest.theta_exact ??
+    contract.manifest.exact_bound ??
     `${contract.manifest.theta?.numerator}/${contract.manifest.theta?.denominator}`) ===
     expected.theta_exact, "contract bound differs from the registered theorem");
   require(contract.source_files &&

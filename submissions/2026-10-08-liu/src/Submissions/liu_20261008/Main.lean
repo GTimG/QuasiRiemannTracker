@@ -29,4 +29,15 @@ theorem bound {q : ℕ} [NeZero q] (χ : _root_.DirichletCharacter ℂ q) {s : �
     (hpole : ¬ (χ = 1 ∧ s = 1)) : _root_.DirichletCharacter.LFunction χ s ≠ 0 := by
   exact CombinedPaper.algebraic_dirichlet_nonzero q (NeZero.ne q) χ s hs hpole
 
+/-- The ranked rational upper bound for the exact algebraic bound. -/
+theorem bound_le :
+    ((1507 - 2 * Real.sqrt 921) / 1653 : ℝ) ≤
+      (874957069799168740018340006959 / 1000000000000000000000000000000 : ℝ) := by
+  have h :
+      (1507 - 1653 * (874957069799168740018340006959 /
+        1000000000000000000000000000000 : ℝ)) / 2 ≤ Real.sqrt 921 :=
+    Real.le_sqrt_of_sq_le (by norm_num)
+  rw [div_le_iff₀ (by norm_num)]
+  linarith
+
 end Submissions.liu_20261008

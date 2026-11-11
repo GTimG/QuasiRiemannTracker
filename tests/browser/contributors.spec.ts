@@ -17,7 +17,6 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
     theta: { numerator, denominator },
     authors: [{ name }],
     exact_bound: undefined,
-    bound_interval: undefined,
     timeline_at: `2026-01-0${i + 1}T00:00:00Z`,
   }));
   await routeCatalogue(page, { schema_version: 1, records: records.reverse() });

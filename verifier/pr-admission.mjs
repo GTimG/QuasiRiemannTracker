@@ -2,6 +2,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { rational } from "../core/rational.mjs";
+import { exactBound, witnessedBound } from "../core/exact-bound.mjs";
 import { maintenanceVerification } from "./pr-maintenance.mjs";
 import { currentVerification } from "./actions/result.mjs";
 import {
@@ -13,34 +14,36 @@ import {
   validateDecimalApproximation,
 } from "./pr-decimal.mjs";
 
+// QRH-Bound is always the rational that is ranked. An optional QRH-Exact
+// gives an exact algebraic expression; the proof must then establish the
+// statement at that expression and that it is at most QRH-Bound.
 export function parseDeclaration(body) {
   const fields = new Map();
   for (const line of (body ?? "").split(/\r?\n/)) {
     if (!/^QRH-/i.test(line.trim())) continue;
-    const match = /^QRH-(Result|Bound|Decimal): ([^\r\n]+)$/.exec(line.trim());
+    const match = /^QRH-(Result|Bound|Exact|Decimal): ([^\r\n]+)$/.exec(
+      line.trim(),
+    );
     if (!match) throw Error("Malformed or unknown QRH declaration field");
     if (fields.has(match[1])) throw Error("Duplicate QRH declaration field");
     fields.set(match[1], match[2].trim());
   }
   if (!fields.size) return null;
   const result_id = fields.get("Result"),
-    theta_exact = fields.get("Bound");
+    bound = fields.get("Bound"),
+    exact = fields.get("Exact");
   if (!/^[a-z][a-z0-9-]{2,63}$/.test(result_id ?? ""))
     throw Error("New bounds require QRH-Result: <stable-result-id>");
-  if (
-    !theta_exact ||
-    theta_exact.length > 256 ||
-    /[\x00-\x1f\x7f]/.test(theta_exact)
-  )
-    throw Error("New bounds require QRH-Bound: <exact checked value>");
-  // Rational literals must be canonical. Algebraic expressions are compared
-  // byte-for-byte with the trusted replay's exact bound.
-  if (/^[\d\s+./-]+$/.test(theta_exact)) {
-    const match = /^(-?\d+)\/(\d+)$/.exec(theta_exact);
-    if (!match) throw Error("Use an exact reduced fraction");
-    const value = rational(match[1], match[2]);
-    if (BigInt(value.numerator) <= 0n) throw Error("Bound must be positive");
-  }
+  const fractionMatch = /^(-?\d+)\/(\d+)$/.exec(bound ?? "");
+  if (!fractionMatch)
+    throw Error(
+      "New bounds require QRH-Bound: <reduced fraction p/q>; give an exact algebraic expression in QRH-Exact",
+    );
+  const theta = rational(fractionMatch[1], fractionMatch[2]);
+  if (BigInt(theta.numerator) <= 0n) throw Error("Bound must be positive");
+  const theta_exact =
+    exact === undefined ? bound : witnessedBound(exact, theta);
+  exactBound(theta_exact);
   const theta_decimal = fields.get("Decimal");
   decimalPrecision(theta_decimal);
   return { result_id, theta_exact, theta_decimal };
@@ -49,7 +52,7 @@ export function parseDeclaration(body) {
 export function hasResultSection(body) {
   return (body ?? "")
     .split(/\r?\n/)
-    .some((line) => /^QRH-(?:Result|Bound|Decimal)\b/i.test(line.trim()));
+    .some((line) => /^QRH-(?:Result|Bound|Exact|Decimal)\b/i.test(line.trim()));
 }
 
 function proofPath(name) {
@@ -171,7 +174,7 @@ export async function evaluatePR({
       throw Error(`Keep the original submission directory ${original}`);
   }
   validateSubmissionDirectory(directory, { submittedAt: pr.created_at });
-  const evidence = await validateEvidence(root, {
+  await validateEvidence(root, {
     repository,
     number: pr.number,
     head_sha: pr.head.sha,
@@ -181,7 +184,6 @@ export async function evaluatePR({
   validateDecimalApproximation({
     theta_exact: declaration.theta_exact,
     theta_decimal: declaration.theta_decimal,
-    bound_interval: evidence?.bound_interval,
     catalogue: JSON.parse(
       readFileSync(join(root, "catalogue/results.json"), "utf8"),
     ),
