@@ -100,6 +100,9 @@ def pack_cache(library, archive, inputs):
     if not required.issubset(files):
         raise ValueError('Compiled submission cache is incomplete')
     manifest = json.dumps({'inputs': inputs, 'files': files}, sort_keys=True).encode()
+    # The reader counts the manifest too; never produce an archive it rejects.
+    if len(manifest) > 16 * 1024 * 1024 or total + len(manifest) > MAX_BYTES:
+        raise ValueError('Compiled submission cache exceeds size limits')
     archive.parent.mkdir(parents=True, exist_ok=True)
     with tarfile.open(archive, 'w:gz', compresslevel=1) as output:
         entry = tarfile.TarInfo('manifest.json')
@@ -109,7 +112,7 @@ def pack_cache(library, archive, inputs):
             output.add(library/name, arcname=name, recursive=False)
 
 
-def restore_cache(archive, library, inputs):
+def restore_cache(archive, library, inputs, *, exact=False):
     """Authenticate externally first. Stage validated outputs before publishing."""
     approved_names(inputs)
     if archive.stat().st_size > MAX_BYTES:
@@ -131,6 +134,8 @@ def restore_cache(archive, library, inputs):
         allowed = approved_names(cached)
         if reason := compatibility_error(cached, inputs):
             raise ValueError(reason)
+        if exact and cached != inputs:
+            raise ValueError('Publication archive inputs differ from planned part')
         if set(manifest['files']) != set(members) or not set(members) <= allowed:
             raise ValueError('Build cache inventory differs')
         required = {m.replace('.', '/')+'.olean' for m in cached['modules']}

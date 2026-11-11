@@ -292,10 +292,18 @@ cache, so a PR compiles only its own new modules. The **Build cache** workflow
 maintains it after every push to `main` that changes `submissions/` or the
 verifier, and rebuilds all shards every Monday at 04:47 UTC. On the proof runner it compiles the shared `Submissions.<id>.*`
 modules of every merged submission in the same sandbox as admission, and
-publishes one archive per submission (a shard) to the
+publishes each submission (a logical shard) as bounded archive pieces to the
 `submission-build-cache-v2` release, listed in a signed `cache.json`. Only
 shards whose modules changed are rebuilt on pushes; admission downloads only the shards
 its PR imports. Each PR's `Candidate.*` modules are never cached.
+
+Large shards are split using actual compiled file sizes. Each piece holds at
+most 512 MiB of compiler outputs, keeps a module's companion files together,
+and must compress below 1 GiB. The unchanged 4 GiB extraction and file-count
+limits still apply independently to every archive. The signed version-3 index
+binds every piece's hash, size and exact module keys; missing, overlapping or
+misassigned pieces fail validation before publication. Version-2 caches remain
+readable and are rebuilt into the new format on the next cache run.
 
 The signing key is the `QRH_BUILD_CACHE_KEY` secret of the `build-cache`
 environment, restricted to `main`; its public key is pinned in

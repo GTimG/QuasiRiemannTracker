@@ -5,14 +5,18 @@ job validates that artifact as data, then signs and publishes it. Neither the
 signing key nor a repository write token is available in the build job.
 """
 from pathlib import Path
-import argparse, datetime, json, os, re, shutil, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request
+import argparse, datetime, json, os, shutil, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from cache_release import KEY, REPOSITORY, TAG, authenticate, download, fetch_shards, INDEX_BYTES, RELEASE
-from standard.build_cache import SUFFIXES, approved_names, digest, pack_cache, restore_cache, shard_of
+from cache_release import (KEY, REPOSITORY, TAG, authenticate, download, fetch_shards,
+                           INDEX_BYTES, RELEASE, PART_ARCHIVE_BYTES, shard_parts, validate_index)
+from standard.build_cache import MAX_FILES, SUFFIXES, approved_names, digest, pack_cache, restore_cache, shard_of
 
 OUT = Path('verification').resolve()
 API = f'https://api.github.com/repos/{REPOSITORY}'
+# Leave ample room for the manifest, tar headers and compression overhead below
+# both the 1 GiB release-piece limit and the unchanged 4 GiB extraction limit.
+PART_PAYLOAD_BYTES = 512 * 1024 ** 2
 
 
 def api(method, url, token, data=None, headers=None):
@@ -46,8 +50,36 @@ def upload(current, path, token):
                                        'Content-Length': str(path.stat().st_size)})
 
 
-def pack_shard(name, modules, keys, library, directory):
-    """Archive one shard's compiled modules, admitting only their named outputs."""
+def module_parts(modules, library):
+    """Partition by actual output sizes, keeping each module's products together."""
+    group, total, files = {}, 0, 0
+    for module, key in sorted(modules.items()):
+        size, count = 0, 0
+        for suffix in SUFFIXES:
+            source = library/(module.replace('.', '/')+suffix)
+            if any(p.is_symlink() for p in [source, *source.parents] if p == library or library in p.parents):
+                raise ValueError(f'Symlink in compiled submission: {module}')
+            if source.exists() and not source.is_file():
+                raise ValueError(f'Non-file compiler output: {module}{suffix}')
+            if suffix == '.olean' and not source.is_file():
+                raise ValueError(f'Missing compiler output: {module}')
+            if source.is_file():
+                size += source.stat().st_size
+                count += 1
+        if size > PART_PAYLOAD_BYTES:
+            raise ValueError(f'One module exceeds cache piece capacity: {module} ({size} bytes)')
+        if group and (total + size > PART_PAYLOAD_BYTES or files + count >= MAX_FILES):
+            yield group
+            group, total, files = {}, 0, 0
+        group[module] = key
+        total += size
+        files += count
+    if group:
+        yield group
+
+
+def pack_part(modules, keys, library, directory):
+    """Archive a bounded part, admitting only the named compiler outputs."""
     staged = directory/'stage'
     shutil.rmtree(staged, ignore_errors=True)
     for module in modules:
@@ -61,6 +93,8 @@ def pack_shard(name, modules, keys, library, directory):
                 shutil.copyfile(source, staged/relative)
     packed = directory/'shard.tar.gz'
     pack_cache(staged, packed, {**keys, 'modules': modules})
+    if packed.stat().st_size > PART_ARCHIVE_BYTES:
+        raise ValueError('Compressed cache piece exceeds size limit')
     sha = digest(packed)
     archive = directory/(sha+'.tar.gz')
     packed.rename(archive)
@@ -105,18 +139,31 @@ def prepare():
     with tempfile.TemporaryDirectory(dir=OUT, prefix='cache-pack-') as tmp:
         tmp = Path(tmp)
         for name in plan['changed']:
-            archive, index_shards[name] = pack_shard(name, shards[name], keys, OUT/'run/candidate-lib', tmp)
-            archive.rename(bundle/archive.name)
-    (bundle/'cache.json').write_text(json.dumps({'schema_version': 2, 'source_head': head,
+            parts = []
+            for modules in module_parts(shards[name], OUT/'run/candidate-lib'):
+                archive, entry = pack_part(modules, keys, OUT/'run/candidate-lib', tmp)
+                archive.rename(bundle/archive.name)
+                parts.append(entry)
+                print(f'Packaged {name} part {len(parts)}: {len(modules)} modules, '
+                      f'{entry["size"]} compressed bytes', flush=True)
+            index_shards[name] = {'modules': shards[name], 'parts': parts}
+    value = {'schema_version': 3, 'source_head': head,
         'created_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'environment': keys['environment'], 'compiler': keys['compiler'],
-        'libraries': keys['libraries'], 'shards': index_shards}, sort_keys=True)+'\n')
+        'libraries': keys['libraries'], 'shards': index_shards}
+    validate_index(value)
+    encoded = json.dumps(value, sort_keys=True)+'\n'
+    if len(encoded.encode()) > INDEX_BYTES:
+        raise ValueError('Publication index exceeds size limit')
+    (bundle/'cache.json').write_text(encoded)
 
 
 def validate_bundle(bundle):
     plan, shards = validate_plan(bundle)
-    index = json.loads((bundle/'cache.json').read_text())
-    if (index.get('schema_version') != 2 or index.get('source_head') != plan['head_sha'] or
+    if (bundle/'cache.json').stat().st_size > INDEX_BYTES:
+        raise ValueError('Publication index exceeds size limit')
+    index = validate_index(json.loads((bundle/'cache.json').read_text()))
+    if (index.get('schema_version') != 3 or index.get('source_head') != plan['head_sha'] or
             any(index.get(k) != plan['keys'][k] for k in ['environment', 'compiler', 'libraries']) or
             set(index['shards']) != set(shards)):
         raise ValueError('Publication index does not match the cache plan')
@@ -129,18 +176,18 @@ def validate_bundle(bundle):
             if entry != plan['previous'][name]:
                 raise ValueError('Unchanged shard was replaced')
             continue
-        sha = entry['sha256']
-        if not re.fullmatch('[a-f0-9]{64}', sha) or entry['archive'] != sha+'.tar.gz':
-            raise ValueError('Invalid publication archive name')
-        archive = bundle/entry['archive']
-        if archive.is_symlink() or archive.stat().st_size != entry['size'] or digest(archive) != sha:
-            raise ValueError('Publication archive checksum differs')
-        # Reuse the consumer's strict archive validator; never execute its contents.
-        with tempfile.TemporaryDirectory(dir=OUT, prefix='cache-validate-') as tmp:
-            selected = restore_cache(archive, Path(tmp)/'lib', {**plan['keys'], 'modules': modules})
-            if selected != set(modules):
-                raise ValueError('Publication archive is missing planned modules')
-        archives.append(archive)
+        for part in entry['parts']:
+            archive = bundle/part['archive']
+            if archive.is_symlink() or archive.stat().st_size != part['size'] or digest(archive) != part['sha256']:
+                raise ValueError('Publication archive checksum differs')
+            # Validate exact part inventory, including manifest-only module claims,
+            # before reusing the consumer's strict extractor. Never execute data.
+            with tempfile.TemporaryDirectory(dir=OUT, prefix='cache-validate-') as tmp:
+                selected = restore_cache(archive, Path(tmp)/'lib',
+                    {**plan['keys'], 'modules': part['modules']}, exact=True)
+                if selected != set(part['modules']):
+                    raise ValueError('Publication archive is missing planned modules')
+            archives.append(archive)
     return plan, index, archives
 
 
@@ -182,7 +229,8 @@ def main():
         upload(current, index, token)
         upload(current, signature, token)
         # Keep archives of the previous index for workers that already read it.
-        keep = {e['archive'] for e in index_value['shards'].values()} | {e['archive'] for e in plan['previous'].values()}
+        keep = {p['archive'] for s in [*index_value['shards'].values(), *plan['previous'].values()]
+                for p in shard_parts(s)}
         current = api('GET', f'{API}/releases/tags/{TAG}', token)
         for asset in current['assets']:
             if asset['name'].endswith('.tar.gz') and asset['name'] not in keep:
@@ -194,8 +242,11 @@ def main():
         if actual != index_value:
             raise ValueError('Published cache index differs from this run')
         for name in plan['changed']:
-            with tempfile.TemporaryDirectory(dir=tmp) as check:
-                fetch_shards(actual, [name], Path(check))
+            # Bound scratch space to one part, even for a very large submission.
+            for part in actual['shards'][name]['parts']:
+                with tempfile.TemporaryDirectory(dir=tmp) as check:
+                    single = {'shards': {name: {'modules': part['modules'], 'parts': [part]}}}
+                    fetch_shards(single, [name], Path(check))
     print(f'Published and downloaded {len(plan["changed"])} changed shards; index lists {len(index_value["shards"])} '
           f'shards for {head}', flush=True)
 

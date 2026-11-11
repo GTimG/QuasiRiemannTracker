@@ -5,6 +5,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'verifier'))
 from standard.build_cache import build_inputs, pack_cache, restore_cache, restore_shards, shard_of, digest, compatibility_error
+import standard.build_cache as build_cache
 spec = importlib.util.spec_from_file_location('restore_build', ROOT/'verifier/actions/restore-build.py')
 restore = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(restore)
@@ -14,6 +15,7 @@ spec.loader.exec_module(plan_cache)
 spec = importlib.util.spec_from_file_location('publish_cache', ROOT/'verifier/actions/publish-cache.py')
 publish_cache = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(publish_cache)
+import cache_release
 
 
 class CacheTests(unittest.TestCase):
@@ -251,6 +253,133 @@ class CacheTests(unittest.TestCase):
         self.assertEqual(restore_cache(archives[0], self.root/'published-lib', keys), set(keys['modules']))
         self.assertFalse((self.root/'published-lib/Candidate').exists())
 
+    def multipart_publication(self):
+        out, keys = self.publication()
+        # Keep the test small while reproducing a logical shard larger than the
+        # extractor's hard cap. Every part must independently fit that same cap.
+        modules = {f'Submissions.base.Part{i}': str(i)*64 for i in range(5)}
+        keys['modules'] = modules
+        for module in modules:
+            base = out/'run/candidate-lib'/(module.replace('.', '/')+'.olean')
+            base.write_bytes(b'compiled'*375)
+            Path(str(base)+'.private').write_bytes(b'private')
+            Path(str(base)+'.server').write_bytes(b'server')
+        plan = out/'cache-plan.json'
+        value = json.loads(plan.read_text())
+        value['keys'] = keys
+        plan.write_text(json.dumps(value))
+        inputs = out/'run/build-inputs.json'
+        inputs.write_text(json.dumps(keys))
+        result = out/'run/build-result.json'
+        value = json.loads(result.read_text())
+        value['build_inputs_sha256'] = digest(inputs)
+        result.write_text(json.dumps(value))
+        patch.object(publish_cache, 'PART_PAYLOAD_BYTES', 6500).start()
+        patch.object(build_cache, 'MAX_BYTES', 12000).start()
+        return out, keys
+
+    def test_oversized_logical_shard_splits_and_restores_every_product(self):
+        out, keys = self.multipart_publication()
+        # The old single-archive implementation fails with the exact same data.
+        with self.assertRaisesRegex(ValueError, 'size limits'):
+            publish_cache.pack_part(keys['modules'], keys, out/'run/candidate-lib', self.root)
+        publish_cache.prepare()
+        _, index, archives = publish_cache.validate_bundle(out/'cache-publication')
+        self.assertEqual(index['schema_version'], 3)
+        self.assertEqual(len(archives), 3)
+        parts = index['shards']['Submissions.base']['parts']
+        self.assertEqual([len(p['modules']) for p in parts], [2, 2, 1])
+        downloaded = self.root/'downloaded'
+        downloaded.mkdir()
+        def fetch(url, target, limit):
+            source = out/'cache-publication'/url.rsplit('/', 1)[1]
+            self.assertLessEqual(source.stat().st_size, limit)
+            shutil.copyfile(source, target)
+        fetched = cache_release.fetch_shards(index, ['Submissions.base'], downloaded, fetch)
+        restored = self.root/'multipart-lib'
+        self.assertEqual(restore_shards({'shards':fetched}, restored, keys), set(keys['modules']))
+        for module in keys['modules']:
+            for suffix in build_cache.SUFFIXES:
+                relative = module.replace('.', '/')+suffix
+                self.assertEqual((restored/relative).read_bytes(), (out/'run/candidate-lib'/relative).read_bytes())
+
+    def test_partitions_are_bounded_and_reject_oversized_single_modules(self):
+        out, keys = self.multipart_publication()
+        lib = out/'run/candidate-lib'
+        with patch.object(publish_cache, 'MAX_FILES', 4):
+            self.assertEqual(len(list(publish_cache.module_parts(keys['modules'], lib))), 5)
+        with patch.object(publish_cache, 'PART_PAYLOAD_BYTES', 3013):
+            self.assertEqual(len(list(publish_cache.module_parts(keys['modules'], lib))), 5)
+        with patch.object(publish_cache, 'PART_PAYLOAD_BYTES', 3012), self.assertRaisesRegex(ValueError, 'One module'):
+            list(publish_cache.module_parts(keys['modules'], lib))
+
+    def test_multipart_index_rejects_missing_duplicate_foreign_and_oversized_parts(self):
+        out, _ = self.multipart_publication()
+        publish_cache.prepare()
+        original = json.loads((out/'cache-publication/cache.json').read_text())
+        for attack in ['missing', 'duplicate', 'wrong-key', 'foreign', 'path', 'oversized', 'empty', 'ambiguous']:
+            index = copy.deepcopy(original)
+            shard = index['shards']['Submissions.base']
+            parts = shard['parts']
+            if attack == 'missing': parts.pop()
+            if attack == 'duplicate': parts.append(copy.deepcopy(parts[0]))
+            if attack == 'wrong-key': parts[0]['modules'][next(iter(parts[0]['modules']))] = 'f'*64
+            if attack == 'foreign': parts[0]['modules']['Submissions.foreign.X'] = 'f'*64
+            if attack == 'path': parts[0]['archive'] = '../escape'
+            if attack == 'oversized': parts[0]['size'] = cache_release.PART_ARCHIVE_BYTES+1
+            if attack == 'empty': shard['parts'] = []
+            if attack == 'ambiguous': shard['archive'] = parts[0]['archive']
+            with self.subTest(attack=attack), self.assertRaises(ValueError):
+                cache_release.validate_index(index)
+
+    def test_part_inventory_cannot_claim_modules_from_another_archive(self):
+        out, _ = self.multipart_publication()
+        publish_cache.prepare()
+        path = out/'cache-publication/cache.json'
+        value = json.loads(path.read_text())
+        parts = value['shards']['Submissions.base']['parts']
+        # The union is still correct and archive hashes still match, but the
+        # signed module-to-archive assignment would be false.
+        parts[0]['modules'], parts[1]['modules'] = parts[1]['modules'], parts[0]['modules']
+        path.write_text(json.dumps(value))
+        with self.assertRaisesRegex(ValueError, 'inputs differ'):
+            publish_cache.validate_bundle(out/'cache-publication')
+
+    def test_multipart_download_rejects_tampered_piece(self):
+        out, _ = self.multipart_publication()
+        publish_cache.prepare()
+        value = json.loads((out/'cache-publication/cache.json').read_text())
+        with self.assertRaisesRegex(ValueError, 'archive differs'):
+            cache_release.fetch_shards(value, ['Submissions.base'], self.root,
+                fetch=lambda url,path,limit:path.write_bytes(b'wrong'))
+
+    def test_legacy_index_is_rebuilt_as_bounded_parts(self):
+        keys = {**self.inputs, 'modules': {'Submissions.base.Main':self.inputs['modules']['Submissions.base.Main']}}
+        shard = {'modules':keys['modules']}
+        _, _, changed, _ = plan_cache.plan(keys, {'schema_version':2,
+            'environment':keys['environment'], 'shards':{'Submissions.base':shard}})
+        self.assertEqual(changed, ['Submissions.base'])
+
+    def test_unchanged_multipart_shard_is_preserved_without_repackaging(self):
+        out, keys = self.multipart_publication()
+        publish_cache.prepare()
+        original = json.loads((out/'cache-publication/cache.json').read_text())
+        _, _, changed, removed = plan_cache.plan(keys, original)
+        self.assertEqual((changed, removed), ([], []))
+        path = out/'cache-plan.json'
+        value = json.loads(path.read_text())
+        value.update(previous=original['shards'], changed=[])
+        path.write_text(json.dumps(value))
+        shutil.rmtree(out/'cache-publication')
+        publish_cache.prepare()
+        _, index, archives = publish_cache.validate_bundle(out/'cache-publication')
+        self.assertEqual(index['shards'], original['shards'])
+        self.assertEqual(archives, [])
+
+    def test_manifest_counts_toward_unchanged_extraction_limit(self):
+        with patch.object(build_cache, 'MAX_BYTES', 100), self.assertRaisesRegex(ValueError, 'size limits'):
+            pack_cache(self.library, self.archive, self.inputs)
+
     def test_publication_rejects_stale_commit_and_inputs(self):
         out, _ = self.publication()
         with patch.dict(os.environ, {'GITHUB_SHA':'b'*40}), self.assertRaisesRegex(ValueError, 'another commit'):
@@ -290,7 +419,7 @@ class CacheTests(unittest.TestCase):
         remote.assert_not_called()
 
     def test_publisher_signs_with_matching_key_and_downloads_published_outputs(self):
-        out, _ = self.publication()
+        out, _ = self.multipart_publication()
         publish_cache.prepare()
         key, public = self.root/'key.pem', self.root/'public.pem'
         subprocess.run(['openssl','genpkey','-algorithm','ED25519','-out',str(key)],check=True)
@@ -316,7 +445,17 @@ class CacheTests(unittest.TestCase):
                 patch.object(publish_cache, 'fetch_shards', side_effect=lambda i,n,d:cache_release.fetch_shards(i,n,d,download)):
             publish_cache.main()
         self.assertEqual(list(uploaded)[-2:], ['cache.json', 'cache.sig'])
-        self.assertEqual(len(uploaded), 3)
+        self.assertEqual(len(uploaded), 5)  # Three bounded pieces plus index/signature.
+        published = json.loads(uploaded['cache.json'])
+        self.assertEqual(published['schema_version'], 3)
+        saved_index, saved_sig = self.root/'downloaded.json', self.root/'downloaded.sig'
+        saved_index.write_bytes(uploaded['cache.json'])
+        saved_sig.write_bytes(uploaded['cache.sig'])
+        self.assertEqual(cache_release.authenticate(saved_index, saved_sig, public), published)
+        published['shards']['Submissions.base']['parts'].pop()
+        saved_index.write_text(json.dumps(published))
+        with self.assertRaises(subprocess.CalledProcessError):
+            cache_release.authenticate(saved_index, saved_sig, public)
 
 
 unittest.main()

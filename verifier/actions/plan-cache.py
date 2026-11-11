@@ -23,7 +23,8 @@ def plan(keys, index, rebuild_all=False):
         shards.setdefault(shard_of(module), {})[module] = key
     previous = {} if index is None or compatibility_error(index, keys) else index['shards']
     changed = sorted(name for name, modules in shards.items()
-                     if rebuild_all or previous.get(name, {}).get('modules') != modules)
+                     if rebuild_all or (index is not None and index.get('schema_version') == 2)
+                     or previous.get(name, {}).get('modules') != modules)
     removed = sorted(set(previous) - set(shards))
     return shards, previous, changed, removed
 
