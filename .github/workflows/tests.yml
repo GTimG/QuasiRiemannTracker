@@ -1,0 +1,27 @@
+name: Tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  # Unit tests for the verifier, admission, catalogue and website code. On a
+  # pull request this runs the PR's own code with a read-only token.
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Fetch publication branch tip
+        continue-on-error: true
+        run: git fetch --no-tags --depth=1 origin +refs/heads/admission-records:refs/remotes/origin/admission-records
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.17.0
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test

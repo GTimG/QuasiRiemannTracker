@@ -284,8 +284,8 @@ successful reuse logs that no replay was needed; it still requires successful
 source preparation, receipt validation, ordinary project tests and admission.
 Missing approvals use the full isolated verifier. Malformed, stale or incompatible
 approved receipts fail closed. A mathematical rejection cannot be overridden by
-the infrastructure-failure fallback. Keep branch protection requiring `test` and
-`qrh/pr-admission`, with verifier and registration updates reviewed by maintainers.
+the infrastructure-failure fallback. Keep branch protection requiring `test`, `website`
+and `qrh/pr-admission`, with verifier and registration updates reviewed by maintainers.
 
 The server publisher runs from a protected checkout after an isolated build has
 passed verification. Run `verifier/actions/setup.py` to prepare the server's
