@@ -31,6 +31,13 @@ jobs:
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
+      # Fail in seconds, before any submission is prepared or compiled, if the
+      # result could not be signed or uploaded.
+      - name: Check the signing key, release access and upload route
+        env:
+          QRH_BUILD_CACHE_KEY: ${{ secrets.QRH_BUILD_CACHE_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 verifier/actions/check-cache-publish.py
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.22.1
@@ -59,8 +66,8 @@ jobs:
           python3 verifier/standard/build.py --profile verification/profile.json
           --prepared verification/prepared --work verification/run
           --tool-pins verification/tool-pins.json
-      # Submitted code ran only in the sandboxed compile step above. The key
-      # and the release token are passed to this step alone.
+      # Submitted code ran only in the sandboxed compile step above. After the
+      # preflight check, the key and the release token reach this step alone.
       - name: Sign and publish the cache
         if: steps.plan.outputs.publish == 'true'
         env:
