@@ -510,11 +510,11 @@ test("propagates evidence validation failures to PR admission", async () => {
   });
 });
 
-test("requires accurate and distinguishing decimal digits with accepted evidence", async () => {
+test("requires accurate decimal digits that show an improvement", async () => {
   for (const [decimal, message] of [
     [
       "0.8748866",
-      "QRH-Decimal needs more digits to differ from the previous bound (previous-result: 0.8748866)",
+      "QRH-Decimal needs more digits to show the bound is below the current best (previous-result: 0.8748866)",
     ],
     [
       "0.87488661",

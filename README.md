@@ -169,9 +169,9 @@ reports remain fixed.
    ```
 
    `QRH-Bound` is a reduced fraction; it is the value that is ranked. Give an
-   accurate truncated `QRH-Decimal` of it with enough digits to differ from the
-   current best verified bound.
-   Equal bounds accept any supported decimal precision. These PR fields declare
+   accurate truncated `QRH-Decimal` of it, with at most 200 fractional digits.
+   A bound below the current best verified bound must be lower within those
+   digits; equal or larger bounds accept any precision. These PR fields declare
    the bound; the committed `metadata.json` supplies its publication metadata.
 
    Exact algebraic bounds are encouraged when they are the natural statement.

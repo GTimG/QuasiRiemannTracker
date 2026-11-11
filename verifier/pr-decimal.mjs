@@ -30,9 +30,9 @@ function prefix(q, digits) {
     : `${scaled / scale}.${String(scaled % scale).padStart(digits, "0")}`;
 }
 
-// Every ranked bound is rational (an exact expression is ranked by its proved
-// rational upper bound), so decimals are compared against the trusted base
-// checkout's catalogue exactly.
+// QRH-Decimal is an accurate truncation of the ranked rational bound. A bound
+// equal to or above the current best is admitted as it is; a bound below it
+// must be distinguishably lower within the declared digits.
 export function validateDecimalApproximation({
   theta_exact,
   theta_decimal,
@@ -51,35 +51,23 @@ export function validateDecimalApproximation({
     throw Error(
       `QRH-Decimal must give the exact bound's truncated digits: ${actual}`,
     );
-
   if (!Array.isArray(catalogue?.records))
     throw Error("A trusted catalogue is required for decimal comparison");
-  const verified = catalogue.records.filter(verifiedHere);
-  if (!verified.length)
+  const best = catalogue.records
+    .filter(verifiedHere)
+    .reduce(
+      (best, record) =>
+        !best || cmp(checkedRational(record.theta), best.theta) < 0
+          ? record
+          : best,
+      null,
+    );
+  if (
+    best &&
+    cmp(candidate, best.theta) < 0 &&
+    prefix(best.theta, digits) === actual
+  )
     throw Error(
-      "Decimal comparison requires a previously accepted or verified catalogue bound",
+      `QRH-Decimal needs more digits to show the bound is below the current best (${best.id}: ${actual})`,
     );
-  const previous = verified.reduce((best, record) => {
-    checkedRational(record.theta);
-    return !best || cmp(record.theta, best.theta) < 0 ? record : best;
-  }, null);
-  if (cmp(candidate, previous.theta) === 0)
-    return { previous_result_id: previous.id, previous_decimal: actual };
-  // Report the previous bound through the first differing digit.
-  const fractionalStart = actual.indexOf(".") + 1;
-  for (let places = 0; places <= digits; places++) {
-    const previousDecimal = prefix(previous.theta, places);
-    const candidateDecimal = actual.slice(
-      0,
-      places === 0 ? fractionalStart - 1 : fractionalStart + places,
-    );
-    if (candidateDecimal !== previousDecimal)
-      return {
-        previous_result_id: previous.id,
-        previous_decimal: previousDecimal,
-      };
-  }
-  throw Error(
-    `QRH-Decimal needs more digits to differ from the previous bound (${previous.id}: ${actual})`,
-  );
 }
