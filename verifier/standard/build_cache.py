@@ -6,6 +6,7 @@ MAX_BYTES = 4 * 1024 ** 3
 MAX_FILES = 50000
 SUFFIXES = ('.olean', '.olean.private', '.olean.server')
 MODULE = re.compile(r'(?:Candidate|Submissions)(?:\.[A-Za-z_][A-Za-z0-9_]*)+')
+SHARED = re.compile(r'Submissions(?:\.[A-Za-z_][A-Za-z0-9_]*){2,}')
 # Bump when changing compiler flags, exported products or module build semantics.
 RECIPE = 'lean-module-o-private-server-v1'
 
@@ -158,3 +159,21 @@ def restore_cache(archive, library, inputs):
                 target.parent.mkdir(parents=True, exist_ok=True)
                 (stage/name).rename(target)
         return selected
+
+
+def shard_of(module):
+    """Shared modules live under Submissions.<submission>.*; one shard each."""
+    if not SHARED.fullmatch(module):
+        raise ValueError('Only shared submission modules are cached')
+    return '.'.join(module.split('.')[:2])
+
+
+def restore_shards(cache, library, inputs):
+    """Restore authenticated shards; shards hold disjoint modules."""
+    selected = set()
+    for shard in cache['shards']:
+        archive = Path(shard['path'])
+        if digest(archive) != shard['sha256']:
+            raise ValueError('Authenticated build cache changed')
+        selected |= restore_cache(archive, library, inputs)
+    return selected

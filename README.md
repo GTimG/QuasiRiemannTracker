@@ -287,21 +287,19 @@ approved receipts fail closed. A mathematical rejection cannot be overridden by
 the infrastructure-failure fallback. Keep branch protection requiring `test`, `website`
 and `qrh/pr-admission`, with verifier and registration updates reviewed by maintainers.
 
-The server publisher runs from a protected checkout after an isolated build has
-passed verification. Run `verifier/actions/setup.py` to prepare the server's
-checking environment with the same Lake build products as GitHub workers.
-Cache restoration reports compatibility differences in the job log and
-`build-cache-status.json` artifact. Copy its `candidate-lib/`, `contract.json`, `result.json`,
-profile and prepared `libraries.json` to the host, then run:
+Admission restores previously compiled submission modules from a signed build
+cache, so a PR compiles only its own new modules. The **Build cache** workflow
+maintains it after every push to `main` that changes `submissions/` or the
+verifier. On the proof runner it compiles the shared `Submissions.<id>.*`
+modules of every merged submission in the same sandbox as admission, and
+publishes one archive per submission (a shard) to the
+`submission-build-cache-v2` release, listed in a signed `cache.json`. Only
+shards whose modules changed are rebuilt; admission downloads only the shards
+its PR imports. Each PR's `Candidate.*` modules are never cached.
 
-```sh
-python3 verifier/actions/publish-build.py \
-  --run /path/to/completed-run --profile /path/to/profile.json \
-  --libraries /path/to/libraries.json --key /path/to/host-signing-key.pem \
-  --out /path/to/cache-output --publish
-```
-
-The signing key and GitHub credentials stay on the host. The public key is pinned
-in `verifier/standard/build-cache-public.pem`; key rotation requires updating that
-pin. The publisher accepts locally produced worker records supplied by the server
-operator. Submitter-provided files must go through the isolated source build.
+The signing key is the `QRH_BUILD_CACHE_KEY` secret of the `build-cache`
+environment, restricted to `main`; its public key is pinned in
+`verifier/standard/build-cache-public.pem`. Only the final publish step receives
+the key, after submitted code has run in the sandbox. A cached module cannot make
+a proof pass: Comparator and all three kernels re-check every exported
+declaration. Key rotation requires updating the pin.

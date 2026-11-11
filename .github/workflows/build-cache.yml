@@ -1,0 +1,79 @@
+name: Build cache
+on:
+  push:
+    branches: [main]
+    paths:
+      - "submissions/**"
+      - "verifier/**"
+      - ".github/workflows/build-cache.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: build-cache
+  cancel-in-progress: false
+jobs:
+  # Compiles the shared Submissions.* modules of every merged submission and
+  # publishes them as signed per-submission shards that admission restores.
+  # Only shards whose modules changed are rebuilt and re-uploaded.
+  build:
+    runs-on: [self-hosted, Linux, X64, qrh-proof]
+    timeout-minutes: 870
+    # The signing key is an environment secret that only main can use.
+    environment: build-cache
+    permissions:
+      contents: write
+    env:
+      QRH_REPLAY_BUDGET_SECONDS: "43200"
+      QRH_WORKER_THREADS: "6"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.22.1
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Prepare the shared modules of every merged submission
+        run: node verifier/actions/prepare-cache.mjs
+      - name: Restore the shared checking environment
+        uses: ./.github/actions/verifier-cache
+      - name: Install worker prerequisites
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends meson ninja-build libcap-dev pkg-config zstd libgmp-dev python3-yaml
+          sudo loginctl enable-linger "$(id -un)"
+          echo "XDG_RUNTIME_DIR=/run/user/$(id -u)" >> "$GITHUB_ENV"
+          echo "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus" >> "$GITHUB_ENV"
+      - name: Build the pinned checking environment
+        timeout-minutes: 120
+        run: python3 verifier/actions/setup.py
+      - name: Plan the changed shards and restore their imports
+        id: plan
+        timeout-minutes: 30
+        run: python3 verifier/actions/plan-cache.py
+      - name: Compile the changed shards
+        if: steps.plan.outputs.build == 'true'
+        run: >-
+          python3 verifier/standard/build.py --profile verification/profile.json
+          --prepared verification/prepared --work verification/run
+          --tool-pins verification/tool-pins.json
+      # Submitted code ran only in the sandboxed compile step above. The key
+      # and the release token are passed to this step alone.
+      - name: Sign and publish the cache
+        if: steps.plan.outputs.publish == 'true'
+        env:
+          QRH_BUILD_CACHE_KEY: ${{ secrets.QRH_BUILD_CACHE_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 verifier/actions/publish-cache.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: build-cache-${{ github.run_attempt }}
+          path: |
+            verification/cache-plan.json
+            verification/run/build-result.json
+            verification/run/logs/
+          if-no-files-found: warn
+          retention-days: 14

@@ -32,6 +32,8 @@ EXACT_HOSTS = frozenset(
     {
         "github.com",
         "api.github.com",
+        # Release asset uploads for the signed submission build cache.
+        "uploads.github.com",
         "codeload.github.com",
         "raw.githubusercontent.com",
         "objects.githubusercontent.com",
