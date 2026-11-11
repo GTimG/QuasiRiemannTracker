@@ -1,4 +1,4 @@
-name: Trusted project checks
+name: Website
 on:
   pull_request:
   push:
@@ -7,7 +7,9 @@ on:
 permissions:
   contents: read
 jobs:
-  test:
+  # Builds the site, runs the browser and deployment checks, and deploys main.
+  # On a pull request this runs the PR's own code with a read-only token.
+  website:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
@@ -30,7 +32,7 @@ jobs:
         id: pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
-      - run: npm run check
+      - run: npm run build
         env:
           QRH_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
       - name: Install Chromium system dependencies
@@ -66,7 +68,7 @@ jobs:
         with:
           path: dist/
   deploy:
-    needs: test
+    needs: website
     if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-24.04
     permissions:

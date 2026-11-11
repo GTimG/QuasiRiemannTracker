@@ -294,7 +294,7 @@ test("classifies maintenance paths and trusted Lean fixtures as maintenance", ()
       file("README.md"),
       file("src/App.tsx"),
       file("docs/submission.md"),
-      file(".github/workflows/ci.yml"),
+      file(".github/workflows/website.yml"),
       file("core/Challenge.lean"),
       file("verifier/fixtures/Example.lean"),
       file("tests/fixtures/Example.lean"),
@@ -556,7 +556,7 @@ test("requires a matching receipt after the PR head changes", async () => {
 });
 
 for (const filename of [
-  ".github/workflows/ci.yml",
+  ".github/workflows/website.yml",
   "core/trust-root.json",
   "verifier/pr-admission.mjs",
   "tests/pr-admission.test.mjs",
