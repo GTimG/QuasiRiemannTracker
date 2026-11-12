@@ -1621,3 +1621,14 @@ dialog .protocol-grid h2 {
   font-weight: 600;
   pointer-events: none;
 }
+/* The front-page box is narrow: a smaller total leaves room for full names. */
+.contributor-board.boxed .contributor-improvement .entry-decimal {
+  font-size: 0.875rem;
+}
+.contributor-board.boxed .contributor-total {
+  gap: 6px;
+}
+.contributor-board.boxed .contributor-label {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
