@@ -11,6 +11,7 @@ playwright-report/
 /evidence/
 /catalogue/results.json
 /public/catalogue.json
+/public/bound-badge.json
 
 # Builds generate public verification records from local provenance.
 /public/certificates/*.json

@@ -4,13 +4,13 @@ QRH-Decimal: decimal-approximation
 
 <!-- Optional, for an exact algebraic bound such as (777 − √1081) / 852:
 add "QRH-Exact: <expression>" and prove Candidate.bound_le, the expression
-being at most QRH-Bound. See the README. -->
+being at most QRH-Bound. See SUBMITTING.md. -->
 
 <!-- Save the metadata below as submissions/YYYY-MM-DD-<slug>/metadata.json.
 Use the original PR creation date in UTC, once, at the start of the directory.
 For new submissions, QRH-Result is the slug without the date prefix.
 Existing submissions retain their stable result ID and original dated directory.
-See https://github.com/GTimG/QuasiRiemannTracker/blob/main/README.md#submit
+See https://github.com/GTimG/QuasiRiemannTracker/blob/main/SUBMITTING.md
 for result and maintenance PR instructions. -->
 
 ```json
@@ -44,5 +44,5 @@ Include sanitized exports in `metadata.json`'s `agent_traces` array. Prefer
 [ATIF](https://docs.harborframework.com/agents/atif); native JSON exports are also
 accepted. Leave the array empty or omit it if no trace is available.
 
-Run the [local secret check](https://github.com/GTimG/QuasiRiemannTracker/blob/main/README.md#submit)
+Run the [local secret check](https://github.com/GTimG/QuasiRiemannTracker/blob/main/SUBMITTING.md)
 before pushing; supplied traces must pass CI checks.

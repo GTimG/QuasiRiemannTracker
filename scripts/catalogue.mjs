@@ -1,5 +1,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
-import { validateCatalogue, boundKey } from "../core/catalogue.mjs";
+import {
+  validateCatalogue,
+  boundKey,
+  verifiedHere,
+} from "../core/catalogue.mjs";
+import { cmp, decimal } from "../core/rational.mjs";
 import {
   catalogueProofRecords,
   proofRevision,
@@ -30,6 +35,23 @@ writeFileSync("public/catalogue.json", JSON.stringify(data, null, 2) + "\n");
 writeFileSync(
   "public/site.json",
   JSON.stringify({ ...config, repository }, null, 2) + "\n",
+);
+// shields.io endpoint for the README's best-bound badge.
+const best = data.records
+  .filter(verifiedHere)
+  .sort((a, b) => cmp(a.theta, b.theta))[0];
+writeFileSync(
+  "public/bound-badge.json",
+  JSON.stringify(
+    {
+      schemaVersion: 1,
+      label: "best verified bound",
+      message: best ? `θ ≤ ${decimal(best.theta, 12)}` : "none yet",
+      color: "1d5d74",
+    },
+    null,
+    2,
+  ) + "\n",
 );
 console.log(
   `Catalogue: ${data.records.length} results from local submission files.`,
