@@ -18,6 +18,14 @@ export DEBIAN_FRONTEND=noninteractive
 export NEEDRESTART_MODE=l
 export NODE_USE_ENV_PROXY=1
 
+# A guest runs one job for up to 16 hours. Ubuntu's daily upgrade at 06:00 UTC
+# would upgrade packages and restart services mid-job; on 2026-11-12 it shut
+# down the runner during a long build. Masked units cannot be started by timers.
+systemctl mask apt-daily.timer apt-daily-upgrade.timer apt-daily.service \
+  apt-daily-upgrade.service unattended-upgrades.service
+systemctl stop apt-daily.timer apt-daily-upgrade.timer apt-daily.service \
+  apt-daily-upgrade.service unattended-upgrades.service 2>/dev/null || true
+
 # Only HTTPS archive requests can cross the external allowlisted proxy.
 sed -i -E 's@http://([a-z0-9.-]*archive.ubuntu.com|security.ubuntu.com)/@https://\1/@g' \
   /etc/apt/sources.list.d/ubuntu.sources
