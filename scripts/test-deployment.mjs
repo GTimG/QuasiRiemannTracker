@@ -87,6 +87,14 @@ try {
     .getByRole("navigation", { name: "Research views" })
     .getByRole("link", { name: /Submissions/ })
     .click();
+  // Submissions opens on the dependency graph: one node per record.
+  const graph = page.getByRole("region", { name: "Dependency graph" });
+  await graph.locator("circle.node").first().waitFor();
+  assert.equal(await graph.locator("circle.node").count(), records.length);
+  await graph
+    .getByRole("group", { name: "Submission view" })
+    .getByRole("button", { name: "List", exact: true })
+    .click();
   await page
     .getByRole("list", { name: "Contributions", exact: true })
     .waitFor();
@@ -115,7 +123,7 @@ try {
   }
   assert.deepEqual(failures, []);
   console.log(
-    `PASS: production build at ${base}, ${plottedCount} full-history points, JSON, favicon and verification records; no browser errors.`,
+    `PASS: production build at ${base}, ${plottedCount} full-history points, graph and list of ${records.length} submissions, JSON, favicon and verification records; no browser errors.`,
   );
 } finally {
   if (browser) await browser.close();
