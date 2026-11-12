@@ -70,8 +70,8 @@ test("milestones sit between leaderboard and protocol and fit narrow screens", a
   const nav = page.getByRole("navigation", { name: "Research views" });
   await expect(nav.getByRole("link")).toHaveText([
     "Timeline",
-    "Contributors3",
     /Submissions/,
+    "Contributors3",
     "Milestones",
     "Protocol",
   ]);
@@ -114,7 +114,7 @@ test("overview dots are small and filled points paint above overlapping hollow p
   const filled = record({ id: "a-frontier", title: "Frontier fixture" });
   const hollow = record({ id: "z-alternative", title: "Equal bound fixture" });
   await routeCatalogue(page, { schema_version: 1, records: [hollow, filled] });
-  await page.goto("/?view=overview");
+  await page.goto("/?view=overview&mode=list");
   const dots = page.locator("[data-dot]");
   await expect(dots).toHaveCount(2);
   const filledDot = page.locator('[data-dot][data-id="a-frontier"]');

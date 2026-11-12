@@ -28,7 +28,7 @@ test("historical catalogue entries display their status and year precision", asy
       json: { schema_version: 1, records: [baseline] },
     }),
   );
-  await page.goto("/?tab=submissions");
+  await page.goto("/?tab=submissions&mode=list");
   const row = page.locator(".contribution-list .leaderboard-entry");
   await expect(row.locator(".tag.historical")).toHaveText(
     "Historical baseline",

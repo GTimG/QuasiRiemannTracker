@@ -45,7 +45,7 @@ test("an earlier submission is a record even when the stronger proof verifies fi
     schema_version: 1,
     records: [record(), stronger, weaker, early],
   });
-  await page.goto("/");
+  await page.goto("/?mode=list");
   const firstDot = page.locator('[data-dot][data-id="fixture-early-pr"]');
   const secondDot = page.locator('[data-dot][data-id="fixture-stronger-pr"]');
   await expect(firstDot).toHaveAttribute(

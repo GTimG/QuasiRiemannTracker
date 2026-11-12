@@ -13,6 +13,7 @@ type Layout = {
   lineage: (id: string) => Set<string>;
   bounds: { x0: number; x1: number; y0: number; y1: number };
   ticks: { y: number; label: string }[];
+  dateTicks: { x: number; label: string }[];
 };
 export type YAxis = "generation" | "bound";
 
@@ -23,8 +24,7 @@ const thetaOf = (r: Contribution) =>
   Number(r.theta.numerator) / Number(r.theta.denominator);
 
 const LAYER = 46,
-  SPREAD = 64,
-  HEIGHT = 640,
+  DEFAULT_HEIGHT = 640,
   FONT = 11.5,
   CHAR = 6.1;
 
@@ -37,6 +37,9 @@ const jitter = (id: string) => {
   for (const c of id) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
   return ((h >>> 0) / 2 ** 32 - 0.5) * 2;
 };
+
+// Horizontal spacing between consecutive submissions.
+const TIME_STEP = 34;
 
 function layout(records: Contribution[], axis: YAxis): Layout {
   const byId = new Map(records.map((r) => [r.id, r]));
@@ -69,11 +72,6 @@ function layout(records: Contribution[], axis: YAxis): Layout {
       ps.filter((p) => !ps.some((q) => q !== p && ancestors.get(q)!.has(p))),
     ]),
   );
-  const directChildren = new Map<string, string[]>(
-    records.map((r) => [r.id, []]),
-  );
-  for (const [id, ps] of direct)
-    for (const p of ps) directChildren.get(p)!.push(id);
 
   const depth = new Map<string, number>();
   const generation = (id: string): number => {
@@ -83,12 +81,6 @@ function layout(records: Contribution[], axis: YAxis): Layout {
     depth.set(id, d);
     return d;
   };
-  const layers: string[][] = [];
-  for (const r of [...records].sort((a, b) =>
-    contributionDate(a).localeCompare(contributionDate(b)),
-  ))
-    (layers[generation(r.id)] ??= []).push(r.id);
-
   const best = Math.min(...records.map(thetaOf));
   const boundY =
     axis === "bound"
@@ -106,44 +98,42 @@ function layout(records: Contribution[], axis: YAxis): Layout {
     for (const t of new Set(records.map(thetaOf).filter((t) => t > BREAK)))
       ticks.push({ y: boundY(t), label: String(+t.toFixed(4)) });
   }
-  const pos = new Map<string, Point>();
-  layers.forEach((ids, g) =>
-    ids.forEach((id, i) =>
-      pos.set(id, {
-        x: (i - (ids.length - 1) / 2) * SPREAD,
-        y: boundY
-          ? boundY(thetaOf(byId.get(id)!))
-          : g * LAYER + jitter(id) * 11,
-      }),
-    ),
+  // x is submission order, evenly spaced (a date scale would let 1922 dominate).
+  const order = [...records].sort((a, b) =>
+    contributionDate(a).localeCompare(contributionDate(b)),
   );
-  // A small force relaxation: pull towards direct lineage, push neighbours apart.
-  const ids = records.map((r) => r.id);
-  for (let step = 0; step < 260; step++) {
-    const cool = 1 - step / 260;
-    const delta = new Map(ids.map((id) => [id, 0]));
-    for (const id of ids) {
-      const p = pos.get(id)!;
-      const linked = [...direct.get(id)!, ...directChildren.get(id)!];
-      for (const other of linked)
-        delta.set(id, delta.get(id)! + (pos.get(other)!.x - p.x) * 0.035);
-      delta.set(id, delta.get(id)! - p.x * 0.004);
-      for (const other of ids) {
-        if (other === id) continue;
-        const q = pos.get(other)!;
-        const dy = Math.abs(q.y - p.y);
-        if (dy > LAYER * 1.4) continue;
-        const dx = p.x - q.x || jitter(id + other);
-        const near = SPREAD * (1.15 - dy / (LAYER * 1.4) / 2);
-        if (Math.abs(dx) < near)
-          delta.set(
-            id,
-            delta.get(id)! + Math.sign(dx) * (near - Math.abs(dx)) * 0.45,
-          );
-      }
-    }
-    for (const id of ids) pos.get(id)!.x += delta.get(id)! * cool;
+  const rank = new Map(order.map((r, i) => [r.id, i]));
+  const dateTicks: Layout["dateTicks"] = [];
+  {
+    let last = "";
+    order.forEach((r, i) => {
+      const day = new Date(contributionDate(r)).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: i === 0 ? "numeric" : undefined,
+        timeZone: "UTC",
+      });
+      if (
+        day !== last &&
+        (!dateTicks.length ||
+          i * TIME_STEP - dateTicks.at(-1)!.x >= TIME_STEP * 5)
+      )
+        dateTicks.push({ x: i * TIME_STEP, label: day });
+      last = day;
+    });
   }
+  const pos = new Map<string, Point>(
+    order.map((r, i) => [
+      r.id,
+      {
+        x: i * TIME_STEP,
+        y: boundY
+          ? boundY(thetaOf(r))
+          : generation(r.id) * LAYER + jitter(r.id) * 11,
+      },
+    ]),
+  );
+  const ids = records.map((r) => r.id);
   const radius = new Map(
     ids.map((id) => [id, 3.2 + 1.9 * Math.sqrt(descendants.get(id)!.size)]),
   );
@@ -157,6 +147,7 @@ function layout(records: Contribution[], axis: YAxis): Layout {
     lineage: (id) =>
       new Set([id, ...ancestors.get(id)!, ...descendants.get(id)!]),
     ticks,
+    dateTicks,
     bounds: {
       x0: Math.min(...xs),
       x1: Math.max(...xs),
@@ -165,6 +156,9 @@ function layout(records: Contribution[], axis: YAxis): Layout {
     },
   };
 }
+
+// x is submission order, so it is fitted independently of y (ax = x/y scale).
+type View = { k: number; ax: number; tx: number; ty: number };
 
 type Box = { x0: number; y0: number; x1: number; y1: number };
 const overlaps = (a: Box, b: Box) =>
@@ -175,34 +169,48 @@ export default function DependencyGraph({
   selected,
   onSelect,
   toolbar,
+  axis,
+  allEdges,
+  onAxis,
+  onAllEdges,
+  height: HEIGHT = DEFAULT_HEIGHT,
+  label = "Dependency graph",
 }: {
   records: Contribution[];
   selected: string | null;
   onSelect: (id: string) => void;
   toolbar?: React.ReactNode;
+  axis: YAxis;
+  allEdges: boolean;
+  onAxis: (axis: YAxis) => void;
+  onAllEdges: (all: boolean) => void;
+  height?: number;
+  label?: string;
 }) {
-  const [axis, setAxis] = useState<YAxis>("generation");
   const graph = useMemo(() => layout(records, axis), [records, axis]);
   const byId = useMemo(() => new Map(records.map((r) => [r.id, r])), [records]);
   const frame = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(900);
-  const [view, setView] = useState<{ k: number; tx: number; ty: number }>();
+  const [view, setView] = useState<View>();
   const [hover, setHover] = useState<string | null>(null);
-  const [allEdges, setAllEdges] = useState(true);
   const drag = useRef<{ x: number; y: number; moved: boolean } | null>(null);
 
   const fit = (w = width) => {
-    if (!records.length) return { k: 1, tx: 0, ty: 0 };
+    if (!records.length) return { k: 1, ax: 1, tx: 0, ty: 0 };
     const { x0, x1, y0, y1 } = graph.bounds;
-    const k = Math.min(
+    // Narrow screens wrap the toolbar and footer, so leave more room.
+    const top = w < 560 ? 96 : 52,
+      bottom = w < 560 ? 104 : 68;
+    const k = Math.min((HEIGHT - top - bottom) / Math.max(1, y1 - y0), 1.6);
+    const kx = Math.min(
       (w - Math.min(340, w * 0.45)) / Math.max(1, x1 - x0),
-      (HEIGHT - 120) / Math.max(1, y1 - y0),
-      1.6,
+      2.5,
     );
     return {
       k,
-      tx: w / 2 - ((x0 + x1) / 2) * k,
-      ty: (w < 560 ? 96 : 52) - y0 * k,
+      ax: kx / k,
+      tx: w / 2 - ((x0 + x1) / 2) * kx,
+      ty: top - y0 * k,
     };
   };
   useEffect(() => {
@@ -234,16 +242,26 @@ export default function DependencyGraph({
   const zoomAt = (factor: number, cx = width / 2, cy = HEIGHT / 2) =>
     setView((current) => {
       const c = current ?? fit();
-      const k = Math.min(6, Math.max(0.25, c.k * factor));
+      const k = Math.min(6, Math.max(0.05, c.k * factor));
       return {
         k,
+        ax: c.ax,
         tx: cx - ((cx - c.tx) * k) / c.k,
         ty: cy - ((cy - c.ty) * k) / c.k,
       };
     });
+  const dateY = HEIGHT - (width < 560 ? 64 : 32);
+  // Thin date labels so they stay at least ~64px apart on screen.
+  const shownDates: { x: number; label: string }[] = [];
+  for (const t of graph.dateTicks.map((t) => ({
+    ...t,
+    x: t.x * v.k * v.ax + v.tx,
+  })))
+    if (!shownDates.length || t.x - shownDates.at(-1)!.x >= 64)
+      shownDates.push(t);
   const screen = (id: string) => {
     const p = graph.pos.get(id)!;
-    return { x: p.x * v.k + v.tx, y: p.y * v.k + v.ty };
+    return { x: p.x * v.k * v.ax + v.tx, y: p.y * v.k + v.ty };
   };
   const r = (id: string) => graph.radius.get(id)! * Math.sqrt(v.k);
 
@@ -262,6 +280,17 @@ export default function DependencyGraph({
         rr = r(c.id);
       return { x0: p.x - rr, y0: p.y - rr, x1: p.x + rr, y1: p.y + rr };
     });
+    // Keep labels clear of the axes, the date row and the toolbar.
+    const narrow = width < 560;
+    if (graph.ticks.length) placed.push({ x0: 0, x1: 60, y0: 0, y1: HEIGHT });
+    placed.push({ x0: 0, x1: width, y0: dateY - 12, y1: HEIGHT });
+    placed.push(
+      narrow
+        ? { x0: 0, x1: width, y0: 0, y1: 92 }
+        : { x0: width - 340, x1: width, y0: 0, y1: 48 },
+    );
+    // Phones get fewer, shorter labels; hovering still names any node.
+    const maxLabels = narrow ? 6 : Infinity;
     const priority = (c: Contribution) =>
       (c.id === focus ? 1e6 : 0) +
       (c.id === selected ? 1e5 : 0) +
@@ -279,7 +308,11 @@ export default function DependencyGraph({
       if (lit && !lit.has(c.id)) continue;
       const p = screen(c.id),
         rr = r(c.id) + 5;
-      const text = short(c.title, c.id === focus ? 80 : 34);
+      if (c.id !== focus && out.length >= maxLabels) continue;
+      const text = short(
+        c.title,
+        c.id === focus ? (narrow ? 40 : 80) : narrow ? 22 : 34,
+      );
       const w = text.length * CHAR,
         h = FONT + 3;
       const options = [
@@ -305,10 +338,10 @@ export default function DependencyGraph({
       }
     }
     return out;
-  }, [records, v.k, v.tx, v.ty, width, focus, selected, allEdges]);
+  }, [graph, v.k, v.ax, v.tx, v.ty, width, HEIGHT, focus, selected]);
 
   return (
-    <section className="panel dependency-graph" aria-label="Dependency graph">
+    <section className="panel dependency-graph" aria-label={label}>
       <div
         ref={frame}
         className="graph-frame"
@@ -350,22 +383,34 @@ export default function DependencyGraph({
                   </g>
                 );
               })}
-              <text x={10} y={v.ty - 22 * v.k} className="axis-break">
-                ≈
-              </text>
+            </g>
+          )}
+          {graph.dateTicks.length > 0 && (
+            <g className="ticks" aria-hidden="true">
+              {shownDates.map((t) => {
+                const x = t.x;
+                return (
+                  <g key={t.label}>
+                    <line x1={x} x2={x} y1={0} y2={dateY - 12} />
+                    <text x={x} y={dateY} textAnchor="middle">
+                      {t.label}
+                    </text>
+                  </g>
+                );
+              })}
             </g>
           )}
           <g className="edges">
             {edges.map(([from, to]) => {
               const a = screen(from),
                 b = screen(to),
-                my = (a.y + b.y) / 2;
+                mx = (a.x + b.x) / 2;
               const on = lit?.has(from) && lit.has(to);
               return (
                 <path
                   key={`${from}>${to}`}
                   className={on ? "on" : lit ? "dim" : undefined}
-                  d={`M${a.x},${a.y} C${a.x},${my} ${b.x},${my} ${b.x},${b.y}`}
+                  d={`M${a.x},${a.y} C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`}
                 />
               );
             })}
@@ -390,6 +435,7 @@ export default function DependencyGraph({
             return (
               <circle
                 key={c.id}
+                data-node={c.id}
                 cx={p.x}
                 cy={p.y}
                 r={r(c.id)}
@@ -419,7 +465,7 @@ export default function DependencyGraph({
               <button
                 key={a}
                 aria-pressed={axis === a}
-                onClick={() => setAxis(a)}
+                onClick={() => onAxis(a)}
               >
                 {a === "generation" ? "Generations" : "Bound θ"}
               </button>
@@ -430,7 +476,7 @@ export default function DependencyGraph({
               <button
                 key={String(all)}
                 aria-pressed={allEdges === all}
-                onClick={() => setAllEdges(all)}
+                onClick={() => onAllEdges(all)}
               >
                 {all ? "All edges" : "Direct"}
               </button>
@@ -452,10 +498,10 @@ export default function DependencyGraph({
           </span>
         </div>
         <div className="graph-controls">
-          <button aria-label="Zoom in" onClick={() => zoomAt(1.3)}>
+          <button aria-label="Zoom graph in" onClick={() => zoomAt(1.3)}>
             <Plus size={14} />
           </button>
-          <button aria-label="Zoom out" onClick={() => zoomAt(1 / 1.3)}>
+          <button aria-label="Zoom graph out" onClick={() => zoomAt(1 / 1.3)}>
             <Minus size={14} />
           </button>
           <button aria-label="Fit graph" onClick={() => setView(fit())}>

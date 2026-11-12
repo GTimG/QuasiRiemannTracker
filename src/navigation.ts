@@ -2,8 +2,8 @@ import { useSyncExternalStore } from "react";
 
 export const tabs = [
   "Timeline",
-  "Contributors",
   "Submissions",
+  "Contributors",
   "Milestones",
   "Protocol",
 ] as const;
@@ -104,11 +104,48 @@ const setGraph: UpdateGraph = (update, mode = "push") => {
   writeView(readView(viewUrl(next)), mode);
 };
 
+/** Submissions view settings, kept in the URL so a view can be shared. */
+export type SubmissionView = {
+  mode: "graph" | "list";
+  axis: "bound" | "generation";
+  edges: "all" | "direct";
+};
+function readSubmissionView(url: URL): SubmissionView {
+  const params = url.searchParams;
+  return {
+    mode: params.get("mode") === "list" ? "list" : "graph",
+    axis: params.get("axis") === "generations" ? "generation" : "bound",
+    edges: params.get("edges") === "direct" ? "direct" : "all",
+  };
+}
+export function setSubmissionView(
+  update: Partial<SubmissionView>,
+  mode: HistoryMode = "push",
+) {
+  const url = new URL(snapshot());
+  const next = { ...readSubmissionView(url), ...update };
+  const set = (name: string, value: string | null) =>
+    value ? url.searchParams.set(name, value) : url.searchParams.delete(name);
+  // Defaults stay out of the URL.
+  set("mode", next.mode === "list" ? "list" : null);
+  set("axis", next.axis === "generation" ? "generations" : null);
+  set("edges", next.edges === "direct" ? "direct" : null);
+  if (url.href === window.location.href) return;
+  window.history[mode === "push" ? "pushState" : "replaceState"](
+    window.history.state,
+    "",
+    url,
+  );
+  window.dispatchEvent(new Event(navigationEvent));
+}
+
 export function useNavigation() {
   const href = useSyncExternalStore(subscribe, snapshot);
   const view = readView(new URL(href));
   return {
     ...view,
+    submissions: readSubmissionView(new URL(href)),
+    setSubmissionView,
     setTab,
     setGraph,
     tabHref: (tab: Tab) => viewUrl({ ...view, tab }, href).href,

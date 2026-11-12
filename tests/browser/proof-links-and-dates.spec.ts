@@ -10,7 +10,7 @@ test("verified proof badges open solution sources and contribution dates retain 
   page,
 }) => {
   await routeCatalogue(page, catalogue);
-  await page.goto("/?tab=submissions");
+  await page.goto("/?tab=submissions&mode=list");
   await expect(
     page.getByRole("button", { name: "Date", exact: true }),
   ).toBeVisible();

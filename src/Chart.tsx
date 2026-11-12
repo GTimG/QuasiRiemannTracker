@@ -59,6 +59,7 @@ export default function Chart({
   events,
   selected,
   onSelect,
+  title,
 }: {
   view: GraphView;
   onViewChange: UpdateGraph;
@@ -67,6 +68,8 @@ export default function Chart({
   events: Event[];
   selected: string | null;
   onSelect: (r: Contribution) => void;
+  /** Heading shown level with the zoom controls. */
+  title?: string;
 }) {
   const { window, overview, vertical } = view;
   const [viewedAt] = useState(Date.now);
@@ -413,6 +416,7 @@ export default function Chart({
   return (
     <section className="panel chart-panel" aria-label="Bound progress">
       <div className="chart-wrap">
+        {title && <h2 className="chart-title">{title}</h2>}
         <div className="chart-toolbar">
           <div className="chart-tools">
             <button
@@ -592,19 +596,20 @@ export default function Chart({
               </text>
             </g>
           ))}
-          <foreignObject
-            x={L}
-            y={0}
-            width={100}
-            height={26}
-            className="axis-label"
-          >
-            <MathJax inline dynamic>
-              {tiny
-                ? String.raw`\(\theta - \theta_0\)`
-                : String.raw`\(\theta\)`}
-            </MathJax>
-          </foreignObject>
+          {/* Only offset axes need a label; plain bounds are self-explanatory. */}
+          {tiny && (
+            <foreignObject
+              x={L}
+              y={0}
+              width={100}
+              height={26}
+              className="axis-label"
+            >
+              <MathJax inline dynamic>
+                {String.raw`\(\theta - \theta_0\)`}
+              </MathJax>
+            </foreignObject>
+          )}
           <g clipPath="url(#plotClip)">
             {milestones.map((m) => (
               <line

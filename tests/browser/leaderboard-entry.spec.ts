@@ -7,7 +7,7 @@ test("entries expand in place, toggle with the keyboard, and restore focus on cl
 }) => {
   const data = catalogue();
   await routeCatalogue(page, data);
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await page
     .getByRole("navigation", { name: "Research views" })
     .getByRole("link", { name: "Submissions", exact: false })
@@ -51,7 +51,7 @@ test("mobile submissions scroll within their table and preserve full details", a
   record.method =
     "A submitted method description with enough detail to exceed one line on a narrow screen. The full explanation remains available in the expanded entry.";
   await routeCatalogue(page, data);
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await page
     .getByRole("navigation", { name: "Research views" })
     .getByRole("link", { name: "Submissions", exact: false })

@@ -29,13 +29,24 @@ export default function Contributors({
   records,
   onSelect,
   submissionsHref,
+  seeAll,
+  height,
+  limit,
 }: {
   records: Contribution[];
   onSelect: (id: string) => void;
   submissionsHref: string;
+  /** Boxed front-page variant: fixed height, the list scrolls inside. */
+  height?: number;
+  /** Show only the top contributors (used where scrolling would get in the way). */
+  limit?: number;
+  seeAll?: {
+    href: string;
+    onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  };
 }) {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const people = contributorLeaderboard(records);
+  const people = contributorLeaderboard(records).slice(0, limit);
   const submissionLink = (record: Contribution, label: string) => (
     <a
       href={`${submissionsHref}#entry-${record.id}`}
@@ -57,11 +68,19 @@ export default function Contributors({
   );
   return (
     <section
-      className="panel contribution-list contributor-board"
+      style={height ? { height } : undefined}
+      className={`panel contribution-list contributor-board${seeAll ? " boxed" : ""}`}
       aria-label="Contributor leaderboard"
     >
       <div className="contributor-header">
-        <strong>Contributors</strong>
+        <span className="section-title">
+          <strong>Contributors</strong>
+          {seeAll && (
+            <a className="see-all" href={seeAll.href} onClick={seeAll.onClick}>
+              See all
+            </a>
+          )}
+        </span>
         <span>
           Total <MathJax inline>{String.raw`\(\Delta\)`}</MathJax>
         </span>

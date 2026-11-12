@@ -32,7 +32,7 @@ test.beforeEach(async ({ page }) => {
 test("verified results expose the source and verification links supplied by the catalogue", async ({
   page,
 }) => {
-  await page.goto("/?tab=submissions");
+  await page.goto("/?tab=submissions&mode=list");
   for (const record of fixtureRecords.filter(
     (record) => record.status === "framework-verified",
   )) {
@@ -49,7 +49,7 @@ test("verified results expose the source and verification links supplied by the 
 test("mixed verification statuses and exact bounds render from the supplied catalogue", async ({
   page,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/?mode=list");
 
   await page
     .getByRole("button", { name: "Fit leaderboard", exact: true })
@@ -93,7 +93,7 @@ test("mixed verification statuses and exact bounds render from the supplied cata
   });
 });
 test("selection, exact sorting and zoom", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/?mode=list");
   const plot = page.getByRole("group", { name: /Interactive bound timeline/ });
   await plot.focus();
   await page.keyboard.press("+");
@@ -128,7 +128,7 @@ test("dialog keyboard controls, protocol, responsive overflow and no errors", as
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await page
     .getByRole("button", { name: "Submit a proof", exact: true })
     .click();
@@ -163,7 +163,7 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
   await page.route("**/catalogue.json", (route) =>
     route.fulfill({ json: { schema_version: 1, records: fixtures.records } }),
   );
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await page
     .getByRole("button", { name: "Fit leaderboard", exact: true })
     .click();
@@ -215,7 +215,7 @@ test("sub-float bounds remain visibly separate after narrowing time, with safe w
 test("a stronger pending submission stays in the table and cannot move the verified curve", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await expect(
     page.locator(`[data-dot][data-id="${bestVerified.id}"]`),
   ).toBeVisible();
