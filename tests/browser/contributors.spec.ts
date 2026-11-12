@@ -20,20 +20,31 @@ test("front page ranks contributors; submissions are bound sorted and best-bound
     timeline_at: `2026-01-0${i + 1}T00:00:00Z`,
   }));
   await routeCatalogue(page, { schema_version: 1, records: records.reverse() });
-  await page.goto("/");
+  await page.goto("/?mode=list");
   const board = page.getByRole("region", { name: "Contributor leaderboard" });
   await expect(board.locator(".contributor-summary")).toHaveCount(2);
   await expect(board.getByRole("heading")).toHaveCount(0);
-  await expect(board.locator(".contributor-header mjx-container svg")).toBeVisible();
+  await expect(
+    board.locator(".contributor-header mjx-container svg"),
+  ).toBeVisible();
   await expect(
     page.getByRole("link", { name: /^Contributors\s*2$/ }),
   ).toBeVisible();
   await expect(board.locator(".contributor-summary").first()).toContainText(
     "Alice",
   );
-  await expect(board.locator(".contributor-summary").first().locator('mjx-container svg')).toBeVisible();
-  await expect(board.locator(".contributor-summary").first().locator('mjx-container')).toHaveAttribute('jax', 'SVG');
-  await expect(board.locator(".contributor-summary").first().locator('[data-mml-node="msup"]')).toHaveCount(1);
+  await expect(
+    board.locator(".contributor-summary").first().locator("mjx-container svg"),
+  ).toBeVisible();
+  await expect(
+    board.locator(".contributor-summary").first().locator("mjx-container"),
+  ).toHaveAttribute("jax", "SVG");
+  await expect(
+    board
+      .locator(".contributor-summary")
+      .first()
+      .locator('[data-mml-node="msup"]'),
+  ).toHaveCount(1);
   await expect(board.locator(".contributor-summary").first()).not.toContainText(
     "0.6",
   );

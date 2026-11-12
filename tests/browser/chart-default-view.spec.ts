@@ -56,7 +56,7 @@ test("the default view focuses verified improvements and reset restores it", asy
     ...catalogue,
     records: [...catalogue.records, historical, weaker, pending],
   });
-  await page.goto("/");
+  await page.goto("/?mode=list");
 
   const chart = page.locator(".chart");
   const fit = page.getByRole("button", {
@@ -169,7 +169,7 @@ test("a verified theta-one baseline connects to the next bound while leaderboard
       ),
     ],
   });
-  await page.goto("/");
+  await page.goto("/?mode=list");
   const chart = page.locator(".chart");
   const point = chart.locator('[data-id="verified-classical-fixture"]');
   await page

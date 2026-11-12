@@ -1,4 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { MathJax } from "better-react-mathjax";
 import { Github, GitPullRequest, X } from "lucide-react";
 import Chart from "./Chart";
@@ -26,8 +32,29 @@ const leanTheorem = `theorem quasi_riemann_bound
     (hs : (θ : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
     LFunction χ s ≠ 0 := by
   sorry`;
+// Side-by-side front page layout; matches the .front-row breakpoint.
+const wideQuery = "(min-width: 1000px)";
+const subscribeWide = (notify: () => void) => {
+  const query = window.matchMedia(wideQuery);
+  query.addEventListener("change", notify);
+  return () => query.removeEventListener("change", notify);
+};
+const isWide = () => window.matchMedia(wideQuery).matches;
+
 export default function App() {
-  const { tab, graph, setTab, setGraph, tabHref } = useNavigation();
+  const wide = useSyncExternalStore(subscribeWide, isWide);
+  const ancestryBox = useRef<HTMLElement>(null);
+  const [ancestryHeight, setAncestryHeight] = useState<number>();
+  const {
+    tab,
+    graph,
+    submissions,
+    setTab,
+    setGraph,
+    setSubmissionView,
+    tabHref,
+  } = useNavigation();
+  const mode = submissions.mode;
   const navigate = (event: React.MouseEvent<HTMLAnchorElement>, next: Tab) => {
     if (
       event.button ||
@@ -53,11 +80,8 @@ export default function App() {
     ),
     [error, setError] = useState(""),
     [modal, setModal] = useState<"submit" | "policy" | null>(null),
-    [mode, setMode] = useState<"list" | "graph">(() =>
-      new URL(window.location.href).searchParams.get("mode") === "graph"
-        ? "graph"
-        : "list",
-    );
+    [ancestryAxis, setAncestryAxis] = useState<"bound" | "generation">("bound"),
+    [ancestryEdges, setAncestryEdges] = useState(true);
   const dialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const read = (name: string) =>
@@ -110,13 +134,38 @@ export default function App() {
     best = [...active]
       .filter(verifiedHere)
       .sort((a, b) => cmp(a.theta, b.theta))[0];
+  // The best verified submission together with everything it builds on.
+  const ancestry = useMemo(() => {
+    if (!best) return [];
+    const byId = new Map(all.map((r) => [r.id, r]));
+    const keep = new Set<string>();
+    const walk = (id: string) => {
+      if (keep.has(id) || !byId.has(id)) return;
+      keep.add(id);
+      byId.get(id)!.builds_on.forEach(walk);
+    };
+    walk(best.id);
+    return all.filter((r) => keep.has(r.id));
+  }, [all, best]);
+  // The front-page contributor box is as tall as the ancestry graph beside it.
+  useEffect(() => {
+    const el = ancestryBox.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() =>
+      setAncestryHeight(el.offsetHeight),
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [tab, best?.id]);
   const revealRecord = (id: string) => {
+    // Opens in whichever view (graph or list) the user last chose.
     setTab("Submissions");
     setSelected(id);
     requestAnimationFrame(() =>
-      document
-        .getElementById(`entry-${id}`)
-        ?.scrollIntoView({ block: "nearest", behavior: "smooth" }),
+      (
+        document.getElementById(`entry-${id}`) ??
+        document.querySelector(".graph-detail")
+      )?.scrollIntoView({ block: "nearest", behavior: "smooth" }),
     );
   };
   useEffect(() => {
@@ -166,7 +215,11 @@ export default function App() {
   const modeSwitch = (
     <div className="mode-switch" role="group" aria-label="Submission view">
       {(["list", "graph"] as const).map((m) => (
-        <button key={m} aria-pressed={mode === m} onClick={() => setMode(m)}>
+        <button
+          key={m}
+          aria-pressed={mode === m}
+          onClick={() => setSubmissionView({ mode: m })}
+        >
           {m === "list" ? "List" : "Graph"}
         </button>
       ))}
@@ -268,6 +321,7 @@ export default function App() {
                 <div className="research-main">
                   {tab === "Timeline" && (
                     <Chart
+                      title="Best achieved bound"
                       view={graph}
                       onViewChange={setGraph}
                       events={[]}
@@ -283,7 +337,66 @@ export default function App() {
                       onSelect={(r) => revealRecord(r.id)}
                     />
                   )}{" "}
-                  {tab === "Timeline" || tab === "Contributors" ? (
+                  {tab === "Timeline" ? (
+                    <div className="front-row">
+                      <Contributors
+                        records={all}
+                        onSelect={revealRecord}
+                        submissionsHref={tabHref("Submissions")}
+                        // Desktop: as tall as the graph, scrolling inside.
+                        // Phones: top 5, so the page scrolls normally.
+                        height={wide ? ancestryHeight : undefined}
+                        limit={wide ? undefined : 5}
+                        seeAll={{
+                          href: tabHref("Contributors"),
+                          onClick: (event) => navigate(event, "Contributors"),
+                        }}
+                      />
+                      {best && (
+                        <section
+                          ref={ancestryBox}
+                          className="ancestry"
+                          aria-labelledby="ancestry-title"
+                        >
+                          <div className="section-title">
+                            <strong id="ancestry-title">
+                              Ancestry graph of best submission
+                            </strong>
+                            <a
+                              className="see-all"
+                              href={tabHref("Submissions")}
+                              onClick={(event) => {
+                                if (
+                                  event.button ||
+                                  event.metaKey ||
+                                  event.ctrlKey ||
+                                  event.shiftKey ||
+                                  event.altKey
+                                )
+                                  return;
+                                event.preventDefault();
+                                setTab("Submissions");
+                                setSubmissionView({ mode: "graph" }, "replace");
+                              }}
+                            >
+                              See all
+                            </a>
+                          </div>
+                          <DependencyGraph
+                            label="Ancestry graph of best submission"
+                            records={ancestry}
+                            selected={selected}
+                            onSelect={revealRecord}
+                            height={460}
+                            axis={ancestryAxis}
+                            allEdges={ancestryEdges}
+                            onAxis={setAncestryAxis}
+                            onAllEdges={setAncestryEdges}
+                          />
+                        </section>
+                      )}
+                    </div>
+                  ) : tab === "Contributors" ? (
                     <Contributors
                       records={all}
                       onSelect={revealRecord}
@@ -298,6 +411,14 @@ export default function App() {
                             selected={selected}
                             onSelect={setSelected}
                             toolbar={modeSwitch}
+                            axis={submissions.axis}
+                            allEdges={submissions.edges === "all"}
+                            onAxis={(axis) => setSubmissionView({ axis })}
+                            onAllEdges={(all) =>
+                              setSubmissionView({
+                                edges: all ? "all" : "direct",
+                              })
+                            }
                           />
                           {selected && all.some((r) => r.id === selected) && (
                             <div className="panel graph-detail">

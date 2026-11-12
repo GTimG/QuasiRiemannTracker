@@ -15,7 +15,7 @@ test("public announcement dates and normal verification badges apply to imported
     pr: 123,
   });
   await routeCatalogue(page, { schema_version: 1, records: [imported] });
-  await page.goto("/");
+  await page.goto("/?mode=list");
   await page.getByRole("link", { name: /Submissions/ }).click();
   const entry = page.locator("#entry-historical-import");
   await expect(entry.locator(".historical-submission-tag")).toHaveCount(0);
@@ -58,7 +58,7 @@ test("day-only announcements do not display a fabricated midnight timestamp", as
     date_label: "Public announcement",
   });
   await routeCatalogue(page, { schema_version: 1, records: [imported] });
-  await page.goto("/?tab=submissions");
+  await page.goto("/?tab=submissions&mode=list");
   const entry = page.locator("#entry-day-only-announcement");
   await expect(entry.locator("time")).toHaveAttribute("datetime", "2030-10-01");
   await expect(entry.locator("time")).toHaveAttribute(
