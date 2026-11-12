@@ -1,0 +1,36 @@
+/- Copyright (c) 2026 Sil. Apache-2.0.
+The parent source of the reference lane: `G(.99, 49/20, .14)`, a restriction of
+PR103's proved source `G(1-10^-256, 2+10^-255, 3/20)` (`QRH.PositiveGap.source`). -/
+import Submissions.marked_anchor_induction.Qrh.PositiveGap.SourceComposition
+import Submissions.marked_anchor_induction.Qrh.MarkedAnchor.Interface.Contract
+
+set_option autoImplicit false
+namespace Qrh.MarkedAnchor.Ordinary.Reference
+noncomputable section
+open OAI.SevenEighths QRH.Record12518109Source QRH.Record1252270103Source
+open Qrh.MarkedAnchor.Interface.Contract
+
+/-- The reference parent `B_ref`. -/
+def Bref : ℝ := 99/100
+/-- The reference parent `L_ref`. -/
+def Lref : ℝ := 49/20
+/-- The reference parent mark cap `c_ref`. -/
+def cref : ℝ := 14/100
+
+/-- PR103's face restricts to the reference parent face: the `lam` grows, the budget and
+the mark cap shrink, all lower edges are `0`. -/
+theorem pr103_restricts_ref :
+    (globalFace
+      (9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+      (2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+      (3/20)).Restricts (globalFace Bref Lref cref) := by
+  constructor <;> norm_num [globalFace, Bref, Lref, cref]
+
+/-- **The reference parent** `G(.99, 49/20, .14)`, unconditional under the
+contrary hypothesis. -/
+theorem parent_source (hβ : (51/100:ℝ) ≤ HeckeZeroSupremum.beta) :
+    GlobalSource Bref Lref cref :=
+  uniformUnitFaceSource_restrict pr103_restricts_ref (QRH.PositiveGap.source hβ)
+
+end
+end Qrh.MarkedAnchor.Ordinary.Reference
