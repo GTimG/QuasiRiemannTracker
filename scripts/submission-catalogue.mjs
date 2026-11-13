@@ -272,6 +272,7 @@ export function buildSubmissionCatalogue({
       theta_exact,
       lean: _,
       rational_lean: __,
+      isolation_lean: ___,
       ...bound
     } = submissionBound(join(base, "src"));
     const facts = Object.hasOwn(publications, id)

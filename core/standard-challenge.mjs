@@ -20,9 +20,15 @@ export function standardChallenge(theta_exact) {
   const rationalBound = bound.rational_lean
     ? `theorem canonical_bound_le :\n    ((${bound.lean}) : ℝ) ≤ (${bound.rational_lean} : ℝ) := by\n  sorry\n\n`
     : "";
+  const isolation = bound.isolation_lean
+    ? `theorem canonical_bound_isolated :\n    ${bound.isolation_lean} := by\n  sorry\n\n`
+    : "";
   return template
     .replace("namespace OAI\n\nnamespace DirichletCharacter", "namespace QRH")
     .replace("LFunction_ne_zero_of_seven_eighths_lt_re", "canonical_bound")
     .replace("(7 / 8 : ℝ)", `(${bound.lean} : ℝ)`)
-    .replace("end DirichletCharacter\n\nend OAI", `${rationalBound}end QRH`);
+    .replace(
+      "end DirichletCharacter\n\nend OAI",
+      `${rationalBound}${isolation}end QRH`,
+    );
 }
