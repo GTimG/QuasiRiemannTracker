@@ -1,0 +1,55 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/ConductorsAndRayClassFields/RayClassSubgroupDegree.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.RayClassSubgroupQuotientEquiv
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+set_option autoImplicit false
+
+/-!
+# Degree of the class field of a ray-class subgroup
+
+The degree of a finite abelian class field is the index of its defining
+subgroup in the ray class group.
+-/
+
+open scoped NumberField
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+universe u
+
+/-- A ray-class subgroup realization has degree equal to the subgroup index. -/
+theorem rayClassSubgroup_degree
+    (K : Type u) [Field K] [NumberField K]
+    (m : RayClassModulus K) (H : Subgroup (RayClassGroup m))
+    (R : RayClassSubgroupRealization K m H) :
+    Module.finrank K R.extension = H.index := by
+  calc
+    Module.finrank K R.extension =
+        Nat.card (R.extension ≃ₐ[K] R.extension) :=
+      (IsGalois.card_aut_eq_finrank K R.extension).symm
+    _ = Nat.card (RayClassGroup m ⧸ H) :=
+      Nat.card_congr (rayClassSubgroupQuotientEquiv K m H R).symm.toEquiv
+    _ = H.index := H.index_eq_card.symm
+
+end ClassFieldTheory
+
+end
