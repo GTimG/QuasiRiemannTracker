@@ -1,0 +1,32 @@
+{
+  "title": "Exact continuum-contact Dirichlet nonvanishing at an isolated degree-nine root",
+  "authors": [
+    {
+      "name": "Joseph Bebel"
+    }
+  ],
+  "description": "All positive moduli and all Dirichlet characters, excluding only the principal pole. Candidate.exact_contact_bound proves nonvanishing at the exact degree-nine continuum contact. Candidate.bound states the exact isolated polynomial-root endpoint; Candidate.bound_isolated proves existence and uniqueness, and Candidate.bound_le proves the certified rational comparison. The ranked fraction matches PR141. The proof uses finite positive-cost constructions and a final order argument, with no uniform-limit assumption on analytic constants. Extends Sil's admitted PR137 marked-anchor induction with a continuum supplier, averaged floor and complete variable-cost source/physical return. New work by Joseph Bebel, AI-assisted. Preserves source notices and credits Sil, OpenAI, Hailey Collet, ArviFoxy, Joe Richey, Jacob Sussman and other inherited contributors.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "marked-anchor-induction",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline",
+    "sil-density-split-20261026"
+  ],
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline",
+    "sil-density-split-20261026"
+  ],
+  "references": [
+    {
+      "label": "Sil's marked-anchor induction (PR137)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/137"
+    }
+  ],
+  "agent_traces": []
+}

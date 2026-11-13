@@ -15,7 +15,7 @@ export function manifest({ id, theta_exact, theta, exact_bound }) {
     theta_exact ??
     exact_bound ??
     `${rational(theta.numerator, theta.denominator).numerator}/${theta.denominator}`;
-  const { lean, rational_lean, ...bound } = exactBound(key);
+  const { lean, rational_lean, isolation_lean, ...bound } = exactBound(key);
   return {
     id,
     ...bound,
