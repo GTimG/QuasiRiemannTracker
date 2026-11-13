@@ -1,0 +1,32 @@
+{
+  "title": "Continuum marked-anchor Dirichlet nonvanishing at the closest supported rational",
+  "authors": [
+    {
+      "name": "Joseph Bebel"
+    }
+  ],
+  "description": "All positive moduli and all Dirichlet characters, excluding the principal pole. Extends Sil's PR137 coupled marked-anchor induction with zero stage decrement, finite approximation to the continuum source curve, an averaged physical floor, and the complete certified return. The submitted rational is the upper Farey neighbour of the degree-nine contact with the 256-character declaration limit. Fixed positive source, fee and conductor-extension costs are retained; exact-root nonvanishing is not asserted. Builds on OpenAI, Hailey Collet, ArviFoxy, Sil and the inherited source/return developments; their notices are preserved. AI-assisted development.",
+  "license": "Apache-2.0; inherited source notices and dependency licenses retained.",
+  "builds_on": [
+    "marked-anchor-induction",
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline",
+    "sil-density-split-20261026"
+  ],
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline",
+    "sil-density-split-20261026"
+  ],
+  "references": [
+    {
+      "label": "Sil's marked-anchor induction (PR137)",
+      "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/137"
+    }
+  ],
+  "agent_traces": []
+}
