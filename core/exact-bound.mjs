@@ -1,4 +1,5 @@
 import { fraction, rational } from "./rational.mjs";
+import { polynomialRoot, polynomialRootFromLean } from "./polynomial-root.mjs";
 
 // A bound is identified by one canonical string, `theta_exact`:
 //
@@ -141,6 +142,7 @@ function algebraic(tree) {
 // The canonical label of a submitted exact expression. Other spellings are
 // rejected with the canonical one, so equal bounds always have equal labels.
 export function algebraicExpression(label) {
+  if (label.startsWith("root(")) return polynomialRoot(label);
   const expression = algebraic(parse(label, "label"));
   if (expression.label !== label)
     throw Error(`Write the exact bound canonically as ${expression.label}`);
@@ -149,6 +151,7 @@ export function algebraicExpression(label) {
 
 // Read an expression from Lean source (whitespace-insensitive).
 export function algebraicFromLean(text) {
+  if (text.trimStart().startsWith("sInf")) return polynomialRootFromLean(text);
   return algebraic(parse(text, "lean"));
 }
 
@@ -184,6 +187,9 @@ export function exactBound(theta_exact) {
     exact_bound: expression.label,
     lean: expression.lean,
     rational_lean: `${witness.numerator} / ${witness.denominator}`,
+    ...(expression.isolation_lean
+      ? { isolation_lean: expression.isolation_lean }
+      : {}),
   };
 }
 
@@ -191,4 +197,7 @@ export function exactBound(theta_exact) {
 export const boundTargets = (theta_exact) => [
   "QRH.canonical_bound",
   ...(exactBound(theta_exact).rational_lean ? [RATIONAL_TARGET] : []),
+  ...(exactBound(theta_exact).isolation_lean
+    ? ["QRH.canonical_bound_isolated"]
+    : []),
 ];

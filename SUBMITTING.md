@@ -126,6 +126,27 @@
    their folders are renamed, even if an older ID includes a date. Use those
    unchanged IDs in `QRH-Result` and dependency declarations.
 
+   For algebraic numbers beyond square-root expressions, use
+   `QRH-Exact: root([c0,c1,...,cn],lower,upper)`. The integer coefficients
+   are in ascending order: `c0 + c1*x + ... + cn*x^n`. The polynomial
+   must be primitive (coefficient gcd 1), with positive leading coefficient,
+   degree 2 through 32. The endpoints are reduced signed fractions with
+   positive denominators and `lower < upper`. The expression has the same
+   256-character limit as other exact expressions. For example,
+   `root([-2,0,1],1/1,2/1)` specifies the positive square root of 2.
+
+   This declaration adds a third checked theorem, `Candidate.bound_isolated`,
+   proving that exactly one root lies in the open interval. The exact threshold
+   is the infimum of that singleton root set. For the example above, the
+   generated Lean expression is
+   `sInf {x | (1 / 1) < x ∧ x < (2 / 1) ∧ ((-2) + x * (0 + x * 1)) = 0}`.
+   Use this literal Horner expression in `bound` and `bound_le`, and prove
+   `bound_isolated : ∃! x : ℝ, (1 / 1) < x ∧ x < (2 / 1) ∧
+   ((-2) + x * (0 + x * 1)) = 0`.
+   All three statements are checked by Lean, NanoDa and con-ron. Parsing does
+   not certify a root's existence or uniqueness; these remain proof obligations.
+   Ranking continues to use the rational `QRH-Bound`.
+
 4. GitHub Actions checks the exact PR head, including drafts. Comparator checks
    the statement and allowed axioms against the
    [canonical target](verifier/upstream-challenge.lean), with the submitted bound
