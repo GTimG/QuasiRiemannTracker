@@ -139,11 +139,14 @@ function algebraic(tree) {
   return { label: render(tree, "label"), lean: render(tree, "lean") };
 }
 
-// The canonical label of a submitted exact expression. Other spellings are
-// rejected with the canonical one, so equal bounds always have equal labels.
+export const parseRadicalExpression = (label) => parse(label, "label");
+
+// The spelling is canonical for this expression. Different expressions can
+// still denote the same real number.
+
 export function algebraicExpression(label) {
   if (label.startsWith("root(")) return polynomialRoot(label);
-  const expression = algebraic(parse(label, "label"));
+  const expression = algebraic(parseRadicalExpression(label));
   if (expression.label !== label)
     throw Error(`Write the exact bound canonically as ${expression.label}`);
   return expression;

@@ -3,7 +3,7 @@ import { rational, cmp, gcd } from "./rational.mjs";
 // Ascending integer coefficients and an open rational isolating interval.
 // Parsing establishes syntax only. Comparator checks existence AND uniqueness
 // in Lean, in addition to nonvanishing and the rational upper comparison.
-export function polynomialRoot(label) {
+export function parsePolynomialRoot(label) {
   if (typeof label !== "string" || label.length > 256)
     throw Error("Polynomial root expression is missing or too long");
   const match = /^root\(\[([^\]]+)\],(-?\d+\/\d+),(-?\d+\/\d+)\)$/.exec(label);
@@ -24,6 +24,11 @@ export function polynomialRoot(label) {
   const lower = read(match[2]),
     upper = read(match[3]);
   if (cmp(lower, upper) >= 0) throw Error("Root interval must be increasing");
+  return { coefficients, lower, upper };
+}
+
+export function polynomialRoot(label) {
+  const { coefficients, lower, upper } = parsePolynomialRoot(label);
   const number = (c) => (c.startsWith("-") ? `(${c})` : c);
   const horner = coefficients.reduceRight(
     (rest, c) => (rest === null ? number(c) : `(${number(c)} + x * ${rest})`),

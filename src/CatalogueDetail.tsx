@@ -54,6 +54,20 @@ export default function CatalogueDetail({
             </code>
           )}
         </div>
+        {!!r.same_bound_as?.length && (
+          <>
+            <h3>Other proofs of the same exact bound</h3>
+            {r.same_bound_as.map(({ id, title }) => (
+              <button
+                className="predecessor"
+                key={id}
+                onClick={() => onSelect(id)}
+              >
+                {title}
+              </button>
+            ))}
+          </>
+        )}
         <h3>Method</h3>
         <p>{r.method}</p>
         {r.attribution_note && (

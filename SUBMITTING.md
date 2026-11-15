@@ -135,6 +135,10 @@
    256-character limit as other exact expressions. For example,
    `root([-2,0,1],1/1,2/1)` specifies the positive square root of 2.
 
+   Verified proofs with the same exact endpoint link to each other in the
+   catalogue. Different polynomials and isolating intervals can identify the
+   same endpoint. Each proof retains its own receipt and ranked rational bound.
+
    This declaration adds a third checked theorem, `Candidate.bound_isolated`,
    proving that exactly one root lies in the open interval. The exact threshold
    is the infimum of that singleton root set. For the example above, the
