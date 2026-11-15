@@ -1,5 +1,6 @@
 // Build from the checked-out submissions. Admission checks decide what may be
 // merged; rendering a checkout never contacts GitHub or walks commit history.
+import { withEqualBounds } from "./equal-bounds.mjs";
 import { execFileSync } from "node:child_process";
 import {
   existsSync,
@@ -272,6 +273,7 @@ export function buildSubmissionCatalogue({
       theta_exact,
       lean: _,
       rational_lean: __,
+      isolation_lean: ___,
       ...bound
     } = submissionBound(join(base, "src"));
     const facts = Object.hasOwn(publications, id)
@@ -392,6 +394,7 @@ export function buildSubmissionCatalogue({
     records,
     ...(historical.length ? { historical_records: historical } : {}),
   });
+  catalogue.records = withEqualBounds(catalogue.records);
   // Validate all source metadata before updating any generated output.
   for (const [id, evidence] of certificates) {
     mkdirSync(join(root, "public/certificates"), { recursive: true });

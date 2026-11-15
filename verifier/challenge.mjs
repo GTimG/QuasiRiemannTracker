@@ -10,6 +10,9 @@ export function solutionWrapper(m) {
   const proofs = [
     `  exact ${m.entrypoint.declaration} χ hs hpole`,
     ...(m.targets.length > 1 ? [`  exact ${RATIONAL_DECLARATION}`] : []),
+    ...(m.targets.includes("QRH.canonical_bound_isolated")
+      ? ["  exact Candidate.bound_isolated"]
+      : []),
   ];
   let body = challenge(m).replace("import Mathlib\n", "");
   for (const proof of proofs) body = body.replace("  sorry", proof);
