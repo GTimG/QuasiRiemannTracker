@@ -139,6 +139,12 @@ export default function Leaderboard({
                       {formatContributionDate(r)}
                     </time>
                   </span>
+                  {!!r.same_bound_as?.length && (
+                    <span className="entry-method">
+                      Same exact bound as {r.same_bound_as.length} other{" "}
+                      {r.same_bound_as.length === 1 ? "proof" : "proofs"}
+                    </span>
+                  )}
                   <span className="entry-method">{r.method}</span>
                   <span id={`frontier-${r.id}`} className="sr-only">
                     {r.is_record

@@ -27,6 +27,7 @@ export type Contribution = {
   date_label?: string;
   date_precision?: "day" | "year";
   exact_bound?: string;
+  same_bound_as?: { id: string; title: string }[];
   verification_note?: string;
   attribution_note?: string;
 };
