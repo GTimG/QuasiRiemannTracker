@@ -1,0 +1,54 @@
+/- Modified by Joseph Bebel (2026-11-12) for the 256-stage PR137 extension.
+Imports are relocated into the private local fork. Where present, stage and return
+parameters instantiate the frozen 0.87334664 extension. Original notices follow.
+Pinned upstream: TheSil/QuasiRiemannTracker, 9d81a4c0b0e8338ef458f3ba5139657ae5404fde. -/
+/- Adapted by Joseph Bebel (2026-10-30, 2026-10-31) for the fixed five-window return. -/
+/- Repeated marks: fork of Collet's final-stage module FinalScheme (Record1252270103Return, Apache-2.0),
+re-instantiated with the final constants of the repeated-mark graph. -/
+/- Modified by Sil (2026-10-26): every window face is restricted from one of the two global faces; the separate physical window face is dropped -/
+/- Modified by ArviFoxy (2026-10-28): module prefix and namespaces renamed to Submissions.arvi_density.Return and QRH.ArviDensity.Return (no other change). -/
+/- Modified by ArviFoxy (2026-10-29): forked into Submissions.arvi_return_tuning, namespace QRH.ArviDensity.Return.Tuning, over the reflective windows and edge covers of this package (`w.toAdmitted` written as `ReturnCountWindow.toAdmitted w`). -/
+/- Modified by Sil (2026-11-11): adds `finalImprovedScheme` (the count scheme with the improved window). -/
+import Candidate.Local.Qrh.TwoSlot.AnchorExtension.Library.PositiveGap.Return.Tuning.FinalWindows
+import Candidate.Local.Qrh.TwoSlot.AnchorExtension.Library.PositiveGap.Return.WindowSources
+import Submissions.hailey_collet_1252270103.Record1252270103Return.CountScheme
+set_option autoImplicit false
+set_option maxHeartbeats 200000
+namespace QRH.PositiveGap.Return.Tuning
+open QRH.Record1252270103Return QRH.PositiveGap.ReturnTuning
+noncomputable section
+open QRH.Record12518109Source QRH.Record12518109Existence
+noncomputable abbrev finalCountScheme : CountScheme where
+ naturalκ := naturalK/6
+ natural_lo := by norm_num [naturalK]
+ natural_hi := by norm_num [naturalK]
+ windows := finalAdmittedWindows
+
+/-- The count scheme with the improved window; it shares the count face of the native window. -/
+noncomputable abbrev finalImprovedScheme : Qrh.MarkedAnchor.Return.ImprovedCountScheme where
+ toCountScheme := finalCountScheme
+ improved := finalImprovedWindows
+ improved_face := by
+  intro w hw
+  simp only [finalImprovedWindows,List.mem_singleton] at hw
+  subst hw
+  have hmem : (⟨.C,15/64,9/16,9/32⟩:WinQ)∈winsQ := by simp [winsQ]
+  exact ⟨ReturnCountWindow.toAdmitted (mkWindow 0 _ (ok_of_mem windows_ok hmem)),
+   List.mem_map.mpr ⟨_,mkWindow_mem windows_ok hmem,rfl⟩,rfl⟩
+
+theorem ReturnCountWindow.toAdmitted_face (w:ReturnCountWindow) :
+ (ReturnCountWindow.toAdmitted w).face=countingSource w.branch := rfl
+
+theorem final_windows_common_mesh
+ (hC:UniformUnitFaceSource countGlobal) (hP:UniformUnitFaceSource physicalGlobal)
+ {ε:ℝ} (hε:0<ε) : ∃mesh:ℝ,0<mesh ∧
+ ∀w∈finalCountScheme.windows,UnitFaceSource w.face mesh ε := by
+ obtain ⟨mesh,hm,hc,hp⟩ := selected_sources_common_mesh hC hP hε
+ refine ⟨mesh,hm,?_⟩
+ intro w hw
+ obtain ⟨v,hv,rfl⟩ := List.mem_map.mp hw
+ change UnitFaceSource (countingSource v.branch) _ ε
+ apply unit_source_restrict (supplier_restricts_counting v.branch v.nonold)
+ cases v.branch <;> first | exact (v.nonold rfl).elim | exact hc | exact hp
+end
+end QRH.PositiveGap.Return.Tuning
