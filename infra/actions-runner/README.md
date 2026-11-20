@@ -36,6 +36,9 @@ setup and operation require no host sudo when Docker and `/dev/kvm` are accessib
   and no VM disk or KVM access. Its file-size limit permits .NET's sparse memory
   mappings; the proof VM retains its 82 GiB backing-file limit. The guest receives
   only the identity, never registration tokens or host credentials.
+- Unattended upgrades and the apt timers are masked in the guest, so a daily
+  upgrade cannot restart the runner service mid-job. Patch the guest by
+  rebuilding the pinned base image.
 - After one job the guest shuts down; Docker removes its anonymous disk volume.
   An idle guest expires after one hour. The host enforces a sixteen-hour absolute
   lifetime, including boot and idle time, independent of guest behavior.

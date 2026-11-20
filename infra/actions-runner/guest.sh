@@ -11,6 +11,15 @@ trap 'printf "Guest bootstrap failed at line %s (status %s)\n" "$LINENO" "$?" >&
 # Keep cloud-init's journal/console pipe: restarting a serial getty invalidates
 # a directly opened ttyS0 descriptor and would discard subsequent diagnostics.
 
+# Ubuntu's daily unattended upgrade restarts services whose libraries changed,
+# including qrh-runner.service. That cancels the running job and consumes the
+# one-job identity (PR 144, 2026-11-20). A disposable guest is patched by
+# rebuilding its pinned base image, never in the middle of a job.
+APT_PERIODIC=(apt-daily.timer apt-daily-upgrade.timer apt-daily.service
+              apt-daily-upgrade.service unattended-upgrades.service)
+systemctl stop "${APT_PERIODIC[@]}" 2>/dev/null || true
+systemctl mask "${APT_PERIODIC[@]}"
+
 export http_proxy=http://10.0.2.100:3128 https_proxy=http://10.0.2.100:3128
 export HTTP_PROXY="$http_proxy" HTTPS_PROXY="$https_proxy"
 export no_proxy=127.0.0.1,localhost NO_PROXY=127.0.0.1,localhost
@@ -84,6 +93,9 @@ test "$(nproc)" = 6
 test -e /sys/fs/cgroup/cgroup.controllers
 test "$(cat /sys/module/apparmor/parameters/enabled)" = Y
 sudo -n true
+for unit in apt-daily.timer apt-daily-upgrade.timer unattended-upgrades.service; do
+  test "$(systemctl is-enabled "$unit" 2>/dev/null || true)" = masked
+done
 systemd-run --user --scope --quiet --property=Delegate=yes true
 git init /home/runner/palomar
 git -C /home/runner/palomar fetch --depth=1 https://github.com/PalomarRegistry/PalomarSubmission.git d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
