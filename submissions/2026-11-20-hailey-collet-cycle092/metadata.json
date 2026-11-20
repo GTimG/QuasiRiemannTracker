@@ -1,0 +1,29 @@
+{
+  "title": "Cycle092: A zero-free half-plane for Dirichlet L-functions",
+  "authors": [
+    {
+      "name": "Hailey Collet",
+      "url": "https://github.com/HaileyStorm"
+    }
+  ],
+  "description": "Cycle092 gives the open half-plane Re(s) > 0.873332794 for every Dirichlet character, with the principal pole excluded. The proof bounds two independently twisted character sums, then uses a family of zero detectors to sharpen the count of the remaining rows. It builds on the OpenAI QRH framework, Hailey Collet’s earlier arguments, and work by ArviFoxy, Sil and Joseph Bebel. Hailey Collet directed the work, with AI assistance on research, drafting and Lean formalization.",
+  "license": "Apache-2.0 for Hailey Collet’s contribution. Reused sources retain their licenses and notices.",
+  "dependencies": [
+    "arvi-repeated-marks-on-sil-face-20261025",
+    "arvi-selected-leaf",
+    "hailey-collet-1252270103",
+    "openai-baseline",
+    "sil-density-split-20261026"
+  ],
+  "references": [
+    {
+      "label": "Cycle092 written-proof submission",
+      "url": "https://github.com/rohanarun/quasi-rh-hillclimb/pull/45"
+    },
+    {
+      "label": "Cycle092 written proof at its submitted revision",
+      "url": "https://github.com/rohanarun/quasi-rh-hillclimb/blob/1affb4664d550a568e32be35238445e3831ed237/submissions/hailey-collet-cycle092/packet/CLOSED_PROOF.md"
+    }
+  ],
+  "published_at": "2026-11-19T15:38:04Z"
+}
