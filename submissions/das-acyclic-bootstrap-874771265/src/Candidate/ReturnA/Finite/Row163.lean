@@ -1,0 +1,22 @@
+/- Exact finite certificates generated for Subhanjan Das, AI-assisted with OpenAI Codex.
+Uses Hailey Collet's Bernstein and return definitions, Apache-2.0, with inherited notices retained. -/
+import Candidate.ReturnA.Finite.ReturnFormulas
+set_option autoImplicit false
+set_option maxHeartbeats 0
+namespace DasStageAFinite
+noncomputable section
+def row163_coefficients : Fin 3 → Fin 4 → ℝ := ![![(22421741529038696988839993187266976271338689/1021168638213207744425976562500000:ℝ),(52336581719215018662432028923401020232096003/1021168638213207744425976562500000:ℝ),(37447067505140920266016912686537964758113011/1021168638213207744425976562500000:ℝ),(1076029739197203366037168443894287390693671/145881234030458249203710937500000:ℝ)],
+![(22370448565651597277781689843032231602764969/510584319106603872212988281250000:ℝ),(52126095883977702392786445450612843840913571/510584319106603872212988281250000:ℝ),(37180095755829551381413036075140238670007973/510584319106603872212988281250000:ℝ),(1060632747938749290603403425354651973524553/72940617015229124601855468750000:ℝ)],
+![(5629290212373822002312083825995540121234691/255292159553301936106494140625000:ℝ),(52509180884313701133972858657466207034441903/1021168638213207744425976562500000:ℝ),(150025001239398122706045397411350719150787739/4084674552852830977703906250000000:ℝ),(4293834863745292473413470385355701412338419/583524936121832996814843750000000:ℝ)]]
+theorem row163_identity (δ p : ℝ) : rowMargin .newTop .C δ p =
+ Record12518109.Bernstein.bsum 2 3 (1060632747938749290603403425354651973524553/72998963468879987937361587181977600000000000000:ℝ) row163_coefficients (117/256:ℝ) (939/2048:ℝ) (255/512:ℝ) (511/1024:ℝ) δ p := by
+ norm_num [admissionGuard,rowMargin,Ebase,countN,countJ,countT,RN,MN,DJ,V,D,A,C0,Z,U,oldD,oldC,branchB,branchL,branchCap,branchZ,isCap,naturalM,lowerM,upperM,derivativeD,derivativeA,derivativeC,derivativeU,derivativeJ,c,h,theta,ell,x,y,kappa,ds,dk,dp,d0,physicalB,physicalLambda,countCB,countCL,naturalK,rowFee,edgeD,edgeC,oldCapacity,newCapacity,Record12518109.Bernstein.bsum,Record12518109.Bernstein.bterm,row163_coefficients,Fin.sum_univ_succ]
+ ring
+theorem row163_pos {δ p : ℝ} (hd : δ∈Set.Icc (117/256:ℝ) (939/2048:ℝ)) (hp : p∈Set.Icc (255/512:ℝ) (511/1024:ℝ)) : 0 < rowMargin .newTop .C δ p := by
+ rw [row163_identity]
+ apply Record12518109.Bernstein.bsum_pos (by norm_num) _ hd hp
+ intro i j
+ fin_cases i <;> fin_cases j <;> norm_num [row163_coefficients]
+end
+end DasStageAFinite
+#print axioms DasStageAFinite.row163_pos
