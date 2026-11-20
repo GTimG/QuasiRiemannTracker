@@ -31,6 +31,9 @@ jobs:
     outputs:
       verify: ${{ steps.prepare.outputs.verify }}
       matrix: ${{ steps.prepare.outputs.matrix }}
+      # "Re-run failed jobs" reuses this job and its outputs, so later jobs
+      # find the context by the attempt that wrote it, not their own attempt.
+      context_attempt: ${{ github.run_attempt }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -90,7 +93,7 @@ jobs:
           node-version: 22.22.1
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: verification-context-${{ github.run_attempt }}
+          name: verification-context-${{ needs.prepare.outputs.context_attempt }}
           path: verification-context/
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Select the affected result
@@ -194,12 +197,13 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: verification-context-${{ github.run_attempt }}
+          name: verification-context-${{ needs.prepare.outputs.context_attempt }}
           path: verification-context/
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         continue-on-error: true
         with:
-          pattern: proof-verification-${{ github.run_attempt }}-*
+          # Results from every attempt; finalize uses the newest per result.
+          pattern: proof-verification-*
           path: verification-results/
       - name: Publish verification for the current PR head
         # Decimal comparisons use generated metadata, never a maintained catalogue.
@@ -207,6 +211,7 @@ jobs:
         run: node verifier/actions/finalize.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          QRH_CONTEXT_ATTEMPT: ${{ needs.prepare.outputs.context_attempt }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: success()
         with:

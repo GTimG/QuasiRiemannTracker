@@ -1,7 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import {
+  mkdtempSync,
+  mkdirSync,
+  writeFileSync,
+  readFileSync,
+  rmSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { record as catalogueRecord } from "./fixtures/catalogue.mjs";
@@ -101,29 +107,35 @@ function run(t, data, env = {}) {
     JSON.stringify(data.attempt?.report ?? {}),
   );
   if (data.context.expectations)
-    for (const expected of data.context.expectations) {
-      const directory = join(
-        cwd,
-        `verification-results/proof-verification-1-${expected.result_id}`,
-      );
-      mkdirSync(join(directory, "run"), { recursive: true });
-      const attempt = data.attempts
-        ? data.attempts[expected.result_id]
-        : data.attempt;
-      if (attempt) {
-        writeFileSync(join(directory, "attempt.json"), JSON.stringify(attempt));
-        writeFileSync(
-          join(directory, "run/result.json"),
-          JSON.stringify(attempt.report ?? {}),
+    for (const expected of data.context.expectations)
+      for (const [runAttempt, given] of Object.entries(
+        data.workerAttempts ?? { 1: null },
+      )) {
+        const directory = join(
+          cwd,
+          `verification-results/proof-verification-${runAttempt}-${expected.result_id}`,
         );
-        writeFileSync(
-          join(directory, "worker-status.json"),
-          JSON.stringify({
-            result: data.completions?.[expected.result_id] || "success",
-          }),
-        );
+        mkdirSync(join(directory, "run"), { recursive: true });
+        const attempt =
+          given ??
+          (data.attempts ? data.attempts[expected.result_id] : data.attempt);
+        if (attempt) {
+          writeFileSync(
+            join(directory, "attempt.json"),
+            JSON.stringify(attempt),
+          );
+          writeFileSync(
+            join(directory, "run/result.json"),
+            JSON.stringify(attempt.report ?? {}),
+          );
+          writeFileSync(
+            join(directory, "worker-status.json"),
+            JSON.stringify({
+              result: data.completions?.[expected.result_id] || "success",
+            }),
+          );
+        }
       }
-    }
   writeFileSync(
     join(cwd, "verification-context/catalogue.json"),
     JSON.stringify(data.catalogue),
@@ -159,6 +171,7 @@ function run(t, data, env = {}) {
         GITHUB_REPOSITORY: repository,
         GITHUB_RUN_ID: "123",
         GITHUB_RUN_ATTEMPT: "1",
+        QRH_CONTEXT_ATTEMPT: "1",
         GITHUB_WORKFLOW_SHA: "c".repeat(40),
         GITHUB_REF: "refs/heads/main",
         QRH_VERIFICATION_RESULT: "success",
@@ -171,7 +184,7 @@ function run(t, data, env = {}) {
   assert.ifError(child.error);
   const line = child.stdout.split("\n").find((l) => l.startsWith("RESULT="));
   assert.ok(line, child.stderr);
-  return { ...JSON.parse(line.slice(7)), status: child.status };
+  return { ...JSON.parse(line.slice(7)), status: child.status, cwd };
 }
 test("publisher accepts current-run proof without reading local receipts", (t) => {
   const result = run(t, fixture());
@@ -313,6 +326,64 @@ for (const field of ["run_id", "run_attempt", "workflow_sha"])
     const data = fixture();
     data.context[field] = "other";
     const result = run(t, data);
+    assert.equal(result.status, 1);
+    assert.equal(result.requests.length, 0);
+    assert.match(result.error, /protected workflow run/);
+  });
+// "Re-run failed jobs" keeps the prepare job, its context and any passing
+// matrix legs from the earlier attempt.
+const reportUrl = (result) =>
+  JSON.parse(
+    readFileSync(
+      join(result.cwd, "verification/certificates/candidate-proof.json"),
+      "utf8",
+    ),
+  ).report_url;
+const rerun = { GITHUB_RUN_ATTEMPT: "2", QRH_CONTEXT_ATTEMPT: "1" };
+const failed = (data) => ({
+  ...data.attempt,
+  status: "checking-failed",
+  reason: "Runner shut down",
+  report: undefined,
+});
+test("publisher accepts a re-run worker against an earlier attempt's context", (t) => {
+  const data = fixture();
+  data.workerAttempts = { 1: failed(data), 2: data.attempt };
+  const result = run(t, data, rerun);
+  assert.equal(result.status, 0, result.error);
+  assert.equal(result.requests.at(-1).body.conclusion, "success");
+  assert.match(reportUrl(result), /\/actions\/runs\/123\/attempts\/2$/);
+});
+test("publisher keeps a result whose matrix leg was not re-run", (t) => {
+  const data = fixture();
+  data.workerAttempts = { 1: data.attempt };
+  const result = run(t, data, rerun);
+  assert.equal(result.status, 0, result.error);
+  assert.match(reportUrl(result), /\/actions\/runs\/123\/attempts\/1$/);
+});
+test("publisher uses the newest attempt even when it failed", (t) => {
+  const data = fixture();
+  data.workerAttempts = { 1: data.attempt, 2: failed(data) };
+  const result = run(t, data, rerun);
+  assert.equal(result.status, 1);
+  assert.match(result.requests.at(-1).body.output.summary, /Runner shut down/);
+});
+test("publisher ignores results older than the context", (t) => {
+  const data = fixture();
+  data.context.run_attempt = "2";
+  data.workerAttempts = { 1: data.attempt };
+  const result = run(t, data, { ...rerun, QRH_CONTEXT_ATTEMPT: "2" });
+  assert.equal(result.status, 1);
+  assert.match(result.requests.at(-1).body.output.summary, /report is missing/);
+});
+for (const [name, context, env] of [
+  ["a later attempt", "3", { ...rerun, QRH_CONTEXT_ATTEMPT: "3" }],
+  ["another prepare attempt", "1", { ...rerun, QRH_CONTEXT_ATTEMPT: "2" }],
+])
+  test(`publisher refuses a context from ${name}`, (t) => {
+    const data = fixture();
+    data.context.run_attempt = context;
+    const result = run(t, data, env);
     assert.equal(result.status, 1);
     assert.equal(result.requests.length, 0);
     assert.match(result.error, /protected workflow run/);
