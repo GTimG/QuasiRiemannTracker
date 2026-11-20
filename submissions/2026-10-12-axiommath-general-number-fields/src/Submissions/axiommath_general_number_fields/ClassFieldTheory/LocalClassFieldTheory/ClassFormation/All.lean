@@ -1,0 +1,69 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/LocalClassFieldTheory/ClassFormation/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ArchimedeanHilbert90
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ArchimedeanNormQuotient
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.CohomologyBridge
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.FieldUnitsHerbrand
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.FilteredLiftingSequence
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Hilbert90
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.IntegerUnitsHerbrand
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalBlocks.All
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.All
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Main
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasis
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisCohomology
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisFiniteQuotient
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisGaloisAction
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisGradedLifting
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisInfiniteProduct
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.NormalBasisRecursiveLifting
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.PrincipalUnitGraded
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.Valuation
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ValuationHerbrand
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.ValueGroupCohomology
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# The local class formation
+
+Public aggregate for the normal-basis, unit-filtration, valuation, and
+cohomology calculations establishing the local class-field axiom.
+-/

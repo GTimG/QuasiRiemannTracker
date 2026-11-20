@@ -1,0 +1,70 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/LocalClassFieldTheory/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalExistence
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalExistenceOrderIso
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocity
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityFamily
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityFamilyArithmeticFrobenius
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityFamilyExt
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityFamilyUnramifiedNormalization
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityUnramifiedNormalization
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityUnramifiedHomExt
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityUnramifiedFamilyExt
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityQuotient
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityQuotientEquivMk
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityQuotientEquivOfArtin
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FiniteAbelianLocalReciprocityTower
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FieldNormSubgroupFiniteIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FieldNormSubgroupIsOpen
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FieldNormSubgroupRingEquiv
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.FieldNormSubgroupTower
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.MemFieldNormSubgroupIff
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.LocalClassFieldTheory.ProfiniteLocalReciprocity
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Finite abelian local class field theory
+
+This module gathers the public local reciprocity, local existence, and
+norm-subgroup statements.  The theorem statements use Mathlib and the public
+definitions layer; their proofs may import implementation modules.
+-/

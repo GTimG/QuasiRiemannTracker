@@ -1,0 +1,92 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/HilbertSymbols/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassEqOneIff
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassMul
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassInv
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassPow
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassEqIff
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingSymbolMul
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingSymbolMulRight
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.HilbertPairingPerfect
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingExists
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingArtinNormalization
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingExponentCompatibility
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.RootQuotientChoiceIndependence
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingInverse
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingNormCriterion
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.LocalHilbertPairingPerfectExists
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.HilbertProductFormula
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.GlobalHilbertPairingFiniteSupport
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.FinitePlaceHilbertBadSetFinite
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.GlobalHilbertPairingSupportBound
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFiniteFree
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFiniteEtale
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraProductDecomposition
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraUniformFieldFactors
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraUniformFactorDegree
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraCopiesOfSimpleFactor
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormProduct
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraFinrank
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormIffSimpleRadicalNorm
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraNormIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerRadicalDegreeEqPowerClassOrder
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.KummerAlgebraOneNormSurjective
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Theorems.HilbertSymbols.PowerClassGroupFinite
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Hilbert symbols
+
+This `All` module collects the power-class quotient theorem, existence and
+the norm-residue criterion for local Hilbert pairings, and existence of a
+coherent family satisfying the global product formula.
+-/

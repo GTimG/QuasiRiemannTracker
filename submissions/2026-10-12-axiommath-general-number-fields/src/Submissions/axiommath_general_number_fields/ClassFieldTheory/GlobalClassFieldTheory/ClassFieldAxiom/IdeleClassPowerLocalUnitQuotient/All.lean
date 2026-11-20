@@ -1,0 +1,43 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/GlobalClassFieldTheory/ClassFieldAxiom/IdeleClassPowerLocalUnitQuotient/All.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.ArchimedeanPowerIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.FinitePlaceCompletionInstances
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.FinitePlacePowerIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.LocalResidueArithmetic
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.NormContainment
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.PrimePowerKummerIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.SupportedIdeleIndex
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.GlobalClassFieldTheory.ClassFieldAxiom.IdeleClassPowerLocalUnitQuotient.SupportedPrincipalQuotient
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# Idele-class power-local-unit quotient
+
+This aggregate preserves the public import path while the implementation is
+organized by the mathematical stages of the norm-index argument.
+-/

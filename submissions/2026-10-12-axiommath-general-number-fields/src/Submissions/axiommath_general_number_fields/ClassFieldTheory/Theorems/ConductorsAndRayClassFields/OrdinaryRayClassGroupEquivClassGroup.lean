@@ -1,0 +1,63 @@
+/-
+AxiomMath/DedekindZetaZeroFree, Apache-2.0.
+Imported revision: 09afbb4ce6570c1615d58509dc197fc9f0956b7d
+Original path: vendor/class-field-theory/Lean4/ClassFieldTheory/Theorems/ConductorsAndRayClassFields/OrdinaryRayClassGroupEquivClassGroup.lean
+Tracker adaptation: local module import paths relocated under Submissions.axiommath_general_number_fields.
+Original theorem bodies and declaration namespaces retained.
+-/
+module
+
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.OrdinaryRayClassModulus
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.RayClassGroup
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Definitions.ConductorsAndRayClassFields.RayClassOfFinitePrime
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.Definitions.FrobeniusAndHilbertClassFields.FinitePrimeFractionalIdeal
+public import Submissions.axiommath_general_number_fields.ClassFieldTheory.AlgebraicNumberTheory.RayClass.OrdinaryClassGroupComparison
+public import Mathlib.RingTheory.ClassGroup.Basic
+
+@[expose] public section
+
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+
+
+
+
+
+
+
+set_option autoImplicit false
+
+/-!
+# The ordinary ray class group is the ideal class group
+
+At the modulus with no finite or real conditions, the ideal-theoretic ray
+class group agrees with Mathlib's ideal class group. The comparison also
+preserves the class of each finite prime, fixing its arithmetic meaning.
+-/
+
+open scoped NumberField
+open NumberField IsDedekindDomain
+
+noncomputable section
+
+namespace ClassFieldTheory
+
+/-- The ordinary ray class group is isomorphic to the ideal class group,
+and the isomorphism sends each finite-prime ray class to its ideal class. -/
+theorem exists_ordinaryRayClassGroupEquivClassGroup
+    (K : Type) [Field K] [NumberField K] :
+    ∃ e : RayClassGroup (ordinaryRayClassModulus K) ≃* ClassGroup (𝓞 K),
+      ∀ v : HeightOneSpectrum (𝓞 K),
+        e (ordinaryRayClassOfFinitePrime v) =
+          ClassGroup.mk K (finitePrimeFractionalIdeal v) := by
+  refine ⟨ordinaryRayClassGroupEquivClassGroup (K := K), ?_⟩
+  intro v
+  exact ordinaryRayClassGroupEquivClassGroup_prime (K := K) v
+
+end ClassFieldTheory
+
+end
