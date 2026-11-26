@@ -1,0 +1,16 @@
+{
+  "title": "Generalized Riemann Hypothesis for Dirichlet L-functions (grh-lean, compact edition)",
+  "authors": [
+    { "name": "Levent Alpöge", "url": "https://alpo.ge" },
+    { "name": "Anthropic", "url": "https://github.com/lsernau/grh-lean" }
+  ],
+  "description": "Dirichlet nonvanishing for every positive modulus and every character when Re(s) > 1/2, excluding only the principal pole: GRH for Dirichlet L-functions. The same development also proves the Riemann Hypothesis in Mathlib's form (Candidate/GRH.lean, riemannHypothesis). The proof is Levent Alpöge's, with Claude (https://alpo.ge/remark.pdf); this is the compact edition of the shorter rewriting by Anthropic and Claude published at https://github.com/lsernau/grh-lean (commit 72fead102f663d5c7a407964a13dc0cf9d977207, 2026-11-25, directory grh-compact). It uses only propext, Classical.choice and Quot.sound, and does not import the OpenAI baseline. Changes for the tracker: modules re-rooted under Candidate (upstream Main renamed GRH), the lakefile leanOptions moved into each file, the Candidate.bound wrapper added, and the proof backported from Lean v4.35.0 / Mathlib 56a00585 to the tracker pins (Lean v4.34.1 / Mathlib d13f23b). Upstream notes that the proof has passed machine checks only and that no mathematician has read it through. The Lean text was written by Claude (AI).",
+  "license": "Apache-2.0; upstream NOTICE retained in the repository NOTICE.",
+  "published_at": "2026-11-25T20:38:07Z",
+  "references": [
+    { "label": "grh-lean repository (source, commit 72fead1)", "url": "https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207" },
+    { "label": "Levent Alpöge, remark on the proof", "url": "https://alpo.ge/remark.pdf" }
+  ],
+  "dependencies": [],
+  "agent_traces": []
+}
